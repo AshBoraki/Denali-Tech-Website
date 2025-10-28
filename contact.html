@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Denali Tech | Free Smart Home Consultation Chicago</title>
+    <meta name="description" content="Get a free consultation for your smart home project. Denali Tech in Chicago offers no-pressure consultations. Call (312) 439-7500 or email Hello@denalitechs.com">
+    <meta name="keywords" content="smart home consultation Chicago, free home automation quote, home automation contact, smart home company Chicago phone, AV consultation, home automation services near me, smart home consultation free, contact home automation installer, Denali Tech phone number, smart home installation quote">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="Video/logo.JPG">
+    
+    <!-- PERFORMANCE: Optimized Font Loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* 
+        ============================================
+        DENALI TECH CONTACT PAGE
+        Simple Contact & Consultation Booking
+        ============================================
+        */
+
+        :root {
+            --bg-color: #0a0d18;
+            --bg-aurora-1: rgba(249, 115, 22, 0.15);
+            --bg-aurora-2: rgba(13, 148, 136, 0.12);
+            --bg-aurora-3: rgba(59, 130, 246, 0.1);
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --accent-primary: #f97316;
+            --accent-hover: #fdba74;
+            --accent-interactive: #fb923c;
+            --border-color: rgba(255, 255, 255, 0.12);
+            --shadow-glow: 0 4px 15px rgba(249, 115, 22, 0.4);
+            --shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.2);
+            --font-main: 'Inter', system-ui, sans-serif;
+            --font-heading: 'Poppins', system-ui, sans-serif;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --animation-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+
+        body.light-theme {
+            --bg-color: #f9fafb;
+            --bg-aurora-1: rgba(249, 115, 22, 0.1);
+            --bg-aurora-2: rgba(13, 148, 136, 0.08);
+            --bg-aurora-3: rgba(59, 130, 246, 0.06);
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --accent-primary: #f97316;
+            --accent-hover: #ea580c;
+            --accent-interactive: #ea580c;
+            --border-color: rgba(0, 0, 0, 0.12);
+            --shadow-glow: 0 4px 15px rgba(249, 115, 22, 0.3);
+            --shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* CRITICAL RESET & PAGE SETUP */
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100vh;
+            background-color: var(--bg-color);
+            overflow-x: hidden;
+            transition: background-color var(--transition);
+            font-family: var(--font-main);
+            color: var(--text-primary);
+        }
+        * { box-sizing: border-box; }
+
+        /* HEADER */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 13, 24, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+            transition: background-color var(--transition);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 8px 16px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            transition: all var(--transition);
+            text-shadow: 0 3px 6px rgba(0, 0, 0, 1);
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
+        }
+
+        .logo:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .logo img {
+            border-radius: 8px;
+            transition: transform var(--transition);
+        }
+
+        .logo:hover img {
+            transform: scale(1.1);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color var(--transition);
+            position: relative;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+            filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6));
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-primary);
+            transition: width var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-interactive));
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all var(--transition);
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 120px 0 80px;
+            background: var(--bg-color);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.3;
+        }
+
+        .hero-background::before,
+        .hero-background::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 200vmax;
+            height: 200vmax;
+            border-radius: 50%;
+            animation: aurora-flow 30s linear infinite;
+        }
+
+        .hero-background::before {
+            background: radial-gradient(circle, var(--bg-aurora-1) 0%, transparent 60%);
+            transform-origin: 30% 30%;
+        }
+
+        .hero-background::after {
+            background: radial-gradient(circle, var(--bg-aurora-2) 0%, transparent 55%);
+            transform-origin: 70% 70%;
+            animation-duration: 25s;
+            animation-direction: reverse;
+        }
+
+        @keyframes aurora-flow {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* CONTACT SECTIONS */
+        .contact-section {
+            padding: 80px 5%;
+            background: var(--bg-color);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 3rem;
+        }
+
+        .contact-info h2 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            transition: all var(--transition);
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            color: var(--accent-primary);
+        }
+
+        .contact-details h3 {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .contact-details p {
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        .contact-details a {
+            color: var(--accent-primary);
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+
+        .contact-details a:hover {
+            color: var(--accent-hover);
+        }
+
+        /* FORM STYLES */
+        .contact-form {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 3rem;
+        }
+
+        .contact-form h2 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+            font-family: var(--font-main);
+            font-size: 1rem;
+            transition: all var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-interactive));
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all var(--transition);
+            box-shadow: var(--shadow-glow);
+            width: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(249, 115, 22, 0.4);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* CONSULTATION INFO */
+        .consultation-info {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-interactive));
+            color: white;
+            padding: 3rem;
+            border-radius: 16px;
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .consultation-info h2 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .consultation-info p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .consultation-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .consultation-feature {
+            text-align: center;
+        }
+
+        .consultation-feature h3 {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .consultation-feature p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            padding: 120px 5%;
+            background: var(--bg-color);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent-primary);
+            padding: 1rem 2rem;
+            border: 2px solid var(--accent-primary);
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent-primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* FOOTER - Your Amazing Design */
+        .prestige-footer {
+            padding: 80px 5% 60px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            background-color: var(--bg-color);
+            transition: background-color var(--transition);
+        }
+
+        .footer-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.8;
+        }
+
+        .footer-background::before,
+        .footer-background::after,
+        .footer-background div {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 200vmax;
+            height: 200vmax;
+            border-radius: 50%;
+            animation: aurora-flow 30s linear infinite;
+        }
+
+        .footer-background::before {
+            background: radial-gradient(circle, var(--bg-aurora-1) 0%, transparent 60%);
+            transform-origin: 30% 30%;
+        }
+
+        .footer-background::after {
+            background: radial-gradient(circle, var(--bg-aurora-2) 0%, transparent 55%);
+            transform-origin: 70% 70%;
+            animation-duration: 25s;
+            animation-direction: reverse;
+        }
+
+        .footer-background div {
+            background: radial-gradient(circle, var(--bg-aurora-3) 0%, transparent 50%);
+            transform-origin: 50% 50%;
+            animation-duration: 35s;
+        }
+
+        #interactive-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.7;
+        }
+
+        .footer-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .footer-main-grid {
+            display: grid;
+            grid-template-columns: 1.8fr repeat(4, 1fr);
+            gap: 50px;
+        }
+
+        .footer-brand h3 {
+            font-size: 32px;
+            font-weight: 700;
+            font-family: var(--font-heading);
+            color: var(--text-primary);
+            margin: 0 0 20px 0;
+            letter-spacing: -0.5px;
+        }
+
+        .footer-brand p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            max-width: 80%;
+        }
+
+        .footer-brand .cta-button {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-interactive));
+            color: #fff;
+            text-decoration: none;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: var(--font-heading);
+            display: inline-block;
+            transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+            margin-top: 30px;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .footer-brand .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-glow);
+            background: linear-gradient(135deg, var(--accent-hover), var(--accent-primary));
+        }
+
+        .footer-column {
+            transition: transform var(--transition);
+        }
+
+        .footer-column:hover {
+            transform: translateY(-5px);
+        }
+
+        .footer-column h4 {
+            font-family: var(--font-heading);
+            font-size: 20px;
+            font-weight: 600;
+            margin: 0 0 25px 0;
+            color: var(--text-primary);
+            letter-spacing: 0.3px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .footer-column a,
+        .contact-item {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 16px;
+            transition: color var(--transition), transform var(--transition);
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-column ul a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--accent-primary);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform var(--transition);
+        }
+
+        .footer-column a:hover,
+        .footer-column a:focus-visible {
+            color: var(--accent-primary);
+            transform: translateX(5px);
+        }
+
+        .footer-column ul a:hover::after,
+        .footer-column ul a:focus-visible::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .contact-item {
+            cursor: pointer;
+        }
+
+        .contact-item:hover {
+            color: var(--accent-primary);
+        }
+
+        .copy-feedback {
+            position: absolute;
+            right: -75px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--accent-primary);
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            opacity: 0;
+            transition: opacity var(--transition), transform var(--transition);
+            pointer-events: none;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .contact-item.copied .copy-feedback {
+            opacity: 1;
+            transform: translateY(-50%) translateX(10px);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-color);
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .footer-bottom-left {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-legal a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color var(--transition), text-decoration var(--transition);
+        }
+
+        .footer-legal a:hover,
+        .footer-legal a:focus-visible {
+            color: var(--accent-primary);
+            text-decoration: underline;
+        }
+
+        .theme-toggle {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .toggle-switch {
+            width: 54px;
+            height: 28px;
+            background: var(--border-color);
+            border-radius: 14px;
+            cursor: pointer;
+            position: relative;
+            transition: background var(--transition);
+        }
+
+        .toggle-switch:hover {
+            background: rgba(249, 115, 22, 0.2);
+        }
+
+        .toggle-switch-circle {
+            width: 22px;
+            height: 22px;
+            background: var(--accent-primary);
+            border-radius: 50%;
+            position: absolute;
+            top: 3px;
+            left: 4px;
+            transition: transform var(--transition), background var(--transition);
+            box-shadow: var(--shadow-subtle);
+        }
+
+        body.light-theme .toggle-switch-circle {
+            transform: translateX(25px);
+            background: var(--accent-hover);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 18px;
+        }
+
+        .social-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--border-color);
+            color: var(--text-secondary);
+            transition: all var(--transition);
+        }
+
+        .social-icon:hover,
+        .social-icon:focus-visible {
+            color: #fff;
+            background-color: var(--accent-primary);
+            transform: translateY(-5px) rotate(8deg);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .social-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+            transition: transform var(--transition);
+        }
+
+        .social-icon:hover svg,
+        .social-icon:focus-visible svg {
+            transform: scale(1.1);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .footer-main-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px 60px;
+            }
+
+            .footer-brand {
+                grid-column: 1 / -1;
+                margin-bottom: 20px;
+            }
+
+            .footer-brand p {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .consultation-features {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-main-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .prestige-footer {
+                padding: 60px 5% 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 0.5rem;
+            }
+
+            .hero {
+                padding: 100px 0 60px;
+            }
+
+            .contact-section {
+                padding: 60px 5%;
+            }
+
+            .contact-info,
+            .contact-form {
+                padding: 2rem;
+            }
+
+            .footer-main-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .footer-bottom {
+                flex-direction: column-reverse;
+                text-align: center;
+                gap: 35px;
+            }
+
+            .footer-social {
+                justify-content: center;
+                margin-bottom: 15px;
+            }
+
+            .footer-bottom-left {
+                justify-content: center;
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            #interactive-canvas {
+                display: none;
+            }
+
+            .hero-background::before,
+            .hero-background::after,
+            .footer-background::before,
+            .footer-background::after,
+            .footer-background div {
+                animation: none;
+            }
+
+            .contact-item:hover,
+            .footer-column:hover,
+            .footer-column a:hover,
+            .social-icon:hover,
+            .social-icon:focus-visible {
+                transform: none;
+            }
+        }
+
+        /* Focus States for Accessibility */
+        .cta-button:focus-visible,
+        .footer-column a:focus-visible,
+        .toggle-switch:focus-visible,
+        .social-icon:focus-visible {
+            outline: 3px solid var(--accent-hover);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        /* Form Success/Error States */
+        .form-success {
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            color: #22c55e;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        .form-error {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #ef4444;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">
+                    <img src="Video/logo.JPG" alt="Denali Tech Logo" style="width: 40px; height: 40px; margin-right: 10px; object-fit: cover; object-position: 40% center;">
+                    Denali Tech
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">What We Do</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html" style="color: var(--accent-primary);">Contact</a></li>
+                </ul>
+                <a href="contact.html" class="cta-button">📞 Call Now</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <h1>Get Your Free Consultation</h1>
+            <p>We'll come to your house, see what you need, and give you a plan that makes sense. No pressure, no sales pitch - just honest advice.</p>
+        </div>
+    </section>
+
+    <!-- Consultation Info -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="consultation-info">
+                <h2>What Happens During Your Free Consultation?</h2>
+                <p>We'll come to your house and spend time understanding what you really need. Here's what you can expect:</p>
+                <div class="consultation-features">
+                    <div class="consultation-feature">
+                        <h3>📅 1 Hour Visit</h3>
+                        <p>We'll spend a full hour with you, no rush</p>
+                    </div>
+                    <div class="consultation-feature">
+                        <h3>🏠 House Walkthrough</h3>
+                        <p>We'll look at your space and understand your needs</p>
+                    </div>
+                    <div class="consultation-feature">
+                        <h3>💡 Honest Advice</h3>
+                        <p>We'll tell you what you actually need, not what we want to sell</p>
+                    </div>
+                    <div class="consultation-feature">
+                        <h3>📋 Clear Plan</h3>
+                        <p>You'll get a written plan with clear pricing</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form and Info -->
+            <div class="contact-grid">
+                <div class="contact-form">
+                    <h2>Request Your Free Consultation</h2>
+                    <div class="form-success" id="form-success">
+                        Thank you! We'll contact you within 24 hours to schedule your free consultation.
+                    </div>
+                    <div class="form-error" id="form-error">
+                        Please fill in all required fields.
+                    </div>
+                    <form id="consultation-form">
+                        <div class="form-group">
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Property Address *</label>
+                            <input type="text" id="address" name="address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">What are you most interested in?</label>
+                            <select id="service" name="service">
+                                <option value="">Select a service</option>
+                                <option value="smart-home">Smart Home Control</option>
+                                <option value="home-theater">Home Theater</option>
+                                <option value="wifi">WiFi That Works</option>
+                                <option value="security">Home Security</option>
+                                <option value="lighting">Smart Lighting</option>
+                                <option value="audio">Music Everywhere</option>
+                                <option value="multiple">Multiple Services</option>
+                                <option value="not-sure">Not Sure Yet</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="timeline">When would you like to get started?</label>
+                            <select id="timeline" name="timeline">
+                                <option value="">Select timeline</option>
+                                <option value="asap">As soon as possible</option>
+                                <option value="1-month">Within 1 month</option>
+                                <option value="3-months">Within 3 months</option>
+                                <option value="6-months">Within 6 months</option>
+                                <option value="planning">Just planning ahead</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Tell us about your project (optional)</label>
+                            <textarea id="message" name="message" placeholder="What would you like your smart home to do? Any specific needs or concerns?"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">📅 Schedule My Free Consultation</button>
+                    </form>
+                </div>
+
+                <div class="contact-info">
+                    <h2>Contact Information</h2>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <p><a href="tel:+1-312-439-7500">(312) 439-7500</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p><a href="mailto:Hello@denalitechs.com">Hello@denalitechs.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h3>Address</h3>
+                            <p>Mt Prospect, IL 60056</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🕒</div>
+                        <div class="contact-details">
+                            <h3>Business Hours</h3>
+                            <p>Monday - Friday: 8:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 4:00 PM<br>Sunday: By Appointment</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Don't wait - get your free consultation today and start making your home smart and simple.</p>
+            <a href="#consultation-form" class="btn-secondary">📅 Book Your Consultation Now</a>
+        </div>
+    </section>
+
+    <!-- Footer - Your Amazing Design -->
+    <footer class="prestige-footer" id="main-footer">
+        <div class="footer-background">
+            <div></div>
+            <canvas id="interactive-canvas"></canvas>
+        </div>
+
+        <div class="footer-content">
+            <div class="footer-main-grid">
+                <div class="footer-brand">
+                    <h3>Denali Tech</h3>
+                    <p>Premier home automation and A/V solutions for the modern home. Experience cutting-edge technology, simplified and tailored to your lifestyle.</p>
+                    <a href="contact.html" class="cta-button">Request a Consultation</a>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Solutions</h4>
+                    <ul>
+                        <li><a href="services.html#automation">Home Automation</a></li>
+                        <li><a href="services.html#theater">Home Theater</a></li>
+                        <li><a href="services.html#networking">WiFi & Networking</a></li>
+                        <li><a href="services.html#surveillance">Surveillance</a></li>
+                        <li><a href="services.html#lighting">Smart Lighting</a></li>
+                        <li><a href="services.html#shades">Smart Shades</a></li>
+                        <li><a href="services.html#audio">Audio Distribution</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="about.html#process">Our Process</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Partners</h4>
+                    <ul>
+                        <li><a href="https://www.control4.com/" target="_blank" rel="noopener noreferrer">Control4</a></li>
+                        <li><a href="https://www.urc-automation.com/" target="_blank" rel="noopener noreferrer">URC Automation</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="tel:+1-312-439-7500" class="contact-item" data-copy="(312) 439-7500">(312) 439-7500 <span class="copy-feedback">Copied!</span></a></li>
+                        <li><a href="mailto:Hello@denalitechs.com" class="contact-item">Hello@denalitechs.com</a></li>
+                        <li><span style="color: var(--text-secondary); line-height: 1.6; display: block;">Mt Prospect, IL 60056</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-left">
+                    <div class="footer-legal">
+                        <span>© <span id="current-year"></span> Denali Tech Inc.</span>
+                        <a href="privacy.html">Privacy & Terms</a>
+                    </div>
+                    <div class="theme-toggle">
+                        <div class="toggle-switch" id="theme-toggle-switch" role="switch" aria-checked="false" aria-label="Toggle between light and dark mode">
+                            <div class="toggle-switch-circle"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/company/denali-tech-inc" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Visit Denali Tech on LinkedIn">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.facebook.com/Denali.Tech" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Visit Denali Tech on Facebook">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-1.5c-1 0-1.5.5-1.5 1.5V12h3l-.5 3h-2.5v6.8c4.56-.93 8-4.96 8-9.8z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/denalitechs/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Visit Denali Tech on Instagram">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664 4.771 4.919-4.919.058-1.266.07-1.644.07-4.85zm0 0M12 2c-5.522 0-10 4.478-10 10s4.478 10 10 10 10-4.478 10-10S17.522 2 12 2zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/>
+                        </svg>
+                    </a>
+                    <a href="https://share.google/5v7QlOZP27cn87Vqo" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Visit Denali Tech on Google Business">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                        </svg>
+                    </a>
+                    <a href="https://maps.app.goo.gl/7WUrwUfWcbSqwSHt7" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Find Denali Tech on Google Maps">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form handling
+        document.getElementById('consultation-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const phone = formData.get('phone');
+            const address = formData.get('address');
+            
+            // Basic validation
+            if (!name || !email || !phone || !address) {
+                document.getElementById('form-error').style.display = 'block';
+                document.getElementById('form-success').style.display = 'none';
+                return;
+            }
+            
+            // Hide error, show success
+            document.getElementById('form-error').style.display = 'none';
+            document.getElementById('form-success').style.display = 'block';
+            
+            // Reset form
+            this.reset();
+            
+            // Scroll to success message
+            document.getElementById('form-success').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Footer Interactive Canvas
+        document.addEventListener('DOMContentLoaded', function() {
+            const footer = document.getElementById('main-footer');
+            const canvas = document.getElementById('interactive-canvas');
+            if (!canvas || !footer) return;
+            const ctx = canvas.getContext('2d', { alpha: true });
+            let particles = [];
+            const mouse = { x: null, y: null };
+            let animationFrameId = null;
+            let resizeTimeout;
+
+            function setupCanvas() {
+                canvas.width = footer.offsetWidth;
+                canvas.height = footer.offsetHeight;
+                initParticles();
+            }
+
+            footer.addEventListener('mousemove', (event) => {
+                const rect = canvas.getBoundingClientRect();
+                mouse.x = event.clientX - rect.left;
+                mouse.y = event.clientY - rect.top;
+            });
+
+            footer.addEventListener('mouseleave', () => { mouse.x = null; mouse.y = null; });
+
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 1.5 + 0.5;
+                    this.speedX = Math.random() * 0.3 - 0.15;
+                    this.speedY = Math.random() * 0.3 - 0.15;
+                    this.color = `rgba(249, 115, 22, ${Math.random() * 0.4 + 0.2})`;
+                }
+                update() {
+                    if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
+                    if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+                }
+                draw() {
+                    ctx.fillStyle = this.color;
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+
+            function initParticles() {
+                particles = [];
+                let numberOfParticles = Math.min((canvas.width * canvas.height) / 15000, 150);
+                for (let i = 0; i < numberOfParticles; i++) { particles.push(new Particle()); }
+            }
+
+            function animateParticles() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (let particle of particles) { particle.update(); particle.draw(); }
+                connectParticles();
+                animationFrameId = requestAnimationFrame(animateParticles);
+            }
+
+            function connectParticles() {
+                for (let i = 0; i < particles.length; i++) {
+                    if (mouse.x !== null && mouse.y !== null) {
+                        const distanceToMouse = Math.hypot(particles[i].x - mouse.x, particles[i].y - mouse.y);
+                        if (distanceToMouse < 200) {
+                            const opacity = 1 - (distanceToMouse / 200);
+                            ctx.strokeStyle = `rgba(248, 250, 252, ${opacity * 0.25})`;
+                            ctx.lineWidth = 0.8;
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(mouse.x, mouse.y);
+                            ctx.stroke();
+                        }
+                    }
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const distance = Math.hypot(particles[i].x - particles[j].x, particles[i].y - particles[j].y);
+                        if (distance < 120) {
+                            const opacity = 1 - (distance / 120);
+                            ctx.strokeStyle = `rgba(249, 115, 22, ${opacity * 0.3})`;
+                            ctx.lineWidth = 0.8;
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+                    if (entry.isIntersecting && !motionQuery.matches) {
+                        if (!animationFrameId) animateParticles();
+                    } else {
+                        if (animationFrameId) {
+                            cancelAnimationFrame(animationFrameId);
+                            animationFrameId = null;
+                        }
+                    }
+                });
+            }, { threshold: 0.01 });
+
+            setupCanvas();
+            observer.observe(footer);
+
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(setupCanvas, 250);
+            });
+
+            // Copy to clipboard functionality
+            document.querySelectorAll('.contact-item[data-copy]').forEach(item => {
+                item.addEventListener('click', (e) => {
+                    navigator.clipboard.writeText(item.dataset.copy).then(() => {
+                        if (item.classList.contains('copied')) return;
+                        item.classList.add('copied');
+                        setTimeout(() => item.classList.remove('copied'), 2000);
+                    });
+                });
+            });
+
+            // Theme toggle functionality
+            const themeToggle = document.getElementById('theme-toggle-switch');
+            const body = document.body;
+            const applyTheme = (theme) => {
+                const isLight = theme === 'light';
+                body.classList.toggle('light-theme', isLight);
+                themeToggle.setAttribute('aria-checked', isLight);
+            };
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme) {
+                applyTheme(savedTheme);
+            } else {
+                applyTheme(prefersDark ? 'dark' : 'light');
+            }
+            themeToggle.addEventListener('click', () => {
+                const newTheme = body.classList.contains('light-theme') ? 'dark' : 'light';
+                localStorage.setItem('theme', newTheme);
+                applyTheme(newTheme);
+            });
+            themeToggle.addEventListener('keydown', (e) => { if (e.key === 'Enter') themeToggle.click(); });
+
+            // Set current year
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>

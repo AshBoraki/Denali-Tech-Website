@@ -1,0 +1,104 @@
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# ━━━ ARCHIVES ━━━━━━━━━━━━━━━━━━━━━━
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+*.zip
+*.tar.gz
+*.tar.bz2
+*.rar
+*.7z
+*.iso
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# ━━━ CODE EDITORS ━━━━━━━━━━━━━━━━━━
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Atom
+.atom/
+
+# JetBrains (WebStorm, PHPStorm, etc.)
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# ━━━ DEPENDENCIES ━━━━━━━━━━━━━━━━━━
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# ━━━ ENVIRONMENT & SECRETS ━━━━━━━━━
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+*.p12
+*.crt
+*.cer
+*.jks
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# ━━━ LOGS & TEMP FILES ━━━━━━━━━━━━━
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+*.bak
+*.swp
+*.swo
+*~
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# ━━━ BUILD & DIST ━━━━━━━━━━━━━━━━━━
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+dist/
+build/
+out/
+*.min.js
+*.min.css
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# ━━━ TESTING ━━━━━━━━━━━━━━━━━━━━━━━
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+.coverage
+coverage/
+*.coverage
+.pytest_cache/
+__pycache__/
+*.pyc
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# ━━━ MISC ━━━━━━━━━━━━━━━━━━━━━━━━━━
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+.cache/
+.sass-cache/
+*.css.map
+*.js.map
+*.map
+
