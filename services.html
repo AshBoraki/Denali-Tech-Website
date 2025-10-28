@@ -369,6 +369,8 @@
             border-radius: 16px;
             overflow: hidden;
             box-shadow: var(--shadow-glow);
+            background: #1a1a1a;
+            border: 2px solid var(--border-color);
         }
 
         .service-video video {
@@ -376,7 +378,7 @@
             height: 400px;
             object-fit: cover;
             transition: transform var(--transition);
-            background: var(--bg-secondary);
+            display: block;
         }
 
         .service-video:hover video {
@@ -762,8 +764,13 @@
                 direction: ltr;
             }
 
+            .service-video {
+                margin-top: 2rem;
+            }
+
             .service-video video {
-                height: 250px;
+                height: 280px;
+                object-fit: contain;
             }
 
             .footer-main-grid {
@@ -802,8 +809,14 @@
                 margin-bottom: 60px;
             }
 
+            .service-video {
+                margin-top: 1.5rem;
+                border: 3px solid var(--accent-primary);
+            }
+
             .service-video video {
-                height: 200px;
+                height: 250px;
+                object-fit: contain;
             }
 
             .footer-main-grid {
@@ -922,7 +935,7 @@
                     <p><strong>Perfect for:</strong> Busy families who want convenience and energy savings</p>
                 </div>
                 <div class="service-video">
-                    <video autoplay muted loop poster="Video/logo.JPG" preload="metadata">
+                    <video autoplay muted loop playsinline poster="Video/logo.JPG" preload="metadata">
                         <source src="Video/Denali tech smart home.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -945,7 +958,7 @@
                     <p><strong>Perfect for:</strong> Movie lovers and families who want the ultimate entertainment experience</p>
                 </div>
                 <div class="service-video">
-                    <video autoplay muted loop poster="Video/logo.JPG" preload="metadata">
+                    <video autoplay muted loop playsinline poster="Video/logo.JPG" preload="metadata">
                         <source src="Video/Home theter Systems - Denali Tech - Chicago.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -968,7 +981,7 @@
                     <p><strong>Perfect for:</strong> Families with lots of devices and anyone tired of slow internet</p>
                 </div>
                 <div class="service-video">
-                    <video autoplay muted loop poster="Video/logo.JPG" preload="metadata">
+                    <video autoplay muted loop playsinline poster="Video/logo.JPG" preload="metadata">
                         <source src="Video/wifi.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -991,7 +1004,7 @@
                     <p><strong>Perfect for:</strong> Families who want peace of mind and protection</p>
                 </div>
                 <div class="service-video">
-                    <video autoplay muted loop poster="Video/logo.JPG" preload="metadata">
+                    <video autoplay muted loop playsinline poster="Video/logo.JPG" preload="metadata">
                         <source src="Video/camera.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -1014,7 +1027,7 @@
                     <p><strong>Perfect for:</strong> Anyone who wants convenience and beautiful lighting</p>
                 </div>
                 <div class="service-video">
-                    <video autoplay muted loop poster="Video/logo.JPG" preload="metadata">
+                    <video autoplay muted loop playsinline poster="Video/logo.JPG" preload="metadata">
                         <source src="Video/Smart lighting Solutions - Denali Tech.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -1037,7 +1050,7 @@
                     <p><strong>Perfect for:</strong> Anyone who wants convenience and privacy control</p>
                 </div>
                 <div class="service-video">
-                    <video autoplay muted loop poster="Video/logo.JPG" preload="metadata">
+                    <video autoplay muted loop playsinline poster="Video/logo.JPG" preload="metadata">
                         <source src="Video/shades.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -1060,7 +1073,7 @@
                     <p><strong>Perfect for:</strong> Music lovers and anyone who entertains guests</p>
                 </div>
                 <div class="service-video">
-                    <video autoplay muted loop poster="Video/logo.JPG" preload="metadata">
+                    <video autoplay muted loop playsinline poster="Video/logo.JPG" preload="metadata">
                         <source src="Video/whole hone audio.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
