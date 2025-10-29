@@ -1,12 +1,21 @@
-<!-- Proxy file for pretty URL /about/ -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=/about.html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | Denali Tech</title>
+    <script>
+      (function(){
+        fetch('/about.html', { credentials: 'same-origin' })
+          .then(r => r.text())
+          .then(html => { document.open(); document.write(html); document.close(); })
+          .catch(() => { document.body.innerHTML = '<p style="padding:2rem;font-family:sans-serif">Loading failed. <a href="/about.html">Open about.html</a>.</p>'; });
+      })();
+    </script>
   </head>
-  <body></body>
+  <body>
+    <p style="padding:2rem;font-family:sans-serif">Loading…</p>
+  </body>
 </html>
 
 

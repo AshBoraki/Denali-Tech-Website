@@ -3,16 +3,13 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Denali Tech</title>
+    <title>Thank You | Denali Tech</title>
     <script>
-      // Load the canonical HTML while keeping pretty URL
       (function(){
-        fetch('/contact.html', { credentials: 'same-origin' })
+        fetch('/thank-you.html', { credentials: 'same-origin' })
           .then(r => r.text())
           .then(html => { document.open(); document.write(html); document.close(); })
-          .catch(() => {
-            document.body.innerHTML = '<p style="padding:2rem;font-family:sans-serif">Loading failed. <a href="/contact.html">Open contact.html</a>.</p>';
-          });
+          .catch(() => { document.body.innerHTML = '<p style="padding:2rem;font-family:sans-serif">Loading failed. <a href="/thank-you.html">Open thank-you.html</a>.</p>'; });
       })();
     </script>
   </head>
@@ -20,5 +17,4 @@
     <p style="padding:2rem;font-family:sans-serif">Loading…</p>
   </body>
 </html>
-
 
