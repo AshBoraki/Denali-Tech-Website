@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | Denali Tech</title>
+    <meta name="description" content="Thanks for contacting Denali Tech. We received your request and will reply within 24 hours.">
+    <link rel="icon" type="image/jpeg" href="Video/logo.JPG">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #0a0d18; --text:#f8fafc; --accent:#f97316; }
+        body { margin:0; font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); }
+        .wrap { min-height: 100vh; display: grid; place-items: center; padding: 40px 16px; }
+        .card { max-width: 720px; text-align: center; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 40px 28px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .brand { display:flex; align-items:center; justify-content:center; gap:10px; margin-bottom: 16px; font-family:'Poppins',system-ui,sans-serif; font-weight:700; }
+        .brand img { width:40px; height:40px; object-fit: cover; object-position: 40% center; border-radius:8px; }
+        h1 { font-family:'Poppins',system-ui,sans-serif; font-size: clamp(1.8rem, 4vw, 2.4rem); margin: 0 0 12px; }
+        p { opacity: .9; line-height: 1.6; }
+        .actions { margin-top: 24px; display:flex; gap:12px; flex-wrap: wrap; justify-content:center; }
+        .btn { padding: 12px 20px; border-radius: 10px; text-decoration:none; font-weight:600; border:2px solid var(--accent); }
+        .primary { background: linear-gradient(135deg, var(--accent), #fb923c); color:#fff; border:none; }
+        .secondary { color: var(--accent); background: transparent; }
+    </style>
+    <script>
+      // Optional: redirect back to contact after a delay
+      // setTimeout(() => window.location.href = 'contact.html', 8000);
+    </script>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="card" role="status" aria-live="polite">
+        <div class="brand"><img src="Video/logo.JPG" alt="Denali Tech Logo"> <span>Denali Tech</span></div>
+        <h1>Thank you — we received your request!</h1>
+        <p>We’ll reach out within 24 hours to schedule your free consultation. If this is urgent, call us at <a href="tel:+1-312-439-7500" style="color: var(--accent); text-decoration: none;">(312) 439-7500</a>.</p>
+        <div class="actions">
+          <a class="btn primary" href="index.html">Back to Home</a>
+          <a class="btn secondary" href="services.html">Explore Services</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+
