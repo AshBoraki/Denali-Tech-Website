@@ -1040,13 +1040,18 @@
             <div class="contact-grid">
                 <div class="contact-form">
                     <h2>Request Your Free Consultation</h2>
-                    <div class="form-success" id="form-success">
-                        Thank you! We'll contact you within 24 hours to schedule your free consultation.
+                    <div class="form-success" id="form-success" style="display:none">
+                        ✅ Request sent! We’ll contact you within 24 hours to schedule your free consultation.
                     </div>
                     <div class="form-error" id="form-error">
                         Please fill in all required fields.
                     </div>
-                    <form id="consultation-form">
+                    <form id="consultation-form" action="https://formsubmit.co/services@denalitechs.com" method="POST">
+                        <!-- FormSubmit controls -->
+                        <input type="hidden" name="_subject" value="Denali Tech: New Consultation Request">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://www.denalitechs.com/contact.html#thankyou">
                         <div class="form-group">
                             <label for="name">Your Name *</label>
                             <input type="text" id="name" name="name" required>
@@ -1109,7 +1114,7 @@
                         <div class="contact-icon">✉️</div>
                         <div class="contact-details">
                             <h3>Email</h3>
-                            <p><a href="mailto:services@denalitechs.com">services@denalitechs.com</a></p>
+                            <p><a href="mailto:Hello@denalitechs.com">Hello@denalitechs.com</a></p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -1190,7 +1195,7 @@
                     <h4>Contact</h4>
                     <ul>
                         <li><a href="tel:+1-312-439-7500" class="contact-item" data-copy="(312) 439-7500">(312) 439-7500 <span class="copy-feedback">Copied!</span></a></li>
-                        <li><a href="mailto:services@denalitechs.com" class="contact-item">services@denalitechs.com</a></li>
+                        <li><a href="mailto:Hello@denalitechs.com" class="contact-item">Hello@denalitechs.com</a></li>
                         <li><span style="color: var(--text-secondary); line-height: 1.6; display: block;">Mt Prospect, IL 60056</span></li>
                     </ul>
                 </div>
@@ -1243,51 +1248,15 @@
     </footer>
 
     <script>
-        // Form handling
-        document.getElementById('consultation-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(this);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const phone = formData.get('phone');
-            const address = formData.get('address');
-            const service = formData.get('service');
-            const timeline = formData.get('timeline');
-            const message = formData.get('message');
-            
-            // Basic validation
-            if (!name || !email || !phone || !address) {
-                document.getElementById('form-error').style.display = 'block';
-                document.getElementById('form-success').style.display = 'none';
-                return;
+        // Show success banner if redirected back from FormSubmit
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.location.hash === '#thankyou') {
+                const success = document.getElementById('form-success');
+                if (success) {
+                    success.style.display = 'block';
+                    success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
             }
-            
-            // Create mailto link with form data
-            const subject = encodeURIComponent(`Free Consultation Request from ${name}`);
-            const body = encodeURIComponent(
-                `Name: ${name}\n` +
-                `Email: ${email}\n` +
-                `Phone: ${phone}\n` +
-                `Property Address: ${address}\n` +
-                `Service Interest: ${service || 'Not specified'}\n` +
-                `Timeline: ${timeline || 'Not specified'}\n` +
-                `Message: ${message || 'None'}\n\n` +
-                `Please contact this customer for a free consultation.`
-            );
-            
-            // Open email client
-            window.location.href = `mailto:services@denalitechs.com?subject=${subject}&body=${body}`;
-            
-            // Hide error, show success
-            document.getElementById('form-error').style.display = 'none';
-            document.getElementById('form-success').style.display = 'block';
-            
-            // Reset form
-            this.reset();
-            
-            // Scroll to success message
-            document.getElementById('form-success').scrollIntoView({ behavior: 'smooth' });
         });
 
         // Footer Interactive Canvas
