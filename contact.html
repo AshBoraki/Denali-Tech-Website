@@ -7,6 +7,7 @@
     <meta name="description" content="Get a free consultation for your smart home project. Denali Tech in Chicago offers no-pressure consultations. Call (312) 439-7500 or email Hello@denalitechs.com">
     <meta name="keywords" content="smart home consultation Chicago, free home automation quote, home automation contact, smart home company Chicago phone, AV consultation, home automation services near me, smart home consultation free, contact home automation installer, Denali Tech phone number, smart home installation quote">
     
+    <base href="/">
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="Video/logo.JPG">
     
@@ -1268,7 +1269,7 @@
                         body: formData
                     });
                     if (res.ok) {
-                        window.location.href = 'thank-you.html';
+                        window.location.href = '/thank-you/';
                     } else {
                         const err = document.getElementById('form-error');
                         if (err) err.style.display = 'block';
