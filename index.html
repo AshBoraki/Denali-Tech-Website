@@ -484,6 +484,45 @@
         }
 
         /* CTA SECTION */
+        /* Partners Section */
+        .partners-section {
+            padding: 80px 5%;
+            background: var(--bg-color);
+            text-align: center;
+        }
+
+        .partners-badges {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 80px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        .partner-badge {
+            transition: transform var(--transition);
+        }
+
+        .partner-badge:hover {
+            transform: translateY(-5px);
+        }
+
+        .partner-badge img {
+            height: 80px;
+            width: auto;
+            filter: brightness(0.9);
+            transition: filter var(--transition);
+        }
+
+        .partner-badge:hover img {
+            filter: brightness(1);
+        }
+
+        body.light-theme .partner-badge img.badge-urc {
+            content: url('Video/URC_Logo_Black.png');
+        }
+
         .cta-section {
             padding: 120px 5%;
             background: linear-gradient(135deg, var(--accent-primary), var(--accent-interactive));
@@ -903,6 +942,18 @@
 
             .services,
             .why-choose,
+            .partners-section {
+                padding: 60px 5%;
+            }
+
+            .partners-badges {
+                gap: 40px;
+            }
+
+            .partner-badge img {
+                height: 60px;
+            }
+
             .cta-section {
                 padding: 80px 5%;
             }
@@ -1154,6 +1205,24 @@
                     <div class="why-icon">💰</div>
                     <h3>Fair Prices</h3>
                     <p>No hidden fees or surprise charges. We give you a clear price upfront and stick to it.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted Partners -->
+    <section class="partners-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Trusted by Industry Leaders</h2>
+                <p>We're certified and authorized to install premium smart home systems</p>
+            </div>
+            <div class="partners-badges">
+                <div class="partner-badge">
+                    <img src="Video/authorized (1).svg" alt="Control4 Authorized Dealer" class="badge-control4">
+                </div>
+                <div class="partner-badge">
+                    <img src="Video/URC_Logo_White.png" alt="URC Automation Partner" class="badge-urc">
                 </div>
             </div>
         </div>
