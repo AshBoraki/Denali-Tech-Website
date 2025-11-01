@@ -187,6 +187,10 @@
             filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
         }
 
+        .logo-text {
+            transition: opacity var(--transition), width var(--transition);
+        }
+
         .logo:hover {
             background: rgba(255, 255, 255, 0.1);
             transform: translateY(-2px);
@@ -281,6 +285,39 @@
             gap: 1.5rem;
             border-bottom: 1px solid var(--border-color);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+        }
+
+        .nav-links .mobile-call-btn {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links .mobile-call-btn {
+                display: block;
+                margin-top: 1rem;
+                padding-top: 1.5rem;
+                border-top: 1px solid var(--border-color);
+            }
+
+            .nav-links .mobile-call-btn a {
+                display: block;
+                width: 100%;
+                text-align: center;
+                background: linear-gradient(135deg, var(--accent-primary), var(--accent-interactive));
+                color: white;
+                padding: 1rem 2rem;
+                border-radius: 8px;
+                text-decoration: none;
+                font-weight: 600;
+                transition: all var(--transition);
+                box-shadow: var(--shadow-subtle);
+            }
+
+            .nav-links .mobile-call-btn a:hover {
+                transform: translateY(-2px);
+                box-shadow: var(--shadow-glow);
+            }
         }
 
         .cta-button {
@@ -924,28 +961,35 @@
         @media (max-width: 768px) {
             .nav {
                 position: relative;
+                justify-content: space-between;
             }
 
             .nav-links {
                 display: none;
             }
 
-            .nav-left-group {
-                gap: 0.75rem;
+            .logo {
+                padding: 6px 12px;
+                font-size: 1.4rem;
+            }
+
+            .logo img {
+                width: 32px !important;
+                height: 32px !important;
+                margin-right: 8px !important;
+            }
+
+            .logo-text {
+                display: inline;
             }
 
             .menu-toggle {
                 display: flex;
-            }
-
-            .logo {
-                font-size: 1.3rem;
-                padding: 6px 12px;
+                padding: 8px;
             }
 
             .cta-button {
-                font-size: 0.85rem;
-                padding: 0.6rem 1.2rem;
+                display: none;
             }
 
             .hero h1 {
@@ -1058,24 +1102,23 @@
     <header class="header">
         <div class="container">
             <nav class="nav">
-                <div class="nav-left-group">
-                    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                    <a href="/" class="logo">
-                        <img src="Video/logo.JPG" alt="Denali Tech Logo" style="width: 40px; height: 40px; margin-right: 10px; object-fit: cover; object-position: 40% center;">
-                        Denali Tech
-                    </a>
-                </div>
+                <a href="/" class="logo" title="Denali Tech">
+                    <img src="Video/logo.JPG" alt="Denali Tech Logo" style="width: 40px; height: 40px; margin-right: 10px; object-fit: cover; object-position: 40% center;">
+                    <span class="logo-text">Denali Tech</span>
+                </a>
                 <ul class="nav-links" id="navLinks">
                     <li><a href="/">Home</a></li>
                     <li><a href="/services/">What We Do</a></li>
                     <li><a href="/projects/" style="color: var(--accent-primary);">Projects</a></li>
                     <li><a href="/about/">About Us</a></li>
                     <li><a href="/contact/">Contact</a></li>
+                    <li class="mobile-call-btn"><a href="tel:+13124397500">📞 Call Now</a></li>
                 </ul>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
                 <a href="tel:+13124397500" class="cta-button">📞 Call Now</a>
             </nav>
         </div>
