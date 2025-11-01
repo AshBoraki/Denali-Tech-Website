@@ -342,6 +342,7 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
+            padding-top: 80px;
         }
 
         /* ENHANCED LIVING BACKGROUND */
@@ -433,9 +434,27 @@
             color: var(--text-secondary);
             margin-bottom: 2rem;
             min-height: 5rem;
+            height: 5rem;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             justify-content: center;
+            line-height: 1.6;
+            text-align: center;
+            padding: 0.75rem 1rem 0.5rem;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .typewriter-content {
+            display: inline-block;
+            width: 100%;
+            max-width: 100%;
+            word-wrap: break-word;
+            word-break: break-word;
+            overflow-wrap: break-word;
+            white-space: normal;
+            hyphens: auto;
+            text-align: center;
         }
 
         .hero-buttons {
@@ -1022,6 +1041,10 @@
         }
 
         @media (max-width: 768px) {
+            .header {
+                padding: 0.5rem 0;
+            }
+
             .nav {
                 position: relative;
                 justify-content: space-between;
@@ -1032,14 +1055,14 @@
             }
 
             .logo {
-                padding: 6px 12px;
-                font-size: 1.4rem;
+                padding: 4px 10px;
+                font-size: 1.2rem;
             }
 
             .logo img {
-                width: 32px !important;
-                height: 32px !important;
-                margin-right: 8px !important;
+                width: 28px !important;
+                height: 28px !important;
+                margin-right: 6px !important;
             }
 
             .logo-text {
@@ -1048,7 +1071,9 @@
 
             .menu-toggle {
                 display: flex;
-                padding: 8px;
+                padding: 6px;
+                min-width: 40px;
+                min-height: 40px;
             }
 
             .cta-button {
@@ -1056,7 +1081,10 @@
             }
 
             .typewriter {
-                min-height: 6rem;
+                min-height: 5.5rem;
+                height: 5.5rem;
+                align-items: flex-start;
+                padding: 0.75rem 0.75rem 0.5rem;
             }
 
             .hero-buttons {
@@ -1082,26 +1110,47 @@
         }
 
         @media (max-width: 480px) {
+            .header {
+                padding: 0.4rem 0;
+            }
+
             .container {
                 padding: 0 0.5rem;
             }
 
             .logo {
-                font-size: 1.1rem;
-                padding: 4px 8px;
+                font-size: 1rem;
+                padding: 3px 8px;
             }
 
             .logo img {
-                width: 28px !important;
-                height: 28px !important;
+                width: 24px !important;
+                height: 24px !important;
+                margin-right: 5px !important;
+            }
+
+            .menu-toggle {
+                padding: 5px;
+                min-width: 36px;
+                min-height: 36px;
+            }
+
+            .menu-toggle span {
+                width: 22px;
+                height: 2px;
             }
 
             .typewriter {
-                min-height: 7rem;
+                min-height: 6rem;
+                height: 6rem;
+                align-items: flex-start;
+                padding: 0.75rem 0.5rem 0.5rem;
+                font-size: 1.1rem;
             }
 
             .hero {
-                padding: 100px 0 60px;
+                padding-top: 100px;
+                padding-bottom: 60px;
             }
 
             .services,
@@ -1291,7 +1340,7 @@
         </div>
         <div class="hero-content">
             <h1>We Make Your Home Smart & Simple</h1>
-            <div class="typewriter" id="typewriter"></div>
+            <div class="typewriter" id="typewriter"><span class="typewriter-content"></span></div>
             <div class="hero-buttons">
                 <a href="/contact/" class="btn-primary">📅 Get Free Consultation</a>
                 <a href="/services/" class="btn-secondary">See What We Do</a>
@@ -1533,8 +1582,9 @@
             });
         });
 
-        // Typewriter Effect
+        // Typewriter Effect - Simplified for smooth flow
         const typewriterElement = document.getElementById('typewriter');
+        const typewriterContent = typewriterElement ? typewriterElement.querySelector('.typewriter-content') : null;
         const messages = [
             'Smart Home Automation Made Simple',
             'Immersive Home Theater Experiences',
@@ -1549,13 +1599,15 @@
         let isDeleting = false;
         
         function typeWriter() {
+            if (!typewriterContent) return;
+            
             const currentMessage = messages[messageIndex];
             
             if (isDeleting) {
-                typewriterElement.textContent = currentMessage.substring(0, charIndex - 1);
+                typewriterContent.textContent = currentMessage.substring(0, charIndex - 1);
                 charIndex--;
             } else {
-                typewriterElement.textContent = currentMessage.substring(0, charIndex + 1);
+                typewriterContent.textContent = currentMessage.substring(0, charIndex + 1);
                 charIndex++;
             }
             
@@ -1574,7 +1626,9 @@
         }
         
         // Start typewriter effect
-        setTimeout(typeWriter, 1000);
+        if (typewriterContent) {
+            setTimeout(typeWriter, 1000);
+        }
 
         // Footer Interactive Canvas
         document.addEventListener('DOMContentLoaded', function() {
