@@ -249,9 +249,11 @@
                 padding: 1rem 2rem;
                 border-radius: 8px;
                 text-decoration: none;
-                font-weight: 600;
+                font-weight: 700;
+                font-size: 1.1rem;
                 transition: all var(--transition);
                 box-shadow: var(--shadow-subtle);
+                text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
             }
 
             .nav-links .mobile-call-btn a:hover {
@@ -266,9 +268,11 @@
             padding: 0.75rem 1.5rem;
             border-radius: 8px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 1rem;
             transition: all var(--transition);
             box-shadow: var(--shadow-subtle);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
         }
 
         .cta-button:hover {
@@ -760,9 +764,10 @@
             text-decoration: none;
             padding: 16px 32px;
             border-radius: 12px;
-            font-size: 16px;
-            font-weight: 600;
+            font-size: 1.1rem;
+            font-weight: 700;
             font-family: var(--font-heading);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
             display: inline-block;
             transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
             margin-top: 30px;
@@ -897,6 +902,68 @@
         .footer-legal a:focus-visible {
             color: var(--accent-primary);
             text-decoration: underline;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-interactive));
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(249, 115, 22, 0.4);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all var(--transition);
+            z-index: 999;
+            min-width: 50px;
+            min-height: 50px;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(249, 115, 22, 0.6);
+            background: linear-gradient(135deg, var(--accent-interactive), var(--accent-primary));
+        }
+
+        .back-to-top:active {
+            transform: translateY(-2px);
+        }
+
+        .back-to-top:focus-visible {
+            outline: 3px solid var(--accent-hover);
+            outline-offset: 3px;
+        }
+
+        @media (max-width: 768px) {
+            .back-to-top {
+                bottom: 1.5rem;
+                right: 1.5rem;
+                width: 44px;
+                height: 44px;
+                min-width: 44px;
+                min-height: 44px;
+            }
+
+            .back-to-top svg {
+                width: 20px;
+                height: 20px;
+            }
         }
 
         .theme-toggle {
@@ -1465,6 +1532,13 @@
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+
     <script>
         // Footer Interactive Canvas
         document.addEventListener('DOMContentLoaded', function() {
@@ -1613,6 +1687,25 @@
 
             // Set current year
             document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // Back to Top Button
+            const backToTop = document.getElementById('backToTop');
+            if (backToTop) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 300) {
+                        backToTop.classList.add('visible');
+                    } else {
+                        backToTop.classList.remove('visible');
+                    }
+                });
+
+                backToTop.addEventListener('click', () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
 
             // Mobile Menu Toggle
             const menuToggle = document.getElementById('menuToggle');
