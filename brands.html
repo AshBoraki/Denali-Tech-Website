@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Denali Tech - We Make Your Home Smart & Simple</title>
-    <meta name="description" content="Denali Tech - Professional home automation and AV solutions in Chicago. Smart home systems, home theater, WiFi networking, security cameras, lighting, shades, and whole home audio. Free consultation available!">
-    <meta name="keywords" content="smart home automation Chicago, Control4 installer Chicago, home automation Mt Prospect, smart home installer near me, home theater installation Chicago, whole home audio Chicago, WiFi installation Chicago, security camera installation Chicago, smart lighting Chicago, motorized shades Chicago, home automation company Chicago, AV installer Chicago, residential automation Chicago, smart home systems, Control4 dealer, URC automation, home technology installer, custom smart home Chicago, automated lighting control, multi-room audio, surveillance camera systems, home networking solutions, smart thermostat installation, voice control installation, automated window treatments, home cinema installation">
+    <title>Trusted Brands & Partners | Denali Tech</title>
+    <meta name="description" content="Denali Tech partners with only the most trusted brands in home automation and AV. We're authorized dealers offering genuine products with full warranty and USA support.">
+    <meta name="keywords" content="authorized Control4 dealer, authorized Lutron dealer, smart home brands, home automation brands, AV equipment brands, trusted smart home products, authorized reseller, warranty support, USA support">
     
+    <base href="/">
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="Video/logo.JPG">
     
@@ -15,20 +16,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     
-    <base href="/">
-    <!-- Particles.js -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    
     <style>
         /* 
         ============================================
-        DENALI TECH - USER-FRIENDLY WEBSITE
-        Based on your amazing footer design
+        DENALI TECH BRANDS PAGE
+        Showcase Trusted Partners
         ============================================
         */
 
         :root {
-            /* DARK MODE (DEFAULT) - Enhanced Contrast & Vibrant Palette */
             --bg-color: #0a0d18;
             --bg-aurora-1: rgba(249, 115, 22, 0.15);
             --bg-aurora-2: rgba(13, 148, 136, 0.12);
@@ -48,7 +44,6 @@
         }
 
         body.light-theme {
-            /* LIGHT MODE - High Contrast & Clean Palette */
             --bg-color: #f9fafb;
             --bg-aurora-1: rgba(249, 115, 22, 0.1);
             --bg-aurora-2: rgba(13, 148, 136, 0.08);
@@ -78,7 +73,7 @@
         }
         * { box-sizing: border-box; }
 
-        /* HEADER - Simple & Clean */
+        /* HEADER */
         .header {
             position: fixed;
             top: 0;
@@ -87,7 +82,7 @@
             background: rgba(10, 13, 24, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
-            padding: 0.5rem 0;
+            padding: 1rem 0;
             border-bottom: 1px solid var(--border-color);
             transition: background-color var(--transition);
         }
@@ -108,58 +103,6 @@
             display: flex;
             align-items: center;
             gap: 1rem;
-        }
-
-        .logo-with-menu {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            text-decoration: none;
-            padding: 8px 12px;
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border-color);
-            transition: all var(--transition);
-        }
-
-        .logo-with-menu:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-2px);
-        }
-
-        .logo-menu-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 4px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 4px;
-            min-width: 32px;
-            min-height: 32px;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .logo-menu-toggle span {
-            display: block;
-            width: 20px;
-            height: 2px;
-            background: white;
-            border-radius: 2px;
-            transition: all var(--transition);
-        }
-
-        .logo-menu-toggle.active span:nth-child(1) {
-            transform: rotate(45deg) translate(6px, 6px);
-        }
-
-        .logo-menu-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .logo-menu-toggle.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(6px, -6px);
         }
 
         .logo {
@@ -337,19 +280,15 @@
             box-shadow: var(--shadow-glow);
         }
 
-        /* HERO SECTION - Animated Background */
+        /* HERO SECTION */
         .hero {
-            height: 100vh;
+            padding: 120px 0 80px;
             background: var(--bg-color);
+            text-align: center;
             position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             overflow: hidden;
-            padding-top: 60px;
         }
 
-        /* ENHANCED LIVING BACKGROUND */
         .hero-background {
             position: absolute;
             top: 0;
@@ -358,12 +297,11 @@
             height: 100%;
             z-index: 0;
             pointer-events: none;
-            opacity: 0.8;
+            opacity: 0.3;
         }
 
         .hero-background::before,
-        .hero-background::after,
-        .hero-background div {
+        .hero-background::after {
             content: '';
             position: absolute;
             left: 50%;
@@ -386,39 +324,17 @@
             animation-direction: reverse;
         }
 
-        .hero-background div {
-            background: radial-gradient(circle, var(--bg-aurora-3) 0%, transparent 50%);
-            transform-origin: 50% 50%;
-            animation-duration: 35s;
-        }
-
-        #particles-js {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-
         @keyframes aurora-flow {
             0% { transform: translate(-50%, -50%) rotate(0deg); }
             100% { transform: translate(-50%, -50%) rotate(360deg); }
         }
 
         .hero-content {
-            text-align: center;
-            z-index: 2;
             position: relative;
-            max-width: 800px;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
             padding: 0 2rem;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 1.2s var(--animation-ease) 0.3s forwards;
-        }
-
-        @keyframes fadeInUp {
-            to { opacity: 1; transform: translateY(0); }
         }
 
         .hero h1 {
@@ -433,268 +349,140 @@
             background-clip: text;
         }
 
-        .typewriter {
-            font-size: clamp(1.4rem, 4vw, 2.2rem);
+        .hero p {
+            font-size: 1.3rem;
             color: var(--text-secondary);
             margin-bottom: 2rem;
-            min-height: 5rem;
-            height: 5rem;
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            line-height: 1.6;
-            text-align: center;
-            padding: 0.75rem 1rem 0.5rem;
-            width: 100%;
-            max-width: 100%;
-            font-weight: 500;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
         }
 
-        .typewriter-content {
-            display: inline-block;
-            width: 100%;
-            max-width: 100%;
-            word-wrap: break-word;
-            word-break: break-word;
-            overflow-wrap: break-word;
-            white-space: normal;
-            hyphens: auto;
-            text-align: center;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-interactive));
-            color: white;
-            padding: 1.1rem 2rem;
-            border-radius: 12px;
-            font-weight: 700;
-            font-size: 1.15rem;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-            text-decoration: none;
-            transition: all var(--transition);
-            box-shadow: var(--shadow-glow);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(249, 115, 22, 0.4);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--text-primary);
-            padding: 1rem 2rem;
-            border: 2px solid var(--accent-primary);
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all var(--transition);
-        }
-
-        .btn-secondary:hover {
-            background: var(--accent-primary);
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        /* SERVICES SECTION */
-        .services {
-            padding: 120px 5%;
+        /* TRUST BADGES */
+        .trust-section {
+            padding: 60px 5%;
             background: var(--bg-color);
-            position: relative;
         }
 
-        .section-header {
-            text-align: center;
+        .trust-badges {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
             margin-bottom: 4rem;
         }
 
-        .section-header h2 {
-            font-family: var(--font-heading);
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        .section-header p {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .service-card {
+        .trust-badge {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--border-color);
             border-radius: 16px;
             padding: 2rem;
             text-align: center;
             transition: all var(--transition);
+        }
+
+        .trust-badge:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .trust-badge-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .trust-badge h3 {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .trust-badge p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* BRANDS GRID */
+        .brands-section {
+            padding: 60px 5%;
+            background: var(--bg-color);
+        }
+
+        .brands-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+
+        .brands-intro h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .brands-intro p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .brand-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition);
+            aspect-ratio: 1;
             position: relative;
             overflow: hidden;
         }
 
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--accent-primary), transparent);
-            opacity: 0;
-            transition: opacity var(--transition);
-        }
-
-        .service-card:hover::before {
-            opacity: 0.1;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent-primary);
-            box-shadow: var(--shadow-glow);
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .service-card h3 {
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-            position: relative;
-            z-index: 2;
-        }
-
-        .service-card p {
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .service-link {
-            color: var(--accent-primary);
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
-            position: relative;
-            z-index: 2;
-        }
-
-        .service-link:hover {
-            color: var(--accent-hover);
-        }
-
-        /* WHY CHOOSE US */
-        .why-choose {
-            padding: 120px 5%;
-            background: var(--bg-color);
-        }
-
-        .why-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .why-card {
-            text-align: center;
-            padding: 1.5rem;
-            transition: transform var(--transition);
-        }
-
-        .why-card:hover {
+        .brand-item:hover {
+            background: rgba(255, 255, 255, 0.1);
             transform: translateY(-5px);
+            box-shadow: var(--shadow-glow);
+            border-color: var(--accent-primary);
         }
 
-        .why-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+        .brand-item img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            filter: brightness(0.95);
+            transition: all var(--transition);
         }
 
-        .why-card h3 {
-            font-family: var(--font-heading);
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-        }
-
-        .why-card p {
-            color: var(--text-secondary);
+        .brand-item:hover img {
+            filter: brightness(1.1);
+            transform: scale(1.05);
         }
 
         /* CTA SECTION */
-        /* Partners Section */
-        .partners-section {
-            padding: 80px 5%;
-            background: var(--bg-color);
-            text-align: center;
-        }
-
-        .partners-badges {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 80px;
-            flex-wrap: wrap;
-            margin-top: 50px;
-        }
-
-        .partner-badge {
-            transition: transform var(--transition);
-        }
-
-        .partner-badge:hover {
-            transform: translateY(-5px);
-        }
-
-        .partner-badge img {
-            height: 80px;
-            width: auto;
-            filter: brightness(0.9);
-            transition: filter var(--transition);
-        }
-
-        .partner-badge:hover img {
-            filter: brightness(1);
-        }
-
-        body.light-theme .partner-badge img.badge-urc {
-            content: url('Video/URC_Logo_Black.png');
-        }
-
         .cta-section {
-            padding: 120px 5%;
+            padding: 80px 5%;
             background: linear-gradient(135deg, var(--accent-primary), var(--accent-interactive));
             color: white;
             text-align: center;
@@ -710,7 +498,33 @@
         .cta-section p {
             font-size: 1.2rem;
             margin-bottom: 2rem;
-            opacity: 0.9;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--accent-primary);
+            padding: 1rem 2rem;
+            border: 2px solid white;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        .btn-secondary:hover {
+            background: transparent;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         /* FOOTER - Your Amazing Design */
@@ -783,9 +597,6 @@
             width: 100%;
             max-width: 1280px;
             margin: 0 auto;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 1.2s var(--animation-ease) 0.3s forwards;
         }
 
         .footer-main-grid {
@@ -819,9 +630,9 @@
             font-size: 1.1rem;
             font-weight: 700;
             font-family: var(--font-heading);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
             display: inline-block;
             transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
             margin-top: 30px;
             box-shadow: var(--shadow-subtle);
         }
@@ -1030,233 +841,6 @@
             transform: scale(1.1);
         }
 
-        /* Mobile Responsive */
-        @media (max-width: 1024px) {
-            .footer-main-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 40px 60px;
-            }
-
-            .footer-brand {
-                grid-column: 1 / -1;
-                margin-bottom: 20px;
-            }
-
-            .footer-brand p {
-                max-width: 100%;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .header {
-                padding: 0.75rem 0;
-            }
-
-            .nav {
-                position: relative;
-                justify-content: space-between;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .logo {
-                padding: 6px 12px;
-                font-size: 1.3rem;
-            }
-
-            .logo img {
-                width: 32px !important;
-                height: 32px !important;
-                margin-right: 8px !important;
-            }
-
-            .logo-text {
-                display: inline;
-            }
-
-            .menu-toggle {
-                display: flex;
-                padding: 8px;
-                min-width: 44px;
-                min-height: 44px;
-            }
-
-            .cta-button {
-                display: none;
-            }
-
-            .typewriter {
-                min-height: 5.5rem;
-                height: 5.5rem;
-                align-items: flex-start;
-                padding: 0.5rem 0.75rem 0.5rem;
-                font-size: clamp(1.3rem, 3.5vw, 1.9rem);
-            }
-
-            .hero {
-                padding-top: 60px;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .why-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .footer-main-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .prestige-footer {
-                padding: 60px 5% 40px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .header {
-                padding: 0.65rem 0;
-            }
-
-            .container {
-                padding: 0 0.5rem;
-            }
-
-            .logo {
-                font-size: 1.15rem;
-                padding: 5px 10px;
-            }
-
-            .logo img {
-                width: 28px !important;
-                height: 28px !important;
-                margin-right: 6px !important;
-            }
-
-            .menu-toggle {
-                padding: 7px;
-                min-width: 44px;
-                min-height: 44px;
-            }
-
-            .menu-toggle span {
-                width: 24px;
-                height: 2.5px;
-            }
-
-            .typewriter {
-                min-height: 6rem;
-                height: 6rem;
-                align-items: flex-start;
-                padding: 0.75rem 0.5rem 0.5rem;
-                font-size: clamp(1.2rem, 3vw, 1.6rem);
-                font-weight: 500;
-            }
-
-            .hero {
-                padding-top: 60px;
-                padding-bottom: 60px;
-            }
-
-            .services,
-            .why-choose,
-            .partners-section {
-                padding: 60px 5%;
-            }
-
-            .partners-badges {
-                gap: 40px;
-            }
-
-            .partner-badge img {
-                height: 60px;
-            }
-
-            .cta-section {
-                padding: 80px 5%;
-            }
-
-            .why-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-main-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .footer-bottom {
-                flex-direction: column-reverse;
-                text-align: center;
-                gap: 35px;
-            }
-
-            .footer-social {
-                justify-content: center;
-                margin-bottom: 15px;
-            }
-
-            .footer-bottom-left {
-                justify-content: center;
-            }
-        }
-
-        /* Accessibility */
-        @media (prefers-reduced-motion: reduce) {
-            html {
-                scroll-behavior: auto;
-            }
-
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-
-            #particles-js,
-            #interactive-canvas {
-                display: none;
-            }
-
-            .hero-background::before,
-            .hero-background::after,
-            .hero-background div,
-            .footer-background::before,
-            .footer-background::after,
-            .footer-background div {
-                animation: none;
-            }
-
-            .service-card:hover,
-            .why-card:hover,
-            .footer-column:hover,
-            .footer-column a:hover,
-            .social-icon:hover,
-            .social-icon:focus-visible {
-                transform: none;
-            }
-        }
-
-        /* Focus States for Accessibility */
-        .cta-button:focus-visible,
-        .footer-column a:focus-visible,
-        .toggle-switch:focus-visible,
-        .social-icon:focus-visible {
-            outline: 3px solid var(--accent-hover);
-            outline-offset: 3px;
-            border-radius: 4px;
-        }
-
         /* Back to Top Button */
         .back-to-top {
             position: fixed;
@@ -1318,67 +902,191 @@
                 height: 20px;
             }
         }
-    </style>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Denali Tech",
-      "image": "https://www.denalitechs.com/Video/logo.JPG",
-      "@id": "https://www.denalitechs.com/",
-      "url": "https://www.denalitechs.com/",
-      "telephone": "+1-312-439-7500",
-      "email": "Hello@denalitechs.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Mt Prospect",
-        "addressRegion": "IL",
-        "postalCode": "60056",
-        "addressCountry": "US"
-      },
-      "areaServed": "Chicago Metro Area",
-      "sameAs": [
-        "https://www.linkedin.com/company/denali-tech-inc",
-        "https://www.facebook.com/Denali.Tech",
-        "https://www.instagram.com/denalitechs/",
-        "https://maps.app.goo.gl/7WUrwUfWcbSqwSHt7"
-      ],
-      "openingHoursSpecification": [{
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-        "opens": "08:00",
-        "closes": "18:00"
-      }],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "reviewCount": "13"
-      }
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Do you offer free consultations?",
-          "acceptedAnswer": {"@type": "Answer","text": "Yes, we offer a no-pressure, free in-home or virtual consultation to design the right solution for you."}
-        },
-        {
-          "@type": "Question",
-          "name": "What areas do you serve?",
-          "acceptedAnswer": {"@type": "Answer","text": "We serve Mt Prospect and the greater Chicago metro area."}
-        },
-        {
-          "@type": "Question",
-          "name": "Which systems do you install?",
-          "acceptedAnswer": {"@type": "Answer","text": "We install smart lighting, shades, home theaters, whole-home audio, WiFi networking, and security systems including Control4 and URC."}
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .footer-main-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px 60px;
+            }
+
+            .footer-brand {
+                grid-column: 1 / -1;
+                margin-bottom: 20px;
+            }
+
+            .footer-brand p {
+                max-width: 100%;
+            }
+
+            .brands-grid {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                gap: 1.5rem;
+            }
         }
-      ]
-    }
-    </script>
+
+        @media (max-width: 768px) {
+            .nav {
+                position: relative;
+                justify-content: space-between;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .logo {
+                padding: 6px 12px;
+                font-size: 1.4rem;
+            }
+
+            .logo img {
+                width: 32px !important;
+                height: 32px !important;
+                margin-right: 8px !important;
+            }
+
+            .logo-text {
+                display: inline;
+            }
+
+            .menu-toggle {
+                display: flex;
+                padding: 8px;
+            }
+
+            .cta-button {
+                display: none;
+            }
+
+            .hero {
+                padding: 100px 0 60px;
+            }
+
+            .trust-badges {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .brands-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+                gap: 1rem;
+            }
+
+            .brand-item {
+                padding: 1.5rem;
+            }
+
+            .footer-main-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .prestige-footer {
+                padding: 60px 5% 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 0.5rem;
+            }
+
+            .logo {
+                font-size: 1.1rem;
+                padding: 4px 8px;
+            }
+
+            .logo img {
+                width: 28px !important;
+                height: 28px !important;
+            }
+
+            .hero {
+                padding: 80px 0 40px;
+            }
+
+            .trust-section,
+            .brands-section {
+                padding: 40px 5%;
+            }
+
+            .brands-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+            }
+
+            .brand-item {
+                padding: 1rem;
+            }
+
+            .footer-main-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .footer-bottom {
+                flex-direction: column-reverse;
+                text-align: center;
+                gap: 35px;
+            }
+
+            .footer-social {
+                justify-content: center;
+                margin-bottom: 15px;
+            }
+
+            .footer-bottom-left {
+                justify-content: center;
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            #interactive-canvas {
+                display: none;
+            }
+
+            .hero-background::before,
+            .hero-background::after,
+            .footer-background::before,
+            .footer-background::after,
+            .footer-background div {
+                animation: none;
+            }
+
+            .trust-badge:hover,
+            .brand-item:hover,
+            .footer-column:hover,
+            .footer-column a:hover,
+            .social-icon:hover,
+            .social-icon:focus-visible {
+                transform: none;
+            }
+        }
+
+        /* Focus States for Accessibility */
+        .cta-button:focus-visible,
+        .btn-secondary:focus-visible,
+        .footer-column a:focus-visible,
+        .toggle-switch:focus-visible,
+        .social-icon:focus-visible {
+            outline: 3px solid var(--accent-hover);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -1394,7 +1102,7 @@
                     <li><a href="/services/">What We Do</a></li>
                     <li><a href="/projects/">Projects</a></li>
                     <li><a href="/about/">About Us</a></li>
-                    <li><a href="/brands/">Brands</a></li>
+                    <li><a href="/brands/" style="color: var(--accent-primary);">Brands</a></li>
                     <li><a href="/contact/">Contact</a></li>
                     <li class="mobile-call-btn"><a href="tel:+13124397500">📞 Call Now</a></li>
                 </ul>
@@ -1409,116 +1117,104 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-background">
-            <div></div>
-            <div id="particles-js"></div>
-        </div>
+    <section class="hero">
+        <div class="hero-background"></div>
         <div class="hero-content">
-            <h1>We Make Your Home Smart & Simple</h1>
-            <div class="typewriter" id="typewriter"><span class="typewriter-content"></span></div>
-            <div class="hero-buttons">
-                <a href="/contact/" class="btn-primary">📅 Get Free Consultation</a>
-                <a href="/services/" class="btn-secondary">See What We Do</a>
-            </div>
+            <h1>Trusted Brands & Partners</h1>
+            <p>We partner with only the most trusted brands in home automation and AV. As authorized dealers, we offer genuine products with full warranty and USA support - no scams, no gray market products, just quality you can trust.</p>
         </div>
     </section>
 
-
-
-    <!-- Services Section -->
-    <section class="services">
+    <!-- Trust Badges -->
+    <section class="trust-section">
         <div class="container">
-            <div class="section-header">
-                <h2>What We Do For You</h2>
-                <p>We're your complete smart home solution - products and services, all from one trusted source. No need to shop around or coordinate with multiple companies. Here's how we make your life easier:</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🏠</div>
-                    <h3>Smart Home Control</h3>
-                    <p>Control your lights, temperature, and security from your phone or with your voice. No more getting up to turn off lights!</p>
-                    <a href="/services/#automation" class="service-link">Learn More →</a>
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <div class="trust-badge-icon">✅</div>
+                    <h3>Authorized Dealer</h3>
+                    <p>We're an authorized dealer for all brands we carry, ensuring you get genuine products with full manufacturer support.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">🎬</div>
-                    <h3>Home Theater</h3>
-                    <p>Turn any room into a movie theater. Watch your favorite shows and movies with amazing picture and sound quality.</p>
-                    <a href="/services/#theater" class="service-link">Learn More →</a>
+                <div class="trust-badge">
+                    <div class="trust-badge-icon">🛡️</div>
+                    <h3>Full Warranty</h3>
+                    <p>All products come with complete manufacturer warranty and support. No gray market products, no scams.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">📶</div>
-                    <h3>WiFi That Works</h3>
-                    <p>No more dead spots! We make sure your internet works perfectly in every room of your house.</p>
-                    <a href="/services/#networking" class="service-link">Learn More →</a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🔒</div>
-                    <h3>Home Security</h3>
-                    <p>Keep your family safe with cameras and alarms that you can check from anywhere. Peace of mind, 24/7.</p>
-                    <a href="/services/#surveillance" class="service-link">Learn More →</a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">💡</div>
-                    <h3>Smart Lighting</h3>
-                    <p>Lights that turn on automatically when you walk in, dim for movie night, or change colors for parties.</p>
-                    <a href="/services/#lighting" class="service-link">Learn More →</a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🎵</div>
-                    <h3>Music Everywhere</h3>
-                    <p>Play your favorite music in any room, or the whole house at once. Perfect for parties or just relaxing.</p>
-                    <a href="/services/#audio" class="service-link">Learn More →</a>
+                <div class="trust-badge">
+                    <div class="trust-badge-icon">🇺🇸</div>
+                    <h3>USA Support</h3>
+                    <p>Get the right USA support and warranty coverage. We only sell products we've tested and mastered.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Us -->
-    <section class="why-choose">
+    <!-- Brands Grid -->
+    <section class="brands-section">
         <div class="container">
-            <div class="section-header">
-                <h2>Why People Choose Us</h2>
-                <p>We're not just another tech company. As an authorized dealer, we provide the products and handle all installation and support - everything you need in one place. Here's what makes us different:</p>
+            <div class="brands-intro">
+                <h2>Our Trusted Partners</h2>
+                <p>We partner with industry-leading brands to bring you the best in smart home automation, home theater, networking, and audio solutions. Each brand has been carefully selected for their quality, reliability, and commitment to excellence.</p>
             </div>
-            <div class="why-grid">
-                <div class="why-card">
-                    <div class="why-icon">🤝</div>
-                    <h3>We Listen</h3>
-                    <p>We don't push complicated stuff you don't need. We listen to what you actually want and make it simple.</p>
+            <div class="brands-grid">
+                <div class="brand-item">
+                    <img src="Video/Brands/Denali techControl4.png" alt="Control4" loading="lazy">
                 </div>
-                <div class="why-card">
-                    <div class="why-icon">🛠️</div>
-                    <h3>We Install Everything</h3>
-                    <p>You don't need to figure anything out. We come to your house and set everything up perfectly.</p>
+                <div class="brand-item">
+                    <img src="Video/Brands/Denali tech Lutron.png" alt="Lutron" loading="lazy">
                 </div>
-                <div class="why-card">
-                    <div class="why-icon">📞</div>
-                    <h3>We're Here When You Need Us</h3>
-                    <p>If something doesn't work right, just call us. We'll fix it quickly, no questions asked.</p>
+                <div class="brand-item">
+                    <img src="Video/Brands/Denali tech Sonos.png" alt="Sonos" loading="lazy">
                 </div>
-                <div class="why-card">
-                    <div class="why-icon">💰</div>
-                    <h3>Fair Prices</h3>
-                    <p>No hidden fees or surprise charges. We give you a clear price upfront and stick to it.</p>
+                <div class="brand-item">
+                    <img src="Video/Brands/Denali tech Sony.png" alt="Sony" loading="lazy">
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Trusted Partners -->
-    <section class="partners-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Trusted by Industry Leaders</h2>
-                <p>We're certified and authorized dealers for premium smart home systems. From product selection to professional installation, we handle everything.</p>
-            </div>
-            <div class="partners-badges">
-                <div class="partner-badge">
-                    <img src="Video/authorized (1).svg" alt="Control4 Authorized Dealer" class="badge-control4">
+                <div class="brand-item">
+                    <img src="Video/Brands/Denali tech KEF.png" alt="KEF" loading="lazy">
                 </div>
-                <div class="partner-badge">
-                    <img src="Video/URC_Logo_White.png" alt="URC Automation Partner" class="badge-urc">
+                <div class="brand-item">
+                    <img src="Video/Brands/Denali tech Klipsch.png" alt="Klipsch" loading="lazy">
+                </div>
+                <div class="brand-item">
+                    <img src="Video/Brands/Denali tech Marantz.png" alt="Marantz" loading="lazy">
+                </div>
+                <div class="brand-item">
+                    <img src="Video/Brands/Denali tech JVC.png" alt="JVC" loading="lazy">
+                </div>
+                <div class="brand-item">
+                    <img src="Video/Brands/Denali tech Audio Quest.png" alt="AudioQuest" loading="lazy">
+                </div>
+                <div class="brand-item">
+                    <img src="Video/Brands/Denali tech Eero.png" alt="Eero" loading="lazy">
+                </div>
+                <div class="brand-item">
+                    <img src="Video/Brands/Denali tech Pakedge.png" alt="Pakedge" loading="lazy">
+                </div>
+                <div class="brand-item">
+                    <img src="Video/Brands/Denali tech raknis.png" alt="Ruckus" loading="lazy">
+                </div>
+                <div class="brand-item">
+                    <img src="Video/Brands/Denali tech Wattbox.png" alt="Wattbox" loading="lazy">
+                </div>
+                <div class="brand-item">
+                    <img src="Video/Brands/Denali tech OvrC.png" alt="OvrC" loading="lazy">
+                </div>
+                <div class="brand-item">
+                    <img src="Video/Brands/Denali tech Ring.png" alt="Ring" loading="lazy">
+                </div>
+                <div class="brand-item">
+                    <img src="Video/Brands/Denali tech Nest.png" alt="Nest" loading="lazy">
+                </div>
+                <div class="brand-item">
+                    <img src="Video/Brands/Denali tech Roku.png" alt="Roku" loading="lazy">
+                </div>
+                <div class="brand-item">
+                    <img src="Video/Brands/Denali tech Access.png" alt="Access" loading="lazy">
+                </div>
+                <div class="brand-item">
+                    <img src="Video/Brands/ Denali tech Luma.png" alt="Luma" loading="lazy">
+                </div>
+                <div class="brand-item">
+                    <img src="Video/Brands/Denali Tech strong Strong.png" alt="Strong" loading="lazy">
                 </div>
             </div>
         </div>
@@ -1527,9 +1223,9 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <h2>Ready to Make Your Home Smart?</h2>
-            <p>Get a free consultation. We'll come to your house, see what you need, and give you a plan that makes sense. No pressure, no sales pitch - just honest advice. As your one-stop shop, we provide the products and handle the installation, so you don't have to coordinate with multiple companies.</p>
-            <a href="/contact/" class="btn-primary">Get Your Free Consultation</a>
+            <h2>Ready to Get Started?</h2>
+            <p>Shop with confidence knowing you're getting genuine products from an authorized dealer with full warranty and support.</p>
+            <a href="/contact/" class="btn-secondary">Get Your Free Consultation</a>
         </div>
     </section>
 
@@ -1645,75 +1341,6 @@
     </button>
 
     <script>
-        // Particles.js Configuration
-        window.addEventListener('load', () => {
-            particlesJS("particles-js", {
-                "particles": {
-                    "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
-                    "color": { "value": "#f97316" },
-                    "shape": { "type": "circle" },
-                    "opacity": { "value": 0.5, "random": false },
-                    "size": { "value": 3, "random": true },
-                    "line_linked": { "enable": true, "distance": 150, "color": "#f97316", "opacity": 0.4, "width": 1 },
-                    "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
-                },
-                "interactivity": {
-                    "detect_on": "canvas",
-                    "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
-                    "modes": { "grab": { "distance": 400, "line_linked": { "opacity": 1 } }, "bubble": { "distance": 400, "size": 40, "duration": 2, "opacity": 8, "speed": 3 }, "repulse": { "distance": 200, "duration": 0.4 }, "push": { "particles_nb": 4 }, "remove": { "particles_nb": 2 } }
-                },
-                "retina_detect": true
-            });
-        });
-
-        // Typewriter Effect - Simplified for smooth flow
-        const typewriterElement = document.getElementById('typewriter');
-        const typewriterContent = typewriterElement ? typewriterElement.querySelector('.typewriter-content') : null;
-        const messages = [
-            'Smart Home Automation Made Simple',
-            'Immersive Home Theater Experiences',
-            'Reliable WiFi Throughout Your Home',
-            'Advanced Security & Surveillance',
-            'Intelligent Lighting Control',
-            'Seamless Audio Distribution'
-        ];
-        
-        let messageIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        
-        function typeWriter() {
-            if (!typewriterContent) return;
-            
-            const currentMessage = messages[messageIndex];
-            
-            if (isDeleting) {
-                typewriterContent.textContent = currentMessage.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                typewriterContent.textContent = currentMessage.substring(0, charIndex + 1);
-                charIndex++;
-            }
-            
-            let typeSpeed = isDeleting ? 50 : 100;
-            
-            if (!isDeleting && charIndex === currentMessage.length) {
-                typeSpeed = 2000;
-                isDeleting = true;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                messageIndex = (messageIndex + 1) % messages.length;
-                typeSpeed = 500;
-            }
-            
-            setTimeout(typeWriter, typeSpeed);
-        }
-        
-        // Start typewriter effect
-        if (typewriterContent) {
-            setTimeout(typeWriter, 1000);
-        }
-
         // Footer Interactive Canvas
         document.addEventListener('DOMContentLoaded', function() {
             const footer = document.getElementById('main-footer');
@@ -1910,3 +1537,4 @@
     </script>
 </body>
 </html>
+
