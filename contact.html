@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Denali Tech | Free Smart Home Consultation Chicago</title>
-    <meta name="description" content="Get a free consultation for your smart home project. Denali Tech in Chicago offers no-pressure consultations. Call (312) 439-7500 or email Hello@denalitechs.com">
+    <title>Contact Denali Tech | Book Consultation or Get in Touch</title>
+    <meta name="description" content="Contact Denali Tech for smart home solutions. Book your free consultation online or reach out directly. Call (312) 439-7500 or email Hello@denalitechs.com">
     <meta name="keywords" content="smart home consultation Chicago, free home automation quote, home automation contact, smart home company Chicago phone, AV consultation, home automation services near me, smart home consultation free, contact home automation installer, Denali Tech phone number, smart home installation quote">
     
     <base href="/">
@@ -601,7 +601,108 @@
             transform: translateY(-3px);
         }
 
-        /* FOOTER - Your Amazing Design */
+        /* BOOKING FORM SECTION */
+        .booking-section {
+            padding: 100px 5%;
+            background: var(--bg-color);
+        }
+
+        .booking-form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .booking-form-container h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            margin-bottom: 0.5rem;
+            text-align: center;
+            color: var(--text-primary);
+        }
+
+        .booking-form-container p {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            font-size: 1.1rem;
+        }
+
+        .booking-form {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .booking-form-submit {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-interactive));
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all var(--transition);
+            box-shadow: var(--shadow-subtle);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            margin-top: 1rem;
+        }
+
+        .booking-form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .booking-form-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .form-success-message,
+        .form-error-message {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .form-success-message {
+            background: rgba(13, 148, 136, 0.2);
+            border: 1px solid rgba(13, 148, 136, 0.5);
+            color: #2dd4bf;
+        }
+
+        .form-error-message {
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid rgba(239, 68, 68, 0.5);
+            color: #fca5a5;
+        }
+
+        @media (max-width: 768px) {
+            .booking-form-container {
+                padding: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
         .prestige-footer {
             padding: 80px 5% 60px;
             width: 100%;
@@ -1176,7 +1277,6 @@
                     <li><a href="/services/">What We Do</a></li>
                     <li><a href="/projects/">Projects</a></li>
                     <li><a href="/about/">About Us</a></li>
-                    <li><a href="/brands/">Brands</a></li>
                     <li><a href="/contact/" style="color: var(--accent-primary);">Contact</a></li>
                     <li class="mobile-call-btn"><a href="tel:+13124397500">📞 Call Now</a></li>
                 </ul>
@@ -1194,8 +1294,8 @@
     <section class="hero">
         <div class="hero-background"></div>
         <div class="hero-content">
-            <h1>Get Your Free Consultation</h1>
-            <p>Serving Chicago and surrounding areas. We'll come to your house, see what you need, and give you a plan that makes sense. No pressure, no sales pitch - just honest advice.</p>
+            <h1>Contact Us</h1>
+            <p>Book your free consultation below or reach out to us directly. We're here to help make your home smart and simple.</p>
         </div>
     </section>
 
@@ -1260,9 +1360,9 @@
             <!-- Contact Form and Info -->
             <div class="contact-grid">
                 <div class="contact-form">
-                    <h2>Request Your Free Consultation</h2>
+                    <h2>Have a Quick Question?</h2>
                     <div class="form-success" id="form-success" style="display:none">
-                        ✅ Request sent! We’ll contact you within 24 hours to schedule your free consultation.
+                        ✅ Message sent! We'll get back to you within 24 hours.
                     </div>
                     <div class="form-error" id="form-error">
                         Please fill in all required fields.
@@ -1320,7 +1420,7 @@
                             <label for="message">Tell us about your project (optional)</label>
                             <textarea id="message" name="message" placeholder="What would you like your smart home to do? Any specific needs or concerns?"></textarea>
                         </div>
-                        <button type="submit" class="btn-primary">📅 Schedule My Free Consultation</button>
+                        <button type="submit" class="btn-primary">📧 Send Message</button>
                     </form>
                 </div>
 
@@ -1363,12 +1463,91 @@
         </div>
     </section>
 
+    <!-- Booking Form Section -->
+    <section class="booking-section" id="booking">
+        <div class="container">
+            <div class="booking-form-container">
+                <h2>📅 Schedule Your Free Consultation</h2>
+                <p>Tell us about your project and we'll come to your location for a free consultation. Fill out the form below with your details.</p>
+                <form class="booking-form" id="booking-form" action="https://formsubmit.co/ajax/services@denalitechs.com" method="POST">
+                    <input type="hidden" name="_captcha" value="true">
+                    <input type="hidden" name="_subject" value="New Consultation Booking Request">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="booking-name">Full Name *</label>
+                            <input type="text" id="booking-name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-phone">Phone Number *</label>
+                            <input type="tel" id="booking-phone" name="phone" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="booking-email">Email Address *</label>
+                            <input type="email" id="booking-email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-service">Service Type *</label>
+                            <select id="booking-service" name="service_type" required>
+                                <option value="">Select a service...</option>
+                                <option value="Smart Home Automation">Smart Home Automation</option>
+                                <option value="Home Theater">Home Theater</option>
+                                <option value="WiFi & Networking">WiFi & Networking</option>
+                                <option value="Security & Surveillance">Security & Surveillance</option>
+                                <option value="Smart Lighting">Smart Lighting</option>
+                                <option value="Audio Distribution">Audio Distribution</option>
+                                <option value="Smart Shades">Smart Shades</option>
+                                <option value="Multiple Services">Multiple Services</option>
+                                <option value="Not Sure / General Consultation">Not Sure / General Consultation</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="booking-address">Full Address *</label>
+                        <input type="text" id="booking-address" name="address" placeholder="Street Address, City, State, ZIP" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="booking-date">Preferred Date *</label>
+                            <input type="date" id="booking-date" name="preferred_date" required min="">
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-time">Preferred Time *</label>
+                            <select id="booking-time" name="preferred_time" required>
+                                <option value="">Select time...</option>
+                                <option value="Morning (8 AM - 12 PM)">Morning (8 AM - 12 PM)</option>
+                                <option value="Afternoon (12 PM - 4 PM)">Afternoon (12 PM - 4 PM)</option>
+                                <option value="Evening (4 PM - 7 PM)">Evening (4 PM - 7 PM)</option>
+                                <option value="Flexible">Flexible</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="booking-details">Project Details / What You'd Like Help With *</label>
+                        <textarea id="booking-details" name="project_details" placeholder="Tell us about your project, what you'd like to achieve, any specific requirements, or questions you have..." required></textarea>
+                    </div>
+
+                    <div id="booking-form-message"></div>
+                    <button type="submit" class="booking-form-submit">Submit Booking Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
             <h2>Ready to Get Started?</h2>
-            <p>Don't wait - get your free consultation today and start making your home smart and simple.</p>
-            <a href="#consultation-form" class="btn-secondary">📅 Book Your Consultation Now</a>
+            <p>Book your free consultation below or contact us directly. We're here to help make your home smart and simple.</p>
+            <a href="#booking" class="btn-secondary">📅 Book Your Consultation</a>
         </div>
     </section>
 
@@ -1726,6 +1905,60 @@
                 });
             }
         });
+
+        // Booking Form Handler
+        document.addEventListener('DOMContentLoaded', function() {
+            const bookingForm = document.getElementById('booking-form');
+            const bookingDateInput = document.getElementById('booking-date');
+            const messageDiv = document.getElementById('booking-form-message');
+            
+            // Set minimum date to today
+            if (bookingDateInput) {
+                const today = new Date().toISOString().split('T')[0];
+                bookingDateInput.setAttribute('min', today);
+            }
+
+            if (bookingForm) {
+                bookingForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    // Check honeypot field - if filled, it's a bot
+                    const honeypot = bookingForm.querySelector('input[name="website"]');
+                    if (honeypot && honeypot.value) {
+                        // Bot detected - silently reject
+                        console.log('Bot submission blocked');
+                        return;
+                    }
+
+                    const submitBtn = bookingForm.querySelector('button[type="submit"]');
+                    if (submitBtn) submitBtn.disabled = true;
+                    if (submitBtn) submitBtn.textContent = 'Submitting...';
+
+                    const formData = new FormData(bookingForm);
+                    
+                    try {
+                        const res = await fetch('https://formsubmit.co/ajax/services@denalitechs.com', {
+                            method: 'POST',
+                            headers: { 'Accept': 'application/json' },
+                            body: formData
+                        });
+
+                        if (res.ok) {
+                            messageDiv.innerHTML = '<div class="form-success-message">✅ Thank you! Your booking request has been submitted. We\'ll contact you soon to confirm your consultation appointment.</div>';
+                            bookingForm.reset();
+                            // Scroll to message
+                            messageDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        } else {
+                            messageDiv.innerHTML = '<div class="form-error-message">❌ There was an error submitting your request. Please try again or call us at (312) 439-7500.</div>';
+                            if (submitBtn) submitBtn.disabled = false;
+                            if (submitBtn) submitBtn.textContent = 'Submit Booking Request';
+                        }
+                    } catch (err) {
+                        messageDiv.innerHTML = '<div class="form-error-message">❌ There was an error submitting your request. Please try again or call us at (312) 439-7500.</div>';
+                        if (submitBtn) submitBtn.disabled = false;
+                        if (submitBtn) submitBtn.textContent = 'Submit Booking Request';
+                    }
+                });
+            }
+        });
     </script>
-</body>
-</html>
