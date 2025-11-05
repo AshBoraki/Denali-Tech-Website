@@ -653,7 +653,6 @@
             color: var(--text-secondary);
         }
 
-        /* CTA SECTION */
         /* Partners Section */
         .partners-section {
             padding: 80px 5%;
@@ -713,7 +712,188 @@
             opacity: 0.9;
         }
 
-        /* FOOTER - Your Amazing Design */
+        /* BOOKING FORM SECTION */
+        .booking-section {
+            padding: 100px 5%;
+            background: var(--bg-color);
+        }
+
+        .booking-form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .booking-form-container h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            margin-bottom: 0.5rem;
+            text-align: center;
+            color: var(--text-primary);
+        }
+
+        .booking-form-container p {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            font-size: 1.1rem;
+        }
+
+        .booking-form {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 0.9rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+            font-family: var(--font-main);
+            font-size: 1rem;
+            transition: all var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group input[type="date"],
+        .form-group input[type="time"] {
+            cursor: pointer;
+        }
+
+        .booking-form-submit {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-interactive));
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all var(--transition);
+            box-shadow: var(--shadow-subtle);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            margin-top: 1rem;
+        }
+
+        .booking-form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .booking-form-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .form-success-message,
+        .form-error-message {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .form-success-message {
+            background: rgba(13, 148, 136, 0.2);
+            border: 1px solid rgba(13, 148, 136, 0.5);
+            color: #2dd4bf;
+        }
+
+        .form-error-message {
+            background: rgba(239, 68, 68, 0.2);
+            border: 1px solid rgba(239, 68, 68, 0.5);
+            color: #fca5a5;
+        }
+
+        @media (max-width: 768px) {
+            .booking-form-container {
+                padding: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .booking-section {
+                padding: 60px 3%;
+            }
+
+            .booking-form-container {
+                padding: 1.5rem;
+                border-radius: 12px;
+            }
+
+            .booking-form-container h2 {
+                font-size: 1.5rem;
+            }
+
+            .booking-form-container p {
+                font-size: 0.95rem;
+            }
+
+            .booking-form {
+                gap: 1.2rem;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 0.8rem 0.9rem;
+                font-size: 0.95rem;
+            }
+
+            .booking-form-submit {
+                width: 100%;
+                padding: 0.9rem 1.5rem;
+                font-size: 1rem;
+            }
+        }
         .prestige-footer {
             padding: 80px 5% 60px;
             width: 100%;
@@ -1341,6 +1521,7 @@
         "https://www.linkedin.com/company/denali-tech-inc",
         "https://www.facebook.com/Denali.Tech",
         "https://www.instagram.com/denalitechs/",
+        "https://share.google/PfmLvv3g2ul8NTO6Y",
         "https://maps.app.goo.gl/7WUrwUfWcbSqwSHt7"
       ],
       "openingHoursSpecification": [{
@@ -1394,7 +1575,6 @@
                     <li><a href="/services/">What We Do</a></li>
                     <li><a href="/projects/">Projects</a></li>
                     <li><a href="/about/">About Us</a></li>
-                    <li><a href="/brands/">Brands</a></li>
                     <li><a href="/contact/">Contact</a></li>
                     <li class="mobile-call-btn"><a href="tel:+13124397500">📞 Call Now</a></li>
                 </ul>
@@ -1418,7 +1598,7 @@
             <h1>We Make Your Home Smart & Simple</h1>
             <div class="typewriter" id="typewriter"><span class="typewriter-content"></span></div>
             <div class="hero-buttons">
-                <a href="/contact/" class="btn-primary">📅 Get Free Consultation</a>
+                <a href="#booking" class="btn-primary">📅 Get Free Consultation</a>
                 <a href="/services/" class="btn-secondary">See What We Do</a>
             </div>
         </div>
@@ -1524,6 +1704,85 @@
         </div>
     </section>
 
+    <!-- Booking Form Section -->
+    <section class="booking-section" id="booking">
+        <div class="container">
+            <div class="booking-form-container">
+                <h2>📅 Schedule Your Free Consultation</h2>
+                <p>Tell us about your project and we'll come to your location for a free consultation. Fill out the form below with your details.</p>
+                <form class="booking-form" id="booking-form" action="https://formsubmit.co/ajax/services@denalitechs.com" method="POST">
+                    <input type="hidden" name="_captcha" value="true">
+                    <input type="hidden" name="_subject" value="New Consultation Booking Request">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="booking-name">Full Name *</label>
+                            <input type="text" id="booking-name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-phone">Phone Number *</label>
+                            <input type="tel" id="booking-phone" name="phone" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="booking-email">Email Address *</label>
+                            <input type="email" id="booking-email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-service">Service Type *</label>
+                            <select id="booking-service" name="service_type" required>
+                                <option value="">Select a service...</option>
+                                <option value="Smart Home Automation">Smart Home Automation</option>
+                                <option value="Home Theater">Home Theater</option>
+                                <option value="WiFi & Networking">WiFi & Networking</option>
+                                <option value="Security & Surveillance">Security & Surveillance</option>
+                                <option value="Smart Lighting">Smart Lighting</option>
+                                <option value="Audio Distribution">Audio Distribution</option>
+                                <option value="Smart Shades">Smart Shades</option>
+                                <option value="Multiple Services">Multiple Services</option>
+                                <option value="Not Sure / General Consultation">Not Sure / General Consultation</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="booking-address">Full Address *</label>
+                        <input type="text" id="booking-address" name="address" placeholder="Street Address, City, State, ZIP" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="booking-date">Preferred Date *</label>
+                            <input type="date" id="booking-date" name="preferred_date" required min="">
+                        </div>
+                        <div class="form-group">
+                            <label for="booking-time">Preferred Time *</label>
+                            <select id="booking-time" name="preferred_time" required>
+                                <option value="">Select time...</option>
+                                <option value="Morning (8 AM - 12 PM)">Morning (8 AM - 12 PM)</option>
+                                <option value="Afternoon (12 PM - 4 PM)">Afternoon (12 PM - 4 PM)</option>
+                                <option value="Evening (4 PM - 7 PM)">Evening (4 PM - 7 PM)</option>
+                                <option value="Flexible">Flexible</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="booking-details">Project Details / What You'd Like Help With *</label>
+                        <textarea id="booking-details" name="project_details" placeholder="Tell us about your project, what you'd like to achieve, any specific requirements, or questions you have..." required></textarea>
+                    </div>
+
+                    <div id="booking-form-message"></div>
+                    <button type="submit" class="booking-form-submit">Submit Booking Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
@@ -1619,7 +1878,7 @@
                             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664 4.771 4.919-4.919.058-1.266.07-1.644.07-4.85zm0 0M12 2c-5.522 0-10 4.478-10 10s4.478 10 10 10 10-4.478 10-10S17.522 2 12 2zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/>
                         </svg>
                     </a>
-                    <a href="https://share.google/5v7QlOZP27cn87Vqo" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Visit Denali Tech on Google Business">
+                    <a href="https://share.google/PfmLvv3g2ul8NTO6Y" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Visit Denali Tech on Google Business">
                         <svg viewBox="0 0 24 24" fill="currentColor">
                             <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
                             <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
@@ -1903,6 +2162,62 @@
                     if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
                         navLinks.classList.remove('active');
                         menuToggle.classList.remove('active');
+                    }
+                });
+            }
+        });
+
+        // Booking Form Handler
+        document.addEventListener('DOMContentLoaded', function() {
+            const bookingForm = document.getElementById('booking-form');
+            const bookingDateInput = document.getElementById('booking-date');
+            const messageDiv = document.getElementById('booking-form-message');
+            
+            // Set minimum date to today
+            if (bookingDateInput) {
+                const today = new Date().toISOString().split('T')[0];
+                bookingDateInput.setAttribute('min', today);
+            }
+
+            if (bookingForm) {
+                bookingForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    // Check honeypot field - if filled, it's a bot
+                    const honeypot = bookingForm.querySelector('input[name="website"]');
+                    if (honeypot && honeypot.value) {
+                        // Bot detected - silently reject
+                        console.log('Bot submission blocked');
+                        return;
+                    }
+
+                    const submitBtn = bookingForm.querySelector('button[type="submit"]');
+                    if (submitBtn) submitBtn.disabled = true;
+                    if (submitBtn) submitBtn.textContent = 'Submitting...';
+
+                    const formData = new FormData(bookingForm);
+                    
+                    try {
+                        const res = await fetch('https://formsubmit.co/ajax/services@denalitechs.com', {
+                            method: 'POST',
+                            headers: { 'Accept': 'application/json' },
+                            body: formData
+                        });
+
+                        if (res.ok) {
+                            messageDiv.innerHTML = '<div class="form-success-message">✅ Thank you! Your booking request has been submitted. We\'ll contact you soon to confirm your consultation appointment.</div>';
+                            bookingForm.reset();
+                            // Scroll to message
+                            messageDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        } else {
+                            messageDiv.innerHTML = '<div class="form-error-message">❌ There was an error submitting your request. Please try again or call us at (312) 439-7500.</div>';
+                            if (submitBtn) submitBtn.disabled = false;
+                            if (submitBtn) submitBtn.textContent = 'Submit Booking Request';
+                        }
+                    } catch (err) {
+                        messageDiv.innerHTML = '<div class="form-error-message">❌ There was an error submitting your request. Please try again or call us at (312) 439-7500.</div>';
+                        if (submitBtn) submitBtn.disabled = false;
+                        if (submitBtn) submitBtn.textContent = 'Submit Booking Request';
                     }
                 });
             }
