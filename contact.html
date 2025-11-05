@@ -1271,8 +1271,10 @@
                         <!-- FormSubmit controls -->
                         <input type="hidden" name="_subject" value="Denali Tech: New Consultation Request">
                         <input type="hidden" name="_template" value="table">
-                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_captcha" value="true">
                         <input type="hidden" name="_next" value="https://www.denalitechs.com/thank-you/">
+                        <!-- Honeypot field to catch bots -->
+                        <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
                         <div class="form-group">
                             <label for="name">Your Name *</label>
                             <input type="text" id="name" name="name" required>
@@ -1488,6 +1490,15 @@
             if (!form) return;
             form.addEventListener('submit', async function (e) {
                 e.preventDefault();
+                
+                // Check honeypot field - if filled, it's a bot
+                const honeypot = form.querySelector('input[name="website"]');
+                if (honeypot && honeypot.value) {
+                    // Bot detected - silently reject
+                    console.log('Bot submission blocked');
+                    return;
+                }
+                
                 const submitBtn = form.querySelector('button[type="submit"]');
                 if (submitBtn) submitBtn.disabled = true;
                 const formData = new FormData(form);
