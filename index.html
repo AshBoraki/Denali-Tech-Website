@@ -1649,6 +1649,12 @@
             gap: 12px;
         }
 
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
         .toggle-switch {
             width: 54px;
             height: 28px;
@@ -1770,6 +1776,14 @@
                 min-height: 44px;
             }
 
+            .header-actions {
+                gap: 0.75rem;
+            }
+            
+            .theme-toggle {
+                order: -1; /* Show theme toggle first on mobile */
+            }
+            
             .cta-button {
                 display: none;
             }
@@ -2086,12 +2100,19 @@
                     <li><a href="/about/">About Us</a></li>
                     <li><a href="/contact/">Contact</a></li>
                 </ul>
-                <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <a href="tel:+13124397500" class="cta-button">📞 Call Now</a>
+                <div class="header-actions">
+                    <div class="theme-toggle">
+                        <div class="toggle-switch" id="theme-toggle-switch" role="switch" aria-checked="false" aria-label="Toggle between light and dark mode">
+                            <div class="toggle-switch-circle"></div>
+                        </div>
+                    </div>
+                    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <a href="tel:+13124397500" class="cta-button">📞 Call Now</a>
+                </div>
             </nav>
         </div>
     </header>
@@ -2506,17 +2527,12 @@
             </div>
 
             <div class="footer-bottom">
-                <div class="footer-bottom-left">
-                    <div class="footer-legal">
-                        <span>© <span id="current-year"></span> Denali Tech Inc.</span>
-                        <a href="/privacy/">Privacy & Terms</a>
-                    </div>
-                    <div class="theme-toggle">
-                        <div class="toggle-switch" id="theme-toggle-switch" role="switch" aria-checked="false" aria-label="Toggle between light and dark mode">
-                            <div class="toggle-switch-circle"></div>
+                    <div class="footer-bottom-left">
+                        <div class="footer-legal">
+                            <span>© <span id="current-year"></span> Denali Tech Inc.</span>
+                            <a href="/privacy/">Privacy & Terms</a>
                         </div>
                     </div>
-                </div>
                 <div class="footer-social">
                     <a href="https://www.linkedin.com/company/denali-tech-inc" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Visit Denali Tech on LinkedIn">
                         <svg viewBox="0 0 24 24">
@@ -2760,11 +2776,11 @@
                 themeToggle.setAttribute('aria-checked', isLight);
             };
             const savedTheme = localStorage.getItem('theme');
-            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
             if (savedTheme) {
                 applyTheme(savedTheme);
             } else {
-                applyTheme(prefersDark ? 'dark' : 'light');
+                // Default to dark mode
+                applyTheme('dark');
             }
             themeToggle.addEventListener('click', () => {
                 const newTheme = body.classList.contains('light-theme') ? 'dark' : 'light';
