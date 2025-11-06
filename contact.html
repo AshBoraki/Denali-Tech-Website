@@ -1611,6 +1611,7 @@
                     <input type="hidden" name="_captcha" value="true">
                     <input type="hidden" name="_subject" value="New Consultation Booking Request">
                     <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" value="https://www.denalitechs.com/thank-you/">
                     <input type="hidden" name="_cc" value="">
                     <!-- Honeypot fields to catch bots -->
                     <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -1845,24 +1846,35 @@
                 const submitBtn = form.querySelector('button[type="submit"]');
                 if (submitBtn) submitBtn.disabled = true;
                 const formData = new FormData(form);
-                try {
-                    const res = await fetch('https://formsubmit.co/ajax/services@denalitechs.com', {
-                        method: 'POST',
-                        headers: { 'Accept': 'application/json' },
-                        body: formData
-                    });
-                    if (res.ok) {
-                        window.location.href = '/thank-you/';
-                    } else {
-                        const err = document.getElementById('form-error');
-                        if (err) err.style.display = 'block';
+                    try {
+                        const res = await fetch('https://formsubmit.co/ajax/services@denalitechs.com', {
+                            method: 'POST',
+                            headers: { 'Accept': 'application/json' },
+                            body: formData
+                        });
+                        
+                        const responseData = await res.json().catch(() => null);
+                        
+                        if (res.ok && responseData && responseData.success !== false) {
+                            window.location.href = '/thank-you/';
+                        } else {
+                            const err = document.getElementById('form-error');
+                            if (err) {
+                                err.style.display = 'block';
+                                err.textContent = '❌ There was an error submitting your request. Please try again or call us at (312) 439-7500.';
+                            }
+                            if (submitBtn) submitBtn.disabled = false;
+                            console.error('Form submission error:', responseData || res.statusText);
+                        }
+                    } catch (err) {
+                        const errBox = document.getElementById('form-error');
+                        if (errBox) {
+                            errBox.style.display = 'block';
+                            errBox.textContent = '❌ Network error. Please check your connection and try again, or call us at (312) 439-7500.';
+                        }
                         if (submitBtn) submitBtn.disabled = false;
+                        console.error('Form submission error:', err);
                     }
-                } catch (err) {
-                    const errBox = document.getElementById('form-error');
-                    if (errBox) errBox.style.display = 'block';
-                    if (submitBtn) submitBtn.disabled = false;
-                }
             });
         });
         // Show success banner if redirected back from FormSubmit
@@ -2125,20 +2137,26 @@
                             body: formData
                         });
 
-                        if (res.ok) {
+                        const responseData = await res.json().catch(() => ({}));
+
+                        if (res.ok && responseData && responseData.success !== false) {
                             messageDiv.innerHTML = '<div class="form-success-message">✅ Thank you! Your booking request has been submitted. We\'ll contact you soon to confirm your consultation appointment.</div>';
                             bookingForm.reset();
                             // Scroll to message
                             messageDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                         } else {
-                            messageDiv.innerHTML = '<div class="form-error-message">❌ There was an error submitting your request. Please try again or call us at (312) 439-7500.</div>';
+                            const errorMsg = responseData.message || 'There was an error submitting your request.';
+                            messageDiv.innerHTML = `<div class="form-error-message">❌ ${errorMsg} Please try again or call us at (312) 439-7500.</div>`;
                             if (submitBtn) submitBtn.disabled = false;
                             if (submitBtn) submitBtn.textContent = 'Submit Booking Request';
+                            console.error('Form submission error:', responseData || res.statusText);
                         }
                     } catch (err) {
-                        messageDiv.innerHTML = '<div class="form-error-message">❌ There was an error submitting your request. Please try again or call us at (312) 439-7500.</div>';
+                        const errorMsg = (err.message && err.message.includes('fetch')) ? 'Network error. Please check your connection and try again.' : 'There was an error submitting your request.';
+                        messageDiv.innerHTML = `<div class="form-error-message">❌ ${errorMsg} Or call us at (312) 439-7500.</div>`;
                         if (submitBtn) submitBtn.disabled = false;
                         if (submitBtn) submitBtn.textContent = 'Submit Booking Request';
+                        console.error('Form submission error:', err);
                     }
                 });
             }
