@@ -459,14 +459,18 @@
             font-weight: 700;
             margin-bottom: 1.5rem;
             color: var(--text-primary);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .service-content h3 {
             font-family: var(--font-heading);
-            font-size: 1.5rem;
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
             font-weight: 600;
             margin-bottom: 1rem;
             color: var(--accent-primary);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .service-content p {
@@ -474,6 +478,8 @@
             color: var(--text-secondary);
             margin-bottom: 1.5rem;
             line-height: 1.7;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .service-features {
@@ -991,7 +997,7 @@
             .service-detail {
                 grid-template-columns: 1fr;
                 gap: 2rem;
-                margin-bottom: 80px;
+                margin-bottom: 60px;
             }
 
             .service-detail:nth-child(even) {
@@ -1049,7 +1055,7 @@
             }
 
             .service-detail {
-                margin-bottom: 60px;
+                margin-bottom: 50px;
             }
 
             .service-content {
@@ -1060,7 +1066,7 @@
                 order: 1;
                 margin-top: 0;
                 margin-bottom: 1.5rem;
-                border: 3px solid var(--accent-primary);
+                border: 2px solid var(--border-color);
                 padding: 0;
             }
 
