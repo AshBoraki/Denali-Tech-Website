@@ -6,8 +6,27 @@ We've switched from FormSubmit.co to Web3Forms because:
 - ✅ More reliable and stable service
 - ✅ Better error handling and debugging
 - ✅ Free tier with 250 submissions/month
-- ✅ Built-in spam protection
+- ✅ Built-in spam protection with hCaptcha
 - ✅ Better API response format
+
+## Important: hCaptcha Setup Required
+
+Web3Forms requires hCaptcha for spam protection. You have two options:
+
+### Option 1: Disable Captcha in Web3Forms Dashboard (Easiest)
+1. Go to [Web3Forms Dashboard](https://web3forms.com)
+2. Log in with your email
+3. Find your access keys
+4. Click on each access key
+5. **Disable "Require hCaptcha"** in the settings
+6. Save changes
+
+### Option 2: Get hCaptcha Site Key (If you want captcha)
+1. Go to [hCaptcha.com](https://www.hcaptcha.com/)
+2. Sign up for a free account
+3. Create a new site
+4. Get your Site Key
+5. Replace `10000000-ffff-ffff-ffff-000000000001` in the HTML files with your real site key
 
 ## Setup Instructions
 
