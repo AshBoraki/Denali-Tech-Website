@@ -645,48 +645,80 @@
 
         /* CONSULTATION INFO */
         .consultation-info {
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-interactive));
-            color: white;
-            padding: 3rem;
-            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid var(--border-color);
+            border-radius: 20px;
+            padding: 4rem 3rem;
             text-align: center;
             margin-bottom: 4rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        body.light-theme .consultation-info {
+            background: rgba(255, 255, 255, 0.8);
+            border: 2px solid rgba(249, 115, 22, 0.2);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
         }
 
         .consultation-info h2 {
             font-family: var(--font-heading);
-            font-size: 2rem;
+            font-size: clamp(2rem, 4vw, 2.8rem);
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            line-height: 1.2;
         }
 
-        .consultation-info p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
+        .consultation-info > p {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            margin-bottom: 3rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .consultation-features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2.5rem;
             margin-top: 2rem;
         }
 
         .consultation-feature {
             text-align: center;
+            padding: 2rem 1.5rem;
+            background: rgba(249, 115, 22, 0.1);
+            border: 1px solid rgba(249, 115, 22, 0.2);
+            border-radius: 16px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        body.light-theme .consultation-feature {
+            background: rgba(249, 115, 22, 0.08);
+            border: 1px solid rgba(249, 115, 22, 0.15);
+        }
+
+        .consultation-feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(249, 115, 22, 0.3);
         }
 
         .consultation-feature h3 {
             font-family: var(--font-heading);
-            font-size: 1.2rem;
+            font-size: clamp(1.3rem, 2.5vw, 1.5rem);
             font-weight: 600;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-primary);
+            line-height: 1.3;
         }
 
         .consultation-feature p {
-            font-size: 0.9rem;
-            opacity: 0.8;
+            font-size: clamp(1rem, 1.8vw, 1.1rem);
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin: 0;
         }
 
         /* CTA SECTION */
@@ -1267,8 +1299,17 @@
                 gap: 2rem;
             }
 
+            .consultation-info {
+                padding: 3rem 2rem;
+            }
+
             .consultation-features {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .consultation-feature {
+                padding: 1.5rem 1rem;
             }
 
             .footer-main-grid {
@@ -1301,6 +1342,27 @@
 
             .contact-section {
                 padding: 60px 5%;
+            }
+
+            .consultation-info {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .consultation-info h2 {
+                font-size: 1.75rem;
+            }
+
+            .consultation-info > p {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .consultation-features {
+                gap: 1.25rem;
+            }
+
+            .consultation-feature {
+                padding: 1.25rem 1rem;
             }
 
             .contact-info,
