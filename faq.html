@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MWPTRPDR');</script>
+    <!-- End Google Tag Manager -->
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Denali Tech | Chicago Home Automation Experts</title>
-    <meta name="description" content="Meet Ashkan Boraki and learn about Denali Tech's mission to make smart home technology accessible. Chicago-based home automation experts with 15+ years experience.">
-    <meta name="keywords" content="Denali Tech founder, Chicago home automation experts, smart home company Chicago, residential AV experts, home technology specialists, Control4 certified installer, custom smart home design, professional home automation team, trusted AV integrator, home automation process">
+    <title>Frequently Asked Questions | Denali Tech</title>
+    <meta name="description" content="Get answers to common questions about Denali Tech's smart home automation services, installation process, warranty, pricing, and more. We're here to help!">
+    <meta name="keywords" content="smart home FAQ, home automation questions, Control4 FAQ, smart home installation questions, home automation pricing, smart home warranty">
     
     <base href="/">
     <!-- Favicon -->
@@ -19,8 +27,7 @@
     <style>
         /* 
         ============================================
-        DENALI TECH ABOUT PAGE
-        Trust-Building Design for Non-Tech Customers
+        DENALI TECH FAQ PAGE
         ============================================
         */
 
@@ -87,6 +94,10 @@
             transition: background-color var(--transition);
         }
 
+        body.light-theme .header {
+            background: rgba(249, 250, 251, 0.95);
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -123,8 +134,10 @@
             filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
         }
 
-        .logo-text {
-            transition: opacity var(--transition), width var(--transition);
+        body.light-theme .logo {
+            color: var(--text-primary);
+            text-shadow: none;
+            filter: none;
         }
 
         .logo:hover {
@@ -156,6 +169,12 @@
             position: relative;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
             filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.6));
+        }
+
+        body.light-theme .nav-links a {
+            color: var(--text-primary);
+            text-shadow: none;
+            filter: none;
         }
 
         .nav-links a:hover {
@@ -201,6 +220,10 @@
             transition: all var(--transition);
         }
 
+        body.light-theme .menu-toggle span {
+            background: var(--text-primary);
+        }
+
         .menu-toggle.active span:nth-child(1) {
             transform: rotate(45deg) translate(8px, 8px);
         }
@@ -219,141 +242,47 @@
             top: 100%;
             left: 0;
             right: 0;
-            background: linear-gradient(135deg, rgba(10, 13, 24, 0.98), rgba(15, 23, 42, 0.98));
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            background: var(--bg-color);
             flex-direction: column;
             padding: 2rem;
-            gap: 0.75rem;
-            border-bottom: 2px solid var(--accent-primary);
-            box-shadow: 0 20px 60px rgba(249, 115, 22, 0.3), 0 0 0 1px rgba(249, 115, 22, 0.1);
+            gap: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             z-index: 999;
-            animation: slideDown 0.3s ease-out;
-            overflow: hidden;
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        body.light-theme .nav-links.active {
-            background: linear-gradient(135deg, rgba(249, 250, 251, 0.98), rgba(255, 255, 255, 0.98));
-            border-bottom: 2px solid var(--accent-primary);
-            box-shadow: 0 20px 60px rgba(249, 115, 22, 0.2), 0 0 0 1px rgba(249, 115, 22, 0.1);
-        }
-
-        .nav-links.active::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.1), transparent);
-            animation: shine 3s infinite;
-        }
-
-        @keyframes shine {
-            0% {
-                left: -100%;
-            }
-            100% {
-                left: 100%;
-            }
-        }
-
-        .nav-links.active li {
-            animation: fadeInUp 0.4s ease-out backwards;
-        }
-
-        .nav-links.active li:nth-child(1) { animation-delay: 0.1s; }
-        .nav-links.active li:nth-child(2) { animation-delay: 0.15s; }
-        .nav-links.active li:nth-child(3) { animation-delay: 0.2s; }
-        .nav-links.active li:nth-child(4) { animation-delay: 0.25s; }
-        .nav-links.active li:nth-child(5) { animation-delay: 0.3s; }
-        .nav-links.active li:nth-child(6) { animation-delay: 0.35s; }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .nav-links.active li a {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1rem 1.5rem;
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(249, 115, 22, 0.2);
-            color: var(--text-primary);
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-            text-shadow: none;
-            filter: none;
-        }
-
-        body.light-theme .nav-links.active li a {
-            background: rgba(249, 115, 22, 0.05);
-            border: 1px solid rgba(249, 115, 22, 0.2);
-        }
-
-        .nav-links.active li a::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .nav-links.active li a:hover::before {
-            left: 100%;
-        }
-
-        .nav-links.active li a:hover {
-            background: linear-gradient(135deg, rgba(249, 115, 22, 0.15), rgba(251, 146, 60, 0.15));
-            border-color: var(--accent-primary);
-            color: var(--accent-primary);
-            transform: translateX(5px);
-            box-shadow: 0 5px 20px rgba(249, 115, 22, 0.3);
-        }
-
-        .nav-links.active li a::after {
-            content: '→';
-            font-size: 1.2rem;
-            opacity: 0;
-            transform: translateX(-10px);
-            transition: all 0.3s ease;
-            color: var(--accent-primary);
-            display: block;
-        }
-
-        .nav-links.active li a:hover::after {
-            opacity: 1;
-            transform: translateX(0);
         }
 
         .nav-links .mobile-call-btn {
             display: none;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links .mobile-call-btn {
+                display: block;
+                margin-top: 1rem;
+                padding-top: 1.5rem;
+                border-top: 1px solid var(--border-color);
+            }
+
+            .nav-links .mobile-call-btn a {
+                display: block;
+                width: 100%;
+                text-align: center;
+                background: linear-gradient(135deg, var(--accent-primary), var(--accent-interactive));
+                color: white;
+                padding: 1rem 2rem;
+                border-radius: 8px;
+                text-decoration: none;
+                font-weight: 700;
+                font-size: 1.1rem;
+                transition: all var(--transition);
+                box-shadow: var(--shadow-subtle);
+                text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            }
+
+            .nav-links .mobile-call-btn a:hover {
+                transform: translateY(-2px);
+                box-shadow: var(--shadow-glow);
+            }
         }
 
         .cta-button {
@@ -367,6 +296,8 @@
             transition: all var(--transition);
             box-shadow: var(--shadow-subtle);
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            min-width: 44px;
+            min-height: 44px;
         }
 
         .cta-button:hover {
@@ -426,7 +357,7 @@
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 0 2rem;
         }
@@ -447,276 +378,107 @@
             font-size: 1.3rem;
             color: var(--text-secondary);
             margin-bottom: 2rem;
-            max-width: 600px;
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
+            line-height: 1.8;
         }
 
-        /* CONTENT SECTIONS */
-        .content-section {
-            padding: 80px 5%;
+        /* FAQ SECTION */
+        .faq-section {
+            padding: 100px 5%;
             background: var(--bg-color);
         }
 
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-header h2 {
-            font-family: var(--font-heading);
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        .section-header p {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            max-width: 600px;
+        .faq-container {
+            max-width: 900px;
             margin: 0 auto;
         }
 
-        .mission-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            margin-bottom: 6rem;
-        }
-
-        .mission-text h3 {
-            font-family: var(--font-heading);
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            color: var(--accent-primary);
-        }
-
-        .mission-text p {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            line-height: 1.7;
-        }
-
-        .mission-image {
-            position: relative;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: var(--shadow-glow);
-        }
-
-        .mission-image img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            transition: transform var(--transition);
-        }
-
-        .mission-image:hover img {
-            transform: scale(1.05);
-        }
-
-        /* VALUES SECTION */
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .value-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 2rem;
+        .faq-header {
             text-align: center;
-            transition: all var(--transition);
-            position: relative;
-            overflow: hidden;
+            margin-bottom: 3rem;
         }
 
-        .value-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--accent-primary), transparent);
-            opacity: 0;
-            transition: opacity var(--transition);
-        }
-
-        .value-card:hover::before {
-            opacity: 0.1;
-        }
-
-        .value-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent-primary);
-            box-shadow: var(--shadow-glow);
-        }
-
-        .value-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .value-card h3 {
+        .faq-header h2 {
             font-family: var(--font-heading);
-            font-size: 1.5rem;
-            font-weight: 600;
+            font-size: clamp(2rem, 4vw, 3rem);
             margin-bottom: 1rem;
             color: var(--text-primary);
-            position: relative;
-            z-index: 2;
         }
 
-        .value-card p {
+        .faq-header p {
+            font-size: 1.2rem;
             color: var(--text-secondary);
-            position: relative;
-            z-index: 2;
         }
 
-        /* PROCESS SECTION */
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 3rem;
-            margin-top: 4rem;
-            padding: 0 2rem;
-        }
-
-        @media (max-width: 1200px) {
-            .process-steps {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2.5rem;
-                padding: 0 1rem;
-            }
-        }
-
-        @media (max-width: 900px) {
-            .process-steps {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
-                padding: 0 1rem;
-            }
-
-            .process-step {
-                padding: 2rem 1.5rem;
-            }
-
-            .step-number {
-                width: 70px;
-                height: 70px;
-                font-size: 1.75rem;
-                margin-bottom: 1.5rem;
-            }
-
-            .process-step h3 {
-                font-size: 1.25rem;
-            }
-        }
-
-        .process-step {
-            text-align: center;
-            padding: 3rem 2rem;
-            position: relative;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            transition: all var(--transition);
-        }
-
-        .process-step:hover {
-            transform: translateY(-8px);
-            border-color: var(--accent-primary);
-            box-shadow: var(--shadow-glow);
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .step-number {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-interactive));
-            color: white;
-            border-radius: 50%;
+        .faq-list {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: var(--font-heading);
-            font-size: 2rem;
-            font-weight: 700;
-            margin: 0 auto 2rem;
-            box-shadow: var(--shadow-glow);
-            transition: all var(--transition);
+            flex-direction: column;
+            gap: 1rem;
         }
 
-        .process-step:hover .step-number {
-            transform: scale(1.1) rotate(5deg);
-        }
-
-        .process-step h3 {
-            font-family: var(--font-heading);
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        .process-step p {
-            color: var(--text-secondary);
-            line-height: 1.7;
-            font-size: 1.05rem;
-        }
-
-        /* STATS SECTION */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 2rem 1rem;
+        .faq-item {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--border-color);
-            border-radius: 16px;
+            border-radius: 12px;
+            overflow: hidden;
             transition: all var(--transition);
         }
 
-        .stat-item:hover {
-            transform: translateY(-5px);
+        .faq-item.active {
             border-color: var(--accent-primary);
-            box-shadow: var(--shadow-glow);
+            box-shadow: var(--shadow-subtle);
         }
 
-        .stat-number {
-            font-family: var(--font-heading);
-            font-size: 3rem;
-            font-weight: 700;
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            user-select: none;
+            transition: color var(--transition);
+        }
+
+        .faq-question:hover {
             color: var(--accent-primary);
-            display: block;
-            margin-bottom: 0.5rem;
         }
 
-        .stat-label {
+        .faq-question-icon {
+            font-size: 1.5rem;
+            transition: transform var(--transition);
+            color: var(--accent-primary);
+        }
+
+        .faq-item.active .faq-question-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0 1.5rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 1.5rem 1.5rem;
+        }
+
+        .faq-answer p {
             color: var(--text-secondary);
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            line-height: 1.8;
+            margin: 0;
         }
 
         /* CTA SECTION */
         .cta-section {
-            padding: 120px 5%;
+            padding: 100px 5%;
             background: linear-gradient(135deg, var(--accent-primary), var(--accent-interactive));
             color: white;
             text-align: center;
@@ -741,24 +503,26 @@
         .btn-primary {
             background: white;
             color: var(--accent-primary);
-            padding: 1rem 2rem;
+            padding: 1.1rem 2rem;
             border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.15rem;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
             transition: all var(--transition);
-            box-shadow: var(--shadow-glow);
+            box-shadow: var(--shadow-subtle);
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
+            min-width: 44px;
+            min-height: 44px;
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
-        /* FOOTER - Your Amazing Design */
+        /* FOOTER */
         .prestige-footer {
             padding: 80px 5% 60px;
             width: 100%;
@@ -998,68 +762,6 @@
             text-decoration: underline;
         }
 
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-interactive));
-            color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 15px rgba(249, 115, 22, 0.4);
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(20px);
-            transition: all var(--transition);
-            z-index: 999;
-            min-width: 50px;
-            min-height: 50px;
-        }
-
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .back-to-top:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 6px 20px rgba(249, 115, 22, 0.6);
-            background: linear-gradient(135deg, var(--accent-interactive), var(--accent-primary));
-        }
-
-        .back-to-top:active {
-            transform: translateY(-2px);
-        }
-
-        .back-to-top:focus-visible {
-            outline: 3px solid var(--accent-hover);
-            outline-offset: 3px;
-        }
-
-        @media (max-width: 768px) {
-            .back-to-top {
-                bottom: 1.5rem;
-                right: 1.5rem;
-                width: 44px;
-                height: 44px;
-                min-width: 44px;
-                min-height: 44px;
-            }
-
-            .back-to-top svg {
-                width: 20px;
-                height: 20px;
-            }
-        }
-
         .theme-toggle {
             display: flex;
             align-items: center;
@@ -1134,6 +836,52 @@
             transform: scale(1.1);
         }
 
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-interactive));
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(249, 115, 22, 0.4);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all var(--transition);
+            z-index: 999;
+            min-width: 50px;
+            min-height: 50px;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(249, 115, 22, 0.6);
+            background: linear-gradient(135deg, var(--accent-interactive), var(--accent-primary));
+        }
+
+        .back-to-top:active {
+            transform: translateY(-2px);
+        }
+
+        .back-to-top:focus-visible {
+            outline: 3px solid var(--accent-hover);
+            outline-offset: 3px;
+        }
+
         /* Mobile Responsive */
         @media (max-width: 1024px) {
             .footer-main-grid {
@@ -1185,38 +933,12 @@
                 display: none;
             }
 
-            .mission-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
+            .hero {
+                padding: 100px 0 60px;
             }
 
-            .values-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .process-steps {
-                grid-template-columns: 1fr !important;
-                gap: 2rem !important;
-                padding: 0 !important;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .founder-story {
-                grid-template-columns: 1fr !important;
-                gap: 2rem !important;
-            }
-
-            .founder-image-side {
-                text-align: center;
-            }
-
-            .founder-image-side img {
-                width: 200px !important;
-                height: 200px !important;
-                max-width: 90vw !important;
+            .faq-section {
+                padding: 60px 5%;
             }
 
             .footer-main-grid {
@@ -1225,6 +947,20 @@
 
             .prestige-footer {
                 padding: 60px 5% 40px;
+            }
+
+            .back-to-top {
+                bottom: 1.5rem;
+                right: 1.5rem;
+                width: 44px;
+                height: 44px;
+                min-width: 44px;
+                min-height: 44px;
+            }
+
+            .back-to-top svg {
+                width: 20px;
+                height: 20px;
             }
         }
 
@@ -1244,15 +980,16 @@
             }
 
             .hero {
-                padding: 100px 0 60px;
+                padding: 80px 0 40px;
             }
 
-            .content-section {
-                padding: 60px 5%;
+            .faq-section {
+                padding: 40px 5%;
             }
 
-            .stats-grid {
-                grid-template-columns: 1fr;
+            .faq-question {
+                padding: 1.25rem;
+                font-size: 1rem;
             }
 
             .footer-main-grid {
@@ -1302,9 +1039,6 @@
                 animation: none;
             }
 
-            .mission-image:hover img,
-            .value-card:hover,
-            .stat-item:hover,
             .footer-column:hover,
             .footer-column a:hover,
             .social-icon:hover,
@@ -1315,6 +1049,7 @@
 
         /* Focus States for Accessibility */
         .cta-button:focus-visible,
+        .btn-primary:focus-visible,
         .footer-column a:focus-visible,
         .toggle-switch:focus-visible,
         .social-icon:focus-visible {
@@ -1323,8 +1058,81 @@
             border-radius: 4px;
         }
     </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do you offer free consultations?",
+          "acceptedAnswer": {"@type": "Answer","text": "Yes! We offer a no-pressure, free in-home or virtual consultation to design the right solution for you. We'll come to your location, listen to your needs, and provide honest advice - no sales pitch, just helpful guidance."}
+        },
+        {
+          "@type": "Question",
+          "name": "What areas do you serve?",
+          "acceptedAnswer": {"@type": "Answer","text": "We serve Mt Prospect and the greater Chicago metro area, including Arlington Heights, Schaumburg, Elk Grove Village, Des Plaines, Park Ridge, Niles, Skokie, Evanston, Glenview, Northbrook, and surrounding communities."}
+        },
+        {
+          "@type": "Question",
+          "name": "Which systems do you install?",
+          "acceptedAnswer": {"@type": "Answer","text": "We install smart lighting, motorized shades, home theaters, whole-home audio, WiFi networking, and security systems. We're authorized dealers for Control4, URC, Lutron, Sonos, and many other premium brands."}
+        },
+        {
+          "@type": "Question",
+          "name": "How long does installation take?",
+          "acceptedAnswer": {"@type": "Answer","text": "Installation time varies based on the scope of your project. A simple WiFi network setup might take a few hours, while a complete whole-home automation system could take several days. We'll provide a detailed timeline during your consultation."}
+        },
+        {
+          "@type": "Question",
+          "name": "Do you provide warranty and support?",
+          "acceptedAnswer": {"@type": "Answer","text": "Absolutely! All products come with full manufacturer warranty, and we provide ongoing support. If something doesn't work right, just call us - we'll fix it quickly, no questions asked. We're here for you long after installation."}
+        },
+        {
+          "@type": "Question",
+          "name": "Can I control everything from my phone?",
+          "acceptedAnswer": {"@type": "Answer","text": "Yes! Most of our systems can be controlled from your smartphone or tablet. You can also use voice control with Alexa or Google Assistant, or use dedicated remotes and keypads. We'll set it up to work the way that's easiest for you."}
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to be tech-savvy to use these systems?",
+          "acceptedAnswer": {"@type": "Answer","text": "Not at all! That's exactly why we exist - to make smart home technology simple for everyone. We design systems that are easy to use, and we'll train you on how to use everything. We make it simple, not complicated."}
+        },
+        {
+          "@type": "Question",
+          "name": "How much does a smart home system cost?",
+          "acceptedAnswer": {"@type": "Answer","text": "Every home is different, so pricing varies based on your specific needs, home size, and the services you choose. We offer everything from simple WiFi upgrades to complete whole-home automation. The best way to get an accurate quote is to schedule a free consultation - we'll assess your needs and provide transparent pricing with no surprises."}
+        },
+        {
+          "@type": "Question",
+          "name": "Do you work with existing systems or only new installations?",
+          "acceptedAnswer": {"@type": "Answer","text": "We work with both! We can integrate new smart home technology with your existing systems, or start fresh with a complete installation. During your free consultation, we'll assess your current setup and recommend the best approach for your needs."}
+        },
+        {
+          "@type": "Question",
+          "name": "What brands do you work with?",
+          "acceptedAnswer": {"@type": "Answer","text": "We're authorized dealers for Control4, URC, Lutron, Sonos, Sony, KEF, Klipsch, Marantz, JVC, and many other premium brands. We only work with trusted, reliable brands that we've tested and know work well. Check out our Brands page to see all our partners."}
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer financing options?",
+          "acceptedAnswer": {"@type": "Answer","text": "Yes, we offer flexible financing options to make smart home technology accessible. During your consultation, we'll discuss your budget and show you financing options that work for you. We want to make it easy for you to get the smart home you deserve."}
+        },
+        {
+          "@type": "Question",
+          "name": "What if something breaks after installation?",
+          "acceptedAnswer": {"@type": "Answer","text": "Don't worry! All products come with manufacturer warranty, and we provide ongoing support. If something doesn't work right, just give us a call. We'll troubleshoot over the phone or come out to fix it. Your satisfaction is our priority, and we're here for you long after installation."}
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWPTRPDR"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -1337,7 +1145,7 @@
                     <li><a href="/">Home</a></li>
                     <li><a href="/services/">What We Do</a></li>
                     <li><a href="/projects/">Projects</a></li>
-                    <li><a href="/about/" style="color: var(--accent-primary);">About Us</a></li>
+                    <li><a href="/about/">About Us</a></li>
                     <li><a href="/contact/">Contact</a></li>
                 </ul>
                 <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
@@ -1354,161 +1162,124 @@
     <section class="hero">
         <div class="hero-background"></div>
         <div class="hero-content">
-            <h1>About Denali Tech</h1>
-            <p>We're more than just a tech company. We're your partners in making your home smart, simple, and exactly what you need it to be.</p>
+            <h1>Frequently Asked Questions</h1>
+            <p>Got questions? We've got answers. Find everything you need to know about our smart home automation services, installation process, and more.</p>
         </div>
     </section>
 
-    <!-- Founder Story Section -->
-    <section class="content-section" style="background: var(--bg-secondary);">
+    <!-- FAQ Section -->
+    <section class="faq-section">
         <div class="container">
-            <div class="section-header">
-                <h2>Our Founder's Story: Ashkan Boraki</h2>
-                <p>From Persia to the United States - A journey of passion, innovation, and making technology accessible</p>
-            </div>
-            
-            <div class="founder-story" style="display: grid; grid-template-columns: 300px 1fr; gap: 3rem; align-items: start; margin-top: 3rem;">
-                <div class="founder-image-side" style="text-align: center;">
-                    <img src="Video/funder.jpg" alt="Ashkan Boraki, Founder of Denali Tech" loading="lazy" style="width: 280px; height: 280px; object-fit: cover; border-radius: 50%; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); border: 5px solid var(--accent-primary); max-width: 100%;">
-                </div>
-                
-                <div class="founder-content">
-                    <p style="font-size: 1.1rem; line-height: 1.9; margin-bottom: 1.5rem; color: var(--text-primary);">
-                        From a young age in Persia, Ashkan was fascinated by computers. By elementary school, he was taking apart computers and experimenting with electronics. This early passion drove him to become an entrepreneur.
-                    </p>
-                    
-                    <p style="font-size: 1.1rem; line-height: 1.9; margin-bottom: 1.5rem; color: var(--text-primary);">
-                        In high school, Ashkan started a custom car audio shop, building innovative sound systems and solving problems. His love for technology and business grew, bringing him to the U.S. in 2013.
-                    </p>
-                    
-                    <p style="font-size: 1.1rem; line-height: 1.9; margin-bottom: 1.5rem; color: var(--text-primary);">
-                        In America, Ashkan learned English and sharpened his programming skills, becoming a lead programmer at Magnolia Best Buy. He mastered complex AV projects and integrated cutting-edge technology into practical solutions.
-                    </p>
-                    
-                    <p style="font-size: 1.1rem; line-height: 1.9; margin-bottom: 1.5rem; color: var(--text-primary);">
-                        In 2022, Ashkan founded Denali Tech, combining his passion for technology, programming, and home automation. Today, we use the latest technology to enhance customer experiences and make smart homes accessible to everyone.
-                    </p>
-                    
-                    <p style="font-size: 1.1rem; line-height: 1.9; color: var(--accent-primary); font-style: italic; font-weight: 600; margin-top: 2rem;">
-                        "Ever-evolving, always learning, and dedicated to bringing the best of technology to every home."
-                    </p>
-                </div>
-            </div>
-            
-            <div style="margin-top: 3rem; text-align: center;">
-                <img src="Video/Denali Van.jpg" alt="Denali Tech Van - Ready to Serve You" loading="lazy" style="max-width: 800px; width: 100%; border-radius: 20px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);">
-            </div>
-        </div>
-    </section>
-
-    <!-- Mission Section -->
-    <section class="content-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Our Mission</h2>
-                <p>Making technology simple for everyone</p>
-            </div>
-            <div class="mission-content">
-                <div class="mission-text">
-                    <h3>We're Here to Make Technology Simple</h3>
-                    <p>At Denali Tech, we're more than a technology provider. We're innovators who make home automation and theater systems accessible. Our mission is to integrate advanced technology into daily life, creating a home of convenience, entertainment, and security.</p>
-                    <p>We create spaces where technology enhances experiences without complication. We don't push unnecessary gadgets—we listen to what you need and make it simple and reliable.</p>
-                </div>
-                <div class="mission-image">
-                    <div style="width: 100%; height: 400px; background: linear-gradient(135deg, var(--accent-primary), var(--accent-interactive)); border-radius: 16px; box-shadow: var(--shadow-glow); display: flex; align-items: center; justify-content: center;">
-                        <div style="text-align: center; color: white; padding: 2rem;">
-                            <h3 style="font-size: 2.5rem; margin-bottom: 1rem;">🏠✨</h3>
-                            <p style="font-size: 1.3rem; font-weight: 600;">Smart Homes Made Simple</p>
-                            <p style="font-size: 1rem; margin-top: 1rem; opacity: 0.9;">Your Trusted Technology Partner</p>
+            <div class="faq-container">
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Do you offer free consultations?</span>
+                            <span class="faq-question-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! We offer a no-pressure, free in-home or virtual consultation to design the right solution for you. We'll come to your location, listen to your needs, and provide honest advice - no sales pitch, just helpful guidance.</p>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Values Section -->
-    <section class="content-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Our Core Values</h2>
-                <p>These are the principles that guide everything we do:</p>
-            </div>
-            <div class="values-grid">
-                <div class="value-card">
-                    <div class="value-icon">🤝</div>
-                    <h3>Client Focus</h3>
-                    <p>We don't just provide solutions; we tailor them to fit your unique needs and desires, exceeding expectations at every turn. We listen to what you actually want and make it simple.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">🚀</div>
-                    <h3>Innovation</h3>
-                    <p>Staying ahead of the curve, we lead with cutting-edge technology, ensuring our clients always experience the best and latest in the tech world.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">⭐</div>
-                    <h3>Quality</h3>
-                    <p>Our commitment to excellence is unwavering. Every project we undertake is a testament to our dedication to delivering superior quality and craftsmanship.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process Section -->
-    <section class="content-section" id="process">
-        <div class="container">
-            <div class="section-header">
-                <h2>Our Service Process</h2>
-                <p>Here's exactly how we work with you to make your home smart:</p>
-            </div>
-            <div class="process-steps">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <h3>Consultation & Design</h3>
-                    <p>We meet with you to understand your needs and create a custom design plan tailored to your home.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <h3>Project Planning</h3>
-                    <p>We outline the project scope, determine resources needed, and create a timeline for smooth completion.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <h3>Installation</h3>
-                    <p>Our expert technicians install equipment and complete all necessary construction and wiring.</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">4</div>
-                    <h3>Testing & Support</h3>
-                    <p>We thoroughly test everything, provide training, and offer ongoing support whenever you need us.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="content-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Why People Trust Us</h2>
-                <p>Our track record speaks for itself:</p>
-            </div>
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <span class="stat-number">500+</span>
-                    <span class="stat-label">Projects Completed</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">15+</span>
-                    <span class="stat-label">Years Experience</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">100%</span>
-                    <span class="stat-label">Client Satisfaction</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">24/7</span>
-                    <span class="stat-label">Support Available</span>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>What areas do you serve?</span>
+                            <span class="faq-question-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We serve Mt Prospect and the greater Chicago metro area, including Arlington Heights, Schaumburg, Elk Grove Village, Des Plaines, Park Ridge, Niles, Skokie, Evanston, Glenview, Northbrook, and surrounding communities.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Which systems do you install?</span>
+                            <span class="faq-question-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We install smart lighting, motorized shades, home theaters, whole-home audio, WiFi networking, and security systems. We're authorized dealers for Control4, URC, Lutron, Sonos, Sony, KEF, Klipsch, Marantz, JVC, and many other premium brands.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How long does installation take?</span>
+                            <span class="faq-question-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Installation time varies based on the scope of your project. A simple WiFi network setup might take a few hours, while a complete whole-home automation system could take several days. We'll provide a detailed timeline during your consultation.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Do you provide warranty and support?</span>
+                            <span class="faq-question-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Absolutely! All products come with full manufacturer warranty, and we provide ongoing support. If something doesn't work right, just call us - we'll fix it quickly, no questions asked. We're here for you long after installation.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Can I control everything from my phone?</span>
+                            <span class="faq-question-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! Most of our systems can be controlled from your smartphone or tablet. You can also use voice control with Alexa or Google Assistant, or use dedicated remotes and keypads. We'll set it up to work the way that's easiest for you.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Do I need to be tech-savvy to use these systems?</span>
+                            <span class="faq-question-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Not at all! That's exactly why we exist - to make smart home technology simple for everyone. We design systems that are easy to use, and we'll train you on how to use everything. We make it simple, not complicated.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Do you work with existing systems or only new installations?</span>
+                            <span class="faq-question-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We work with both! We can integrate new smart home technology with your existing systems, or start fresh with a complete installation. During your free consultation, we'll assess your current setup and recommend the best approach for your needs.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>What brands do you work with?</span>
+                            <span class="faq-question-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We're authorized dealers for Control4, URC, Lutron, Sonos, Sony, KEF, Klipsch, Marantz, JVC, and many other premium brands. We only work with trusted, reliable brands that we've tested and know work well. Check out our Brands page to see all our partners.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Do you offer financing options?</span>
+                            <span class="faq-question-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we offer flexible financing options to make smart home technology accessible. During your consultation, we'll discuss your budget and show you financing options that work for you. We want to make it easy for you to get the smart home you deserve.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>What if something breaks after installation?</span>
+                            <span class="faq-question-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Don't worry! All products come with manufacturer warranty, and we provide ongoing support. If something doesn't work right, just give us a call. We'll troubleshoot over the phone or come out to fix it. Your satisfaction is our priority, and we're here for you long after installation.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How much does a smart home system cost?</span>
+                            <span class="faq-question-icon">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Every home is different, so pricing varies based on your specific needs, home size, and the services you choose. We offer everything from simple WiFi upgrades to complete whole-home automation. The best way to get an accurate quote is to schedule a free consultation - we'll assess your needs and provide transparent pricing with no surprises.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1517,13 +1288,13 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <h2>Ready to Work With Us?</h2>
-            <p>Get a free consultation and discover how Denali Tech can enhance your lifestyle with cutting-edge smart home technology.</p>
-            <a href="/contact/" class="btn-primary">📅 Get Your Free Consultation</a>
+            <h2>Still Have Questions?</h2>
+            <p>We're here to help! Contact us for a free consultation and get all your questions answered.</p>
+            <a href="/contact/" class="btn-primary">Get Your Free Consultation</a>
         </div>
     </section>
 
-    <!-- Footer - Your Amazing Design -->
+    <!-- Footer -->
     <footer class="prestige-footer" id="main-footer">
         <div class="footer-background">
             <div></div>
@@ -1636,7 +1407,6 @@
     </button>
 
     <script>
-        // Footer Interactive Canvas
         document.addEventListener('DOMContentLoaded', function() {
             const footer = document.getElementById('main-footer');
             const canvas = document.getElementById('interactive-canvas');
@@ -1828,7 +1598,26 @@
                     }
                 });
             }
+
+            // FAQ Accordion Functionality
+            document.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('click', () => {
+                    const faqItem = question.parentElement;
+                    const isActive = faqItem.classList.contains('active');
+                    
+                    // Close all FAQ items
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    
+                    // Open clicked item if it wasn't active
+                    if (!isActive) {
+                        faqItem.classList.add('active');
+                    }
+                });
+            });
         });
     </script>
 </body>
 </html>
+

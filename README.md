@@ -21,6 +21,9 @@ Denali Tech specializes in making smart home technology accessible to everyone. 
 - **Services** (`services.html`) - Complete service details with video demonstrations
 - **About** (`about.html`) - Company mission, founder story, values, process
 - **Contact** (`contact.html`) - Free consultation booking form
+- **Brands** (`brands.html`) - Trusted brand partners and authorized dealers
+- **Projects** (`projects.html`) - Project showcase gallery
+- **FAQ** (`faq.html`) - Frequently asked questions
 - **Privacy** (`privacy.html`) - Privacy policy
 
 ### 🔧 Technical Features
