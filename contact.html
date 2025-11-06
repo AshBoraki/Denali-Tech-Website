@@ -1565,13 +1565,13 @@
                     <div class="form-error" id="form-error">
                         Please fill in all required fields.
                     </div>
-                    <form id="consultation-form" action="https://formsubmit.co/services@denalitechs.com" method="POST" novalidate>
-                        <!-- FormSubmit controls -->
-                        <input type="hidden" name="_subject" value="Denali Tech: New Consultation Request">
-                        <input type="hidden" name="_template" value="table">
-                        <input type="hidden" name="_captcha" value="true">
-                        <input type="hidden" name="_next" value="https://www.denalitechs.com/thank-you/">
-                        <input type="hidden" name="_cc" value="">
+                    <form id="consultation-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+                        <!-- Web3Forms controls -->
+                        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+                        <input type="hidden" name="subject" value="Denali Tech: New Consultation Request">
+                        <input type="hidden" name="from_name" value="Denali Tech Website">
+                        <input type="hidden" name="to_email" value="services@denalitechs.com">
+                        <input type="hidden" name="redirect" value="https://www.denalitechs.com/thank-you/">
                         <!-- Honeypot fields to catch bots -->
                         <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
                         <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -1669,12 +1669,12 @@
             <div class="booking-form-container">
                 <h2>📅 Schedule Your Free Consultation</h2>
                 <p>Tell us about your project and we'll come to your location for a free consultation. Fill out the form below with your details.</p>
-                <form class="booking-form" id="booking-form" action="https://formsubmit.co/ajax/services@denalitechs.com" method="POST">
-                    <input type="hidden" name="_captcha" value="true">
-                    <input type="hidden" name="_subject" value="New Consultation Booking Request">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_next" value="https://www.denalitechs.com/thank-you/">
-                    <input type="hidden" name="_cc" value="">
+                <form class="booking-form" id="booking-form" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+                    <input type="hidden" name="subject" value="New Consultation Booking Request">
+                    <input type="hidden" name="from_name" value="Denali Tech Website">
+                    <input type="hidden" name="to_email" value="services@denalitechs.com">
+                    <input type="hidden" name="redirect" value="https://www.denalitechs.com/thank-you/">
                     <!-- Honeypot fields to catch bots -->
                     <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
                     <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -1909,7 +1909,7 @@
                 if (submitBtn) submitBtn.disabled = true;
                 const formData = new FormData(form);
                     try {
-                        const res = await fetch('https://formsubmit.co/ajax/services@denalitechs.com', {
+                        const res = await fetch('https://api.web3forms.com/submit', {
                             method: 'POST',
                             headers: { 'Accept': 'application/json' },
                             body: formData
@@ -1917,13 +1917,14 @@
                         
                         const responseData = await res.json().catch(() => null);
                         
-                        if (res.ok && responseData && responseData.success !== false) {
+                        if (res.ok && responseData && responseData.success) {
                             window.location.href = '/thank-you/';
                         } else {
                             const err = document.getElementById('form-error');
                             if (err) {
+                                const errorMsg = responseData?.message || 'There was an error submitting your request.';
                                 err.style.display = 'block';
-                                err.textContent = '❌ There was an error submitting your request. Please try again or call us at (312) 439-7500.';
+                                err.textContent = `❌ ${errorMsg} Please try again or call us at (312) 439-7500.`;
                             }
                             if (submitBtn) submitBtn.disabled = false;
                             console.error('Form submission error:', responseData || res.statusText);
@@ -2193,7 +2194,7 @@
                     const formData = new FormData(bookingForm);
                     
                     try {
-                        const res = await fetch('https://formsubmit.co/ajax/services@denalitechs.com', {
+                        const res = await fetch('https://api.web3forms.com/submit', {
                             method: 'POST',
                             headers: { 'Accept': 'application/json' },
                             body: formData
@@ -2201,13 +2202,13 @@
 
                         const responseData = await res.json().catch(() => ({}));
 
-                        if (res.ok && responseData && responseData.success !== false) {
+                        if (res.ok && responseData && responseData.success) {
                             messageDiv.innerHTML = '<div class="form-success-message">✅ Thank you! Your booking request has been submitted. We\'ll contact you soon to confirm your consultation appointment.</div>';
                             bookingForm.reset();
                             // Scroll to message
                             messageDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                         } else {
-                            const errorMsg = responseData.message || 'There was an error submitting your request.';
+                            const errorMsg = responseData?.message || 'There was an error submitting your request.';
                             messageDiv.innerHTML = `<div class="form-error-message">❌ ${errorMsg} Please try again or call us at (312) 439-7500.</div>`;
                             if (submitBtn) submitBtn.disabled = false;
                             if (submitBtn) submitBtn.textContent = 'Submit Booking Request';

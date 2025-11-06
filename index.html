@@ -2330,12 +2330,12 @@
             <div class="booking-form-container">
                 <h2>📅 Schedule Your Free Consultation</h2>
                 <p>Tell us about your project and we'll come to your location for a free consultation. Fill out the form below with your details.</p>
-                <form class="booking-form" id="booking-form" action="https://formsubmit.co/ajax/services@denalitechs.com" method="POST">
-                    <input type="hidden" name="_captcha" value="true">
-                    <input type="hidden" name="_subject" value="New Consultation Booking Request">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_next" value="https://www.denalitechs.com/thank-you/">
-                    <input type="hidden" name="_cc" value="">
+                <form class="booking-form" id="booking-form" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+                    <input type="hidden" name="subject" value="New Consultation Booking Request">
+                    <input type="hidden" name="from_name" value="Denali Tech Website">
+                    <input type="hidden" name="to_email" value="services@denalitechs.com">
+                    <input type="hidden" name="redirect" value="https://www.denalitechs.com/thank-you/">
                     <!-- Honeypot fields to catch bots -->
                     <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
                     <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -2425,11 +2425,11 @@
             <div class="newsletter-content">
                 <h2>Stay Updated with Smart Home Tips</h2>
                 <p>Get the latest smart home tips, product updates, and special offers delivered straight to your inbox. No spam, just helpful information.</p>
-                <form class="newsletter-form" id="newsletter-form" action="https://formsubmit.co/ajax/Hello@denalitechs.com" method="POST">
-                    <input type="hidden" name="_subject" value="Newsletter Subscription">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_captcha" value="true">
-                    <input type="hidden" name="_cc" value="">
+                <form class="newsletter-form" id="newsletter-form" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+                    <input type="hidden" name="subject" value="Newsletter Subscription">
+                    <input type="hidden" name="from_name" value="Denali Tech Website">
+                    <input type="hidden" name="to_email" value="Hello@denalitechs.com">
                     <!-- Honeypot field to catch bots -->
                     <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
                     <!-- Additional honeypot -->
@@ -2826,7 +2826,9 @@
                             }
                         });
                         
-                        if (response.ok) {
+                        const responseData = await response.json().catch(() => ({}));
+                        
+                        if (response.ok && responseData && responseData.success) {
                             newsletterMessage.textContent = '✓ Thank you for subscribing! Check your email to confirm.';
                             newsletterMessage.style.color = '#90EE90';
                             newsletterForm.reset();
@@ -2839,11 +2841,15 @@
                                 });
                             }
                         } else {
-                            throw new Error('Subscription failed');
+                            const errorMsg = responseData?.message || 'Subscription failed';
+                            newsletterMessage.textContent = `❌ ${errorMsg} Please try again or contact us directly.`;
+                            newsletterMessage.style.color = '#FFB6C1';
+                            console.error('Newsletter subscription error:', responseData || response.statusText);
                         }
                     } catch (error) {
-                        newsletterMessage.textContent = 'Something went wrong. Please try again or contact us directly.';
+                        newsletterMessage.textContent = '❌ Network error. Please check your connection and try again.';
                         newsletterMessage.style.color = '#FFB6C1';
+                        console.error('Newsletter subscription error:', error);
                     }
                 });
             }
@@ -2977,7 +2983,7 @@
                     const formData = new FormData(bookingForm);
                     
                     try {
-                        const res = await fetch('https://formsubmit.co/ajax/services@denalitechs.com', {
+                        const res = await fetch('https://api.web3forms.com/submit', {
                             method: 'POST',
                             headers: { 'Accept': 'application/json' },
                             body: formData
@@ -2985,13 +2991,13 @@
 
                         const responseData = await res.json().catch(() => ({}));
 
-                        if (res.ok && responseData && responseData.success !== false) {
+                        if (res.ok && responseData && responseData.success) {
                             messageDiv.innerHTML = '<div class="form-success-message">✅ Thank you! Your booking request has been submitted. We\'ll contact you soon to confirm your consultation appointment.</div>';
                             bookingForm.reset();
                             // Scroll to message
                             messageDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                         } else {
-                            const errorMsg = responseData.message || 'There was an error submitting your request.';
+                            const errorMsg = responseData?.message || 'There was an error submitting your request.';
                             messageDiv.innerHTML = `<div class="form-error-message">❌ ${errorMsg} Please try again or call us at (312) 439-7500.</div>`;
                             if (submitBtn) submitBtn.disabled = false;
                             if (submitBtn) submitBtn.textContent = 'Submit Booking Request';
