@@ -271,13 +271,137 @@
             top: 100%;
             left: 0;
             right: 0;
-            background: var(--bg-color);
+            background: linear-gradient(135deg, rgba(10, 13, 24, 0.98), rgba(15, 23, 42, 0.98));
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             flex-direction: column;
             padding: 2rem;
-            gap: 1.5rem;
-            border-bottom: 1px solid var(--border-color);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            gap: 0.75rem;
+            border-bottom: 2px solid var(--accent-primary);
+            box-shadow: 0 20px 60px rgba(249, 115, 22, 0.3), 0 0 0 1px rgba(249, 115, 22, 0.1);
             z-index: 999;
+            animation: slideDown 0.3s ease-out;
+            overflow: hidden;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        body.light-theme .nav-links.active {
+            background: linear-gradient(135deg, rgba(249, 250, 251, 0.98), rgba(255, 255, 255, 0.98));
+            border-bottom: 2px solid var(--accent-primary);
+            box-shadow: 0 20px 60px rgba(249, 115, 22, 0.2), 0 0 0 1px rgba(249, 115, 22, 0.1);
+        }
+
+        .nav-links.active::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.1), transparent);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% {
+                left: -100%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+
+        .nav-links.active li {
+            animation: fadeInUp 0.4s ease-out backwards;
+        }
+
+        .nav-links.active li:nth-child(1) { animation-delay: 0.1s; }
+        .nav-links.active li:nth-child(2) { animation-delay: 0.15s; }
+        .nav-links.active li:nth-child(3) { animation-delay: 0.2s; }
+        .nav-links.active li:nth-child(4) { animation-delay: 0.25s; }
+        .nav-links.active li:nth-child(5) { animation-delay: 0.3s; }
+        .nav-links.active li:nth-child(6) { animation-delay: 0.35s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .nav-links.active li a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(249, 115, 22, 0.2);
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            text-shadow: none;
+            filter: none;
+        }
+
+        body.light-theme .nav-links.active li a {
+            background: rgba(249, 115, 22, 0.05);
+            border: 1px solid rgba(249, 115, 22, 0.2);
+        }
+
+        .nav-links.active li a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .nav-links.active li a:hover::before {
+            left: 100%;
+        }
+
+        .nav-links.active li a:hover {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.15), rgba(251, 146, 60, 0.15));
+            border-color: var(--accent-primary);
+            color: var(--accent-primary);
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(249, 115, 22, 0.3);
+        }
+
+        .nav-links.active li a::after {
+            content: '→';
+            font-size: 1.2rem;
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: all 0.3s ease;
+            color: var(--accent-primary);
+            display: block;
+        }
+
+        .nav-links.active li a:hover::after {
+            opacity: 1;
+            transform: translateX(0);
         }
 
         .nav-links .mobile-call-btn {
@@ -1244,7 +1368,6 @@
                     <li><a href="/projects/">Projects</a></li>
                     <li><a href="/about/">About Us</a></li>
                     <li><a href="/contact/">Contact</a></li>
-                    <li class="mobile-call-btn"><a href="tel:+13124397500">📞 Call Now</a></li>
                 </ul>
                 <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
                     <span></span>
@@ -1475,6 +1598,7 @@
                         <li><a href="/about/">About Us</a></li>
                         <li><a href="/projects/">Our Projects</a></li>
                         <li><a href="/about/#process">Our Process</a></li>
+                        <li><a href="/faq.html">FAQ</a></li>
                         <li><a href="/contact/">Contact</a></li>
                         <li><a href="/privacy/">Privacy Policy</a></li>
                     </ul>
