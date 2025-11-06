@@ -2798,6 +2798,13 @@
                         return;
                     }
                     
+                    // Check hCaptcha
+                    const hCaptcha = newsletterForm.querySelector('textarea[name="h-captcha-response"]');
+                    if (!hCaptcha || !hCaptcha.value) {
+                        newsletterMessage.innerHTML = '<div style="color: #ff4444;">❌ Please complete the captcha verification before submitting.</div>';
+                        return;
+                    }
+                    
                     // Rate limiting check
                     const now = Date.now();
                     if (now - lastSubmissionTime < minTimeBetweenSubmissions) {
@@ -2957,6 +2964,17 @@
                         if (messageDiv) {
                             messageDiv.textContent = 'Spam detected. Submission blocked.';
                             messageDiv.style.color = '#ff4444';
+                        }
+                        return;
+                    }
+                    
+                    // Check hCaptcha
+                    const hCaptcha = bookingForm.querySelector('textarea[name="h-captcha-response"]');
+                    if (!hCaptcha || !hCaptcha.value) {
+                        if (messageDiv) {
+                            messageDiv.innerHTML = '<div class="form-error-message">❌ Please complete the captcha verification before submitting.</div>';
+                        } else {
+                            alert('Please complete the captcha verification before submitting.');
                         }
                         return;
                     }
