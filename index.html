@@ -2801,8 +2801,14 @@
                         return;
                     }
                     
-                    // Check hCaptcha
-                    const hCaptcha = newsletterForm.querySelector('textarea[name="h-captcha-response"]');
+                    // Check hCaptcha - wait a moment for it to load if needed
+                    let hCaptcha = newsletterForm.querySelector('textarea[name="h-captcha-response"]');
+                    if (!hCaptcha) {
+                        // hCaptcha widget might not be loaded yet, wait a bit
+                        await new Promise(resolve => setTimeout(resolve, 500));
+                        hCaptcha = newsletterForm.querySelector('textarea[name="h-captcha-response"]');
+                    }
+                    
                     if (!hCaptcha || !hCaptcha.value) {
                         newsletterMessage.innerHTML = '<div style="color: #ff4444;">❌ Please complete the captcha verification before submitting.</div>';
                         return;
@@ -2971,8 +2977,14 @@
                         return;
                     }
                     
-                    // Check hCaptcha
-                    const hCaptcha = bookingForm.querySelector('textarea[name="h-captcha-response"]');
+                    // Check hCaptcha - wait a moment for it to load if needed
+                    let hCaptcha = bookingForm.querySelector('textarea[name="h-captcha-response"]');
+                    if (!hCaptcha) {
+                        // hCaptcha widget might not be loaded yet, wait a bit
+                        await new Promise(resolve => setTimeout(resolve, 500));
+                        hCaptcha = bookingForm.querySelector('textarea[name="h-captcha-response"]');
+                    }
+                    
                     if (!hCaptcha || !hCaptcha.value) {
                         if (messageDiv) {
                             messageDiv.innerHTML = '<div class="form-error-message">❌ Please complete the captcha verification before submitting.</div>';
