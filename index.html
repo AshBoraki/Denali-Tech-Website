@@ -3050,10 +3050,8 @@
                         const responseData = await res.json().catch(() => ({}));
 
                         if (res.ok && responseData && responseData.success) {
-                            messageDiv.innerHTML = '<div class="form-success-message">✅ Thank you! Your booking request has been submitted. We\'ll contact you soon to confirm your consultation appointment.</div>';
-                            bookingForm.reset();
-                            // Scroll to message
-                            messageDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                            // Redirect to thank you page
+                            window.location.href = '/thank-you/';
                         } else {
                             const errorMsg = responseData?.message || 'There was an error submitting your request.';
                             messageDiv.innerHTML = `<div class="form-error-message">❌ ${errorMsg} Please try again or call us at (312) 439-7500.</div>`;
