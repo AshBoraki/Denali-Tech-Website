@@ -9,24 +9,25 @@ We've switched from FormSubmit.co to Web3Forms because:
 - ✅ Built-in spam protection with hCaptcha
 - ✅ Better API response format
 
-## Important: hCaptcha Setup Required
+## ⚠️ IMPORTANT: Disable hCaptcha in Web3Forms Dashboard
 
-Web3Forms requires hCaptcha for spam protection. You have two options:
+**You MUST disable hCaptcha in your Web3Forms dashboard for the forms to work!**
 
-### Option 1: Disable Captcha in Web3Forms Dashboard (Easiest)
+The forms already have built-in spam protection (honeypot fields), so hCaptcha is not needed.
+
+### Steps to Disable hCaptcha:
+
 1. Go to [Web3Forms Dashboard](https://web3forms.com)
-2. Log in with your email
-3. Find your access keys
-4. Click on each access key
-5. **Disable "Require hCaptcha"** in the settings
-6. Save changes
+2. Log in with your email (`services@denalitechs.com`)
+3. Find your access keys:
+   - `5a36ffa3-78b0-43cd-8049-125bbec92df2` (consultation form)
+   - `9007b329-be2c-40a8-af09-d652f0f5b566` (booking form)
+4. Click on **each access key** to open its settings
+5. Find the **"Require hCaptcha"** or **"Enable hCaptcha"** option
+6. **Turn it OFF / Disable it**
+7. **Save changes** for each access key
 
-### Option 2: Get hCaptcha Site Key (If you want captcha)
-1. Go to [hCaptcha.com](https://www.hcaptcha.com/)
-2. Sign up for a free account
-3. Create a new site
-4. Get your Site Key
-5. Replace `10000000-ffff-ffff-ffff-000000000001` in the HTML files with your real site key
+**After disabling hCaptcha, your forms will work immediately!**
 
 ## Setup Instructions
 

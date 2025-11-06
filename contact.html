@@ -23,9 +23,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     
-    <!-- hCaptcha -->
-    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
-    
     <style>
         /* 
         ============================================
@@ -1623,9 +1620,6 @@
                             <label for="message">Tell us about your project (optional)</label>
                             <textarea id="message" name="message" placeholder="What would you like your smart home to do? Any specific needs or concerns?"></textarea>
                         </div>
-                        <div class="form-group">
-                            <div class="h-captcha" data-sitekey="10000000-ffff-ffff-ffff-000000000001" data-callback="onHCaptchaSuccess"></div>
-                        </div>
                         <button type="submit" class="btn-primary">📧 Send Message</button>
                     </form>
                 </div>
@@ -1746,9 +1740,6 @@
                     </div>
 
                     <div id="booking-form-message"></div>
-                    <div class="form-group" style="margin-top: 1rem;">
-                        <div class="h-captcha" data-sitekey="10000000-ffff-ffff-ffff-000000000001" data-callback="onHCaptchaSuccess"></div>
-                    </div>
                     <button type="submit" class="booking-form-submit">Submit Booking Request</button>
                 </form>
             </div>
