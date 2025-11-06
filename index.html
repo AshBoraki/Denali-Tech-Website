@@ -2401,6 +2401,9 @@
                     </div>
 
                     <div id="booking-form-message"></div>
+                    <div class="form-group" style="margin-top: 1rem;">
+                        <div class="h-captcha" data-captcha="true"></div>
+                    </div>
                     <button type="submit" class="booking-form-submit">Submit Booking Request</button>
                 </form>
             </div>
@@ -2435,6 +2438,7 @@
                     <!-- Additional honeypot -->
                     <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
                     <input type="email" name="email" class="newsletter-input" placeholder="Enter your email address" required>
+                    <div class="h-captcha" data-captcha="true" style="margin: 1rem 0;"></div>
                     <button type="submit" class="newsletter-button">Subscribe</button>
                 </form>
                 <div id="newsletter-message" style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.9rem;"></div>
@@ -3071,5 +3075,8 @@
             }
         });
     </script>
+    
+    <!-- Web3Forms hCaptcha Script -->
+    <script src="https://web3forms.com/client/script.js" async defer></script>
 </body>
 </html>
