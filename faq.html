@@ -768,6 +768,12 @@
             gap: 12px;
         }
 
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
         .toggle-switch {
             width: 54px;
             height: 28px;
@@ -929,6 +935,14 @@
                 padding: 8px;
             }
 
+            .header-actions {
+                gap: 0.75rem;
+            }
+            
+            .theme-toggle {
+                order: -1; /* Show theme toggle first on mobile */
+            }
+            
             .cta-button {
                 display: none;
             }
@@ -1148,12 +1162,19 @@
                     <li><a href="/about/">About Us</a></li>
                     <li><a href="/contact/">Contact</a></li>
                 </ul>
-                <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+                <div class="header-actions">
+                    <div class="theme-toggle">
+                        <div class="toggle-switch" id="theme-toggle-switch" role="switch" aria-checked="false" aria-label="Toggle between light and dark mode">
+                            <div class="toggle-switch-circle"></div>
+                        </div>
+                    </div>
+                    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
-                <a href="tel:+13124397500" class="cta-button">📞 Call Now</a>
+                    <a href="tel:+13124397500" class="cta-button">📞 Call Now</a>
+                </div>
             </nav>
         </div>
     </header>
@@ -1358,11 +1379,7 @@
                     <div class="footer-legal">
                         <span>© <span id="current-year"></span> Denali Tech Inc.</span>
                         <a href="/privacy/">Privacy & Terms</a>
-                    </div>
-                    <div class="theme-toggle">
-                        <div class="toggle-switch" id="theme-toggle-switch" role="switch" aria-checked="false" aria-label="Toggle between light and dark mode">
-                            <div class="toggle-switch-circle"></div>
-                        </div>
+                    </div></div>
                     </div>
                 </div>
                 <div class="footer-social">
