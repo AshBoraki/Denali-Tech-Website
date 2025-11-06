@@ -445,8 +445,8 @@
         }
 
         .brand-item {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border-color);
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(0, 0, 0, 0.1);
             border-radius: 16px;
             padding: 2rem;
             display: flex;
@@ -458,8 +458,17 @@
             overflow: hidden;
         }
 
-        .brand-item:hover {
+        body.light-theme .brand-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        body.light-theme .brand-item:hover {
             background: rgba(255, 255, 255, 0.1);
+        }
+
+        .brand-item:hover {
+            background: #ffffff;
             transform: translateY(-5px);
             box-shadow: var(--shadow-glow);
             border-color: var(--accent-primary);
@@ -471,12 +480,16 @@
             width: auto;
             height: auto;
             object-fit: contain;
-            filter: brightness(0.95);
+            filter: brightness(1);
             transition: all var(--transition);
         }
 
+        body.light-theme .brand-item img {
+            filter: brightness(0.95);
+        }
+
         .brand-item:hover img {
-            filter: brightness(1.1);
+            filter: brightness(1.05);
             transform: scale(1.05);
         }
 

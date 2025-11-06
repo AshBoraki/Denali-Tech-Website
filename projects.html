@@ -250,6 +250,10 @@
             cursor: pointer;
             padding: 8px;
             z-index: 1001;
+            min-width: 44px;
+            min-height: 44px;
+            justify-content: center;
+            align-items: center;
         }
 
         .menu-toggle span {
@@ -379,7 +383,7 @@
 
         .hero h1 {
             font-family: var(--font-heading);
-            font-size: 3.5rem;
+            font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 700;
             margin: 0 0 1.5rem 0;
             color: var(--text-primary);
@@ -387,10 +391,12 @@
         }
 
         .hero p {
-            font-size: 1.25rem;
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
             color: var(--text-secondary);
             margin: 0 0 2rem 0;
             line-height: 1.6;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .hero-image {
@@ -530,6 +536,8 @@
             font-weight: 700;
             margin: 0 0 0.75rem 0;
             color: var(--text-primary);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .project-description {
@@ -537,6 +545,8 @@
             font-size: 0.95rem;
             line-height: 1.6;
             margin: 0;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         /* MODAL */
@@ -569,6 +579,7 @@
             padding: 2.5rem;
             position: relative;
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            -webkit-overflow-scrolling: touch;
         }
 
         .modal-close {
@@ -609,17 +620,21 @@
 
         .modal-title {
             font-family: var(--font-heading);
-            font-size: 2.25rem;
+            font-size: clamp(1.5rem, 4vw, 2.25rem);
             font-weight: 700;
             margin: 0 0 1.5rem 0;
             color: var(--text-primary);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .modal-description {
-            font-size: 1.1rem;
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
             color: var(--text-secondary);
             line-height: 1.8;
             margin: 0;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         /* FOOTER - EXACT COPY */
@@ -1087,6 +1102,7 @@
                 padding: 0.65rem 1.1rem;
                 font-size: 0.85rem;
                 min-height: 44px;
+                min-width: 44px;
                 flex: 0 0 auto;
             }
 
@@ -1101,15 +1117,17 @@
             }
 
             .modal-content {
-                padding: 2rem 1.5rem;
+                padding: 1.5rem;
+                margin: 10px;
+                max-height: 85vh;
             }
 
             .modal-title {
-                font-size: 1.75rem;
+                font-size: 1.5rem;
             }
 
             .modal-description {
-                font-size: 1rem;
+                font-size: 0.95rem;
             }
 
             .footer-main-grid {
@@ -1132,7 +1150,8 @@
             .filter-btn {
                 padding: 0.6rem 0.95rem;
                 font-size: 0.8rem;
-                min-height: 42px;
+                min-height: 44px;
+                min-width: 44px;
                 flex: 0 0 auto;
             }
 
@@ -1220,7 +1239,7 @@
         <div class="hero-content">
             <h1>Our Project Showcase</h1>
             <p>Explore our premium smart home installations across Chicago and surrounding areas. From luxury home theaters to complete automation systems, see how we transform houses into intelligent living spaces.</p>
-            <img src="Video/Project showcases /denali tech Project sho cases header iamge .png" alt="Denali Tech Professional Audio Equipment" class="hero-image">
+            <img src="Video/Project showcases /denali tech Project sho cases header iamge .png" alt="Denali Tech Professional Audio Equipment" class="hero-image" loading="eager" fetchpriority="high">
         </div>
     </section>
 
@@ -1256,7 +1275,7 @@
             <!-- Project 2 -->
             <div class="project-card" data-category="home-theater" data-id="basement">
                 <div class="project-image-wrapper">
-                    <img src="Video/Project showcases /basmanet home theter and sets.jpg" alt="Basement Home Theater" class="project-image">
+                    <img src="Video/Project showcases /basmanet home theter and sets.jpg" alt="Basement Home Theater" class="project-image" loading="lazy">
                 </div>
                 <div class="project-info">
                     <span class="project-category">Home Theater</span>
@@ -1268,7 +1287,7 @@
             <!-- Project 3 -->
             <div class="project-card" data-category="home-theater" data-id="contemporary">
                 <div class="project-image-wrapper">
-                    <img src="Video/Project showcases /Contemporary Basement Media Hub.jpg" alt="Contemporary Basement Media Hub" class="project-image">
+                    <img src="Video/Project showcases /Contemporary Basement Media Hub.jpg" alt="Contemporary Basement Media Hub" class="project-image" loading="lazy">
                 </div>
                 <div class="project-info">
                     <span class="project-category">Home Theater</span>
@@ -1280,7 +1299,7 @@
             <!-- Project 4 -->
             <div class="project-card" data-category="gaming" data-id="gaming">
                 <div class="project-image-wrapper">
-                    <img src="Video/Project showcases /gming setup.jpg" alt="Gaming Room Setup" class="project-image">
+                    <img src="Video/Project showcases /gming setup.jpg" alt="Gaming Room Setup" class="project-image" loading="lazy">
                 </div>
                 <div class="project-info">
                     <span class="project-category">Gaming Room</span>
@@ -1292,7 +1311,7 @@
             <!-- Project 5 -->
             <div class="project-card" data-category="home-theater" data-id="riser">
                 <div class="project-image-wrapper">
-                    <img src="Video/Project showcases /home theter csutom seti reser.jpeg" alt="Custom Theater Riser" class="project-image">
+                    <img src="Video/Project showcases /home theter csutom seti reser.jpeg" alt="Custom Theater Riser" class="project-image" loading="lazy">
                 </div>
                 <div class="project-info">
                     <span class="project-category">Home Theater</span>
@@ -1304,7 +1323,7 @@
             <!-- Project 6 -->
             <div class="project-card" data-category="outdoor" data-id="kef-outdoor">
                 <div class="project-image-wrapper">
-                    <img src="Video/Project showcases /Kef outdoor sepaker.jpg" alt="KEF Outdoor Speaker Installation" class="project-image">
+                    <img src="Video/Project showcases /Kef outdoor sepaker.jpg" alt="KEF Outdoor Speaker Installation" class="project-image" loading="lazy">
                 </div>
                 <div class="project-info">
                     <span class="project-category">Outdoor Entertainment</span>
@@ -1316,7 +1335,7 @@
             <!-- Project 7 -->
             <div class="project-card" data-category="automation" data-id="control4-neo">
                 <div class="project-image-wrapper">
-                    <img src="Video/Project showcases /control 4 neo remeote.JPG" alt="Control4 Neo Remote" class="project-image">
+                    <img src="Video/Project showcases /control 4 neo remeote.JPG" alt="Control4 Neo Remote" class="project-image" loading="lazy">
                 </div>
                 <div class="project-info">
                     <span class="project-category">Smart Automation</span>
@@ -1328,7 +1347,7 @@
             <!-- Project 8 -->
             <div class="project-card" data-category="automation" data-id="control4-remote">
                 <div class="project-image-wrapper">
-                    <img src="Video/Project showcases /control4 remeote .jpg" alt="Control4 Remote Control" class="project-image">
+                    <img src="Video/Project showcases /control4 remeote .jpg" alt="Control4 Remote Control" class="project-image" loading="lazy">
                 </div>
                 <div class="project-info">
                     <span class="project-category">Smart Automation</span>
@@ -1340,7 +1359,7 @@
             <!-- Project 9 -->
             <div class="project-card" data-category="automation" data-id="thermostat">
                 <div class="project-image-wrapper">
-                    <img src="Video/Project showcases /qdjkpm-1jankw-dh79xv_edited.jpg" alt="Smart Thermostat Installation" class="project-image">
+                    <img src="Video/Project showcases /qdjkpm-1jankw-dh79xv_edited.jpg" alt="Smart Thermostat Installation" class="project-image" loading="lazy">
                 </div>
                 <div class="project-info">
                     <span class="project-category">Smart Automation</span>
@@ -1352,7 +1371,7 @@
             <!-- Project 10 -->
             <div class="project-card" data-category="outdoor" data-id="outdoor-garden">
                 <div class="project-image-wrapper">
-                    <img src="Video/Project showcases /20201028_111544.jpg" alt="Outdoor Speaker in Garden" class="project-image">
+                    <img src="Video/Project showcases /20201028_111544.jpg" alt="Outdoor Speaker in Garden" class="project-image" loading="lazy">
                 </div>
                 <div class="project-info">
                     <span class="project-category">Outdoor Entertainment</span>
@@ -1364,7 +1383,7 @@
             <!-- Project 11 -->
             <div class="project-card" data-category="outdoor" data-id="outdoor-tv">
                 <div class="project-image-wrapper">
-                    <img src="Video/Project showcases /outdoor tv and sruend system.jpg" alt="Outdoor TV and Surround System" class="project-image">
+                    <img src="Video/Project showcases /outdoor tv and sruend system.jpg" alt="Outdoor TV and Surround System" class="project-image" loading="lazy">
                 </div>
                 <div class="project-info">
                     <span class="project-category">Outdoor Entertainment</span>
@@ -1376,7 +1395,7 @@
             <!-- Project 12 -->
             <div class="project-card" data-category="home-theater" data-id="streamlined">
                 <div class="project-image-wrapper">
-                    <img src="Video/Project showcases /Streamlined Entertainment Lounge.jpg" alt="Streamlined Entertainment Lounge" class="project-image">
+                    <img src="Video/Project showcases /Streamlined Entertainment Lounge.jpg" alt="Streamlined Entertainment Lounge" class="project-image" loading="lazy">
                 </div>
                 <div class="project-info">
                     <span class="project-category">Home Theater</span>
@@ -1388,7 +1407,7 @@
             <!-- Project 13 -->
             <div class="project-card" data-category="gaming" data-id="triple-play">
                 <div class="project-image-wrapper">
-                    <img src="Video/Project showcases /Triple Play Sports Enthusiast Corner.avif" alt="Triple Play Sports Enthusiast Corner" class="project-image">
+                    <img src="Video/Project showcases /Triple Play Sports Enthusiast Corner.avif" alt="Triple Play Sports Enthusiast Corner" class="project-image" loading="lazy">
                 </div>
                 <div class="project-info">
                     <span class="project-category">Gaming Room</span>
@@ -1400,7 +1419,7 @@
             <!-- Project 14 -->
             <div class="project-card" data-category="home-theater" data-id="urc-family">
                 <div class="project-image-wrapper">
-                    <img src="Video/Project showcases /Urc Family media room.jpg" alt="URC Family Media Room" class="project-image">
+                    <img src="Video/Project showcases /Urc Family media room.jpg" alt="URC Family Media Room" class="project-image" loading="lazy">
                 </div>
                 <div class="project-info">
                     <span class="project-category">Home Theater</span>
@@ -1412,7 +1431,7 @@
             <!-- Project 15 -->
             <div class="project-card" data-category="home-theater" data-id="fire-edge-martinlogan">
                 <div class="project-image-wrapper">
-                    <img src="Video/Project showcases /zire egde screen and  prejector and MartinLogan .jpg" alt="Fire Edge Screen with Projector and MartinLogan Speakers" class="project-image">
+                    <img src="Video/Project showcases /zire egde screen and  prejector and MartinLogan .jpg" alt="Fire Edge Screen with Projector and MartinLogan Speakers" class="project-image" loading="lazy">
                 </div>
                 <div class="project-info">
                     <span class="project-category">Home Theater</span>
