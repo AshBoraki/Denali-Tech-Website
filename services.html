@@ -573,7 +573,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
-            align-items: center;
+            align-items: start;
         }
 
         .service-detail:nth-child(even) {
@@ -652,8 +652,15 @@
             transform: scale(1.05);
         }
 
+        .service-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
         .service-video {
-            position: relative;
+            position: sticky;
+            top: 100px;
             border-radius: 16px;
             overflow: hidden;
             box-shadow: var(--shadow-glow);
@@ -661,11 +668,17 @@
             border: 2px solid var(--border-color);
             padding: 0;
             margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: fit-content;
+            max-height: 600px;
         }
 
         .service-video video {
             width: 100%;
             height: auto;
+            max-height: 500px;
             aspect-ratio: 16 / 9;
             object-fit: cover;
             transition: transform var(--transition);
@@ -1144,10 +1157,14 @@
                 margin-top: 0;
                 margin-bottom: 2rem;
                 padding: 0;
+                position: static;
+                height: auto;
+                max-height: none;
             }
 
             .service-video video {
                 height: auto;
+                max-height: 400px;
                 aspect-ratio: 16 / 9;
                 object-fit: cover;
                 width: 100%;
@@ -1199,10 +1216,14 @@
                 margin-bottom: 1.5rem;
                 border: 2px solid var(--border-color);
                 padding: 0;
+                position: static;
+                height: auto;
+                max-height: none;
             }
 
             .service-video video {
                 height: auto;
+                max-height: 300px;
                 aspect-ratio: 16 / 9;
                 object-fit: cover;
                 width: 100%;
@@ -1419,7 +1440,7 @@
                     <p><strong>Perfect for:</strong> Busy families who want convenience and energy savings</p>
                 </div>
                 <div class="service-video">
-                    <video autoplay muted loop playsinline poster="Video/logo.JPG" preload="metadata">
+                    <video autoplay muted loop playsinline poster="Video/logo.JPG" preload="auto" loading="eager">
                         <source src="Video/Denali tech smart home.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -1442,7 +1463,7 @@
                     <p><strong>Perfect for:</strong> Movie lovers and families who want the ultimate entertainment experience</p>
                 </div>
                 <div class="service-video">
-                    <video autoplay muted loop playsinline poster="Video/logo.JPG" preload="metadata">
+                    <video autoplay muted loop playsinline poster="Video/logo.JPG" preload="auto" loading="eager">
                         <source src="Video/Home theter Systems - Denali Tech - Chicago.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -1465,7 +1486,7 @@
                     <p><strong>Perfect for:</strong> Families with lots of devices and anyone tired of slow internet</p>
                 </div>
                 <div class="service-video">
-                    <video autoplay muted loop playsinline poster="Video/logo.JPG" preload="metadata">
+                    <video autoplay muted loop playsinline poster="Video/logo.JPG" preload="auto" loading="eager">
                         <source src="Video/wifi.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -1488,7 +1509,7 @@
                     <p><strong>Perfect for:</strong> Families who want peace of mind and protection</p>
                 </div>
                 <div class="service-video">
-                    <video autoplay muted loop playsinline poster="Video/logo.JPG" preload="metadata">
+                    <video autoplay muted loop playsinline poster="Video/logo.JPG" preload="auto" loading="eager">
                         <source src="Video/camera.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -1511,7 +1532,7 @@
                     <p><strong>Perfect for:</strong> Anyone who wants convenience and beautiful lighting</p>
                 </div>
                 <div class="service-video">
-                    <video autoplay muted loop playsinline poster="Video/logo.JPG" preload="metadata">
+                    <video autoplay muted loop playsinline poster="Video/logo.JPG" preload="auto" loading="eager">
                         <source src="Video/Smart lighting Solutions - Denali Tech.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -1534,7 +1555,7 @@
                     <p><strong>Perfect for:</strong> Anyone who wants convenience and privacy control</p>
                 </div>
                 <div class="service-video">
-                    <video autoplay muted loop playsinline poster="Video/logo.JPG" preload="metadata">
+                    <video autoplay muted loop playsinline poster="Video/logo.JPG" preload="auto" loading="eager">
                         <source src="Video/shades.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -1557,7 +1578,7 @@
                     <p><strong>Perfect for:</strong> Music lovers and anyone who entertains guests</p>
                 </div>
                 <div class="service-video">
-                    <video autoplay muted loop playsinline poster="Video/logo.JPG" preload="metadata">
+                    <video autoplay muted loop playsinline poster="Video/logo.JPG" preload="auto" loading="eager">
                         <source src="Video/whole hone audio.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
