@@ -488,6 +488,7 @@
         /* HERO SECTION - Animated Background */
         .hero {
             height: 100vh;
+            min-height: 600px; /* Ensure minimum height */
             background: var(--bg-color);
             position: relative;
             display: flex;
@@ -495,6 +496,7 @@
             justify-content: center;
             overflow: hidden;
             padding-top: 60px;
+            padding-bottom: 40px; /* Add bottom padding for better spacing */
         }
 
         /* ENHANCED LIVING BACKGROUND */
@@ -563,6 +565,9 @@
             opacity: 0;
             transform: translateY(20px);
             animation: fadeInUp 1.2s var(--animation-ease) 0.3s forwards;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
         }
 
         @keyframes fadeInUp {
@@ -1797,15 +1802,20 @@
             }
 
             .hero {
-                padding-top: 120px;
+                min-height: 700px; /* Better minimum height for mobile */
+                padding-top: 140px; /* More space from header */
+                padding-bottom: 60px; /* More space at bottom */
             }
 
             .hero-content {
-                padding-top: 2rem;
+                padding-top: 0;
+                padding-bottom: 0;
+                gap: 1.25rem;
             }
 
             .hero h1 {
-                margin-top: 1.5rem;
+                margin-top: 0;
+                margin-bottom: 1.25rem;
             }
 
             .hero-buttons {
@@ -1874,13 +1884,40 @@
                 height: 2.5px;
             }
 
+            .hero {
+                min-height: 650px;
+                padding-top: 130px;
+                padding-bottom: 50px;
+            }
+
+            .hero-content {
+                gap: 1rem;
+                padding: 0 1.5rem;
+            }
+
+            .hero h1 {
+                margin-bottom: 1rem;
+                font-size: clamp(2rem, 6vw, 3rem);
+            }
+
             .typewriter {
-                min-height: 6rem;
+                min-height: 5rem;
                 height: auto;
                 align-items: flex-start;
                 padding: 0.75rem 0.5rem 0.5rem;
                 font-size: clamp(1.2rem, 3vw, 1.6rem);
                 font-weight: 500;
+                margin-bottom: 0.75rem;
+            }
+
+            .hero-buttons {
+                margin-top: 0.5rem;
+            }
+
+            .warranty-badge {
+                margin-top: 1rem;
+                font-size: 0.85rem;
+                padding: 0.75rem 1rem;
             }
 
             .hero {
