@@ -40,6 +40,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     
+    <!-- DNS Prefetch for External Resources -->
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://api.web3forms.com">
+    <link rel="dns-prefetch" href="https://web3forms.com">
+    <link rel="dns-prefetch" href="https://js.hcaptcha.com">
+    
     <base href="/">
     
     <!-- Google Analytics 4 - Replace G-XXXXXXXXXX with your actual Measurement ID -->
@@ -512,7 +518,7 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            padding-top: 60px;
+            padding-top: 120px; /* More space from header on desktop */
             padding-bottom: 40px; /* Add bottom padding for better spacing */
         }
 
@@ -1106,68 +1112,6 @@
         }
 
 
-        /* NEWSLETTER SECTION */
-        .newsletter-section {
-            padding: 80px 5%;
-            background: rgba(255, 255, 255, 0.03);
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-            text-align: center;
-        }
-
-        .newsletter-content h2 {
-            font-family: var(--font-heading);
-            font-size: clamp(2rem, 4vw, 2.5rem);
-            color: var(--text-primary);
-            margin-bottom: 1rem;
-        }
-
-        .newsletter-content p {
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .newsletter-form {
-            display: flex;
-            gap: 1rem;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .newsletter-input {
-            flex: 1;
-            padding: 1rem 1.5rem;
-            border: none;
-            border-radius: 12px;
-            font-size: 1rem;
-            background: white;
-            color: var(--text-primary);
-        }
-
-        .newsletter-button {
-            padding: 1rem 2rem;
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-interactive));
-            color: white;
-            border: none;
-            border-radius: 12px;
-            font-weight: 700;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all var(--transition);
-            box-shadow: var(--shadow-subtle);
-            min-width: 44px;
-            min-height: 44px;
-        }
-
-        .newsletter-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
-
         /* WARRANTY BADGE */
         .warranty-badge {
             display: inline-flex;
@@ -1209,9 +1153,6 @@
                 grid-template-columns: 1fr;
             }
 
-            .newsletter-form {
-                flex-direction: column;
-            }
         }
 
         .cta-section {
@@ -1239,190 +1180,6 @@
             margin-right: auto;
         }
 
-        /* BOOKING FORM SECTION */
-        .booking-section {
-            padding: 100px 5%;
-            background: var(--bg-color);
-        }
-
-        .booking-form-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 3rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .booking-form-container h2 {
-            font-family: var(--font-heading);
-            font-size: clamp(1.8rem, 3vw, 2.5rem);
-            margin-bottom: 0.5rem;
-            text-align: center;
-            color: var(--text-primary);
-        }
-
-        .booking-form-container p {
-            text-align: center;
-            color: var(--text-secondary);
-            margin-bottom: 2.5rem;
-            font-size: 1.1rem;
-        }
-
-        .booking-form {
-            display: grid;
-            gap: 1.5rem;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .form-group.full-width {
-            grid-column: 1 / -1;
-        }
-
-        .form-group label {
-            color: var(--text-primary);
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            font-size: 0.95rem;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            padding: 0.9rem 1rem;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-primary);
-            font-family: var(--font-main);
-            font-size: 16px;
-            transition: all var(--transition);
-            -webkit-appearance: none;
-            appearance: none;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent-primary);
-            box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .form-group input[type="date"],
-        .form-group input[type="time"] {
-            cursor: pointer;
-        }
-
-        .booking-form-submit {
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-interactive));
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all var(--transition);
-            box-shadow: var(--shadow-subtle);
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-            margin-top: 1rem;
-        }
-
-        .booking-form-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-glow);
-        }
-
-        .booking-form-submit:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .form-success-message,
-        .form-error-message {
-            padding: 1rem;
-            border-radius: 8px;
-            margin-top: 1rem;
-            text-align: center;
-            font-weight: 500;
-        }
-
-        .form-success-message {
-            background: rgba(13, 148, 136, 0.2);
-            border: 1px solid rgba(13, 148, 136, 0.5);
-            color: #2dd4bf;
-        }
-
-        .form-error-message {
-            background: rgba(239, 68, 68, 0.2);
-            border: 1px solid rgba(239, 68, 68, 0.5);
-            color: #fca5a5;
-        }
-
-        @media (max-width: 768px) {
-            .booking-form-container {
-                padding: 2rem;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .booking-section {
-                padding: 60px 3%;
-            }
-
-            .booking-form-container {
-                padding: 1.5rem;
-                border-radius: 12px;
-            }
-
-            .booking-form-container h2 {
-                font-size: 1.5rem;
-            }
-
-            .booking-form-container p {
-                font-size: 0.95rem;
-            }
-
-            .booking-form {
-                gap: 1.2rem;
-            }
-
-            .form-group input,
-            .form-group select,
-            .form-group textarea {
-                padding: 0.8rem 0.9rem;
-                font-size: 16px;
-            }
-
-            .booking-form-submit {
-                width: 100%;
-                padding: 0.9rem 1.5rem;
-                font-size: 1rem;
-            }
-        }
         .prestige-footer {
             padding: 80px 5% 60px;
             width: 100%;
@@ -2147,7 +1904,7 @@
         <div class="container">
             <nav class="nav">
                 <a href="/" class="logo" title="Denali Tech">
-                    <img src="Video/logo.JPG" alt="Denali Tech Logo" style="width: 40px; height: 40px; margin-right: 10px; object-fit: cover; object-position: 40% center;">
+                    <img src="Video/logo.JPG" alt="Denali Tech Logo" loading="eager" style="width: 40px; height: 40px; margin-right: 10px; object-fit: cover; object-position: 40% center;">
                     <span class="logo-text">Denali Tech</span>
                 </a>
                 <ul class="nav-links" id="navLinks">
@@ -2184,7 +1941,7 @@
             <h1>We Make Your Home Smart & Simple</h1>
             <div class="typewriter" id="typewriter"><span class="typewriter-content"></span></div>
             <div class="hero-buttons">
-                <a href="#booking" class="btn-primary">📅 Get Free Consultation</a>
+                <a href="/contact/#booking" class="btn-primary">📅 Get Free Consultation</a>
                 <a href="/services/" class="btn-secondary">See What We Do</a>
             </div>
             <div style="text-align: center; margin-top: 3rem;">
@@ -2290,10 +2047,10 @@
             </div>
             <div class="partners-badges">
                 <div class="partner-badge">
-                    <img src="Video/authorized (1).svg" alt="Control4 Authorized Dealer" class="badge-control4">
+                    <img src="Video/authorized (1).svg" alt="Control4 Authorized Dealer" loading="lazy" class="badge-control4">
                 </div>
                 <div class="partner-badge">
-                    <img src="Video/URC_Logo_White.png" alt="URC Automation Partner" class="badge-urc">
+                    <img src="Video/URC_Logo_White.png" alt="URC Automation Partner" loading="lazy" class="badge-urc">
                 </div>
             </div>
             <div style="margin-top: 3rem;">
@@ -2402,125 +2159,14 @@
         </div>
     </section>
 
-    <!-- Booking Form Section -->
-    <section class="booking-section" id="booking">
-        <div class="container">
-            <div class="booking-form-container">
-                <h2>📅 Schedule Your Free Consultation</h2>
-                <p>Tell us about your project and we'll come to your location for a free consultation. Fill out the form below with your details.</p>
-                <form class="booking-form" id="booking-form" action="https://api.web3forms.com/submit" method="POST">
-                    <input type="hidden" name="access_key" value="9007b329-be2c-40a8-af09-d652f0f5b566">
-                    <input type="hidden" name="subject" value="New Consultation Booking Request">
-                    <input type="hidden" name="from_name" value="Denali Tech Website">
-                    <input type="hidden" name="to_email" value="services@denalitechs.com">
-                    <input type="hidden" name="redirect" value="https://www.denalitechs.com/thank-you/">
-                    <!-- Honeypot fields to catch bots -->
-                    <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
-                    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="booking-name">Full Name *</label>
-                            <input type="text" id="booking-name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="booking-phone">Phone Number *</label>
-                            <input type="tel" id="booking-phone" name="phone" required>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="booking-email">Email Address *</label>
-                            <input type="email" id="booking-email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="booking-service">Service Type *</label>
-                            <select id="booking-service" name="service_type" required>
-                                <option value="">Select a service...</option>
-                                <option value="Smart Home Automation">Smart Home Automation</option>
-                                <option value="Home Theater">Home Theater</option>
-                                <option value="WiFi & Networking">WiFi & Networking</option>
-                                <option value="Security & Surveillance">Security & Surveillance</option>
-                                <option value="Smart Lighting">Smart Lighting</option>
-                                <option value="Audio Distribution">Audio Distribution</option>
-                                <option value="Smart Shades">Smart Shades</option>
-                                <option value="Multiple Services">Multiple Services</option>
-                                <option value="Not Sure / General Consultation">Not Sure / General Consultation</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group full-width">
-                        <label for="booking-address">Full Address *</label>
-                        <input type="text" id="booking-address" name="address" placeholder="Street Address, City, State, ZIP" required>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="booking-date">Preferred Date *</label>
-                            <input type="date" id="booking-date" name="preferred_date" required min="">
-                        </div>
-                        <div class="form-group">
-                            <label for="booking-time">Preferred Time *</label>
-                            <select id="booking-time" name="preferred_time" required>
-                                <option value="">Select time...</option>
-                                <option value="Morning (8 AM - 12 PM)">Morning (8 AM - 12 PM)</option>
-                                <option value="Afternoon (12 PM - 4 PM)">Afternoon (12 PM - 4 PM)</option>
-                                <option value="Evening (4 PM - 7 PM)">Evening (4 PM - 7 PM)</option>
-                                <option value="Flexible">Flexible</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group full-width">
-                        <label for="booking-details">Project Details / What You'd Like Help With *</label>
-                        <textarea id="booking-details" name="project_details" placeholder="Tell us about your project, what you'd like to achieve, any specific requirements, or questions you have..." required></textarea>
-                    </div>
-
-                    <div id="booking-form-message"></div>
-                    <div class="form-group" style="margin-top: 1rem;">
-                        <div class="h-captcha" data-captcha="true"></div>
-                    </div>
-                    <button type="submit" class="booking-form-submit">Submit Booking Request</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
             <h2>Ready to Make Your Home Smart?</h2>
             <p>Get a free consultation. We'll come to your house, see what you need, and give you a plan that makes sense. No pressure, no sales pitch - just honest advice. As your one-stop shop, we provide the products and handle the installation, so you don't have to coordinate with multiple companies.</p>
             <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
-                <a href="/contact/" class="btn-primary">Get Your Free Consultation</a>
+                <a href="/contact/#booking" class="btn-primary">Get Your Free Consultation</a>
                 <a href="/brands/" class="btn-secondary" style="display: inline-flex; align-items: center; gap: 0.5rem;">See Our Brands →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter Section -->
-    <section class="newsletter-section">
-        <div class="container">
-            <div class="newsletter-content">
-                <h2>Stay Updated with Smart Home Tips</h2>
-                <p>Get the latest smart home tips, product updates, and special offers delivered straight to your inbox. No spam, just helpful information.</p>
-                <form class="newsletter-form" id="newsletter-form" action="https://api.web3forms.com/submit" method="POST">
-                    <!-- Newsletter form disabled - get Web3Forms access key to enable -->
-                    <input type="hidden" name="access_key" value="">
-                    <input type="hidden" name="subject" value="Newsletter Subscription">
-                    <input type="hidden" name="from_name" value="Denali Tech Website">
-                    <input type="hidden" name="to_email" value="Hello@denalitechs.com">
-                    <!-- Honeypot field to catch bots -->
-                    <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
-                    <!-- Additional honeypot -->
-                    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
-                    <input type="email" name="email" class="newsletter-input" placeholder="Enter your email address" required>
-                    <div class="h-captcha" data-captcha="true" style="margin: 1rem 0;"></div>
-                    <button type="submit" class="newsletter-button">Subscribe</button>
-                </form>
-                <div id="newsletter-message" style="margin-top: 1rem; color: var(--text-secondary); font-size: 0.9rem;"></div>
             </div>
         </div>
     </section>
@@ -2537,7 +2183,7 @@
                 <div class="footer-brand">
                     <h3>Denali Tech</h3>
                     <p>Premier home automation and A/V solutions for the modern home. Experience cutting-edge technology, simplified and tailored to your lifestyle.</p>
-                    <a href="/contact/" class="cta-button">Request a Consultation</a>
+                    <a href="/contact/#booking" class="cta-button">Request a Consultation</a>
                 </div>
 
                 <div class="footer-column">
@@ -2851,101 +2497,7 @@
             document.getElementById('current-year').textContent = new Date().getFullYear();
 
 
-            // Newsletter Form Handling
-            const newsletterForm = document.getElementById('newsletter-form');
-            const newsletterMessage = document.getElementById('newsletter-message');
-            
-            if (newsletterForm) {
-                // Rate limiting: prevent rapid submissions
-                let lastSubmissionTime = 0;
-                const minTimeBetweenSubmissions = 3000; // 3 seconds
-                
-                newsletterForm.addEventListener('submit', async (e) => {
-                    e.preventDefault();
-                    
-                    // Check honeypot fields - if filled, it's a bot
-                    const honeypot1 = newsletterForm.querySelector('input[name="website"]');
-                    const honeypot2 = newsletterForm.querySelector('input[name="_gotcha"]');
-                    if ((honeypot1 && honeypot1.value) || (honeypot2 && honeypot2.value)) {
-                        newsletterMessage.textContent = 'Spam detected. Submission blocked.';
-                        newsletterMessage.style.color = '#ff4444';
-                        return;
-                    }
-                    
-                    // Check hCaptcha - wait a moment for it to load if needed
-                    let hCaptcha = newsletterForm.querySelector('textarea[name="h-captcha-response"]');
-                    if (!hCaptcha) {
-                        // hCaptcha widget might not be loaded yet, wait a bit
-                        await new Promise(resolve => setTimeout(resolve, 500));
-                        hCaptcha = newsletterForm.querySelector('textarea[name="h-captcha-response"]');
-                    }
-                    
-                    if (!hCaptcha || !hCaptcha.value) {
-                        newsletterMessage.innerHTML = '<div style="color: #ff4444;">❌ Please complete the captcha verification before submitting.</div>';
-                        return;
-                    }
-                    
-                    // Rate limiting check
-                    const now = Date.now();
-                    if (now - lastSubmissionTime < minTimeBetweenSubmissions) {
-                        newsletterMessage.textContent = 'Please wait a moment before submitting again.';
-                        newsletterMessage.style.color = '#ffa500';
-                        return;
-                    }
-                    lastSubmissionTime = now;
-                    
-                    const formData = new FormData(newsletterForm);
-                    const email = formData.get('email');
-                    
-                    // Validate email format
-                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    if (!emailRegex.test(email)) {
-                        newsletterMessage.textContent = 'Please enter a valid email address.';
-                        newsletterMessage.style.color = '#ff4444';
-                        return;
-                    }
-                    
-                    newsletterMessage.textContent = 'Subscribing...';
-                    newsletterMessage.style.color = 'var(--text-secondary)';
-                    
-                    try {
-                        const response = await fetch(newsletterForm.action, {
-                            method: 'POST',
-                            body: formData,
-                            headers: {
-                                'Accept': 'application/json'
-                            }
-                        });
-                        
-                        const responseData = await response.json().catch(() => ({}));
-                        
-                        if (response.ok && responseData && responseData.success) {
-                            newsletterMessage.textContent = '✓ Thank you for subscribing! Check your email to confirm.';
-                            newsletterMessage.style.color = '#90EE90';
-                            newsletterForm.reset();
-                            
-                            // Track newsletter subscription (if Google Analytics is set up)
-                            if (typeof gtag !== 'undefined') {
-                                gtag('event', 'newsletter_subscription', {
-                                    'event_category': 'engagement',
-                                    'event_label': 'Newsletter Signup'
-                                });
-                            }
-                        } else {
-                            const errorMsg = responseData?.message || 'Subscription failed';
-                            newsletterMessage.textContent = `❌ ${errorMsg} Please try again or contact us directly.`;
-                            newsletterMessage.style.color = '#FFB6C1';
-                            console.error('Newsletter subscription error:', responseData || response.statusText);
-                        }
-                    } catch (error) {
-                        newsletterMessage.textContent = '❌ Network error. Please check your connection and try again.';
-                        newsletterMessage.style.color = '#FFB6C1';
-                        console.error('Newsletter subscription error:', error);
-                    }
-                });
-            }
-            
-            // Track form submissions and phone calls (if Google Analytics is set up)
+            // Track phone calls (if Google Analytics is set up)
             if (typeof gtag !== 'undefined') {
                 // Track phone button clicks
                 document.querySelectorAll('a[href^="tel:"]').forEach(link => {
@@ -2957,30 +2509,24 @@
                         });
                     });
                 });
-                
-                // Track consultation form submissions
-                const bookingForm = document.getElementById('booking-form');
-                if (bookingForm) {
-                    bookingForm.addEventListener('submit', function() {
-                        gtag('event', 'form_submission', {
-                            'event_category': 'lead_generation',
-                            'event_label': 'Consultation Booking',
-                            'value': 1
-                        });
-                    });
-                }
             }
 
-            // Back to Top Button
+            // Back to Top Button with throttled scroll handler
             const backToTop = document.getElementById('backToTop');
             if (backToTop) {
-                window.addEventListener('scroll', () => {
-                    if (window.scrollY > 300) {
-                        backToTop.classList.add('visible');
-                    } else {
-                        backToTop.classList.remove('visible');
-                    }
-                });
+                let scrollTimeout;
+                const handleScroll = () => {
+                    if (scrollTimeout) return;
+                    scrollTimeout = requestAnimationFrame(() => {
+                        if (window.scrollY > 300) {
+                            backToTop.classList.add('visible');
+                        } else {
+                            backToTop.classList.remove('visible');
+                        }
+                        scrollTimeout = null;
+                    });
+                };
+                window.addEventListener('scroll', handleScroll, { passive: true });
 
                 backToTop.addEventListener('click', () => {
                     window.scrollTo({
@@ -3017,108 +2563,6 @@
             }
         });
 
-        // Booking Form Handler
-        document.addEventListener('DOMContentLoaded', function() {
-            const bookingForm = document.getElementById('booking-form');
-            const bookingDateInput = document.getElementById('booking-date');
-            const messageDiv = document.getElementById('booking-form-message');
-            
-            // Set minimum date to today
-            if (bookingDateInput) {
-                const today = new Date().toISOString().split('T')[0];
-                bookingDateInput.setAttribute('min', today);
-            }
-
-            if (bookingForm) {
-                // Rate limiting: prevent rapid submissions
-                let lastSubmissionTime = 0;
-                const minTimeBetweenSubmissions = 5000; // 5 seconds
-                
-                bookingForm.addEventListener('submit', async function(e) {
-                    e.preventDefault();
-                    
-                    // Check honeypot fields - if filled, it's a bot
-                    const honeypot1 = bookingForm.querySelector('input[name="website"]');
-                    const honeypot2 = bookingForm.querySelector('input[name="_gotcha"]');
-                    if ((honeypot1 && honeypot1.value) || (honeypot2 && honeypot2.value)) {
-                        if (messageDiv) {
-                            messageDiv.textContent = 'Spam detected. Submission blocked.';
-                            messageDiv.style.color = '#ff4444';
-                        }
-                        return;
-                    }
-                    
-                    // Check hCaptcha - wait a moment for it to load if needed
-                    let hCaptcha = bookingForm.querySelector('textarea[name="h-captcha-response"]');
-                    if (!hCaptcha) {
-                        // hCaptcha widget might not be loaded yet, wait a bit
-                        await new Promise(resolve => setTimeout(resolve, 500));
-                        hCaptcha = bookingForm.querySelector('textarea[name="h-captcha-response"]');
-                    }
-                    
-                    if (!hCaptcha || !hCaptcha.value) {
-                        if (messageDiv) {
-                            messageDiv.innerHTML = '<div class="form-error-message">❌ Please complete the captcha verification before submitting.</div>';
-                        } else {
-                            alert('Please complete the captcha verification before submitting.');
-                        }
-                        return;
-                    }
-                    
-                    // Rate limiting check
-                    const now = Date.now();
-                    if (now - lastSubmissionTime < minTimeBetweenSubmissions) {
-                        if (messageDiv) {
-                            messageDiv.textContent = 'Please wait a moment before submitting again.';
-                            messageDiv.style.color = '#ffa500';
-                        }
-                        return;
-                    }
-                    lastSubmissionTime = now;
-                    
-                    // Check honeypot field - if filled, it's a bot (legacy check)
-                    const honeypot = bookingForm.querySelector('input[name="website"]');
-                    if (honeypot && honeypot.value) {
-                        // Bot detected - silently reject
-                        console.log('Bot submission blocked');
-                        return;
-                    }
-
-                    const submitBtn = bookingForm.querySelector('button[type="submit"]');
-                    if (submitBtn) submitBtn.disabled = true;
-                    if (submitBtn) submitBtn.textContent = 'Submitting...';
-
-                    const formData = new FormData(bookingForm);
-                    
-                    try {
-                        const res = await fetch('https://api.web3forms.com/submit', {
-                            method: 'POST',
-                            headers: { 'Accept': 'application/json' },
-                            body: formData
-                        });
-
-                        const responseData = await res.json().catch(() => ({}));
-
-                        if (res.ok && responseData && responseData.success) {
-                            // Redirect to thank you page
-                            window.location.href = '/thank-you/';
-                        } else {
-                            const errorMsg = responseData?.message || 'There was an error submitting your request.';
-                            messageDiv.innerHTML = `<div class="form-error-message">❌ ${errorMsg} Please try again or call us at (312) 439-7500.</div>`;
-                            if (submitBtn) submitBtn.disabled = false;
-                            if (submitBtn) submitBtn.textContent = 'Submit Booking Request';
-                            console.error('Form submission error:', responseData || res.statusText);
-                        }
-                    } catch (err) {
-                        const errorMsg = err.message && err.message.includes('fetch') ? 'Network error. Please check your connection and try again.' : 'There was an error submitting your request.';
-                        messageDiv.innerHTML = `<div class="form-error-message">❌ ${errorMsg} Or call us at (312) 439-7500.</div>`;
-                        if (submitBtn) submitBtn.disabled = false;
-                        if (submitBtn) submitBtn.textContent = 'Submit Booking Request';
-                        console.error('Form submission error:', err);
-                    }
-                });
-            }
-        });
     </script>
 
     <!-- Live Chat Widget - Tawk.to (Free) -->
@@ -3162,18 +2606,20 @@
             const isMobile = window.innerWidth < 769;
             
             if (isMobile) {
-                // Show after user scrolls down a bit
+                // Show after user scrolls down a bit (throttled with requestAnimationFrame)
                 let scrollTimeout;
-                window.addEventListener('scroll', () => {
-                    clearTimeout(scrollTimeout);
-                    scrollTimeout = setTimeout(() => {
+                const handleFloatingScroll = () => {
+                    if (scrollTimeout) return;
+                    scrollTimeout = requestAnimationFrame(() => {
                         if (window.scrollY > 300) {
                             floatingBtn.style.display = 'block';
                         } else {
                             floatingBtn.style.display = 'none';
                         }
-                    }, 100);
-                });
+                        scrollTimeout = null;
+                    });
+                };
+                window.addEventListener('scroll', handleFloatingScroll, { passive: true });
             }
         });
     </script>
