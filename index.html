@@ -94,6 +94,7 @@
             --animation-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
         }
 
+        :root[data-theme='light'],
         body.light-theme {
             /* LIGHT MODE - High Contrast & Clean Palette */
             --bg-color: #f9fafb;
@@ -347,6 +348,7 @@
             }
         }
 
+        :root[data-theme='light'] .nav-links.active,
         body.light-theme .nav-links.active {
             background: linear-gradient(135deg, rgba(249, 250, 251, 0.98), rgba(255, 255, 255, 0.98));
             border-bottom: 2px solid var(--accent-primary);
@@ -413,6 +415,7 @@
             filter: none;
         }
 
+        :root[data-theme='light'] .nav-links.active li a,
         body.light-theme .nav-links.active li a {
             background: rgba(249, 115, 22, 0.05);
             border: 1px solid rgba(249, 115, 22, 0.2);
@@ -530,8 +533,15 @@
             height: 18px;
         }
 
+        :root[data-theme='light'] .call-now-button .phone-icon,
         body.light-theme .call-now-button .phone-icon {
             background: rgba(0, 0, 0, 0.08);
+        }
+
+        @media (max-width: 768px) {
+            .header-actions .call-now-button {
+                display: none;
+            }
         }
 
         /* HERO SECTION - Animated Background */
@@ -1013,6 +1023,7 @@
             filter: brightness(1);
         }
 
+        :root[data-theme='light'] .partner-badge img.badge-urc,
         body.light-theme .partner-badge img.badge-urc {
             content: url('Video/URC_Logo_Black.png');
         }
