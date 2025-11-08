@@ -1376,6 +1376,24 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWPTRPDR"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+    <script>
+        (function () {
+            const storageKey = 'theme';
+            const applyTheme = (theme) => {
+                const isLight = theme === 'light';
+                document.body.classList.toggle('light-theme', isLight);
+                document.documentElement.setAttribute('data-theme', theme);
+                window.__currentTheme = theme;
+            };
+            const savedTheme = localStorage.getItem(storageKey);
+            const initialTheme = savedTheme === 'dark' ? 'dark' : 'light';
+            applyTheme(initialTheme);
+            window.__setTheme = (theme) => {
+                localStorage.setItem(storageKey, theme);
+                applyTheme(theme);
+            };
+        })();
+    </script>
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -1822,24 +1840,28 @@
 
             // Theme toggle functionality
             const themeToggle = document.getElementById('theme-toggle-switch');
-            const body = document.body;
-            const applyTheme = (theme) => {
-                const isLight = theme === 'light';
-                body.classList.toggle('light-theme', isLight);
-                themeToggle.setAttribute('aria-checked', isLight);
+            const getCurrentTheme = () => document.body.classList.contains('light-theme') ? 'light' : 'dark';
+            const updateTheme = (theme) => {
+                if (typeof window.__setTheme === 'function') {
+                    window.__setTheme(theme);
+                } else {
+                    const isLight = theme === 'light';
+                    document.body.classList.toggle('light-theme', isLight);
+                    document.documentElement.setAttribute('data-theme', theme);
+                    localStorage.setItem('theme', theme);
+                }
+                themeToggle.setAttribute('aria-checked', theme === 'light');
             };
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme) {
-                applyTheme(savedTheme);
-            } else {
-                applyTheme('light');
+            if (themeToggle) {
+                themeToggle.setAttribute('aria-checked', getCurrentTheme() === 'light');
+                themeToggle.addEventListener('click', () => {
+                    const newTheme = getCurrentTheme() === 'light' ? 'dark' : 'light';
+                    updateTheme(newTheme);
+                });
+                themeToggle.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') themeToggle.click();
+                });
             }
-            themeToggle.addEventListener('click', () => {
-                const newTheme = body.classList.contains('light-theme') ? 'dark' : 'light';
-                localStorage.setItem('theme', newTheme);
-                applyTheme(newTheme);
-            });
-            themeToggle.addEventListener('keydown', (e) => { if (e.key === 'Enter') themeToggle.click(); });
 
             // Set current year
             document.getElementById('current-year').textContent = new Date().getFullYear();
