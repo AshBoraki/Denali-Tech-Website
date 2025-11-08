@@ -508,6 +508,32 @@
             box-shadow: var(--shadow-glow);
         }
 
+        .cta-button.call-now-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            white-space: nowrap;
+        }
+
+        .call-now-button .phone-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .call-now-button .phone-icon svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        body.light-theme .call-now-button .phone-icon {
+            background: rgba(0, 0, 0, 0.08);
+        }
+
         /* HERO SECTION - Animated Background */
         .hero {
             height: 100vh;
@@ -1925,7 +1951,14 @@
                         <span></span>
                         <span></span>
                     </button>
-                    <a href="tel:+13124397500" class="cta-button">📞 Call Now</a>
+                    <a href="tel:+13124397500" class="cta-button call-now-button">
+                        <span class="phone-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M6.62 10.79a15.07 15.07 0 006.59 6.59l2.2-2.2a1 1 0 011.03-.24 11.62 11.62 0 003.67.59 1 1 0 011 1v3.5a1 1 0 01-1 1A17.5 17.5 0 013 6a1 1 0 011-1h3.5a1 1 0 011 1 11.62 11.62 0 00.59 3.67 1 1 0 01-.24 1.03z"></path>
+                            </svg>
+                        </span>
+                        <span>Call Now</span>
+                    </a>
                 </div>
             </nav>
         </div>
@@ -2483,8 +2516,8 @@
             if (savedTheme) {
                 applyTheme(savedTheme);
             } else {
-                // Default to dark mode
-                applyTheme('dark');
+                // Default to light mode
+                applyTheme('light');
             }
             themeToggle.addEventListener('click', () => {
                 const newTheme = body.classList.contains('light-theme') ? 'dark' : 'light';
@@ -2584,7 +2617,9 @@
     <!-- Smart Floating Call Button - Only shows on mobile/tablet -->
     <div id="floating-call-btn" style="position: fixed; bottom: 100px; right: 20px; z-index: 998; display: none;">
         <a href="tel:+13124397500" style="display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, var(--accent-primary), var(--accent-interactive)); border-radius: 50%; box-shadow: 0 4px 15px rgba(249, 115, 22, 0.4); text-decoration: none; transition: all 0.3s; animation: pulse 2s infinite;" aria-label="Call us now" title="Call (312) 439-7500">
-            <span style="font-size: 1.5rem;">📞</span>
+            <svg viewBox="0 0 24 24" fill="#ffffff" width="24" height="24" aria-hidden="true">
+                <path d="M6.62 10.79a15.07 15.07 0 006.59 6.59l2.2-2.2a1 1 0 011.03-.24 11.62 11.62 0 003.67.59 1 1 0 011 1v3.5a1 1 0 01-1 1A17.5 17.5 0 013 6a1 1 0 011-1h3.5a1 1 0 011 1 11.62 11.62 0 00.59 3.67 1 1 0 01-.24 1.03z"></path>
+            </svg>
         </a>
     </div>
     <style>
