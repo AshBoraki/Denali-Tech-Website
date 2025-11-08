@@ -1259,36 +1259,12 @@
         }
 
         @media (max-width: 768px) {
-            :root {
-                --header-height: var(--mobile-header-height);
+            .header {
+                min-height: var(--mobile-header-height);
             }
 
-            .nav-links .mobile-call-btn {
-                display: block;
-                margin-top: 1rem;
-                padding-top: 1.5rem;
-                border-top: 1px solid var(--border-color);
-            }
-
-            .nav-links .mobile-call-btn a {
-                display: block;
-                width: 100%;
-                text-align: center;
-                background: linear-gradient(135deg, var(--accent-primary), var(--accent-interactive));
-                color: white;
-                padding: 1rem 2rem;
-                border-radius: 8px;
-                text-decoration: none;
-                font-weight: 700;
-                font-size: 1.1rem;
-                transition: all var(--transition);
-                box-shadow: var(--shadow-subtle);
-                text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-            }
-
-            .nav-links .mobile-call-btn a:hover {
-                transform: translateY(-2px);
-                box-shadow: var(--shadow-glow);
+            .header .container {
+                height: var(--mobile-header-height);
             }
 
             .nav {

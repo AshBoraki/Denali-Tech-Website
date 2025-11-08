@@ -424,8 +424,12 @@
         }
 
         @media (max-width: 768px) {
-            :root {
-                --header-height: var(--mobile-header-height);
+            .header {
+                min-height: var(--mobile-header-height);
+            }
+
+            .header .container {
+                height: var(--mobile-header-height);
             }
 
             .nav-links .mobile-call-btn {
