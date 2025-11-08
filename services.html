@@ -59,6 +59,9 @@
             --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             --animation-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
             --header-height: 82px;
+            --mobile-header-height: 64px;
+            --hamburger-color-dark: #ffffff;
+            --hamburger-color-light: #0f172a;
         }
 
         :root[data-theme='light'],
@@ -253,9 +256,14 @@
             display: block;
             width: 25px;
             height: 3px;
-            background: white;
+            background: var(--hamburger-color-dark);
             border-radius: 3px;
             transition: all var(--transition);
+        }
+
+        :root[data-theme='light'] .menu-toggle span,
+        body.light-theme .menu-toggle span {
+            background: var(--hamburger-color-light);
         }
 
         .menu-toggle.active span:nth-child(1) {
@@ -416,6 +424,10 @@
         }
 
         @media (max-width: 768px) {
+            :root {
+                --header-height: var(--mobile-header-height);
+            }
+
             .nav-links .mobile-call-btn {
                 display: block;
                 margin-top: 1rem;
