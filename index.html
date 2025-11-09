@@ -471,6 +471,44 @@
 
             .nav {
                 gap: 1rem;
+                justify-content: space-between;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .logo {
+                padding: 4px 10px;
+                font-size: clamp(1.05rem, 5vw, 1.25rem);
+            }
+
+            .logo img {
+                width: 30px;
+                height: 30px;
+                margin-right: 6px;
+            }
+
+            .logo-text {
+                display: inline;
+            }
+
+            .menu-toggle {
+                display: flex;
+                padding: 6px;
+            }
+
+            .header-actions {
+                gap: 0.6rem;
+            }
+
+            .theme-toggle {
+                order: -1;
+            }
+
+            .header-actions .cta-button,
+            .cta-button.call-now-button {
+                display: none;
             }
 
             .nav-links .mobile-call-btn {
@@ -501,32 +539,6 @@
                 box-shadow: var(--shadow-glow);
             }
 
-            .logo {
-                padding: 4px 10px;
-                font-size: 1.25rem;
-            }
-
-            .logo img {
-                width: 30px;
-                height: 30px;
-                margin-right: 8px;
-            }
-
-            .header-actions {
-                gap: 0.6rem;
-            }
-
-            .theme-toggle {
-                order: -1;
-            }
-
-            .cta-button.call-now-button {
-                display: none;
-            }
-
-            .menu-toggle {
-                padding: 6px;
-            }
         }
 
         .cta-button {
