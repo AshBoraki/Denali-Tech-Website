@@ -430,6 +430,46 @@
 
             .header .container {
                 height: var(--mobile-header-height);
+                padding: 0 1rem;
+                gap: 1rem;
+            }
+
+            .nav {
+                position: relative;
+                justify-content: space-between;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .logo {
+                padding: 4px 10px;
+                font-size: clamp(1.05rem, 5vw, 1.25rem);
+            }
+
+            .logo img {
+                width: 30px !important;
+                height: 30px !important;
+                margin-right: 6px !important;
+            }
+
+            .menu-toggle {
+                display: flex;
+                padding: 6px;
+            }
+
+            .header-actions {
+                gap: 0.6rem;
+            }
+            
+            .theme-toggle {
+                order: -1; /* Show theme toggle first on mobile */
+            }
+            
+            .header-actions .cta-button {
+                display: none;
             }
 
             .nav-links .mobile-call-btn {
@@ -1198,13 +1238,13 @@
 
             .logo {
                 padding: 4px 10px;
-                font-size: 1.25rem;
+                font-size: clamp(1.05rem, 5vw, 1.25rem);
             }
 
             .logo img {
                 width: 30px !important;
                 height: 30px !important;
-                margin-right: 8px !important;
+                margin-right: 6px !important;
             }
 
             .menu-toggle {
@@ -1220,7 +1260,7 @@
                 order: -1; /* Show theme toggle first on mobile */
             }
             
-            .cta-button {
+            .header-actions .cta-button {
                 display: none;
             }
 

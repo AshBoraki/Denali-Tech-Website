@@ -49,6 +49,9 @@
             --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             --animation-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
             --header-height: 82px;
+            --mobile-header-height: 64px;
+            --hamburger-color-dark: #ffffff;
+            --hamburger-color-light: #0f172a;
         }
 
         :root[data-theme='light'],
@@ -243,9 +246,14 @@
             display: block;
             width: 25px;
             height: 3px;
-            background: white;
+            background: var(--hamburger-color-dark);
             border-radius: 3px;
             transition: all var(--transition);
+        }
+
+        :root[data-theme='light'] .menu-toggle span,
+        body.light-theme .menu-toggle span {
+            background: var(--hamburger-color-light);
         }
 
         .menu-toggle.active span:nth-child(1) {
@@ -406,6 +414,58 @@
         }
 
         @media (max-width: 768px) {
+            .header {
+                min-height: var(--mobile-header-height);
+            }
+
+            .header .container {
+                height: var(--mobile-header-height);
+                padding: 0 1rem;
+                gap: 1rem;
+            }
+
+            .nav {
+                position: relative;
+                justify-content: space-between;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .logo {
+                padding: 4px 10px;
+                font-size: clamp(1.05rem, 5vw, 1.25rem);
+            }
+
+            .logo img {
+                width: 30px !important;
+                height: 30px !important;
+                margin-right: 6px !important;
+            }
+
+            .logo-text {
+                display: inline;
+            }
+
+            .menu-toggle {
+                display: flex;
+                padding: 6px;
+            }
+
+            .header-actions {
+                gap: 0.6rem;
+            }
+            
+            .theme-toggle {
+                order: -1; /* Show theme toggle first on mobile */
+            }
+            
+            .header-actions .cta-button {
+                display: none;
+            }
+
             .nav-links .mobile-call-btn {
                 display: block;
                 margin-top: 1rem;
