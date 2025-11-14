@@ -351,20 +351,38 @@
         }
 
         .nav-links.active li a:hover,
-        .nav-links.active li a:focus {
+        .nav-links.active li a:focus,
+        .nav-links.active li a:active {
             background: rgba(249, 115, 22, 0.1);
             color: var(--accent-primary);
             padding-left: 1.25rem;
         }
 
         .nav-links.active li a:hover::before,
-        .nav-links.active li a:focus::before {
+        .nav-links.active li a:focus::before,
+        .nav-links.active li a:active::before {
             height: 60%;
         }
 
         :root[data-theme='light'] .nav-links.active li a:hover,
-        body.light-theme .nav-links.active li a:hover {
+        body.light-theme .nav-links.active li a:hover,
+        :root[data-theme='light'] .nav-links.active li a:active,
+        body.light-theme .nav-links.active li a:active {
             background: rgba(249, 115, 22, 0.08);
+        }
+
+        /* Touch-friendly active state for mobile */
+        @media (hover: none) and (pointer: coarse) {
+            .nav-links.active li a:active {
+                background: rgba(249, 115, 22, 0.15);
+                color: var(--accent-primary);
+                padding-left: 1.25rem;
+                transform: scale(0.98);
+            }
+
+            .nav-links.active li a:active::before {
+                height: 60%;
+            }
         }
 
         .nav-links .mobile-call-btn {
@@ -408,9 +426,17 @@
                 transition: all 0.2s ease;
             }
 
-            .nav-links .mobile-call-btn a:hover {
+            .nav-links .mobile-call-btn a:hover,
+            .nav-links .mobile-call-btn a:active {
                 opacity: 0.9;
                 transform: translateX(2px);
+            }
+
+            /* Touch feedback for mobile call button */
+            @media (hover: none) and (pointer: coarse) {
+                .nav-links .mobile-call-btn a:active {
+                    transform: translateX(2px) scale(0.98);
+                }
             }
 
             .menu-toggle {
@@ -1416,9 +1442,17 @@
                 transition: all 0.2s ease;
             }
 
-            .nav-links .mobile-call-btn a:hover {
+            .nav-links .mobile-call-btn a:hover,
+            .nav-links .mobile-call-btn a:active {
                 opacity: 0.9;
                 transform: translateX(2px);
+            }
+
+            /* Touch feedback for mobile call button */
+            @media (hover: none) and (pointer: coarse) {
+                .nav-links .mobile-call-btn a:active {
+                    transform: translateX(2px) scale(0.98);
+                }
             }
 
             .menu-toggle {
