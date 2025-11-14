@@ -350,28 +350,27 @@
             transition: height 0.2s ease;
         }
 
-        .nav-links.active li a:hover,
-        .nav-links.active li a:focus,
-        .nav-links.active li a:active {
-            background: rgba(249, 115, 22, 0.1);
-            color: var(--accent-primary);
-            padding-left: 1.25rem;
+        /* Desktop hover effects - only on devices that support hover */
+        @media (hover: hover) and (pointer: fine) {
+            .nav-links.active li a:hover,
+            .nav-links.active li a:focus {
+                background: rgba(249, 115, 22, 0.1);
+                color: var(--accent-primary);
+                padding-left: 1.25rem;
+            }
+
+            .nav-links.active li a:hover::before,
+            .nav-links.active li a:focus::before {
+                height: 60%;
+            }
+
+            :root[data-theme='light'] .nav-links.active li a:hover,
+            body.light-theme .nav-links.active li a:hover {
+                background: rgba(249, 115, 22, 0.08);
+            }
         }
 
-        .nav-links.active li a:hover::before,
-        .nav-links.active li a:focus::before,
-        .nav-links.active li a:active::before {
-            height: 60%;
-        }
-
-        :root[data-theme='light'] .nav-links.active li a:hover,
-        body.light-theme .nav-links.active li a:hover,
-        :root[data-theme='light'] .nav-links.active li a:active,
-        body.light-theme .nav-links.active li a:active {
-            background: rgba(249, 115, 22, 0.08);
-        }
-
-        /* Touch-friendly active state for mobile */
+        /* Touch-friendly active state for mobile - tap feedback */
         @media (hover: none) and (pointer: coarse) {
             .nav-links.active li a:active {
                 background: rgba(249, 115, 22, 0.15);
@@ -382,6 +381,18 @@
 
             .nav-links.active li a:active::before {
                 height: 60%;
+            }
+
+            /* Disable hover effects on touch devices */
+            .nav-links.active li a:hover {
+                background: transparent;
+                color: var(--text-primary);
+                padding-left: 1rem;
+                transform: none;
+            }
+
+            .nav-links.active li a:hover::before {
+                height: 0;
             }
         }
 
@@ -426,16 +437,25 @@
                 transition: all 0.2s ease;
             }
 
-            .nav-links .mobile-call-btn a:hover,
-            .nav-links .mobile-call-btn a:active {
-                opacity: 0.9;
-                transform: translateX(2px);
+            /* Desktop hover for call button */
+            @media (hover: hover) and (pointer: fine) {
+                .nav-links .mobile-call-btn a:hover {
+                    opacity: 0.9;
+                    transform: translateX(2px);
+                }
             }
 
             /* Touch feedback for mobile call button */
             @media (hover: none) and (pointer: coarse) {
                 .nav-links .mobile-call-btn a:active {
+                    opacity: 0.9;
                     transform: translateX(2px) scale(0.98);
+                }
+
+                /* Disable hover on touch devices */
+                .nav-links .mobile-call-btn a:hover {
+                    opacity: 1;
+                    transform: none;
                 }
             }
 
@@ -1442,16 +1462,25 @@
                 transition: all 0.2s ease;
             }
 
-            .nav-links .mobile-call-btn a:hover,
-            .nav-links .mobile-call-btn a:active {
-                opacity: 0.9;
-                transform: translateX(2px);
+            /* Desktop hover for call button */
+            @media (hover: hover) and (pointer: fine) {
+                .nav-links .mobile-call-btn a:hover {
+                    opacity: 0.9;
+                    transform: translateX(2px);
+                }
             }
 
             /* Touch feedback for mobile call button */
             @media (hover: none) and (pointer: coarse) {
                 .nav-links .mobile-call-btn a:active {
+                    opacity: 0.9;
                     transform: translateX(2px) scale(0.98);
+                }
+
+                /* Disable hover on touch devices */
+                .nav-links .mobile-call-btn a:hover {
+                    opacity: 1;
+                    transform: none;
                 }
             }
 
