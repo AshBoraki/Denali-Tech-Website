@@ -38,7 +38,14 @@
     <!-- PERFORMANCE: Optimized Font Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Preload critical fonts for faster rendering -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
+    <!-- Fallback fonts -->
+    <style>
+        /* Font fallback to prevent FOIT (Flash of Invisible Text) */
+        body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+    </style>
     
     <!-- DNS Prefetch for External Resources -->
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
@@ -73,6 +80,65 @@
         Based on your amazing footer design
         ============================================
         */
+
+        /* Loading Skeleton Styles - Better Perceived Performance */
+        .skeleton {
+            background: linear-gradient(90deg, 
+                var(--bg-color) 0%, 
+                rgba(255, 255, 255, 0.05) 50%, 
+                var(--bg-color) 100%);
+            background-size: 200% 100%;
+            animation: skeleton-loading 1.5s ease-in-out infinite;
+            border-radius: 8px;
+        }
+
+        @keyframes skeleton-loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        .skeleton-image {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 12px;
+        }
+
+        .skeleton-text {
+            height: 1em;
+            margin-bottom: 0.5rem;
+            border-radius: 4px;
+        }
+
+        .skeleton-text:last-child {
+            width: 60%;
+        }
+
+        /* Image loading state - smooth fade-in */
+        img[loading="lazy"] {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        img[loading="lazy"].loaded {
+            opacity: 1;
+        }
+
+        /* Font loading optimization - prevent FOIT (Flash of Invisible Text) */
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: local('Inter');
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: local('Poppins');
+        }
 
         :root {
             /* DARK MODE (DEFAULT) - Enhanced Contrast & Vibrant Palette */
@@ -2704,6 +2770,89 @@
         });
     </script>
     
+    <!-- Image Loading Handler - Add loaded class when images finish loading -->
+    <script>
+        (function() {
+            // Handle lazy-loaded images with smooth fade-in
+            const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+            
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.addEventListener('load', function() {
+                                img.classList.add('loaded');
+                            }, { once: true });
+                            observer.unobserve(img);
+                        }
+                    });
+                }, {
+                    rootMargin: '50px' // Start loading 50px before image enters viewport
+                });
+
+                lazyImages.forEach(img => imageObserver.observe(img));
+            } else {
+                // Fallback for older browsers
+                lazyImages.forEach(img => {
+                    img.addEventListener('load', function() {
+                        img.classList.add('loaded');
+                    }, { once: true });
+                });
+            }
+
+            // Mobile enhancements: Touch gestures and optimizations
+            let touchStartX = 0;
+            let touchStartY = 0;
+            let touchEndX = 0;
+            let touchEndY = 0;
+
+            // Swipe detection for mobile galleries (can be used in projects page)
+            document.addEventListener('touchstart', function(e) {
+                touchStartX = e.changedTouches[0].screenX;
+                touchStartY = e.changedTouches[0].screenY;
+            }, { passive: true });
+
+            document.addEventListener('touchend', function(e) {
+                touchEndX = e.changedTouches[0].screenX;
+                touchEndY = e.changedTouches[0].screenY;
+                handleSwipe();
+            }, { passive: true });
+
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                const deltaX = touchEndX - touchStartX;
+                const deltaY = touchEndY - touchStartY;
+
+                // Horizontal swipe
+                if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > swipeThreshold) {
+                    if (deltaX > 0) {
+                        // Swipe right
+                        const event = new CustomEvent('swiperight');
+                        document.dispatchEvent(event);
+                    } else {
+                        // Swipe left
+                        const event = new CustomEvent('swipeleft');
+                        document.dispatchEvent(event);
+                    }
+                }
+            }
+
+            // Optimize scroll performance on mobile with requestAnimationFrame
+            let ticking = false;
+            function optimizeScroll() {
+                if (!ticking) {
+                    window.requestAnimationFrame(function() {
+                        // Scroll optimizations can be added here
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }
+            window.addEventListener('scroll', optimizeScroll, { passive: true });
+        })();
+    </script>
+
     <!-- Web3Forms hCaptcha Script (Zero-Config) -->
     <script src="https://web3forms.com/client/script.js" async defer></script>
 </body>

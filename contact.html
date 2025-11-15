@@ -31,7 +31,14 @@
     <!-- PERFORMANCE: Optimized Font Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Preload critical fonts for faster rendering -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
+    <!-- Fallback fonts -->
+    <style>
+        /* Font fallback to prevent FOIT (Flash of Invisible Text) */
+        body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+    </style>
     
     
     <style>
@@ -1682,7 +1689,7 @@
         <div class="container">
             <nav class="nav">
                 <a href="/" class="logo" title="Denali Tech">
-                    <img src="Video/logo.JPG" alt="Denali Tech Logo" style="width: 56px; height: 40px; margin-right: 10px; object-fit: cover; object-position: 40% center; border-radius: 10px;">
+                    <img src="Video/logo.JPG" alt="Denali Tech Logo" loading="eager" style="width: 56px; height: 40px; margin-right: 10px; object-fit: cover; object-position: 40% center; border-radius: 10px;">
                     <span class="logo-text">Denali Tech</span>
                 </a>
                 <ul class="nav-links" id="navLinks">
