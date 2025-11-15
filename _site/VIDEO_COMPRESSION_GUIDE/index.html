@@ -1,0 +1,89 @@
+<h1>Video Compression Guide for Denali Tech Website</h1>
+<h2>Current Video Sizes</h2>
+<ul>
+<li><strong>Denali tech smart home.mp4</strong>: 82MB ⚠️ (Too Large)</li>
+<li><strong>wifi.mp4</strong>: 33MB ⚠️ (Too Large)</li>
+<li><strong>Smart lighting Solutions - Denali Tech.mp4</strong>: 18MB ⚠️ (Should compress)</li>
+<li><strong>Home theter Systems - Denali Tech - Chicago.mp4</strong>: 14MB ✓ (Acceptable)</li>
+<li><strong>camera.mp4</strong>: 1.6MB ✓ (Good)</li>
+<li><strong>shades.mp4</strong>: 1.3MB ✓ (Good)</li>
+<li><strong>whole hone audio.mp4</strong>: 1.6MB ✓ (Good)</li>
+</ul>
+<h2>Recommended Target Sizes</h2>
+<ul>
+<li>All videos should be <strong>10-15MB max</strong> for fast mobile loading</li>
+<li>Aim for <strong>5-10MB</strong> if possible without quality loss</li>
+</ul>
+<h2>How to Compress Videos</h2>
+<h3>Option 1: Using HandBrake (Easy - No Command Line)</h3>
+<ol>
+<li>Download <strong>HandBrake</strong> (free): https://handbrake.fr/</li>
+<li>Open HandBrake and add your video file</li>
+<li>Settings:
+<ul>
+<li><strong>Preset</strong>: &quot;Web&quot; → &quot;Gmail Medium 5 Minutes 720p30&quot;</li>
+<li><strong>Video Codec</strong>: H.264</li>
+<li><strong>Quality</strong>: RF 24-26 (lower number = better quality)</li>
+<li><strong>Framerate</strong>: Same as source</li>
+<li><strong>Resolution</strong>: 1280x720 (720p is perfect for website loops)</li>
+</ul>
+</li>
+<li>Click &quot;Start Encode&quot;</li>
+<li>Replace the old file with the new compressed version</li>
+</ol>
+<h3>Option 2: Using CloudConvert (Online - No Install)</h3>
+<ol>
+<li>Go to https://cloudconvert.com/mp4-converter</li>
+<li>Upload your video</li>
+<li>Set quality to &quot;Medium&quot; or &quot;High&quot;</li>
+<li>Set video resolution to 1280x720 (720p)</li>
+<li>Convert and download</li>
+<li>Replace the old file</li>
+</ol>
+<h3>Option 3: Using FFmpeg (Command Line - Most Control)</h3>
+<p>If you have Homebrew installed, install ffmpeg:</p>
+<pre><code class="language-bash">brew install ffmpeg
+</code></pre>
+<p>Then compress videos:</p>
+<pre><code class="language-bash"># Navigate to Video folder
+cd &quot;/Users/ashb/Desktop/Denali Tech Website/Video&quot;
+
+# Compress smart home video (82MB → ~10MB)
+ffmpeg -i &quot;Denali tech smart home.mp4&quot; -vcodec h264 -crf 28 -preset medium -vf scale=1280:-2 -acodec aac -b:a 128k &quot;Denali tech smart home_compressed.mp4&quot;
+
+# Compress WiFi video (33MB → ~8MB)
+ffmpeg -i &quot;wifi.mp4&quot; -vcodec h264 -crf 28 -preset medium -vf scale=1280:-2 -acodec aac -b:a 128k &quot;wifi_compressed.mp4&quot;
+
+# Compress lighting video (18MB → ~6MB)
+ffmpeg -i &quot;Smart lighting Solutions - Denali Tech.mp4&quot; -vcodec h264 -crf 28 -preset medium -vf scale=1280:-2 -acodec aac -b:a 128k &quot;Smart lighting Solutions - Denali Tech_compressed.mp4&quot;
+
+# After testing quality, replace old files with compressed versions
+mv &quot;Denali tech smart home_compressed.mp4&quot; &quot;Denali tech smart home.mp4&quot;
+mv &quot;wifi_compressed.mp4&quot; &quot;wifi.mp4&quot;
+mv &quot;Smart lighting Solutions - Denali Tech_compressed.mp4&quot; &quot;Smart lighting Solutions - Denali Tech.mp4&quot;
+</code></pre>
+<p><strong>Explanation of FFmpeg settings:</strong></p>
+<ul>
+<li><code>-crf 28</code>: Quality level (23-28 is good, lower = better quality)</li>
+<li><code>-preset medium</code>: Encoding speed (slow = smaller file, fast = bigger file)</li>
+<li><code>-vf scale=1280:-2</code>: Resize to 720p (maintains aspect ratio)</li>
+<li><code>-acodec aac -b:a 128k</code>: Audio compression</li>
+</ul>
+<h2>After Compression</h2>
+<ol>
+<li>Test all videos on the website to ensure quality is good</li>
+<li>Check file sizes - should be 5-15MB each</li>
+<li>Test loading speed on mobile phone</li>
+<li>Commit and push changes to GitHub</li>
+</ol>
+<h2>Current Optimization</h2>
+<p>✓ Videos already use <code>preload=&quot;metadata&quot;</code> (loads only first frame until user interaction)
+✓ Videos have poster images (logo.JPG shows while loading)
+✓ Videos set to autoplay, muted, loop (best for background videos)</p>
+<h2>Priority Videos to Compress</h2>
+<ol>
+<li><strong>Denali tech smart home.mp4</strong> (82MB) - HIGHEST PRIORITY</li>
+<li><strong>wifi.mp4</strong> (33MB) - HIGH PRIORITY</li>
+<li><strong>Smart lighting Solutions - Denali Tech.mp4</strong> (18MB) - MEDIUM PRIORITY</li>
+</ol>
+<p>Compressing these 3 files will reduce total size from <strong>133MB to ~25MB</strong> - a huge improvement! 🚀</p>

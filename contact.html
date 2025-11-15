@@ -710,10 +710,11 @@
             background: rgba(255, 255, 255, 0.05);
             color: var(--text-primary);
             font-family: var(--font-main);
-            font-size: 16px;
+            font-size: 16px; /* Prevents iOS zoom on focus */
             transition: all var(--transition);
             -webkit-appearance: none;
             appearance: none;
+            min-height: 44px; /* Minimum touch target size for mobile */
         }
 
         .form-group input:focus,
@@ -1266,6 +1267,25 @@
         }
 
         @media (max-width: 768px) {
+            /* Mobile form improvements */
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                padding: 1.1rem 1rem; /* Larger padding for easier tapping */
+                font-size: 16px; /* Prevents iOS zoom */
+            }
+
+            .form-group label {
+                font-size: 1rem; /* Larger labels for readability */
+                margin-bottom: 0.75rem;
+            }
+
+            .btn-primary {
+                padding: 1.2rem 2rem; /* Larger button for mobile */
+                font-size: 1.1rem;
+                min-height: 50px; /* Ensure adequate touch target */
+            }
+
             .back-to-top {
                 bottom: 1.5rem;
                 right: 1.5rem;
@@ -1700,6 +1720,7 @@
                     <li><a href="/services/">What We Do</a></li>
                     <li><a href="/projects/">Projects</a></li>
                     <li><a href="/about/">About Us</a></li>
+                    <li><a href="/faq.html">FAQ</a></li>
                     <li><a href="/contact/" style="color: var(--accent-primary);">Contact</a></li>
                 </ul>
                 <div class="header-actions">
