@@ -1,0 +1,90 @@
+<h1>Web3Forms Setup Guide</h1>
+<h2>Why Web3Forms?</h2>
+<p>We've switched from FormSubmit.co to Web3Forms because:</p>
+<ul>
+<li>✅ More reliable and stable service</li>
+<li>✅ Better error handling and debugging</li>
+<li>✅ Free tier with 250 submissions/month</li>
+<li>✅ Built-in spam protection with hCaptcha</li>
+<li>✅ Better API response format</li>
+</ul>
+<h2>✅ hCaptcha Setup Complete</h2>
+<p>hCaptcha has been properly integrated using Web3Forms' zero-config method. The forms now include:</p>
+<ol>
+<li><strong>hCaptcha widgets</strong> in all forms (consultation, booking, newsletter)</li>
+<li><strong>Web3Forms script</strong> that automatically handles hCaptcha integration</li>
+<li><strong>No configuration needed</strong> - Web3Forms handles everything automatically</li>
+</ol>
+<h3>How It Works:</h3>
+<ul>
+<li>Web3Forms provides the hCaptcha integration automatically</li>
+<li>Users will see a captcha checkbox when submitting forms</li>
+<li>The captcha is validated automatically by Web3Forms</li>
+<li>No site keys or API keys needed - it's all handled by Web3Forms</li>
+</ul>
+<h3>Activating hCaptcha:</h3>
+<p>According to Web3Forms documentation, you need to:</p>
+<ol>
+<li>Submit a form <strong>once</strong> with the hCaptcha checkbox checked</li>
+<li>This activates hCaptcha for that form</li>
+<li>After activation, hCaptcha will be required for all future submissions</li>
+</ol>
+<p><strong>Your forms are now ready to use with hCaptcha protection!</strong></p>
+<h2>Setup Instructions</h2>
+<h3>Step 1: Get Your Access Key</h3>
+<ol>
+<li>Go to <a href="https://web3forms.com">https://web3forms.com</a></li>
+<li>Enter your email address: <code>services@denalitechs.com</code></li>
+<li>Click &quot;Get Your Access Key&quot;</li>
+<li>Check your email for the access key</li>
+<li>Copy the access key (it will look like: <code>a1b2c3d4-e5f6-7890-abcd-ef1234567890</code>)</li>
+</ol>
+<h3>Step 2: Update the Access Key in Your Website</h3>
+<p>You need to replace <code>YOUR_WEB3FORMS_ACCESS_KEY</code> with your actual access key in these files:</p>
+<ol>
+<li><strong>index.html</strong> - Line 2334 (booking form)</li>
+<li><strong>index.html</strong> - Line 2429 (newsletter form)</li>
+<li><strong>contact.html</strong> - Line 1569 (consultation form)</li>
+<li><strong>contact.html</strong> - Line 1673 (booking form)</li>
+</ol>
+<p><strong>Find and replace:</strong></p>
+<pre><code class="language-html">&lt;input type=&quot;hidden&quot; name=&quot;access_key&quot; value=&quot;YOUR_WEB3FORMS_ACCESS_KEY&quot;&gt;
+</code></pre>
+<p><strong>With:</strong></p>
+<pre><code class="language-html">&lt;input type=&quot;hidden&quot; name=&quot;access_key&quot; value=&quot;YOUR_ACTUAL_ACCESS_KEY_HERE&quot;&gt;
+</code></pre>
+<h3>Step 3: Test the Forms</h3>
+<ol>
+<li>Test the booking form on the homepage</li>
+<li>Test the consultation form on the contact page</li>
+<li>Test the newsletter subscription form</li>
+<li>Check your email (<code>services@denalitechs.com</code> and <code>Hello@denalitechs.com</code>) for submissions</li>
+</ol>
+<h3>Step 4: Verify Everything Works</h3>
+<ul>
+<li>✅ Forms submit without errors</li>
+<li>✅ Success messages appear</li>
+<li>✅ Emails are received</li>
+<li>✅ No console errors in browser (F12 → Console)</li>
+</ul>
+<h2>Troubleshooting</h2>
+<h3>Forms Still Not Working?</h3>
+<ol>
+<li><strong>Check the access key</strong> - Make sure it's correct and not expired</li>
+<li><strong>Check browser console</strong> - Look for error messages (F12 → Console)</li>
+<li><strong>Check email</strong> - Make sure emails are going to the correct address</li>
+<li><strong>Check Web3Forms dashboard</strong> - Log in to see submission history</li>
+</ol>
+<h3>Getting Rate Limit Errors?</h3>
+<ul>
+<li>Free tier: 250 submissions/month</li>
+<li>Upgrade to paid plan if you need more</li>
+<li>Or use multiple access keys for different forms</li>
+</ul>
+<h2>Support</h2>
+<ul>
+<li>Web3Forms Documentation: https://docs.web3forms.com</li>
+<li>Web3Forms Support: https://web3forms.com/contact</li>
+</ul>
+<hr>
+<p><strong>Important:</strong> Don't forget to replace <code>YOUR_WEB3FORMS_ACCESS_KEY</code> with your actual access key before going live!</p>
