@@ -1477,6 +1477,27 @@
             border-radius: 4px;
         }
     </style>
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.denalitechs.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://www.denalitechs.com/services/"
+        }
+      ]
+    }
+    </script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -1807,6 +1828,36 @@
                         <source src="Video/whole hone audio.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Services Section -->
+    <section class="related-services-section" style="padding: 80px 5%; background: var(--bg-color);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Related Services You Might Like</h2>
+                <p>Many customers combine these services for a complete smart home solution</p>
+            </div>
+            <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <div class="service-card" style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; transition: all var(--transition);">
+                    <div class="service-icon" style="font-size: 3rem; margin-bottom: 1rem;">🏠</div>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">Smart Home Automation</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Control everything from one app</p>
+                    <a href="/services/#automation" class="service-link" style="color: var(--accent-primary); text-decoration: none; font-weight: 600;">Learn More →</a>
+                </div>
+                <div class="service-card" style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; transition: all var(--transition);">
+                    <div class="service-icon" style="font-size: 3rem; margin-bottom: 1rem;">🔒</div>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">Security & Surveillance</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Keep your home safe 24/7</p>
+                    <a href="/services/#surveillance" class="service-link" style="color: var(--accent-primary); text-decoration: none; font-weight: 600;">Learn More →</a>
+                </div>
+                <div class="service-card" style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; transition: all var(--transition);">
+                    <div class="service-icon" style="font-size: 3rem; margin-bottom: 1rem;">💡</div>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">Smart Lighting</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Automated lighting control</p>
+                    <a href="/services/#lighting" class="service-link" style="color: var(--accent-primary); text-decoration: none; font-weight: 600;">Learn More →</a>
                 </div>
             </div>
         </div>
