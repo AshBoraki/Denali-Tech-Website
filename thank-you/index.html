@@ -1,20 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MWPTRPDR');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thank You | Denali Tech</title>
+    <meta name="description" content="Thanks for contacting Denali Tech. We received your request and will reply within 24 hours.">
+    <meta name="keywords" content="denali tech contact, smart home consultation, home automation quote, chicago smart home installer">
+    <base href="/">
+    <link rel="icon" type="image/jpeg" href="Video/logo.JPG">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --bg: #0a0d18; 
+            --text: #f8fafc; 
+            --accent: #f97316; 
+            --accent-hover: #fdba74;
+            --text-secondary: #cbd5e1;
+        }
+        body { 
+            margin: 0; 
+            font-family: 'Inter', system-ui, sans-serif; 
+            background: var(--bg); 
+            color: var(--text); 
+            min-height: 100vh;
+        }
+        .wrap { 
+            min-height: 100vh; 
+            display: grid; 
+            place-items: center; 
+            padding: clamp(20px, 5vw, 40px) clamp(16px, 4vw, 24px); 
+        }
+        .card { 
+            max-width: 720px; 
+            width: 100%;
+            text-align: center; 
+            background: rgba(255,255,255,0.05); 
+            border: 1px solid rgba(255,255,255,0.12); 
+            border-radius: 16px; 
+            padding: clamp(2rem, 5vw, 2.5rem) clamp(1.5rem, 4vw, 1.75rem); 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2); 
+        }
+        .brand { 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 10px; 
+            margin-bottom: 16px; 
+            font-family: 'Poppins', system-ui, sans-serif; 
+            font-weight: 700;
+            font-size: clamp(1.1rem, 3vw, 1.25rem);
+        }
+        .brand img { 
+            width: clamp(36px, 5vw, 40px); 
+            height: clamp(36px, 5vw, 40px); 
+            object-fit: cover; 
+            object-position: 40% center; 
+            border-radius: 8px; 
+        }
+        h1 { 
+            font-family: 'Poppins', system-ui, sans-serif; 
+            font-size: clamp(1.5rem, 5vw, 2.4rem); 
+            margin: 0 0 12px; 
+            line-height: 1.2;
+            color: var(--text);
+        }
+        p { 
+            opacity: .9; 
+            line-height: 1.6; 
+            font-size: clamp(0.95rem, 2vw, 1rem);
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+        p a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        p a:hover {
+            color: var(--accent-hover);
+        }
+        .actions { 
+            margin-top: 24px; 
+            display: flex; 
+            gap: 12px; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+        }
+        .btn { 
+            padding: clamp(12px, 3vw, 14px) clamp(20px, 4vw, 24px); 
+            border-radius: 10px; 
+            text-decoration: none; 
+            font-weight: 600; 
+            border: 2px solid var(--accent);
+            font-size: clamp(0.9rem, 2vw, 1rem);
+            transition: all 0.3s ease;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .primary { 
+            background: linear-gradient(135deg, var(--accent), #fb923c); 
+            color: #fff; 
+            border: none;
+            box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3);
+        }
+        .primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(249, 115, 22, 0.4);
+        }
+        .secondary { 
+            color: var(--accent); 
+            background: transparent; 
+        }
+        .secondary:hover {
+            background: rgba(249, 115, 22, 0.1);
+            border-color: var(--accent-hover);
+        }
+        
+        @media (max-width: 480px) {
+            .actions {
+                flex-direction: column;
+                width: 100%;
+            }
+            .btn {
+                width: 100%;
+            }
+            .card {
+                padding: 1.5rem 1rem;
+            }
+        }
+    </style>
     <script>
-      (function(){
-        fetch('/thank-you.html', { credentials: 'same-origin' })
-          .then(r => r.text())
-          .then(html => { document.open(); document.write(html); document.close(); })
-          .catch(() => { document.body.innerHTML = '<p style="padding:2rem;font-family:sans-serif">Loading failed. <a href="/thank-you.html">Open thank-you.html</a>.</p>'; });
-      })();
+      // Optional: redirect back to contact after a delay
+      // setTimeout(() => window.location.href = 'contact.html', 8000);
     </script>
   </head>
   <body>
-    <p style="padding:2rem;font-family:sans-serif">Loading…</p>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWPTRPDR"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="wrap">
+      <div class="card" role="status" aria-live="polite">
+        <div class="brand"><img src="Video/logo.JPG" alt="Denali Tech Logo"> <span>Denali Tech</span></div>
+        <h1>Thank you — we received your request!</h1>
+        <p>We'll reach out within 24 hours to schedule your free consultation. If this is urgent, call us at <a href="tel:+13124397500" style="color: var(--accent); text-decoration: none;">(312) 439-7500</a>.</p>
+        <div class="actions">
+          <a class="btn primary" href="/">Back to Home</a>
+          <a class="btn secondary" href="/services/">Explore Services</a>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
+
 
