@@ -16,15 +16,15 @@ Denali Tech specializes in making smart home technology accessible to everyone. 
 - Light/Dark mode toggle for user preference
 - Fully responsive design (mobile, tablet, desktop)
 
-### 📱 Pages
-- **Home** (`index.html`) - Hero section, services overview, why choose us, CTA
-- **Services** (`services.html`) - Complete service details with video demonstrations
-- **About** (`about.html`) - Company mission, founder story, values, process
-- **Contact** (`contact.html`) - Free consultation booking form
-- **Brands** (`brands.html`) - Trusted brand partners and authorized dealers
-- **Projects** (`projects.html`) - Project showcase gallery
-- **FAQ** (`faq.html`) - Frequently asked questions
-- **Privacy** (`privacy.html`) - Privacy policy
+### 📱 Pages (Clean URLs)
+- **Home** (`/`) - Hero section, services overview, why choose us, CTA
+- **Services** (`/services/`) - Complete service details with video demonstrations
+- **About** (`/about/`) - Company mission, founder story, values, process
+- **Contact** (`/contact/`) - Free consultation booking form
+- **Brands** (`/brands/`) - Trusted brand partners and authorized dealers
+- **Projects** (`/projects/`) - Project showcase gallery
+- **FAQ** (`/faq.html`) - Frequently asked questions
+- **Privacy** (`/privacy/`) - Privacy policy
 
 ### 🔧 Technical Features
 - **SEO Optimized** - Following Google 2025 best practices
@@ -37,25 +37,29 @@ Denali Tech specializes in making smart home technology accessible to everyone. 
 ```
 Denali Tech Website/
 ├── index.html          # Homepage
-├── services.html       # Services page
-├── about.html          # About Us page
-├── contact.html        #The page
-├── privacy.html        # Privacy Policy
+├── faq.html            # FAQ page
 ├── robots.txt          # SEO crawl instructions
 ├── sitemap.xml         # Site structure for search engines
-├── .gitignore          # Git ignore rules
 ├── README.md           # This file
+├── about/              # About page (clean URL: /about/)
+│   └── index.html
+├── services/           # Services page (clean URL: /services/)
+│   └── index.html
+├── contact/            # Contact page (clean URL: /contact/)
+│   └── index.html
+├── projects/           # Projects page (clean URL: /projects/)
+│   └── index.html
+├── brands/             # Brands page (clean URL: /brands/)
+│   └── index.html
+├── privacy/            # Privacy page (clean URL: /privacy/)
+│   └── index.html
+├── thank-you/          # Thank you page (clean URL: /thank-you/)
+│   └── index.html
 └── Video/              # Media folder
     ├── logo.JPG
     ├── funder.jpg
     ├── Denali Van.jpg
-    ├── automation.mp4
-    ├── theater.mp4
-    ├── networking.mp4
-    ├── surveillance.mp4
-    ├── lighting.mp4
-    ├── audio.mp4
-    └── shades.mp4
+    └── [videos and images]
 ```
 
 ## 🚀 SEO Features
