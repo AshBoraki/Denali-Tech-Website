@@ -225,6 +225,46 @@
             --shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
+        /* High contrast link styles for FAQ section to meet WCAG AA standards (4.5:1 ratio) */
+        .faq-link,
+        .quick-faq-section a {
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            font-weight: 600;
+            transition: all var(--transition);
+        }
+
+        /* Dark mode: Use brighter orange (#fdba74) for better contrast on dark backgrounds */
+        body:not(.light-theme) .faq-link,
+        body:not(.light-theme) .quick-faq-section a {
+            color: #fdba74; /* Lighter orange - meets WCAG AA on dark backgrounds */
+        }
+
+        /* Light mode: Use darker orange (#c2410c) for better contrast on light backgrounds */
+        body.light-theme .faq-link,
+        body.light-theme .quick-faq-section a,
+        :root[data-theme='light'] .faq-link,
+        :root[data-theme='light'] .quick-faq-section a {
+            color: #c2410c; /* Darker orange - meets WCAG AA on light backgrounds */
+        }
+
+        .faq-link:hover,
+        .quick-faq-section a:hover {
+            text-decoration-thickness: 2px;
+        }
+
+        body:not(.light-theme) .faq-link:hover,
+        body:not(.light-theme) .quick-faq-section a:hover {
+            color: #fbbf24; /* Even brighter on hover for dark mode */
+        }
+
+        body.light-theme .faq-link:hover,
+        body.light-theme .quick-faq-section a:hover,
+        :root[data-theme='light'] .faq-link:hover,
+        :root[data-theme='light'] .quick-faq-section a:hover {
+            color: #9a3412; /* Even darker on hover for light mode */
+        }
+
         /* CRITICAL RESET & PAGE SETUP */
         html { scroll-behavior: smooth; }
         body {
@@ -2488,7 +2528,7 @@
         <div class="container">
             <div class="section-header">
                 <h2>Frequently Asked Questions About Smart Home Automation in Chicago</h2>
-                <p>Quick answers to common questions - <a href="/faq.html" style="color: var(--accent-primary); text-decoration: underline; text-underline-offset: 3px; font-weight: 600;">view all FAQs →</a></p>
+                <p>Quick answers to common questions - <a href="/faq.html" class="faq-link" style="text-underline-offset: 3px;">view all FAQs →</a></p>
             </div>
             <div class="faq-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
                 <div class="faq-item-quick" style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem;">
@@ -2497,11 +2537,11 @@
                 </div>
                 <div class="faq-item-quick" style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem;">
                     <h3 style="font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: 1rem; color: var(--text-primary);">What areas do you serve?</h3>
-                    <p style="color: var(--text-secondary); line-height: 1.6; margin: 0;">We serve the entire Chicago metro area including Mt Prospect, Arlington Heights, Schaumburg, Evanston, Skokie, and surrounding suburbs. <a href="/contact/" style="color: var(--accent-primary); text-decoration: underline; text-underline-offset: 2px; font-weight: 600;">Contact us</a> to confirm we serve your area.</p>
+                    <p style="color: var(--text-secondary); line-height: 1.6; margin: 0;">We serve the entire Chicago metro area including Mt Prospect, Arlington Heights, Schaumburg, Evanston, Skokie, and surrounding suburbs. <a href="/contact/" class="faq-link">Contact us</a> to confirm we serve your area.</p>
                 </div>
                 <div class="faq-item-quick" style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem;">
                     <h3 style="font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: 1rem; color: var(--text-primary);">How much does smart home automation cost?</h3>
-                    <p style="color: var(--text-secondary); line-height: 1.6; margin: 0;">Costs vary based on your home size and needs. Simple WiFi upgrades start around $2,000, while complete whole-home automation can range from $15,000-$50,000+. <a href="/contact/#booking" style="color: var(--accent-primary); text-decoration: underline; text-underline-offset: 2px; font-weight: 600;">Get a free quote</a> tailored to your home.</p>
+                    <p style="color: var(--text-secondary); line-height: 1.6; margin: 0;">Costs vary based on your home size and needs. Simple WiFi upgrades start around $2,000, while complete whole-home automation can range from $15,000-$50,000+. <a href="/contact/#booking" class="faq-link">Get a free quote</a> tailored to your home.</p>
                 </div>
             </div>
             <div style="text-align: center; margin-top: 2rem;">
