@@ -2211,8 +2211,9 @@
             <nav class="nav">
                 <a href="/" class="logo" title="Denali Tech">
                     <picture>
-                        <source srcset="Video/logo.webp" type="image/webp">
-                        <img src="Video/logo.JPG" alt="Denali Tech Logo" loading="eager" width="56" height="40" style="width: 56px; height: 40px; margin-right: 10px; object-fit: cover; object-position: 40% center; border-radius: 10px;">
+                        <!-- Use srcset to hint browser about image size, though ideally a smaller logo file (112x80px) should be created -->
+                        <source srcset="Video/logo.webp 1x" type="image/webp">
+                        <img src="Video/logo.JPG" alt="Denali Tech Logo" loading="eager" width="56" height="40" style="width: 56px; height: 40px; margin-right: 10px; object-fit: cover; object-position: 40% center; border-radius: 10px;" fetchpriority="high">
                     </picture>
                     <span class="logo-text">Denali Tech</span>
                 </a>
@@ -2724,7 +2725,7 @@
             setTimeout(typeWriter, 1000);
         }
 
-        // Footer Interactive Canvas
+        // Footer Interactive Canvas - Optimized to avoid forced reflows
         document.addEventListener('DOMContentLoaded', function() {
             const footer = document.getElementById('main-footer');
             const canvas = document.getElementById('interactive-canvas');
@@ -2734,17 +2735,32 @@
             const mouse = { x: null, y: null };
             let animationFrameId = null;
             let resizeTimeout;
+            let canvasRect = null;
+            let needsRectUpdate = true;
+
+            // Cache canvas rect and update only when needed to avoid forced reflows
+            function updateCanvasRect() {
+                if (needsRectUpdate) {
+                    canvasRect = canvas.getBoundingClientRect();
+                    needsRectUpdate = false;
+                }
+            }
 
             function setupCanvas() {
-                canvas.width = footer.offsetWidth;
-                canvas.height = footer.offsetHeight;
-                initParticles();
+                // Use requestAnimationFrame to batch DOM reads and avoid forced reflow
+                requestAnimationFrame(function() {
+                    canvas.width = footer.offsetWidth;
+                    canvas.height = footer.offsetHeight;
+                    needsRectUpdate = true; // Mark rect as needing update after resize
+                    initParticles();
+                });
             }
 
             footer.addEventListener('mousemove', (event) => {
-                const rect = canvas.getBoundingClientRect();
-                mouse.x = event.clientX - rect.left;
-                mouse.y = event.clientY - rect.top;
+                // Update rect only once per frame to avoid multiple reflows
+                updateCanvasRect();
+                mouse.x = event.clientX - canvasRect.left;
+                mouse.y = event.clientY - canvasRect.top;
             });
 
             footer.addEventListener('mouseleave', () => { mouse.x = null; mouse.y = null; });
@@ -2831,10 +2847,39 @@
             setupCanvas();
             observer.observe(footer);
 
-            window.addEventListener('resize', () => {
-                clearTimeout(resizeTimeout);
-                resizeTimeout = setTimeout(setupCanvas, 250);
-            });
+            // Use ResizeObserver instead of window resize to avoid forced reflows
+            if ('ResizeObserver' in window) {
+                const resizeObserver = new ResizeObserver(function(entries) {
+                    clearTimeout(resizeTimeout);
+                    resizeTimeout = setTimeout(function() {
+                        needsRectUpdate = true;
+                        setupCanvas();
+                    }, 250);
+                });
+                resizeObserver.observe(footer);
+            } else {
+                // Fallback for older browsers
+                window.addEventListener('resize', () => {
+                    clearTimeout(resizeTimeout);
+                    resizeTimeout = setTimeout(function() {
+                        needsRectUpdate = true;
+                        setupCanvas();
+                    }, 250);
+                });
+            }
+            
+            // Reset rect update flag on scroll/resize to ensure accuracy
+            let lastUpdateTime = 0;
+            function scheduleRectUpdate() {
+                const now = performance.now();
+                if (now - lastUpdateTime > 100) { // Throttle to max once per 100ms
+                    needsRectUpdate = true;
+                    lastUpdateTime = now;
+                }
+            }
+            
+            // Update rect when page scrolls or window resizes
+            window.addEventListener('scroll', scheduleRectUpdate, { passive: true });
 
             // Copy to clipboard functionality
             document.querySelectorAll('.contact-item[data-copy]').forEach(item => {
