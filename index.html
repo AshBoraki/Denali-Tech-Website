@@ -68,6 +68,10 @@
     <link rel="dns-prefetch" href="https://api.web3forms.com">
     <link rel="dns-prefetch" href="https://web3forms.com">
     <link rel="dns-prefetch" href="https://js.hcaptcha.com">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    
+    <!-- Preconnect to CDN for faster resource loading -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     
     <base href="/">
     
@@ -86,8 +90,32 @@
     <!-- Google Search Console Verification - Replace with your verification code -->
     <!-- <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" /> -->
     
-    <!-- Particles.js -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <!-- Particles.js - Deferred to avoid render blocking -->
+    <script>
+    // Load particles.js after page is interactive
+    function loadParticles() {
+        var script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js';
+        script.async = true;
+        document.head.appendChild(script);
+    }
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+            if ('requestIdleCallback' in window) {
+                requestIdleCallback(loadParticles, { timeout: 2000 });
+            } else {
+                setTimeout(loadParticles, 1000);
+            }
+        });
+    } else {
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(loadParticles, { timeout: 2000 });
+        } else {
+            setTimeout(loadParticles, 1000);
+        }
+    }
+    </script>
     
     <style>
         /* 
@@ -2184,7 +2212,7 @@
                 <a href="/" class="logo" title="Denali Tech">
                     <picture>
                         <source srcset="Video/logo.webp" type="image/webp">
-                        <img src="Video/logo.JPG" alt="Denali Tech Logo" loading="eager" style="width: 56px; height: 40px; margin-right: 10px; object-fit: cover; object-position: 40% center; border-radius: 10px;">
+                        <img src="Video/logo.JPG" alt="Denali Tech Logo" loading="eager" width="56" height="40" style="width: 56px; height: 40px; margin-right: 10px; object-fit: cover; object-position: 40% center; border-radius: 10px;">
                     </picture>
                     <span class="logo-text">Denali Tech</span>
                 </a>
@@ -2220,6 +2248,7 @@
         </div>
     </header>
 
+    <main>
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-background">
@@ -2336,12 +2365,12 @@
             </div>
             <div class="partners-badges">
                 <div class="partner-badge">
-                    <img src="Video/authorized (1).svg" alt="Control4 Authorized Dealer" loading="lazy" class="badge-control4">
+                    <img src="Video/authorized (1).svg" alt="Control4 Authorized Dealer" loading="lazy" width="200" height="200" class="badge-control4">
                 </div>
                 <div class="partner-badge">
                     <picture>
                         <source srcset="Video/URC_Logo_White.webp" type="image/webp">
-                        <img src="Video/URC_Logo_White.png" alt="URC Automation Partner" loading="lazy" class="badge-urc">
+                        <img src="Video/URC_Logo_White.png" alt="URC Automation Partner" loading="lazy" width="200" height="100" class="badge-urc">
                     </picture>
                 </div>
             </div>
@@ -2447,7 +2476,7 @@
                     <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">Not sure if we serve your area? Give us a call - we're always happy to help!</p>
                 </div>
                 <div class="service-area-map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11857.815476876!2d-87.9375!3d42.0664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fb8b4b7b5b5b5%3A0x5b5b5b5b5b5b5b5b!2sMt%20Prospect%2C%20IL%2060056!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11857.815476876!2d-87.9375!3d42.0664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fb8b4b7b5b5b5%3A0x5b5b5b5b5b5b5b5b!2sMt%20Prospect%2C%20IL%2060056!5e0!3m2!1sen!2sus!4v1234567890123!5m2!1sen!2sus" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Denali Tech Service Area Map - Chicago Metro Area"></iframe>
                 </div>
             </div>
         </div>
@@ -2458,7 +2487,7 @@
         <div class="container">
             <div class="section-header">
                 <h2>Frequently Asked Questions About Smart Home Automation in Chicago</h2>
-                <p>Quick answers to common questions - <a href="/faq.html" style="color: var(--accent-primary); text-decoration: none;">view all FAQs →</a></p>
+                <p>Quick answers to common questions - <a href="/faq.html" style="color: var(--accent-primary); text-decoration: underline; text-underline-offset: 3px; font-weight: 600;">view all FAQs →</a></p>
             </div>
             <div class="faq-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
                 <div class="faq-item-quick" style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem;">
@@ -2467,11 +2496,11 @@
                 </div>
                 <div class="faq-item-quick" style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem;">
                     <h3 style="font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: 1rem; color: var(--text-primary);">What areas do you serve?</h3>
-                    <p style="color: var(--text-secondary); line-height: 1.6; margin: 0;">We serve the entire Chicago metro area including Mt Prospect, Arlington Heights, Schaumburg, Evanston, Skokie, and surrounding suburbs. <a href="/contact/" style="color: var(--accent-primary);">Contact us</a> to confirm we serve your area.</p>
+                    <p style="color: var(--text-secondary); line-height: 1.6; margin: 0;">We serve the entire Chicago metro area including Mt Prospect, Arlington Heights, Schaumburg, Evanston, Skokie, and surrounding suburbs. <a href="/contact/" style="color: var(--accent-primary); text-decoration: underline; text-underline-offset: 2px; font-weight: 600;">Contact us</a> to confirm we serve your area.</p>
                 </div>
                 <div class="faq-item-quick" style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem;">
                     <h3 style="font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: 1rem; color: var(--text-primary);">How much does smart home automation cost?</h3>
-                    <p style="color: var(--text-secondary); line-height: 1.6; margin: 0;">Costs vary based on your home size and needs. Simple WiFi upgrades start around $2,000, while complete whole-home automation can range from $15,000-$50,000+. <a href="/contact/#booking" style="color: var(--accent-primary);">Get a free quote</a> tailored to your home.</p>
+                    <p style="color: var(--text-secondary); line-height: 1.6; margin: 0;">Costs vary based on your home size and needs. Simple WiFi upgrades start around $2,000, while complete whole-home automation can range from $15,000-$50,000+. <a href="/contact/#booking" style="color: var(--accent-primary); text-decoration: underline; text-underline-offset: 2px; font-weight: 600;">Get a free quote</a> tailored to your home.</p>
                 </div>
             </div>
             <div style="text-align: center; margin-top: 2rem;">
@@ -2591,6 +2620,7 @@
             </div>
         </div>
     </footer>
+    </main>
 
     <!-- Back to Top Button -->
     <button id="backToTop" class="back-to-top" aria-label="Back to top">
@@ -2600,25 +2630,50 @@
     </button>
 
     <script>
-        // Particles.js Configuration
-        window.addEventListener('load', () => {
-            particlesJS("particles-js", {
-                "particles": {
-                    "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
-                    "color": { "value": "#f97316" },
-                    "shape": { "type": "circle" },
-                    "opacity": { "value": 0.5, "random": false },
-                    "size": { "value": 3, "random": true },
-                    "line_linked": { "enable": true, "distance": 150, "color": "#f97316", "opacity": 0.4, "width": 1 },
-                    "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
-                },
-                "interactivity": {
-                    "detect_on": "canvas",
-                    "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
-                    "modes": { "grab": { "distance": 400, "line_linked": { "opacity": 1 } }, "bubble": { "distance": 400, "size": 40, "duration": 2, "opacity": 8, "speed": 3 }, "repulse": { "distance": 200, "duration": 0.4 }, "push": { "particles_nb": 4 }, "remove": { "particles_nb": 2 } }
-                },
-                "retina_detect": true
-            });
+        // Particles.js Configuration - Wait for script to load
+        function initParticlesJS() {
+            if (typeof particlesJS !== 'undefined') {
+                particlesJS("particles-js", {
+                    "particles": {
+                        "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                        "color": { "value": "#f97316" },
+                        "shape": { "type": "circle" },
+                        "opacity": { "value": 0.5, "random": false },
+                        "size": { "value": 3, "random": true },
+                        "line_linked": { "enable": true, "distance": 150, "color": "#f97316", "opacity": 0.4, "width": 1 },
+                        "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
+                    },
+                    "interactivity": {
+                        "detect_on": "canvas",
+                        "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
+                        "modes": { "grab": { "distance": 400, "line_linked": { "opacity": 1 } }, "bubble": { "distance": 400, "size": 40, "duration": 2, "opacity": 8, "speed": 3 }, "repulse": { "distance": 200, "duration": 0.4 }, "push": { "particles_nb": 4 }, "remove": { "particles_nb": 2 } }
+                    },
+                    "retina_detect": true
+                });
+            } else {
+                // Retry after a short delay if script not loaded yet
+                setTimeout(initParticlesJS, 100);
+            }
+        }
+        
+        // Wait for page load and particles.js script
+        window.addEventListener('load', function() {
+            // Check if particles.js is already loaded
+            if (typeof particlesJS !== 'undefined') {
+                initParticlesJS();
+            } else {
+                // Wait for script to load
+                var checkParticles = setInterval(function() {
+                    if (typeof particlesJS !== 'undefined') {
+                        clearInterval(checkParticles);
+                        initParticlesJS();
+                    }
+                }, 100);
+                // Timeout after 5 seconds
+                setTimeout(function() {
+                    clearInterval(checkParticles);
+                }, 5000);
+            }
         });
 
         // Typewriter Effect - Simplified for smooth flow
