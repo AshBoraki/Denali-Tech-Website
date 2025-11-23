@@ -1,12 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-MWPTRPDR');</script>
+    <!-- Google Tag Manager - Optimized for Performance -->
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    // Load GTM after DOM is ready to improve LCP/FCP scores
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', loadGTM);
+    } else {
+        // DOM already loaded, use requestIdleCallback or setTimeout
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(loadGTM, { timeout: 1500 });
+        } else {
+            setTimeout(loadGTM, 500);
+        }
+    }
+    function loadGTM() {
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MWPTRPDR');
+    }
+    </script>
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -642,8 +658,11 @@
             box-shadow: var(--shadow-glow);
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 0.5rem;
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            white-space: normal;
         }
 
         .btn-primary:hover {
@@ -1347,6 +1366,18 @@
 
             .prestige-footer {
                 padding: 60px 5% 40px;
+            }
+
+            .btn-primary {
+                width: 100%;
+                display: flex !important;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                padding: 1rem 1.5rem;
+                font-size: 1rem;
+                line-height: 1.4;
             }
         }
 
