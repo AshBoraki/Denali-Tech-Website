@@ -755,31 +755,64 @@
             let animationFrameId = null;
             let resizeTimeout;
             let canvasRect = null;
+            let footerRect = null; // Cache footer rect to avoid repeated reflows
             let needsRectUpdate = true;
 
             // Cache canvas rect and update only when needed to avoid forced reflows
             function updateCanvasRect() {
                 if (needsRectUpdate) {
-                    canvasRect = canvas.getBoundingClientRect();
-                    needsRectUpdate = false;
+                    // Batch rect reads together
+                    requestAnimationFrame(() => {
+                        canvasRect = canvas.getBoundingClientRect();
+                        if (footerRect === null) {
+                            footerRect = footer.getBoundingClientRect();
+                        }
+                        needsRectUpdate = false;
+                    });
                 }
             }
 
             function setupCanvas() {
-                // Use requestAnimationFrame to batch DOM reads and avoid forced reflow
+                // Cache DOM reads first, then write in next frame to avoid forced reflow
+                const width = footer.offsetWidth;
+                const height = footer.offsetHeight;
                 requestAnimationFrame(function() {
-                    canvas.width = footer.offsetWidth;
-                    canvas.height = footer.offsetHeight;
+                    canvas.width = width;
+                    canvas.height = height;
                     needsRectUpdate = true; // Mark rect as needing update after resize
+                    footerRect = null; // Reset footer rect to force update
                     initParticles();
                 });
             }
 
+            // Update footer rect when needed (batched via requestAnimationFrame)
+            function updateFooterRect() {
+                if (needsRectUpdate || !footerRect) {
+                    requestAnimationFrame(() => {
+                        footerRect = footer.getBoundingClientRect();
+                        canvasRect = canvas.getBoundingClientRect();
+                        needsRectUpdate = false;
+                    });
+                }
+            }
+            
             footer.addEventListener('mousemove', (event) => {
-                // Update rect only once per frame to avoid multiple reflows
-                updateCanvasRect();
-                mouse.x = event.clientX - canvasRect.left;
-                mouse.y = event.clientY - canvasRect.top;
+                // Use cached rects, update only when needed (batched via requestAnimationFrame)
+                if (needsRectUpdate) {
+                    updateFooterRect();
+                }
+                // Calculate mouse position using cached rects or event coordinates
+                if (footerRect) {
+                    mouse.x = event.clientX - footerRect.left;
+                    mouse.y = event.clientY - footerRect.top;
+                } else if (canvasRect) {
+                    mouse.x = event.clientX - canvasRect.left;
+                    mouse.y = event.clientY - canvasRect.top;
+                } else {
+                    // Last resort: use event offset (no reflow)
+                    mouse.x = event.offsetX;
+                    mouse.y = event.offsetY;
+                }
             });
 
             footer.addEventListener('mouseleave', () => { mouse.x = null; mouse.y = null; });
@@ -954,27 +987,39 @@
                 });
             }
 
-            // Back to Top Button with throttled scroll handler
+            // Back to Top Button with throttled scroll handler (optimized to avoid forced reflows)
             const backToTop = document.getElementById('backToTop');
             if (backToTop) {
+                const header = document.querySelector('.header');
                 let scrollTimeout;
+                let lastScrollTop = 0;
+                
                 const handleScroll = () => {
                     if (scrollTimeout) return;
                     scrollTimeout = requestAnimationFrame(() => {
+                        // Batch all DOM reads together
                         const scrollTop = window.scrollY || window.pageYOffset;
-                        const header = document.querySelector('.header');
                         
-                        // Add shadow to header on scroll
+                        // Only update if scroll position changed significantly to reduce reflows
+                        if (Math.abs(scrollTop - lastScrollTop) < 10) {
+                            scrollTimeout = null;
+                            return;
+                        }
+                        lastScrollTop = scrollTop;
+                        
+                        // Batch all DOM writes together
+                        const shouldShowHeaderShadow = scrollTop > 20;
+                        const shouldShowBackToTop = scrollTop > 300;
+                        
                         if (header) {
-                            if (scrollTop > 20) {
+                            if (shouldShowHeaderShadow) {
                                 header.classList.add('scrolled');
                             } else {
                                 header.classList.remove('scrolled');
                             }
                         }
                         
-                        // Back to top button
-                        if (scrollTop > 300) {
+                        if (shouldShowBackToTop) {
                             backToTop.classList.add('visible');
                         } else {
                             backToTop.classList.remove('visible');
@@ -1052,8 +1097,18 @@
             const floatingBtn = document.getElementById('floating-call-btn');
             if (!floatingBtn) return;
             
-            // Check if mobile/tablet
-            const isMobile = window.innerWidth < 769;
+            // Check if mobile/tablet using media query to avoid forced reflow
+            const mediaQuery = window.matchMedia('(max-width: 768px)');
+            let isMobile = mediaQuery.matches;
+            
+            // Update on resize (debounced)
+            let resizeTimeout;
+            mediaQuery.addEventListener('change', (e) => {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(() => {
+                    isMobile = e.matches;
+                }, 100);
+            });
             
             if (isMobile) {
                 // Show after user scrolls down a bit (throttled with requestAnimationFrame)
