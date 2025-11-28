@@ -5,7 +5,6 @@ This guide explains how to set up proper cache headers for your website to impro
 ## Files Created
 
 1. **`.htaccess`** - For Apache servers
-2. **`_headers`** - For Netlify/Vercel hosting
 
 ## Cache Settings
 
@@ -35,33 +34,6 @@ This guide explains how to set up proper cache headers for your website to impro
    curl -I https://denalitechs.com/Video/logo.webp
    ```
    Look for: `Cache-Control: public, max-age=31536000, immutable`
-
-### For Netlify
-
-1. Upload `_headers` file to your website root directory (same level as `index.html`)
-2. Deploy your site
-3. Netlify will automatically apply these headers
-4. Verify in Netlify dashboard → Site settings → Headers
-
-### For Vercel
-
-1. Upload `_headers` file to your `public` directory (or root)
-2. Or create `vercel.json`:
-   ```json
-   {
-     "headers": [
-       {
-         "source": "/Video/(.*)",
-         "headers": [
-           {
-             "key": "Cache-Control",
-             "value": "public, max-age=31536000, immutable"
-           }
-         ]
-       }
-     ]
-   }
-   ```
 
 ### For Other Hosting Providers
 
@@ -105,9 +77,7 @@ Or use browser DevTools:
    apache2ctl -M | grep headers
    ```
 
-2. **Netlify:** Ensure `_headers` file is in root directory, not a subdirectory
-
-3. **Check server logs** for any errors related to cache configuration
+2. **Check server logs** for any errors related to cache configuration
 
 4. **Clear CDN cache** if using Cloudflare or similar service
 
