@@ -387,13 +387,13 @@
                 <div class="partner-badge">
                     <picture>
                         <source srcset="Video/Brands/Denali techControl4.webp" type="image/webp">
-                        <img src="Video/Brands/Denali techControl4.png" alt="Control4 Authorized Dealer" loading="lazy" width="200" height="100" class="badge-control4">
+                        <img src="Video/Brands/Denali techControl4.png" alt="Control4 Authorized Dealer" loading="eager" width="200" height="100" class="badge-control4">
                     </picture>
                 </div>
                 <div class="partner-badge">
                     <picture>
                         <source srcset="Video/URC_Logo_White.webp" type="image/webp">
-                        <img src="Video/URC_Logo_White.png" alt="URC Automation Partner" loading="lazy" width="200" height="100" class="badge-urc">
+                        <img src="Video/URC_Logo_White.png" alt="URC Automation Partner" loading="eager" width="200" height="100" class="badge-urc">
                     </picture>
                 </div>
             </div>
@@ -1138,14 +1138,26 @@
             // Handle lazy-loaded images with smooth fade-in
             const lazyImages = document.querySelectorAll('img[loading="lazy"]');
             
+            // Immediately show images that are already loaded
+            lazyImages.forEach(img => {
+                if (img.complete && img.naturalHeight !== 0) {
+                    img.classList.add('loaded');
+                }
+            });
+            
             if ('IntersectionObserver' in window) {
                 const imageObserver = new IntersectionObserver((entries, observer) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
                             const img = entry.target;
-                            img.addEventListener('load', function() {
+                            // Check if already loaded
+                            if (img.complete && img.naturalHeight !== 0) {
                                 img.classList.add('loaded');
-                            }, { once: true });
+                            } else {
+                                img.addEventListener('load', function() {
+                                    img.classList.add('loaded');
+                                }, { once: true });
+                            }
                             observer.unobserve(img);
                         }
                     });
@@ -1157,9 +1169,13 @@
             } else {
                 // Fallback for older browsers
                 lazyImages.forEach(img => {
-                    img.addEventListener('load', function() {
+                    if (img.complete && img.naturalHeight !== 0) {
                         img.classList.add('loaded');
-                    }, { once: true });
+                    } else {
+                        img.addEventListener('load', function() {
+                            img.classList.add('loaded');
+                        }, { once: true });
+                    }
                 });
             }
 
