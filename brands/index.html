@@ -152,6 +152,10 @@
             transition: background var(--transition), border-color var(--transition), box-shadow var(--transition);
         }
 
+        .header.scrolled {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
         :root[data-theme='light'] .header,
         body.light-theme .header {
             background: rgba(255, 255, 255, 0.94);
@@ -462,14 +466,14 @@
             }
 
             .logo {
-                padding: 4px 10px;
+                padding: 2px 8px;
                 font-size: clamp(1.05rem, 5vw, 1.25rem);
             }
 
             .logo img {
-                width: 30px !important;
-                height: 30px !important;
-                margin-right: 6px !important;
+                width: 48px;
+                height: 34px;
+                margin-right: 6px;
             }
 
             .logo-text {
@@ -1253,14 +1257,14 @@
             }
 
             .logo {
-                padding: 6px 12px;
-                font-size: 1.4rem;
+                font-size: 1.15rem;
+                padding: 2px 8px;
             }
 
             .logo img {
-                width: 48px;
-                height: 34px;
-                margin-right: 6px;
+                width: 44px !important;
+                height: 32px !important;
+                margin-right: 6px !important;
             }
 
             .logo-text {
@@ -1268,8 +1272,14 @@
             }
 
             .menu-toggle {
-                display: flex;
-                padding: 8px;
+                padding: 7px;
+                min-width: 44px;
+                min-height: 44px;
+            }
+
+            .menu-toggle span {
+                width: 24px;
+                height: 2.5px;
             }
 
             .header-actions {
