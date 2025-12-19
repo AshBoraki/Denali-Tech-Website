@@ -78,6 +78,8 @@
     <!-- Preload critical fonts for faster rendering -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
+    <!-- Google Places API for Address Autocomplete -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVK7VnJwQ&libraries=places" async defer></script>
     <!-- Fallback fonts -->
     <style>
         /* Font fallback to prevent FOIT (Flash of Invisible Text) */
@@ -788,16 +790,28 @@
             width: 100%;
             padding: 0.75rem 0.875rem;
             border: 1px solid var(--border-color);
-            border-radius: 8px;
+            border-radius: 10px;
             background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             color: var(--text-primary);
             font-family: var(--font-main);
             font-size: 16px; /* Prevents iOS zoom on focus */
-            transition: all var(--transition);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             -webkit-appearance: none;
             appearance: none;
             min-height: 44px; /* Minimum touch target size for mobile */
             box-sizing: border-box;
+            position: relative;
+        }
+
+        .form-group input:hover,
+        .form-group select:hover,
+        .form-group textarea:hover {
+            border-color: rgba(249, 115, 22, 0.3);
+            background: rgba(255, 255, 255, 0.07);
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
         .form-group textarea {
@@ -820,7 +834,130 @@
         .form-group textarea:focus {
             outline: none;
             border-color: var(--accent-primary);
-            box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+            box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15),
+                        0 4px 12px rgba(249, 115, 22, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .form-group input:focus-visible,
+        .form-group select:focus-visible,
+        .form-group textarea:focus-visible {
+            outline: 2px solid var(--accent-primary);
+            outline-offset: 2px;
+        }
+
+        .form-group input.keyboard-navigation:focus,
+        .form-group select.keyboard-navigation:focus,
+        .form-group textarea.keyboard-navigation:focus {
+            outline: 3px solid var(--accent-primary);
+            outline-offset: 3px;
+            box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.2),
+                        0 4px 12px rgba(249, 115, 22, 0.3);
+        }
+
+        .form-group input.valid,
+        .form-group select.valid,
+        .form-group textarea.valid {
+            border-color: rgba(34, 197, 94, 0.6);
+            background: rgba(34, 197, 94, 0.05);
+        }
+
+        .form-group input.error,
+        .form-group select.error,
+        .form-group textarea.error {
+            border-color: #ef4444;
+            background: rgba(239, 68, 68, 0.05);
+            animation: errorPulse 0.5s ease;
+        }
+
+        @keyframes errorPulse {
+            0%, 100% { border-color: #ef4444; }
+            50% { border-color: #f87171; }
+        }
+
+        .form-group input.address-autocomplete-success {
+            border-color: rgba(34, 197, 94, 0.8);
+            background: rgba(34, 197, 94, 0.1);
+            animation: successPulse 0.6s ease;
+        }
+
+        @keyframes successPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        .field-hint {
+            display: block;
+            margin-top: 0.5rem;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            line-height: 1.5;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .form-group:focus-within .field-hint {
+            opacity: 1;
+        }
+
+        .character-count {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        #details-count {
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        /* Google Places Autocomplete Styling */
+        .pac-container {
+            background: rgba(10, 13, 24, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            margin-top: 4px;
+            z-index: 10000 !important;
+        }
+
+        .pac-item {
+            padding: 0.75rem 1rem;
+            color: var(--text-primary);
+            border-top: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .pac-item:first-child {
+            border-top: none;
+        }
+
+        .pac-item:hover,
+        .pac-item-selected {
+            background: rgba(249, 115, 22, 0.15);
+        }
+
+        .pac-icon {
+            margin-right: 0.75rem;
+        }
+
+        .pac-matched {
+            color: var(--accent-primary);
+            font-weight: 600;
+        }
+
+        body.light-theme .pac-container {
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        body.light-theme .pac-item {
+            color: #1e293b;
         }
 
         /* Enhanced Form Validation Feedback */
@@ -870,6 +1007,56 @@
             font-weight: 500;
         }
 
+        /* Auto-save indicator */
+        #auto-save-indicator {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(34, 197, 94, 0.95);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 0.625rem 1rem;
+            border-radius: 10px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            z-index: 1000;
+            pointer-events: none;
+            box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+            transform: translateY(10px);
+        }
+
+        #auto-save-indicator.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .form-restore-message {
+            padding: 0.75rem 1rem;
+            background: rgba(249, 115, 22, 0.1);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            border-left: 3px solid var(--accent-primary);
+        }
+
+        .form-restore-message button {
+            margin-left: 0.5rem;
+            background: transparent;
+            border: none;
+            color: var(--accent-primary);
+            cursor: pointer;
+            text-decoration: underline;
+            font-size: inherit;
+            padding: 0;
+        }
+
+        .form-restore-message button:hover {
+            color: var(--accent-hover);
+        }
+
         /* Form Steps (Fieldsets) */
         .form-step {
             border: none;
@@ -902,17 +1089,33 @@
 
         /* Field Error Messages */
         .field-error {
-            display: block;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
             color: #ef4444;
             font-size: 0.875rem;
             margin-top: 0.5rem;
             min-height: 1.25rem;
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            transform: translateY(-5px);
+        }
+
+        .field-error::before {
+            content: '⚠️';
+            font-size: 1rem;
         }
 
         .field-error.show {
             opacity: 1;
+            transform: translateY(0);
+            animation: errorShake 0.4s ease;
+        }
+
+        @keyframes errorShake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
         }
 
         .form-group input:invalid:not(:placeholder-shown):not(:focus),
@@ -922,10 +1125,15 @@
             box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
         }
 
+        .form-group {
+            position: relative;
+        }
+
         .form-group input:valid:not(:placeholder-shown),
         .form-group select:valid:not([value=""]),
         .form-group textarea:valid:not(:placeholder-shown) {
-            border-color: rgba(34, 197, 94, 0.5);
+            border-color: rgba(34, 197, 94, 0.6);
+            background: rgba(34, 197, 94, 0.05);
         }
 
         /* Field completion indicator */
@@ -942,17 +1150,39 @@
         .field-check {
             display: none;
             position: absolute;
-            right: 1rem;
+            right: 0.875rem;
             top: 50%;
             transform: translateY(-50%);
             color: rgba(34, 197, 94, 1);
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+            font-weight: bold;
             pointer-events: none;
+            animation: checkmarkAppear 0.3s ease;
+        }
+
+        @keyframes checkmarkAppear {
+            0% {
+                opacity: 0;
+                transform: translateY(-50%) scale(0);
+            }
+            50% {
+                transform: translateY(-50%) scale(1.2);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(-50%) scale(1);
+            }
         }
 
         .form-group textarea + .field-check {
             top: 1.5rem;
             transform: none;
+        }
+
+        .form-group input:valid:not(:placeholder-shown) ~ .field-check,
+        .form-group select:valid:not([value=""]) ~ .field-check,
+        .form-group textarea:valid:not(:placeholder-shown) ~ .field-check {
+            display: block;
         }
 
         .form-group textarea {
@@ -1119,10 +1349,29 @@
             max-width: 900px;
             margin: 0 auto;
             background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border-color);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.18);
             border-radius: 20px;
             padding: 2.5rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37),
+                        0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .booking-form-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                rgba(249, 115, 22, 0.5), 
+                transparent);
+            opacity: 0.6;
         }
 
         .booking-form-container h2 {
@@ -1160,25 +1409,68 @@
             color: white;
             padding: 1rem 2rem;
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             font-size: 1.1rem;
             font-weight: 700;
             cursor: pointer;
-            transition: all var(--transition);
-            box-shadow: var(--shadow-subtle);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3);
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-            margin-top: 1rem;
+            margin-top: 1.25rem;
+            position: relative;
+            overflow: hidden;
+            min-height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .booking-form-submit::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .booking-form-submit:hover::before {
+            left: 100%;
         }
 
         .booking-form-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-glow);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(249, 115, 22, 0.4);
+            background: linear-gradient(135deg, #fb923c, var(--accent-interactive));
+        }
+
+        .booking-form-submit:active {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 10px rgba(249, 115, 22, 0.3);
         }
 
         .booking-form-submit:disabled {
             opacity: 0.6;
             cursor: not-allowed;
             transform: none;
+            box-shadow: none;
+        }
+
+        .booking-form-submit:disabled::before {
+            display: none;
+        }
+
+        .btn-loader {
+            display: inline-block;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
 
         .form-success-message,
@@ -1191,15 +1483,62 @@
         }
 
         .form-success-message {
-            background: rgba(13, 148, 136, 0.2);
-            border: 1px solid rgba(13, 148, 136, 0.5);
-            color: #2dd4bf;
+            background: rgba(34, 197, 94, 0.15);
+            border: 1px solid rgba(34, 197, 94, 0.4);
+            color: #22c55e;
+            box-shadow: 0 4px 12px rgba(34, 197, 94, 0.2);
         }
 
         .form-error-message {
-            background: rgba(239, 68, 68, 0.2);
-            border: 1px solid rgba(239, 68, 68, 0.5);
-            color: #fca5a5;
+            background: rgba(239, 68, 68, 0.15);
+            border: 1px solid rgba(239, 68, 68, 0.4);
+            color: #ef4444;
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+        }
+
+        .form-info-message {
+            background: rgba(249, 115, 22, 0.15);
+            border: 1px solid rgba(249, 115, 22, 0.4);
+            color: var(--accent-primary);
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.2);
+        }
+
+        .form-success-message,
+        .form-error-message,
+        .form-info-message {
+            animation: messageSlideIn 0.3s ease;
+        }
+
+        @keyframes messageSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .booking-form-submit.submitting {
+            pointer-events: none;
+            opacity: 0.8;
+        }
+
+        .booking-form-submit.submitting::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: loadingShimmer 1.5s infinite;
+        }
+
+        @keyframes loadingShimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
         }
 
         @media (max-width: 768px) {
@@ -2450,8 +2789,12 @@
                         </div>
                         <div class="form-group full-width">
                             <label for="booking-details">Project Details / What You'd Like Help With *</label>
-                            <textarea id="booking-details" name="project_details" placeholder="Tell us about your project, what you'd like to achieve, any specific requirements, or questions you have..." required rows="4" aria-required="true"></textarea>
+                            <textarea id="booking-details" name="project_details" placeholder="Tell us about your project, what you'd like to achieve, any specific requirements, or questions you have..." required rows="4" aria-required="true" minlength="10"></textarea>
                             <span class="field-error" id="details-error" role="alert"></span>
+                            <div class="character-count" style="display: flex; justify-content: space-between; margin-top: 0.5rem;">
+                                <small class="field-hint" style="color: var(--text-secondary); font-size: 0.875rem;">💡 Be as detailed as possible - this helps us prepare better recommendations</small>
+                                <small id="details-count" style="color: var(--text-secondary); font-size: 0.875rem; font-weight: 500;">0 characters</small>
+                            </div>
                         </div>
                     </fieldset>
 
@@ -2952,12 +3295,228 @@
                 }
             }
             
+            // Auto-save functionality - Save form data to localStorage
+            const FORM_STORAGE_KEY = 'denali_contact_form_data';
+            const AUTO_SAVE_DELAY = 1000; // Save after 1 second of inactivity
+            
+            let autoSaveTimeout;
+            
+            function saveFormData() {
+                if (!bookingForm) return;
+                const formData = new FormData(bookingForm);
+                const data = {};
+                for (let [key, value] of formData.entries()) {
+                    // Skip hidden fields and honeypot fields
+                    if (key !== 'access_key' && key !== 'subject' && key !== 'from_name' && 
+                        key !== 'to_email' && key !== 'redirect' && key !== 'website' && 
+                        key !== '_gotcha' && key !== 'h-captcha-response') {
+                        data[key] = value;
+                    }
+                }
+                try {
+                    localStorage.setItem(FORM_STORAGE_KEY, JSON.stringify(data));
+                    // Show subtle save indicator
+                    const saveIndicator = document.getElementById('auto-save-indicator');
+                    if (saveIndicator) {
+                        saveIndicator.textContent = '💾 Saved';
+                        saveIndicator.style.opacity = '1';
+                        setTimeout(() => {
+                            saveIndicator.style.opacity = '0';
+                        }, 2000);
+                    }
+                } catch (e) {
+                    console.warn('Could not save form data:', e);
+                }
+            }
+            
+            function loadFormData() {
+                if (!bookingForm) return;
+                try {
+                    const saved = localStorage.getItem(FORM_STORAGE_KEY);
+                    if (saved) {
+                        const data = JSON.parse(saved);
+                        Object.keys(data).forEach(key => {
+                            const field = bookingForm.querySelector(`[name="${key}"]`);
+                            if (field && field.type !== 'file') {
+                                field.value = data[key];
+                                // Trigger change event to update validation
+                                field.dispatchEvent(new Event('change', { bubbles: true }));
+                            }
+                        });
+                        updateFormProgress();
+                        // Show restore message
+                        const restoreMsg = document.createElement('div');
+                        restoreMsg.className = 'form-restore-message';
+                        restoreMsg.innerHTML = '📋 Form data restored. <button type="button" onclick="this.parentElement.remove()" style="margin-left: 0.5rem; background: transparent; border: none; color: var(--accent-primary); cursor: pointer; text-decoration: underline;">Dismiss</button>';
+                        restoreMsg.style.cssText = 'padding: 0.75rem 1rem; background: rgba(249, 115, 22, 0.1); border-radius: 8px; margin-bottom: 1rem; color: var(--text-primary); font-size: 0.9rem;';
+                        bookingForm.insertBefore(restoreMsg, bookingForm.firstChild);
+                    }
+                } catch (e) {
+                    console.warn('Could not load form data:', e);
+                }
+            }
+            
+            function clearFormData() {
+                try {
+                    localStorage.removeItem(FORM_STORAGE_KEY);
+                } catch (e) {
+                    console.warn('Could not clear form data:', e);
+                }
+            }
+            
+            // Auto-save on input with debouncing
+            if (bookingForm) {
+                bookingForm.addEventListener('input', function() {
+                    clearTimeout(autoSaveTimeout);
+                    autoSaveTimeout = setTimeout(saveFormData, AUTO_SAVE_DELAY);
+                    updateFormProgress();
+                });
+                
+                bookingForm.addEventListener('change', function() {
+                    clearTimeout(autoSaveTimeout);
+                    autoSaveTimeout = setTimeout(saveFormData, AUTO_SAVE_DELAY);
+                    updateFormProgress();
+                });
+                
+                    // Load saved data on page load
+                loadFormData();
+                
+                // Clear saved data on successful submission
+                bookingForm.addEventListener('submit', function() {
+                    setTimeout(clearFormData, 1000);
+                });
+            }
+            
+            // Enhanced keyboard navigation for form steps
+            if (bookingForm) {
+                const formSteps = bookingForm.querySelectorAll('.form-step');
+                formSteps.forEach((step, index) => {
+                    const fields = step.querySelectorAll('input, select, textarea, button');
+                    const firstField = fields[0];
+                    const lastField = fields[fields.length - 1];
+                    
+                    // Handle Tab key navigation
+                    lastField?.addEventListener('keydown', function(e) {
+                        if (e.key === 'Tab' && !e.shiftKey && index < formSteps.length - 1) {
+                            e.preventDefault();
+                            const nextStep = formSteps[index + 1];
+                            const nextFirstField = nextStep.querySelector('input, select, textarea, button');
+                            nextFirstField?.focus();
+                        }
+                    });
+                    
+                    firstField?.addEventListener('keydown', function(e) {
+                        if (e.key === 'Tab' && e.shiftKey && index > 0) {
+                            e.preventDefault();
+                            const prevStep = formSteps[index - 1];
+                            const prevFields = prevStep.querySelectorAll('input, select, textarea, button');
+                            prevFields[prevFields.length - 1]?.focus();
+                        }
+                    });
+                });
+            }
+            
+            // Enhanced ARIA live regions for better screen reader support
+            const ariaLiveRegion = document.createElement('div');
+            ariaLiveRegion.setAttribute('role', 'status');
+            ariaLiveRegion.setAttribute('aria-live', 'polite');
+            ariaLiveRegion.setAttribute('aria-atomic', 'true');
+            ariaLiveRegion.className = 'sr-only';
+            ariaLiveRegion.style.cssText = 'position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0;';
+            document.body.appendChild(ariaLiveRegion);
+            
+            function announceToScreenReader(message) {
+                ariaLiveRegion.textContent = message;
+                setTimeout(() => {
+                    ariaLiveRegion.textContent = '';
+                }, 1000);
+            }
+            
+            // Announce form progress to screen readers
+            if (bookingForm && formProgressBar) {
+                const originalUpdateProgress = updateFormProgress;
+                updateFormProgress = function() {
+                    originalUpdateProgress();
+                    const progress = Math.round((formProgressBar.style.width || '0%').replace('%', ''));
+                    if (progress > 0 && progress < 100) {
+                        announceToScreenReader(`Form progress: ${progress} percent complete`);
+                    } else if (progress === 100) {
+                        announceToScreenReader('Form is complete and ready to submit');
+                    }
+                };
+            }
+            
             // Track form field changes
             if (bookingForm) {
-                bookingForm.addEventListener('input', updateFormProgress);
-                bookingForm.addEventListener('change', updateFormProgress);
                 updateFormProgress(); // Initial check
             }
+            
+            // Form Analytics & Tracking
+            const formAnalytics = {
+                startTime: Date.now(),
+                fieldInteractions: {},
+                errors: [],
+                timeOnForm: 0,
+                
+                trackFieldInteraction(fieldName) {
+                    if (!this.fieldInteractions[fieldName]) {
+                        this.fieldInteractions[fieldName] = {
+                            firstInteraction: Date.now(),
+                            interactions: 0,
+                            timeSpent: 0
+                        };
+                    }
+                    this.fieldInteractions[fieldName].interactions++;
+                },
+                
+                trackError(fieldName, errorMessage) {
+                    this.errors.push({
+                        field: fieldName,
+                        message: errorMessage,
+                        timestamp: Date.now()
+                    });
+                },
+                
+                trackSubmission(success) {
+                    this.timeOnForm = Date.now() - this.startTime;
+                    const analyticsData = {
+                        timeOnForm: this.timeOnForm,
+                        fieldInteractions: this.fieldInteractions,
+                        errors: this.errors,
+                        success: success,
+                        timestamp: Date.now()
+                    };
+                    
+                    // Log to console for debugging (remove in production or send to analytics service)
+                    console.log('Form Analytics:', analyticsData);
+                    
+                    // You can send this to your analytics service here
+                    // Example: sendToAnalytics(analyticsData);
+                }
+            };
+            
+            // Track field interactions
+            if (bookingForm) {
+                const formInputs = bookingForm.querySelectorAll('input, select, textarea');
+                formInputs.forEach(input => {
+                    input.addEventListener('focus', function() {
+                        formAnalytics.trackFieldInteraction(this.name || this.id);
+                    });
+                });
+                
+                // Track errors
+                bookingForm.addEventListener('invalid', function(e) {
+                    e.preventDefault();
+                    const field = e.target;
+                    formAnalytics.trackError(field.name || field.id, field.validationMessage);
+                }, true);
+            }
+            
+            // Add auto-save indicator
+            const autoSaveIndicator = document.createElement('div');
+            autoSaveIndicator.id = 'auto-save-indicator';
+            autoSaveIndicator.style.cssText = 'position: fixed; bottom: 20px; right: 20px; background: rgba(34, 197, 94, 0.9); color: white; padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.875rem; opacity: 0; transition: opacity 0.3s ease; z-index: 1000; pointer-events: none;';
+            document.body.appendChild(autoSaveIndicator);
             
             // Pre-fill service type from URL parameter
             const urlParams = new URLSearchParams(window.location.search);
@@ -2994,8 +3553,11 @@
                 bookingDateInput.setAttribute('min', today.toISOString().split('T')[0]);
             }
 
+            // Debounced validation for performance
+            const validationTimeouts = new Map();
+            
             // Enhanced Real-time Validation with Error Messages
-            function validateField(field) {
+            function validateField(field, immediate = false) {
                 const errorId = field.id + '-error';
                 const errorElement = document.getElementById(errorId);
                 let isValid = true;
@@ -3004,58 +3566,134 @@
                 // Remove previous error styling
                 field.classList.remove('error');
                 
-                if (field.hasAttribute('required')) {
-                    if (field.type === 'email' && field.value) {
-                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                        if (!emailRegex.test(field.value)) {
-                            isValid = false;
-                            errorMessage = 'Please enter a valid email address';
-                        }
-                    } else if (field.type === 'tel' && field.value) {
-                        const phoneRegex = /^[\d\s\(\)\-]+$/;
-                        const digitsOnly = field.value.replace(/\D/g, '');
-                        if (digitsOnly.length < 10) {
-                            isValid = false;
-                            errorMessage = 'Please enter a valid phone number';
-                        }
-                    } else if (field.tagName === 'SELECT' && field.value === '') {
-                        isValid = false;
-                        errorMessage = 'This field is required';
-                    } else if (field.value.trim() === '') {
-                        isValid = false;
-                        errorMessage = 'This field is required';
-                    }
+                // Clear existing timeout for this field
+                if (validationTimeouts.has(field.id)) {
+                    clearTimeout(validationTimeouts.get(field.id));
                 }
-
-                if (errorElement) {
-                    if (isValid) {
-                        errorElement.classList.remove('show');
-                        errorElement.textContent = '';
-                    } else {
-                        errorElement.classList.add('show');
-                        errorElement.textContent = errorMessage;
+                
+                const performValidation = () => {
+                    if (field.hasAttribute('required')) {
+                        if (field.type === 'email' && field.value) {
+                            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                            if (!emailRegex.test(field.value)) {
+                                isValid = false;
+                                errorMessage = 'Please enter a valid email address';
+                            }
+                        } else if (field.type === 'tel' && field.value) {
+                            const phoneRegex = /^[\d\s\(\)\-]+$/;
+                            const digitsOnly = field.value.replace(/\D/g, '');
+                            if (digitsOnly.length < 10) {
+                                isValid = false;
+                                errorMessage = 'Please enter a valid phone number (10 digits minimum)';
+                            }
+                        } else if (field.type === 'date' && field.value) {
+                            const selectedDate = new Date(field.value);
+                            const tomorrow = new Date();
+                            tomorrow.setDate(tomorrow.getDate() + 1);
+                            if (selectedDate < tomorrow) {
+                                isValid = false;
+                                errorMessage = 'Please select a date starting from tomorrow';
+                            }
+                        } else if (field.tagName === 'SELECT' && field.value === '') {
+                            isValid = false;
+                            errorMessage = 'This field is required';
+                        } else if (field.tagName === 'TEXTAREA' && field.value.trim().length < 10) {
+                            isValid = false;
+                            errorMessage = 'Please provide more details (at least 10 characters)';
+                        } else if (field.value.trim() === '') {
+                            isValid = false;
+                            errorMessage = 'This field is required';
+                        }
                     }
-                }
 
-                return isValid;
+                    if (errorElement) {
+                        if (isValid) {
+                            errorElement.classList.remove('show');
+                            errorElement.textContent = '';
+                            field.classList.add('valid');
+                            announceToScreenReader(`${field.labels?.[0]?.textContent || 'Field'} is valid`);
+                        } else {
+                            errorElement.classList.add('show');
+                            errorElement.textContent = errorMessage;
+                            field.classList.add('error');
+                            announceToScreenReader(`Error in ${field.labels?.[0]?.textContent || 'field'}: ${errorMessage}`);
+                        }
+                    }
+
+                    return isValid;
+                };
+                
+                // Debounce validation (except for blur events)
+                if (immediate) {
+                    return performValidation();
+                } else {
+                    const timeoutId = setTimeout(performValidation, 300);
+                    validationTimeouts.set(field.id, timeoutId);
+                    return true; // Return true initially, validation happens async
+                }
             }
 
             if (bookingForm) {
                 const formInputs = bookingForm.querySelectorAll('input, select, textarea');
                 formInputs.forEach(input => {
+                    // Immediate validation on blur
                     input.addEventListener('blur', function() {
-                        validateField(this);
+                        validateField(this, true);
                     });
 
+                    // Debounced validation on input
                     input.addEventListener('input', function() {
                         if (this.value.trim()) {
-                            validateField(this);
+                            validateField(this, false);
                         } else {
                             const errorId = this.id + '-error';
                             const errorElement = document.getElementById(errorId);
                             if (errorElement) {
                                 errorElement.classList.remove('show');
                             }
+                            this.classList.remove('valid', 'error');
+                        }
+                    });
+                    
+                    // Character count for textarea
+                    if (input.tagName === 'TEXTAREA' && input.id === 'booking-details') {
+                        const countElement = document.getElementById('details-count');
+                        if (countElement) {
+                            input.addEventListener('input', function() {
+                                const length = this.value.length;
+                                countElement.textContent = `${length} character${length !== 1 ? 's' : ''}`;
+                                
+                                // Color coding for character count
+                                if (length < 10) {
+                                    countElement.style.color = '#ef4444';
+                                } else if (length < 50) {
+                                    countElement.style.color = '#f59e0b';
+                                } else {
+                                    countElement.style.color = '#22c55e';
+                                }
+                            });
+                        }
+                    }
+                    
+                    // Add focus ring for keyboard navigation
+                    input.addEventListener('focus', function() {
+                        this.classList.add('keyboard-focused');
+                    });
+                    
+                    input.addEventListener('blur', function() {
+                        this.classList.remove('keyboard-focused');
+                    });
+                    
+                    // Detect mouse vs keyboard usage
+                    let isMouseUser = false;
+                    document.addEventListener('mousedown', () => {
+                        isMouseUser = true;
+                        setTimeout(() => { isMouseUser = false; }, 100);
+                    });
+                    
+                    input.addEventListener('focus', function() {
+                        if (!isMouseUser) {
+                            this.classList.add('keyboard-navigation');
                         }
                     });
                 });
@@ -3077,12 +3715,94 @@
                         }
                     });
                 }
+                
+                // Google Places API Address Autocomplete
+                function initAutocomplete() {
+                    const addressInput = document.getElementById('booking-address');
+                    if (addressInput && typeof google !== 'undefined' && google.maps) {
+                        const autocomplete = new google.maps.places.Autocomplete(addressInput, {
+                            types: ['address'],
+                            componentRestrictions: { country: 'us' },
+                            fields: ['formatted_address', 'address_components', 'geometry']
+                        });
+                        
+                        autocomplete.addListener('place_changed', function() {
+                            const place = autocomplete.getPlace();
+                            if (place.formatted_address) {
+                                addressInput.value = place.formatted_address;
+                                // Trigger validation
+                                addressInput.dispatchEvent(new Event('input', { bubbles: true }));
+                                // Show success indicator
+                                addressInput.classList.add('address-autocomplete-success');
+                                setTimeout(() => {
+                                    addressInput.classList.remove('address-autocomplete-success');
+                                }, 2000);
+                            }
+                        });
+                        
+                        // Prevent form submission on Enter key in autocomplete
+                        addressInput.addEventListener('keydown', function(e) {
+                            if (e.key === 'Enter' && document.querySelector('.pac-container:not([style*="display: none"])')) {
+                                e.preventDefault();
+                            }
+                        });
+                    }
+                }
+                
+                // Fallback if Google Maps API loads after DOM
+                if (typeof google !== 'undefined' && google.maps) {
+                    initAutocomplete();
+                } else {
+                    window.initAutocomplete = initAutocomplete;
+                }
             }
 
+            // Enhanced security: Rate limiting and spam detection
+            let lastSubmissionTime = 0;
+            let submissionAttempts = 0;
+            const minTimeBetweenSubmissions = 5000; // 5 seconds
+            const maxSubmissionsPerHour = 3;
+            const submissionHistory = JSON.parse(localStorage.getItem('form_submission_history') || '[]');
+            
+            function checkRateLimit() {
+                const now = Date.now();
+                const oneHourAgo = now - (60 * 60 * 1000);
+                
+                // Clean old submissions
+                const recentSubmissions = submissionHistory.filter(time => time > oneHourAgo);
+                localStorage.setItem('form_submission_history', JSON.stringify(recentSubmissions));
+                
+                // Check if too many submissions
+                if (recentSubmissions.length >= maxSubmissionsPerHour) {
+                    return {
+                        allowed: false,
+                        message: `Too many submission attempts. Please wait ${Math.ceil((recentSubmissions[0] + (60 * 60 * 1000) - now) / 60000)} minutes before trying again.`
+                    };
+                }
+                
+                // Check minimum time between submissions
+                if (now - lastSubmissionTime < minTimeBetweenSubmissions) {
+                    return {
+                        allowed: false,
+                        message: 'Please wait a moment before submitting again.'
+                    };
+                }
+                
+                return { allowed: true };
+            }
+            
+            function recordSubmission() {
+                const now = Date.now();
+                lastSubmissionTime = now;
+                submissionAttempts++;
+                
+                const history = JSON.parse(localStorage.getItem('form_submission_history') || '[]');
+                history.push(now);
+                localStorage.setItem('form_submission_history', JSON.stringify(history));
+            }
+            
             if (bookingForm) {
-                // Rate limiting: prevent rapid submissions
-                let lastSubmissionTime = 0;
-                const minTimeBetweenSubmissions = 5000; // 5 seconds
+                // Enhanced rate limiting: prevent rapid submissions
                 
                 bookingForm.addEventListener('submit', async function(e) {
                     e.preventDefault();
@@ -3115,16 +3835,25 @@
                         return;
                     }
                     
-                    // Rate limiting check
-                    const now = Date.now();
-                    if (now - lastSubmissionTime < minTimeBetweenSubmissions) {
+                    // Enhanced rate limiting check
+                    const rateLimitCheck = checkRateLimit();
+                    if (!rateLimitCheck.allowed) {
                         if (messageDiv) {
-                            messageDiv.textContent = 'Please wait a moment before submitting again.';
-                            messageDiv.style.color = '#ffa500';
+                            messageDiv.innerHTML = `<div class="form-error-message">⚠️ ${rateLimitCheck.message}</div>`;
+                            messageDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }
+                        const submitBtn = bookingForm.querySelector('button[type="submit"]');
+                        if (submitBtn) {
+                            submitBtn.disabled = false;
+                            const btnText = submitBtn.querySelector('.btn-text');
+                            const btnLoader = submitBtn.querySelector('.btn-loader');
+                            if (btnText) btnText.textContent = 'Submit Booking Request';
+                            if (btnLoader) btnLoader.style.display = 'none';
                         }
                         return;
                     }
-                    lastSubmissionTime = now;
+                    
+                    recordSubmission();
 
                     const submitBtn = bookingForm.querySelector('button[type="submit"]');
                     const btnText = submitBtn?.querySelector('.btn-text');
@@ -3132,8 +3861,19 @@
                     
                     if (submitBtn) {
                         submitBtn.disabled = true;
+                        submitBtn.classList.add('submitting');
                         if (btnText) btnText.textContent = 'Submitting...';
                         if (btnLoader) btnLoader.style.display = 'inline';
+                        
+                        // Add loading animation
+                        submitBtn.style.position = 'relative';
+                        submitBtn.style.overflow = 'hidden';
+                    }
+                    
+                    // Show submission progress
+                    if (messageDiv) {
+                        messageDiv.innerHTML = '<div class="form-info-message">⏳ Processing your request...</div>';
+                        messageDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     }
 
                     const formData = new FormData(bookingForm);
@@ -3148,9 +3888,13 @@
                         const responseData = await res.json().catch(() => ({}));
 
                         if (res.ok && responseData && responseData.success) {
+                            // Track successful submission
+                            formAnalytics.trackSubmission(true);
                             // Redirect to thank you page
                             window.location.href = '/thank-you/';
                         } else {
+                            // Track failed submission
+                            formAnalytics.trackSubmission(false);
                             const errorMsg = responseData?.message || 'There was an error submitting your request.';
                             messageDiv.innerHTML = `<div class="form-error-message">❌ ${errorMsg} Please try again or call us at (312) 439-7500.</div>`;
                             if (submitBtn) {
