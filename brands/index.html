@@ -453,6 +453,9 @@
                 height: var(--mobile-header-height);
                 padding: 0 1rem;
                 gap: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
             }
 
             .nav {
@@ -495,7 +498,8 @@
                 order: -1; /* Show theme toggle first on mobile */
             }
             
-            .header-actions .cta-button {
+            .header-actions .cta-button,
+            .cta-button.call-now-button {
                 display: none;
             }
 
@@ -1103,6 +1107,15 @@
             transition: background var(--transition);
         }
 
+        body:not(.light-theme) .toggle-switch {
+            background: rgba(148, 163, 184, 0.28);
+        }
+
+        :root[data-theme='light'] .toggle-switch,
+        body.light-theme .toggle-switch {
+            background: rgba(15, 23, 42, 0.12);
+        }
+
         .toggle-switch:hover {
             background: rgba(249, 115, 22, 0.2);
         }
@@ -1246,14 +1259,9 @@
             }
         }
 
-        @media (max-width: 768px) {
-            .nav {
-                position: relative;
-                justify-content: space-between;
-            }
-
-            .nav-links {
-                display: none;
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 0.5rem;
             }
 
             .logo {
@@ -1282,20 +1290,9 @@
                 height: 2.5px;
             }
 
-            .header-actions {
-                gap: 0.75rem;
-            }
-            
-            .theme-toggle {
-                order: -1; /* Show theme toggle first on mobile */
-            }
-            
-            .cta-button {
-                display: none;
-            }
 
             .hero {
-                padding: 100px 0 60px;
+                padding: 80px 0 40px;
             }
 
             .trust-badges {
@@ -1324,17 +1321,6 @@
         @media (max-width: 480px) {
             .container {
                 padding: 0 0.5rem;
-            }
-
-            .logo {
-                font-size: 1.15rem;
-                padding: 2px 8px;
-            }
-
-            .logo img {
-                width: 44px !important;
-                height: 32px !important;
-                margin-right: 6px !important;
             }
 
             .hero {
