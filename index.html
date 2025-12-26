@@ -54,7 +54,10 @@
     <!-- End Google Tag Manager -->
     
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="theme-color" content="#f97316">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Denali Tech - We Make Your Home Smart & Simple</title>
     <meta name="description" content="Denali Tech - Professional home automation and AV solutions in Chicago. Smart home systems, home theater, WiFi networking, security cameras, lighting, shades, and whole home audio. Free consultation available!">
     <meta name="keywords" content="smart home automation Chicago, Control4 installer Chicago, home automation Mt Prospect, smart home installer near me, home theater installation Chicago, whole home audio Chicago, WiFi installation Chicago, security camera installation Chicago, smart lighting Chicago, motorized shades Chicago, home automation company Chicago, AV installer Chicago, residential automation Chicago, smart home systems, Control4 dealer, URC automation, home technology installer, custom smart home Chicago, automated lighting control, multi-room audio, surveillance camera systems, home networking solutions, smart thermostat installation, voice control installation, automated window treatments, home cinema installation">
@@ -279,8 +282,8 @@
             <h1>We Make Your Home Smart & Simple</h1>
             <div class="typewriter" id="typewriter"><span class="typewriter-content"></span></div>
             <div class="hero-buttons">
-                <a href="/contact/#booking" class="btn-primary">📅 Get Free Consultation</a>
-                <a href="/services/" class="btn-secondary">See What We Do</a>
+                <a href="/contact/#booking" class="btn-primary" aria-label="Schedule a free consultation">📅 Get Free Consultation</a>
+                <a href="/services/" class="btn-secondary" aria-label="Learn about our services">See What We Do</a>
             </div>
             <div style="text-align: center; margin-top: 3rem; display: flex; flex-direction: column; gap: 1.5rem; align-items: center;">
                 <div class="warranty-badge">
@@ -309,7 +312,15 @@
     </section>
 
     <!-- Statistics/Trust Signals Section -->
-    <section class="stats-section" style="padding: 60px 5%; background: linear-gradient(135deg, rgba(249,115,22,0.1), rgba(13,148,136,0.08)); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <section class="stats-section" style="padding: 60px 5%; background: linear-gradient(135deg, rgba(249,115,22,0.1), rgba(13,148,136,0.08)); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); position: relative; overflow: hidden;">
+        <div style="position: absolute; top: -50%; right: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(249,115,22,0.1) 0%, transparent 70%); border-radius: 50%; pointer-events: none; animation: float 20s ease-in-out infinite;"></div>
+        <div style="position: absolute; bottom: -30%; left: -5%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(13,148,136,0.1) 0%, transparent 70%); border-radius: 50%; pointer-events: none; animation: float 15s ease-in-out infinite reverse;"></div>
+        <style>
+            @keyframes float {
+                0%, 100% { transform: translate(0, 0) scale(1); }
+                50% { transform: translate(30px, -30px) scale(1.1); }
+            }
+        </style>
         <div class="container">
             <div class="stats-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2.5rem; max-width: 1000px; margin: 0 auto;">
                 <div class="stat-card" style="text-align: center; padding: 1.5rem; background: rgba(255,255,255,0.03); border-radius: 12px; border: 1px solid var(--border-color); transition: all 0.3s ease;">
@@ -354,42 +365,42 @@
                 <p>We're your complete smart home solution - products and services, all from one trusted source. No need to shop around or coordinate with multiple companies. Here's how we make your life easier:</p>
             </div>
             <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon" style="font-size: 3.5rem; margin-bottom: 1.25rem; filter: drop-shadow(0 4px 8px rgba(249,115,22,0.3));">🏠</div>
+                <article class="service-card" role="article" aria-label="Smart Home Control service">
+                    <div class="service-icon" aria-hidden="true" style="font-size: 3.5rem; margin-bottom: 1.25rem; filter: drop-shadow(0 4px 8px rgba(249,115,22,0.3));">🏠</div>
                     <h3>Smart Home Control</h3>
                     <p>Control your lights, temperature, and security from your phone or with your voice. No more getting up to turn off lights!</p>
-                    <a href="/services/#automation" class="service-link">Learn More →</a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon" style="font-size: 3.5rem; margin-bottom: 1.25rem; filter: drop-shadow(0 4px 8px rgba(249,115,22,0.3));">🎬</div>
+                    <a href="/services/#automation" class="service-link" aria-label="Learn more about Smart Home Control">Learn More →</a>
+                </article>
+                <article class="service-card" role="article" aria-label="Home Theater service">
+                    <div class="service-icon" aria-hidden="true" style="font-size: 3.5rem; margin-bottom: 1.25rem; filter: drop-shadow(0 4px 8px rgba(249,115,22,0.3));">🎬</div>
                     <h3>Home Theater</h3>
                     <p>Turn any room into a movie theater. Watch your favorite shows and movies with amazing picture and sound quality.</p>
-                    <a href="/services/#theater" class="service-link">Learn More →</a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon" style="font-size: 3.5rem; margin-bottom: 1.25rem; filter: drop-shadow(0 4px 8px rgba(249,115,22,0.3));">📶</div>
+                    <a href="/services/#theater" class="service-link" aria-label="Learn more about Home Theater">Learn More →</a>
+                </article>
+                <article class="service-card" role="article" aria-label="WiFi and Networking service">
+                    <div class="service-icon" aria-hidden="true" style="font-size: 3.5rem; margin-bottom: 1.25rem; filter: drop-shadow(0 4px 8px rgba(249,115,22,0.3));">📶</div>
                     <h3>WiFi That Works</h3>
                     <p>No more dead spots! We make sure your internet works perfectly in every room of your house.</p>
-                    <a href="/services/#networking" class="service-link">Learn More →</a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon" style="font-size: 3.5rem; margin-bottom: 1.25rem; filter: drop-shadow(0 4px 8px rgba(249,115,22,0.3));">🔒</div>
+                    <a href="/services/#networking" class="service-link" aria-label="Learn more about WiFi and Networking">Learn More →</a>
+                </article>
+                <article class="service-card" role="article" aria-label="Home Security service">
+                    <div class="service-icon" aria-hidden="true" style="font-size: 3.5rem; margin-bottom: 1.25rem; filter: drop-shadow(0 4px 8px rgba(249,115,22,0.3));">🔒</div>
                     <h3>Home Security</h3>
                     <p>Keep your family safe with cameras and alarms that you can check from anywhere. Peace of mind, 24/7.</p>
-                    <a href="/services/#surveillance" class="service-link">Learn More →</a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon" style="font-size: 3.5rem; margin-bottom: 1.25rem; filter: drop-shadow(0 4px 8px rgba(249,115,22,0.3));">💡</div>
+                    <a href="/services/#surveillance" class="service-link" aria-label="Learn more about Home Security">Learn More →</a>
+                </article>
+                <article class="service-card" role="article" aria-label="Smart Lighting service">
+                    <div class="service-icon" aria-hidden="true" style="font-size: 3.5rem; margin-bottom: 1.25rem; filter: drop-shadow(0 4px 8px rgba(249,115,22,0.3));">💡</div>
                     <h3>Smart Lighting</h3>
                     <p>Lights that turn on automatically when you walk in, dim for movie night, or change colors for parties.</p>
-                    <a href="/services/#lighting" class="service-link">Learn More →</a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon" style="font-size: 3.5rem; margin-bottom: 1.25rem; filter: drop-shadow(0 4px 8px rgba(249,115,22,0.3));">🎵</div>
+                    <a href="/services/#lighting" class="service-link" aria-label="Learn more about Smart Lighting">Learn More →</a>
+                </article>
+                <article class="service-card" role="article" aria-label="Whole Home Audio service">
+                    <div class="service-icon" aria-hidden="true" style="font-size: 3.5rem; margin-bottom: 1.25rem; filter: drop-shadow(0 4px 8px rgba(249,115,22,0.3));">🎵</div>
                     <h3>Music Everywhere</h3>
                     <p>Play your favorite music in any room, or the whole house at once. Perfect for parties or just relaxing.</p>
-                    <a href="/services/#audio" class="service-link">Learn More →</a>
-                </div>
+                    <a href="/services/#audio" class="service-link" aria-label="Learn more about Whole Home Audio">Learn More →</a>
+                </article>
             </div>
             <div style="text-align: center; margin-top: 3rem;">
                 <a href="/services/" class="btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem;">Explore All Services →</a>
@@ -405,31 +416,478 @@
                 <p>We're not just another tech company. As an authorized dealer, we provide the products and handle all installation and support - everything you need in one place. Here's what makes us different:</p>
             </div>
             <div class="why-grid">
-                <div class="why-card">
-                    <div class="why-icon" style="font-size: 3rem; margin-bottom: 1.25rem; filter: drop-shadow(0 4px 8px rgba(249,115,22,0.2));">🤝</div>
+                <article class="why-card" role="article" aria-label="We Listen - Why choose Denali Tech">
+                    <div class="why-icon" aria-hidden="true" style="font-size: 3rem; margin-bottom: 1.25rem; filter: drop-shadow(0 4px 8px rgba(249,115,22,0.2));">🤝</div>
                     <h3>We Listen</h3>
                     <p>We don't push complicated stuff you don't need. We listen to what you actually want and make it simple.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon" style="font-size: 3rem; margin-bottom: 1.25rem; filter: drop-shadow(0 4px 8px rgba(249,115,22,0.2));">🛠️</div>
+                </article>
+                <article class="why-card" role="article" aria-label="We Install Everything - Why choose Denali Tech">
+                    <div class="why-icon" aria-hidden="true" style="font-size: 3rem; margin-bottom: 1.25rem; filter: drop-shadow(0 4px 8px rgba(249,115,22,0.2));">🛠️</div>
                     <h3>We Install Everything</h3>
                     <p>You don't need to figure anything out. We come to your house and set everything up perfectly.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon" style="font-size: 3rem; margin-bottom: 1.25rem; filter: drop-shadow(0 4px 8px rgba(249,115,22,0.2));">📞</div>
+                </article>
+                <article class="why-card" role="article" aria-label="We're Here When You Need Us - Why choose Denali Tech">
+                    <div class="why-icon" aria-hidden="true" style="font-size: 3rem; margin-bottom: 1.25rem; filter: drop-shadow(0 4px 8px rgba(249,115,22,0.2));">📞</div>
                     <h3>We're Here When You Need Us</h3>
                     <p>If something doesn't work right, just call us. We'll fix it quickly, no questions asked.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-icon" style="font-size: 3rem; margin-bottom: 1.25rem; filter: drop-shadow(0 4px 8px rgba(249,115,22,0.2));">💰</div>
+                </article>
+                <article class="why-card" role="article" aria-label="Fair Prices - Why choose Denali Tech">
+                    <div class="why-icon" aria-hidden="true" style="font-size: 3rem; margin-bottom: 1.25rem; filter: drop-shadow(0 4px 8px rgba(249,115,22,0.2));">💰</div>
                     <h3>Fair Prices</h3>
                     <p>No hidden fees or surprise charges. We give you a clear price upfront and stick to it.</p>
-                </div>
+                </article>
             </div>
             <div style="text-align: center; margin-top: 3rem;">
                 <a href="/about/" class="btn-secondary" style="display: inline-flex; align-items: center; gap: 0.5rem;">Learn More About Us →</a>
             </div>
         </div>
+    </section>
+
+    <!-- Featured Projects Showcase -->
+    <section class="featured-projects-section" style="padding: 120px 5%; background: var(--bg-color); position: relative; overflow: hidden;">
+        <div class="container">
+            <div class="section-header" style="opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease;">
+                <h2>See Our Work in Action</h2>
+                <p>Real homes, real transformations. Browse our recent smart home installations across Chicago and surrounding areas.</p>
+            </div>
+            <script>
+                // Animate section header on load
+                document.addEventListener('DOMContentLoaded', function() {
+                    const header = document.querySelector('.featured-projects-section .section-header');
+                    if (header) {
+                        setTimeout(() => {
+                            header.style.opacity = '1';
+                            header.style.transform = 'translateY(0)';
+                        }, 300);
+                    }
+                });
+            </script>
+            <div class="projects-showcase-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <div class="project-showcase-card" role="article" aria-label="Premium Fire Edge Theater project" tabindex="0" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; transition: all var(--transition); cursor: pointer;" onclick="window.location.href='/projects/'" onkeydown="if(event.key==='Enter') window.location.href='/projects/'">
+                    <div class="project-image-wrapper" style="position: relative; width: 100%; padding-top: 75%; overflow: hidden; background: #000;">
+                        <picture>
+                            <source srcset="Video/Project showcases /zire egde screen and  prejector and MartinLogan .webp" type="image/webp">
+                            <img src="Video/Project showcases /zire egde screen and  prejector and MartinLogan .jpg" alt="Premium Fire Edge Theater with MartinLogan Speakers" loading="lazy" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                        </picture>
+                        <div class="project-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7)); opacity: 0; transition: opacity 0.3s ease;"></div>
+                    </div>
+                    <div class="project-info" style="padding: 1.5rem;">
+                        <span style="display: inline-block; background: var(--accent-primary); color: white; padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.75rem;">Home Theater</span>
+                        <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">Premium Fire Edge Theater</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">Fire edge projection screen, 4K laser projector, and premium MartinLogan speakers for exceptional audio clarity.</p>
+                    </div>
+                </div>
+                <div class="project-showcase-card" role="article" aria-label="Sound & Light Harmony project" tabindex="0" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; transition: all var(--transition); cursor: pointer;" onclick="window.location.href='/projects/'" onkeydown="if(event.key==='Enter') window.location.href='/projects/'">
+                    <div class="project-image-wrapper" style="position: relative; width: 100%; padding-top: 75%; overflow: hidden; background: #000;">
+                        <picture>
+                            <source srcset="Video/Project showcases /Sound & Light Harmony.webp" type="image/webp">
+                            <img src="Video/Project showcases /Sound & Light Harmony.jpg" alt="Sound & Light Harmony Installation" loading="lazy" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                        </picture>
+                        <div class="project-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7)); opacity: 0; transition: opacity 0.3s ease;"></div>
+                    </div>
+                    <div class="project-info" style="padding: 1.5rem;">
+                        <span style="display: inline-block; background: var(--accent-primary); color: white; padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.75rem;">Smart Automation</span>
+                        <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">Sound & Light Harmony</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">Integrated audio and lighting control creating the perfect ambiance for any occasion.</p>
+                    </div>
+                </div>
+                <div class="project-showcase-card" role="article" aria-label="Modern Media Room project" tabindex="0" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; transition: all var(--transition); cursor: pointer;" onclick="window.location.href='/projects/'" onkeydown="if(event.key==='Enter') window.location.href='/projects/'">
+                    <div class="project-image-wrapper" style="position: relative; width: 100%; padding-top: 75%; overflow: hidden; background: #000;">
+                        <picture>
+                            <source srcset="Video/Project showcases /Media Room_edited.webp" type="image/webp">
+                            <img src="Video/Project showcases /Media Room_edited.jpg" alt="Modern Media Room Installation" loading="lazy" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                        </picture>
+                        <div class="project-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7)); opacity: 0; transition: opacity 0.3s ease;"></div>
+                    </div>
+                    <div class="project-info" style="padding: 1.5rem;">
+                        <span style="display: inline-block; background: var(--accent-primary); color: white; padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.75rem;">Media Room</span>
+                        <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">Modern Media Room</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">Clean, contemporary design with seamless technology integration for the ultimate entertainment experience.</p>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="/projects/" class="btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem;">View All Projects →</a>
+            </div>
+        </div>
+        <style>
+            .project-showcase-card:focus {
+                outline: 3px solid var(--accent-primary);
+                outline-offset: 3px;
+            }
+            @media (hover: hover) and (pointer: fine) {
+                .project-showcase-card:hover {
+                    transform: translateY(-8px);
+                    border-color: var(--accent-primary);
+                    box-shadow: var(--shadow-glow);
+                }
+                .project-showcase-card:hover .project-image-wrapper img {
+                    transform: scale(1.1);
+                }
+                .project-showcase-card:hover .project-overlay {
+                    opacity: 1;
+                }
+            }
+            @media (max-width: 768px) {
+                .projects-showcase-grid {
+                    grid-template-columns: 1fr;
+                }
+                .project-showcase-card {
+                    margin-bottom: 1rem;
+                }
+            }
+            @media (prefers-reduced-motion: reduce) {
+                .project-showcase-card {
+                    transition: none;
+                }
+                .project-showcase-card:hover {
+                    transform: none;
+                }
+            }
+        </style>
+    </section>
+
+    <!-- Video Showcase Section -->
+    <section class="video-showcase-section" style="padding: 120px 5%; background: linear-gradient(135deg, rgba(249,115,22,0.08), rgba(13,148,136,0.06)); position: relative;">
+        <div class="container">
+            <div class="section-header">
+                <h2>See Smart Home Technology in Action</h2>
+                <p>Watch how we transform homes with cutting-edge automation and entertainment systems. Click play to see our work!</p>
+            </div>
+            <div class="video-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.5rem; margin-top: 3rem; max-width: 1400px; margin-left: auto; margin-right: auto;">
+                <div class="video-card" style="background: rgba(255,255,255,0.05); border: 2px solid var(--border-color); border-radius: 20px; overflow: hidden; position: relative; box-shadow: var(--shadow-subtle); transition: all var(--transition);">
+                    <div class="video-wrapper" style="position: relative; width: 100%; padding-top: 56.25%; background: linear-gradient(135deg, rgba(249,115,22,0.2), rgba(13,148,136,0.2));">
+                        <video 
+                            controls 
+                            playsinline
+                            loop
+                            autoplay
+                            muted
+                            aria-label="Smart Home Automation video demonstration"
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; background: #000; cursor: pointer;" 
+                            poster="Video/logo.webp" 
+                            preload="metadata"
+                            class="video-player">
+                            <source src="Video/Denali tech smart home.mp4" type="video/mp4">
+                            <track kind="captions" src="" label="English" srclang="en" default>
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="play-indicator" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80px; height: 80px; background: rgba(249,115,22,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; pointer-events: none; opacity: 0; transition: opacity 0.3s ease; z-index: 2;">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div style="padding: 2rem; background: rgba(255,255,255,0.03);">
+                        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                            <div style="width: 4px; height: 24px; background: var(--accent-primary); border-radius: 2px;"></div>
+                            <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--text-primary); margin: 0;">Smart Home Automation</h3>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.7; margin: 0;">See how we integrate lighting, security, and climate control into one seamless system. Watch real installations in action.</p>
+                    </div>
+                </div>
+                <div class="video-card" style="background: rgba(255,255,255,0.05); border: 2px solid var(--border-color); border-radius: 20px; overflow: hidden; position: relative; box-shadow: var(--shadow-subtle); transition: all var(--transition);">
+                    <div class="video-wrapper" style="position: relative; width: 100%; padding-top: 56.25%; background: linear-gradient(135deg, rgba(249,115,22,0.2), rgba(13,148,136,0.2));">
+                        <video 
+                            controls 
+                            playsinline
+                            loop
+                            autoplay
+                            muted
+                            aria-label="Home Theater Systems video demonstration"
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; background: #000; cursor: pointer;" 
+                            poster="Video/logo.webp" 
+                            preload="metadata"
+                            class="video-player">
+                            <source src="Video/Home theter Systems - Denali Tech - Chicago.mp4" type="video/mp4">
+                            <track kind="captions" src="" label="English" srclang="en" default>
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="play-indicator" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80px; height: 80px; background: rgba(249,115,22,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; pointer-events: none; opacity: 0; transition: opacity 0.3s ease; z-index: 2;">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div style="padding: 2rem; background: rgba(255,255,255,0.03);">
+                        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                            <div style="width: 4px; height: 24px; background: var(--accent-primary); border-radius: 2px;"></div>
+                            <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--text-primary); margin: 0;">Home Theater Systems</h3>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.7; margin: 0;">Experience premium audio and visual quality in our custom home theater installations. See the transformation from start to finish.</p>
+                    </div>
+                </div>
+                <div class="video-card" style="background: rgba(255,255,255,0.05); border: 2px solid var(--border-color); border-radius: 20px; overflow: hidden; position: relative; box-shadow: var(--shadow-subtle); transition: all var(--transition);">
+                    <div class="video-wrapper" style="position: relative; width: 100%; padding-top: 56.25%; background: linear-gradient(135deg, rgba(249,115,22,0.2), rgba(13,148,136,0.2));">
+                        <video 
+                            controls 
+                            playsinline
+                            loop
+                            autoplay
+                            muted
+                            aria-label="Smart Lighting Solutions video demonstration"
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; background: #000; cursor: pointer;" 
+                            poster="Video/logo.webp" 
+                            preload="metadata"
+                            class="video-player">
+                            <source src="Video/Smart lighting Solutions - Denali Tech.mp4" type="video/mp4">
+                            <track kind="captions" src="" label="English" srclang="en" default>
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="play-indicator" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80px; height: 80px; background: rgba(249,115,22,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; pointer-events: none; opacity: 0; transition: opacity 0.3s ease; z-index: 2;">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div style="padding: 2rem; background: rgba(255,255,255,0.03);">
+                        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                            <div style="width: 4px; height: 24px; background: var(--accent-primary); border-radius: 2px;"></div>
+                            <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--text-primary); margin: 0;">Smart Lighting Solutions</h3>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.7; margin: 0;">Transform your home's ambiance with intelligent lighting that adapts to your lifestyle. Watch the magic happen.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            .service-card:focus-within,
+            .why-card:focus-within,
+            .testimonial-card:focus-within,
+            .pricing-card:focus-within,
+            .faq-item-quick:focus-within,
+            .video-card:focus-within {
+                outline: 3px solid var(--accent-primary);
+                outline-offset: 3px;
+                border-radius: 16px;
+            }
+            .service-link:focus,
+            .btn-primary:focus,
+            .btn-secondary:focus {
+                outline: 3px solid var(--accent-primary);
+                outline-offset: 3px;
+                border-radius: 6px;
+            }
+            .video-card {
+                position: relative;
+            }
+            .video-wrapper {
+                position: relative;
+            }
+            .video-player {
+                border-radius: 16px 16px 0 0;
+            }
+            .video-card:hover .play-indicator {
+                opacity: 1;
+            }
+            .video-player::-webkit-media-controls-panel {
+                background-color: rgba(0, 0, 0, 0.7);
+            }
+            .video-player::-webkit-media-controls-play-button {
+                background-color: var(--accent-primary);
+                border-radius: 50%;
+            }
+            @media (hover: hover) and (pointer: fine) {
+                .video-card:hover {
+                    transform: translateY(-8px);
+                    border-color: var(--accent-primary);
+                    box-shadow: var(--shadow-glow);
+                }
+            }
+            @media (max-width: 768px) {
+                .video-grid {
+                    grid-template-columns: 1fr;
+                    gap: 2rem;
+                }
+                .video-card {
+                    border-radius: 16px;
+                }
+            }
+            /* Ensure videos are visible and playable */
+            video {
+                min-height: 200px;
+            }
+            video:focus {
+                outline: 3px solid var(--accent-primary);
+                outline-offset: 2px;
+            }
+        </style>
+        <script>
+            // Enhance video playback experience
+            document.addEventListener('DOMContentLoaded', function() {
+                const videos = document.querySelectorAll('.video-player');
+                videos.forEach(video => {
+                    // Ensure loop is set
+                    video.loop = true;
+                    
+                    // Add click to play/pause
+                    video.addEventListener('click', function(e) {
+                        if (video.paused) {
+                            video.play();
+                        } else {
+                            video.pause();
+                        }
+                    });
+                    
+                    // Show play indicator when paused
+                    video.addEventListener('play', function() {
+                        const indicator = this.parentElement.querySelector('.play-indicator');
+                        if (indicator) indicator.style.opacity = '0';
+                    });
+                    
+                    video.addEventListener('pause', function() {
+                        const indicator = this.parentElement.querySelector('.play-indicator');
+                        if (indicator) indicator.style.opacity = '0.7';
+                    });
+                    
+                    // Ensure video loops when it ends
+                    video.addEventListener('ended', function() {
+                        this.currentTime = 0;
+                        this.play();
+                    });
+                    
+                    // Preload on hover for better UX
+                    const card = video.closest('.video-card');
+                    if (card) {
+                        card.addEventListener('mouseenter', function() {
+                            if (video.readyState < 2) {
+                                video.load();
+                            }
+                        }, { once: true });
+                    }
+                    
+                    // Start playing when video is ready (muted autoplay)
+                    video.addEventListener('loadedmetadata', function() {
+                        // Try to play, but don't force if user hasn't interacted
+                        if (document.visibilityState === 'visible') {
+                            video.play().catch(function(error) {
+                                // Autoplay was prevented, that's okay
+                                console.log('Autoplay prevented:', error);
+                            });
+                        }
+                    });
+                });
+            });
+        </script>
+    </section>
+
+    <!-- How It Works / Process Section -->
+    <section class="process-section" style="padding: 120px 5%; background: var(--bg-color);">
+        <div class="container">
+            <div class="section-header">
+                <h2>How We Make It Simple</h2>
+                <p>From consultation to completion, we handle every step. Here's how we transform your home:</p>
+            </div>
+            <div class="process-timeline" style="max-width: 1000px; margin: 4rem auto 0; position: relative;">
+                <div class="process-step" style="display: grid; grid-template-columns: auto 1fr; gap: 2rem; margin-bottom: 3rem; align-items: start;">
+                    <div class="step-number" style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-primary), var(--accent-interactive)); display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 1.8rem; font-weight: 700; color: white; box-shadow: var(--shadow-glow); flex-shrink: 0;">1</div>
+                    <div class="step-content">
+                        <h3 style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.75rem;">Free Consultation</h3>
+                        <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.8; margin: 0;">We visit your home, listen to your needs, and provide honest recommendations. No pressure, no sales pitch - just expert advice tailored to your lifestyle and budget.</p>
+                    </div>
+                </div>
+                <div class="process-step" style="display: grid; grid-template-columns: auto 1fr; gap: 2rem; margin-bottom: 3rem; align-items: start;">
+                    <div class="step-number" style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-primary), var(--accent-interactive)); display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 1.8rem; font-weight: 700; color: white; box-shadow: var(--shadow-glow); flex-shrink: 0;">2</div>
+                    <div class="step-content">
+                        <h3 style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.75rem;">Custom Design & Planning</h3>
+                        <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.8; margin: 0;">We create a detailed plan showing exactly what we'll install, where it goes, and how it works together. You'll see everything before we start, with transparent pricing.</p>
+                    </div>
+                </div>
+                <div class="process-step" style="display: grid; grid-template-columns: auto 1fr; gap: 2rem; margin-bottom: 3rem; align-items: start;">
+                    <div class="step-number" style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-primary), var(--accent-interactive)); display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 1.8rem; font-weight: 700; color: white; box-shadow: var(--shadow-glow); flex-shrink: 0;">3</div>
+                    <div class="step-content">
+                        <h3 style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.75rem;">Professional Installation</h3>
+                        <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.8; margin: 0;">Our certified technicians install everything with precision and care. We handle all wiring, programming, and setup - you don't lift a finger.</p>
+                    </div>
+                </div>
+                <div class="process-step" style="display: grid; grid-template-columns: auto 1fr; gap: 2rem; align-items: start;">
+                    <div class="step-number" style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-primary), var(--accent-interactive)); display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 1.8rem; font-weight: 700; color: white; box-shadow: var(--shadow-glow); flex-shrink: 0;">4</div>
+                    <div class="step-content">
+                        <h3 style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.75rem;">Training & Lifetime Support</h3>
+                        <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.8; margin: 0;">We teach you how to use everything, then we're here whenever you need us. Questions? Problems? Just call - we'll help you right away.</p>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="/contact/#booking" class="btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem;">Start Your Free Consultation →</a>
+            </div>
+        </div>
+        <style>
+            @media (max-width: 768px) {
+                .process-step {
+                    grid-template-columns: 1fr;
+                    gap: 1rem;
+                }
+                .step-number {
+                    margin: 0 auto 1rem;
+                }
+            }
+        </style>
+    </section>
+
+    <!-- Pricing Transparency Section -->
+    <section class="pricing-section" style="padding: 120px 5%; background: linear-gradient(135deg, rgba(249,115,22,0.1), rgba(13,148,136,0.08));">
+        <div class="container">
+            <div class="section-header">
+                <h2>Transparent Pricing, No Surprises</h2>
+                <p>We believe in honest pricing. Here's what you can expect to invest in your smart home:</p>
+            </div>
+            <div class="pricing-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem; max-width: 1200px; margin-left: auto; margin-right: auto;">
+                <div class="pricing-card" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 16px; padding: 2rem; text-align: center; transition: all var(--transition);">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">📶</div>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.75rem;">WiFi & Networking</h3>
+                    <div style="font-family: var(--font-heading); font-size: 2rem; font-weight: 700; color: var(--accent-primary); margin-bottom: 1rem;">Starting at $2,000</div>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">Eliminate dead zones with professional-grade WiFi systems. Perfect coverage throughout your entire home.</p>
+                    <ul style="list-style: none; padding: 0; margin: 0; text-align: left; color: var(--text-secondary); font-size: 0.9rem;">
+                        <li style="padding: 0.5rem 0; display: flex; align-items: start; gap: 0.5rem;"><span style="color: var(--accent-primary);">✓</span> Mesh network setup</li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: start; gap: 0.5rem;"><span style="color: var(--accent-primary);">✓</span> Network optimization</li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: start; gap: 0.5rem;"><span style="color: var(--accent-primary);">✓</span> Professional installation</li>
+                    </ul>
+                </div>
+                <div class="pricing-card" style="background: rgba(255,255,255,0.05); border: 2px solid var(--accent-primary); border-radius: 16px; padding: 2rem; text-align: center; transition: all var(--transition); position: relative;">
+                    <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent-primary); color: white; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">Most Popular</div>
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🏠</div>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.75rem;">Smart Home Package</h3>
+                    <div style="font-family: var(--font-heading); font-size: 2rem; font-weight: 700; color: var(--accent-primary); margin-bottom: 1rem;">$8,000 - $25,000</div>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">Complete automation including lighting, climate control, security, and entertainment systems.</p>
+                    <ul style="list-style: none; padding: 0; margin: 0; text-align: left; color: var(--text-secondary); font-size: 0.9rem;">
+                        <li style="padding: 0.5rem 0; display: flex; align-items: start; gap: 0.5rem;"><span style="color: var(--accent-primary);">✓</span> Smart lighting control</li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: start; gap: 0.5rem;"><span style="color: var(--accent-primary);">✓</span> Climate automation</li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: start; gap: 0.5rem;"><span style="color: var(--accent-primary);">✓</span> Security integration</li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: start; gap: 0.5rem;"><span style="color: var(--accent-primary);">✓</span> Voice control</li>
+                    </ul>
+                </div>
+                <div class="pricing-card" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 16px; padding: 2rem; text-align: center; transition: all var(--transition);">
+                    <div style="font-size: 2.5rem; margin-bottom: 1rem;">🎬</div>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.75rem;">Home Theater</h3>
+                    <div style="font-family: var(--font-heading); font-size: 2rem; font-weight: 700; color: var(--accent-primary); margin-bottom: 1rem;">$15,000+</div>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">Premium audio-visual experience with 4K projection, surround sound, and custom acoustic treatment.</p>
+                    <ul style="list-style: none; padding: 0; margin: 0; text-align: left; color: var(--text-secondary); font-size: 0.9rem;">
+                        <li style="padding: 0.5rem 0; display: flex; align-items: start; gap: 0.5rem;"><span style="color: var(--accent-primary);">✓</span> 4K laser projector</li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: start; gap: 0.5rem;"><span style="color: var(--accent-primary);">✓</span> Premium audio system</li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: start; gap: 0.5rem;"><span style="color: var(--accent-primary);">✓</span> Custom seating & design</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: rgba(255,255,255,0.03); border-radius: 12px; border: 1px solid var(--border-color);">
+                <p style="color: var(--text-secondary); font-size: 1.05rem; margin-bottom: 1rem;"><strong style="color: var(--text-primary);">All prices include:</strong> Professional installation, programming, training, and lifetime support. No hidden fees.</p>
+                <a href="/contact/#booking" class="btn-secondary" style="display: inline-flex; align-items: center; gap: 0.5rem;">Get Your Custom Quote →</a>
+            </div>
+        </div>
+        <style>
+            @media (hover: hover) and (pointer: fine) {
+                .pricing-card:hover {
+                    transform: translateY(-8px);
+                    box-shadow: var(--shadow-glow);
+                    background: rgba(255,255,255,0.08);
+                }
+            }
+            @media (max-width: 768px) {
+                .pricing-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
     </section>
 
     <!-- Trusted Partners -->
@@ -469,31 +927,31 @@
                 <div class="testimonials-grid">
                     <div class="testimonial-card">
                         <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="testimonial-text">"Denali Tech transformed our home into a smart home paradise. The installation was seamless, and the team was professional and knowledgeable. Couldn't be happier!"</p>
+                        <p class="testimonial-text">"Denali Tech transformed our home into a smart home paradise. The installation was seamless, and the team was professional and knowledgeable. Couldn't be happier! They answered all our questions and made sure everything worked perfectly before leaving."</p>
                         <div class="testimonial-author">
                             <div>
                                 <div class="testimonial-author-name">Sarah M.</div>
-                                <div style="font-size: 0.9rem; color: var(--text-secondary);">Chicago, IL</div>
+                                <div style="font-size: 0.9rem; color: var(--text-secondary);">Chicago, IL • Home Automation</div>
                             </div>
                         </div>
                     </div>
                     <div class="testimonial-card">
                         <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="testimonial-text">"Best decision we made! The home theater system is incredible, and the whole home audio is amazing. They made everything so simple and easy to use."</p>
+                        <p class="testimonial-text">"Best decision we made! The home theater system is incredible, and the whole home audio is amazing. They made everything so simple and easy to use. Our family movie nights are now a true experience. Worth every penny!"</p>
                         <div class="testimonial-author">
                             <div>
                                 <div class="testimonial-author-name">Michael R.</div>
-                                <div style="font-size: 0.9rem; color: var(--text-secondary);">Mt Prospect, IL</div>
+                                <div style="font-size: 0.9rem; color: var(--text-secondary);">Mt Prospect, IL • Home Theater</div>
                             </div>
                         </div>
                     </div>
                     <div class="testimonial-card">
                         <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-                        <p class="testimonial-text">"Professional, reliable, and honest. They told us exactly what we needed without pushing unnecessary upgrades. The WiFi coverage is now perfect throughout our entire house."</p>
+                        <p class="testimonial-text">"Professional, reliable, and honest. They told us exactly what we needed without pushing unnecessary upgrades. The WiFi coverage is now perfect throughout our entire house. When we had a question months later, they came right out - no charge!"</p>
                         <div class="testimonial-author">
                             <div>
                                 <div class="testimonial-author-name">Jennifer L.</div>
-                                <div style="font-size: 0.9rem; color: var(--text-secondary);">Arlington Heights, IL</div>
+                                <div style="font-size: 0.9rem; color: var(--text-secondary);">Arlington Heights, IL • WiFi & Networking</div>
                             </div>
                         </div>
                     </div>
@@ -558,31 +1016,128 @@
         </div>
     </section>
 
-    <!-- Quick FAQ Section - For Featured Snippets -->
-    <section class="quick-faq-section" style="padding: 80px 5%; background: var(--bg-color);">
+    <!-- Blog Preview Section -->
+    <section class="blog-preview-section" style="padding: 120px 5%; background: var(--bg-color);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Learn About Smart Home Technology</h2>
+                <p>Expert tips, guides, and insights to help you make informed decisions about your smart home.</p>
+            </div>
+            <div class="blog-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <article class="blog-card" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; transition: all var(--transition);">
+                    <a href="/blogs/urc-remote-programming-guide/" style="text-decoration: none; color: inherit; display: block;">
+                        <div class="blog-image-wrapper" style="position: relative; width: 100%; padding-top: 56.25%; overflow: hidden; background: rgba(249,115,22,0.1);">
+                            <picture>
+                                <source srcset="blogs/urc-remote-programming-guide/images/Urc mx 990 iamge in living room in hand .jpg" type="image/jpeg">
+                                <img src="blogs/urc-remote-programming-guide/images/Urc mx 990 iamge in living room in hand .jpg" alt="URC Remote Programming Guide" loading="lazy" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                            </picture>
+                        </div>
+                        <div style="padding: 1.5rem;">
+                            <span style="display: inline-block; background: var(--accent-primary); color: white; padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 0.8rem; font-weight: 600; margin-bottom: 0.75rem;">Guide</span>
+                            <h3 style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.75rem; line-height: 1.4;">URC Remote Programming Guide</h3>
+                            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0 0 1rem 0;">Learn how to program your URC remote control to control everything in your smart home - TV, audio, lights, shades, and more.</p>
+                            <span style="color: var(--accent-primary); font-weight: 600; font-size: 0.9rem;">Read More →</span>
+                        </div>
+                    </a>
+                </article>
+                <article class="blog-card" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; transition: all var(--transition);">
+                    <div class="blog-image-wrapper" style="position: relative; width: 100%; padding-top: 56.25%; overflow: hidden; background: linear-gradient(135deg, rgba(249,115,22,0.2), rgba(13,148,136,0.2)); display: flex; align-items: center; justify-content: center;">
+                        <div style="text-align: center; padding: 2rem;">
+                            <div style="font-size: 3rem; margin-bottom: 1rem;">📱</div>
+                            <div style="color: var(--text-primary); font-weight: 600;">More Articles Coming Soon</div>
+                        </div>
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <span style="display: inline-block; background: rgba(249,115,22,0.2); color: var(--accent-primary); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 0.8rem; font-weight: 600; margin-bottom: 0.75rem;">Coming Soon</span>
+                        <h3 style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.75rem; line-height: 1.4;">Smart Home Buyer's Guide</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">Everything you need to know before investing in smart home technology. Expert tips and recommendations.</p>
+                    </div>
+                </article>
+                <article class="blog-card" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; transition: all var(--transition);">
+                    <div class="blog-image-wrapper" style="position: relative; width: 100%; padding-top: 56.25%; overflow: hidden; background: linear-gradient(135deg, rgba(249,115,22,0.2), rgba(13,148,136,0.2)); display: flex; align-items: center; justify-content: center;">
+                        <div style="text-align: center; padding: 2rem;">
+                            <div style="font-size: 3rem; margin-bottom: 1rem;">💡</div>
+                            <div style="color: var(--text-primary); font-weight: 600;">More Articles Coming Soon</div>
+                        </div>
+                    </div>
+                    <div style="padding: 1.5rem;">
+                        <span style="display: inline-block; background: rgba(249,115,22,0.2); color: var(--accent-primary); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 0.8rem; font-weight: 600; margin-bottom: 0.75rem;">Coming Soon</span>
+                        <h3 style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.75rem; line-height: 1.4;">10 Questions to Ask Your Installer</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">Make sure you're hiring the right company. Essential questions every homeowner should ask.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+        <style>
+            @media (hover: hover) and (pointer: fine) {
+                .blog-card:hover {
+                    transform: translateY(-5px);
+                    border-color: var(--accent-primary);
+                    box-shadow: var(--shadow-glow);
+                }
+                .blog-card:hover .blog-image-wrapper img {
+                    transform: scale(1.1);
+                }
+            }
+            @media (max-width: 768px) {
+                .blog-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+    </section>
+
+    <!-- Quick FAQ Section - Enhanced -->
+    <section class="quick-faq-section" style="padding: 120px 5%; background: linear-gradient(135deg, rgba(249,115,22,0.08), rgba(13,148,136,0.06));">
         <div class="container">
             <div class="section-header">
                 <h2>Frequently Asked Questions About Smart Home Automation in Chicago</h2>
                 <p>Quick answers to common questions - <a href="/faq.html" class="faq-link" style="text-underline-offset: 3px;">view all FAQs →</a></p>
             </div>
             <div class="faq-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
-                <div class="faq-item-quick" style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem;">
+                <div class="faq-item-quick" style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; transition: all var(--transition);">
                     <h3 style="font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: 1rem; color: var(--text-primary);">Do you offer free consultations?</h3>
                     <p style="color: var(--text-secondary); line-height: 1.6; margin: 0;">Yes! We offer completely free, no-pressure consultations. We'll come to your Chicago area home, assess your needs, and provide honest recommendations with no obligation.</p>
                 </div>
-                <div class="faq-item-quick" style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem;">
+                <div class="faq-item-quick" style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; transition: all var(--transition);">
                     <h3 style="font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: 1rem; color: var(--text-primary);">What areas do you serve?</h3>
                     <p style="color: var(--text-secondary); line-height: 1.6; margin: 0;">We serve the entire Chicago metro area including Mt Prospect, Arlington Heights, Schaumburg, Evanston, Skokie, and surrounding suburbs. <a href="/contact/" class="faq-link">Contact us</a> to confirm we serve your area.</p>
                 </div>
-                <div class="faq-item-quick" style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem;">
+                <div class="faq-item-quick" style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; transition: all var(--transition);">
                     <h3 style="font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: 1rem; color: var(--text-primary);">How much does smart home automation cost?</h3>
                     <p style="color: var(--text-secondary); line-height: 1.6; margin: 0;">Costs vary based on your home size and needs. Simple WiFi upgrades start around $2,000, while complete whole-home automation can range from $15,000-$50,000+. <a href="/contact/#booking" class="faq-link">Get a free quote</a> tailored to your home.</p>
                 </div>
+                <div class="faq-item-quick" style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; transition: all var(--transition);">
+                    <h3 style="font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: 1rem; color: var(--text-primary);">How long does installation take?</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.6; margin: 0;">Most installations take 1-3 days depending on the scope. WiFi upgrades can be completed in a few hours, while full home automation systems typically take 2-5 days. We'll give you a timeline during your consultation.</p>
+                </div>
+                <div class="faq-item-quick" style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; transition: all var(--transition);">
+                    <h3 style="font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: 1rem; color: var(--text-primary);">Do you provide training?</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.6; margin: 0;">Absolutely! We train every family member on how to use the system before we leave. We also provide written guides and are always available for questions via phone or in-person visits.</p>
+                </div>
+                <div class="faq-item-quick" style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; transition: all var(--transition);">
+                    <h3 style="font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: 1rem; color: var(--text-primary);">What if something breaks?</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.6; margin: 0;">All products come with manufacturer warranties, and we provide lifetime support. If something doesn't work right, just call us - we'll fix it quickly, often at no charge if it's a programming issue.</p>
+                </div>
             </div>
-            <div style="text-align: center; margin-top: 2rem;">
-                <a href="/faq.html" class="btn-secondary" style="display: inline-flex; align-items: center; gap: 0.5rem;">View All FAQs →</a>
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="/faq.html" class="btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem;">View All FAQs →</a>
             </div>
         </div>
+        <style>
+            @media (hover: hover) and (pointer: fine) {
+                .faq-item-quick:hover {
+                    transform: translateY(-3px);
+                    border-color: var(--accent-primary);
+                    box-shadow: var(--shadow-subtle);
+                }
+            }
+            @media (max-width: 768px) {
+                .faq-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
     </section>
 
     <!-- CTA Section - Enhanced for Ad Customers -->
@@ -1222,7 +1777,7 @@
         });
     </script>
     
-    <!-- Image Loading Handler - Add loaded class when images finish loading -->
+    <!-- Image Loading Handler & Scroll Animations -->
     <script>
         (function() {
             // Handle lazy-loaded images with smooth fade-in
@@ -1256,6 +1811,31 @@
                 });
 
                 lazyImages.forEach(img => imageObserver.observe(img));
+                
+                // Scroll-triggered animations for sections
+                const animatedElements = document.querySelectorAll('.service-card, .why-card, .testimonial-card, .project-showcase-card, .video-card, .pricing-card, .faq-item-quick, .process-step, .stat-card');
+                
+                const animationObserver = new IntersectionObserver((entries) => {
+                    entries.forEach((entry, index) => {
+                        if (entry.isIntersecting) {
+                            setTimeout(() => {
+                                entry.target.style.opacity = '1';
+                                entry.target.style.transform = 'translateY(0)';
+                            }, index * 100); // Stagger animations
+                            animationObserver.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                });
+                
+                animatedElements.forEach(el => {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(30px)';
+                    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    animationObserver.observe(el);
+                });
             } else {
                 // Fallback for older browsers
                 lazyImages.forEach(img => {
@@ -1318,8 +1898,133 @@
                 }
             }
             window.addEventListener('scroll', optimizeScroll, { passive: true });
+            
+            // Add smooth scroll behavior for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
+                    if (href !== '#' && href.length > 1) {
+                        const target = document.querySelector(href);
+                        if (target) {
+                            e.preventDefault();
+                            const headerOffset = 80;
+                            const elementPosition = target.getBoundingClientRect().top;
+                            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                            
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+            
+            // Add loading state for buttons
+            document.querySelectorAll('a.btn-primary, a.btn-secondary').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    if (this.href && !this.href.includes('#')) {
+                        const originalText = this.innerHTML;
+                        this.innerHTML = '<span style="display: inline-block; animation: spin 1s linear infinite;">⏳</span> Loading...';
+                        this.style.pointerEvents = 'none';
+                        
+                        setTimeout(() => {
+                            this.innerHTML = originalText;
+                            this.style.pointerEvents = '';
+                        }, 2000);
+                    }
+                });
+            });
+            
+            // Performance: Debounce scroll events
+            function debounce(func, wait) {
+                let timeout;
+                return function executedFunction(...args) {
+                    const later = () => {
+                        clearTimeout(timeout);
+                        func(...args);
+                    };
+                    clearTimeout(timeout);
+                    timeout = setTimeout(later, wait);
+                };
+            }
+            
+            // Add parallax effect to hero section (subtle)
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                const handleScroll = debounce(() => {
+                    const scrolled = window.pageYOffset;
+                    const heroContent = hero.querySelector('.hero-content');
+                    if (heroContent && scrolled < window.innerHeight) {
+                        heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
+                        heroContent.style.opacity = 1 - (scrolled / window.innerHeight) * 0.5;
+                    }
+                }, 10);
+                
+                window.addEventListener('scroll', handleScroll, { passive: true });
+            }
+            
+            // Add number counter animation for stats
+            const statNumbers = document.querySelectorAll('.stat-number');
+            const animateValue = (element, start, end, duration) => {
+                let startTimestamp = null;
+                const step = (timestamp) => {
+                    if (!startTimestamp) startTimestamp = timestamp;
+                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                    const current = Math.floor(progress * (end - start) + start);
+                    if (element.textContent.includes('.')) {
+                        element.textContent = end.toFixed(1);
+                    } else if (element.textContent.includes('+')) {
+                        element.textContent = end + '+';
+                    } else if (element.textContent === 'FREE') {
+                        element.textContent = 'FREE';
+                    } else if (element.textContent === '24/7') {
+                        element.textContent = '24/7';
+                    } else {
+                        element.textContent = current;
+                    }
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    }
+                };
+                window.requestAnimationFrame(step);
+            };
+            
+            const statsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const statNumber = entry.target;
+                        const text = statNumber.textContent.trim();
+                        let targetValue = 0;
+                        
+                        if (text.includes('.')) {
+                            targetValue = parseFloat(text);
+                        } else if (text.includes('+')) {
+                            targetValue = parseInt(text);
+                        } else if (text === 'FREE' || text === '24/7') {
+                            return; // Don't animate these
+                        } else {
+                            targetValue = parseInt(text) || 0;
+                        }
+                        
+                        if (targetValue > 0) {
+                            animateValue(statNumber, 0, targetValue, 2000);
+                            statsObserver.unobserve(statNumber);
+                        }
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            statNumbers.forEach(stat => statsObserver.observe(stat));
         })();
     </script>
+    
+    <style>
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
 
     <!-- Web3Forms hCaptcha Script (Zero-Config) -->
     <script src="https://web3forms.com/client/script.js" async defer></script>
