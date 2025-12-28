@@ -558,7 +558,6 @@
                 <div class="video-card" style="background: rgba(255,255,255,0.05); border: 2px solid var(--border-color); border-radius: 20px; overflow: hidden; position: relative; box-shadow: var(--shadow-subtle); transition: all var(--transition);">
                     <div class="video-wrapper" style="position: relative; width: 100%; padding-top: 56.25%; background: linear-gradient(135deg, rgba(249,115,22,0.2), rgba(13,148,136,0.2));">
                         <video 
-                            controls 
                             playsinline
                             loop
                             autoplay
@@ -589,7 +588,6 @@
                 <div class="video-card" style="background: rgba(255,255,255,0.05); border: 2px solid var(--border-color); border-radius: 20px; overflow: hidden; position: relative; box-shadow: var(--shadow-subtle); transition: all var(--transition);">
                     <div class="video-wrapper" style="position: relative; width: 100%; padding-top: 56.25%; background: linear-gradient(135deg, rgba(249,115,22,0.2), rgba(13,148,136,0.2));">
                         <video 
-                            controls 
                             playsinline
                             loop
                             autoplay
@@ -620,7 +618,6 @@
                 <div class="video-card" style="background: rgba(255,255,255,0.05); border: 2px solid var(--border-color); border-radius: 20px; overflow: hidden; position: relative; box-shadow: var(--shadow-subtle); transition: all var(--transition);">
                     <div class="video-wrapper" style="position: relative; width: 100%; padding-top: 56.25%; background: linear-gradient(135deg, rgba(249,115,22,0.2), rgba(13,148,136,0.2));">
                         <video 
-                            controls 
                             playsinline
                             loop
                             autoplay
@@ -680,12 +677,39 @@
             .video-card:hover .play-indicator {
                 opacity: 1;
             }
+            /* Hide all video controls */
             .video-player::-webkit-media-controls-panel {
-                background-color: rgba(0, 0, 0, 0.7);
+                display: none !important;
             }
             .video-player::-webkit-media-controls-play-button {
-                background-color: var(--accent-primary);
-                border-radius: 50%;
+                display: none !important;
+            }
+            .video-player::-webkit-media-controls-start-playback-button {
+                display: none !important;
+            }
+            .video-player::-webkit-media-controls {
+                display: none !important;
+            }
+            video::-webkit-media-controls-overlay-play-button {
+                display: none !important;
+            }
+            video::-webkit-media-controls-timeline {
+                display: none !important;
+            }
+            video::-webkit-media-controls-current-time-display {
+                display: none !important;
+            }
+            video::-webkit-media-controls-time-remaining-display {
+                display: none !important;
+            }
+            video::-webkit-media-controls-mute-button {
+                display: none !important;
+            }
+            video::-webkit-media-controls-volume-slider {
+                display: none !important;
+            }
+            video::-webkit-media-controls-fullscreen-button {
+                display: none !important;
             }
             @media (hover: hover) and (pointer: fine) {
                 .video-card:hover {
