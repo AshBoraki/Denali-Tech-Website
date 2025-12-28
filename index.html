@@ -387,6 +387,358 @@
         }
     </style>
 
+    <!-- Featured Projects Showcase -->
+    <section class="featured-projects-section" style="padding: 120px 5%; background: var(--bg-color); position: relative; overflow: hidden;">
+        <div class="container">
+            <div class="section-header" style="opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease;">
+                <h2>See Our Work in Action</h2>
+                <p>Real homes, real transformations. Browse our recent smart home installations across Chicago and surrounding areas.</p>
+            </div>
+            <script>
+                // Animate section header on load
+                document.addEventListener('DOMContentLoaded', function() {
+                    const header = document.querySelector('.featured-projects-section .section-header');
+                    if (header) {
+                        setTimeout(() => {
+                            header.style.opacity = '1';
+                            header.style.transform = 'translateY(0)';
+                        }, 300);
+                    }
+                });
+            </script>
+            <div class="projects-showcase-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <div class="project-showcase-card" role="article" aria-label="Premium Fire Edge Theater project" tabindex="0" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; transition: all var(--transition); cursor: pointer;" onclick="window.location.href='/projects/'" onkeydown="if(event.key==='Enter') window.location.href='/projects/'">
+                    <div class="project-image-wrapper" style="position: relative; width: 100%; padding-top: 75%; overflow: hidden; background: #000;">
+                        <picture>
+                            <source srcset="Video/Project showcases /zire egde screen and  prejector and MartinLogan .webp" type="image/webp">
+                            <img src="Video/Project showcases /zire egde screen and  prejector and MartinLogan .jpg" alt="Premium Fire Edge Theater with MartinLogan Speakers" loading="lazy" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                        </picture>
+                        <div class="project-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7)); opacity: 0; transition: opacity 0.3s ease;"></div>
+                    </div>
+                    <div class="project-info" style="padding: 1.5rem;">
+                        <span style="display: inline-block; background: var(--accent-primary); color: white; padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.75rem;">Home Theater</span>
+                        <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">Premium Fire Edge Theater</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">Fire edge projection screen, 4K laser projector, and premium MartinLogan speakers for exceptional audio clarity.</p>
+                    </div>
+                </div>
+                <div class="project-showcase-card" role="article" aria-label="Sound & Light Harmony project" tabindex="0" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; transition: all var(--transition); cursor: pointer;" onclick="window.location.href='/projects/'" onkeydown="if(event.key==='Enter') window.location.href='/projects/'">
+                    <div class="project-image-wrapper" style="position: relative; width: 100%; padding-top: 75%; overflow: hidden; background: #000;">
+                        <picture>
+                            <source srcset="Video/Project showcases /Sound & Light Harmony.webp" type="image/webp">
+                            <img src="Video/Project showcases /Sound & Light Harmony.jpg" alt="Sound & Light Harmony Installation" loading="lazy" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                        </picture>
+                        <div class="project-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7)); opacity: 0; transition: opacity 0.3s ease;"></div>
+                    </div>
+                    <div class="project-info" style="padding: 1.5rem;">
+                        <span style="display: inline-block; background: var(--accent-primary); color: white; padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.75rem;">Smart Automation</span>
+                        <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">Sound & Light Harmony</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">Integrated audio and lighting control creating the perfect ambiance for any occasion.</p>
+                    </div>
+                </div>
+                <div class="project-showcase-card" role="article" aria-label="Modern Media Room project" tabindex="0" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; transition: all var(--transition); cursor: pointer;" onclick="window.location.href='/projects/'" onkeydown="if(event.key==='Enter') window.location.href='/projects/'">
+                    <div class="project-image-wrapper" style="position: relative; width: 100%; padding-top: 75%; overflow: hidden; background: #000;">
+                        <picture>
+                            <source srcset="Video/Project showcases /Media Room_edited.webp" type="image/webp">
+                            <img src="Video/Project showcases /Media Room_edited.jpg" alt="Modern Media Room Installation" loading="lazy" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                        </picture>
+                        <div class="project-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7)); opacity: 0; transition: opacity 0.3s ease;"></div>
+                    </div>
+                    <div class="project-info" style="padding: 1.5rem;">
+                        <span style="display: inline-block; background: var(--accent-primary); color: white; padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.75rem;">Media Room</span>
+                        <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">Modern Media Room</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">Clean, contemporary design with seamless technology integration for the ultimate entertainment experience.</p>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="/projects/" class="btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 700;">View All Projects →</a>
+            </div>
+        </div>
+        <style>
+            .project-showcase-card:focus {
+                outline: 3px solid var(--accent-primary);
+                outline-offset: 3px;
+            }
+            @media (hover: hover) and (pointer: fine) {
+                .project-showcase-card:hover {
+                    transform: translateY(-8px);
+                    border-color: var(--accent-primary);
+                    box-shadow: var(--shadow-glow);
+                }
+                .project-showcase-card:hover .project-image-wrapper img {
+                    transform: scale(1.1);
+                }
+                .project-showcase-card:hover .project-overlay {
+                    opacity: 1;
+                }
+            }
+            @media (max-width: 768px) {
+                .projects-showcase-grid {
+                    grid-template-columns: 1fr;
+                }
+                .project-showcase-card {
+                    margin-bottom: 1rem;
+                }
+            }
+            @media (prefers-reduced-motion: reduce) {
+                .project-showcase-card {
+                    transition: none;
+                }
+                .project-showcase-card:hover {
+                    transform: none;
+                }
+            }
+        </style>
+    </section>
+
+    <!-- Video Showcase Section -->
+    <section class="video-showcase-section" style="padding: 120px 5%; background: linear-gradient(135deg, rgba(249,115,22,0.08), rgba(13,148,136,0.06)); position: relative;">
+        <div class="container">
+            <div class="section-header">
+                <h2>See Smart Home Technology in Action</h2>
+                <p>Watch how we transform homes with cutting-edge automation and entertainment systems. Click play to see our work!</p>
+            </div>
+            <div class="video-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.5rem; margin-top: 3rem; max-width: 1400px; margin-left: auto; margin-right: auto;">
+                <div class="video-card" style="background: rgba(255,255,255,0.05); border: 2px solid var(--border-color); border-radius: 20px; overflow: hidden; position: relative; box-shadow: var(--shadow-subtle); transition: all var(--transition);">
+                    <div class="video-wrapper" style="position: relative; width: 100%; padding-top: 56.25%; background: linear-gradient(135deg, rgba(249,115,22,0.2), rgba(13,148,136,0.2));">
+                        <video 
+                            playsinline
+                            loop
+                            autoplay
+                            muted
+                            aria-label="Smart Home Automation video demonstration"
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; background: #000; cursor: pointer;" 
+                            poster="Video/logo.webp" 
+                            preload="metadata"
+                            class="video-player">
+                            <source src="Video/Denali tech smart home.mp4" type="video/mp4">
+                            <track kind="captions" src="" label="English" srclang="en" default>
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="play-indicator" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80px; height: 80px; background: rgba(249,115,22,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; pointer-events: none; opacity: 0; transition: opacity 0.3s ease; z-index: 2;">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div style="padding: 2rem; background: rgba(255,255,255,0.03);">
+                        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                            <div style="width: 4px; height: 24px; background: var(--accent-primary); border-radius: 2px;"></div>
+                            <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--text-primary); margin: 0;">Smart Home Automation</h3>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.7; margin: 0;">See how we integrate lighting, security, and climate control into one seamless system. Watch real installations in action.</p>
+                    </div>
+                </div>
+                <div class="video-card" style="background: rgba(255,255,255,0.05); border: 2px solid var(--border-color); border-radius: 20px; overflow: hidden; position: relative; box-shadow: var(--shadow-subtle); transition: all var(--transition);">
+                    <div class="video-wrapper" style="position: relative; width: 100%; padding-top: 56.25%; background: linear-gradient(135deg, rgba(249,115,22,0.2), rgba(13,148,136,0.2));">
+                        <video 
+                            playsinline
+                            loop
+                            autoplay
+                            muted
+                            aria-label="Home Theater Systems video demonstration"
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; background: #000; cursor: pointer;" 
+                            poster="Video/logo.webp" 
+                            preload="metadata"
+                            class="video-player">
+                            <source src="Video/Home theter Systems - Denali Tech - Chicago.mp4" type="video/mp4">
+                            <track kind="captions" src="" label="English" srclang="en" default>
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="play-indicator" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80px; height: 80px; background: rgba(249,115,22,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; pointer-events: none; opacity: 0; transition: opacity 0.3s ease; z-index: 2;">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div style="padding: 2rem; background: rgba(255,255,255,0.03);">
+                        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                            <div style="width: 4px; height: 24px; background: var(--accent-primary); border-radius: 2px;"></div>
+                            <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--text-primary); margin: 0;">Home Theater Systems</h3>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.7; margin: 0;">Experience premium audio and visual quality in our custom home theater installations. See the transformation from start to finish.</p>
+                    </div>
+                </div>
+                <div class="video-card" style="background: rgba(255,255,255,0.05); border: 2px solid var(--border-color); border-radius: 20px; overflow: hidden; position: relative; box-shadow: var(--shadow-subtle); transition: all var(--transition);">
+                    <div class="video-wrapper" style="position: relative; width: 100%; padding-top: 56.25%; background: linear-gradient(135deg, rgba(249,115,22,0.2), rgba(13,148,136,0.2));">
+                        <video 
+                            playsinline
+                            loop
+                            autoplay
+                            muted
+                            aria-label="Smart Lighting Solutions video demonstration"
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; background: #000; cursor: pointer;" 
+                            poster="Video/logo.webp" 
+                            preload="metadata"
+                            class="video-player">
+                            <source src="Video/Smart lighting Solutions - Denali Tech.mp4" type="video/mp4">
+                            <track kind="captions" src="" label="English" srclang="en" default>
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="play-indicator" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80px; height: 80px; background: rgba(249,115,22,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; pointer-events: none; opacity: 0; transition: opacity 0.3s ease; z-index: 2;">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div style="padding: 2rem; background: rgba(255,255,255,0.03);">
+                        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
+                            <div style="width: 4px; height: 24px; background: var(--accent-primary); border-radius: 2px;"></div>
+                            <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--text-primary); margin: 0;">Smart Lighting Solutions</h3>
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.7; margin: 0;">Transform your home's ambiance with intelligent lighting that adapts to your lifestyle. Watch the magic happen.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            .service-card:focus-within,
+            .why-card:focus-within,
+            .testimonial-card:focus-within,
+            .pricing-card:focus-within,
+            .faq-item-quick:focus-within,
+            .video-card:focus-within {
+                outline: 3px solid var(--accent-primary);
+                outline-offset: 3px;
+                border-radius: 16px;
+            }
+            .service-link:focus,
+            .btn-primary:focus,
+            .btn-secondary:focus {
+                outline: 3px solid var(--accent-primary);
+                outline-offset: 3px;
+                border-radius: 6px;
+            }
+            .video-card {
+                position: relative;
+            }
+            .video-wrapper {
+                position: relative;
+            }
+            .video-player {
+                border-radius: 16px 16px 0 0;
+            }
+            .video-card:hover .play-indicator {
+                opacity: 1;
+            }
+            /* Hide all video controls */
+            .video-player::-webkit-media-controls-panel {
+                display: none !important;
+            }
+            .video-player::-webkit-media-controls-play-button {
+                display: none !important;
+            }
+            .video-player::-webkit-media-controls-start-playback-button {
+                display: none !important;
+            }
+            .video-player::-webkit-media-controls {
+                display: none !important;
+            }
+            video::-webkit-media-controls-overlay-play-button {
+                display: none !important;
+            }
+            video::-webkit-media-controls-timeline {
+                display: none !important;
+            }
+            video::-webkit-media-controls-current-time-display {
+                display: none !important;
+            }
+            video::-webkit-media-controls-time-remaining-display {
+                display: none !important;
+            }
+            video::-webkit-media-controls-mute-button {
+                display: none !important;
+            }
+            video::-webkit-media-controls-volume-slider {
+                display: none !important;
+            }
+            video::-webkit-media-controls-fullscreen-button {
+                display: none !important;
+            }
+            @media (hover: hover) and (pointer: fine) {
+                .video-card:hover {
+                    transform: translateY(-8px);
+                    border-color: var(--accent-primary);
+                    box-shadow: var(--shadow-glow);
+                }
+            }
+            @media (max-width: 768px) {
+                .video-grid {
+                    grid-template-columns: 1fr;
+                    gap: 2rem;
+                }
+                .video-card {
+                    border-radius: 16px;
+                }
+            }
+            /* Ensure videos are visible and playable */
+            video {
+                min-height: 200px;
+            }
+            video:focus {
+                outline: 3px solid var(--accent-primary);
+                outline-offset: 2px;
+            }
+        </style>
+        <script>
+            // Enhance video playback experience
+            document.addEventListener('DOMContentLoaded', function() {
+                const videos = document.querySelectorAll('.video-player');
+                videos.forEach(video => {
+                    // Ensure loop is set
+                    video.loop = true;
+                    
+                    // Add click to play/pause
+                    video.addEventListener('click', function(e) {
+                        if (video.paused) {
+                            video.play();
+                        } else {
+                            video.pause();
+                        }
+                    });
+                    
+                    // Show play indicator when paused
+                    video.addEventListener('play', function() {
+                        const indicator = this.parentElement.querySelector('.play-indicator');
+                        if (indicator) indicator.style.opacity = '0';
+                    });
+                    
+                    video.addEventListener('pause', function() {
+                        const indicator = this.parentElement.querySelector('.play-indicator');
+                        if (indicator) indicator.style.opacity = '0.7';
+                    });
+                    
+                    // Ensure video loops when it ends
+                    video.addEventListener('ended', function() {
+                        this.currentTime = 0;
+                        this.play();
+                    });
+                    
+                    // Preload on hover for better UX
+                    const card = video.closest('.video-card');
+                    if (card) {
+                        card.addEventListener('mouseenter', function() {
+                            if (video.readyState < 2) {
+                                video.load();
+                            }
+                        }, { once: true });
+                    }
+                    
+                    // Start playing when video is ready (muted autoplay)
+                    video.addEventListener('loadedmetadata', function() {
+                        // Try to play, but don't force if user hasn't interacted
+                        if (document.visibilityState === 'visible') {
+                            video.play().catch(function(error) {
+                                // Autoplay was prevented, that's okay
+                                console.log('Autoplay prevented:', error);
+                            });
+                        }
+                    });
+                });
+            });
+        </script>
+    </section>
+
     <!-- Services Section -->
     <section class="services">
         <div class="container">
@@ -728,110 +1080,6 @@
         </div>
     </section>
 
-    <!-- Featured Projects Showcase -->
-    <section class="featured-projects-section" style="padding: 120px 5%; background: var(--bg-color); position: relative; overflow: hidden;">
-        <div class="container">
-            <div class="section-header" style="opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease;">
-                <h2>See Our Work in Action</h2>
-                <p>Real homes, real transformations. Browse our recent smart home installations across Chicago and surrounding areas.</p>
-            </div>
-            <script>
-                // Animate section header on load
-                document.addEventListener('DOMContentLoaded', function() {
-                    const header = document.querySelector('.featured-projects-section .section-header');
-                    if (header) {
-                        setTimeout(() => {
-                            header.style.opacity = '1';
-                            header.style.transform = 'translateY(0)';
-                        }, 300);
-                    }
-                });
-            </script>
-            <div class="projects-showcase-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-top: 3rem;">
-                <div class="project-showcase-card" role="article" aria-label="Premium Fire Edge Theater project" tabindex="0" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; transition: all var(--transition); cursor: pointer;" onclick="window.location.href='/projects/'" onkeydown="if(event.key==='Enter') window.location.href='/projects/'">
-                    <div class="project-image-wrapper" style="position: relative; width: 100%; padding-top: 75%; overflow: hidden; background: #000;">
-                        <picture>
-                            <source srcset="Video/Project showcases /zire egde screen and  prejector and MartinLogan .webp" type="image/webp">
-                            <img src="Video/Project showcases /zire egde screen and  prejector and MartinLogan .jpg" alt="Premium Fire Edge Theater with MartinLogan Speakers" loading="lazy" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
-                        </picture>
-                        <div class="project-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7)); opacity: 0; transition: opacity 0.3s ease;"></div>
-                    </div>
-                    <div class="project-info" style="padding: 1.5rem;">
-                        <span style="display: inline-block; background: var(--accent-primary); color: white; padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.75rem;">Home Theater</span>
-                        <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">Premium Fire Edge Theater</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">Fire edge projection screen, 4K laser projector, and premium MartinLogan speakers for exceptional audio clarity.</p>
-                    </div>
-                </div>
-                <div class="project-showcase-card" role="article" aria-label="Sound & Light Harmony project" tabindex="0" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; transition: all var(--transition); cursor: pointer;" onclick="window.location.href='/projects/'" onkeydown="if(event.key==='Enter') window.location.href='/projects/'">
-                    <div class="project-image-wrapper" style="position: relative; width: 100%; padding-top: 75%; overflow: hidden; background: #000;">
-                        <picture>
-                            <source srcset="Video/Project showcases /Sound & Light Harmony.webp" type="image/webp">
-                            <img src="Video/Project showcases /Sound & Light Harmony.jpg" alt="Sound & Light Harmony Installation" loading="lazy" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
-                        </picture>
-                        <div class="project-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7)); opacity: 0; transition: opacity 0.3s ease;"></div>
-                    </div>
-                    <div class="project-info" style="padding: 1.5rem;">
-                        <span style="display: inline-block; background: var(--accent-primary); color: white; padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.75rem;">Smart Automation</span>
-                        <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">Sound & Light Harmony</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">Integrated audio and lighting control creating the perfect ambiance for any occasion.</p>
-                    </div>
-                </div>
-                <div class="project-showcase-card" role="article" aria-label="Modern Media Room project" tabindex="0" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; transition: all var(--transition); cursor: pointer;" onclick="window.location.href='/projects/'" onkeydown="if(event.key==='Enter') window.location.href='/projects/'">
-                    <div class="project-image-wrapper" style="position: relative; width: 100%; padding-top: 75%; overflow: hidden; background: #000;">
-                        <picture>
-                            <source srcset="Video/Project showcases /Media Room_edited.webp" type="image/webp">
-                            <img src="Video/Project showcases /Media Room_edited.jpg" alt="Modern Media Room Installation" loading="lazy" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
-                        </picture>
-                        <div class="project-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7)); opacity: 0; transition: opacity 0.3s ease;"></div>
-                    </div>
-                    <div class="project-info" style="padding: 1.5rem;">
-                        <span style="display: inline-block; background: var(--accent-primary); color: white; padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.75rem;">Media Room</span>
-                        <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">Modern Media Room</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">Clean, contemporary design with seamless technology integration for the ultimate entertainment experience.</p>
-                    </div>
-                </div>
-            </div>
-            <div style="text-align: center; margin-top: 3rem;">
-                <a href="/projects/" class="btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 700;">View All Projects →</a>
-            </div>
-        </div>
-        <style>
-            .project-showcase-card:focus {
-                outline: 3px solid var(--accent-primary);
-                outline-offset: 3px;
-            }
-            @media (hover: hover) and (pointer: fine) {
-                .project-showcase-card:hover {
-                    transform: translateY(-8px);
-                    border-color: var(--accent-primary);
-                    box-shadow: var(--shadow-glow);
-                }
-                .project-showcase-card:hover .project-image-wrapper img {
-                    transform: scale(1.1);
-                }
-                .project-showcase-card:hover .project-overlay {
-                    opacity: 1;
-                }
-            }
-            @media (max-width: 768px) {
-                .projects-showcase-grid {
-                    grid-template-columns: 1fr;
-                }
-                .project-showcase-card {
-                    margin-bottom: 1rem;
-                }
-            }
-            @media (prefers-reduced-motion: reduce) {
-                .project-showcase-card {
-                    transition: none;
-                }
-                .project-showcase-card:hover {
-                    transform: none;
-                }
-            }
-        </style>
-    </section>
-
     <!-- Pricing Transparency Section -->
     <section class="pricing-section" style="padding: 120px 5%; background: linear-gradient(135deg, rgba(249,115,22,0.1), rgba(13,148,136,0.08));">
         <div class="container">
@@ -895,254 +1143,6 @@
                 }
             }
         </style>
-    </section>
-
-    <!-- Video Showcase Section -->
-    <section class="video-showcase-section" style="padding: 120px 5%; background: linear-gradient(135deg, rgba(249,115,22,0.08), rgba(13,148,136,0.06)); position: relative;">
-        <div class="container">
-            <div class="section-header">
-                <h2>See Smart Home Technology in Action</h2>
-                <p>Watch how we transform homes with cutting-edge automation and entertainment systems. Click play to see our work!</p>
-            </div>
-            <div class="video-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.5rem; margin-top: 3rem; max-width: 1400px; margin-left: auto; margin-right: auto;">
-                <div class="video-card" style="background: rgba(255,255,255,0.05); border: 2px solid var(--border-color); border-radius: 20px; overflow: hidden; position: relative; box-shadow: var(--shadow-subtle); transition: all var(--transition);">
-                    <div class="video-wrapper" style="position: relative; width: 100%; padding-top: 56.25%; background: linear-gradient(135deg, rgba(249,115,22,0.2), rgba(13,148,136,0.2));">
-                        <video 
-                            playsinline
-                            loop
-                            autoplay
-                            muted
-                            aria-label="Smart Home Automation video demonstration"
-                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; background: #000; cursor: pointer;" 
-                            poster="Video/logo.webp" 
-                            preload="metadata"
-                            class="video-player">
-                            <source src="Video/Denali tech smart home.mp4" type="video/mp4">
-                            <track kind="captions" src="" label="English" srclang="en" default>
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="play-indicator" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80px; height: 80px; background: rgba(249,115,22,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; pointer-events: none; opacity: 0; transition: opacity 0.3s ease; z-index: 2;">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
-                                <path d="M8 5v14l11-7z"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div style="padding: 2rem; background: rgba(255,255,255,0.03);">
-                        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
-                            <div style="width: 4px; height: 24px; background: var(--accent-primary); border-radius: 2px;"></div>
-                            <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--text-primary); margin: 0;">Smart Home Automation</h3>
-                        </div>
-                        <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.7; margin: 0;">See how we integrate lighting, security, and climate control into one seamless system. Watch real installations in action.</p>
-                    </div>
-                </div>
-                <div class="video-card" style="background: rgba(255,255,255,0.05); border: 2px solid var(--border-color); border-radius: 20px; overflow: hidden; position: relative; box-shadow: var(--shadow-subtle); transition: all var(--transition);">
-                    <div class="video-wrapper" style="position: relative; width: 100%; padding-top: 56.25%; background: linear-gradient(135deg, rgba(249,115,22,0.2), rgba(13,148,136,0.2));">
-                        <video 
-                            playsinline
-                            loop
-                            autoplay
-                            muted
-                            aria-label="Home Theater Systems video demonstration"
-                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; background: #000; cursor: pointer;" 
-                            poster="Video/logo.webp" 
-                            preload="metadata"
-                            class="video-player">
-                            <source src="Video/Home theter Systems - Denali Tech - Chicago.mp4" type="video/mp4">
-                            <track kind="captions" src="" label="English" srclang="en" default>
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="play-indicator" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80px; height: 80px; background: rgba(249,115,22,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; pointer-events: none; opacity: 0; transition: opacity 0.3s ease; z-index: 2;">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
-                                <path d="M8 5v14l11-7z"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div style="padding: 2rem; background: rgba(255,255,255,0.03);">
-                        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
-                            <div style="width: 4px; height: 24px; background: var(--accent-primary); border-radius: 2px;"></div>
-                            <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--text-primary); margin: 0;">Home Theater Systems</h3>
-                        </div>
-                        <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.7; margin: 0;">Experience premium audio and visual quality in our custom home theater installations. See the transformation from start to finish.</p>
-                    </div>
-                </div>
-                <div class="video-card" style="background: rgba(255,255,255,0.05); border: 2px solid var(--border-color); border-radius: 20px; overflow: hidden; position: relative; box-shadow: var(--shadow-subtle); transition: all var(--transition);">
-                    <div class="video-wrapper" style="position: relative; width: 100%; padding-top: 56.25%; background: linear-gradient(135deg, rgba(249,115,22,0.2), rgba(13,148,136,0.2));">
-                        <video 
-                            playsinline
-                            loop
-                            autoplay
-                            muted
-                            aria-label="Smart Lighting Solutions video demonstration"
-                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; background: #000; cursor: pointer;" 
-                            poster="Video/logo.webp" 
-                            preload="metadata"
-                            class="video-player">
-                            <source src="Video/Smart lighting Solutions - Denali Tech.mp4" type="video/mp4">
-                            <track kind="captions" src="" label="English" srclang="en" default>
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="play-indicator" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80px; height: 80px; background: rgba(249,115,22,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; pointer-events: none; opacity: 0; transition: opacity 0.3s ease; z-index: 2;">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
-                                <path d="M8 5v14l11-7z"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div style="padding: 2rem; background: rgba(255,255,255,0.03);">
-                        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
-                            <div style="width: 4px; height: 24px; background: var(--accent-primary); border-radius: 2px;"></div>
-                            <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--text-primary); margin: 0;">Smart Lighting Solutions</h3>
-                        </div>
-                        <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.7; margin: 0;">Transform your home's ambiance with intelligent lighting that adapts to your lifestyle. Watch the magic happen.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <style>
-            .service-card:focus-within,
-            .why-card:focus-within,
-            .testimonial-card:focus-within,
-            .pricing-card:focus-within,
-            .faq-item-quick:focus-within,
-            .video-card:focus-within {
-                outline: 3px solid var(--accent-primary);
-                outline-offset: 3px;
-                border-radius: 16px;
-            }
-            .service-link:focus,
-            .btn-primary:focus,
-            .btn-secondary:focus {
-                outline: 3px solid var(--accent-primary);
-                outline-offset: 3px;
-                border-radius: 6px;
-            }
-            .video-card {
-                position: relative;
-            }
-            .video-wrapper {
-                position: relative;
-            }
-            .video-player {
-                border-radius: 16px 16px 0 0;
-            }
-            .video-card:hover .play-indicator {
-                opacity: 1;
-            }
-            /* Hide all video controls */
-            .video-player::-webkit-media-controls-panel {
-                display: none !important;
-            }
-            .video-player::-webkit-media-controls-play-button {
-                display: none !important;
-            }
-            .video-player::-webkit-media-controls-start-playback-button {
-                display: none !important;
-            }
-            .video-player::-webkit-media-controls {
-                display: none !important;
-            }
-            video::-webkit-media-controls-overlay-play-button {
-                display: none !important;
-            }
-            video::-webkit-media-controls-timeline {
-                display: none !important;
-            }
-            video::-webkit-media-controls-current-time-display {
-                display: none !important;
-            }
-            video::-webkit-media-controls-time-remaining-display {
-                display: none !important;
-            }
-            video::-webkit-media-controls-mute-button {
-                display: none !important;
-            }
-            video::-webkit-media-controls-volume-slider {
-                display: none !important;
-            }
-            video::-webkit-media-controls-fullscreen-button {
-                display: none !important;
-            }
-            @media (hover: hover) and (pointer: fine) {
-                .video-card:hover {
-                    transform: translateY(-8px);
-                    border-color: var(--accent-primary);
-                    box-shadow: var(--shadow-glow);
-                }
-            }
-            @media (max-width: 768px) {
-                .video-grid {
-                    grid-template-columns: 1fr;
-                    gap: 2rem;
-                }
-                .video-card {
-                    border-radius: 16px;
-                }
-            }
-            /* Ensure videos are visible and playable */
-            video {
-                min-height: 200px;
-            }
-            video:focus {
-                outline: 3px solid var(--accent-primary);
-                outline-offset: 2px;
-            }
-        </style>
-        <script>
-            // Enhance video playback experience
-            document.addEventListener('DOMContentLoaded', function() {
-                const videos = document.querySelectorAll('.video-player');
-                videos.forEach(video => {
-                    // Ensure loop is set
-                    video.loop = true;
-                    
-                    // Add click to play/pause
-                    video.addEventListener('click', function(e) {
-                        if (video.paused) {
-                            video.play();
-                        } else {
-                            video.pause();
-                        }
-                    });
-                    
-                    // Show play indicator when paused
-                    video.addEventListener('play', function() {
-                        const indicator = this.parentElement.querySelector('.play-indicator');
-                        if (indicator) indicator.style.opacity = '0';
-                    });
-                    
-                    video.addEventListener('pause', function() {
-                        const indicator = this.parentElement.querySelector('.play-indicator');
-                        if (indicator) indicator.style.opacity = '0.7';
-                    });
-                    
-                    // Ensure video loops when it ends
-                    video.addEventListener('ended', function() {
-                        this.currentTime = 0;
-                        this.play();
-                    });
-                    
-                    // Preload on hover for better UX
-                    const card = video.closest('.video-card');
-                    if (card) {
-                        card.addEventListener('mouseenter', function() {
-                            if (video.readyState < 2) {
-                                video.load();
-                            }
-                        }, { once: true });
-                    }
-                    
-                    // Start playing when video is ready (muted autoplay)
-                    video.addEventListener('loadedmetadata', function() {
-                        // Try to play, but don't force if user hasn't interacted
-                        if (document.visibilityState === 'visible') {
-                            video.play().catch(function(error) {
-                                // Autoplay was prevented, that's okay
-                                console.log('Autoplay prevented:', error);
-                            });
-                        }
-                    });
-                });
-            });
-        </script>
     </section>
 
     <!-- Service Area Section -->
@@ -1212,11 +1212,11 @@
                 </article>
                 <article class="blog-card" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; transition: all var(--transition);">
                     <a href="/blogs/smart-home-buyers-guide/" style="text-decoration: none; color: inherit; display: block;">
-                        <div class="blog-image-wrapper" style="position: relative; width: 100%; padding-top: 56.25%; overflow: hidden; background: linear-gradient(135deg, rgba(249,115,22,0.3), rgba(13,148,136,0.2)); display: flex; align-items: center; justify-content: center;">
-                            <div style="text-align: center; padding: 2rem;">
-                                <div style="font-size: 3rem; margin-bottom: 1rem;">📱</div>
-                                <div style="color: var(--text-primary); font-weight: 600; font-size: 0.9rem;">Smart Home Guide</div>
-                            </div>
+                        <div class="blog-image-wrapper" style="position: relative; width: 100%; padding-top: 56.25%; overflow: hidden; background: #000;">
+                            <picture>
+                                <source srcset="Video/guide imges.webp" type="image/webp">
+                                <img src="Video/guide imges.webp" alt="Control4 Smart Home Control Devices and Remotes" loading="lazy" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                            </picture>
                         </div>
                         <div style="padding: 1.5rem;">
                             <span style="display: inline-block; background: var(--accent-primary); color: white; padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 0.8rem; font-weight: 600; margin-bottom: 0.75rem;">Guide</span>
@@ -1228,11 +1228,11 @@
                 </article>
                 <article class="blog-card" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; transition: all var(--transition);">
                     <a href="/blogs/questions-to-ask-installer/" style="text-decoration: none; color: inherit; display: block;">
-                        <div class="blog-image-wrapper" style="position: relative; width: 100%; padding-top: 56.25%; overflow: hidden; background: linear-gradient(135deg, rgba(249,115,22,0.2), rgba(13,148,136,0.3)); display: flex; align-items: center; justify-content: center;">
-                            <div style="text-align: center; padding: 2rem;">
-                                <div style="font-size: 3rem; margin-bottom: 1rem;">💡</div>
-                                <div style="color: var(--text-primary); font-weight: 600; font-size: 0.9rem;">Essential Questions</div>
-                            </div>
+                        <div class="blog-image-wrapper" style="position: relative; width: 100%; padding-top: 56.25%; overflow: hidden; background: #000;">
+                            <picture>
+                                <source srcset="Video/interviewing-av-tech.jpg" type="image/jpeg">
+                                <img src="Video/interviewing-av-tech.jpg" alt="Professional Interview with AV Technology Expert" loading="lazy" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                            </picture>
                         </div>
                         <div style="padding: 1.5rem;">
                             <span style="display: inline-block; background: var(--accent-primary); color: white; padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 0.8rem; font-weight: 600; margin-bottom: 0.75rem;">Tips</span>
