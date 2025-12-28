@@ -293,20 +293,50 @@
                         <div class="warranty-badge-detail">All products come with manufacturer warranty. We're here for you long after installation.</div>
                     </div>
                 </div>
-                <div style="display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center; margin-top: 1rem; padding: 1.5rem; background: rgba(255,255,255,0.05); border-radius: 12px; border: 1px solid var(--border-color); position: relative; z-index: 10; width: 100%; max-width: 700px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                    <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-secondary); font-size: 0.95rem;">
-                        <span style="font-size: 1.2rem;">✅</span>
-                        <span>Authorized Control4 Dealer</span>
+                <div id="trust-badges-grid" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 1.25rem; margin-top: 1rem; width: 100%; max-width: 700px; position: relative; z-index: 10;">
+                    <div style="display: flex; align-items: center; gap: 0.6rem; padding: 0.875rem 1.25rem; background: rgba(255,255,255,0.06); border-radius: 8px; border: 1px solid var(--border-color); transition: all 0.3s ease; white-space: nowrap;">
+                        <span style="font-size: 1.3rem; color: var(--accent-primary); flex-shrink: 0;">✅</span>
+                        <span style="color: var(--text-primary); font-weight: 600; font-size: 0.9rem;">Authorized Control4 Dealer</span>
                     </div>
-                    <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-secondary); font-size: 0.95rem;">
-                        <span style="font-size: 1.2rem;">✅</span>
-                        <span>URC Certified Partner</span>
+                    <div style="display: flex; align-items: center; gap: 0.6rem; padding: 0.875rem 1.25rem; background: rgba(255,255,255,0.06); border-radius: 8px; border: 1px solid var(--border-color); transition: all 0.3s ease; white-space: nowrap;">
+                        <span style="font-size: 1.3rem; color: var(--accent-primary); flex-shrink: 0;">✅</span>
+                        <span style="color: var(--text-primary); font-weight: 600; font-size: 0.9rem;">URC Certified Partner</span>
                     </div>
-                    <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-secondary); font-size: 0.95rem;">
-                        <span style="font-size: 1.2rem;">✅</span>
-                        <span>5.0 ⭐ Rating</span>
+                    <div style="display: flex; align-items: center; gap: 0.6rem; padding: 0.875rem 1.25rem; background: rgba(255,255,255,0.06); border-radius: 8px; border: 1px solid var(--border-color); transition: all 0.3s ease; white-space: nowrap;">
+                        <span style="font-size: 1.3rem; color: var(--accent-primary); flex-shrink: 0;">⭐</span>
+                        <span style="color: var(--text-primary); font-weight: 600; font-size: 0.9rem;">5.0 Rating</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.6rem; padding: 0.875rem 1.25rem; background: rgba(255,255,255,0.06); border-radius: 8px; border: 1px solid var(--border-color); transition: all 0.3s ease; white-space: nowrap;">
+                        <span style="font-size: 1.3rem; color: var(--accent-primary); flex-shrink: 0;">🛡️</span>
+                        <span style="color: var(--text-primary); font-weight: 600; font-size: 0.9rem;">Licensed & Insured</span>
                     </div>
                 </div>
+                <style>
+                    @media (hover: hover) and (pointer: fine) {
+                        #trust-badges-grid > div:hover {
+                            transform: translateY(-2px);
+                            border-color: var(--accent-primary);
+                            background: rgba(255,255,255,0.1);
+                            box-shadow: 0 4px 12px rgba(249,115,22,0.25);
+                        }
+                    }
+                    @media (max-width: 768px) {
+                        #trust-badges-grid {
+                            flex-direction: column;
+                            gap: 0.875rem;
+                        }
+                        #trust-badges-grid > div {
+                            width: 100%;
+                            justify-content: center;
+                        }
+                    }
+                    @media (max-width: 480px) {
+                        #trust-badges-grid > div {
+                            padding: 0.75rem 1rem;
+                            font-size: 0.85rem;
+                        }
+                    }
+                </style>
             </div>
         </div>
     </section>
@@ -331,7 +361,7 @@
                 <div class="stat-card" style="text-align: center; padding: 1.5rem; background: rgba(255,255,255,0.03); border-radius: 12px; border: 1px solid var(--border-color); transition: all 0.3s ease;">
                     <div class="stat-number" style="font-family: var(--font-heading); font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; color: var(--accent-primary); margin-bottom: 0.5rem; line-height: 1;">100+</div>
                     <div class="stat-label" style="font-size: 1rem; color: var(--text-secondary); font-weight: 600;">🏠 Homes Automated</div>
-                    <div class="stat-detail" style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.25rem;">Chicago Area</div>
+                    <div class="stat-detail" style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.25rem;">Serving Chicago Since 2015</div>
                 </div>
                 <div class="stat-card" style="text-align: center; padding: 1.5rem; background: rgba(255,255,255,0.03); border-radius: 12px; border: 1px solid var(--border-color); transition: all 0.3s ease;">
                     <div class="stat-number" style="font-family: var(--font-heading); font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; color: var(--accent-primary); margin-bottom: 0.5rem; line-height: 1;">24/7</div>
@@ -1266,6 +1296,7 @@
                     <ul>
                         <li><a href="tel:+13124397500" class="contact-item" data-copy="(312) 439-7500">(312) 439-7500 <span class="copy-feedback">Copied!</span></a></li>
                         <li><a href="mailto:Hello@denalitechs.com" class="contact-item">Hello@denalitechs.com</a></li>
+                        <li><span style="color: var(--text-secondary); line-height: 1.6; display: block;">Mt Prospect, IL 60056</span></li>
                         <li><span style="color: var(--text-secondary); line-height: 1.6; display: block;">Serving Chicago & Surrounding Areas</span></li>
                     </ul>
                 </div>
@@ -1761,7 +1792,29 @@
             </svg>
         </a>
     </div>
-    <style>@keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.05);}}@media (min-width:769px){#floating-call-btn{display:none !important;}}</style>
+    
+    <!-- Exit Intent Popup -->
+    <div id="exit-popup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(5px); z-index: 10000; align-items: center; justify-content: center; animation: fadeIn 0.3s ease;">
+        <div style="background: var(--bg-color); border-radius: 20px; padding: 2.5rem; max-width: 500px; margin: 2rem; border: 2px solid var(--accent-primary); box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5); position: relative; animation: slideUp 0.3s ease;">
+            <button id="close-popup" style="position: absolute; top: 1rem; right: 1rem; background: rgba(255,255,255,0.1); border: none; color: var(--text-secondary); font-size: 1.5rem; cursor: pointer; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: all 0.3s;" aria-label="Close popup" onmouseover="this.style.background='rgba(255,255,255,0.2)';this.style.color='var(--accent-primary)'" onmouseout="this.style.background='rgba(255,255,255,0.1)';this.style.color='var(--text-secondary)'">×</button>
+            <h3 style="font-family: var(--font-heading); font-size: 1.8rem; font-weight: 700; color: var(--text-primary); margin-bottom: 1rem; text-align: center;">Wait! Don't Miss Out</h3>
+            <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 1.5rem; text-align: center; line-height: 1.6;">Get a <strong style="color: var(--accent-primary);">FREE consultation</strong> and discover how we can transform your home. No obligation, just expert advice.</p>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <a href="/contact/#booking" class="btn-primary" style="text-align: center; font-weight: 700; padding: 1rem 2rem;">Schedule Free Consultation</a>
+                <a href="tel:+13124397500" style="text-align: center; color: var(--accent-primary); font-weight: 600; text-decoration: none; padding: 0.75rem; transition: color 0.3s;" onmouseover="this.style.color='var(--accent-interactive)'" onmouseout="this.style.color='var(--accent-primary)'">Or Call (312) 439-7500</a>
+            </div>
+        </div>
+    </div>
+    
+    <style>
+        @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+        @keyframes slideUp{from{transform:translateY(30px);opacity:0;}to{transform:translateY(0);opacity:1;}}
+    </style>
+    
+    <style>
+        @keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.05);}}
+        @media (min-width:769px){#floating-call-btn{display:none !important;}}
+    </style>
     <script>
         // Show floating call button only on mobile/tablet after scroll
         window.addEventListener('load', () => {
@@ -1958,6 +2011,42 @@
                     }
                 });
             });
+            
+            // Exit Intent Popup
+            const exitPopup = document.getElementById('exit-popup');
+            const closePopupBtn = document.getElementById('close-popup');
+            let exitIntentShown = localStorage.getItem('exitPopupShown') === 'true';
+            
+            if (exitPopup && !exitIntentShown) {
+                // Detect mouse leaving viewport (exit intent)
+                document.addEventListener('mouseleave', function(e) {
+                    if (e.clientY <= 0 && !exitIntentShown) {
+                        exitPopup.style.display = 'flex';
+                        exitIntentShown = true;
+                        localStorage.setItem('exitPopupShown', 'true');
+                    }
+                });
+                
+                // Close popup handlers
+                if (closePopupBtn) {
+                    closePopupBtn.addEventListener('click', () => {
+                        exitPopup.style.display = 'none';
+                    });
+                }
+                
+                exitPopup.addEventListener('click', function(e) {
+                    if (e.target === exitPopup) {
+                        exitPopup.style.display = 'none';
+                    }
+                });
+                
+                // Close on Escape key
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && exitPopup.style.display === 'flex') {
+                        exitPopup.style.display = 'none';
+                    }
+                });
+            }
             
             // Performance: Debounce scroll events
             function debounce(func, wait) {
