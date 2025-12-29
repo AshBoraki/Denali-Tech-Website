@@ -134,6 +134,165 @@
             margin-bottom: 2rem;
         }
         
+        .blog-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin: 1.5rem 0;
+        }
+        
+        .blog-tag {
+            display: inline-block;
+            padding: 0.4rem 0.8rem;
+            background: rgba(249, 115, 22, 0.15);
+            border: 1px solid rgba(249, 115, 22, 0.3);
+            border-radius: 6px;
+            color: var(--accent-primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .blog-share {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .share-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all var(--transition);
+            cursor: pointer;
+        }
+        
+        .share-btn:hover {
+            background: var(--accent-primary);
+            border-color: var(--accent-primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .blog-navigation {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 4rem 0;
+            padding-top: 3rem;
+            border-top: 2px solid var(--border-color);
+        }
+        
+        .nav-post {
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            transition: all var(--transition);
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .nav-post:hover {
+            border-color: var(--accent-primary);
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-3px);
+        }
+        
+        .nav-post-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .nav-post-title {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0;
+        }
+        
+        .related-posts {
+            margin: 4rem 0;
+            padding-top: 3rem;
+            border-top: 2px solid var(--border-color);
+        }
+        
+        .related-posts h3 {
+            font-family: var(--font-heading);
+            font-size: 1.75rem;
+            color: var(--text-primary);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .related-posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .related-post-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all var(--transition);
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .related-post-card:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .related-post-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .related-post-content {
+            padding: 1.25rem;
+        }
+        
+        .related-post-category {
+            display: inline-block;
+            background: var(--accent-primary);
+            color: white;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .related-post-title {
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0;
+        }
+        
         .blog-hero-image {
             width: 100%;
             max-width: 100%;
@@ -270,9 +429,16 @@
             </div>
             <h1 class="blog-title">Smart Home Buyer's Guide: Everything You Need to Know Before Investing</h1>
             <div class="blog-meta">
-                <span>📅 Published: <time datetime="2024-12-26">December 26, 2024</time></span>
+                <span>📅 Published: <time datetime="2024-01-20">January 20, 2024</time></span>
                 <span>👤 By: Denali Tech Team</span>
-                <span>🏷️ Category: Smart Home Tips</span>
+                <span>⏱️ 12 min read</span>
+                <span>🏷️ Category: Buying Guide</span>
+            </div>
+            <div class="blog-tags">
+                <span class="blog-tag">Smart Home</span>
+                <span class="blog-tag">Buying Guide</span>
+                <span class="blog-tag">Tips</span>
+                <span class="blog-tag">Planning</span>
             </div>
         </div>
         
@@ -488,8 +654,73 @@
                 <a href="/contact/#booking" class="btn-primary">📅 Book Free Consultation</a>
                 <p style="margin-top: 1rem; font-size: 0.95rem;">Or call us: <a href="tel:+13124397500" style="color: var(--accent-primary); text-decoration: none; font-weight: 600;">(312) 439-7500</a></p>
             </div>
+            
+            <!-- Social Sharing -->
+            <div class="blog-share">
+                <span style="color: var(--text-secondary); font-weight: 600; margin-right: 0.5rem;">Share:</span>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.denalitechs.com/blogs/smart-home-buyers-guide/" target="_blank" rel="noopener noreferrer" class="share-btn" aria-label="Share on Facebook">
+                    <span>📘</span>
+                    <span>Facebook</span>
+                </a>
+                <a href="https://twitter.com/intent/tweet?url=https://www.denalitechs.com/blogs/smart-home-buyers-guide/&text=Smart Home Buyer's Guide" target="_blank" rel="noopener noreferrer" class="share-btn" aria-label="Share on Twitter">
+                    <span>🐦</span>
+                    <span>Twitter</span>
+                </a>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.denalitechs.com/blogs/smart-home-buyers-guide/" target="_blank" rel="noopener noreferrer" class="share-btn" aria-label="Share on LinkedIn">
+                    <span>💼</span>
+                    <span>LinkedIn</span>
+                </a>
+                <button onclick="copyToClipboard()" class="share-btn" style="cursor: pointer; border: none; font-family: inherit;" aria-label="Copy link">
+                    <span>🔗</span>
+                    <span>Copy Link</span>
+                </button>
+            </div>
+            
+            <!-- Blog Navigation -->
+            <div class="blog-navigation">
+                <a href="/blogs/urc-remote-programming-guide/" class="nav-post">
+                    <div class="nav-post-label">← Previous Post</div>
+                    <div class="nav-post-title">URC Remote Programming Guide</div>
+                </a>
+                <a href="/blogs/questions-to-ask-installer/" class="nav-post" style="text-align: right;">
+                    <div class="nav-post-label">Next Post →</div>
+                    <div class="nav-post-title">10 Questions to Ask Your Installer</div>
+                </a>
+            </div>
+            
+            <!-- Related Posts -->
+            <div class="related-posts">
+                <h3>Related Articles</h3>
+                <div class="related-posts-grid">
+                    <a href="/blogs/urc-remote-programming-guide/" class="related-post-card">
+                        <img src="../urc-remote-programming-guide/images/Urc mx 990 iamge in living room in hand .jpg" alt="URC Remote Programming Guide" class="related-post-image" loading="lazy">
+                        <div class="related-post-content">
+                            <span class="related-post-category">URC Systems</span>
+                            <h4 class="related-post-title">URC Remote Programming Guide</h4>
+                        </div>
+                    </a>
+                    <a href="/blogs/questions-to-ask-installer/" class="related-post-card">
+                        <img src="../../Video/interviewing-av-tech.jpg" alt="10 Questions to Ask Your Installer" class="related-post-image" loading="lazy">
+                        <div class="related-post-content">
+                            <span class="related-post-category">Tips</span>
+                            <h4 class="related-post-title">10 Questions to Ask Your Installer</h4>
+                        </div>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
+    
+    <script>
+        function copyToClipboard() {
+            const url = window.location.href;
+            navigator.clipboard.writeText(url).then(() => {
+                alert('Link copied to clipboard!');
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+            });
+        }
+    </script>
 </body>
 </html>
 
