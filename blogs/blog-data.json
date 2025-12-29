@@ -1,0 +1,67 @@
+{
+  "posts": [
+    {
+      "id": "urc-remote-programming-guide",
+      "title": "URC Remote Programming Guide: Get Your Universal Remote Working Perfectly",
+      "slug": "urc-remote-programming-guide",
+      "url": "/blogs/urc-remote-programming-guide/",
+      "excerpt": "Learn how to program your URC remote control to control everything in your smart home - TV, audio, lights, shades, and more.",
+      "category": "URC Systems",
+      "tags": ["URC", "Remote Control", "Programming", "Smart Home"],
+      "author": "Denali Tech Team",
+      "publishedDate": "2024-01-15",
+      "updatedDate": "2024-01-15",
+      "readingTime": 8,
+      "heroImage": "/blogs/urc-remote-programming-guide/images/Urc mx 990 iamge in living room in hand .jpg",
+      "featured": true
+    },
+    {
+      "id": "smart-home-buyers-guide",
+      "title": "Smart Home Buyer's Guide: Everything You Need to Know Before Investing",
+      "slug": "smart-home-buyers-guide",
+      "url": "/blogs/smart-home-buyers-guide/",
+      "excerpt": "Everything you need to know before investing in smart home technology. Expert tips and recommendations.",
+      "category": "Buying Guide",
+      "tags": ["Smart Home", "Buying Guide", "Tips", "Planning"],
+      "author": "Denali Tech Team",
+      "publishedDate": "2024-01-20",
+      "updatedDate": "2024-01-20",
+      "readingTime": 12,
+      "heroImage": "/Video/guide imges.webp",
+      "featured": true
+    },
+    {
+      "id": "questions-to-ask-installer",
+      "title": "10 Questions to Ask Your Installer Before Hiring",
+      "slug": "questions-to-ask-installer",
+      "url": "/blogs/questions-to-ask-installer/",
+      "excerpt": "Make sure you're hiring the right company. Essential questions every homeowner should ask.",
+      "category": "Tips",
+      "tags": ["Installation", "Tips", "Hiring", "Questions"],
+      "author": "Denali Tech Team",
+      "publishedDate": "2024-01-25",
+      "updatedDate": "2024-01-25",
+      "readingTime": 6,
+      "heroImage": "/Video/interviewing-av-tech.jpg",
+      "featured": true
+    }
+  ],
+  "categories": [
+    {
+      "name": "URC Systems",
+      "slug": "urc-systems",
+      "description": "Everything about URC remote controls and automation systems"
+    },
+    {
+      "name": "Buying Guide",
+      "slug": "buying-guide",
+      "description": "Guides to help you make informed smart home purchases"
+    },
+    {
+      "name": "Tips",
+      "slug": "tips",
+      "description": "Practical tips and advice for smart home owners"
+    }
+  ]
+}
+
