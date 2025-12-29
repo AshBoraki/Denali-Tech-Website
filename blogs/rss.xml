@@ -6,7 +6,7 @@
         <link>https://www.denalitechs.com/blogs/</link>
         <description>Expert tips, guides, and insights about smart home technology, home automation, and AV systems from Chicago's trusted smart home experts.</description>
         <language>en-us</language>
-        <lastBuildDate>Mon, 25 Jan 2024 12:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 30 Jan 2024 12:00:00 GMT</lastBuildDate>
         <atom:link href="https://www.denalitechs.com/blogs/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://www.denalitechs.com/Video/logo.JPG</url>
@@ -39,6 +39,51 @@
             <pubDate>Thu, 25 Jan 2024 12:00:00 GMT</pubDate>
             <guid isPermaLink="true">https://www.denalitechs.com/blogs/questions-to-ask-installer/</guid>
             <category>Tips</category>
+        </item>
+        
+        <item>
+            <title>URC MX-990 Remote Review: Complete Analysis</title>
+            <link>https://www.denalitechs.com/blogs/urc-mx-990-review/</link>
+            <description>Complete review of the URC MX-990 universal remote control. Learn about battery life, features, pros, cons, and whether it's right for your smart home.</description>
+            <pubDate>Tue, 30 Jan 2024 12:00:00 GMT</pubDate>
+            <guid isPermaLink="true">https://www.denalitechs.com/blogs/urc-mx-990-review/</guid>
+            <category>Product Review</category>
+        </item>
+        
+        <item>
+            <title>Control4 SR-260 Remote Review: Complete Analysis</title>
+            <link>https://www.denalitechs.com/blogs/control4-remote-review/</link>
+            <description>Complete review of the Control4 SR-260 universal remote control. Learn about battery life, features, pros, cons, and whether the SR-260 is right for your smart home.</description>
+            <pubDate>Tue, 30 Jan 2024 12:00:00 GMT</pubDate>
+            <guid isPermaLink="true">https://www.denalitechs.com/blogs/control4-remote-review/</guid>
+            <category>Product Review</category>
+        </item>
+        
+        <item>
+            <title>Control4 Helo Remote Review: Non-Touch Version</title>
+            <link>https://www.denalitechs.com/blogs/urc-universal-remote-review/</link>
+            <description>Complete review of the Control4 Helo remote control (non-touch version). Learn about battery life, features, pros, cons, and whether the Helo is right for your smart home.</description>
+            <pubDate>Tue, 30 Jan 2024 12:00:00 GMT</pubDate>
+            <guid isPermaLink="true">https://www.denalitechs.com/blogs/urc-universal-remote-review/</guid>
+            <category>Product Review</category>
+        </item>
+        
+        <item>
+            <title>Control4 NEEO Remote Review: Sleek Design &amp; Features</title>
+            <link>https://www.denalitechs.com/blogs/modern-smart-home-remote-review/</link>
+            <description>Complete review of the Control4 NEEO remote control. Learn about battery life, features, pros, cons, and whether the NEEO is right for your smart home.</description>
+            <pubDate>Tue, 30 Jan 2024 12:00:00 GMT</pubDate>
+            <guid isPermaLink="true">https://www.denalitechs.com/blogs/modern-smart-home-remote-review/</guid>
+            <category>Product Review</category>
+        </item>
+        
+        <item>
+            <title>Control4 Helo Touch Remote Review: Complete Analysis</title>
+            <link>https://www.denalitechs.com/blogs/control4-helo-touch-review/</link>
+            <description>Complete review of the Control4 Helo Touch remote control. Learn about battery life, features, pros, cons, and whether the Helo Touch is right for your smart home.</description>
+            <pubDate>Tue, 30 Jan 2024 12:00:00 GMT</pubDate>
+            <guid isPermaLink="true">https://www.denalitechs.com/blogs/control4-helo-touch-review/</guid>
+            <category>Product Review</category>
         </item>
     </channel>
 </rss>
