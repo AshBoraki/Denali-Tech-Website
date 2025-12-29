@@ -44,6 +44,66 @@
       "readingTime": 6,
       "heroImage": "/Video/interviewing-av-tech.jpg",
       "featured": true
+    },
+    {
+      "id": "urc-mx-990-review",
+      "title": "URC MX-990 Remote Review: Complete Analysis",
+      "slug": "urc-mx-990-review",
+      "url": "/blogs/urc-mx-990-review/",
+      "excerpt": "Complete review of the URC MX-990 universal remote control. Learn about battery life, features, pros, cons, and whether it's right for your smart home.",
+      "category": "Product Review",
+      "tags": ["URC", "Remote Control", "Review", "MX-990", "Product Review"],
+      "author": "Denali Tech Team",
+      "publishedDate": "2024-01-30",
+      "updatedDate": "2024-01-30",
+      "readingTime": 8,
+      "heroImage": "/Video/urc-mx-990-golf-course.jpg",
+      "featured": true
+    },
+    {
+      "id": "control4-remote-review",
+      "title": "Control4 Remote Review: Complete Analysis",
+      "slug": "control4-remote-review",
+      "url": "/blogs/control4-remote-review/",
+      "excerpt": "Complete review of Control4 universal remote controls. Learn about battery life, features, pros, cons, and whether Control4 remotes are right for your smart home.",
+      "category": "Product Review",
+      "tags": ["Control4", "Remote Control", "Review", "Smart Home", "Product Review"],
+      "author": "Denali Tech Team",
+      "publishedDate": "2024-01-30",
+      "updatedDate": "2024-01-30",
+      "readingTime": 8,
+      "heroImage": "/Video/control4-remote-golf-course.jpg",
+      "featured": true
+    },
+    {
+      "id": "urc-universal-remote-review",
+      "title": "URC Universal Remote Review: WATCH/HOME/LISTEN Model",
+      "slug": "urc-universal-remote-review",
+      "url": "/blogs/urc-universal-remote-review/",
+      "excerpt": "Complete review of URC universal remote with WATCH/HOME/LISTEN buttons. Learn about battery life, features, pros, cons, and whether it's right for your smart home.",
+      "category": "Product Review",
+      "tags": ["URC", "Remote Control", "Review", "Universal Remote", "Product Review"],
+      "author": "Denali Tech Team",
+      "publishedDate": "2024-01-30",
+      "updatedDate": "2024-01-30",
+      "readingTime": 8,
+      "heroImage": "/Video/urc-universal-remote-golf-course.jpg",
+      "featured": true
+    },
+    {
+      "id": "modern-smart-home-remote-review",
+      "title": "Modern Smart Home Remote Review: Sleek Design & Features",
+      "slug": "modern-smart-home-remote-review",
+      "url": "/blogs/modern-smart-home-remote-review/",
+      "excerpt": "Complete review of modern smart home universal remote controls. Learn about battery life, features, pros, cons, and whether modern remotes are right for your smart home.",
+      "category": "Product Review",
+      "tags": ["Smart Home", "Remote Control", "Review", "Modern Design", "Product Review"],
+      "author": "Denali Tech Team",
+      "publishedDate": "2024-01-30",
+      "updatedDate": "2024-01-30",
+      "readingTime": 8,
+      "heroImage": "/Video/modern-smart-home-remote-golf-course.jpg",
+      "featured": true
     }
   ],
   "categories": [
@@ -61,6 +121,11 @@
       "name": "Tips",
       "slug": "tips",
       "description": "Practical tips and advice for smart home owners"
+    },
+    {
+      "name": "Product Review",
+      "slug": "product-review",
+      "description": "In-depth reviews of smart home products and devices"
     }
   ]
 }
