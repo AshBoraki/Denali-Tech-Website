@@ -584,13 +584,18 @@
             grid.classList.remove('hidden');
             noResults.classList.add('hidden');
             
-            grid.innerHTML = filteredPosts.map(post => `
+            grid.innerHTML = filteredPosts.map(post => {
+                // Check if webp version exists (only for jpg/jpeg/png files)
+                const webpPath = post.heroImage.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+                const hasWebp = post.heroImage.toLowerCase().endsWith('.webp') || webpPath !== post.heroImage;
+                
+                return `
                 <article class="blog-card">
                     <a href="${post.url}" style="text-decoration: none; color: inherit;">
                         <div class="blog-image-wrapper">
                             <picture>
-                                <source srcset="${post.heroImage.replace(/\.(jpg|jpeg|png)$/i, '.webp')}" type="image/webp">
-                                <img src="${post.heroImage}" alt="${post.title}" loading="lazy">
+                                ${hasWebp ? `<source srcset="${webpPath}" type="image/webp">` : ''}
+                                <img src="${post.heroImage}" alt="${post.title}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
                             </picture>
                         </div>
                         <div class="blog-card-content">
@@ -609,7 +614,8 @@
                         </div>
                     </a>
                 </article>
-            `).join('');
+            `;
+            }).join('');
         }
 
         function formatDate(dateString) {
