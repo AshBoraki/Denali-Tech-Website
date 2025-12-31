@@ -487,6 +487,7 @@
             <div class="blog-header">
                 <h1>Smart Home Blog</h1>
                 <p>Expert tips, guides, and insights to help you make informed decisions about your smart home technology.</p>
+                <p id="postCount" style="font-size: 0.95rem; color: var(--text-secondary); margin-top: 0.5rem;"></p>
                 <a href="/blogs/rss.xml" class="rss-link" aria-label="Subscribe to RSS feed">
                     <span>📡</span>
                     <span>RSS Feed</span>
@@ -524,7 +525,11 @@
 
         async function loadBlogData() {
             try {
-                const response = await fetch('/blogs/blog-data.json');
+                // Try multiple paths to ensure it works from different locations
+                let response = await fetch('./blog-data.json');
+                if (!response.ok) {
+                    response = await fetch('/blogs/blog-data.json');
+                }
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
@@ -532,6 +537,7 @@
                 if (!blogData || !blogData.posts || blogData.posts.length === 0) {
                     throw new Error('No blog posts found in data');
                 }
+                console.log(`Loaded ${blogData.posts.length} blog posts`);
                 initializeBlog();
             } catch (error) {
                 console.error('Error loading blog data:', error);
@@ -580,10 +586,23 @@
         function renderPosts() {
             const grid = document.getElementById('blogGrid');
             const noResults = document.getElementById('noResults');
+            const postCount = document.getElementById('postCount');
+            
+            console.log(`Rendering ${filteredPosts.length} blog posts out of ${blogData.posts.length} total`);
+            
+            // Update post count display
+            if (postCount) {
+                if (filteredPosts.length === blogData.posts.length) {
+                    postCount.textContent = `Showing all ${filteredPosts.length} posts`;
+                } else {
+                    postCount.textContent = `Showing ${filteredPosts.length} of ${blogData.posts.length} posts`;
+                }
+            }
             
             if (filteredPosts.length === 0) {
                 grid.classList.add('hidden');
                 noResults.classList.remove('hidden');
+                if (postCount) postCount.textContent = '';
                 return;
             }
             
