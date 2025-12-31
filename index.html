@@ -1884,51 +1884,83 @@
                 });
             }
 
-            // Fix section scroll capture on mobile - remove problematic inline styles and prevent scroll capture
-            if (window.innerWidth <= 768) {
-                const sections = document.querySelectorAll('section');
-                sections.forEach(section => {
-                    // Remove overflow from inline styles
-                    const style = section.getAttribute('style');
-                    if (style && style.includes('overflow')) {
-                        const newStyle = style.replace(/overflow[^;]*;?/gi, '').trim();
-                        if (newStyle) {
-                            section.setAttribute('style', newStyle);
-                        } else {
-                            section.removeAttribute('style');
+            // Fix section scroll capture on mobile - redirect scroll to body
+            function fixSectionScrollCapture() {
+                if (window.innerWidth <= 768) {
+                    const sections = document.querySelectorAll('section');
+                    sections.forEach(section => {
+                        // Remove overflow from inline styles only
+                        const style = section.getAttribute('style');
+                        if (style && style.includes('overflow')) {
+                            const newStyle = style.replace(/overflow[^;]*;?/gi, '').trim();
+                            if (newStyle) {
+                                section.setAttribute('style', newStyle);
+                            } else {
+                                section.removeAttribute('style');
+                            }
                         }
-                    }
-                    
-                    // Prevent sections from capturing scroll/touch events
-                    section.style.overflow = 'visible';
-                    section.style.overflowY = 'visible';
-                    section.style.overflowX = 'hidden';
-                    section.style.touchAction = 'pan-y';
-                    
-                    // Prevent touch events from being captured
-                    section.addEventListener('touchstart', function(e) {
-                        // Allow touch to pass through to body
-                        if (e.target === section || section.contains(e.target)) {
-                            // Don't prevent default, let it bubble to body
-                        }
-                    }, { passive: true });
-                    
-                    section.addEventListener('touchmove', function(e) {
-                        // Allow scroll to pass through
-                    }, { passive: true });
-                    
-                    section.addEventListener('wheel', function(e) {
-                        // Prevent sections from capturing wheel events
-                        e.stopPropagation();
-                    }, { passive: true });
-                });
-                
-                // Ensure body/html can always scroll
-                document.body.style.overflowY = 'auto';
-                document.body.style.touchAction = 'pan-y';
-                document.documentElement.style.overflowY = 'auto';
-                document.documentElement.style.touchAction = 'pan-y';
+                        
+                        // Set overflow without affecting layout
+                        section.style.overflow = 'visible';
+                        section.style.overflowY = 'visible';
+                        section.style.overflowX = 'hidden';
+                        section.style.touchAction = 'pan-y';
+                        
+                        // Redirect scroll events to document body
+                        let touchStartY = 0;
+                        let touchStartTime = 0;
+                        
+                        section.addEventListener('touchstart', function(e) {
+                            touchStartY = e.touches[0].clientY;
+                            touchStartTime = Date.now();
+                        }, { passive: true });
+                        
+                        section.addEventListener('touchmove', function(e) {
+                            const touchY = e.touches[0].clientY;
+                            const deltaY = touchStartY - touchY;
+                            const timeDelta = Date.now() - touchStartTime;
+                            
+                            // If significant vertical movement, scroll the body instead
+                            if (Math.abs(deltaY) > 5 && timeDelta < 300) {
+                                const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+                                const newScroll = currentScroll + deltaY;
+                                
+                                // Scroll the document instead of the section
+                                window.scrollTo({
+                                    top: newScroll,
+                                    behavior: 'auto'
+                                });
+                                
+                                // Prevent default to stop section scrolling
+                                e.preventDefault();
+                            }
+                        }, { passive: false });
+                        
+                        // Redirect wheel events to body
+                        section.addEventListener('wheel', function(e) {
+                            // Only redirect if section would scroll
+                            const sectionScrollTop = section.scrollTop;
+                            const sectionScrollHeight = section.scrollHeight;
+                            const sectionClientHeight = section.clientHeight;
+                            
+                            // If section can't scroll or is at boundaries, redirect to body
+                            if (sectionScrollHeight <= sectionClientHeight || 
+                                (sectionScrollTop === 0 && e.deltaY < 0) ||
+                                (sectionScrollTop >= sectionScrollHeight - sectionClientHeight && e.deltaY > 0)) {
+                                window.scrollBy({
+                                    top: e.deltaY,
+                                    behavior: 'auto'
+                                });
+                                e.preventDefault();
+                            }
+                        }, { passive: false });
+                    });
+                }
             }
+            
+            // Run on load and resize
+            fixSectionScrollCapture();
+            window.addEventListener('resize', fixSectionScrollCapture);
         });
 
     </script>
