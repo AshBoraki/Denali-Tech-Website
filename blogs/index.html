@@ -547,6 +547,12 @@
         }
 
         function initializeBlog() {
+            // Sort posts by date (newest first)
+            blogData.posts.sort((a, b) => {
+                const dateA = new Date(a.publishedDate);
+                const dateB = new Date(b.publishedDate);
+                return dateB - dateA; // Newest first
+            });
             filteredPosts = blogData.posts;
             renderCategories();
             renderPosts();
@@ -658,11 +664,18 @@
                 posts = posts.filter(post => 
                     post.title.toLowerCase().includes(query) ||
                     post.excerpt.toLowerCase().includes(query) ||
+                    post.category.toLowerCase().includes(query) ||
+                    post.author.toLowerCase().includes(query) ||
                     post.tags.some(tag => tag.toLowerCase().includes(query))
                 );
             }
 
-            filteredPosts = posts;
+            // Sort filtered posts by date (newest first)
+            filteredPosts = posts.sort((a, b) => {
+                const dateA = new Date(a.publishedDate);
+                const dateB = new Date(b.publishedDate);
+                return dateB - dateA; // Newest first
+            });
             renderPosts();
         }
 
