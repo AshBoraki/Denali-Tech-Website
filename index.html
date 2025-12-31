@@ -1884,7 +1884,7 @@
                 });
             }
 
-            // Fix section scroll capture on mobile - redirect scroll to body
+            // Fix section scroll capture on mobile - prevent sections from being scroll containers
             function fixSectionScrollCapture() {
                 if (window.innerWidth <= 768) {
                     const sections = document.querySelectorAll('section');
@@ -1900,61 +1900,22 @@
                             }
                         }
                         
-                        // Set overflow without affecting layout
+                        // Set overflow without affecting layout - let browser handle natural scrolling
                         section.style.overflow = 'visible';
                         section.style.overflowY = 'visible';
                         section.style.overflowX = 'hidden';
                         section.style.touchAction = 'pan-y';
                         
-                        // Redirect scroll events to document body
-                        let touchStartY = 0;
-                        let touchStartTime = 0;
-                        
-                        section.addEventListener('touchstart', function(e) {
-                            touchStartY = e.touches[0].clientY;
-                            touchStartTime = Date.now();
-                        }, { passive: true });
-                        
-                        section.addEventListener('touchmove', function(e) {
-                            const touchY = e.touches[0].clientY;
-                            const deltaY = touchStartY - touchY;
-                            const timeDelta = Date.now() - touchStartTime;
-                            
-                            // If significant vertical movement, scroll the body instead
-                            if (Math.abs(deltaY) > 5 && timeDelta < 300) {
-                                const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-                                const newScroll = currentScroll + deltaY;
-                                
-                                // Scroll the document instead of the section
-                                window.scrollTo({
-                                    top: newScroll,
-                                    behavior: 'auto'
-                                });
-                                
-                                // Prevent default to stop section scrolling
-                                e.preventDefault();
-                            }
-                        }, { passive: false });
-                        
-                        // Redirect wheel events to body
-                        section.addEventListener('wheel', function(e) {
-                            // Only redirect if section would scroll
-                            const sectionScrollTop = section.scrollTop;
-                            const sectionScrollHeight = section.scrollHeight;
-                            const sectionClientHeight = section.clientHeight;
-                            
-                            // If section can't scroll or is at boundaries, redirect to body
-                            if (sectionScrollHeight <= sectionClientHeight || 
-                                (sectionScrollTop === 0 && e.deltaY < 0) ||
-                                (sectionScrollTop >= sectionScrollHeight - sectionClientHeight && e.deltaY > 0)) {
-                                window.scrollBy({
-                                    top: e.deltaY,
-                                    behavior: 'auto'
-                                });
-                                e.preventDefault();
-                            }
-                        }, { passive: false });
+                        // Ensure section can't become a scroll container
+                        section.style.height = 'auto';
+                        section.style.maxHeight = 'none';
                     });
+                    
+                    // Ensure body is the scroll container
+                    document.body.style.overflowY = 'auto';
+                    document.body.style.touchAction = 'pan-y';
+                    document.documentElement.style.overflowY = 'auto';
+                    document.documentElement.style.touchAction = 'pan-y';
                 }
             }
             
