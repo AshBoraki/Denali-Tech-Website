@@ -1883,6 +1883,23 @@
                     }
                 });
             }
+
+            // Fix section scroll capture on mobile - remove problematic inline styles
+            if (window.innerWidth <= 768) {
+                const sections = document.querySelectorAll('section');
+                sections.forEach(section => {
+                    const style = section.getAttribute('style');
+                    if (style && style.includes('overflow')) {
+                        // Remove overflow from inline styles
+                        const newStyle = style.replace(/overflow[^;]*;?/gi, '').trim();
+                        if (newStyle) {
+                            section.setAttribute('style', newStyle);
+                        } else {
+                            section.removeAttribute('style');
+                        }
+                    }
+                });
+            }
         });
 
     </script>
