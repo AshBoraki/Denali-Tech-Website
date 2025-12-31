@@ -658,12 +658,42 @@
                 }
             }
             @media (max-width: 768px) {
+                .video-showcase-section {
+                    padding: 80px 1rem !important;
+                    overflow-x: hidden !important;
+                    width: 100% !important;
+                    max-width: 100vw !important;
+                    position: relative !important;
+                }
                 .video-grid {
-                    grid-template-columns: 1fr;
-                    gap: 2rem;
+                    grid-template-columns: 1fr !important;
+                    gap: 2rem !important;
+                    width: 100% !important;
+                    max-width: 100% !important;
+                    margin-left: 0 !important;
+                    margin-right: 0 !important;
+                    padding: 0 !important;
+                    box-sizing: border-box !important;
+                    overflow-x: hidden !important;
                 }
                 .video-card {
                     border-radius: 16px;
+                    width: 100% !important;
+                    max-width: 100% !important;
+                    margin: 0 !important;
+                    box-sizing: border-box !important;
+                    overflow: hidden !important;
+                }
+                .video-wrapper {
+                    width: 100% !important;
+                    max-width: 100% !important;
+                    overflow: hidden !important;
+                }
+                .video-wrapper video {
+                    width: 100% !important;
+                    max-width: 100% !important;
+                    height: auto !important;
+                    object-fit: contain !important;
                 }
             }
             /* Ensure videos are visible and playable */
