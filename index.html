@@ -1884,13 +1884,13 @@
                 });
             }
 
-            // Fix section scroll capture on mobile - remove problematic inline styles
+            // Fix section scroll capture on mobile - remove problematic inline styles and prevent scroll capture
             if (window.innerWidth <= 768) {
                 const sections = document.querySelectorAll('section');
                 sections.forEach(section => {
+                    // Remove overflow from inline styles
                     const style = section.getAttribute('style');
                     if (style && style.includes('overflow')) {
-                        // Remove overflow from inline styles
                         const newStyle = style.replace(/overflow[^;]*;?/gi, '').trim();
                         if (newStyle) {
                             section.setAttribute('style', newStyle);
@@ -1898,7 +1898,36 @@
                             section.removeAttribute('style');
                         }
                     }
+                    
+                    // Prevent sections from capturing scroll/touch events
+                    section.style.overflow = 'visible';
+                    section.style.overflowY = 'visible';
+                    section.style.overflowX = 'hidden';
+                    section.style.touchAction = 'pan-y';
+                    
+                    // Prevent touch events from being captured
+                    section.addEventListener('touchstart', function(e) {
+                        // Allow touch to pass through to body
+                        if (e.target === section || section.contains(e.target)) {
+                            // Don't prevent default, let it bubble to body
+                        }
+                    }, { passive: true });
+                    
+                    section.addEventListener('touchmove', function(e) {
+                        // Allow scroll to pass through
+                    }, { passive: true });
+                    
+                    section.addEventListener('wheel', function(e) {
+                        // Prevent sections from capturing wheel events
+                        e.stopPropagation();
+                    }, { passive: true });
                 });
+                
+                // Ensure body/html can always scroll
+                document.body.style.overflowY = 'auto';
+                document.body.style.touchAction = 'pan-y';
+                document.documentElement.style.overflowY = 'auto';
+                document.documentElement.style.touchAction = 'pan-y';
             }
         });
 
