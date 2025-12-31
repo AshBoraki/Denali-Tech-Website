@@ -1,6 +1,111 @@
 {
   "posts": [
     {
+      "id": "smart-home-automation-for-beginners",
+      "title": "Smart Home Automation for Beginners: Complete Starter Guide 2025",
+      "slug": "smart-home-automation-for-beginners",
+      "url": "/blogs/smart-home-automation-for-beginners/",
+      "excerpt": "New to smart homes? This beginner's guide explains everything you need to know about smart home automation, from basics to getting started. Simple, easy-to-understand guide.",
+      "category": "Smart Home Guide",
+      "tags": ["Beginners", "Smart Home", "Guide", "Getting Started"],
+      "author": "Denali Tech Team",
+      "publishedDate": "2025-01-08",
+      "updatedDate": "2025-01-08",
+      "readingTime": 10,
+      "heroImage": "/Video/guide imges.webp",
+      "featured": true
+    },
+    {
+      "id": "home-theater-installation-guide",
+      "title": "Home Theater Installation Guide: Everything You Need to Know",
+      "slug": "home-theater-installation-guide",
+      "url": "/blogs/home-theater-installation-guide/",
+      "excerpt": "Complete guide to home theater installation. Learn about projectors, audio systems, room design, and what to expect. Professional home theater installation in Chicago.",
+      "category": "Smart Home Guide",
+      "tags": ["Home Theater", "Installation", "Guide", "Audio Video"],
+      "author": "Denali Tech Team",
+      "publishedDate": "2025-01-07",
+      "updatedDate": "2025-01-07",
+      "readingTime": 11,
+      "heroImage": "/Video/guide imges.webp",
+      "featured": true
+    },
+    {
+      "id": "what-is-control4-guide",
+      "title": "What is Control4? Complete Guide for Homeowners 2025",
+      "slug": "what-is-control4-guide",
+      "url": "/blogs/what-is-control4-guide/",
+      "excerpt": "Learn what Control4 is, how it works, what it can control, and whether it's right for your home. Complete guide from authorized Control4 dealers in Chicago.",
+      "category": "Smart Home Guide",
+      "tags": ["Control4", "Smart Home", "Guide", "Automation"],
+      "author": "Denali Tech Team",
+      "publishedDate": "2025-01-06",
+      "updatedDate": "2025-01-06",
+      "readingTime": 9,
+      "heroImage": "/Video/guide imges.webp",
+      "featured": true
+    },
+    {
+      "id": "how-to-choose-smart-home-installer",
+      "title": "How to Choose a Smart Home Installer: 10 Essential Questions to Ask",
+      "slug": "how-to-choose-smart-home-installer",
+      "url": "/blogs/how-to-choose-smart-home-installer/",
+      "excerpt": "Don't hire the wrong company. Learn how to choose a smart home installer with our essential guide. Questions to ask, red flags to avoid, and what to look for when hiring.",
+      "category": "Tips",
+      "tags": ["Installation", "Hiring", "Tips", "Questions"],
+      "author": "Denali Tech Team",
+      "publishedDate": "2025-01-05",
+      "updatedDate": "2025-01-05",
+      "readingTime": 7,
+      "heroImage": "/Video/interviewing-av-tech.jpg",
+      "featured": true
+    },
+    {
+      "id": "wifi-dead-zones-fix-guide",
+      "title": "How to Fix WiFi Dead Zones: Complete Guide to Whole-Home WiFi Coverage",
+      "slug": "wifi-dead-zones-fix-guide",
+      "url": "/blogs/wifi-dead-zones-fix-guide/",
+      "excerpt": "Struggling with WiFi dead zones? Learn how to fix slow WiFi, eliminate dead spots, and get perfect coverage throughout your home. Professional WiFi installation guide for Chicago homeowners.",
+      "category": "Smart Home Guide",
+      "tags": ["WiFi", "Networking", "Troubleshooting", "WiFi Dead Zones"],
+      "author": "Denali Tech Team",
+      "publishedDate": "2025-01-04",
+      "updatedDate": "2025-01-04",
+      "readingTime": 8,
+      "heroImage": "/Video/guide imges.webp",
+      "featured": true
+    },
+    {
+      "id": "control4-vs-urc-comparison",
+      "title": "Control4 vs URC: Which Smart Home System is Right for You?",
+      "slug": "control4-vs-urc-comparison",
+      "url": "/blogs/control4-vs-urc-comparison/",
+      "excerpt": "Complete comparison of Control4 vs URC smart home systems. Learn the differences, pros, cons, and which system fits your needs. Expert advice from authorized dealers in Chicago.",
+      "category": "Buying Guide",
+      "tags": ["Control4", "URC", "Comparison", "Smart Home Systems"],
+      "author": "Denali Tech Team",
+      "publishedDate": "2025-01-03",
+      "updatedDate": "2025-01-03",
+      "readingTime": 10,
+      "heroImage": "/Video/guide imges.webp",
+      "featured": true
+    },
+    {
+      "id": "how-much-does-smart-home-automation-cost",
+      "title": "How Much Does Smart Home Automation Cost? Complete Pricing Guide 2025",
+      "slug": "how-much-does-smart-home-automation-cost",
+      "url": "/blogs/how-much-does-smart-home-automation-cost/",
+      "excerpt": "Smart home automation costs explained. Get transparent pricing for WiFi systems ($2,000+), smart home packages ($8,000-$25,000), and home theaters ($15,000+). Free consultation available in Chicago.",
+      "category": "Smart Home Guide",
+      "tags": ["Smart Home Cost", "Pricing Guide", "Home Automation", "Budget Planning"],
+      "author": "Denali Tech Team",
+      "publishedDate": "2025-01-02",
+      "updatedDate": "2025-01-02",
+      "readingTime": 12,
+      "heroImage": "/Video/guide imges.webp",
+      "featured": true
+    },
+    {
       "id": "urc-remote-programming-guide",
       "title": "URC Remote Programming Guide: Get Your Universal Remote Working Perfectly",
       "slug": "urc-remote-programming-guide",
@@ -141,6 +246,11 @@
       "name": "Product Review",
       "slug": "product-review",
       "description": "In-depth reviews of smart home products and devices"
+    },
+    {
+      "name": "Smart Home Guide",
+      "slug": "smart-home-guide",
+      "description": "Comprehensive guides about smart home automation and costs"
     }
   ]
 }
