@@ -3042,7 +3042,6 @@
                 const honeypot2 = form.querySelector('input[name="_gotcha"]');
                 if ((honeypot1 && honeypot1.value) || (honeypot2 && honeypot2.value)) {
                     // Bot detected - silently reject
-                    console.log('Bot submission blocked');
                     return;
                 }
                 
@@ -3549,9 +3548,6 @@
                         success: success,
                         timestamp: Date.now()
                     };
-                    
-                    // Log to console for debugging (remove in production or send to analytics service)
-                    console.log('Form Analytics:', analyticsData);
                     
                     // You can send this to your analytics service here
                     // Example: sendToAnalytics(analyticsData);
