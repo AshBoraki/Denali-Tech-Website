@@ -1391,6 +1391,25 @@
             font-size: 1.05rem;
         }
 
+        /* Quick Contact Buttons */
+        .booking-form-container a[href^="tel:"],
+        .booking-form-container a[href^="mailto:"] {
+            transition: all var(--transition);
+        }
+
+        .booking-form-container a[href^="tel:"]:hover,
+        .booking-form-container a[href^="mailto:"]:hover {
+            background: rgba(249, 115, 22, 0.2) !important;
+            border-color: var(--accent-primary) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+        }
+
+        .booking-form-container a[href^="tel:"]:active,
+        .booking-form-container a[href^="mailto:"]:active {
+            transform: translateY(0);
+        }
+
         .booking-form {
             display: grid;
             gap: 0;
@@ -2176,6 +2195,15 @@
                 margin-bottom: 1.25rem;
             }
 
+            /* Quick contact buttons mobile */
+            .booking-form-container > div > div:first-of-type a[href^="tel:"],
+            .booking-form-container > div > div:first-of-type a[href^="mailto:"] {
+                flex: 1 1 100%;
+                justify-content: center;
+                padding: 0.875rem 1.25rem;
+                font-size: 0.95rem;
+            }
+
             .booking-form {
                 gap: 0;
             }
@@ -2659,26 +2687,45 @@
     <section class="booking-section" id="booking">
         <div class="container">
             <div class="booking-form-container">
-                <h2>📞 Get In Touch - Schedule Your Free Consultation</h2>
-                <p>Have a question or want to schedule a consultation? Fill out the form below and we'll get back to you within 24 hours. We'll come to your location for a free consultation - no obligation, just honest advice.</p>
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <h2 style="font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 700; color: var(--text-primary); margin-bottom: 1rem; line-height: 1.2;">Schedule Your Free Consultation</h2>
+                    <p style="font-size: 1.1rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto 1.5rem; line-height: 1.6;">Have a question or want to schedule a consultation? Fill out the form below and we'll get back to you within 24 hours. We'll come to your location for a free consultation - no obligation, just honest advice.</p>
+                    
+                    <!-- Quick Contact Options -->
+                    <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom: 2rem;">
+                        <a href="tel:+13124397500" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: rgba(249, 115, 22, 0.1); border: 1px solid rgba(249, 115, 22, 0.3); border-radius: 8px; color: var(--accent-primary); text-decoration: none; font-weight: 600; transition: all var(--transition);">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            <span>(312) 439-7500</span>
+                        </a>
+                        <a href="mailto:Hello@denalitechs.com" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: rgba(249, 115, 22, 0.1); border: 1px solid rgba(249, 115, 22, 0.3); border-radius: 8px; color: var(--accent-primary); text-decoration: none; font-weight: 600; transition: all var(--transition);">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <span>Hello@denalitechs.com</span>
+                        </a>
+                    </div>
+                </div>
                 
-                <!-- Trust Signals -->
-                <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin: 1.25rem 0; padding: 1.25rem; background: rgba(249, 115, 22, 0.08); border-radius: 12px; border: 1px solid rgba(249, 115, 22, 0.2);">
-                    <div style="text-align: center; flex: 1; min-width: 120px;">
-                        <div style="font-size: 1.5rem; font-weight: 600; color: var(--accent-primary);">5 ⭐</div>
-                        <div style="font-size: 0.875rem; color: var(--text-secondary);">Google Reviews</div>
+                <!-- Trust Signals - Improved Design -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; margin: 2rem 0; padding: 1.5rem; background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(249, 115, 22, 0.05)); border-radius: 16px; border: 1px solid rgba(249, 115, 22, 0.2);">
+                    <div style="text-align: center; padding: 0.5rem;">
+                        <div style="font-size: 2rem; font-weight: 700; color: var(--accent-primary); margin-bottom: 0.25rem; line-height: 1;">5.0</div>
+                        <div style="font-size: 0.875rem; color: var(--text-secondary); font-weight: 500;">⭐ Google Rating</div>
                     </div>
-                    <div style="text-align: center; flex: 1; min-width: 120px;">
-                        <div style="font-size: 1.5rem; font-weight: 600; color: var(--accent-primary);">24hr</div>
-                        <div style="font-size: 0.875rem; color: var(--text-secondary);">Response Time</div>
+                    <div style="text-align: center; padding: 0.5rem;">
+                        <div style="font-size: 2rem; font-weight: 700; color: var(--accent-primary); margin-bottom: 0.25rem; line-height: 1;">24hr</div>
+                        <div style="font-size: 0.875rem; color: var(--text-secondary); font-weight: 500;">Response Time</div>
                     </div>
-                    <div style="text-align: center; flex: 1; min-width: 120px;">
-                        <div style="font-size: 1.5rem; font-weight: 600; color: var(--accent-primary);">100%</div>
-                        <div style="font-size: 0.875rem; color: var(--text-secondary);">Free Consultation</div>
+                    <div style="text-align: center; padding: 0.5rem;">
+                        <div style="font-size: 2rem; font-weight: 700; color: var(--accent-primary); margin-bottom: 0.25rem; line-height: 1;">100%</div>
+                        <div style="font-size: 0.875rem; color: var(--text-secondary); font-weight: 500;">Free Consultation</div>
                     </div>
-                    <div style="text-align: center; flex: 1; min-width: 120px;">
-                        <div style="font-size: 1.5rem; font-weight: 600; color: var(--accent-primary);">✓</div>
-                        <div style="font-size: 0.875rem; color: var(--text-secondary);">No Obligation</div>
+                    <div style="text-align: center; padding: 0.5rem;">
+                        <div style="font-size: 2rem; font-weight: 700; color: var(--accent-primary); margin-bottom: 0.25rem; line-height: 1;">✓</div>
+                        <div style="font-size: 0.875rem; color: var(--text-secondary); font-weight: 500;">No Obligation</div>
                     </div>
                 </div>
                 
