@@ -690,9 +690,35 @@
                 outline-offset: 3px;
                 border-radius: 16px;
             }
+            /* Enhanced Focus Indicators for Better Accessibility */
+            .service-link:focus-visible,
+            .btn-primary:focus-visible,
+            .btn-secondary:focus-visible,
+            .cta-button:focus-visible,
+            .google-profile-link:focus-visible,
+            .service-area-toggle-btn:focus-visible,
+            .logo:focus-visible,
+            .nav-links a:focus-visible,
+            .footer-column a:focus-visible,
+            .social-icon:focus-visible,
+            .contact-item:focus-visible {
+                outline: 3px solid var(--accent-primary);
+                outline-offset: 3px;
+                border-radius: 6px;
+            }
+            
+            /* Fallback for older browsers */
             .service-link:focus,
             .btn-primary:focus,
-            .btn-secondary:focus {
+            .btn-secondary:focus,
+            .cta-button:focus,
+            .google-profile-link:focus,
+            .service-area-toggle-btn:focus,
+            .logo:focus,
+            .nav-links a:focus,
+            .footer-column a:focus,
+            .social-icon:focus,
+            .contact-item:focus {
                 outline: 3px solid var(--accent-primary);
                 outline-offset: 3px;
                 border-radius: 6px;
