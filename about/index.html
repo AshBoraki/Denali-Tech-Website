@@ -91,6 +91,28 @@
     <style>
         /* Font fallback to prevent FOIT (Flash of Invisible Text) */
         body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+    
+    /* Skip Navigation Link for Accessibility */
+    .skip-link {
+        position: absolute;
+        top: -100px;
+        left: 0;
+        background: var(--accent-primary);
+        color: white;
+        padding: 1rem 1.5rem;
+        text-decoration: none;
+        font-weight: 600;
+        z-index: 10000;
+        border-radius: 0 0 8px 0;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        transition: top 0.3s ease;
+    }
+    .skip-link:focus {
+        top: 0;
+        outline: 3px solid var(--accent-hover);
+        outline-offset: 2px;
+    }
+
     </style>
     
     <!-- Schema.org Structured Data -->
@@ -1571,6 +1593,8 @@
     </style>
 </head>
 <body>
+    <!-- Skip Navigation Link -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWPTRPDR"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -1636,7 +1660,7 @@
         </div>
     </header>
 
-    <main role="main">
+    <main role="main" id="main-content">
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-background"></div>
