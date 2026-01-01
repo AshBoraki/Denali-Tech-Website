@@ -1516,6 +1516,28 @@
             background: linear-gradient(135deg, #fb923c, var(--accent-interactive));
         }
 
+        .loading-spinner {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin-right: 0.5rem;
+            vertical-align: middle;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .booking-form-submit:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
         .booking-form-submit:active {
             transform: translateY(-1px);
             box-shadow: 0 2px 10px rgba(249, 115, 22, 0.3);
@@ -3134,7 +3156,13 @@
                 lastSubmissionTime = now;
                 
                 const submitBtn = form.querySelector('button[type="submit"]');
-                if (submitBtn) submitBtn.disabled = true;
+                const originalBtnText = submitBtn ? submitBtn.innerHTML : '';
+                if (submitBtn) {
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = '<span class="loading-spinner"></span> Sending...';
+                    submitBtn.style.opacity = '0.7';
+                    submitBtn.style.cursor = 'not-allowed';
+                }
                 const formData = new FormData(form);
                 
                 // Add CSRF token (timestamp-based nonce)
@@ -3162,7 +3190,12 @@
                                 err.style.display = 'block';
                                 err.textContent = `❌ ${errorMsg} Please try again or call us at (312) 439-7500.`;
                             }
-                            if (submitBtn) submitBtn.disabled = false;
+                            if (submitBtn) {
+                                submitBtn.disabled = false;
+                                submitBtn.innerHTML = originalBtnText;
+                                submitBtn.style.opacity = '1';
+                                submitBtn.style.cursor = 'pointer';
+                            }
                             console.error('Form submission error:', responseData || res.statusText);
                         }
                     } catch (err) {
@@ -3171,7 +3204,12 @@
                             errBox.style.display = 'block';
                             errBox.textContent = '❌ Network error. Please check your connection and try again, or call us at (312) 439-7500.';
                         }
-                        if (submitBtn) submitBtn.disabled = false;
+                        if (submitBtn) {
+                            submitBtn.disabled = false;
+                            submitBtn.innerHTML = originalBtnText;
+                            submitBtn.style.opacity = '1';
+                            submitBtn.style.cursor = 'pointer';
+                        }
                         console.error('Form submission error:', err);
                     }
             });
