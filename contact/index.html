@@ -2699,8 +2699,8 @@
         <div class="container">
             <div class="booking-form-container">
                 <div style="text-align: center; margin-bottom: 2rem;">
-                    <h2 style="font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 700; color: var(--text-primary); margin-bottom: 1rem; line-height: 1.2;">Schedule Your Free Consultation</h2>
-                    <p style="font-size: 1.1rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto 1.5rem; line-height: 1.6;">Have a question or want to schedule a consultation? Fill out the form below and we'll get back to you within 24 hours. We'll come to your location for a free consultation - no obligation, just honest advice.</p>
+                    <h2 style="font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 700; color: var(--text-primary); margin-bottom: 1rem; line-height: 1.2;">Get In Touch</h2>
+                    <p style="font-size: 1.1rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto 1.5rem; line-height: 1.6;">Have a question, need help, or want to schedule a free consultation? Fill out the form below and we'll get back to you within 24 hours. Whether you're ready to get started or just exploring your options, we're here to help.</p>
                     
                     <!-- Quick Contact Options -->
                     <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom: 2rem;">
@@ -2858,23 +2858,26 @@
                         </div>
                     </fieldset>
 
-                    <!-- Step 3: Schedule Consultation -->
+                    <!-- Step 3: Schedule Consultation (Optional) -->
                     <fieldset class="form-step" data-step="3">
-                        <legend>Schedule Your Consultation</legend>
+                        <legend>Schedule Consultation (Optional)</legend>
+                        <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.6;">If you'd like to schedule an in-home consultation, please provide your preferred date and time below. This is optional - you can also just ask questions and we'll respond.</p>
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="booking-date">Preferred Consultation Date *</label>
-                                <input type="date" id="booking-date" name="preferred_date" required aria-required="true" min="">
+                                <label for="booking-date">Preferred Consultation Date</label>
+                                <input type="date" id="booking-date" name="preferred_date" aria-required="false" min="">
                                 <span class="field-error" id="date-error" role="alert"></span>
+                                <small style="display: block; margin-top: 0.5rem; color: var(--text-secondary); font-size: 0.875rem;">Optional - only if you want to schedule</small>
                             </div>
                             <div class="form-group">
-                                <label for="booking-time">Preferred Time *</label>
-                                <select id="booking-time" name="preferred_time" required aria-required="true">
+                                <label for="booking-time">Preferred Time</label>
+                                <select id="booking-time" name="preferred_time" aria-required="false">
                                     <option value="">Select time...</option>
                                     <option value="Morning (8 AM - 12 PM)">Morning (8 AM - 12 PM)</option>
                                     <option value="Afternoon (12 PM - 4 PM)">Afternoon (12 PM - 4 PM)</option>
                                     <option value="Evening (4 PM - 7 PM)">Evening (4 PM - 7 PM)</option>
                                     <option value="Flexible">Flexible</option>
+                                    <option value="Not scheduling - just have questions">Not scheduling - just have questions</option>
                                 </select>
                                 <span class="field-error" id="time-error" role="alert"></span>
                             </div>
@@ -2884,7 +2887,7 @@
                         <div style="margin-top: 1rem; padding: 1rem; background: rgba(249, 115, 22, 0.1); border-radius: 10px; border-left: 3px solid var(--accent-primary);">
                             <p style="margin: 0; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
                                 <strong style="color: var(--text-primary); display: block; margin-bottom: 0.4rem;">✅ What happens next?</strong>
-                                We'll review your request and contact you within 24 hours to confirm your consultation date and time. All consultations are completely free with no obligation.
+                                We'll review your message and get back to you within 24 hours. If you requested a consultation, we'll confirm the date and time. All consultations are completely free with no obligation.
                             </p>
                         </div>
                     </fieldset>
@@ -2897,7 +2900,7 @@
                     
                     <!-- Submit Button -->
                     <button type="submit" class="booking-form-submit" id="submit-btn">
-                        <span class="btn-text">Submit Booking Request</span>
+                        <span class="btn-text">Send Message</span>
                         <span class="btn-loader" style="display: none;">⏳</span>
                     </button>
                 </form>
@@ -3907,7 +3910,7 @@
                             submitBtn.disabled = false;
                             const btnText = submitBtn.querySelector('.btn-text');
                             const btnLoader = submitBtn.querySelector('.btn-loader');
-                            if (btnText) btnText.textContent = 'Submit Booking Request';
+                            if (btnText) btnText.textContent = 'Send Message';
                             if (btnLoader) btnLoader.style.display = 'none';
                         }
                         return;
@@ -3961,7 +3964,7 @@
                                 submitBtn.disabled = false;
                                 const btnText = submitBtn.querySelector('.btn-text');
                                 const btnLoader = submitBtn.querySelector('.btn-loader');
-                                if (btnText) btnText.textContent = 'Submit Booking Request';
+                                if (btnText) btnText.textContent = 'Send Message';
                                 if (btnLoader) btnLoader.style.display = 'none';
                             }
                             console.error('Form submission error:', responseData || res.statusText);
@@ -3973,7 +3976,7 @@
                             submitBtn.disabled = false;
                             const btnText = submitBtn.querySelector('.btn-text');
                             const btnLoader = submitBtn.querySelector('.btn-loader');
-                            if (btnText) btnText.textContent = 'Submit Booking Request';
+                            if (btnText) btnText.textContent = 'Send Message';
                             if (btnLoader) btnLoader.style.display = 'none';
                         }
                         console.error('Form submission error:', err);
