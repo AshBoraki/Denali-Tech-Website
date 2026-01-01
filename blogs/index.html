@@ -539,7 +539,6 @@
                 if (!blogData || !blogData.posts || blogData.posts.length === 0) {
                     throw new Error('No blog posts found in data');
                 }
-                console.log(`Loaded ${blogData.posts.length} blog posts`);
                 initializeBlog();
             } catch (error) {
                 console.error('Error loading blog data:', error);
