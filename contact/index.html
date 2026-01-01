@@ -3650,6 +3650,7 @@
                                 errorMessage = 'Please enter a valid phone number (10 digits minimum)';
                             }
                         } else if (field.type === 'date' && field.value) {
+                            // Only validate date if it's provided (optional field)
                             const selectedDate = new Date(field.value);
                             const tomorrow = new Date();
                             tomorrow.setDate(tomorrow.getDate() + 1);
@@ -3657,7 +3658,7 @@
                                 isValid = false;
                                 errorMessage = 'Please select a date starting from tomorrow';
                             }
-                        } else if (field.tagName === 'SELECT' && field.value === '') {
+                        } else if (field.tagName === 'SELECT' && field.value === '' && field.hasAttribute('required')) {
                             isValid = false;
                             errorMessage = 'This field is required';
                         } else if (field.tagName === 'TEXTAREA' && field.value.trim().length < 10) {
