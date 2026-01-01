@@ -3057,7 +3057,11 @@
                     e.preventDefault();
                     const messageDiv = document.getElementById('consultation-form-message') || form.querySelector('.form-message');
                     if (messageDiv) {
-                        messageDiv.innerHTML = '<div class="form-error-message">❌ Please complete the captcha verification before submitting.</div>';
+                        const errorDiv = document.createElement('div');
+                        errorDiv.className = 'form-error-message';
+                        errorDiv.textContent = '❌ Please complete the captcha verification before submitting.';
+                        messageDiv.textContent = '';
+                        messageDiv.appendChild(errorDiv);
                     } else {
                         alert('Please complete the captcha verification before submitting.');
                     }
