@@ -54,7 +54,7 @@
     <!-- End Google Tag Manager -->
     
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0, user-scalable=yes">
     <meta name="theme-color" content="#f97316">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -119,6 +119,70 @@
         gtag('config', 'G-XXXXXXXXXX');
     </script>
     -->
+    
+    <!-- Performance Monitoring - Core Web Vitals -->
+    <script>
+    // Track Core Web Vitals for performance monitoring
+    if ('PerformanceObserver' in window) {
+        // Largest Contentful Paint (LCP)
+        try {
+            const lcpObserver = new PerformanceObserver((list) => {
+                const entries = list.getEntries();
+                const lastEntry = entries[entries.length - 1];
+                // Log LCP (can be sent to analytics)
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'web_vitals', {
+                        'event_category': 'Performance',
+                        'event_label': 'LCP',
+                        'value': Math.round(lastEntry.renderTime || lastEntry.loadTime)
+                    });
+                }
+            });
+            lcpObserver.observe({entryTypes: ['largest-contentful-paint']});
+        } catch (e) {}
+        
+        // First Input Delay (FID)
+        try {
+            const fidObserver = new PerformanceObserver((list) => {
+                const entries = list.getEntries();
+                entries.forEach((entry) => {
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'web_vitals', {
+                            'event_category': 'Performance',
+                            'event_label': 'FID',
+                            'value': Math.round(entry.processingStart - entry.startTime)
+                        });
+                    }
+                });
+            });
+            fidObserver.observe({entryTypes: ['first-input']});
+        } catch (e) {}
+        
+        // Cumulative Layout Shift (CLS)
+        try {
+            let clsValue = 0;
+            const clsObserver = new PerformanceObserver((list) => {
+                const entries = list.getEntries();
+                entries.forEach((entry) => {
+                    if (!entry.hadRecentInput) {
+                        clsValue += entry.value;
+                    }
+                });
+                // Log CLS when page is unloaded
+                window.addEventListener('beforeunload', () => {
+                    if (typeof gtag !== 'undefined' && clsValue > 0) {
+                        gtag('event', 'web_vitals', {
+                            'event_category': 'Performance',
+                            'event_label': 'CLS',
+                            'value': Math.round(clsValue * 1000)
+                        });
+                    }
+                });
+            });
+            clsObserver.observe({entryTypes: ['layout-shift']});
+        } catch (e) {}
+    }
+    </script>
     
     <!-- Google Search Console Verification - Replace with your verification code -->
     <!-- <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" /> -->
