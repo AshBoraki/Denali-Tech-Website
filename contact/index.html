@@ -3083,10 +3083,18 @@
                 const submitBtn = form.querySelector('button[type="submit"]');
                 if (submitBtn) submitBtn.disabled = true;
                 const formData = new FormData(form);
+                
+                // Add CSRF token (timestamp-based nonce)
+                const csrfToken = Date.now().toString(36) + Math.random().toString(36).substr(2);
+                formData.append('_csrf', csrfToken);
+                
                     try {
                         const res = await fetch('https://api.web3forms.com/submit', {
                             method: 'POST',
-                            headers: { 'Accept': 'application/json' },
+                            headers: { 
+                                'Accept': 'application/json',
+                                'X-Requested-With': 'XMLHttpRequest'
+                            },
                             body: formData
                         });
                         
@@ -3409,7 +3417,15 @@
                         // Show restore message
                         const restoreMsg = document.createElement('div');
                         restoreMsg.className = 'form-restore-message';
-                        restoreMsg.innerHTML = '📋 Form data restored. <button type="button" onclick="this.parentElement.remove()" style="margin-left: 0.5rem; background: transparent; border: none; color: var(--accent-primary); cursor: pointer; text-decoration: underline;">Dismiss</button>';
+                        restoreMsg.textContent = '';
+                        const restoreText = document.createTextNode('📋 Form data restored. ');
+                        const dismissBtn = document.createElement('button');
+                        dismissBtn.type = 'button';
+                        dismissBtn.textContent = 'Dismiss';
+                        dismissBtn.style.cssText = 'margin-left: 0.5rem; background: transparent; border: none; color: var(--accent-primary); cursor: pointer; text-decoration: underline;';
+                        dismissBtn.addEventListener('click', () => restoreMsg.remove());
+                        restoreMsg.appendChild(restoreText);
+                        restoreMsg.appendChild(dismissBtn);
                         restoreMsg.style.cssText = 'padding: 0.75rem 1rem; background: rgba(249, 115, 22, 0.1); border-radius: 8px; margin-bottom: 1rem; color: var(--text-primary); font-size: 0.9rem;';
                         bookingForm.insertBefore(restoreMsg, bookingForm.firstChild);
                     }
@@ -3888,7 +3904,11 @@
                     
                     if (!hCaptcha || !hCaptcha.value) {
                         if (messageDiv) {
-                            messageDiv.innerHTML = '<div class="form-error-message">❌ Please complete the captcha verification before submitting.</div>';
+                            const errorDiv = document.createElement('div');
+                            errorDiv.className = 'form-error-message';
+                            errorDiv.textContent = '❌ Please complete the captcha verification before submitting.';
+                            messageDiv.textContent = '';
+                            messageDiv.appendChild(errorDiv);
                         } else {
                             alert('Please complete the captcha verification before submitting.');
                         }
@@ -3899,7 +3919,11 @@
                     const rateLimitCheck = checkRateLimit();
                     if (!rateLimitCheck.allowed) {
                         if (messageDiv) {
-                            messageDiv.innerHTML = `<div class="form-error-message">⚠️ ${rateLimitCheck.message}</div>`;
+                            const errorDiv = document.createElement('div');
+                            errorDiv.className = 'form-error-message';
+                            errorDiv.textContent = `⚠️ ${rateLimitCheck.message}`;
+                            messageDiv.textContent = '';
+                            messageDiv.appendChild(errorDiv);
                             messageDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
                         }
                         const submitBtn = bookingForm.querySelector('button[type="submit"]');
@@ -3932,7 +3956,11 @@
                     
                     // Show submission progress
                     if (messageDiv) {
-                        messageDiv.innerHTML = '<div class="form-info-message">⏳ Processing your request...</div>';
+                        const infoDiv = document.createElement('div');
+                        infoDiv.className = 'form-info-message';
+                        infoDiv.textContent = '⏳ Processing your request...';
+                        messageDiv.textContent = '';
+                        messageDiv.appendChild(infoDiv);
                         messageDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     }
 
@@ -3956,7 +3984,11 @@
                             // Track failed submission
                             formAnalytics.trackSubmission(false);
                             const errorMsg = responseData?.message || 'There was an error submitting your request.';
-                            messageDiv.innerHTML = `<div class="form-error-message">❌ ${errorMsg} Please try again or call us at (312) 439-7500.</div>`;
+                            const errorDiv = document.createElement('div');
+                            errorDiv.className = 'form-error-message';
+                            errorDiv.textContent = `❌ ${errorMsg} Please try again or call us at (312) 439-7500.`;
+                            messageDiv.textContent = '';
+                            messageDiv.appendChild(errorDiv);
                             if (submitBtn) {
                                 submitBtn.disabled = false;
                                 const btnText = submitBtn.querySelector('.btn-text');
@@ -3968,7 +4000,11 @@
                         }
                     } catch (err) {
                         const errorMsg = (err.message && err.message.includes('fetch')) ? 'Network error. Please check your connection and try again.' : 'There was an error submitting your request.';
-                        messageDiv.innerHTML = `<div class="form-error-message">❌ ${errorMsg} Or call us at (312) 439-7500.</div>`;
+                        const errorDiv = document.createElement('div');
+                        errorDiv.className = 'form-error-message';
+                        errorDiv.textContent = `❌ ${errorMsg} Or call us at (312) 439-7500.`;
+                        messageDiv.textContent = '';
+                        messageDiv.appendChild(errorDiv);
                         if (submitBtn) {
                             submitBtn.disabled = false;
                             const btnText = submitBtn.querySelector('.btn-text');
