@@ -452,8 +452,16 @@
                 grid-template-columns: 1fr;
             }
             
+            .menu-toggle {
+                display: flex;
+            }
+
             .nav-links {
                 display: none;
+            }
+
+            .nav-links.active {
+                display: flex !important;
             }
         }
     </style>
@@ -472,7 +480,7 @@
                 <span>Denali Tech</span>
             </a>
             <nav>
-                <ul class="nav-links">
+                <ul class="nav-links" id="navLinks">
                     <li><a href="/">Home</a></li>
                     <li><a href="/services/">Services</a></li>
                     <li><a href="/projects/">Projects</a></li>
@@ -481,6 +489,11 @@
                     <li><a href="/contact/">Contact</a></li>
                 </ul>
             </nav>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
 
