@@ -704,103 +704,6 @@
         }
 
         /* Contact Information Section */
-        .contact-info-section {
-            padding: 80px 5%;
-            background: var(--bg-color);
-        }
-
-        .contact-info-wrapper {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .contact-info {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
-            padding: 3.5rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .contact-info h2 {
-            font-family: var(--font-heading);
-            font-size: clamp(1.8rem, 3vw, 2.2rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-align: center;
-            color: var(--text-primary);
-        }
-
-        .contact-items-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1.25rem;
-            padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            transition: all var(--transition);
-        }
-
-        .contact-item:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-3px);
-            border-color: var(--accent-primary);
-            box-shadow: 0 8px 20px rgba(249, 115, 22, 0.2);
-        }
-
-        .contact-icon {
-            font-size: 2rem;
-            color: var(--accent-primary);
-            flex-shrink: 0;
-            margin-top: 0.25rem;
-        }
-
-        .contact-details {
-            flex: 1;
-        }
-
-        .contact-details h3 {
-            font-family: var(--font-heading);
-            font-size: 1.15rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
-        }
-
-        .contact-details p {
-            color: var(--text-secondary);
-            margin: 0;
-            line-height: 1.6;
-            font-size: 0.95rem;
-        }
-
-        .contact-details a {
-            color: var(--accent-primary);
-            text-decoration: none;
-            transition: color var(--transition);
-            font-weight: 500;
-        }
-
-        .contact-details a:hover {
-            color: var(--accent-hover);
-            text-decoration: underline;
-        }
-
-        .contact-map-container {
-            margin-top: 2rem;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
 
         /* FORM STYLES */
         .contact-form {
@@ -1567,17 +1470,6 @@
                 gap: 1rem;
             }
 
-            .contact-item {
-                flex-direction: column;
-                text-align: center;
-                padding: 1.5rem 1rem;
-            }
-
-            .contact-icon {
-                font-size: 2.5rem;
-                margin-bottom: 0.5rem;
-            }
-
             .booking-form-container h2 {
                 font-size: 1.75rem;
                 margin-bottom: 1rem;
@@ -2128,7 +2020,6 @@
             }
 
             .contact-section,
-            .contact-info-section,
             .booking-section {
                 padding: 60px 4%;
             }
@@ -2140,37 +2031,6 @@
             .contact-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
-            }
-
-            .contact-info-wrapper {
-                max-width: 100%;
-            }
-
-            .contact-info {
-                padding: 2.5rem 1.5rem;
-            }
-
-            .contact-info h2 {
-                font-size: 1.75rem;
-                margin-bottom: 1rem;
-            }
-
-            .contact-items-grid {
-                grid-template-columns: 1fr;
-                gap: 1.25rem;
-                margin-bottom: 1.5rem;
-            }
-
-            .contact-item {
-                padding: 1.25rem;
-            }
-
-            .contact-map-container {
-                margin-top: 1.5rem;
-            }
-
-            .contact-map-container iframe {
-                height: 250px;
             }
 
             .contact-form h2 {
@@ -2254,36 +2114,8 @@
             }
 
             .contact-section,
-            .contact-info-section,
             .booking-section {
                 padding: 50px 3%;
-            }
-
-            .contact-info {
-                padding: 2rem 1.25rem;
-            }
-
-            .contact-info h2 {
-                font-size: 1.5rem;
-            }
-
-            .contact-items-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .contact-item {
-                padding: 1rem;
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .contact-icon {
-                margin-top: 0;
-            }
-
-            .contact-map-container iframe {
-                height: 200px;
             }
 
             .booking-form-container {
@@ -2355,14 +2187,6 @@
 
             .booking-form-container > div[style*="flex-wrap"] > div > div:last-child {
                 font-size: 0.8rem !important;
-            }
-
-            .contact-item {
-                padding: 1.25rem 0.75rem;
-            }
-
-            .contact-icon {
-                font-size: 2rem;
             }
 
             .footer-main-grid {
@@ -2546,51 +2370,6 @@
         <div class="hero-content">
             <h1>Let's Talk About Your Smart Home</h1>
             <p>Whether you're ready to get started or just exploring your options, we're here to help. Schedule your free consultation or reach out with any questions - no pressure, just honest advice.</p>
-        </div>
-    </section>
-
-    <!-- Contact Information Section -->
-    <section class="contact-info-section">
-        <div class="container">
-            <div class="contact-info-wrapper">
-                <div class="contact-info">
-                    <h2>Get In Touch</h2>
-                    <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem; font-size: 1.1rem;">Choose the way that works best for you - we're here to help!</p>
-                    <div class="contact-items-grid">
-                        <div class="contact-item">
-                            <div class="contact-icon">📞</div>
-                            <div class="contact-details">
-                                <h3>Phone</h3>
-                                <p><a href="tel:+13124397500">(312) 439-7500</a></p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">✉️</div>
-                            <div class="contact-details">
-                                <h3>Email</h3>
-                                <p><a href="mailto:Hello@denalitechs.com">Hello@denalitechs.com</a></p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">🕒</div>
-                            <div class="contact-details">
-                                <h3>Business Hours</h3>
-                                <p>Monday - Friday: 8:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 4:00 PM<br>Sunday: By Appointment</p>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">🗺️</div>
-                            <div class="contact-details">
-                                <h3>Find Us</h3>
-                                <p><a href="https://maps.app.goo.gl/7WUrwUfWcbSqwSHt7" target="_blank" rel="noopener noreferrer">Get Directions on Google Maps</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="contact-map-container">
-                        <iframe title="Denali Tech on Google Maps" src="https://www.google.com/maps?q=800+Central+Rd,+Mt+Prospect,+IL+60056&output=embed" width="100%" height="300" style="border:0; border-radius: 12px;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
