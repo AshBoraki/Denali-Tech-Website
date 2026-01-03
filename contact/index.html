@@ -960,55 +960,7 @@
             font-weight: 500;
         }
 
-        /* Auto-save indicator */
-        #auto-save-indicator {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: rgba(34, 197, 94, 0.95);
-            backdrop-filter: blur(10px);
-            color: white;
-            padding: 0.625rem 1rem;
-            border-radius: 10px;
-            font-size: 0.875rem;
-            font-weight: 600;
-            opacity: 0;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            z-index: 1000;
-            pointer-events: none;
-            box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
-            transform: translateY(10px);
-        }
 
-        #auto-save-indicator.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .form-restore-message {
-            padding: 0.75rem 1rem;
-            background: rgba(249, 115, 22, 0.1);
-            border-radius: 8px;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-            font-size: 0.9rem;
-            border-left: 3px solid var(--accent-primary);
-        }
-
-        .form-restore-message button {
-            margin-left: 0.5rem;
-            background: transparent;
-            border: none;
-            color: var(--accent-primary);
-            cursor: pointer;
-            text-decoration: underline;
-            font-size: inherit;
-            padding: 0;
-        }
-
-        .form-restore-message button:hover {
-            color: var(--accent-hover);
-        }
 
         /* Form Steps (Fieldsets) */
         .form-step {
@@ -3077,101 +3029,17 @@
                 }
             }
             
-            // Auto-save functionality - Save form data to localStorage
-            const FORM_STORAGE_KEY = 'denali_contact_form_data';
-            const AUTO_SAVE_DELAY = 1000; // Save after 1 second of inactivity
-            
-            let autoSaveTimeout;
-            
-            function saveFormData() {
-                if (!bookingForm) return;
-                const formData = new FormData(bookingForm);
-                const data = {};
-                for (let [key, value] of formData.entries()) {
-                    // Skip hidden fields and honeypot fields
-                    if (key !== 'access_key' && key !== 'subject' && key !== 'from_name' && 
-                        key !== 'to_email' && key !== 'redirect' && key !== 'website' && 
-                        key !== '_gotcha' && key !== 'h-captcha-response') {
-                        data[key] = value;
-                    }
-                }
-                try {
-                    localStorage.setItem(FORM_STORAGE_KEY, JSON.stringify(data));
-                    // Show subtle save indicator
-                    const saveIndicator = document.getElementById('auto-save-indicator');
-                    if (saveIndicator) {
-                        saveIndicator.textContent = '💾 Saved';
-                        saveIndicator.style.opacity = '1';
-                        setTimeout(() => {
-                            saveIndicator.style.opacity = '0';
-                        }, 2000);
-                    }
-                } catch (e) {
-                    console.warn('Could not save form data:', e);
-                }
-            }
-            
-            function loadFormData() {
-                if (!bookingForm) return;
-                try {
-                    const saved = localStorage.getItem(FORM_STORAGE_KEY);
-                    if (saved) {
-                        const data = JSON.parse(saved);
-                        Object.keys(data).forEach(key => {
-                            const field = bookingForm.querySelector(`[name="${key}"]`);
-                            if (field && field.type !== 'file') {
-                                field.value = data[key];
-                                // Trigger change event to update validation
-                                field.dispatchEvent(new Event('change', { bubbles: true }));
-                            }
-                        });
-                        updateFormProgress();
-                        // Show restore message
-                        const restoreMsg = document.createElement('div');
-                        restoreMsg.className = 'form-restore-message';
-                        restoreMsg.textContent = '';
-                        const restoreText = document.createTextNode('📋 Form data restored. ');
-                        const dismissBtn = document.createElement('button');
-                        dismissBtn.type = 'button';
-                        dismissBtn.textContent = 'Dismiss';
-                        dismissBtn.style.cssText = 'margin-left: 0.5rem; background: transparent; border: none; color: var(--accent-primary); cursor: pointer; text-decoration: underline;';
-                        dismissBtn.addEventListener('click', () => restoreMsg.remove());
-                        restoreMsg.appendChild(restoreText);
-                        restoreMsg.appendChild(dismissBtn);
-                        restoreMsg.style.cssText = 'padding: 0.75rem 1rem; background: rgba(249, 115, 22, 0.1); border-radius: 8px; margin-bottom: 1rem; color: var(--text-primary); font-size: 0.9rem;';
-                        bookingForm.insertBefore(restoreMsg, bookingForm.firstChild);
-                    }
-                } catch (e) {
-                    console.warn('Could not load form data:', e);
-                }
-            }
-            
-            function clearFormData() {
-                try {
-                    localStorage.removeItem(FORM_STORAGE_KEY);
-                } catch (e) {
-                    console.warn('Could not clear form data:', e);
-                }
-            }
-            
-            // Auto-save on input with debouncing
+            // Form progress tracking
             if (bookingForm) {
                 bookingForm.addEventListener('input', function() {
-                    clearTimeout(autoSaveTimeout);
-                    autoSaveTimeout = setTimeout(saveFormData, AUTO_SAVE_DELAY);
                     updateFormProgress();
                 });
                 
                 bookingForm.addEventListener('change', function() {
-                    clearTimeout(autoSaveTimeout);
-                    autoSaveTimeout = setTimeout(saveFormData, AUTO_SAVE_DELAY);
                     updateFormProgress();
                 });
                 
-                    // Load saved data on page load
-                loadFormData();
-                
-                // Clear saved data on successful submission
+                // Clear any old form data on successful submission
                 bookingForm.addEventListener('submit', function() {
                     setTimeout(clearFormData, 1000);
                 });
@@ -3298,12 +3166,6 @@
                     formAnalytics.trackError(field.name || field.id, field.validationMessage);
                 }, true);
             }
-            
-            // Add auto-save indicator
-            const autoSaveIndicator = document.createElement('div');
-            autoSaveIndicator.id = 'auto-save-indicator';
-            autoSaveIndicator.style.cssText = 'position: fixed; bottom: 20px; right: 20px; background: rgba(34, 197, 94, 0.9); color: white; padding: 0.5rem 1rem; border-radius: 8px; font-size: 0.875rem; opacity: 0; transition: opacity 0.3s ease; z-index: 1000; pointer-events: none;';
-            document.body.appendChild(autoSaveIndicator);
             
             // Pre-fill service type from URL parameter
             const urlParams = new URLSearchParams(window.location.search);
