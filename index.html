@@ -294,6 +294,12 @@
                 max-height: none !important;
                 touch-action: pan-y !important;
                 -webkit-overflow-scrolling: auto !important;
+                position: static !important;
+                transform: none !important;
+                will-change: auto !important;
+            }
+            .stats-section > div[style*="position: absolute"] {
+                display: none !important;
             }
             .stats-section *, 
             .stats-grid, .stats-grid *,
@@ -303,14 +309,18 @@
                 overflow: visible !important;
                 -webkit-overflow-scrolling: auto !important;
                 pointer-events: auto !important;
+                position: static !important;
+                transform: none !important;
             }
             .stats-grid {
                 overflow: visible !important;
                 touch-action: pan-y !important;
+                position: static !important;
             }
             .stat-card {
                 overflow: visible !important;
                 touch-action: pan-y !important;
+                position: static !important;
             }
         }
     </style>
