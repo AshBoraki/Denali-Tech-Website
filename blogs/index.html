@@ -200,57 +200,10 @@
             font-weight: 600;
         }
 
-        .theme-toggle {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
         .header-actions {
             display: flex;
             align-items: center;
             gap: 1rem;
-        }
-
-        .toggle-switch {
-            width: 54px;
-            height: 28px;
-            background: var(--border-color);
-            border-radius: 14px;
-            cursor: pointer;
-            position: relative;
-            transition: background var(--transition);
-        }
-
-        body:not(.light-theme) .toggle-switch {
-            background: rgba(148, 163, 184, 0.28);
-        }
-
-        :root[data-theme='light'] .toggle-switch,
-        body.light-theme .toggle-switch {
-            background: rgba(15, 23, 42, 0.12);
-        }
-
-        .toggle-switch:hover {
-            background: rgba(249, 115, 22, 0.2);
-        }
-
-        .toggle-switch-circle {
-            width: 22px;
-            height: 22px;
-            background: var(--accent-primary);
-            border-radius: 50%;
-            position: absolute;
-            top: 3px;
-            left: 4px;
-            transition: transform var(--transition), background var(--transition);
-            box-shadow: var(--shadow-subtle);
-        }
-
-        :root[data-theme='light'] .toggle-switch-circle,
-        body.light-theme .toggle-switch-circle {
-            transform: translateX(25px);
-            background: var(--accent-hover);
         }
         
         .nav-links {
@@ -722,10 +675,6 @@
         .header-actions {
             gap: 0.6rem;
         }
-        
-        .theme-toggle {
-            order: -1; /* Show theme toggle first on mobile */
-        }
     }
     
     /* Skip Navigation Link for Accessibility */
@@ -763,11 +712,6 @@
             .social-icon:focus-visible,
             .contact-item:focus-visible,
             .menu-toggle:focus-visible,
-            .toggle-switch:focus-visible {
-                outline: 3px solid var(--accent-primary);
-                outline-offset: 3px;
-                border-radius: 6px;
-            }
             
             /* Fallback for older browsers */
             a:focus:not(:focus-visible),
@@ -813,11 +757,6 @@
                 </ul>
             </nav>
             <div class="header-actions">
-                <div class="theme-toggle">
-                    <div class="toggle-switch" id="theme-toggle-switch" role="switch" aria-checked="false" aria-label="Toggle between light and dark mode">
-                        <div class="toggle-switch-circle"></div>
-                    </div>
-                </div>
                 <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">
                     <span></span>
                     <span></span>
@@ -1045,32 +984,9 @@
         // Initialize on page load
         loadBlogData();
 
-        // Theme toggle functionality
-        const themeToggle = document.getElementById('theme-toggle-switch');
-        const getCurrentTheme = () => document.body.classList.contains('light-theme') ? 'light' : 'dark';
-        const updateTheme = (theme) => {
-            if (typeof window.__setTheme === 'function') {
-                window.__setTheme(theme);
-            } else {
-                const isLight = theme === 'light';
-                document.body.classList.toggle('light-theme', isLight);
-                document.documentElement.setAttribute('data-theme', theme);
-                localStorage.setItem('theme', theme);
-            }
-            if (themeToggle) {
-                themeToggle.setAttribute('aria-checked', theme === 'light');
-            }
-        };
-        if (themeToggle) {
-            themeToggle.setAttribute('aria-checked', getCurrentTheme() === 'light');
-            themeToggle.addEventListener('click', () => {
-                const newTheme = getCurrentTheme() === 'light' ? 'dark' : 'light';
-                updateTheme(newTheme);
-            });
-            themeToggle.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter') themeToggle.click();
-            });
-        }
+        // Ensure dark mode is always applied (no theme toggle on blogs)
+        document.body.classList.remove('light-theme');
+        document.documentElement.setAttribute('data-theme', 'dark');
 
         // Mobile Menu Toggle
         const menuToggle = document.getElementById('menu-toggle');
