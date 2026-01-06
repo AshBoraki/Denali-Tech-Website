@@ -427,15 +427,25 @@
         </div>
         <style>
             /* Position video to start below header */
-            .hero-background {
-                top: var(--header-height) !important;
-                height: calc(100% - var(--header-height)) !important;
+            @media (min-width: 769px) {
+                .hero-background {
+                    top: var(--header-height) !important;
+                    height: calc(100vh - var(--header-height)) !important;
+                }
+                
+                .hero-background video {
+                    top: 0 !important;
+                }
             }
             
             @media (max-width: 768px) {
                 .hero-background {
                     top: var(--mobile-header-height) !important;
-                    height: calc(100% - var(--mobile-header-height)) !important;
+                    height: calc(100vh - var(--mobile-header-height)) !important;
+                }
+                
+                .hero-background video {
+                    top: 0 !important;
                 }
             }
         </style>
