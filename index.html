@@ -278,6 +278,38 @@
                 overflow: visible !important;
                 overscroll-behavior: none !important;
                 -webkit-overflow-scrolling: auto !important;
+                pointer-events: auto !important;
+            }
+            
+            /* Fix stats section specifically - prevent scroll lock */
+            .stats-section, .stats-section *, 
+            .stats-grid, .stats-grid *,
+            .stat-card, .stat-card *,
+            .util-bg-card-sm, .util-bg-card-sm *,
+            .stat-number, .stat-label, .stat-detail {
+                touch-action: pan-y !important;
+                overflow: visible !important;
+                overscroll-behavior: none !important;
+                -webkit-overflow-scrolling: auto !important;
+                pointer-events: auto !important;
+                position: relative !important;
+            }
+            
+            /* Ensure stats section doesn't create scroll container */
+            .stats-section {
+                overflow: visible !important;
+                overflow-y: visible !important;
+                overflow-x: hidden !important;
+                height: auto !important;
+                max-height: none !important;
+            }
+            
+            .stat-card {
+                touch-action: pan-y !important;
+                overflow: visible !important;
+                pointer-events: auto !important;
+                -webkit-user-select: none !important;
+                user-select: none !important;
             }
             
             /* Ensure cards don't create scroll containers */
