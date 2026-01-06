@@ -834,8 +834,43 @@
             }
         </style>
         <script>
+            // Force autoplay for hero background video on iOS
+            function initHeroVideo() {
+                const heroVideo = document.getElementById('hero-background-video');
+                if (heroVideo) {
+                    // Set video properties for iOS
+                    heroVideo.setAttribute('playsinline', '');
+                    heroVideo.setAttribute('webkit-playsinline', '');
+                    heroVideo.muted = true;
+                    heroVideo.loop = true;
+                    
+                    // Force play on iOS
+                    const playPromise = heroVideo.play();
+                    if (playPromise !== undefined) {
+                        playPromise.catch(error => {
+                            // If autoplay fails, try again on user interaction
+                            const tryPlay = () => {
+                                heroVideo.play().catch(() => {});
+                                document.removeEventListener('touchstart', tryPlay);
+                                document.removeEventListener('scroll', tryPlay);
+                            };
+                            document.addEventListener('touchstart', tryPlay, { once: true, passive: true });
+                            document.addEventListener('scroll', tryPlay, { once: true, passive: true });
+                        });
+                    }
+                    
+                    // Ensure video continues playing if paused
+                    heroVideo.addEventListener('pause', function() {
+                        if (!document.hidden) {
+                            this.play().catch(() => {});
+                        }
+                    });
+                }
+            }
+            
             // Enhance video playback experience
             document.addEventListener('DOMContentLoaded', function() {
+                initHeroVideo();
                 const videos = document.querySelectorAll('.video-player');
                 videos.forEach(video => {
                     // Ensure loop is set
