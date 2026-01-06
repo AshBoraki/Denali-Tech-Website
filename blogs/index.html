@@ -432,6 +432,16 @@
             border-color: var(--accent-primary);
             background: rgba(255, 255, 255, 0.08);
         }
+
+        :root[data-theme='light'] .search-box input,
+        body.light-theme .search-box input {
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        :root[data-theme='light'] .search-box input:focus,
+        body.light-theme .search-box input:focus {
+            background: rgba(0, 0, 0, 0.08);
+        }
         
         .search-box::before {
             content: "🔍";
