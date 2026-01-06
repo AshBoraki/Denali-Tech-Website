@@ -470,6 +470,11 @@
             cursor: pointer;
             transition: all var(--transition);
         }
+
+        :root[data-theme='light'] .filter-btn,
+        body.light-theme .filter-btn {
+            background: rgba(0, 0, 0, 0.05);
+        }
         
         .filter-btn:hover,
         .filter-btn.active {
