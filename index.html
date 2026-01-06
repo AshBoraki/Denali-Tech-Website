@@ -528,12 +528,36 @@
         </div>
     </section>
     <style>
-        @media (hover: hover) and (pointer: fine) {
+            @media (hover: hover) and (pointer: fine) {
             .stat-card:hover {
                 transform: translateY(-5px);
                 border-color: var(--accent-primary);
                 box-shadow: var(--shadow-glow);
                 background: rgba(255,255,255,0.05);
+            }
+        }
+        
+        /* Make stats section more compact on mobile */
+        @media (max-width: 768px) {
+            .stats-section {
+                padding: 40px 4% 30px !important;
+            }
+            .stats-grid {
+                gap: 1rem !important;
+            }
+            .stat-card {
+                padding: 1rem 0.75rem !important;
+            }
+            .stat-number {
+                font-size: clamp(1.8rem, 4vw, 2.2rem) !important;
+                margin-bottom: 0.25rem !important;
+            }
+            .stat-label {
+                font-size: 0.85rem !important;
+            }
+            .stat-detail {
+                font-size: 0.75rem !important;
+                margin-top: 0.1rem !important;
             }
         }
     </style>
