@@ -605,7 +605,7 @@
         <div class="container">
             <div class="section-header">
                 <h2>See Smart Home Technology in Action</h2>
-                <p>Watch how we transform homes with cutting-edge automation and entertainment systems. Click play to see our work!</p>
+                <p>Watch how we transform homes with cutting-edge automation and entertainment systems. See our work in action!</p>
             </div>
             <div class="video-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem; margin-top: 2rem; max-width: 1400px; margin-left: auto; margin-right: auto;">
                 <div class="video-card" style="background: rgba(255,255,255,0.02); border: 2px solid var(--border-color); border-radius: 20px; overflow: hidden; position: relative; box-shadow: var(--shadow-subtle);">
@@ -624,7 +624,7 @@
                             <track kind="captions" src="" label="English" srclang="en" default>
                             Your browser does not support the video tag.
                         </video>
-                        <div class="play-indicator" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80px; height: 80px; background: rgba(249,115,22,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; pointer-events: none; opacity: 0; transition: opacity 0.3s ease; z-index: 2;">
+                        <div class="play-indicator" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80px; height: 80px; background: rgba(249,115,22,0.9); border-radius: 50%; display: none; align-items: center; justify-content: center; pointer-events: none; opacity: 0; transition: opacity 0.3s ease; z-index: 2;">
                             <svg width="32" height="32" viewBox="0 0 24 24" fill="white" aria-hidden="true">
                                 <path d="M8 5v14l11-7z"/>
                             </svg>
@@ -764,7 +764,7 @@
                 -webkit-tap-highlight-color: transparent;
             }
             .video-card:hover .play-indicator {
-                opacity: 1;
+                opacity: 0;
             }
             /* Hide all video controls */
             .video-player::-webkit-media-controls-panel {
