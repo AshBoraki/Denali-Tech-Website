@@ -91,6 +91,8 @@
             --font-main: 'Inter', system-ui, sans-serif;
             --font-heading: 'Poppins', system-ui, sans-serif;
             --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --hamburger-color-dark: #ffffff;
+            --hamburger-color-light: #0f172a;
         }
         
         :root[data-theme='light'],
@@ -245,7 +247,7 @@
             display: block;
             width: 25px;
             height: 3px;
-            background: var(--text-primary);
+            background: var(--hamburger-color-dark);
             border-radius: 3px;
             transition: all var(--transition);
         }
@@ -640,6 +642,8 @@
                 padding: 6px;
                 min-width: 44px;
                 min-height: 44px;
+                justify-content: center;
+                align-items: center;
             }
             
             .menu-toggle span {
