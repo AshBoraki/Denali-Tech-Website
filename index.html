@@ -736,13 +736,17 @@
             .google-profile-link:focus,
             .service-area-toggle-btn:focus,
             .logo:focus,
-            .nav-links a:focus,
             .footer-column a:focus,
             .social-icon:focus,
             .contact-item:focus {
                 outline: 3px solid var(--accent-primary);
                 outline-offset: 3px;
                 border-radius: 6px;
+            }
+            
+            /* Remove outline on mouse clicks - only show for keyboard navigation */
+            .nav-links a:focus:not(:focus-visible) {
+                outline: none;
             }
             .video-card {
                 position: relative;
