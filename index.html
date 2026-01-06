@@ -284,7 +284,7 @@
             }
         }
         
-        /* Prevent stats section from trapping scroll events on mobile */
+        /* Prevent stats section from trapping scroll events on mobile - Android specific fix */
         @media (max-width: 768px) {
             .stats-section {
                 overflow: visible !important;
@@ -292,11 +292,10 @@
                 overflow-x: hidden !important;
                 height: auto !important;
                 max-height: none !important;
-                touch-action: pan-y !important;
+                touch-action: pan-y pinch-zoom !important;
                 -webkit-overflow-scrolling: auto !important;
-                position: static !important;
-                transform: none !important;
-                will-change: auto !important;
+                overscroll-behavior: none !important;
+                -webkit-overflow-scrolling: touch !important;
             }
             .stats-section > div[style*="position: absolute"] {
                 display: none !important;
@@ -304,23 +303,35 @@
             .stats-section *, 
             .stats-grid, .stats-grid *,
             .stat-card, .stat-card *,
-            .util-bg-card-sm, .util-bg-card-sm * {
-                touch-action: pan-y !important;
+            .util-bg-card-sm, .util-bg-card-sm *,
+            .stat-number, .stat-label, .stat-detail {
+                touch-action: pan-y pinch-zoom !important;
                 overflow: visible !important;
                 -webkit-overflow-scrolling: auto !important;
-                pointer-events: auto !important;
-                position: static !important;
-                transform: none !important;
+                overscroll-behavior: none !important;
+                -webkit-user-select: none !important;
+                user-select: none !important;
+                -webkit-touch-callout: none !important;
             }
             .stats-grid {
                 overflow: visible !important;
-                touch-action: pan-y !important;
-                position: static !important;
+                touch-action: pan-y pinch-zoom !important;
+                overscroll-behavior: none !important;
             }
             .stat-card {
                 overflow: visible !important;
-                touch-action: pan-y !important;
-                position: static !important;
+                touch-action: pan-y pinch-zoom !important;
+                overscroll-behavior: none !important;
+                -webkit-user-select: none !important;
+                user-select: none !important;
+            }
+        }
+        
+        /* Additional Android-specific fixes */
+        @media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 1) {
+            .stats-section {
+                -webkit-transform: translateZ(0) !important;
+                transform: translateZ(0) !important;
             }
         }
     </style>
@@ -1990,14 +2001,27 @@
                 if (window.innerWidth <= 768) {
                     const sections = document.querySelectorAll('section');
                     sections.forEach(section => {
-                        // Specifically fix stats section
+                        // Specifically fix stats section for Android
                         if (section.classList.contains('stats-section')) {
                             section.style.overflow = 'visible';
                             section.style.overflowY = 'visible';
                             section.style.overflowX = 'hidden';
                             section.style.height = 'auto';
                             section.style.maxHeight = 'none';
-                            section.style.touchAction = 'pan-y';
+                            section.style.touchAction = 'pan-y pinch-zoom';
+                            section.style.overscrollBehavior = 'none';
+                            section.style.webkitOverflowScrolling = 'auto';
+                            // Remove any transform that might create a new stacking context
+                            section.style.transform = 'translateZ(0)';
+                            section.style.webkitTransform = 'translateZ(0)';
+                            
+                            // Fix all children
+                            const children = section.querySelectorAll('*');
+                            children.forEach(child => {
+                                child.style.touchAction = 'pan-y pinch-zoom';
+                                child.style.overscrollBehavior = 'none';
+                                child.style.webkitOverflowScrolling = 'auto';
+                            });
                         }
                         // Remove overflow from inline styles only
                         const style = section.getAttribute('style');
