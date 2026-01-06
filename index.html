@@ -425,6 +425,20 @@
             <div></div>
             <div id="particles-js"></div>
         </div>
+        <style>
+            /* Position video to start below header */
+            .hero-background {
+                top: var(--header-height) !important;
+                height: calc(100% - var(--header-height)) !important;
+            }
+            
+            @media (max-width: 768px) {
+                .hero-background {
+                    top: var(--mobile-header-height) !important;
+                    height: calc(100% - var(--mobile-header-height)) !important;
+                }
+            }
+        </style>
         <div class="hero-content">
             <h1>We Make Your Home Smart & Simple</h1>
             <div class="typewriter" id="typewriter"><span class="typewriter-content"></span></div>
