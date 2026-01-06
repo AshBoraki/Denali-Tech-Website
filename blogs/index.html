@@ -635,11 +635,11 @@
         
         @media (max-width: 768px) {
             .header {
-                min-height: 70px;
+                min-height: var(--mobile-header-height);
             }
             
             .header .container {
-                height: 70px;
+                height: var(--mobile-header-height);
                 padding: 0 1rem;
                 gap: 1rem;
                 display: flex;
@@ -778,20 +778,20 @@
     <!-- Header -->
     <header class="header">
         <div class="container">
-            <a href="/" class="logo" title="Denali Tech">
-                <picture>
-                    <source srcset="../Video/logo.webp 1x" type="image/webp">
-                    <img src="../Video/logo.JPG" alt="Denali Tech Logo" loading="eager" width="56" height="40" style="width: 56px; height: 40px; margin-right: 6px; object-fit: cover; object-position: 40% center; border-radius: 10px;" fetchpriority="high">
-                </picture>
-                <span class="logo-text">Denali Tech</span>
-            </a>
-            <nav>
+            <nav class="nav">
+                <a href="/" class="logo" title="Denali Tech">
+                    <picture>
+                        <source srcset="../Video/logo.webp 1x" type="image/webp">
+                        <img src="../Video/logo.JPG" alt="Denali Tech Logo" loading="eager" width="56" height="40" style="width: 56px; height: 40px; margin-right: 6px; object-fit: cover; object-position: 40% center; border-radius: 10px;" fetchpriority="high">
+                    </picture>
+                    <span class="logo-text">Denali Tech</span>
+                </a>
                 <ul class="nav-links" id="navLinks">
                     <li><a href="/">Home</a></li>
-                    <li><a href="/services/">Services</a></li>
+                    <li><a href="/services/">What We Do</a></li>
                     <li><a href="/projects/">Projects</a></li>
-                    <li><a href="/blogs/">Blog</a></li>
-                    <li><a href="/about/">About</a></li>
+                    <li><a href="/about/">About Us</a></li>
+                    <li><a href="/blogs/" style="color: var(--accent-primary);">Blog</a></li>
                     <li><a href="/contact/">Contact</a></li>
                 </ul>
             </nav>
