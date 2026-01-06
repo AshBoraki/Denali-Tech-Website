@@ -1980,6 +1980,15 @@
                 if (window.innerWidth <= 768) {
                     const sections = document.querySelectorAll('section');
                     sections.forEach(section => {
+                        // Specifically fix stats section
+                        if (section.classList.contains('stats-section')) {
+                            section.style.overflow = 'visible';
+                            section.style.overflowY = 'visible';
+                            section.style.overflowX = 'hidden';
+                            section.style.height = 'auto';
+                            section.style.maxHeight = 'none';
+                            section.style.touchAction = 'pan-y';
+                        }
                         // Remove overflow from inline styles only
                         const style = section.getAttribute('style');
                         if (style && style.includes('overflow')) {
