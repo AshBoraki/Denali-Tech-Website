@@ -1328,7 +1328,7 @@
                 window.__currentTheme = theme;
             };
             const savedTheme = localStorage.getItem(storageKey);
-            const initialTheme = savedTheme === 'dark' ? 'dark' : 'light';
+            const initialTheme = savedTheme === 'light' ? 'light' : 'dark';
             applyTheme(initialTheme);
             window.__setTheme = (theme) => {
                 localStorage.setItem(storageKey, theme);
