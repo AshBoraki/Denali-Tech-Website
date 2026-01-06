@@ -283,6 +283,17 @@
                 -webkit-overflow-scrolling: touch !important;
             }
         }
+        
+        /* Prevent stats section from trapping scroll events on mobile */
+        @media (max-width: 768px) {
+            .stats-section, .stats-section *, 
+            .stats-grid, .stats-grid *,
+            .stat-card, .stat-card * {
+                touch-action: pan-y !important;
+                overflow: visible !important;
+                -webkit-overflow-scrolling: auto !important;
+            }
+        }
     </style>
     
     <!-- Breadcrumb Schema -->
