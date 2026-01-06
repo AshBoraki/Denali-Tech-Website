@@ -286,12 +286,31 @@
         
         /* Prevent stats section from trapping scroll events on mobile */
         @media (max-width: 768px) {
-            .stats-section, .stats-section *, 
+            .stats-section {
+                overflow: visible !important;
+                overflow-y: visible !important;
+                overflow-x: hidden !important;
+                height: auto !important;
+                max-height: none !important;
+                touch-action: pan-y !important;
+                -webkit-overflow-scrolling: auto !important;
+            }
+            .stats-section *, 
             .stats-grid, .stats-grid *,
-            .stat-card, .stat-card * {
+            .stat-card, .stat-card *,
+            .util-bg-card-sm, .util-bg-card-sm * {
                 touch-action: pan-y !important;
                 overflow: visible !important;
                 -webkit-overflow-scrolling: auto !important;
+                pointer-events: auto !important;
+            }
+            .stats-grid {
+                overflow: visible !important;
+                touch-action: pan-y !important;
+            }
+            .stat-card {
+                overflow: visible !important;
+                touch-action: pan-y !important;
             }
         }
     </style>
