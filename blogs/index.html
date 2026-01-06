@@ -139,6 +139,12 @@
             width: 100%;
             transition: background var(--transition), border-color var(--transition), box-shadow var(--transition);
         }
+
+        :root[data-theme='light'] .header,
+        body.light-theme .header {
+            background: rgba(249, 250, 251, 0.98);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+        }
         
         .header .container {
             max-width: 1200px;
@@ -396,6 +402,11 @@
             background: rgba(255, 255, 255, 0.03);
             border-radius: 12px;
             border: 1px solid var(--border-color);
+        }
+
+        :root[data-theme='light'] .blog-controls,
+        body.light-theme .blog-controls {
+            background: rgba(0, 0, 0, 0.03);
         }
         
         .search-box {
