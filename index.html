@@ -540,24 +540,27 @@
         /* Make stats section more compact on mobile */
         @media (max-width: 768px) {
             .stats-section {
-                padding: 40px 4% 30px !important;
+                padding: 30px 4% 20px !important;
             }
             .stats-grid {
-                gap: 1rem !important;
+                gap: 0.75rem !important;
+                grid-template-columns: repeat(2, 1fr) !important;
             }
-            .stat-card {
-                padding: 1rem 0.75rem !important;
+            .stat-card, .util-p-1-5 {
+                padding: 0.75rem 0.5rem !important;
             }
             .stat-number {
-                font-size: clamp(1.8rem, 4vw, 2.2rem) !important;
-                margin-bottom: 0.25rem !important;
+                font-size: clamp(1.5rem, 5vw, 2rem) !important;
+                margin-bottom: 0.2rem !important;
+                line-height: 1 !important;
             }
             .stat-label {
-                font-size: 0.85rem !important;
+                font-size: 0.8rem !important;
+                margin-bottom: 0 !important;
             }
             .stat-detail {
-                font-size: 0.75rem !important;
-                margin-top: 0.1rem !important;
+                font-size: 0.7rem !important;
+                margin-top: 0.05rem !important;
             }
         }
     </style>
