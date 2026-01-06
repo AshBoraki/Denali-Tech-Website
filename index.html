@@ -732,12 +732,18 @@
             }
             .video-card {
                 position: relative;
+                touch-action: pan-y !important;
             }
             .video-wrapper {
                 position: relative;
+                touch-action: pan-y !important;
             }
             .video-player {
                 border-radius: 16px 16px 0 0;
+                touch-action: pan-y !important;
+                -webkit-user-select: none;
+                user-select: none;
+                -webkit-tap-highlight-color: transparent;
             }
             .video-card:hover .play-indicator {
                 opacity: 1;
@@ -777,10 +783,21 @@
                 display: none !important;
             }
             @media (hover: hover) and (pointer: fine) {
-                .video-card:hover {
-                    transform: translateY(-8px);
-                    border-color: var(--accent-primary);
-                    box-shadow: var(--shadow-glow);
+                @media (hover: hover) and (pointer: fine) {
+                    .video-card:hover {
+                        transform: translateY(-8px);
+                        border-color: var(--accent-primary);
+                        box-shadow: var(--shadow-glow);
+                    }
+                }
+                
+                @media (hover: none) and (pointer: coarse) {
+                    .video-card:hover {
+                        transform: none;
+                    }
+                    .video-card:active {
+                        transform: scale(0.98);
+                    }
                 }
             }
             @media (max-width: 768px) {
