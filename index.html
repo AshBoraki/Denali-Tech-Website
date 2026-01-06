@@ -246,7 +246,7 @@
         }
     </style>
     
-    <!-- Mobile Touch Scroll Fix - Prevents sections from being dragged -->
+    <!-- Mobile Touch Scroll Fix - Prevents sections from being dragged and scroll lock -->
     <style>
         /* Prevent unwanted drag behavior on mobile while scrolling */
         @media (max-width: 768px) {
@@ -259,11 +259,30 @@
                 user-drag: none !important;
             }
             
-            /* Force vertical scroll only on containers and sections */
+            /* Force vertical scroll only on containers and sections - prevent scroll lock */
             section, main, article, div.container, div.section-header, 
             div.services-grid, div.why-grid, div.testimonials-grid,
             div.projects-showcase-grid, div.blog-grid, div.stats-grid,
             div.service-area-grid, div.footer-main-grid {
+                touch-action: pan-y !important;
+                overflow: visible !important;
+                overscroll-behavior: none !important;
+            }
+            
+            /* Prevent individual cards from capturing scroll events */
+            .service-card, .testimonial-card, .project-showcase-card, 
+            .video-card, .blog-card, .pricing-card, .stat-card, 
+            .why-card, .faq-item-quick, .process-step-card, 
+            .brand-showcase-item, .partner-badge {
+                touch-action: pan-y !important;
+                overflow: visible !important;
+                overscroll-behavior: none !important;
+                -webkit-overflow-scrolling: auto !important;
+            }
+            
+            /* Ensure cards don't create scroll containers */
+            .service-card > *, .testimonial-card > *, .project-showcase-card > *,
+            .video-card > *, .blog-card > *, .pricing-card > * {
                 touch-action: pan-y !important;
             }
             
@@ -271,16 +290,27 @@
             body {
                 overscroll-behavior-y: contain !important;
                 overscroll-behavior-x: none !important;
+                touch-action: pan-y pinch-zoom !important;
             }
             
             html {
                 overscroll-behavior-y: contain !important;
                 overscroll-behavior-x: none !important;
+                touch-action: pan-y pinch-zoom !important;
             }
             
             /* Ensure smooth scrolling on touch devices */
             body {
                 -webkit-overflow-scrolling: touch !important;
+            }
+            
+            /* Prevent any nested scrolling containers */
+            * {
+                overscroll-behavior-y: none !important;
+            }
+            
+            html, body {
+                overscroll-behavior-y: contain !important;
             }
         }
     </style>
