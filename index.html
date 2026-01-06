@@ -826,17 +826,33 @@
                     margin: 0 !important;
                     box-sizing: border-box !important;
                     overflow: hidden !important;
+                    touch-action: pan-y !important;
+                    transform: none !important;
+                    transition: none !important;
                 }
+                
+                .video-card:active {
+                    transform: scale(0.98) !important;
+                }
+                
                 .video-wrapper {
                     width: 100% !important;
                     max-width: 100% !important;
                     overflow: hidden !important;
+                    touch-action: pan-y !important;
                 }
-                .video-wrapper video {
+                
+                .video-wrapper video,
+                .video-player {
                     width: 100% !important;
                     max-width: 100% !important;
                     height: auto !important;
                     object-fit: contain !important;
+                    touch-action: pan-y !important;
+                    pointer-events: auto !important;
+                    -webkit-user-select: none !important;
+                    user-select: none !important;
+                    -webkit-tap-highlight-color: transparent !important;
                 }
             }
             /* Ensure videos are visible and playable */
