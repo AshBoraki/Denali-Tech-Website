@@ -157,17 +157,41 @@
             align-items: center;
             gap: 0.75rem;
             font-family: var(--font-heading);
-            font-weight: 700;
-            font-size: 1.5rem;
+            font-weight: 600;
+            font-size: clamp(1.4rem, 1.8vw, 1.65rem);
             color: var(--text-primary);
             text-decoration: none;
+            padding: 0.25rem 0.5rem;
+            margin-top: 0;
+            border-radius: 0;
+            transition: color var(--transition), background var(--transition), box-shadow var(--transition), transform var(--transition);
+        }
+        
+        .logo:hover {
+            transform: translateY(-1px);
+            background: rgba(249, 115, 22, 0.12);
+            box-shadow: 0 8px 24px rgba(249, 115, 22, 0.25);
         }
         
         .logo img {
             width: 56px;
             height: 40px;
             object-fit: cover;
+            object-position: 40% center;
             border-radius: 10px;
+            box-shadow: 0 6px 16px rgba(10, 13, 24, 0.25);
+            transition: transform var(--transition), box-shadow var(--transition);
+            margin-right: 6px;
+        }
+        
+        .logo:hover img {
+            transform: scale(1.04);
+            box-shadow: 0 10px 22px rgba(249, 115, 22, 0.35);
+        }
+        
+        .logo-text {
+            letter-spacing: 0.02em;
+            font-weight: 600;
         }
         
         .nav-links {
@@ -552,6 +576,43 @@
             .header .container {
                 height: 70px;
                 padding: 0 1rem;
+                gap: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            
+            .nav {
+                gap: 1rem;
+                justify-content: space-between;
+            }
+            
+            .logo {
+                padding: 4px 8px;
+                font-size: clamp(1.05rem, 5vw, 1.25rem);
+                margin-top: 0.2rem;
+            }
+            
+            .logo img {
+                width: 56px;
+                height: 40px;
+                margin-right: 6px;
+            }
+            
+            .logo-text {
+                display: inline;
+            }
+            
+            .menu-toggle {
+                display: flex;
+                padding: 6px;
+                min-width: 44px;
+                min-height: 44px;
+            }
+            
+            .menu-toggle span {
+                width: 25px;
+                height: 3px;
             }
             
             .blog-listing-container {
@@ -569,10 +630,6 @@
             
             .blog-grid {
                 grid-template-columns: 1fr;
-            }
-            
-            .menu-toggle {
-                display: flex;
             }
 
             .nav-links {
