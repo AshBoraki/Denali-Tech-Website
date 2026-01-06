@@ -284,54 +284,10 @@
             }
         }
         
-        /* Prevent stats section from trapping scroll events on mobile - Android specific fix */
+        /* Hide stats section on mobile to avoid scroll issues */
         @media (max-width: 768px) {
             .stats-section {
-                overflow: visible !important;
-                overflow-y: visible !important;
-                overflow-x: hidden !important;
-                height: auto !important;
-                max-height: none !important;
-                touch-action: pan-y pinch-zoom !important;
-                -webkit-overflow-scrolling: auto !important;
-                overscroll-behavior: none !important;
-                -webkit-overflow-scrolling: touch !important;
-            }
-            .stats-section > div[style*="position: absolute"] {
                 display: none !important;
-            }
-            .stats-section *, 
-            .stats-grid, .stats-grid *,
-            .stat-card, .stat-card *,
-            .util-bg-card-sm, .util-bg-card-sm *,
-            .stat-number, .stat-label, .stat-detail {
-                touch-action: pan-y pinch-zoom !important;
-                overflow: visible !important;
-                -webkit-overflow-scrolling: auto !important;
-                overscroll-behavior: none !important;
-                -webkit-user-select: none !important;
-                user-select: none !important;
-                -webkit-touch-callout: none !important;
-            }
-            .stats-grid {
-                overflow: visible !important;
-                touch-action: pan-y pinch-zoom !important;
-                overscroll-behavior: none !important;
-            }
-            .stat-card {
-                overflow: visible !important;
-                touch-action: pan-y pinch-zoom !important;
-                overscroll-behavior: none !important;
-                -webkit-user-select: none !important;
-                user-select: none !important;
-            }
-        }
-        
-        /* Additional Android-specific fixes */
-        @media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 1) {
-            .stats-section {
-                -webkit-transform: translateZ(0) !important;
-                transform: translateZ(0) !important;
             }
         }
     </style>
