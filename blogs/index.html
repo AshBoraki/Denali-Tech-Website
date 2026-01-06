@@ -1019,8 +1019,35 @@
         // Initialize on page load
         loadBlogData();
 
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle-switch');
+        const getCurrentTheme = () => document.body.classList.contains('light-theme') ? 'light' : 'dark';
+        const updateTheme = (theme) => {
+            if (typeof window.__setTheme === 'function') {
+                window.__setTheme(theme);
+            } else {
+                const isLight = theme === 'light';
+                document.body.classList.toggle('light-theme', isLight);
+                document.documentElement.setAttribute('data-theme', theme);
+                localStorage.setItem('theme', theme);
+            }
+            if (themeToggle) {
+                themeToggle.setAttribute('aria-checked', theme === 'light');
+            }
+        };
+        if (themeToggle) {
+            themeToggle.setAttribute('aria-checked', getCurrentTheme() === 'light');
+            themeToggle.addEventListener('click', () => {
+                const newTheme = getCurrentTheme() === 'light' ? 'dark' : 'light';
+                updateTheme(newTheme);
+            });
+            themeToggle.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') themeToggle.click();
+            });
+        }
+
         // Mobile Menu Toggle
-        const menuToggle = document.getElementById('menuToggle');
+        const menuToggle = document.getElementById('menu-toggle');
         const navLinks = document.getElementById('navLinks');
         if (menuToggle && navLinks) {
             menuToggle.addEventListener('click', () => {
