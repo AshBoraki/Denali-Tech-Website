@@ -2306,6 +2306,7 @@
 
             // Interactive Canvas Animation
             const canvas = document.getElementById('interactive-canvas');
+            if (!canvas) return; // Exit early if canvas doesn't exist
             const ctx = canvas.getContext('2d');
         let particles = [];
         let mouse = { x: null, y: null, radius: 100 };
