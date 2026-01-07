@@ -2313,8 +2313,11 @@
             }
 
             // Enhanced Mobile Menu Toggle
+            console.log('[PROJECTS] Starting mobile menu initialization...');
             const menuToggle = document.getElementById('menuToggle');
             const navLinks = document.getElementById('navLinks');
+            console.log('[PROJECTS] Menu toggle found:', !!menuToggle);
+            console.log('[PROJECTS] Nav links found:', !!navLinks);
             
             // Create backdrop overlay
             let backdrop = document.querySelector('.mobile-menu-backdrop');
@@ -2322,24 +2325,42 @@
                 backdrop = document.createElement('div');
                 backdrop.className = 'mobile-menu-backdrop';
                 document.body.appendChild(backdrop);
+                console.log('[PROJECTS] Created backdrop overlay');
+            } else {
+                console.log('[PROJECTS] Backdrop already exists');
             }
             
             function openMenu() {
-                if (navLinks) navLinks.classList.add('active');
-                if (menuToggle) menuToggle.classList.add('active');
-                backdrop.classList.add('active');
+                console.log('[PROJECTS] Opening menu...');
+                if (navLinks) {
+                    navLinks.classList.add('active');
+                    console.log('[PROJECTS] Added active class to navLinks');
+                }
+                if (menuToggle) {
+                    menuToggle.classList.add('active');
+                    console.log('[PROJECTS] Added active class to menuToggle');
+                }
+                if (backdrop) {
+                    backdrop.classList.add('active');
+                    console.log('[PROJECTS] Added active class to backdrop');
+                }
                 document.body.classList.add('menu-open');
+                console.log('[PROJECTS] Menu opened successfully');
             }
             
             function closeMenu() {
+                console.log('[PROJECTS] Closing menu...');
                 if (navLinks) navLinks.classList.remove('active');
                 if (menuToggle) menuToggle.classList.remove('active');
-                backdrop.classList.remove('active');
+                if (backdrop) backdrop.classList.remove('active');
                 document.body.classList.remove('menu-open');
+                console.log('[PROJECTS] Menu closed');
             }
             
             if (menuToggle && navLinks) {
+                console.log('[PROJECTS] Both elements found, attaching event listeners...');
                 menuToggle.addEventListener('click', (e) => {
+                    console.log('[PROJECTS] Menu button clicked!');
                     e.stopPropagation();
                     if (navLinks.classList.contains('active')) {
                         closeMenu();
@@ -2347,6 +2368,7 @@
                         openMenu();
                     }
                 });
+                console.log('[PROJECTS] Click event listener attached');
 
                 // Close menu when clicking backdrop
                 backdrop.addEventListener('click', () => {
