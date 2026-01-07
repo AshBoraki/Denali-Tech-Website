@@ -426,19 +426,54 @@
             <div id="particles-js"></div>
         </div>
         <style>
-            /* Position video to start below header */
+            /* Position video to start below header - Works on all screen sizes */
+            /* Base styles for all screens */
+            .hero-background {
+                position: absolute;
+                left: 0;
+                width: 100%;
+                overflow: hidden;
+                z-index: 0;
+                pointer-events: none;
+            }
+            
+            .hero-background video {
+                position: absolute;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                min-width: 100%;
+                min-height: 100%;
+                z-index: 0;
+            }
+            
+            /* Desktop screens (769px and above) */
             @media (min-width: 769px) {
                 .hero-background {
                     top: var(--header-height) !important;
                     height: calc(100vh - var(--header-height)) !important;
+                    max-height: calc(100vh - var(--header-height)) !important;
                 }
                 
                 .hero-background video {
                     top: 0 !important;
+                    max-width: 100vw !important;
                 }
             }
             
-            @media (max-width: 768px) {
+            /* Large desktop screens (1024px and above) */
+            @media (min-width: 1024px) {
+                .hero-background video {
+                    width: 100% !important;
+                    height: 100% !important;
+                    object-fit: cover !important;
+                }
+            }
+            
+            /* Tablet screens (481px to 768px) */
+            @media (min-width: 481px) and (max-width: 768px) {
                 .hero-background {
                     top: var(--mobile-header-height) !important;
                     height: calc(100vh - var(--mobile-header-height)) !important;
@@ -446,6 +481,35 @@
                 
                 .hero-background video {
                     top: 0 !important;
+                }
+            }
+            
+            /* Mobile screens (480px and below) */
+            @media (max-width: 480px) {
+                .hero-background {
+                    top: var(--mobile-header-height) !important;
+                    height: calc(100vh - var(--mobile-header-height)) !important;
+                    min-height: calc(100vh - var(--mobile-header-height)) !important;
+                    max-height: calc(100vh - var(--mobile-header-height)) !important;
+                }
+                
+                .hero-background video {
+                    top: 0 !important;
+                    min-height: 100% !important;
+                    min-width: 100% !important;
+                    max-width: 100vw !important;
+                }
+            }
+            
+            /* Landscape orientation on mobile/tablet */
+            @media (max-width: 768px) and (orientation: landscape) {
+                .hero-background {
+                    height: calc(100vh - var(--mobile-header-height)) !important;
+                }
+                
+                .hero-background video {
+                    object-fit: cover !important;
+                    object-position: center !important;
                 }
             }
         </style>
@@ -2484,4 +2548,5 @@
     <!-- Web3Forms hCaptcha Script (Zero-Config) -->
     <script src="https://web3forms.com/client/script.js" async defer></script>
 </body>
+</html>
 </html>
