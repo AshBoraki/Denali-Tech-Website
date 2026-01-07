@@ -293,6 +293,24 @@
                 touch-action: pan-y !important;
             }
             
+            /* Ensure header doesn't block scrolling on mobile */
+            .header,
+            .header * {
+                touch-action: pan-y !important;
+                pointer-events: auto !important;
+            }
+            
+            /* Allow scrolling through header area */
+            body {
+                touch-action: pan-y pinch-zoom !important;
+                -webkit-overflow-scrolling: touch !important;
+            }
+            
+            html {
+                touch-action: pan-y pinch-zoom !important;
+                -webkit-overflow-scrolling: touch !important;
+            }
+            
             /* Prevent pull-to-refresh and overscroll bounce */
             body {
                 overscroll-behavior-y: contain !important;
@@ -1961,6 +1979,33 @@
             }
             window.addEventListener('load', preventHorizontalScroll);
             window.addEventListener('resize', preventHorizontalScroll);
+        })();
+        
+        // Fix mobile header scroll blocking issue
+        (function() {
+            if (window.innerWidth <= 768) {
+                const header = document.querySelector('.header');
+                if (header) {
+                    // Ensure header doesn't block touch events
+                    header.style.touchAction = 'pan-y';
+                    header.style.pointerEvents = 'auto';
+                    
+                    // Allow scrolling through header area
+                    header.addEventListener('touchstart', function(e) {
+                        // Don't prevent default - allow scroll to work
+                    }, { passive: true });
+                    
+                    header.addEventListener('touchmove', function(e) {
+                        // Don't prevent default - allow scroll to work
+                    }, { passive: true });
+                    
+                    // Ensure body can scroll
+                    document.body.style.touchAction = 'pan-y pinch-zoom';
+                    document.body.style.overflowY = 'auto';
+                    document.documentElement.style.touchAction = 'pan-y pinch-zoom';
+                    document.documentElement.style.overflowY = 'auto';
+                }
+            }
         })();
         
         // Particles.js Configuration - Wait for script to load
