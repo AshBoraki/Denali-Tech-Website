@@ -1201,6 +1201,20 @@
                     heroVideo.muted = true;
                     heroVideo.loop = true;
                     
+                    // Prevent video from capturing touch events on mobile
+                    heroVideo.style.pointerEvents = 'none';
+                    heroVideo.style.touchAction = 'none';
+                    
+                    // Prevent all touch events from being captured by video on mobile
+                    if (window.innerWidth <= 768) {
+                        const preventVideoTouch = function(e) {
+                            e.stopPropagation();
+                        };
+                        heroVideo.addEventListener('touchstart', preventVideoTouch, { passive: true });
+                        heroVideo.addEventListener('touchmove', preventVideoTouch, { passive: true });
+                        heroVideo.addEventListener('touchend', preventVideoTouch, { passive: true });
+                    }
+                    
                     // Force play on iOS
                     const playPromise = heroVideo.play();
                     if (playPromise !== undefined) {
