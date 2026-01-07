@@ -80,9 +80,20 @@
     <link rel="canonical" href="https://www.denalitechs.com/">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/jpeg" href="Video/logo icon for web title .jpg">
-    <link rel="shortcut icon" type="image/jpeg" href="Video/logo icon for web title .jpg">
-    <link rel="apple-touch-icon" href="Video/logo icon for web title .jpg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="favicon-512x512.png">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Enhanced Meta Tags -->
+    <meta name="author" content="Denali Tech">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
     
     <!-- PERFORMANCE: Optimized Font Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -105,6 +116,10 @@
     
     <!-- Preconnect to CDN for faster resource loading -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="Video/logo.webp" as="image" type="image/webp" fetchpriority="high">
+    <link rel="preload" href="Video/logo.JPG" as="image" type="image/jpeg" fetchpriority="high">
     
     <base href="/">
     
@@ -478,6 +493,69 @@
         "https://www.linkedin.com/company/denali-tech-inc",
         "https://www.facebook.com/Denali.Tech",
         "https://www.instagram.com/denalitechs/"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "13",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    }
+    </script>
+    <!-- Review Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Denali Tech",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "13",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Sarah M."
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Denali Tech transformed our home into a smart home paradise. The installation was seamless, and the team was professional and knowledgeable. Couldn't be happier! They answered all our questions and made sure everything worked perfectly before leaving."
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Michael R."
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Best decision we made! The home theater system is incredible, and the whole home audio is amazing. They made everything so simple and easy to use. Our family movie nights are now a true experience. Worth every penny!"
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Jennifer L."
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Professional, reliable, and honest. They told us exactly what we needed without pushing unnecessary upgrades. The WiFi coverage is now perfect throughout our entire house. When we had a question months later, they came right out - no charge!"
+        }
       ]
     }
     </script>
@@ -733,7 +811,7 @@
                     <div class="project-image-wrapper" style="position: relative; width: 100%; padding-top: 75%; overflow: hidden; background: #000;">
                         <picture>
                             <source srcset="Video/Project showcases /zire egde screen and  prejector and MartinLogan .webp" type="image/webp">
-                            <img src="Video/Project showcases /zire egde screen and  prejector and MartinLogan .jpg" alt="Premium Fire Edge Theater with MartinLogan Speakers" loading="lazy" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                            <img src="Video/Project showcases /zire egde screen and  prejector and MartinLogan .jpg" alt="Premium Fire Edge Theater with MartinLogan Speakers" loading="lazy" width="800" height="600" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                         </picture>
                         <div class="project-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7)); opacity: 0; transition: opacity 0.3s ease;"></div>
                     </div>
@@ -747,7 +825,7 @@
                     <div class="project-image-wrapper" style="position: relative; width: 100%; padding-top: 75%; overflow: hidden; background: #000;">
                         <picture>
                             <source srcset="Video/Project showcases /Sound & Light Harmony.webp" type="image/webp">
-                            <img src="Video/Project showcases /Sound & Light Harmony.jpg" alt="Sound & Light Harmony Installation" loading="lazy" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                            <img src="Video/Project showcases /Sound & Light Harmony.jpg" alt="Sound & Light Harmony Installation" loading="lazy" width="800" height="600" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                         </picture>
                         <div class="project-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7)); opacity: 0; transition: opacity 0.3s ease;"></div>
                     </div>
@@ -761,7 +839,7 @@
                     <div class="project-image-wrapper" style="position: relative; width: 100%; padding-top: 75%; overflow: hidden; background: #000;">
                         <picture>
                             <source srcset="Video/Project showcases /Media Room_edited.webp" type="image/webp">
-                            <img src="Video/Project showcases /Media Room_edited.jpg" alt="Modern Media Room Installation" loading="lazy" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                            <img src="Video/Project showcases /Media Room_edited.jpg" alt="Modern Media Room Installation" loading="lazy" width="800" height="600" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                         </picture>
                         <div class="project-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7)); opacity: 0; transition: opacity 0.3s ease;"></div>
                     </div>
@@ -1380,37 +1458,37 @@
                 <div class="brand-showcase-item" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem 1rem; transition: all var(--transition); display: flex; align-items: center; justify-content: center; min-height: 100px; cursor: pointer;" onclick="window.location.href='/brands/'" onkeydown="if(event.key==='Enter') window.location.href='/brands/'" role="button" tabindex="0" aria-label="Control4 - Authorized Dealer">
                     <picture>
                         <source srcset="Video/Brands/Denali techControl4.webp" type="image/webp">
-                        <img src="Video/Brands/Denali techControl4.png" alt="Control4" loading="lazy" style="max-width: 100%; height: auto; max-height: 50px; object-fit: contain; filter: grayscale(0.3) brightness(0.95); transition: all var(--transition);">
+                        <img src="Video/Brands/Denali techControl4.png" alt="Control4" loading="lazy" width="150" height="50" style="max-width: 100%; height: auto; max-height: 50px; object-fit: contain; filter: grayscale(0.3) brightness(0.95); transition: all var(--transition);">
                     </picture>
                 </div>
                 <div class="brand-showcase-item" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem 1rem; transition: all var(--transition); display: flex; align-items: center; justify-content: center; min-height: 100px; cursor: pointer;" onclick="window.location.href='/brands/'" onkeydown="if(event.key==='Enter') window.location.href='/brands/'" role="button" tabindex="0" aria-label="Lutron">
                     <picture>
                         <source srcset="Video/Brands/Denali tech Lutron.webp" type="image/webp">
-                        <img src="Video/Brands/Denali tech Lutron.png" alt="Lutron" loading="lazy" style="max-width: 100%; height: auto; max-height: 50px; object-fit: contain; filter: grayscale(0.3) brightness(0.95); transition: all var(--transition);">
+                        <img src="Video/Brands/Denali tech Lutron.png" alt="Lutron" loading="lazy" width="150" height="50" style="max-width: 100%; height: auto; max-height: 50px; object-fit: contain; filter: grayscale(0.3) brightness(0.95); transition: all var(--transition);">
                     </picture>
                 </div>
                 <div class="brand-showcase-item" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem 1rem; transition: all var(--transition); display: flex; align-items: center; justify-content: center; min-height: 100px; cursor: pointer;" onclick="window.location.href='/brands/'" onkeydown="if(event.key==='Enter') window.location.href='/brands/'" role="button" tabindex="0" aria-label="Sonos">
                     <picture>
                         <source srcset="Video/Brands/Denali tech Sonos.webp" type="image/webp">
-                        <img src="Video/Brands/Denali tech Sonos.png" alt="Sonos" loading="lazy" style="max-width: 100%; height: auto; max-height: 50px; object-fit: contain; filter: grayscale(0.3) brightness(0.95); transition: all var(--transition);">
+                        <img src="Video/Brands/Denali tech Sonos.png" alt="Sonos" loading="lazy" width="150" height="50" style="max-width: 100%; height: auto; max-height: 50px; object-fit: contain; filter: grayscale(0.3) brightness(0.95); transition: all var(--transition);">
                     </picture>
                 </div>
                 <div class="brand-showcase-item" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem 1rem; transition: all var(--transition); display: flex; align-items: center; justify-content: center; min-height: 100px; cursor: pointer;" onclick="window.location.href='/brands/'" onkeydown="if(event.key==='Enter') window.location.href='/brands/'" role="button" tabindex="0" aria-label="Sony">
                     <picture>
                         <source srcset="Video/Brands/Denali tech Sony.webp" type="image/webp">
-                        <img src="Video/Brands/Denali tech Sony.png" alt="Sony" loading="lazy" style="max-width: 100%; height: auto; max-height: 50px; object-fit: contain; filter: grayscale(0.3) brightness(0.95); transition: all var(--transition);">
+                        <img src="Video/Brands/Denali tech Sony.png" alt="Sony" loading="lazy" width="150" height="50" style="max-width: 100%; height: auto; max-height: 50px; object-fit: contain; filter: grayscale(0.3) brightness(0.95); transition: all var(--transition);">
                     </picture>
                 </div>
                 <div class="brand-showcase-item" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem 1rem; transition: all var(--transition); display: flex; align-items: center; justify-content: center; min-height: 100px; cursor: pointer;" onclick="window.location.href='/brands/'" onkeydown="if(event.key==='Enter') window.location.href='/brands/'" role="button" tabindex="0" aria-label="KEF">
                     <picture>
                         <source srcset="Video/Brands/Denali tech KEF.webp" type="image/webp">
-                        <img src="Video/Brands/Denali tech KEF.png" alt="KEF" loading="lazy" style="max-width: 100%; height: auto; max-height: 50px; object-fit: contain; filter: grayscale(0.3) brightness(0.95); transition: all var(--transition);">
+                        <img src="Video/Brands/Denali tech KEF.png" alt="KEF" loading="lazy" width="150" height="50" style="max-width: 100%; height: auto; max-height: 50px; object-fit: contain; filter: grayscale(0.3) brightness(0.95); transition: all var(--transition);">
                     </picture>
                 </div>
                 <div class="brand-showcase-item" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem 1rem; transition: all var(--transition); display: flex; align-items: center; justify-content: center; min-height: 100px; cursor: pointer;" onclick="window.location.href='/brands/'" onkeydown="if(event.key==='Enter') window.location.href='/brands/'" role="button" tabindex="0" aria-label="URC">
                     <picture>
                         <source srcset="Video/URC_Logo_Black.webp" type="image/webp">
-                        <img src="Video/URC_Logo_Black.png" alt="URC" loading="lazy" style="max-width: 100%; height: auto; max-height: 50px; object-fit: contain; filter: grayscale(0.3) brightness(0.95); transition: all var(--transition);">
+                        <img src="Video/URC_Logo_Black.png" alt="URC" loading="lazy" width="150" height="50" style="max-width: 100%; height: auto; max-height: 50px; object-fit: contain; filter: grayscale(0.3) brightness(0.95); transition: all var(--transition);">
                     </picture>
                 </div>
                 <div class="brand-showcase-item" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.5rem 1rem; transition: all var(--transition); display: flex; align-items: center; justify-content: center; min-height: 100px; cursor: pointer; position: relative;" onclick="window.location.href='/brands/'" onkeydown="if(event.key==='Enter') window.location.href='/brands/'" role="button" tabindex="0" aria-label="View All Brands">
@@ -1617,7 +1695,7 @@
                         <div class="blog-image-wrapper" style="position: relative; width: 100%; padding-top: 56.25%; overflow: hidden; background: #000;">
                             <picture>
                                 <source srcset="Video/guide imges.webp" type="image/webp">
-                                <img src="Video/guide imges.webp" alt="Control4 Smart Home Control Devices and Remotes" loading="lazy" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                                <img src="Video/guide imges.webp" alt="Control4 Smart Home Control Devices and Remotes" loading="lazy" width="800" height="600" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                             </picture>
                         </div>
                         <div style="padding: 1.5rem;">
@@ -1633,7 +1711,7 @@
                         <div class="blog-image-wrapper" style="position: relative; width: 100%; padding-top: 56.25%; overflow: hidden; background: #000;">
                             <picture>
                                 <source srcset="Video/interviewing-av-tech.jpg" type="image/jpeg">
-                                <img src="Video/interviewing-av-tech.jpg" alt="How to Choose a Smart Home Installer" loading="lazy" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                                <img src="Video/interviewing-av-tech.jpg" alt="How to Choose a Smart Home Installer" loading="lazy" width="800" height="600" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                             </picture>
                         </div>
                         <div style="padding: 1.5rem;">
@@ -2686,6 +2764,20 @@
 
     <!-- Web3Forms hCaptcha Script (Zero-Config) -->
     <script src="https://web3forms.com/client/script.js" async defer></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(function(registration) {
+                        console.log('ServiceWorker registration successful');
+                    })
+                    .catch(function(err) {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
 </body>
-</html>
 </html>
