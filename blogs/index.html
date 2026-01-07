@@ -1235,7 +1235,7 @@
                 </ul>
             </nav>
             <div class="header-actions">
-                <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -1467,7 +1467,8 @@
         document.documentElement.setAttribute('data-theme', 'dark');
 
         // Enhanced Mobile Menu Toggle
-            const menuToggle = document.getElementById('menuToggle') || document.getElementById('menu-toggle');
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menuToggle');
             const navLinks = document.getElementById('navLinks');
             
             // Create backdrop overlay
@@ -1538,7 +1539,7 @@
                     }
                 });
             }
-        }
+        });
     </script>
     </main>
 </body>
