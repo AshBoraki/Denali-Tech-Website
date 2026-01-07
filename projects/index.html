@@ -2289,29 +2289,30 @@
     </button>
 
     <script>
-        // Set current year
-        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year
+            document.getElementById('current-year').textContent = new Date().getFullYear();
 
-        // Back to Top Button
-        const backToTop = document.getElementById('backToTop');
-        if (backToTop) {
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 300) {
-                    backToTop.classList.add('visible');
-                } else {
-                    backToTop.classList.remove('visible');
-                }
-            });
-
-            backToTop.addEventListener('click', () => {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
+            // Back to Top Button
+            const backToTop = document.getElementById('backToTop');
+            if (backToTop) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 300) {
+                        backToTop.classList.add('visible');
+                    } else {
+                        backToTop.classList.remove('visible');
+                    }
                 });
-            });
-        }
 
-        // Enhanced Mobile Menu Toggle
+                backToTop.addEventListener('click', () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+
+            // Enhanced Mobile Menu Toggle
             const menuToggle = document.getElementById('menuToggle') || document.getElementById('menu-toggle');
             const navLinks = document.getElementById('navLinks');
             
@@ -2382,64 +2383,47 @@
                         closeMenu();
                     }
                 });
-            });
-
-            // Close menu when clicking a link
-            navLinks.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('active');
-                    menuToggle.classList.remove('active');
-                });
-            });
-
-            // Close menu when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
-                    navLinks.classList.remove('active');
-                    menuToggle.classList.remove('active');
-                }
-            });
-        }
-
-        // Theme Toggle
-        const themeToggle = document.getElementById('theme-toggle-switch');
-        const getCurrentTheme = () => document.body.classList.contains('light-theme') ? 'light' : 'dark';
-        const updateTheme = (theme) => {
-            if (typeof window.__setTheme === 'function') {
-                window.__setTheme(theme);
-            } else {
-                const isLight = theme === 'light';
-                document.body.classList.toggle('light-theme', isLight);
-                document.documentElement.setAttribute('data-theme', theme);
-                localStorage.setItem('theme', theme);
             }
-            themeToggle.setAttribute('aria-checked', theme === 'light');
-        };
-        if (themeToggle) {
-            themeToggle.setAttribute('aria-checked', getCurrentTheme() === 'light');
-            themeToggle.addEventListener('click', () => {
-                const newTheme = getCurrentTheme() === 'light' ? 'dark' : 'light';
-                updateTheme(newTheme);
-            });
-            themeToggle.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter') themeToggle.click();
-            });
-        }
 
-        // Contact copy functionality
-        document.querySelectorAll('.contact-item[data-copy]').forEach(item => {
-            item.addEventListener('click', (e) => {
-                navigator.clipboard.writeText(item.dataset.copy).then(() => {
-                    if (item.classList.contains('copied')) return;
-                    item.classList.add('copied');
-                    setTimeout(() => item.classList.remove('copied'), 2000);
+            // Theme Toggle
+            const themeToggle = document.getElementById('theme-toggle-switch');
+            const getCurrentTheme = () => document.body.classList.contains('light-theme') ? 'light' : 'dark';
+            const updateTheme = (theme) => {
+                if (typeof window.__setTheme === 'function') {
+                    window.__setTheme(theme);
+                } else {
+                    const isLight = theme === 'light';
+                    document.body.classList.toggle('light-theme', isLight);
+                    document.documentElement.setAttribute('data-theme', theme);
+                    localStorage.setItem('theme', theme);
+                }
+                themeToggle.setAttribute('aria-checked', theme === 'light');
+            };
+            if (themeToggle) {
+                themeToggle.setAttribute('aria-checked', getCurrentTheme() === 'light');
+                themeToggle.addEventListener('click', () => {
+                    const newTheme = getCurrentTheme() === 'light' ? 'dark' : 'light';
+                    updateTheme(newTheme);
+                });
+                themeToggle.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') themeToggle.click();
+                });
+            }
+
+            // Contact copy functionality
+            document.querySelectorAll('.contact-item[data-copy]').forEach(item => {
+                item.addEventListener('click', (e) => {
+                    navigator.clipboard.writeText(item.dataset.copy).then(() => {
+                        if (item.classList.contains('copied')) return;
+                        item.classList.add('copied');
+                        setTimeout(() => item.classList.remove('copied'), 2000);
+                    });
                 });
             });
-        });
 
-        // Interactive Canvas Animation
-        const canvas = document.getElementById('interactive-canvas');
-        const ctx = canvas.getContext('2d');
+            // Interactive Canvas Animation
+            const canvas = document.getElementById('interactive-canvas');
+            const ctx = canvas.getContext('2d');
         let particles = [];
         let mouse = { x: null, y: null, radius: 100 };
 
