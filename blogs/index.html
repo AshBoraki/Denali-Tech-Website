@@ -247,6 +247,15 @@
             flex-shrink: 0;
         }
         
+        @media (min-width: 769px) {
+            /* Reserve space to match other pages that have theme toggle and call button */
+            /* This ensures nav-links align in the same position as other pages */
+            .header-actions {
+                min-width: 240px; /* Space for: theme toggle (54px) + gap (1rem/16px) + call button (~170px) */
+                justify-content: flex-end;
+            }
+        }
+        
         .nav-links {
             display: flex;
             align-items: center;
