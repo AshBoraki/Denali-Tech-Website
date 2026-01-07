@@ -646,7 +646,7 @@
     <!-- Hero Section -->
     <section class="hero" id="home" itemscope itemtype="https://schema.org/WebPage">
         <div class="hero-background">
-            <video id="hero-background-video" autoplay muted loop playsinline webkit-playsinline style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; object-fit: cover; object-position: center center; z-index: 0; opacity: 0.5; pointer-events: none; touch-action: none;">
+            <video id="hero-background-video" autoplay muted loop playsinline webkit-playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center; z-index: 0; opacity: 0.5; pointer-events: none; touch-action: none;">
                 <source src="Video/Denali tech smart home.mp4" type="video/mp4">
             </video>
             <div></div>
@@ -656,26 +656,26 @@
             /* Position video to start below header - Works on all screen sizes */
             /* Base styles for all screens */
             .hero-background {
-                position: fixed;
+                position: absolute;
                 top: 0;
                 left: 0;
                 width: 100%;
-                height: 100vh;
+                height: 100%;
                 overflow: hidden;
                 z-index: 0;
                 pointer-events: none;
             }
             
             .hero-background video {
-                position: fixed;
+                position: absolute;
                 top: 0;
                 left: 0;
                 width: 100%;
-                height: 100vh;
+                height: 100%;
                 object-fit: cover;
                 object-position: center center;
                 min-width: 100%;
-                min-height: 100vh;
+                min-height: 100%;
                 z-index: 0;
                 pointer-events: none !important;
                 touch-action: none !important;
@@ -687,15 +687,15 @@
             /* Desktop screens (769px and above) */
             @media (min-width: 769px) {
                 .hero-background {
-                    position: fixed !important;
-                    top: 0 !important;
-                    height: 100vh !important;
+                    position: absolute !important;
+                    top: var(--header-height) !important;
+                    height: calc(100vh - var(--header-height)) !important;
                 }
                 
                 .hero-background video {
-                    position: fixed !important;
+                    position: absolute !important;
                     top: 0 !important;
-                    height: 100vh !important;
+                    height: 100% !important;
                     width: 100% !important;
                     object-fit: cover !important;
                     object-position: center center !important;
@@ -706,7 +706,7 @@
             @media (min-width: 1024px) {
                 .hero-background video {
                     width: 100% !important;
-                    height: 100vh !important;
+                    height: 100% !important;
                     object-fit: cover !important;
                     object-position: center center !important;
                 }
@@ -715,15 +715,15 @@
             /* Tablet screens (481px to 768px) */
             @media (min-width: 481px) and (max-width: 768px) {
                 .hero-background {
-                    position: fixed !important;
-                    top: 0 !important;
-                    height: 100vh !important;
+                    position: absolute !important;
+                    top: var(--mobile-header-height) !important;
+                    height: calc(100vh - var(--mobile-header-height)) !important;
                 }
                 
                 .hero-background video {
-                    position: fixed !important;
+                    position: absolute !important;
                     top: 0 !important;
-                    height: 100vh !important;
+                    height: 100% !important;
                     width: 100% !important;
                 }
             }
@@ -731,17 +731,17 @@
             /* Mobile screens (480px and below) */
             @media (max-width: 480px) {
                 .hero-background {
-                    position: fixed !important;
-                    top: 0 !important;
-                    height: 100vh !important;
+                    position: absolute !important;
+                    top: var(--mobile-header-height) !important;
+                    height: calc(100vh - var(--mobile-header-height)) !important;
                 }
                 
                 .hero-background video {
-                    position: fixed !important;
+                    position: absolute !important;
                     top: 0 !important;
-                    height: 100vh !important;
+                    height: 100% !important;
                     width: 100% !important;
-                    min-height: 100vh !important;
+                    min-height: 100% !important;
                     object-fit: cover !important;
                     object-position: center center !important;
                 }
@@ -750,15 +750,15 @@
             /* Landscape orientation on mobile/tablet */
             @media (max-width: 768px) and (orientation: landscape) {
                 .hero-background {
-                    position: fixed !important;
-                    top: 0 !important;
-                    height: 100vh !important;
+                    position: absolute !important;
+                    top: var(--mobile-header-height) !important;
+                    height: calc(100vh - var(--mobile-header-height)) !important;
                 }
                 
                 .hero-background video {
-                    position: fixed !important;
+                    position: absolute !important;
                     top: 0 !important;
-                    height: 100vh !important;
+                    height: 100% !important;
                     object-fit: cover !important;
                     object-position: center center !important;
                 }
