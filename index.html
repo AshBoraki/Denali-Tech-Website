@@ -308,13 +308,18 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
+      "@type": ["LocalBusiness", "HomeImprovementContractor", "ElectronicsStore"],
       "name": "Denali Tech",
+      "legalName": "Denali Tech",
       "image": "https://www.denalitechs.com/Video/logo.JPG",
+      "logo": "https://www.denalitechs.com/Video/logo.JPG",
       "@id": "https://www.denalitechs.com/",
       "url": "https://www.denalitechs.com/",
       "telephone": "+1-312-439-7500",
       "email": "Hello@denalitechs.com",
+      "priceRange": "$$",
+      "currenciesAccepted": "USD",
+      "paymentAccepted": "Cash, Credit Card, Check",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Mt Prospect",
@@ -322,7 +327,56 @@
         "postalCode": "60056",
         "addressCountry": "US"
       },
-      "areaServed": "Chicago Metro Area",
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Chicago"
+        },
+        {
+          "@type": "City",
+          "name": "Mt Prospect"
+        },
+        {
+          "@type": "City",
+          "name": "Arlington Heights"
+        },
+        {
+          "@type": "City",
+          "name": "Schaumburg"
+        },
+        {
+          "@type": "City",
+          "name": "Evanston"
+        },
+        {
+          "@type": "City",
+          "name": "Skokie"
+        },
+        {
+          "@type": "City",
+          "name": "Glenview"
+        },
+        {
+          "@type": "City",
+          "name": "Niles"
+        },
+        {
+          "@type": "City",
+          "name": "Des Plaines"
+        },
+        {
+          "@type": "City",
+          "name": "Park Ridge"
+        },
+        {
+          "@type": "City",
+          "name": "Elk Grove Village"
+        },
+        {
+          "@type": "City",
+          "name": "Northbrook"
+        }
+      ],
       "sameAs": [
         "https://www.linkedin.com/company/denali-tech-inc",
         "https://www.facebook.com/Denali.Tech",
@@ -340,7 +394,91 @@
         "@type": "AggregateRating",
         "ratingValue": "5.0",
         "reviewCount": "13"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Smart Home Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Home Automation",
+              "description": "Complete smart home automation systems including Control4 and URC integration"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Home Theater Installation",
+              "description": "Professional home theater and media room design and installation"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "WiFi Networking",
+              "description": "Whole-home WiFi networking solutions to eliminate dead zones"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Security Camera Installation",
+              "description": "4K surveillance camera systems and video doorbell installation"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Smart Lighting",
+              "description": "Automated lighting control and Lutron system installation"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Motorized Shades",
+              "description": "Hunter Douglas and Lutron motorized window treatment installation"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Whole Home Audio",
+              "description": "Sonos and multi-room audio system installation"
+            }
+          }
+        ]
       }
+    }
+    </script>
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Denali Tech",
+      "url": "https://www.denalitechs.com/",
+      "logo": "https://www.denalitechs.com/Video/logo.JPG",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-312-439-7500",
+        "contactType": "Customer Service",
+        "areaServed": "US",
+        "availableLanguage": "English"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/company/denali-tech-inc",
+        "https://www.facebook.com/Denali.Tech",
+        "https://www.instagram.com/denalitechs/"
+      ]
     }
     </script>
 </head>
