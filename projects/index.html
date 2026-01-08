@@ -2180,11 +2180,9 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Enhanced Mobile Menu Toggle - MUST run first, before any early returns
-            const menuToggle = document.getElementById('menuToggle') || document.getElementById('menu-toggle');
+            // Enhanced Mobile Menu Toggle
+            const menuToggle = document.getElementById('menuToggle');
             const navLinks = document.getElementById('navLinks');
-            
-            console.log('Menu elements found:', { menuToggle: !!menuToggle, navLinks: !!navLinks });
             
             // Create backdrop overlay
             let backdrop = document.querySelector('.mobile-menu-backdrop');
@@ -2195,60 +2193,28 @@
             }
             
             function openMenu() {
-                console.log('Opening menu');
                 if (navLinks) navLinks.classList.add('active');
                 if (menuToggle) menuToggle.classList.add('active');
-                if (backdrop) backdrop.classList.add('active');
+                backdrop.classList.add('active');
                 document.body.classList.add('menu-open');
-                console.log('Menu opened, navLinks active:', navLinks?.classList.contains('active'));
             }
             
             function closeMenu() {
-                console.log('Closing menu');
                 if (navLinks) navLinks.classList.remove('active');
                 if (menuToggle) menuToggle.classList.remove('active');
-                if (backdrop) backdrop.classList.remove('active');
+                backdrop.classList.remove('active');
                 document.body.classList.remove('menu-open');
             }
             
             if (menuToggle && navLinks) {
-                console.log('Menu elements found:', { 
-                    menuToggle: !!menuToggle, 
-                    navLinks: !!navLinks,
-                    menuToggleId: menuToggle.id,
-                    menuToggleDisplay: window.getComputedStyle(menuToggle).display,
-                    menuToggleZIndex: window.getComputedStyle(menuToggle).zIndex,
-                    menuTogglePointerEvents: window.getComputedStyle(menuToggle).pointerEvents
-                });
-                
-                // Force pointer events and ensure button is clickable
-                menuToggle.style.pointerEvents = 'auto';
-                menuToggle.style.cursor = 'pointer';
-                menuToggle.style.zIndex = '10002';
-                menuToggle.setAttribute('tabindex', '0');
-                
-                const handleMenuToggle = (e) => {
-                    console.log('Menu toggle clicked!', e.type, e.target);
+                menuToggle.addEventListener('click', (e) => {
                     e.stopPropagation();
                     if (navLinks.classList.contains('active')) {
                         closeMenu();
                     } else {
                         openMenu();
                     }
-                };
-                
-                // Use multiple event types to ensure it works
-                menuToggle.onclick = handleMenuToggle;
-                menuToggle.addEventListener('click', handleMenuToggle);
-                menuToggle.addEventListener('touchend', handleMenuToggle);
-                
-                // Also handle via direct property
-                menuToggle.addEventListener('mousedown', (e) => {
-                    console.log('Menu toggle mousedown!');
-                    e.stopPropagation();
                 });
-                
-                console.log('Event listeners attached to menu toggle');
 
                 // Close menu when clicking backdrop
                 backdrop.addEventListener('click', () => {
