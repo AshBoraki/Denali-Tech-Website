@@ -2179,9 +2179,10 @@
     </button>
 
     <script>
-        // Enhanced Mobile Menu Toggle
+        // Footer Interactive Canvas
         document.addEventListener('DOMContentLoaded', function() {
-            const menuToggle = document.getElementById('menuToggle');
+            // Enhanced Mobile Menu Toggle - MUST run first, before any early returns
+            const menuToggle = document.getElementById('menuToggle') || document.getElementById('menu-toggle');
             const navLinks = document.getElementById('navLinks');
             
             // Create backdrop overlay
