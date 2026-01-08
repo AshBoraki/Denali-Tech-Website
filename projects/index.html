@@ -2174,7 +2174,10 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Set current year
-            document.getElementById('current-year').textContent = new Date().getFullYear();
+            const currentYearEl = document.getElementById('current-year');
+            if (currentYearEl) {
+                currentYearEl.textContent = new Date().getFullYear();
+            }
 
             // Back to Top Button
             const backToTop = document.getElementById('backToTop');
@@ -2208,16 +2211,16 @@
             }
             
             function openMenu() {
-                if (navLinks) navLinks.classList.add('active');
-                if (menuToggle) menuToggle.classList.add('active');
-                if (backdrop) backdrop.classList.add('active');
+                navLinks.classList.add('active');
+                menuToggle.classList.add('active');
+                backdrop.classList.add('active');
                 document.body.classList.add('menu-open');
             }
             
             function closeMenu() {
-                if (navLinks) navLinks.classList.remove('active');
-                if (menuToggle) menuToggle.classList.remove('active');
-                if (backdrop) backdrop.classList.remove('active');
+                navLinks.classList.remove('active');
+                menuToggle.classList.remove('active');
+                backdrop.classList.remove('active');
                 document.body.classList.remove('menu-open');
             }
             
