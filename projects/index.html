@@ -2179,34 +2179,42 @@
     </button>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Enhanced Mobile Menu Toggle
-            const menuToggle = document.getElementById('menuToggle');
-            const navLinks = document.getElementById('navLinks');
-            
-            // Create backdrop overlay
-            let backdrop = document.querySelector('.mobile-menu-backdrop');
-            if (!backdrop) {
-                backdrop = document.createElement('div');
-                backdrop.className = 'mobile-menu-backdrop';
-                document.body.appendChild(backdrop);
-            }
-            
-            function openMenu() {
-                if (navLinks) navLinks.classList.add('active');
-                if (menuToggle) menuToggle.classList.add('active');
-                backdrop.classList.add('active');
-                document.body.classList.add('menu-open');
-            }
-            
-            function closeMenu() {
-                if (navLinks) navLinks.classList.remove('active');
-                if (menuToggle) menuToggle.classList.remove('active');
-                backdrop.classList.remove('active');
-                document.body.classList.remove('menu-open');
-            }
-            
-            if (menuToggle && navLinks) {
+        // Enhanced Mobile Menu Toggle - Run immediately, don't wait for DOMContentLoaded
+        (function() {
+            function initMenu() {
+                const menuToggle = document.getElementById('menuToggle');
+                const navLinks = document.getElementById('navLinks');
+                
+                if (!menuToggle || !navLinks) {
+                    // Elements not ready yet, try again
+                    if (document.readyState === 'loading') {
+                        document.addEventListener('DOMContentLoaded', initMenu);
+                    }
+                    return;
+                }
+                
+                // Create backdrop overlay
+                let backdrop = document.querySelector('.mobile-menu-backdrop');
+                if (!backdrop) {
+                    backdrop = document.createElement('div');
+                    backdrop.className = 'mobile-menu-backdrop';
+                    document.body.appendChild(backdrop);
+                }
+                
+                function openMenu() {
+                    navLinks.classList.add('active');
+                    menuToggle.classList.add('active');
+                    backdrop.classList.add('active');
+                    document.body.classList.add('menu-open');
+                }
+                
+                function closeMenu() {
+                    navLinks.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                    backdrop.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                }
+                
                 menuToggle.addEventListener('click', (e) => {
                     e.stopPropagation();
                     if (navLinks.classList.contains('active')) {
@@ -2252,7 +2260,16 @@
                     }
                 });
             }
-
+            
+            // Try to initialize immediately, or wait for DOM
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initMenu);
+            } else {
+                initMenu();
+            }
+        })();
+        
+        document.addEventListener('DOMContentLoaded', function() {
             // Set current year
             const currentYearEl = document.getElementById('current-year');
             if (currentYearEl) {
