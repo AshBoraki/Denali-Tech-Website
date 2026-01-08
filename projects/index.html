@@ -1799,7 +1799,6 @@
                 </a>
             </div>
         </div>
-        </div>
     </header>
 
     <!-- HERO SECTION -->
@@ -2180,6 +2179,8 @@
             const menuToggle = document.getElementById('menuToggle') || document.getElementById('menu-toggle');
             const navLinks = document.getElementById('navLinks');
             
+            console.log('Menu elements found:', { menuToggle: !!menuToggle, navLinks: !!navLinks });
+            
             // Create backdrop overlay
             let backdrop = document.querySelector('.mobile-menu-backdrop');
             if (!backdrop) {
@@ -2189,28 +2190,38 @@
             }
             
             function openMenu() {
+                console.log('Opening menu');
                 if (navLinks) navLinks.classList.add('active');
                 if (menuToggle) menuToggle.classList.add('active');
-                backdrop.classList.add('active');
+                if (backdrop) backdrop.classList.add('active');
                 document.body.classList.add('menu-open');
+                console.log('Menu opened, navLinks active:', navLinks?.classList.contains('active'));
             }
             
             function closeMenu() {
+                console.log('Closing menu');
                 if (navLinks) navLinks.classList.remove('active');
                 if (menuToggle) menuToggle.classList.remove('active');
-                backdrop.classList.remove('active');
+                if (backdrop) backdrop.classList.remove('active');
                 document.body.classList.remove('menu-open');
             }
             
             if (menuToggle && navLinks) {
-                menuToggle.addEventListener('click', (e) => {
+                console.log('Adding click listener to menu toggle');
+                
+                const handleMenuToggle = (e) => {
+                    console.log('Menu toggle clicked!', e.type, e);
                     e.stopPropagation();
+                    e.preventDefault();
                     if (navLinks.classList.contains('active')) {
                         closeMenu();
                     } else {
                         openMenu();
                     }
-                });
+                };
+                
+                menuToggle.addEventListener('click', handleMenuToggle);
+                menuToggle.addEventListener('touchend', handleMenuToggle);
 
                 // Close menu when clicking backdrop
                 backdrop.addEventListener('click', () => {
