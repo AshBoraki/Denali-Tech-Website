@@ -2544,7 +2544,6 @@
                     document.body.style.overflow = 'auto';
                 }
             });
-        }
 
             // Mobile swipe gestures for gallery navigation
             let touchStartX = 0;
@@ -2553,42 +2552,42 @@
             let currentProjectIndex = 0;
 
             modal.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        }, { passive: true });
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
 
-        modal.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        }, { passive: true });
+            modal.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, { passive: true });
 
-        function handleSwipe() {
-            const swipeThreshold = 50;
-            const deltaX = touchEndX - touchStartX;
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                const deltaX = touchEndX - touchStartX;
 
-            if (Math.abs(deltaX) > swipeThreshold) {
-                const currentCard = document.querySelector(`[data-id="${projectIds[currentProjectIndex]}"]`);
-                if (!currentCard) return;
+                if (Math.abs(deltaX) > swipeThreshold) {
+                    const currentCard = document.querySelector(`[data-id="${projectIds[currentProjectIndex]}"]`);
+                    if (!currentCard) return;
 
-                if (deltaX > 0) {
-                    // Swipe right - previous project
-                    currentProjectIndex = (currentProjectIndex - 1 + projectIds.length) % projectIds.length;
-                } else {
-                    // Swipe left - next project
-                    currentProjectIndex = (currentProjectIndex + 1) % projectIds.length;
-                }
+                    if (deltaX > 0) {
+                        // Swipe right - previous project
+                        currentProjectIndex = (currentProjectIndex - 1 + projectIds.length) % projectIds.length;
+                    } else {
+                        // Swipe left - next project
+                        currentProjectIndex = (currentProjectIndex + 1) % projectIds.length;
+                    }
 
-                const newProjectId = projectIds[currentProjectIndex];
-                const newProject = projectDetails[newProjectId];
-                const newCard = document.querySelector(`[data-id="${newProjectId}"]`);
-                
-                if (newCard && newProject) {
-                    const imageSrc = newCard.querySelector('.project-image').src;
-                    modalImage.src = imageSrc;
-                    modalTitle.textContent = newProject.title;
-                    modalDescription.textContent = newProject.description;
+                    const newProjectId = projectIds[currentProjectIndex];
+                    const newProject = projectDetails[newProjectId];
+                    const newCard = document.querySelector(`[data-id="${newProjectId}"]`);
+                    
+                    if (newCard && newProject) {
+                        const imageSrc = newCard.querySelector('.project-image').src;
+                        modalImage.src = imageSrc;
+                        modalTitle.textContent = newProject.title;
+                        modalDescription.textContent = newProject.description;
+                    }
                 }
             }
-        }
 
             // Update current index when opening modal
             projectCards.forEach((card, index) => {
@@ -2601,35 +2600,36 @@
             document.addEventListener('keydown', (e) => {
                 if (!modal.classList.contains('active')) return;
 
-            if (e.key === 'ArrowLeft') {
-                currentProjectIndex = (currentProjectIndex - 1 + projectIds.length) % projectIds.length;
-                const newProjectId = projectIds[currentProjectIndex];
-                const newProject = projectDetails[newProjectId];
-                const newCard = document.querySelector(`[data-id="${newProjectId}"]`);
-                
-                if (newCard && newProject) {
-                    const imageSrc = newCard.querySelector('.project-image').src;
-                    modalImage.src = imageSrc;
-                    modalTitle.textContent = newProject.title;
-                    modalDescription.textContent = newProject.description;
+                if (e.key === 'ArrowLeft') {
+                    currentProjectIndex = (currentProjectIndex - 1 + projectIds.length) % projectIds.length;
+                    const newProjectId = projectIds[currentProjectIndex];
+                    const newProject = projectDetails[newProjectId];
+                    const newCard = document.querySelector(`[data-id="${newProjectId}"]`);
+                    
+                    if (newCard && newProject) {
+                        const imageSrc = newCard.querySelector('.project-image').src;
+                        modalImage.src = imageSrc;
+                        modalTitle.textContent = newProject.title;
+                        modalDescription.textContent = newProject.description;
+                    }
+                } else if (e.key === 'ArrowRight') {
+                    currentProjectIndex = (currentProjectIndex + 1) % projectIds.length;
+                    const newProjectId = projectIds[currentProjectIndex];
+                    const newProject = projectDetails[newProjectId];
+                    const newCard = document.querySelector(`[data-id="${newProjectId}"]`);
+                    
+                    if (newCard && newProject) {
+                        const imageSrc = newCard.querySelector('.project-image').src;
+                        modalImage.src = imageSrc;
+                        modalTitle.textContent = newProject.title;
+                        modalDescription.textContent = newProject.description;
+                    }
+                } else if (e.key === 'Escape') {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
                 }
-            } else if (e.key === 'ArrowRight') {
-                currentProjectIndex = (currentProjectIndex + 1) % projectIds.length;
-                const newProjectId = projectIds[currentProjectIndex];
-                const newProject = projectDetails[newProjectId];
-                const newCard = document.querySelector(`[data-id="${newProjectId}"]`);
-                
-                if (newCard && newProject) {
-                    const imageSrc = newCard.querySelector('.project-image').src;
-                    modalImage.src = imageSrc;
-                    modalTitle.textContent = newProject.title;
-                    modalDescription.textContent = newProject.description;
-                }
-            } else if (e.key === 'Escape') {
-                modal.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        });
+            });
+        }
     </script>
 </body>
 </html>
