@@ -2177,85 +2177,76 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Enhanced Mobile Menu Toggle - MUST run first, before any early returns
-            try {
-                const menuToggle = document.getElementById('menuToggle') || document.getElementById('menu-toggle');
-                const navLinks = document.getElementById('navLinks');
-                
-                // Create backdrop overlay
-                let backdrop = document.querySelector('.mobile-menu-backdrop');
-                if (!backdrop) {
-                    backdrop = document.createElement('div');
-                    backdrop.className = 'mobile-menu-backdrop';
-                    document.body.appendChild(backdrop);
-                }
-                
-                function openMenu() {
-                    if (navLinks) navLinks.classList.add('active');
-                    if (menuToggle) menuToggle.classList.add('active');
-                    if (backdrop) backdrop.classList.add('active');
-                    document.body.classList.add('menu-open');
-                }
-                
-                function closeMenu() {
-                    if (navLinks) navLinks.classList.remove('active');
-                    if (menuToggle) menuToggle.classList.remove('active');
-                    if (backdrop) backdrop.classList.remove('active');
-                    document.body.classList.remove('menu-open');
-                }
-                
-                if (menuToggle && navLinks) {
-                    menuToggle.addEventListener('click', (e) => {
-                        e.stopPropagation();
-                        e.preventDefault();
-                        if (navLinks.classList.contains('active')) {
-                            closeMenu();
-                        } else {
-                            openMenu();
-                        }
-                    });
-
-                    // Close menu when clicking backdrop
-                    if (backdrop) {
-                        backdrop.addEventListener('click', () => {
-                            closeMenu();
-                        });
+            const menuToggle = document.getElementById('menuToggle') || document.getElementById('menu-toggle');
+            const navLinks = document.getElementById('navLinks');
+            
+            // Create backdrop overlay
+            let backdrop = document.querySelector('.mobile-menu-backdrop');
+            if (!backdrop) {
+                backdrop = document.createElement('div');
+                backdrop.className = 'mobile-menu-backdrop';
+                document.body.appendChild(backdrop);
+            }
+            
+            function openMenu() {
+                if (navLinks) navLinks.classList.add('active');
+                if (menuToggle) menuToggle.classList.add('active');
+                backdrop.classList.add('active');
+                document.body.classList.add('menu-open');
+            }
+            
+            function closeMenu() {
+                if (navLinks) navLinks.classList.remove('active');
+                if (menuToggle) menuToggle.classList.remove('active');
+                backdrop.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+            
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    if (navLinks.classList.contains('active')) {
+                        closeMenu();
+                    } else {
+                        openMenu();
                     }
+                });
 
-                    // Close menu when clicking a link
-                    navLinks.querySelectorAll('a').forEach(link => {
-                        link.addEventListener('click', () => {
-                            closeMenu();
-                        });
-                    });
+                // Close menu when clicking backdrop
+                backdrop.addEventListener('click', () => {
+                    closeMenu();
+                });
 
-                    // Close menu when clicking outside
-                    document.addEventListener('click', (e) => {
-                        if (navLinks.classList.contains('active') && 
-                            !navLinks.contains(e.target) && 
-                            !menuToggle.contains(e.target) &&
-                            backdrop && !backdrop.contains(e.target)) {
-                            closeMenu();
-                        }
+                // Close menu when clicking a link
+                navLinks.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        closeMenu();
                     });
-                    
-                    // Close menu on escape key
-                    document.addEventListener('keydown', (e) => {
-                        if (e.key === 'Escape' && navLinks.classList.contains('active')) {
-                            closeMenu();
-                        }
-                    });
-                    
-                    // Close menu on window resize (if resizing to desktop)
-                    window.addEventListener('resize', () => {
-                        if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
-                            closeMenu();
-                        }
-                    });
-                } else {
-                    console.warn('Menu toggle or nav links not found');
-                }
-            } catch (error) {
-                console.error('Error initializing mobile menu:', error);
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (navLinks.classList.contains('active') && 
+                        !navLinks.contains(e.target) && 
+                        !menuToggle.contains(e.target) &&
+                        !backdrop.contains(e.target)) {
+                        closeMenu();
+                    }
+                });
+                
+                // Close menu on escape key
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+                        closeMenu();
+                    }
+                });
+                
+                // Close menu on window resize (if resizing to desktop)
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
+                        closeMenu();
+                    }
+                });
             }
 
             // Set current year
@@ -2416,20 +2407,22 @@
         const filterBtns = document.querySelectorAll('.filter-btn');
         const projectCards = document.querySelectorAll('.project-card');
 
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const filter = btn.dataset.filter;
-                projectCards.forEach(card => {
-                    if (filter === 'all' || card.dataset.category === filter) {
-                        card.classList.remove('hidden');
-                    } else {
-                        card.classList.add('hidden');
-                    }
+        if (filterBtns.length > 0 && projectCards.length > 0) {
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    const filter = btn.dataset.filter;
+                    projectCards.forEach(card => {
+                        if (filter === 'all' || card.dataset.category === filter) {
+                            card.classList.remove('hidden');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    });
                 });
             });
-        });
+        }
 
         // Modal Functionality
         const modal = document.getElementById('projectModal');
@@ -2437,6 +2430,9 @@
         const modalImage = document.getElementById('modalImage');
         const modalTitle = document.getElementById('modalTitle');
         const modalDescription = document.getElementById('modalDescription');
+        
+        // Only proceed if modal elements exist
+        if (modal && modalClose && modalImage && modalTitle && modalDescription && projectCards.length > 0) {
 
         const projectDetails = {
             'cityscape': {
@@ -2501,40 +2497,41 @@
             }
         };
 
-        projectCards.forEach(card => {
-            card.addEventListener('click', () => {
-                const projectId = card.dataset.id;
-                const project = projectDetails[projectId];
-                const imageSrc = card.querySelector('.project-image').src;
+            projectCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const projectId = card.dataset.id;
+                    const project = projectDetails[projectId];
+                    const imageSrc = card.querySelector('.project-image').src;
 
-                modalImage.src = imageSrc;
-                modalImage.alt = project.title || 'Project image';
-                modalTitle.textContent = project.title;
-                modalDescription.textContent = project.description;
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
+                    modalImage.src = imageSrc;
+                    modalImage.alt = project.title || 'Project image';
+                    modalTitle.textContent = project.title;
+                    modalDescription.textContent = project.description;
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
             });
-        });
 
-        modalClose.addEventListener('click', () => {
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
-
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
+            modalClose.addEventListener('click', () => {
                 modal.classList.remove('active');
                 document.body.style.overflow = 'auto';
-            }
-        });
+            });
 
-        // Mobile swipe gestures for gallery navigation
-        let touchStartX = 0;
-        let touchEndX = 0;
-        const projectIds = Object.keys(projectDetails);
-        let currentProjectIndex = 0;
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        }
 
-        modal.addEventListener('touchstart', (e) => {
+            // Mobile swipe gestures for gallery navigation
+            let touchStartX = 0;
+            let touchEndX = 0;
+            const projectIds = Object.keys(projectDetails);
+            let currentProjectIndex = 0;
+
+            modal.addEventListener('touchstart', (e) => {
             touchStartX = e.changedTouches[0].screenX;
         }, { passive: true });
 
@@ -2572,16 +2569,16 @@
             }
         }
 
-        // Update current index when opening modal
-        projectCards.forEach((card, index) => {
-            card.addEventListener('click', () => {
-                currentProjectIndex = projectIds.indexOf(card.dataset.id);
+            // Update current index when opening modal
+            projectCards.forEach((card, index) => {
+                card.addEventListener('click', () => {
+                    currentProjectIndex = projectIds.indexOf(card.dataset.id);
+                });
             });
-        });
 
-        // Keyboard navigation for accessibility
-        document.addEventListener('keydown', (e) => {
-            if (!modal.classList.contains('active')) return;
+            // Keyboard navigation for accessibility
+            document.addEventListener('keydown', (e) => {
+                if (!modal.classList.contains('active')) return;
 
             if (e.key === 'ArrowLeft') {
                 currentProjectIndex = (currentProjectIndex - 1 + projectIds.length) % projectIds.length;
