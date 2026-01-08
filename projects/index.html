@@ -2212,7 +2212,6 @@
                 const handleMenuToggle = (e) => {
                     console.log('Menu toggle clicked!', e.type, e);
                     e.stopPropagation();
-                    e.preventDefault();
                     if (navLinks.classList.contains('active')) {
                         closeMenu();
                     } else {
