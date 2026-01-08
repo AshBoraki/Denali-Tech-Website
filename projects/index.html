@@ -1240,10 +1240,13 @@
             }
 
             .menu-toggle {
-                display: flex;
+                display: flex !important;
                 padding: 6px;
                 min-width: 44px;
                 min-height: 44px;
+                pointer-events: auto !important;
+                position: relative;
+                z-index: 10002 !important;
             }
 
             .header-actions {
@@ -1700,8 +1703,10 @@
                 /* Enhanced Hamburger Menu Icon */
                 .menu-toggle {
                     position: relative;
-                    z-index: 10001;
+                    z-index: 10002 !important;
                     transition: transform 0.3s ease;
+                    pointer-events: auto !important;
+                    cursor: pointer !important;
                 }
                 
                 .menu-toggle:active {
@@ -2207,10 +2212,23 @@
             }
             
             if (menuToggle && navLinks) {
-                console.log('Adding click listener to menu toggle');
+                console.log('Menu elements found:', { 
+                    menuToggle: !!menuToggle, 
+                    navLinks: !!navLinks,
+                    menuToggleId: menuToggle.id,
+                    menuToggleDisplay: window.getComputedStyle(menuToggle).display,
+                    menuToggleZIndex: window.getComputedStyle(menuToggle).zIndex,
+                    menuTogglePointerEvents: window.getComputedStyle(menuToggle).pointerEvents
+                });
+                
+                // Force pointer events and ensure button is clickable
+                menuToggle.style.pointerEvents = 'auto';
+                menuToggle.style.cursor = 'pointer';
+                menuToggle.style.zIndex = '10002';
+                menuToggle.setAttribute('tabindex', '0');
                 
                 const handleMenuToggle = (e) => {
-                    console.log('Menu toggle clicked!', e.type, e);
+                    console.log('Menu toggle clicked!', e.type, e.target);
                     e.stopPropagation();
                     if (navLinks.classList.contains('active')) {
                         closeMenu();
@@ -2219,8 +2237,18 @@
                     }
                 };
                 
+                // Use multiple event types to ensure it works
+                menuToggle.onclick = handleMenuToggle;
                 menuToggle.addEventListener('click', handleMenuToggle);
                 menuToggle.addEventListener('touchend', handleMenuToggle);
+                
+                // Also handle via direct property
+                menuToggle.addEventListener('mousedown', (e) => {
+                    console.log('Menu toggle mousedown!');
+                    e.stopPropagation();
+                });
+                
+                console.log('Event listeners attached to menu toggle');
 
                 // Close menu when clicking backdrop
                 backdrop.addEventListener('click', () => {
