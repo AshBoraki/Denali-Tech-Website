@@ -120,6 +120,9 @@
     
     <base href="/">
     
+    <!-- Shared Mobile Menu Script -->
+    <script src="/assets/js/mobile-menu.js"></script>
+    
     <!-- Google Analytics 4 - Replace G-XXXXXXXXXX with your actual Measurement ID -->
     <!-- Get your Measurement ID from: https://analytics.google.com/ -->
     <!--
@@ -2739,79 +2742,7 @@
                 });
             }
 
-            // Enhanced Mobile Menu Toggle
-            const menuToggle = document.getElementById('menuToggle');
-            const navLinks = document.getElementById('navLinks');
             
-            // Create backdrop overlay
-            let backdrop = document.querySelector('.mobile-menu-backdrop');
-            if (!backdrop) {
-                backdrop = document.createElement('div');
-                backdrop.className = 'mobile-menu-backdrop';
-                document.body.appendChild(backdrop);
-            }
-            
-            function openMenu() {
-                navLinks.classList.add('active');
-                menuToggle.classList.add('active');
-                backdrop.classList.add('active');
-                document.body.classList.add('menu-open');
-            }
-            
-            function closeMenu() {
-                navLinks.classList.remove('active');
-                menuToggle.classList.remove('active');
-                backdrop.classList.remove('active');
-                document.body.classList.remove('menu-open');
-            }
-            
-            if (menuToggle && navLinks) {
-                menuToggle.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    if (navLinks.classList.contains('active')) {
-                        closeMenu();
-                    } else {
-                        openMenu();
-                    }
-                });
-
-                // Close menu when clicking backdrop
-                backdrop.addEventListener('click', () => {
-                    closeMenu();
-                });
-
-                // Close menu when clicking a link
-                navLinks.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', () => {
-                        closeMenu();
-                    });
-                });
-
-                // Close menu when clicking outside
-                document.addEventListener('click', (e) => {
-                    if (navLinks.classList.contains('active') && 
-                        !navLinks.contains(e.target) && 
-                        !menuToggle.contains(e.target) &&
-                        !backdrop.contains(e.target)) {
-                        closeMenu();
-                    }
-                });
-                
-                // Close menu on escape key
-                document.addEventListener('keydown', (e) => {
-                    if (e.key === 'Escape' && navLinks.classList.contains('active')) {
-                        closeMenu();
-                    }
-                });
-                
-                // Close menu on window resize (if resizing to desktop)
-                window.addEventListener('resize', () => {
-                    if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
-                        closeMenu();
-                    }
-                });
-            }
-
             // Fix section scroll capture on mobile - prevent sections from being scroll containers
             function fixSectionScrollCapture() {
                 if (window.innerWidth <= 768) {
