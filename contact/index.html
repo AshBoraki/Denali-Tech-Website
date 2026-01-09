@@ -67,12 +67,6 @@
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.denalitechs.com/contact/">
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.denalitechs.com/contact/">
-    <meta property="og:title" content="Contact Us | Denali Tech - Free Smart Home Consultation">
-    <meta property="og:description" content="Schedule your free smart home consultation with Denali Tech. We serve Chicago and surrounding areas. No obligation, just honest advice.">
-    <meta property="og:image" content="https://www.denalitechs.com/Video/logo icon for web title .jpg">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
@@ -3050,7 +3044,6 @@
                                 submitBtn.style.opacity = '1';
                                 submitBtn.style.cursor = 'pointer';
                             }
-                            console.error('Form submission error:', responseData || res.statusText);
                         }
                     } catch (err) {
                         const errBox = document.getElementById('form-error');
@@ -3064,7 +3057,6 @@
                             submitBtn.style.opacity = '1';
                             submitBtn.style.cursor = 'pointer';
                         }
-                        console.error('Form submission error:', err);
                     }
             });
         });
@@ -3826,7 +3818,6 @@
                                 if (btnText) btnText.textContent = 'Send Message';
                                 if (btnLoader) btnLoader.style.display = 'none';
                             }
-                            console.error('Form submission error:', responseData || res.statusText);
                         }
                     } catch (err) {
                         const errorMsg = (err.message && err.message.includes('fetch')) ? 'Network error. Please check your connection and try again.' : 'There was an error submitting your request.';
@@ -3842,7 +3833,6 @@
                             if (btnText) btnText.textContent = 'Send Message';
                             if (btnLoader) btnLoader.style.display = 'none';
                         }
-                        console.error('Form submission error:', err);
                     }
                 });
             }

@@ -756,7 +756,7 @@
                         </div>
                     </a>
                     <a href="/blogs/urc-remote-programming-guide/" class="related-post-card">
-                        <img src="../urc-remote-programming-guide/images/Urc mx 990 iamge in living room in hand .jpg" alt="URC Remote Programming Guide" class="related-post-image" loading="lazy">
+                        <img src="../urc-remote-programming-guide/images/urc-mx-990-image-in-living-room-in-hand.jpg" alt="URC Remote Programming Guide" class="related-post-image" loading="lazy">
                         <div class="related-post-content">
                             <span class="related-post-category">URC Systems</span>
                             <h4 class="related-post-title">URC Remote Programming Guide</h4>
@@ -772,8 +772,8 @@
             const url = window.location.href;
             navigator.clipboard.writeText(url).then(() => {
                 alert('Link copied to clipboard!');
-            }).catch(err => {
-                console.error('Failed to copy:', err);
+            }).catch(() => {
+                // Clipboard copy failed - user already sees alert for success
             });
         }
     </script>
