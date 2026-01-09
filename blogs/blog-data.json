@@ -1,6 +1,21 @@
 {
   "posts": [
     {
+      "id": "smart-home-automation-arlington-heights-guide",
+      "title": "Smart Home Automation in Arlington Heights: Complete Guide 2025",
+      "slug": "smart-home-automation-arlington-heights-guide",
+      "url": "/blogs/smart-home-automation-arlington-heights-guide/",
+      "excerpt": "Complete guide to smart home automation in Arlington Heights, IL. Learn about costs, popular features, installation process, and choosing the right system for your Arlington Heights home. Free consultation available.",
+      "category": "Smart Home Guide",
+      "tags": ["Arlington Heights", "Local Guide", "Smart Home", "Home Automation"],
+      "author": "Denali Tech Team",
+      "publishedDate": "2025-01-10",
+      "updatedDate": "2025-01-10",
+      "readingTime": 14,
+      "heroImage": "/Video/guide imges.webp",
+      "featured": true
+    },
+    {
       "id": "smart-home-not-working-troubleshooting",
       "title": "Smart Home Not Working? 10 Common Issues & Professional Solutions",
       "slug": "smart-home-not-working-troubleshooting",
