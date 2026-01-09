@@ -116,98 +116,13 @@
     
     <!-- Preload Critical Resources -->
     <link rel="preload" href="Video/logo.webp" as="image" type="image/webp" fetchpriority="high">
-    <link rel="preload" href="Video/logo.JPG" as="image" type="image/jpeg" fetchpriority="high">
     
     <base href="/">
     
     <!-- Shared Mobile Menu Script -->
     <script src="/assets/js/mobile-menu.js"></script>
     
-    <!-- Google Analytics 4 - Replace G-XXXXXXXXXX with your actual Measurement ID -->
-    <!-- Get your Measurement ID from: https://analytics.google.com/ -->
-    <!--
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX');
-    </script>
-    -->
     
-    <!-- Performance Monitoring - Core Web Vitals -->
-    <script>
-    // Track Core Web Vitals for performance monitoring
-    if ('PerformanceObserver' in window) {
-        // Largest Contentful Paint (LCP)
-        try {
-            const lcpObserver = new PerformanceObserver((list) => {
-                const entries = list.getEntries();
-                const lastEntry = entries[entries.length - 1];
-                // Log LCP (can be sent to analytics)
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', 'web_vitals', {
-                        'event_category': 'Performance',
-                        'event_label': 'LCP',
-                        'value': Math.round(lastEntry.renderTime || lastEntry.loadTime)
-                    });
-                }
-            });
-            lcpObserver.observe({entryTypes: ['largest-contentful-paint']});
-        } catch (e) {}
-        
-        // First Input Delay (FID)
-        try {
-            const fidObserver = new PerformanceObserver((list) => {
-                const entries = list.getEntries();
-                entries.forEach((entry) => {
-                    if (typeof gtag !== 'undefined') {
-                        gtag('event', 'web_vitals', {
-                            'event_category': 'Performance',
-                            'event_label': 'FID',
-                            'value': Math.round(entry.processingStart - entry.startTime)
-                        });
-                    }
-                });
-            });
-            fidObserver.observe({entryTypes: ['first-input']});
-        } catch (e) {}
-        
-        // Cumulative Layout Shift (CLS)
-        try {
-            let clsValue = 0;
-            const clsObserver = new PerformanceObserver((list) => {
-                const entries = list.getEntries();
-                entries.forEach((entry) => {
-                    if (!entry.hadRecentInput) {
-                        clsValue += entry.value;
-                    }
-                });
-                // Log CLS when page is unloaded
-                window.addEventListener('beforeunload', () => {
-                    if (typeof gtag !== 'undefined' && clsValue > 0) {
-                        gtag('event', 'web_vitals', {
-                            'event_category': 'Performance',
-                            'event_label': 'CLS',
-                            'value': Math.round(clsValue * 1000)
-                        });
-                    }
-                });
-            });
-            clsObserver.observe({entryTypes: ['layout-shift']});
-        } catch (e) {}
-    }
-    </script>
-    
-    <!-- Google Search Console Verification -->
-    <!-- To verify your site in Google Search Console:
-         1. Go to https://search.google.com/search-console
-         2. Add your property (www.denalitechs.com)
-         3. Choose "HTML tag" verification method
-         4. Copy the content value from the meta tag they provide
-         5. Replace YOUR_VERIFICATION_CODE below with that value
-         6. Uncomment the line below -->
-    <!-- <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" /> -->
     
     <!-- Particles.js - Deferred to avoid render blocking -->
     <script>
@@ -277,7 +192,7 @@
             /* Force vertical scroll only on containers and sections */
             section, main, article, div.container, div.section-header, 
             div.services-grid, div.why-grid, div.testimonials-grid,
-            div.projects-showcase-grid, div.blog-grid, div.stats-grid,
+            div.projects-showcase-grid, div.blog-grid,
             div.service-area-grid, div.footer-main-grid {
                 touch-action: pan-y !important;
             }
@@ -364,10 +279,6 @@
             }
         }
         
-        /* Hide stats section on all devices */
-        .stats-section {
-            display: none !important;
-        }
     </style>
     
     <!-- Breadcrumb Schema -->
@@ -827,53 +738,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Statistics/Trust Signals Section -->
-    <section class="stats-section" style="padding: 80px 5% 60px; background: linear-gradient(135deg, rgba(249,115,22,0.1), rgba(13,148,136,0.08)); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); position: relative; overflow: visible; margin-top: 0;">
-        <div style="position: absolute; top: -50%; right: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(249,115,22,0.1) 0%, transparent 70%); border-radius: 50%; pointer-events: none; animation: float 20s ease-in-out infinite;"></div>
-        <div style="position: absolute; bottom: -30%; left: -5%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(13,148,136,0.1) 0%, transparent 70%); border-radius: 50%; pointer-events: none; animation: float 15s ease-in-out infinite reverse;"></div>
-        <style>
-            @keyframes float {
-                0%, 100% { transform: translate(0, 0) scale(1); }
-                50% { transform: translate(30px, -30px) scale(1.1); }
-            }
-        </style>
-        <div class="container">
-            <div class="stats-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2.5rem; max-width: 1000px; margin: 0 auto;">
-                <div class="stat-card util-text-center util-p-1-5 util-bg-card-sm" style="transition: all 0.3s ease;">
-                    <div class="stat-number" style="font-family: var(--font-heading); font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; color: var(--accent-primary); margin-bottom: 0.5rem; line-height: 1;">5.0</div>
-                    <div class="stat-label" style="font-size: 1rem; color: var(--text-secondary); font-weight: 600;">⭐ Google Rating</div>
-                    <div class="stat-detail" style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.25rem;">13+ Reviews</div>
-                </div>
-                <div class="stat-card util-text-center util-p-1-5 util-bg-card-sm" style="transition: all 0.3s ease;">
-                    <div class="stat-number" style="font-family: var(--font-heading); font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; color: var(--accent-primary); margin-bottom: 0.5rem; line-height: 1;">100+</div>
-                    <div class="stat-label" style="font-size: 1rem; color: var(--text-secondary); font-weight: 600;">🏠 Homes Automated</div>
-                    <div class="stat-detail" style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.25rem;">Serving Chicago Since 2022</div>
-                </div>
-                <div class="stat-card util-text-center util-p-1-5 util-bg-card-sm" style="transition: all 0.3s ease;">
-                    <div class="stat-number" style="font-family: var(--font-heading); font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; color: var(--accent-primary); margin-bottom: 0.5rem; line-height: 1;">24/7</div>
-                    <div class="stat-label" style="font-size: 1rem; color: var(--text-secondary); font-weight: 600;">🛡️ Support</div>
-                    <div class="stat-detail" style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.25rem;">Lifetime Support</div>
-                </div>
-                <div class="stat-card util-text-center util-p-1-5 util-bg-card-sm" style="transition: all 0.3s ease;">
-                    <div class="stat-number" style="font-family: var(--font-heading); font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; color: var(--accent-primary); margin-bottom: 0.5rem; line-height: 1;">FREE</div>
-                    <div class="stat-label" style="font-size: 1rem; color: var(--text-secondary); font-weight: 600;">📞 Consultation</div>
-                    <div class="stat-detail" style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.25rem;">No Obligation</div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <style>
-            @media (hover: hover) and (pointer: fine) {
-            .stat-card:hover {
-                transform: translateY(-5px);
-                border-color: var(--accent-primary);
-                box-shadow: var(--shadow-glow);
-                background: rgba(255,255,255,0.05);
-            }
-        }
-        
-    </style>
 
     <!-- Featured Projects Showcase -->
     <section class="featured-projects-section" style="padding: 120px 5%; background: var(--bg-color); position: relative; overflow: hidden;">
@@ -2328,33 +2192,6 @@
             window.addEventListener('resize', preventHorizontalScroll);
         })();
         
-        // Fix mobile header scroll blocking issue
-        (function() {
-            if (window.innerWidth <= 768) {
-                const header = document.querySelector('.header');
-                if (header) {
-                    // Ensure header doesn't block touch events
-                    header.style.touchAction = 'pan-y';
-                    header.style.pointerEvents = 'auto';
-                    
-                    // Allow scrolling through header area
-                    header.addEventListener('touchstart', function(e) {
-                        // Don't prevent default - allow scroll to work
-                    }, { passive: true });
-                    
-                    header.addEventListener('touchmove', function(e) {
-                        // Don't prevent default - allow scroll to work
-                    }, { passive: true });
-                    
-                    // Ensure body can scroll
-                    document.body.style.touchAction = 'pan-y pinch-zoom';
-                    document.body.style.overflowY = 'auto';
-                    document.documentElement.style.touchAction = 'pan-y pinch-zoom';
-                    document.documentElement.style.overflowY = 'auto';
-                }
-            }
-        })();
-        
         // Particles.js Configuration - Wait for script to load
         function initParticlesJS() {
             if (typeof particlesJS !== 'undefined') {
@@ -2678,20 +2515,6 @@
             document.getElementById('current-year').textContent = new Date().getFullYear();
 
 
-            // Track phone calls (if Google Analytics is set up)
-            if (typeof gtag !== 'undefined') {
-                // Track phone button clicks
-                document.querySelectorAll('a[href^="tel:"]').forEach(link => {
-                    link.addEventListener('click', function() {
-                        gtag('event', 'phone_call', {
-                            'event_category': 'contact',
-                            'event_label': 'Phone Button Click',
-                            'value': 1
-                        });
-                    });
-                });
-            }
-
             // Back to Top Button with throttled scroll handler (optimized to avoid forced reflows)
             const backToTop = document.getElementById('backToTop');
             if (backToTop) {
@@ -2748,28 +2571,6 @@
                 if (window.innerWidth <= 768) {
                     const sections = document.querySelectorAll('section');
                     sections.forEach(section => {
-                        // Specifically fix stats section for Android
-                        if (section.classList.contains('stats-section')) {
-                            section.style.overflow = 'visible';
-                            section.style.overflowY = 'visible';
-                            section.style.overflowX = 'hidden';
-                            section.style.height = 'auto';
-                            section.style.maxHeight = 'none';
-                            section.style.touchAction = 'pan-y pinch-zoom';
-                            section.style.overscrollBehavior = 'none';
-                            section.style.webkitOverflowScrolling = 'auto';
-                            // Remove any transform that might create a new stacking context
-                            section.style.transform = 'translateZ(0)';
-                            section.style.webkitTransform = 'translateZ(0)';
-                            
-                            // Fix all children
-                            const children = section.querySelectorAll('*');
-                            children.forEach(child => {
-                                child.style.touchAction = 'pan-y pinch-zoom';
-                                child.style.overscrollBehavior = 'none';
-                                child.style.webkitOverflowScrolling = 'auto';
-                            });
-                        }
                         // Remove overflow from inline styles only
                         const style = section.getAttribute('style');
                         if (style && style.includes('overflow')) {
@@ -2807,21 +2608,6 @@
 
     </script>
 
-    <!-- Live Chat Widget - Tawk.to (Free) -->
-    <!-- To activate: Sign up at https://www.tawk.to and replace the placeholder below with your actual Tawk.to widget code -->
-    <!-- 
-    <script type="text/javascript">
-        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-        (function(){
-            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-            s1.async=true;
-            s1.src='https://embed.tawk.to/YOUR_TAWK_TO_ID/YOUR_TAWK_TO_KEY';
-            s1.charset='UTF-8';
-            s1.setAttribute('crossorigin','*');
-            s0.parentNode.insertBefore(s1,s0);
-        })();
-    </script>
-    -->
     
     <!-- Smart Floating Call Button - Only shows on mobile/tablet -->
     <div id="floating-call-btn" style="position: fixed; bottom: 100px; right: 20px; z-index: 998; display: none;">
@@ -2928,7 +2714,7 @@
                 lazyImages.forEach(img => imageObserver.observe(img));
                 
                 // Scroll-triggered animations for sections
-                const animatedElements = document.querySelectorAll('.service-card, .why-card, .testimonial-card, .project-showcase-card, .video-card, .pricing-card, .faq-item-quick, .process-step, .stat-card');
+                const animatedElements = document.querySelectorAll('.service-card, .why-card, .testimonial-card, .project-showcase-card, .video-card, .pricing-card, .faq-item-quick, .process-step-card');
                 
                 const animationObserver = new IntersectionObserver((entries) => {
                     entries.forEach((entry, index) => {
@@ -3114,59 +2900,6 @@
                 
                 window.addEventListener('scroll', handleScroll, { passive: true });
             }
-            
-            // Add number counter animation for stats
-            const statNumbers = document.querySelectorAll('.stat-number');
-            const animateValue = (element, start, end, duration) => {
-                let startTimestamp = null;
-                const step = (timestamp) => {
-                    if (!startTimestamp) startTimestamp = timestamp;
-                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                    const current = Math.floor(progress * (end - start) + start);
-                    if (element.textContent.includes('.')) {
-                        element.textContent = end.toFixed(1);
-                    } else if (element.textContent.includes('+')) {
-                        element.textContent = end + '+';
-                    } else if (element.textContent === 'FREE') {
-                        element.textContent = 'FREE';
-                    } else if (element.textContent === '24/7') {
-                        element.textContent = '24/7';
-                    } else {
-                        element.textContent = current;
-                    }
-                    if (progress < 1) {
-                        window.requestAnimationFrame(step);
-                    }
-                };
-                window.requestAnimationFrame(step);
-            };
-            
-            const statsObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const statNumber = entry.target;
-                        const text = statNumber.textContent.trim();
-                        let targetValue = 0;
-                        
-                        if (text.includes('.')) {
-                            targetValue = parseFloat(text);
-                        } else if (text.includes('+')) {
-                            targetValue = parseInt(text);
-                        } else if (text === 'FREE' || text === '24/7') {
-                            return; // Don't animate these
-                        } else {
-                            targetValue = parseInt(text) || 0;
-                        }
-                        
-                        if (targetValue > 0) {
-                            animateValue(statNumber, 0, targetValue, 2000);
-                            statsObserver.unobserve(statNumber);
-                        }
-                    }
-                });
-            }, { threshold: 0.5 });
-            
-            statNumbers.forEach(stat => statsObserver.observe(stat));
         })();
     </script>
     
