@@ -1255,8 +1255,10 @@
             grid.innerHTML = filteredPosts.map(post => {
                 // Only use webp if the image is already webp, otherwise use original format
                 const isWebp = post.heroImage.toLowerCase().endsWith('.webp');
-                // URL encode the image path to handle spaces in filenames
-                const encodedImagePath = encodeURI(post.heroImage);
+                // URL encode the image path to handle spaces and special characters in filenames
+                // Split path and encode each segment to properly handle ? and & characters
+                const pathParts = post.heroImage.split('/');
+                const encodedImagePath = pathParts.map(part => encodeURIComponent(part)).join('/');
                 
                 return `
                 <article class="blog-card">
