@@ -1187,7 +1187,6 @@
                 }
                 initializeBlog();
             } catch (error) {
-                console.error('Error loading blog data:', error);
                 const grid = document.getElementById('blogGrid');
                 grid.innerHTML = `
                     <div style="grid-column: 1 / -1; text-align: center; padding: 3rem; color: var(--text-secondary);">
@@ -1215,7 +1214,6 @@
         function renderCategories() {
             const filtersContainer = document.getElementById('categoryFilters');
             if (!filtersContainer) {
-                console.error('Category filters container not found');
                 return;
             }
             
