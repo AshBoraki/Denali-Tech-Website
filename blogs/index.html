@@ -1262,7 +1262,7 @@
                 <article class="blog-card">
                     <a href="${post.url}" style="text-decoration: none; color: inherit;">
                         <div class="blog-image-wrapper">
-                            <img src="${encodedImagePath}" alt="${post.title}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #667eea 0%, #764ba2 100%)';">
+                            <img src="${encodedImagePath}" alt="${escapeHtml(post.title)}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #667eea 0%, #764ba2 100%)';">
                         </div>
                         <div class="blog-card-content">
                             <div class="blog-card-meta">
@@ -1270,9 +1270,9 @@
                                 <span>📅 ${formatDate(post.publishedDate)}</span>
                             </div>
                             <h2 class="blog-card-title">
-                                <a href="${post.url}">${post.title}</a>
+                                <a href="${post.url}">${escapeHtml(post.title)}</a>
                             </h2>
-                            <p class="blog-card-excerpt">${post.excerpt}</p>
+                            <p class="blog-card-excerpt">${escapeHtml(post.excerpt)}</p>
                             <div class="blog-card-footer">
                                 <span class="blog-card-reading-time">⏱️ ${post.readingTime} min read</span>
                                 <a href="${post.url}" class="blog-card-link">Read More →</a>
@@ -1287,6 +1287,12 @@
         function formatDate(dateString) {
             const date = new Date(dateString);
             return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+        }
+        
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
         }
 
         function setupEventListeners() {
