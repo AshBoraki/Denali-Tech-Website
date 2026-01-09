@@ -1,6 +1,21 @@
 {
   "posts": [
     {
+      "id": "smart-home-not-working-troubleshooting",
+      "title": "Smart Home Not Working? 10 Common Issues & Professional Solutions",
+      "slug": "smart-home-not-working-troubleshooting",
+      "url": "/blogs/smart-home-not-working-troubleshooting/",
+      "excerpt": "Your smart home devices not working? Learn how to fix common smart home problems including connectivity issues, devices not responding, WiFi problems, and more. Professional troubleshooting guide for Chicago homeowners.",
+      "category": "Troubleshooting",
+      "tags": ["Troubleshooting", "Smart Home Help", "Problem Solving", "Tech Support"],
+      "author": "Denali Tech Team",
+      "publishedDate": "2025-01-09",
+      "updatedDate": "2025-01-09",
+      "readingTime": 15,
+      "heroImage": "/Video/guide imges.webp",
+      "featured": true
+    },
+    {
       "id": "smart-home-automation-for-beginners",
       "title": "Smart Home Automation for Beginners: Complete Starter Guide 2025",
       "slug": "smart-home-automation-for-beginners",
@@ -236,6 +251,11 @@
       "name": "Smart Home Guide",
       "slug": "smart-home-guide",
       "description": "Comprehensive guides about smart home automation and costs"
+    },
+    {
+      "name": "Troubleshooting",
+      "slug": "troubleshooting",
+      "description": "Troubleshooting guides and solutions for smart home problems"
     }
   ]
 }
