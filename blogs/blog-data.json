@@ -1,6 +1,21 @@
 {
   "posts": [
     {
+      "id": "lutron-smart-lighting-guide",
+      "title": "Lutron Smart Lighting: Complete Guide for Chicago Homes 2025",
+      "slug": "lutron-smart-lighting-guide",
+      "url": "/blogs/lutron-smart-lighting-guide/",
+      "excerpt": "Complete guide to Lutron smart lighting systems for Chicago homes. Learn about Lutron dimmers, switches, product lines (Caseta, RA2, RA3, HomeWorks), integration with Control4/URC, costs, and professional installation.",
+      "category": "Smart Home Guide",
+      "tags": ["Lutron", "Smart Lighting", "Home Automation", "Chicago", "Product Guide"],
+      "author": "Denali Tech Team",
+      "publishedDate": "2025-01-11",
+      "updatedDate": "2025-01-11",
+      "readingTime": 16,
+      "heroImage": "/Video/Blogs imge/Lutron Smart Lighting-Complete Guide-for-Chicago Homes.jpg",
+      "featured": true
+    },
+    {
       "id": "why-professional-network-setup-is-superior",
       "title": "Why Professional Network Setup is Superior: Araknis Network Installation Guide",
       "slug": "why-professional-network-setup-is-superior",
