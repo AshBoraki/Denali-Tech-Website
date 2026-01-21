@@ -750,6 +750,7 @@
         .service-video video {
             width: 100%;
             height: auto;
+            min-height: 300px;
             max-height: 500px;
             aspect-ratio: 16 / 9;
             object-fit: cover;
@@ -757,6 +758,12 @@
             display: block;
             margin: 0;
             padding: 0;
+            background: #000;
+        }
+        
+        /* Ensure video container has minimum height */
+        .service-video {
+            min-height: 300px;
         }
 
         .service-video:hover video {
@@ -1319,10 +1326,16 @@
 
             .service-video video {
                 height: auto;
+                min-height: 250px;
                 max-height: 400px;
                 aspect-ratio: 16 / 9;
                 object-fit: cover;
                 width: 100%;
+                background: #000;
+            }
+            
+            .service-video {
+                min-height: 250px;
             }
 
             .footer-main-grid {
@@ -1391,10 +1404,16 @@
 
             .service-video video {
                 height: auto;
+                min-height: 200px;
                 max-height: 300px;
                 aspect-ratio: 16 / 9;
                 object-fit: cover;
                 width: 100%;
+                background: #000;
+            }
+            
+            .service-video {
+                min-height: 200px;
             }
 
             .footer-main-grid {
@@ -1677,7 +1696,7 @@
                     <a href="/contact/#booking?service=Smart Home Automation" class="btn-primary" style="margin-top: 1.5rem; display: inline-block;">Get Quote for Smart Home Automation</a>
                 </div>
                 <div class="service-video">
-                    <video autoplay muted loop playsinline poster="Video/logo.JPG" preload="auto" loading="eager">
+                    <video autoplay muted loop playsinline poster="Video/logo.JPG" preload="auto" loading="eager" onerror="this.style.display='none'; if(this.poster) { const img = document.createElement('img'); img.src = this.poster; img.style.width='100%'; img.style.height='auto'; img.style.objectFit='cover'; img.style.borderRadius='16px'; this.parentElement.appendChild(img); }">
                         <source src="Video/Denali tech smart home.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -1701,7 +1720,7 @@
                     <a href="/contact/#booking?service=Home Theater" class="btn-primary" style="margin-top: 1.5rem; display: inline-block;">Get Quote for Home Theater</a>
                 </div>
                 <div class="service-video">
-                    <video autoplay muted loop playsinline poster="Video/logo.JPG" preload="auto" loading="eager">
+                    <video autoplay muted loop playsinline poster="Video/logo.JPG" preload="auto" loading="eager" onerror="this.style.display='none'; if(this.poster) { const img = document.createElement('img'); img.src = this.poster; img.style.width='100%'; img.style.height='auto'; img.style.objectFit='cover'; img.style.borderRadius='16px'; this.parentElement.appendChild(img); }">
                         <source src="Video/Home Theater Systems - Denali Tech - Chicago.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -1725,7 +1744,7 @@
                     <a href="/contact/#booking?service=WiFi & Networking" class="btn-primary" style="margin-top: 1.5rem; display: inline-block;">Get Quote for WiFi & Networking</a>
                 </div>
                 <div class="service-video">
-                    <video autoplay muted loop playsinline poster="Video/logo.JPG" preload="auto" loading="eager">
+                    <video autoplay muted loop playsinline poster="Video/logo.JPG" preload="auto" loading="eager" onerror="this.style.display='none'; if(this.poster) { const img = document.createElement('img'); img.src = this.poster; img.style.width='100%'; img.style.height='auto'; img.style.objectFit='cover'; img.style.borderRadius='16px'; this.parentElement.appendChild(img); }">
                         <source src="Video/wifi.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -1749,7 +1768,7 @@
                     <a href="/contact/#booking?service=Security & Surveillance" class="btn-primary" style="margin-top: 1.5rem; display: inline-block;">Get Quote for Security & Surveillance</a>
                 </div>
                 <div class="service-video">
-                    <video autoplay muted loop playsinline poster="Video/logo.JPG" preload="auto" loading="eager">
+                    <video autoplay muted loop playsinline poster="Video/logo.JPG" preload="auto" loading="eager" onerror="this.style.display='none'; if(this.poster) { const img = document.createElement('img'); img.src = this.poster; img.style.width='100%'; img.style.height='auto'; img.style.objectFit='cover'; img.style.borderRadius='16px'; this.parentElement.appendChild(img); }">
                         <source src="Video/camera.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -1773,7 +1792,7 @@
                     <a href="/contact/#booking?service=Smart Lighting" class="btn-primary" style="margin-top: 1.5rem; display: inline-block;">Get Quote for Smart Lighting</a>
                 </div>
                 <div class="service-video">
-                    <video autoplay muted loop playsinline poster="Video/logo.JPG" preload="auto" loading="eager">
+                    <video autoplay muted loop playsinline poster="Video/logo.JPG" preload="auto" loading="eager" onerror="this.style.display='none'; if(this.poster) { const img = document.createElement('img'); img.src = this.poster; img.style.width='100%'; img.style.height='auto'; img.style.objectFit='cover'; img.style.borderRadius='16px'; this.parentElement.appendChild(img); }">
                         <source src="Video/Smart lighting Solutions - Denali Tech.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -1797,7 +1816,7 @@
                     <a href="/contact/#booking?service=Smart Shades" class="btn-primary" style="margin-top: 1.5rem; display: inline-block;">Get Quote for Smart Shades</a>
                 </div>
                 <div class="service-video">
-                    <video autoplay muted loop playsinline poster="Video/logo.JPG" preload="auto" loading="eager">
+                    <video autoplay muted loop playsinline poster="Video/logo.JPG" preload="auto" loading="eager" onerror="this.style.display='none'; if(this.poster) { const img = document.createElement('img'); img.src = this.poster; img.style.width='100%'; img.style.height='auto'; img.style.objectFit='cover'; img.style.borderRadius='16px'; this.parentElement.appendChild(img); }">
                         <source src="Video/shades.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -1821,7 +1840,7 @@
                     <a href="/contact/#booking?service=Audio Distribution" class="btn-primary" style="margin-top: 1.5rem; display: inline-block;">Get Quote for Audio Distribution</a>
                 </div>
                 <div class="service-video">
-                    <video autoplay muted loop playsinline poster="Video/logo.JPG" preload="auto" loading="eager">
+                    <video autoplay muted loop playsinline poster="Video/logo.JPG" preload="auto" loading="eager" onerror="this.style.display='none'; if(this.poster) { const img = document.createElement('img'); img.src = this.poster; img.style.width='100%'; img.style.height='auto'; img.style.objectFit='cover'; img.style.borderRadius='16px'; this.parentElement.appendChild(img); }">
                         <source src="Video/whole home audio.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -2147,6 +2166,105 @@
                     });
                 });
             }
+
+            // Service Videos - Enhanced Video Handling
+            const serviceVideos = document.querySelectorAll('.service-video video');
+            serviceVideos.forEach(video => {
+                // Ensure video properties are set correctly
+                video.setAttribute('playsinline', '');
+                video.setAttribute('webkit-playsinline', '');
+                video.muted = true;
+                video.loop = true;
+                
+                // Error handling - if video fails to load, show poster
+                video.addEventListener('error', function(e) {
+                    console.warn('Video failed to load:', this.src);
+                    // Ensure poster is visible if video fails
+                    if (this.poster) {
+                        this.style.display = 'none';
+                        const posterImg = document.createElement('img');
+                        posterImg.src = this.poster;
+                        posterImg.style.width = '100%';
+                        posterImg.style.height = 'auto';
+                        posterImg.style.objectFit = 'cover';
+                        posterImg.style.borderRadius = '16px';
+                        this.parentElement.appendChild(posterImg);
+                    }
+                });
+
+                // Handle video loading
+                video.addEventListener('loadedmetadata', function() {
+                    // Try to play when metadata is loaded
+                    const playPromise = this.play();
+                    if (playPromise !== undefined) {
+                        playPromise.catch(error => {
+                            // Autoplay was prevented - that's okay, browser policy
+                            // Video will play when user interacts with page
+                        });
+                    }
+                });
+
+                // Ensure video plays when it becomes visible (Intersection Observer)
+                const videoObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting && entry.target.readyState >= 2) {
+                            const playPromise = entry.target.play();
+                            if (playPromise !== undefined) {
+                                playPromise.catch(() => {
+                                    // Autoplay prevented - will play on user interaction
+                                });
+                            }
+                        }
+                    });
+                }, { threshold: 0.5 });
+
+                videoObserver.observe(video);
+
+                // Ensure video continues playing if paused unexpectedly
+                video.addEventListener('pause', function() {
+                    if (!document.hidden && this.currentTime > 0 && !this.ended) {
+                        // Only auto-resume if video was playing and page is visible
+                        setTimeout(() => {
+                            if (this.paused && !this.ended) {
+                                this.play().catch(() => {});
+                            }
+                        }, 100);
+                    }
+                });
+
+                // Ensure video loops properly
+                video.addEventListener('ended', function() {
+                    this.currentTime = 0;
+                    this.play().catch(() => {});
+                });
+
+                // Handle source errors
+                const sources = video.querySelectorAll('source');
+                sources.forEach(source => {
+                    source.addEventListener('error', function() {
+                        console.warn('Video source failed:', this.src);
+                        // Try next source if available
+                        const nextSource = this.nextElementSibling;
+                        if (nextSource && nextSource.tagName === 'SOURCE') {
+                            video.load();
+                        }
+                    });
+                });
+            });
+
+            // Fallback: Try to play all videos on user interaction
+            const playAllVideos = () => {
+                serviceVideos.forEach(video => {
+                    if (video.paused && video.readyState >= 2) {
+                        video.play().catch(() => {});
+                    }
+                });
+            };
+
+            // Play videos on first user interaction
+            ['click', 'touchstart', 'scroll'].forEach(event => {
+                document.addEventListener(event, playAllVideos, { once: true, passive: true });
+            });
         });
     </script>
     </main>
