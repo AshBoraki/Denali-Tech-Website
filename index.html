@@ -256,11 +256,18 @@
             body {
                 touch-action: pan-y pinch-zoom !important;
                 -webkit-overflow-scrolling: touch !important;
+                overflow-y: auto !important;
+                overflow-x: hidden !important;
+                height: auto !important;
+                min-height: 100vh !important;
             }
             
             html {
                 touch-action: pan-y pinch-zoom !important;
                 -webkit-overflow-scrolling: touch !important;
+                overflow-y: auto !important;
+                overflow-x: hidden !important;
+                height: auto !important;
             }
             
             /* Prevent pull-to-refresh and overscroll bounce */
@@ -826,6 +833,9 @@
                 }
             }
             @media (max-width: 768px) {
+                .featured-projects-section {
+                    padding: 60px 1rem !important;
+                }
                 .projects-showcase-grid {
                     grid-template-columns: 1fr;
                 }
@@ -1398,6 +1408,9 @@
                 }
             }
             @media (max-width: 768px) {
+                .process-section {
+                    padding: 60px 1rem !important;
+                }
                 .process-steps-container {
                     grid-template-columns: 1fr;
                     gap: 2rem;
@@ -1484,6 +1497,9 @@
                 }
             }
             @media (max-width: 768px) {
+                .brands-showcase-section {
+                    padding: 60px 1rem !important;
+                }
                 .brands-showcase-grid {
                     grid-template-columns: repeat(2, 1fr);
                     gap: 1.5rem;
@@ -1624,6 +1640,9 @@
                 }
             }
             @media (max-width: 768px) {
+                .pricing-section {
+                    padding: 60px 1rem !important;
+                }
                 .pricing-grid {
                     grid-template-columns: 1fr;
                 }
@@ -1704,6 +1723,9 @@
                 }
             }
             @media (max-width: 768px) {
+                .blog-preview-section {
+                    padding: 60px 1rem !important;
+                }
                 .blog-grid {
                     grid-template-columns: 1fr;
                 }
@@ -1745,6 +1767,9 @@
                 }
             }
             @media (max-width: 768px) {
+                .quick-faq-section {
+                    padding: 60px 1rem !important;
+                }
                 .faq-grid {
                     grid-template-columns: 1fr;
                 }
