@@ -286,7 +286,7 @@
                 }
             }
             
-            /* Allow scrolling through header area */
+            /* CRITICAL: Ensure scrolling works on mobile */
             body {
                 touch-action: pan-y pinch-zoom !important;
                 -webkit-overflow-scrolling: touch !important;
@@ -295,6 +295,7 @@
                 height: auto !important;
                 min-height: 100vh !important;
                 position: relative !important;
+                overscroll-behavior-y: auto !important;
             }
             
             html {
@@ -303,6 +304,7 @@
                 overflow-y: auto !important;
                 overflow-x: hidden !important;
                 height: auto !important;
+                overscroll-behavior-y: auto !important;
             }
             
             main {
@@ -311,6 +313,7 @@
                 pointer-events: auto !important;
                 touch-action: pan-y !important;
                 overflow: visible !important;
+                overflow-y: visible !important;
             }
             
             section {
@@ -319,16 +322,17 @@
                 pointer-events: auto !important;
                 touch-action: pan-y !important;
                 overflow: visible !important;
+                overflow-y: visible !important;
             }
             
-            /* Prevent pull-to-refresh and overscroll bounce */
+            /* Remove overscroll restrictions that might block scrolling */
             body {
-                overscroll-behavior-y: contain !important;
+                overscroll-behavior-y: auto !important;
                 overscroll-behavior-x: none !important;
             }
             
             html {
-                overscroll-behavior-y: contain !important;
+                overscroll-behavior-y: auto !important;
                 overscroll-behavior-x: none !important;
             }
             
@@ -1938,14 +1942,20 @@
     </button>
 
     <script>
-        // Prevent horizontal scrolling on mobile devices
+        // Prevent horizontal scrolling on mobile devices - but allow vertical scrolling
         (function() {
-            // Ensure overflow-x is hidden on load
             function preventHorizontalScroll() {
+                // Only prevent horizontal scroll, ensure vertical scroll works
                 document.documentElement.style.overflowX = 'hidden';
+                document.documentElement.style.overflowY = 'auto';
                 document.body.style.overflowX = 'hidden';
+                document.body.style.overflowY = 'auto';
                 document.body.style.width = '100%';
                 document.body.style.maxWidth = '100vw';
+                // Ensure scrolling is enabled
+                document.body.style.position = 'relative';
+                document.body.style.height = 'auto';
+                document.documentElement.style.height = 'auto';
             }
             
             // Apply immediately
@@ -2333,7 +2343,7 @@
             }
 
             
-            // Fix section scroll capture on mobile - prevent sections from being scroll containers
+            // Fix section scroll capture on mobile - ensure body is the scroll container
             function fixSectionScrollCapture() {
                 if (window.innerWidth <= 768) {
                     const sections = document.querySelectorAll('section');
@@ -2349,22 +2359,39 @@
                             }
                         }
                         
-                        // Set overflow without affecting layout - let browser handle natural scrolling
+                        // Set overflow to allow scrolling through sections
                         section.style.overflow = 'visible';
                         section.style.overflowY = 'visible';
                         section.style.overflowX = 'hidden';
                         section.style.touchAction = 'pan-y';
+                        section.style.pointerEvents = 'auto';
                         
                         // Ensure section can't become a scroll container
                         section.style.height = 'auto';
                         section.style.maxHeight = 'none';
                     });
                     
-                    // Ensure body is the scroll container
+                    // CRITICAL: Ensure body is the scroll container and scrolling works
                     document.body.style.overflowY = 'auto';
+                    document.body.style.overflowX = 'hidden';
                     document.body.style.touchAction = 'pan-y';
+                    document.body.style.position = 'relative';
+                    document.body.style.height = 'auto';
+                    document.body.style.minHeight = '100vh';
+                    
                     document.documentElement.style.overflowY = 'auto';
+                    document.documentElement.style.overflowX = 'hidden';
                     document.documentElement.style.touchAction = 'pan-y';
+                    document.documentElement.style.height = 'auto';
+                    
+                    // Ensure main is scrollable
+                    const main = document.querySelector('main');
+                    if (main) {
+                        main.style.overflow = 'visible';
+                        main.style.overflowY = 'visible';
+                        main.style.touchAction = 'pan-y';
+                        main.style.pointerEvents = 'auto';
+                    }
                 }
             }
             
