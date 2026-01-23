@@ -2600,19 +2600,38 @@
                 };
             }
             
-            // Add parallax effect to hero section (subtle)
+            // Add parallax effect to hero section (subtle) - disabled on mobile
             const hero = document.querySelector('.hero');
             if (hero) {
                 const handleScroll = debounce(() => {
-                    const scrolled = window.pageYOffset;
-                    const heroContent = hero.querySelector('.hero-content');
-                    if (heroContent && scrolled < window.innerHeight) {
-                        heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
-                        heroContent.style.opacity = 1 - (scrolled / window.innerHeight) * 0.5;
+                    // Only apply parallax on desktop
+                    if (window.innerWidth > 768) {
+                        const scrolled = window.pageYOffset;
+                        const heroContent = hero.querySelector('.hero-content');
+                        if (heroContent && scrolled < window.innerHeight) {
+                            heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
+                            heroContent.style.opacity = 1 - (scrolled / window.innerHeight) * 0.5;
+                        }
+                    } else {
+                        // On mobile, ensure hero content is always visible
+                        const heroContent = hero.querySelector('.hero-content');
+                        if (heroContent) {
+                            heroContent.style.opacity = '1';
+                            heroContent.style.visibility = 'visible';
+                            heroContent.style.transform = 'none';
+                        }
                     }
                 }, 10);
                 
                 window.addEventListener('scroll', handleScroll, { passive: true });
+                // Ensure mobile visibility on load
+                if (window.innerWidth <= 768) {
+                    const heroContent = hero.querySelector('.hero-content');
+                    if (heroContent) {
+                        heroContent.style.opacity = '1';
+                        heroContent.style.visibility = 'visible';
+                    }
+                }
             }
         })();
     </script>
