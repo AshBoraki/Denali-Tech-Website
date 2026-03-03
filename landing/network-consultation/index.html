@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Replace YOUR_PIXEL_ID with your real Facebook Pixel ID -->
+  <!-- Optional direct Meta Pixel (set facebook-pixel-id meta content) -->
   <script>
     (function () {
-      var PIXEL_ID = 'YOUR_PIXEL_ID';
+      var pixelMeta = document.querySelector('meta[name="facebook-pixel-id"]');
+      var PIXEL_ID = pixelMeta && pixelMeta.content ? pixelMeta.content.trim() : '';
       if (!/^\d{8,20}$/.test(PIXEL_ID)) return;
 
       !function(f,b,e,v,n,t,s)
@@ -24,22 +25,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#0d59d8">
-  <meta name="robots" content="noindex,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="robots" content="noindex,nofollow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 
-  <title>Wi-Fi Consultation | Denali Tech Chicago</title>
-  <meta name="description" content="Still dealing with dead zones and buffering after mesh systems? Denali Tech designs and installs enterprise-grade Wi-Fi 7 networks for Chicago homes.">
+  <title>Smart Home Network Consultation | Denali Tech Chicago</title>
+  <meta name="description" content="A great smart home starts with a solid network. Denali Tech designs and installs reliable whole-home network foundations for home automation in Chicago.">
   <link rel="canonical" href="https://www.denalitechs.com/landing/network-consultation/">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Still Having Wi-Fi Problems After Trying Mesh Systems?">
-  <meta property="og:description" content="Professional Wi-Fi 7 upgrade consultation for Chicago homeowners.">
+  <meta property="og:title" content="A Smart Home Is Only as Good as Its Network">
+  <meta property="og:description" content="Denali Tech builds reliable whole-home network foundations for smart home automation in Chicago.">
   <meta property="og:url" content="https://www.denalitechs.com/landing/network-consultation/">
   <meta property="og:image" content="https://www.denalitechs.com/Video/IMG_5331-poster.jpg">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Still Having Wi-Fi Problems After Trying Mesh Systems?">
-  <meta name="twitter:description" content="Professional Wi-Fi 7 upgrade consultation for Chicago homeowners.">
+  <meta name="twitter:title" content="A Smart Home Is Only as Good as Its Network">
+  <meta name="twitter:description" content="Denali Tech builds reliable whole-home network foundations for smart home automation in Chicago.">
   <meta name="twitter:image" content="https://www.denalitechs.com/Video/IMG_5331-poster.jpg">
+  <meta name="facebook-pixel-id" content="">
 
   <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
@@ -233,6 +235,29 @@
       background: var(--primary-hover);
       outline: none;
       transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      color: #25d366;
+      background: rgba(37, 211, 102, 0.1);
+      border: 1px solid rgba(37, 211, 102, 0.3);
+    }
+
+    .btn-outline:hover,
+    .btn-outline:focus-visible {
+      background: rgba(37, 211, 102, 0.18);
+      outline: none;
+      transform: translateY(-1px);
+    }
+
+    .cta-row {
+      margin-top: 8px;
+      margin-bottom: 12px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      width: 100%;
+      max-width: 420px;
     }
 
     .hero-video {
@@ -450,6 +475,10 @@
       .compare-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
+
+      .cta-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
 
     @media (min-width: 980px) {
@@ -476,19 +505,23 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div>
-          <h1>Still Having Wi-Fi Problems After Trying Mesh Systems?</h1>
-          <p class="hero-sub">Tried Eero or pods and still have dead zones, buffering, or drops? You need a professionally designed network.</p>
+          <h1>A Smart Home Is Only as Good as Its Network</h1>
+          <p class="hero-sub">We’re a home automation company, and we know the foundation of every reliable system is a solid network. We design, calibrate, and place the right equipment so your smart home works every day.</p>
           <ul class="hero-list" aria-label="Wi-Fi upgrade benefits">
-            <li>Reliable coverage in every room</li>
-            <li>Wi-Fi 7 design built for your home layout</li>
+            <li>Reliable whole-home performance for smart home systems</li>
+            <li>Planned placement, calibration, and proven hardware</li>
           </ul>
-          <a class="btn btn-primary" href="#consultation-form">Request My Wi-Fi Consultation</a>
+          <div class="cta-row" aria-label="Primary actions">
+            <a class="btn btn-primary" href="#consultation-form">Request My Wi-Fi Consultation</a>
+            <a class="btn btn-outline" href="https://wa.me/13124397500" target="_blank" rel="noopener noreferrer">Text Us</a>
+          </div>
           <div class="hero-value" aria-label="What you get with Denali Tech">
             <h3>What You Get With Denali Tech</h3>
-            <p>A professionally installed Wi-Fi 7 network built for your actual home, not guesswork.</p>
+            <p>A professionally engineered network foundation built for dependable home automation.</p>
             <ul class="hero-value-list">
               <li>Reliable coverage across the whole house</li>
-              <li>Fast, stable Wi-Fi for streaming, work, and smart devices</li>
+              <li>Stable connections for lighting, cameras, remotes, and control</li>
+              <li>Right product selection and precise calibration</li>
               <li>Expert setup, tuning, and local support</li>
             </ul>
           </div>
@@ -500,7 +533,7 @@
               <source src="../../Video/IMG_5331-vertical-web.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
-            <div class="video-caption">From patchy mesh signals to engineered, full-home Wi-Fi performance.</div>
+            <div class="video-caption">From weak coverage to a properly engineered network foundation.</div>
           </div>
         </div>
       </div>
@@ -524,6 +557,14 @@
             <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
             <input type="hidden" name="form_started_at" id="form-started-at" value="">
             <input type="hidden" name="js_enabled" id="js-enabled" value="1">
+            <input type="hidden" name="utm_source" id="utm-source" value="">
+            <input type="hidden" name="utm_medium" id="utm-medium" value="">
+            <input type="hidden" name="utm_campaign" id="utm-campaign" value="">
+            <input type="hidden" name="utm_content" id="utm-content" value="">
+            <input type="hidden" name="utm_term" id="utm-term" value="">
+            <input type="hidden" name="fbclid" id="fbclid" value="">
+            <input type="hidden" name="landing_page" id="landing-page" value="">
+            <input type="hidden" name="referrer" id="referrer" value="">
 
             <div class="form-grid">
               <div class="field">
@@ -585,12 +626,12 @@
     <section aria-labelledby="compare-title">
       <div class="wrap">
         <div class="mini-head">
-          <h2 id="compare-title">Mesh Fails. Professional Design Works.</h2>
+          <h2 id="compare-title">Why Typical Fixes Fail in Smart Homes</h2>
         </div>
 
         <div class="compare-grid">
-          <div class="compare-item"><strong>Mesh Fails:</strong> Wireless hops, poor placement, convenience-first setup.</div>
-          <div class="compare-item"><strong>Denali Works:</strong> Hardwired APs, proper signal mapping, Wi-Fi 7 tuning.</div>
+          <div class="compare-item"><strong>Typical Setups Fail:</strong> Random gear, poor placement, and weak calibration create dropouts and unreliable automation.</div>
+          <div class="compare-item"><strong>Denali Standard:</strong> Proper network design, correct access point placement, and proven products built for smart-home reliability.</div>
         </div>
       </div>
     </section>
@@ -603,7 +644,7 @@
 
         <div class="proof-row">
           <div class="proof">5-Star Rated</div>
-          <div class="proof">Years of Experience</div>
+          <div class="proof">Experienced Install Team</div>
           <div class="proof">Chicago Service Area</div>
         </div>
       </div>
@@ -612,8 +653,8 @@
     <section class="urgency" aria-labelledby="urgency-title">
       <div class="wrap">
         <div class="urgency-box">
-          <h2 id="urgency-title">Ready For A Real Fix?</h2>
-          <p>Stop wasting money on temporary fixes.</p>
+          <h2 id="urgency-title">Build It on the Right Foundation</h2>
+          <p>Start with a solid network, and everything in your smart home works better.</p>
           <a class="btn btn-primary" href="#consultation-form">Request My Wi-Fi Consultation</a>
         </div>
       </div>
@@ -625,6 +666,7 @@
       var form = document.getElementById('wifi-consult-form');
       var submitBtn = document.getElementById('submit-btn');
       var formMessage = document.getElementById('form-message');
+      if (!form || !submitBtn || !formMessage) return;
 
       var MIN_FILL_MS = 2500;
       var MIN_INTERACTIONS = 1;
@@ -697,6 +739,25 @@
           /* no-op */
         }
       }
+
+      function setHiddenField(id, value) {
+        var input = document.getElementById(id);
+        if (input) input.value = value || '';
+      }
+
+      function captureAttribution() {
+        var params = new URLSearchParams(window.location.search);
+        setHiddenField('utm-source', params.get('utm_source'));
+        setHiddenField('utm-medium', params.get('utm_medium'));
+        setHiddenField('utm-campaign', params.get('utm_campaign'));
+        setHiddenField('utm-content', params.get('utm_content'));
+        setHiddenField('utm-term', params.get('utm_term'));
+        setHiddenField('fbclid', params.get('fbclid'));
+        setHiddenField('landing-page', window.location.href);
+        setHiddenField('referrer', document.referrer || '');
+      }
+
+      captureAttribution();
 
       function validate() {
         clearErrors();
