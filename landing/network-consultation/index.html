@@ -5,8 +5,7 @@
   <script>
     (function () {
       var PIXEL_ID = 'YOUR_PIXEL_ID';
-      var looksValidPixel = /^\d{8,20}$/.test(PIXEL_ID);
-      if (!looksValidPixel) return;
+      if (!/^\d{8,20}$/.test(PIXEL_ID)) return;
 
       !function(f,b,e,v,n,t,s)
       {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -24,23 +23,21 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#0f4cc9">
+  <meta name="theme-color" content="#0b57d0">
   <meta name="robots" content="noindex,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
-  <title>Denali Tech Wi-Fi Consultation | Professional Home Network Upgrades in Chicago</title>
-  <meta name="description" content="Still dealing with Wi-Fi dead zones and buffering after trying mesh systems? Denali Tech designs and installs enterprise-grade Wi-Fi 7 networks for Chicago homes.">
-  <meta name="keywords" content="Wi-Fi upgrade Chicago, Wi-Fi dead zones, mesh system issues, enterprise Wi-Fi 7, home network installation, Denali Tech">
+  <title>Wi-Fi Consultation | Denali Tech Chicago</title>
+  <meta name="description" content="Still dealing with dead zones and buffering after mesh systems? Denali Tech designs and installs enterprise-grade Wi-Fi 7 networks for Chicago homes.">
   <link rel="canonical" href="https://www.denalitechs.com/landing/network-consultation/">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Still Having Wi-Fi Problems After Trying Mesh Systems?">
-  <meta property="og:description" content="Professional Wi-Fi 7 network design and installation for Chicago homeowners.">
+  <meta property="og:description" content="Get a professionally designed Wi-Fi 7 network upgrade for your home.">
   <meta property="og:url" content="https://www.denalitechs.com/landing/network-consultation/">
   <meta property="og:image" content="https://www.denalitechs.com/Video/IMG_5331-poster.jpg">
-  <meta property="og:site_name" content="Denali Tech">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Still Having Wi-Fi Problems After Trying Mesh Systems?">
-  <meta name="twitter:description" content="Get a professional Wi-Fi network upgrade designed for your home.">
+  <meta name="twitter:description" content="Professional Wi-Fi 7 upgrade consultation for Chicago homeowners.">
   <meta name="twitter:image" content="https://www.denalitechs.com/Video/IMG_5331-poster.jpg">
 
   <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
@@ -49,198 +46,282 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #f8fafc;
-      --bg-soft: #f1f5f9;
+      --bg: #f5f8fc;
       --surface: #ffffff;
-      --surface-strong: #f9fbff;
+      --surface-soft: #f8fbff;
       --text: #0f172a;
       --muted: #334155;
-      --border: #d9e2ef;
-      --primary: #0f4cc9;
-      --primary-hover: #0a3a9f;
+      --line: #d8e3f1;
+      --primary: #0b57d0;
+      --primary-hover: #0948ae;
       --accent: #ff6b00;
       --accent-hover: #e45f00;
-      --success: #0f9f57;
-      --danger: #d83333;
-      --radius-lg: 18px;
-      --radius-md: 12px;
+      --danger: #cf2c2c;
+      --success: #137a3c;
+      --radius: 14px;
       --shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
-      --content-width: 1120px;
+      --max: 1140px;
     }
 
     * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
-      font-family: "Manrope", "Segoe UI", sans-serif;
-      color: var(--text);
+      font-family: "Inter", system-ui, sans-serif;
       background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
     }
 
     .wrap {
-      width: min(var(--content-width), calc(100% - 2rem));
+      width: min(var(--max), calc(100% - 2rem));
       margin-inline: auto;
     }
 
-    section {
-      padding: 72px 0;
-    }
+    section { padding: 56px 0; }
 
     h1, h2, h3 {
       margin: 0;
-      font-family: "Space Grotesk", "Trebuchet MS", sans-serif;
+      line-height: 1.2;
       letter-spacing: -0.02em;
-      line-height: 1.18;
-      color: #08152e;
     }
 
     h1 {
-      font-size: clamp(2rem, 4vw, 3.35rem);
-      max-width: 12ch;
+      font-size: clamp(2rem, 4vw, 3rem);
       margin-bottom: 16px;
+      max-width: 13ch;
     }
 
     h2 {
-      font-size: clamp(1.55rem, 2.8vw, 2.4rem);
-      margin-bottom: 14px;
+      font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+      margin-bottom: 12px;
     }
 
     p {
       margin: 0;
       color: var(--muted);
-      font-size: clamp(1rem, 1.35vw, 1.08rem);
+      font-size: clamp(1rem, 1.3vw, 1.08rem);
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
     }
 
     .hero {
-      padding-top: 42px;
-      padding-bottom: 54px;
+      padding-top: 40px;
+      padding-bottom: 44px;
     }
 
     .hero-grid {
       display: grid;
-      gap: 20px;
-      align-items: center;
+      gap: 26px;
+      align-items: start;
     }
 
     .hero-copy {
-      max-width: 840px;
+      max-width: 640px;
     }
 
-    .hero-subheadline {
-      font-size: clamp(1.08rem, 1.6vw, 1.28rem);
-      max-width: 62ch;
-      margin-bottom: 24px;
-    }
-
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      align-items: center;
+    .hero-sub {
       margin-bottom: 18px;
     }
 
-    .cta-btn {
-      appearance: none;
+    .quick-points {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .quick-points li {
+      position: relative;
+      padding-left: 24px;
+      color: #1e3a5f;
+      font-weight: 500;
+    }
+
+    .quick-points li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--primary);
+    }
+
+    .btn {
       border: 0;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 52px;
+      min-height: 50px;
       padding: 14px 22px;
       border-radius: 999px;
-      font-family: "Space Grotesk", "Trebuchet MS", sans-serif;
-      font-size: 1rem;
       font-weight: 700;
-      color: #fff;
-      background: linear-gradient(135deg, var(--primary) 0%, #2465e6 100%);
-      box-shadow: 0 10px 28px rgba(15, 76, 201, 0.3);
+      font-size: 0.98rem;
       cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      transition: 0.2s ease;
     }
 
-    .cta-btn:hover,
-    .cta-btn:focus-visible {
+    .btn-primary {
+      color: #fff;
+      background: var(--primary);
+      box-shadow: 0 10px 24px rgba(11, 87, 208, 0.3);
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible {
+      background: var(--primary-hover);
       transform: translateY(-1px);
-      box-shadow: 0 14px 30px rgba(15, 76, 201, 0.36);
-      background: linear-gradient(135deg, var(--primary-hover) 0%, #1f56c6 100%);
       outline: none;
     }
 
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow);
-      padding: clamp(20px, 2vw, 30px);
+    .hero-form {
+      padding: 20px;
     }
 
-    .video-wrap {
+    .hero-form h3 {
+      font-size: 1.25rem;
+      margin-bottom: 6px;
+    }
+
+    .hero-form-note {
+      font-size: 0.94rem;
+      margin-bottom: 16px;
+      color: #4b5f7d;
+    }
+
+    .form-grid {
       display: grid;
-      gap: 24px;
+      gap: 12px;
       grid-template-columns: 1fr;
-      max-width: 1020px;
-      margin-inline: auto;
     }
 
-    .video-box {
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      overflow: hidden;
-      background: #eff6ff;
-      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.1);
-      max-width: 360px;
-      margin-inline: auto;
+    .field {
+      display: grid;
+      gap: 6px;
     }
 
-    .video-box iframe,
-    .video-box video {
+    .field.full { grid-column: 1 / -1; }
+
+    label {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: #1d3557;
+    }
+
+    input,
+    select,
+    textarea {
       width: 100%;
-      display: block;
-      aspect-ratio: 9 / 16;
-      background: #a7c2f4;
-      border: 0;
+      min-height: 44px;
+      border: 1px solid #bdd1ea;
+      border-radius: 10px;
+      background: #fbfdff;
+      padding: 10px 12px;
+      font: inherit;
+      color: #173764;
     }
 
-    .video-caption {
-      padding: 14px 16px;
-      background: #eff6ff;
-      border-top: 1px solid var(--border);
-      color: #11326f;
-      font-size: 0.98rem;
+    textarea {
+      min-height: 96px;
+      resize: vertical;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(11, 87, 208, 0.16);
+    }
+
+    .field-error {
+      min-height: 16px;
+      font-size: 0.81rem;
+      color: var(--danger);
       font-weight: 600;
     }
 
-    .video-info h2,
-    .video-info p {
-      text-align: left;
+    .form-message {
+      margin-top: 10px;
+      min-height: 20px;
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .form-message.success { color: var(--success); }
+    .form-message.error { color: var(--danger); }
+
+    .h-captcha { margin-top: 12px; margin-bottom: 8px; }
+
+    .submit-btn {
+      width: 100%;
+      min-height: 50px;
+      border: 0;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #fff;
+      background: var(--accent);
+      box-shadow: 0 10px 24px rgba(255, 107, 0, 0.28);
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .submit-btn:hover,
+    .submit-btn:focus-visible {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .submit-btn:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 20px;
+    }
+
+    .video-row {
+      display: grid;
+      gap: 24px;
+      align-items: center;
+      padding: 24px;
     }
 
     .video-points {
-      list-style: none;
+      margin: 14px 0 0;
       padding: 0;
-      margin: 16px 0 0;
+      list-style: none;
       display: grid;
       gap: 10px;
-      max-width: 100%;
     }
 
     .video-points li {
       position: relative;
-      padding-left: 28px;
-      color: #25436d;
+      padding-left: 24px;
+      color: #1f3d67;
       font-weight: 500;
     }
 
@@ -249,46 +330,64 @@
       position: absolute;
       left: 0;
       top: 9px;
-      width: 14px;
-      height: 14px;
+      width: 9px;
+      height: 9px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent) 0%, #ff8b3d 100%);
-      box-shadow: 0 0 0 4px rgba(255, 107, 0, 0.15);
+      background: var(--accent);
     }
 
-    .section-head {
-      text-align: center;
-      max-width: 780px;
-      margin: 0 auto 24px;
+    .video-box {
+      max-width: 360px;
+      margin-inline: auto;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+      background: #edf3fb;
+    }
+
+    .video-box video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      border: 0;
+      background: #c9d7ea;
+    }
+
+    .video-caption {
+      padding: 12px;
+      font-size: 0.9rem;
+      color: #22486f;
+      border-top: 1px solid var(--line);
+      background: #f2f7fd;
+      font-weight: 600;
     }
 
     .list {
-      margin: 0;
-      padding: 0;
       list-style: none;
+      margin: 0 auto;
+      padding: 0;
       display: grid;
-      gap: 12px;
+      gap: 10px;
       max-width: 860px;
-      margin-inline: auto;
     }
 
     .list li {
       position: relative;
-      padding: 16px 18px 16px 50px;
-      border-radius: var(--radius-md);
-      background: var(--surface-strong);
-      border: 1px solid #cde0ff;
-      color: #1f3b66;
+      padding: 14px 16px 14px 44px;
+      border-radius: 10px;
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
+      color: #18365d;
       font-weight: 600;
     }
 
     .list.problem li::before,
     .list.solution li::before {
       position: absolute;
-      left: 18px;
-      top: 14px;
-      font-size: 1.25rem;
+      left: 16px;
+      top: 13px;
       font-weight: 800;
+      font-size: 1.1rem;
     }
 
     .list.problem li::before {
@@ -301,185 +400,65 @@
       color: var(--success);
     }
 
-    .social-grid {
-      display: grid;
-      gap: 14px;
-      grid-template-columns: 1fr;
-      max-width: 940px;
+    .proof-grid {
+      max-width: 980px;
       margin-inline: auto;
+      display: grid;
+      gap: 12px;
+      grid-template-columns: 1fr;
     }
 
-    .social-item {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 18px;
+    .proof-item {
       text-align: center;
-      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
-    }
-
-    .social-value {
-      display: block;
-      font-family: "Space Grotesk", "Trebuchet MS", sans-serif;
-      font-size: 1.5rem;
-      color: #0a2f7d;
-      margin-bottom: 6px;
-    }
-
-    .form-card {
-      max-width: 780px;
-      margin-inline: auto;
-    }
-
-    .form-grid {
-      display: grid;
-      gap: 14px;
-      grid-template-columns: 1fr;
-    }
-
-    .field {
-      display: grid;
-      gap: 6px;
-    }
-
-    label {
-      font-size: 0.95rem;
-      color: #173a75;
-      font-weight: 700;
-    }
-
-    input,
-    select,
-    textarea {
-      width: 100%;
-      border: 1px solid #b6cbef;
+      padding: 16px;
+      border: 1px solid var(--line);
       border-radius: 10px;
-      min-height: 46px;
-      padding: 11px 13px;
-      font-size: 1rem;
-      font-family: "Manrope", "Segoe UI", sans-serif;
-      color: #123268;
-      background: #fbfdff;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      background: #fff;
     }
 
-    textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-
-    input:focus,
-    select:focus,
-    textarea:focus {
-      outline: none;
-      border-color: #2c66da;
-      box-shadow: 0 0 0 3px rgba(44, 102, 218, 0.18);
-    }
-
-    .field-error {
-      min-height: 18px;
-      color: var(--danger);
-      font-size: 0.82rem;
-      font-weight: 600;
-    }
-
-    .form-message {
-      margin-top: 12px;
-      font-size: 0.95rem;
-      font-weight: 700;
-      min-height: 22px;
-    }
-
-    .form-message.success { color: var(--success); }
-    .form-message.error { color: var(--danger); }
-
-    .h-captcha {
-      margin-top: 16px;
-      margin-bottom: 8px;
-    }
-
-    .submit-btn {
-      width: 100%;
-      margin-top: 4px;
-      min-height: 52px;
-      border: 0;
-      border-radius: 12px;
-      font-family: "Space Grotesk", "Trebuchet MS", sans-serif;
-      font-size: 1rem;
-      font-weight: 700;
-      color: #fff;
-      background: linear-gradient(135deg, var(--accent) 0%, #ff842f 100%);
-      box-shadow: 0 12px 26px rgba(255, 107, 0, 0.32);
-      cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .submit-btn:hover,
-    .submit-btn:focus-visible {
-      transform: translateY(-1px);
-      box-shadow: 0 14px 28px rgba(255, 107, 0, 0.38);
-      outline: none;
-      background: linear-gradient(135deg, var(--accent-hover) 0%, #f67622 100%);
-    }
-
-    .submit-btn:disabled {
-      cursor: not-allowed;
-      opacity: 0.72;
-      transform: none;
-      box-shadow: none;
-    }
-
-    .urgency {
-      padding-top: 18px;
-      padding-bottom: 80px;
+    .proof-item strong {
+      display: block;
+      font-size: 1.2rem;
+      margin-bottom: 4px;
+      color: #0f386d;
     }
 
     .urgency-box {
-      max-width: 900px;
+      max-width: 920px;
       margin-inline: auto;
       text-align: center;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 26px 20px;
-      background: #ffffff;
-      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+      padding: 26px 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: var(--shadow);
     }
 
     .urgency-box p {
-      color: #102c5f;
-      font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+      color: #1a3a64;
+      font-size: clamp(1.05rem, 1.8vw, 1.28rem);
       font-weight: 700;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
-    @media (min-width: 720px) {
-      .social-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
+    @media (min-width: 820px) {
       .form-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .field.full {
-        grid-column: 1 / -1;
+      .proof-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
     }
 
     @media (min-width: 980px) {
       .hero-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr) minmax(380px, 440px);
       }
 
-      .video-wrap {
-        grid-template-columns: minmax(290px, 360px) minmax(0, 1fr);
-        align-items: center;
+      .video-row {
+        grid-template-columns: minmax(0, 1fr) minmax(310px, 360px);
       }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      * { animation: none !important; transition: none !important; }
     }
   </style>
 
@@ -492,13 +471,7 @@
     "telephone": "+1-312-439-7500",
     "areaServed": ["Chicago", "Northbrook", "Glenview", "Arlington Heights", "Park Ridge", "Skokie"],
     "serviceType": "Professional Wi-Fi 7 Home Network Design and Installation",
-    "description": "Enterprise-grade Wi-Fi 7 upgrades for homeowners dealing with dead zones, buffering, and dropped connections after mesh systems.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Chicago",
-      "addressRegion": "IL",
-      "addressCountry": "US"
-    }
+    "description": "Enterprise-grade Wi-Fi 7 upgrades for homeowners dealing with dead zones, buffering, and dropped connections after mesh systems."
   }
   </script>
 </head>
@@ -506,99 +479,21 @@
   <main>
     <section class="hero">
       <div class="wrap hero-grid">
-        <div class="hero-copy" data-reveal>
+        <div class="hero-copy">
           <h1>Still Having Wi-Fi Problems After Trying Mesh Systems?</h1>
-          <p class="hero-subheadline">If you’ve tried Eero, Xfinity Pods, or other mesh systems and still have dead zones, buffering, or dropped connections — you don’t need another gadget. You need a properly designed network.</p>
-          <div class="cta-row">
-            <a class="cta-btn" href="#consultation-form">Request My Wi-Fi Consultation</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section aria-labelledby="video-title">
-      <div class="wrap card video-wrap" data-reveal>
-        <div class="video-info">
-          <h2 id="video-title">Why Homeowners Choose Denali Instead of Adding More Mesh Pods</h2>
-          <p>This is the difference between temporary fixes and a real upgrade. We replace unstable Eero/pod-style setups with a professionally designed Wi-Fi 7 network that performs in every room.</p>
-          <ul class="video-points" aria-label="Denali Wi-Fi solution benefits">
-            <li>No wireless hop chain losses from pod-to-pod relays</li>
-            <li>Hardwired Wi-Fi 7 access points for stable, full-speed coverage</li>
-            <li>Signal mapped and tuned for your exact home layout</li>
-            <li>Reliable performance for streaming, calls, cameras, and smart devices</li>
-            <li>Installed and supported by a local Chicago professional team</li>
+          <p class="hero-sub">If you’ve tried Eero, Xfinity Pods, or other mesh systems and still have dead zones, buffering, or dropped connections, you do not need another gadget. You need a properly designed network.</p>
+          <ul class="quick-points" aria-label="Wi-Fi upgrade benefits">
+            <li>Reliable coverage in every room</li>
+            <li>Wi-Fi 7 design built for your exact home layout</li>
+            <li>Professional installation and tuning by local experts</li>
           </ul>
-        </div>
-        <div class="video-box">
-          <video controls preload="none" poster="../../Video/IMG_5331-poster.jpg" playsinline aria-label="Wi-Fi upgrade demonstration short video">
-            <source src="../../Video/IMG_5331-vertical-web.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <div class="video-caption">From patchy mesh signals to engineered, full-home Wi-Fi performance.</div>
-        </div>
-      </div>
-    </section>
-
-    <section aria-labelledby="problem-title">
-      <div class="wrap" data-reveal>
-        <div class="section-head">
-          <h2 id="problem-title">Why Mesh Systems Fail in Larger Homes</h2>
-        </div>
-        <ul class="list problem">
-          <li>They rely on wireless hops (signal loss)</li>
-          <li>Poor placement causes dead zones</li>
-          <li>Not professionally configured</li>
-          <li>Built for convenience, not performance</li>
-        </ul>
-      </div>
-    </section>
-
-    <section aria-labelledby="solution-title">
-      <div class="wrap" data-reveal>
-        <div class="section-head">
-          <h2 id="solution-title">Enterprise-Grade Wi-Fi 7 Installed the Right Way</h2>
-          <p>Denali Tech designs and installs a professional Wi-Fi 7 network built around your home, usage, and performance goals.</p>
-        </div>
-        <ul class="list solution">
-          <li>Hardwired access points for stable, full-speed coverage</li>
-          <li>Proper signal mapping before equipment placement</li>
-          <li>Commercial-grade equipment selected for reliability</li>
-          <li>Designed for your home's layout and real device load</li>
-          <li>Professionally installed, tuned, and verified room-by-room</li>
-        </ul>
-      </div>
-    </section>
-
-    <section aria-labelledby="proof-title">
-      <div class="wrap" data-reveal>
-        <div class="section-head">
-          <h2 id="proof-title">Trusted Local Team for High-Performance Home Wi-Fi</h2>
-        </div>
-        <div class="social-grid">
-          <article class="social-item">
-            <span class="social-value">5-Star Rated</span>
-            <p>Consistently strong homeowner reviews for reliability, communication, and final results.</p>
-          </article>
-          <article class="social-item">
-            <span class="social-value">Years of Experience</span>
-            <p>Experienced in designing and installing residential networks that stay stable under heavy usage.</p>
-          </article>
-          <article class="social-item">
-            <span class="social-value">Chicago Service Area</span>
-            <p>Serving Chicago and nearby suburbs with on-site professional installation and optimization.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="consultation-form" aria-labelledby="form-title">
-      <div class="wrap" data-reveal>
-        <div class="section-head">
-          <h2 id="form-title">Get Your Wi-Fi Fixed Properly</h2>
-          <p>Tell us what is happening in your home now and we will recommend the right network upgrade plan.</p>
+          <a class="btn btn-primary" href="#consultation-form">Request My Wi-Fi Consultation</a>
         </div>
 
-        <div class="card form-card">
+        <div class="card hero-form" id="consultation-form">
+          <h3>Get Your Wi-Fi Fixed Properly</h3>
+          <p class="hero-form-note">Fast response from Denali Tech. Serving Chicago and surrounding suburbs.</p>
+
           <form id="wifi-consult-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
             <input type="hidden" name="access_key" value="9007b329-be2c-40a8-af09-d652f0f5b566">
             <input type="hidden" name="subject" value="Facebook Ads - Wi-Fi Consultation Request">
@@ -631,26 +526,26 @@
 
               <div class="field">
                 <label for="home-size">Home size (sq ft)</label>
-                <input type="text" id="home-size" name="home_size_sq_ft" placeholder="e.g., 3,800" required>
+                <input type="text" id="home-size" name="home_size_sq_ft" placeholder="Optional">
                 <span class="field-error" id="home-size-error" role="alert"></span>
               </div>
 
               <div class="field full">
                 <label for="wifi-system">Current Wi-Fi system</label>
-                <input type="text" id="wifi-system" name="current_wifi_system" placeholder="e.g., Xfinity gateway + 3 pods" required>
+                <input type="text" id="wifi-system" name="current_wifi_system" placeholder="Optional (e.g., Eero, Xfinity Pods)">
                 <span class="field-error" id="wifi-system-error" role="alert"></span>
               </div>
 
               <div class="field full">
                 <label for="wifi-problems">What problems are you experiencing?</label>
-                <textarea id="wifi-problems" name="wifi_problems" placeholder="Tell us where coverage drops, where buffering happens, and any rooms/devices affected." required></textarea>
+                <textarea id="wifi-problems" name="wifi_problems" placeholder="Where does coverage drop? Which rooms buffer?" required></textarea>
                 <span class="field-error" id="wifi-problems-error" role="alert"></span>
               </div>
 
               <div class="field full">
                 <label for="budget">Budget range</label>
-                <select id="budget" name="budget_range" required>
-                  <option value="">Select your budget range</option>
+                <select id="budget" name="budget_range">
+                  <option value="">Prefer to discuss</option>
                   <option value="$1k-$3k">$1k-$3k</option>
                   <option value="$3k-$6k">$3k-$6k</option>
                   <option value="$6k+">$6k+</option>
@@ -667,12 +562,88 @@
       </div>
     </section>
 
+    <section aria-labelledby="video-title">
+      <div class="wrap card video-row">
+        <div>
+          <h2 id="video-title">Why Homeowners Choose Denali Instead of Adding More Mesh Pods</h2>
+          <p>This is the difference between temporary fixes and a real upgrade. We replace unstable Eero and pod-style setups with professionally designed Wi-Fi 7 networks.</p>
+          <ul class="video-points" aria-label="Denali Wi-Fi solution benefits">
+            <li>No wireless hop-chain signal losses</li>
+            <li>Hardwired Wi-Fi 7 access points for stronger consistency</li>
+            <li>Signal mapping and placement based on your home layout</li>
+            <li>Stable performance for streaming, calls, cameras, and smart devices</li>
+            <li>Installed and supported by a local Chicago team</li>
+          </ul>
+        </div>
+
+        <div class="video-box">
+          <video controls preload="none" poster="../../Video/IMG_5331-poster.jpg" playsinline aria-label="Wi-Fi upgrade demonstration short video">
+            <source src="../../Video/IMG_5331-vertical-web.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-caption">From patchy mesh signals to engineered, full-home Wi-Fi performance.</div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="problem-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="problem-title">Why Mesh Systems Fail in Larger Homes</h2>
+        </div>
+        <ul class="list problem">
+          <li>They rely on wireless hops (signal loss)</li>
+          <li>Poor placement causes dead zones</li>
+          <li>Not professionally configured</li>
+          <li>Built for convenience, not performance</li>
+        </ul>
+      </div>
+    </section>
+
+    <section aria-labelledby="solution-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="solution-title">Enterprise-Grade Wi-Fi 7 Installed the Right Way</h2>
+          <p>Denali Tech designs and installs a professional Wi-Fi 7 network built around your home, usage, and performance goals.</p>
+        </div>
+        <ul class="list solution">
+          <li>Hardwired access points for stable, full-speed coverage</li>
+          <li>Proper signal mapping before equipment placement</li>
+          <li>Commercial-grade equipment selected for reliability</li>
+          <li>Designed for your home's layout and real device load</li>
+          <li>Professionally installed, tuned, and verified room-by-room</li>
+        </ul>
+      </div>
+    </section>
+
+    <section aria-labelledby="proof-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="proof-title">Trusted Local Team for High-Performance Home Wi-Fi</h2>
+        </div>
+        <div class="proof-grid">
+          <article class="proof-item">
+            <strong>5-Star Rated</strong>
+            <p>Consistent homeowner reviews for reliability and results.</p>
+          </article>
+          <article class="proof-item">
+            <strong>Years of Experience</strong>
+            <p>Real residential networking experience with high-device homes.</p>
+          </article>
+          <article class="proof-item">
+            <strong>Chicago Service Area</strong>
+            <p>On-site installation and optimization across Chicago suburbs.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="urgency" aria-labelledby="urgency-title">
-      <div class="wrap" data-reveal>
+      <div class="wrap">
         <div class="urgency-box">
           <h2 id="urgency-title">Ready For A Real Fix?</h2>
           <p>Stop wasting money on temporary fixes. Get a real network solution designed for your home.</p>
-          <a class="cta-btn" href="#consultation-form">Request My Wi-Fi Consultation</a>
+          <a class="btn btn-primary" href="#consultation-form">Request My Wi-Fi Consultation</a>
         </div>
       </div>
     </section>
@@ -683,8 +654,8 @@
       var form = document.getElementById('wifi-consult-form');
       var submitBtn = document.getElementById('submit-btn');
       var formMessage = document.getElementById('form-message');
-      var MIN_FILL_MS = 4000;
-      var MIN_INTERACTIONS = 2;
+      var MIN_FILL_MS = 3500;
+      var MIN_INTERACTIONS = 1;
       var COOLDOWN_MS = 45000;
       var interactions = 0;
       var spamLinkPattern = /(https?:\/\/|www\.)/i;
@@ -800,26 +771,11 @@
           ok = false;
         }
 
-        if (!fields.homeSize.value.trim()) {
-          setError('home-size-error', 'Please enter your home size.');
-          ok = false;
-        }
-
-        if (!fields.wifiSystem.value.trim()) {
-          setError('wifi-system-error', 'Please enter your current Wi-Fi system.');
-          ok = false;
-        }
-
         if (!fields.wifiProblems.value.trim()) {
           setError('wifi-problems-error', 'Please describe the Wi-Fi problems you are experiencing.');
           ok = false;
         } else if (spamLinkPattern.test(fields.wifiProblems.value)) {
           setError('wifi-problems-error', 'Please remove links from this field.');
-          ok = false;
-        }
-
-        if (!fields.budget.value) {
-          setError('budget-error', 'Please select a budget range.');
           ok = false;
         }
 
@@ -867,7 +823,6 @@
             submitBtn.disabled = false;
           });
       });
-
     })();
   </script>
   <script src="https://web3forms.com/client/script.js" async defer></script>
