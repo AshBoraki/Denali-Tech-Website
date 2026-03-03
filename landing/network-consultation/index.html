@@ -161,16 +161,26 @@
       background: var(--primary);
     }
 
-    .hero-micro {
-      margin-top: 12px;
-      margin-bottom: 8px;
-      font-size: 0.9rem;
-      color: #2b466d;
-      font-weight: 600;
-      max-width: 52ch;
+    .hero-value {
+      margin-top: 14px;
+      padding: 12px 13px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fbfdff;
+      max-width: 60ch;
     }
 
-    .hero-meta {
+    .hero-value h3 {
+      font-size: 1.04rem;
+      margin-bottom: 6px;
+    }
+
+    .hero-value p {
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+    }
+
+    .hero-value-list {
       margin: 0;
       padding: 0;
       list-style: none;
@@ -178,10 +188,23 @@
       gap: 6px;
     }
 
-    .hero-meta li {
-      font-size: 0.88rem;
-      color: #35506f;
+    .hero-value-list li {
+      position: relative;
+      padding-left: 16px;
+      font-size: 0.9rem;
+      color: #1f3f67;
       font-weight: 500;
+    }
+
+    .hero-value-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
     }
 
     .btn {
@@ -245,49 +268,6 @@
       text-align: center;
       max-width: 700px;
       margin: 0 auto 12px;
-    }
-
-    .info-grid {
-      display: grid;
-      gap: 12px;
-      max-width: 900px;
-      margin-inline: auto;
-    }
-
-    .info-card {
-      padding: 16px;
-    }
-
-    .info-card p {
-      font-size: 0.95rem;
-      margin-bottom: 8px;
-    }
-
-    .info-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: grid;
-      gap: 8px;
-    }
-
-    .info-list li {
-      position: relative;
-      padding-left: 18px;
-      color: #1f3f67;
-      font-size: 0.93rem;
-      font-weight: 500;
-    }
-
-    .info-list li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 8px;
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--accent);
     }
 
     .compare-grid {
@@ -476,10 +456,6 @@
       .hero-grid {
         grid-template-columns: minmax(0, 1fr) minmax(330px, 380px);
       }
-
-      .info-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
     }
   </style>
 
@@ -507,11 +483,15 @@
             <li>Wi-Fi 7 design built for your home layout</li>
           </ul>
           <a class="btn btn-primary" href="#consultation-form">Request My Wi-Fi Consultation</a>
-          <p class="hero-micro">Best for homeowners with larger homes, multiple floors, and heavy daily Wi-Fi usage.</p>
-          <ul class="hero-meta" aria-label="Consultation highlights">
-            <li>5-star rated local Chicago team</li>
-            <li>Professional on-site network planning and installation</li>
-          </ul>
+          <div class="hero-value" aria-label="What you get with Denali Tech">
+            <h3>What You Get With Denali Tech</h3>
+            <p>A professionally installed Wi-Fi 7 network built for your actual home, not guesswork.</p>
+            <ul class="hero-value-list">
+              <li>Reliable coverage across the whole house</li>
+              <li>Fast, stable Wi-Fi for streaming, work, and smart devices</li>
+              <li>Expert setup, tuning, and local support</li>
+            </ul>
+          </div>
         </div>
 
         <div class="card hero-video">
@@ -522,20 +502,6 @@
             </video>
             <div class="video-caption">From patchy mesh signals to engineered, full-home Wi-Fi performance.</div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section aria-labelledby="value-title">
-      <div class="wrap info-grid">
-        <div class="card info-card">
-          <h2 id="value-title">What You Get With Denali Tech</h2>
-          <p>A professionally installed Wi-Fi 7 network built for your actual home, not guesswork.</p>
-          <ul class="info-list" aria-label="Denali Wi-Fi solution benefits">
-            <li>Reliable coverage across the whole house</li>
-            <li>Fast, stable Wi-Fi for streaming, work, and smart devices</li>
-            <li>Expert setup, tuning, and local support</li>
-          </ul>
         </div>
       </div>
     </section>
