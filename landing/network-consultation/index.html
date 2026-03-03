@@ -3,20 +3,24 @@
 <head>
   <!-- Replace YOUR_PIXEL_ID with your actual Facebook Pixel ID -->
   <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'YOUR_PIXEL_ID');
-    fbq('track', 'PageView');
+    (function () {
+      var PIXEL_ID = 'YOUR_PIXEL_ID';
+      var looksValidPixel = /^\d{8,20}$/.test(PIXEL_ID);
+      if (!looksValidPixel) return;
+
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+
+      fbq('init', PIXEL_ID);
+      fbq('track', 'PageView');
+    })();
   </script>
-  <noscript>
-    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1" alt="">
-  </noscript>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -389,6 +393,11 @@
     .form-message.success { color: var(--success); }
     .form-message.error { color: var(--danger); }
 
+    .h-captcha {
+      margin-top: 16px;
+      margin-bottom: 8px;
+    }
+
     .submit-btn {
       width: 100%;
       margin-top: 4px;
@@ -650,6 +659,7 @@
               </div>
             </div>
 
+            <div class="h-captcha" data-captcha="true"></div>
             <button class="submit-btn" id="submit-btn" type="submit">Request My Network Evaluation</button>
             <div class="form-message" id="form-message" role="status" aria-live="polite"></div>
           </form>
@@ -725,6 +735,11 @@
 
       function validPhone(phone) {
         return phone.replace(/\D/g, '').length >= 10;
+      }
+
+      function getCaptchaToken() {
+        var captcha = form.querySelector('textarea[name="h-captcha-response"]');
+        return captcha ? captcha.value.trim() : '';
       }
 
       function canSubmitAgain() {
@@ -812,9 +827,18 @@
         return ok;
       }
 
-      form.addEventListener('submit', function (event) {
+      form.addEventListener('submit', async function (event) {
         event.preventDefault();
         if (!validate()) return;
+
+        if (!getCaptchaToken()) {
+          await new Promise(function (resolve) { setTimeout(resolve, 500); });
+        }
+        if (!getCaptchaToken()) {
+          setMessage('Please complete the captcha verification before submitting.', true);
+          return;
+        }
+
         if (!canSubmitAgain()) {
           setMessage('Please wait about a minute before sending another request.', true);
           return;
@@ -847,5 +871,6 @@
 
     })();
   </script>
+  <script src="https://web3forms.com/client/script.js" async defer></script>
 </body>
 </html>
