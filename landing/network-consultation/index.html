@@ -85,7 +85,7 @@
       margin-inline: auto;
     }
 
-    section { padding: 56px 0; }
+    section { padding: 44px 0; }
 
     h1, h2, h3 {
       margin: 0;
@@ -308,13 +308,18 @@
     .section-head {
       text-align: center;
       max-width: 780px;
-      margin: 0 auto 20px;
+      margin: 0 auto 14px;
     }
 
     .video-row {
       display: grid;
       gap: 24px;
       align-items: start;
+      max-width: 1140px;
+      margin-inline: auto;
+    }
+
+    .video-info-card {
       padding: 24px;
     }
 
@@ -340,6 +345,7 @@
       padding-left: 24px;
       color: #1f3d67;
       font-weight: 500;
+      font-size: 0.96rem;
     }
 
     .video-points li::before {
@@ -395,7 +401,8 @@
       background: var(--surface-soft);
       border: 1px solid var(--line);
       color: #18365d;
-      font-weight: 600;
+      font-weight: 500;
+      font-size: 0.95rem;
     }
 
     .list.problem li::before,
@@ -427,7 +434,7 @@
 
     .proof-item {
       text-align: center;
-      padding: 16px;
+      padding: 14px;
       border: 1px solid var(--line);
       border-radius: 10px;
       background: #fff;
@@ -444,7 +451,7 @@
       max-width: 920px;
       margin-inline: auto;
       text-align: center;
-      padding: 26px 18px;
+      padding: 20px 16px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background: #fff;
@@ -475,6 +482,12 @@
 
       .video-row {
         grid-template-columns: minmax(0, 1fr) minmax(380px, 460px);
+      }
+    }
+
+    @media (min-width: 900px) {
+      .list.problem {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
   </style>
@@ -520,16 +533,15 @@
     </section>
 
     <section aria-labelledby="video-title">
-      <div class="wrap card video-row">
-        <div>
+      <div class="wrap video-row">
+        <div class="card video-info-card">
           <h2 id="video-title">Why Homeowners Choose Denali Instead of Adding More Mesh Pods</h2>
-          <p>This is the difference between temporary fixes and a real upgrade. We replace unstable Eero and pod-style setups with professionally designed Wi-Fi 7 networks.</p>
+          <p>Instead of adding more pods, we design and install a real Wi-Fi 7 network built for your home.</p>
           <ul class="video-points" aria-label="Denali Wi-Fi solution benefits">
             <li>No wireless hop-chain signal losses</li>
             <li>Hardwired Wi-Fi 7 access points for stronger consistency</li>
             <li>Signal mapping and placement based on your home layout</li>
             <li>Stable performance for streaming, calls, cameras, and smart devices</li>
-            <li>Installed and supported by a local Chicago team</li>
           </ul>
         </div>
 
@@ -623,7 +635,7 @@
       <div class="wrap">
         <div class="section-head">
           <h2 id="solution-title">Enterprise-Grade Wi-Fi 7 Installed the Right Way</h2>
-          <p>Denali Tech designs and installs a professional Wi-Fi 7 network built around your home, usage, and performance goals.</p>
+          <p>Professional Wi-Fi 7 design, installation, and optimization for consistent full-home coverage.</p>
         </div>
         <ul class="list solution">
           <li>Hardwired access points for stable, full-speed coverage</li>
