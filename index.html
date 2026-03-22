@@ -52,6 +52,46 @@
     initGTM();
     </script>
     <!-- End Google Tag Manager -->
+    <meta name="facebook-pixel-id" content="1445768249716742">
+    <script>
+    (function() {
+        var pixelId = "1445768249716742";
+
+        if (!window.fbq) {
+            !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";
+            n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;
+            s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document, "script",
+            "https://connect.facebook.net/en_US/fbevents.js");
+        }
+
+        try {
+            window.fbq("init", pixelId);
+            window.fbq("track", "PageView");
+        } catch (error) {}
+
+        window.denaliMetaPixel = window.denaliMetaPixel || {};
+        window.denaliMetaPixel.pixelId = pixelId;
+        window.denaliMetaPixel.trackLeadOnce = function(details) {
+            var now = Date.now();
+
+            try {
+                var key = "denali_meta_last_lead_at";
+                var last = parseInt(sessionStorage.getItem(key) || "0", 10);
+                if (last && (now - last) < 1800000) return false;
+                sessionStorage.setItem(key, String(now));
+            } catch (error) {}
+
+            if (typeof window.fbq === "function") {
+                window.fbq("track", "Lead", details || {});
+                return true;
+            }
+
+            return false;
+        };
+    })();
+    </script>
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0, user-scalable=yes">
