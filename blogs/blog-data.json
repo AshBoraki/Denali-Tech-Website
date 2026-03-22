@@ -1,6 +1,21 @@
 {
   "posts": [
     {
+      "id": "best-smart-home-brands-chicago-guide",
+      "title": "Best Smart Home Brands We Trust for Chicago Homes",
+      "slug": "best-smart-home-brands-chicago-guide",
+      "url": "/blogs/best-smart-home-brands-chicago-guide/",
+      "excerpt": "See the smart home brands Denali Tech trusts for Chicago-area homes, including Control4, URC, Lutron, Sonos, Araknis, OvrC, WattBox, and more.",
+      "category": "Buying Guide",
+      "tags": ["Smart Home Brands", "Control4", "Lutron", "Araknis", "Chicago"],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-03-22",
+      "updatedDate": "2026-03-22",
+      "readingTime": 11,
+      "heroImage": "/Video/Brands/Denali techControl4.webp",
+      "featured": true
+    },
+    {
       "id": "ovrc-remote-monitoring-guide",
       "title": "What Is OvrC? Why Remote Monitoring Matters for Smart Homes",
       "slug": "ovrc-remote-monitoring-guide",
