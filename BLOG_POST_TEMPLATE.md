@@ -40,7 +40,7 @@
         "name": "Denali Tech",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://www.denalitechs.com/Video/logo.webp"
+          "url": "https://denalitechs.com/Video/logo.webp"
         }
       },
       "datePublished": "[YYYY-MM-DD]",
@@ -215,7 +215,7 @@
             <div class="cta-box">
                 <p><strong>Ready to transform your Chicago home?</strong></p>
                 <p>Get a free, no-obligation consultation with Denali Tech. We'll assess your space, listen to your goals, and create a custom smart home plan that fits your lifestyle and budget.</p>
-                <a href="/contact/#booking" class="btn-primary">📅 Schedule Your Free Consultation</a>
+                <a href="/contact/#booking" class="btn-primary">📅 Let's Talk About Your Project</a>
                 <p class="contact-info">
                     Or call us at <a href="tel:+13124397500">(312) 439-7500</a><br>
                     Email: <a href="mailto:Hello@denalitechs.com">Hello@denalitechs.com</a>

@@ -40,29 +40,29 @@
     
     <!-- Open Graph Meta Tags -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.denalitechs.com/blogs/">
+    <meta property="og:url" content="https://denalitechs.com/blogs/">
     <meta property="og:title" content="Blog - Smart Home Tips, Guides & Insights | Denali Tech">
     <meta property="og:description" content="Expert guides and tips on smart home automation, Control4, URC, home theater, WiFi, and more. Learn from Chicago's trusted smart home experts.">
-    <meta property="og:image" content="https://www.denalitechs.com/Video/logo icon for web title .jpg">
+    <meta property="og:image" content="https://denalitechs.com/Video/logo-social.jpg">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.denalitechs.com/blogs/">
+    <link rel="canonical" href="https://denalitechs.com/blogs/">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://www.denalitechs.com/blogs/">
+    <meta name="twitter:url" content="https://denalitechs.com/blogs/">
     <meta name="twitter:title" content="Smart Home Blog | Denali Tech">
     <meta name="twitter:description" content="Expert guides and tips on smart home automation, Control4, URC, home theater, WiFi, and more. Learn from Chicago's trusted smart home experts.">
-    <meta name="twitter:image" content="https://www.denalitechs.com/Video/logo icon for web title .jpg">
+    <meta name="twitter:image" content="https://denalitechs.com/Video/logo-social.jpg">
     
 
     
     <base href="/">
-    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="../favicon-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="../favicon-512x512.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -86,26 +86,26 @@
         "@type": "Blog",
         "name": "Denali Tech Smart Home Blog",
         "description": "Expert tips, guides, and insights about smart home technology, home automation, and AV systems.",
-        "url": "https://www.denalitechs.com/blogs/",
+        "url": "https://denalitechs.com/blogs/",
         "publisher": {
             "@type": "Organization",
             "name": "Denali Tech",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://www.denalitechs.com/Video/logo icon for web title .jpg"
+                "url": "https://denalitechs.com/Video/logo%20no%20back%20greand%20.png"
             }
         },
         "author": {
             "@type": "Organization",
             "name": "Denali Tech",
-            "url": "https://www.denalitechs.com/"
+            "url": "https://denalitechs.com/"
         },
         "inLanguage": "en-US",
         "potentialAction": {
             "@type": "ReadAction",
             "target": {
                 "@type": "EntryPoint",
-                "urlTemplate": "https://www.denalitechs.com/blogs/"
+                "urlTemplate": "https://denalitechs.com/blogs/"
             }
         }
     }
@@ -812,10 +812,10 @@
 
 
     <!-- Shared Mobile Menu Script -->
-    <script src="../assets/js/mobile-menu.js"></script>
+    <script src="/assets/js/mobile-menu.js" defer></script>
     
     <!-- Shared Mobile Menu Styles -->
-    <link rel="stylesheet" href="../assets/css/mobile-menu.css">
+    <link rel="stylesheet" href="/assets/css/mobile-menu.css">
 
 </head>
 <body>
@@ -832,8 +832,8 @@
             <nav class="nav">
                 <a href="/" class="logo" title="Denali Tech">
                     <picture>
-                        <source srcset="../Video/logo.webp 1x" type="image/webp">
-                        <img src="../Video/logo.JPG" alt="Denali Tech Logo" loading="eager" width="56" height="40" style="width: 56px; height: 40px; margin-right: 6px; object-fit: cover; object-position: 40% center; border-radius: 10px;" fetchpriority="high">
+                        <source srcset="/Video/logo.webp 1x" type="image/webp">
+                        <img src="/Video/logo.JPG" alt="Denali Tech Logo" loading="eager" width="56" height="40" style="width: 56px; height: 40px; margin-right: 6px; object-fit: cover; object-position: 40% center; border-radius: 10px;" fetchpriority="high">
                     </picture>
                     <span class="logo-text">Denali Tech</span>
                 </a>
@@ -899,11 +899,7 @@
 
         async function loadBlogData() {
             try {
-                // Try multiple paths to ensure it works from different locations
-                let response = await fetch('./blog-data.json');
-                if (!response.ok) {
-                    response = await fetch('/blogs/blog-data.json');
-                }
+                const response = await fetch('/blogs/blog-data.json');
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
@@ -1088,4 +1084,3 @@
     </main>
 </body>
 </html>
-
