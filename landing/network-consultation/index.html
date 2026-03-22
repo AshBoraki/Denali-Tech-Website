@@ -1,24 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Optional direct Meta Pixel (set facebook-pixel-id meta content) -->
+  <meta name="facebook-pixel-id" content="1445768249716742">
   <script>
-    (function () {
-      var pixelMeta = document.querySelector('meta[name="facebook-pixel-id"]');
-      var PIXEL_ID = pixelMeta && pixelMeta.content ? pixelMeta.content.trim() : '';
-      if (!/^\d{8,20}$/.test(PIXEL_ID)) return;
+    (function() {
+      var pixelId = "1445768249716742";
 
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
+      if (!window.fbq) {
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";
+        n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;
+        s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document, "script",
+        "https://connect.facebook.net/en_US/fbevents.js");
+      }
 
-      fbq('init', PIXEL_ID);
-      fbq('track', 'PageView');
+      try {
+        window.fbq("init", pixelId);
+        window.fbq("track", "PageView");
+      } catch (error) {}
+
+      window.denaliMetaPixel = window.denaliMetaPixel || {};
+      window.denaliMetaPixel.pixelId = pixelId;
+      window.denaliMetaPixel.trackLeadOnce = function(details) {
+        var now = Date.now();
+
+        try {
+          var key = "denali_meta_last_lead_at";
+          var last = parseInt(sessionStorage.getItem(key) || "0", 10);
+          if (last && (now - last) < 1800000) return false;
+          sessionStorage.setItem(key, String(now));
+        } catch (error) {}
+
+        if (typeof window.fbq === "function") {
+          window.fbq("track", "Lead", details || {});
+          return true;
+        }
+
+        return false;
+      };
     })();
   </script>
 
@@ -41,7 +61,6 @@
   <meta name="twitter:title" content="A Smart Home Is Only as Good as Its Network">
   <meta name="twitter:description" content="Denali Tech builds reliable whole-home network foundations for smart home automation in Chicago.">
   <meta name="twitter:image" content="https://denalitechs.com/Video/IMG_5331-poster.jpg">
-  <meta name="facebook-pixel-id" content="">
 
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -841,7 +860,17 @@
           .then(function (response) { return response.json(); })
           .then(function (data) {
             if (data && data.success) {
-              if (typeof fbq === 'function') fbq('track', 'Lead');
+              if (window.denaliMetaPixel && typeof window.denaliMetaPixel.trackLeadOnce === 'function') {
+                window.denaliMetaPixel.trackLeadOnce({
+                  lead_type: 'network_consultation',
+                  form_id: 'network-consultation-form'
+                });
+              } else if (typeof fbq === 'function') {
+                fbq('track', 'Lead', {
+                  lead_type: 'network_consultation',
+                  form_id: 'network-consultation-form'
+                });
+              }
               rememberSubmitTime();
               setMessage('Thanks. Redirecting...', false);
               window.location.href = form.querySelector('[name="redirect"]').value;
