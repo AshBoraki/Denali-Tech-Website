@@ -1,6 +1,51 @@
 {
   "posts": [
     {
+      "id": "ovrc-remote-monitoring-guide",
+      "title": "What Is OvrC? Why Remote Monitoring Matters for Smart Homes",
+      "slug": "ovrc-remote-monitoring-guide",
+      "url": "/blogs/ovrc-remote-monitoring-guide/",
+      "excerpt": "Learn what OvrC is, how remote monitoring helps smart homes, and why professionally installed systems are easier to support, maintain, and fix when problems happen.",
+      "category": "Smart Home Guide",
+      "tags": ["OvrC", "Remote Monitoring", "Smart Home Support", "Network Service"],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-03-22",
+      "updatedDate": "2026-03-22",
+      "readingTime": 9,
+      "heroImage": "/Video/Brands/Denali tech OvrC.webp",
+      "featured": true
+    },
+    {
+      "id": "wattbox-power-management-guide",
+      "title": "Why WattBox Matters for Reliable Smart Home and Theater Systems",
+      "slug": "wattbox-power-management-guide",
+      "url": "/blogs/wattbox-power-management-guide/",
+      "excerpt": "Learn why WattBox power management matters for reliable smart homes, theaters, and network racks, including remote rebooting, surge protection, and cleaner service support.",
+      "category": "Smart Home Guide",
+      "tags": ["WattBox", "Power Management", "Home Theater", "Network Reliability"],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-03-22",
+      "updatedDate": "2026-03-22",
+      "readingTime": 9,
+      "heroImage": "/Video/Blogs imge/Arakins Wifi setup/snapav-wattbox-800-ipvm-power-management.jpg",
+      "featured": true
+    },
+    {
+      "id": "control4-x4-homeowner-guide",
+      "title": "Control4 X4 Guide: What Homeowners Should Know",
+      "slug": "control4-x4-homeowner-guide",
+      "url": "/blogs/control4-x4-homeowner-guide/",
+      "excerpt": "Learn what homeowners should know about the Control4 X4 experience, including why cleaner interfaces, routines, and better day-to-day usability matter in a professionally installed smart home.",
+      "category": "Smart Home Guide",
+      "tags": ["Control4", "X4", "Home Automation", "Smart Home Interface"],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-03-22",
+      "updatedDate": "2026-03-22",
+      "readingTime": 10,
+      "heroImage": "/Video/Blogs imge/What is Control4 Complete Guide for Homeowners 2025.webp",
+      "featured": true
+    },
+    {
       "id": "whole-home-audio-sonos-vs-traditional",
       "title": "Whole Home Audio Systems: Sonos vs Traditional Multi-Room Audio 2026",
       "slug": "whole-home-audio-sonos-vs-traditional",
