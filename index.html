@@ -112,7 +112,7 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     
     <!-- Preload Critical Resources -->
-    <link rel="preload" href="/Video/logo.webp" as="image" type="image/webp" fetchpriority="high">
+    <link rel="preload" href="/Video/homepage/logo-112.webp" as="image" type="image/webp" fetchpriority="high">
     
     <base href="/">
     
@@ -626,9 +626,8 @@
             <nav class="nav">
                 <a href="/" class="logo" title="Denali Tech">
                     <picture>
-                        <!-- Use srcset to hint browser about image size, though ideally a smaller logo file (112x80px) should be created -->
-                        <source srcset="/Video/logo.webp 1x" type="image/webp">
-                        <img src="/Video/logo.JPG" alt="Denali Tech Logo" loading="eager" width="56" height="40" style="width: 56px; height: 40px; margin-right: 6px; object-fit: cover; object-position: 40% center; border-radius: 10px;" fetchpriority="high">
+                        <source srcset="/Video/homepage/logo-112.webp 112w" sizes="56px" type="image/webp">
+                        <img src="/Video/homepage/logo-112.webp" alt="Denali Tech Logo" loading="eager" width="56" height="40" style="width: 56px; height: 40px; margin-right: 6px; object-fit: cover; object-position: 40% center; border-radius: 10px;" fetchpriority="high">
                     </picture>
                     <span class="logo-text">Denali Tech</span>
                 </a>
@@ -823,8 +822,11 @@
                 <div class="project-showcase-card" role="article" aria-label="Premium Fire Edge Theater project" tabindex="0" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; transition: all var(--transition); cursor: pointer;" onclick="window.location.href='/projects/'" onkeydown="if(event.key==='Enter') window.location.href='/projects/'">
                     <div class="project-image-wrapper" style="position: relative; width: 100%; padding-top: 75%; overflow: hidden; background: #000;">
                         <picture>
-                            <source srcset="/Video/Project%20showcases%20/fire-edge-screen-and-projector-and-martinlogan.webp" type="image/webp">
-                            <img src="/Video/Project%20showcases%20/fire-edge-screen-and-projector-and-martinlogan.jpg" alt="Premium Fire Edge Theater with MartinLogan Speakers" loading="lazy" width="800" height="600" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                            <source
+                                srcset="/Video/homepage/fire-edge-screen-and-projector-and-martinlogan-480.webp 480w, /Video/homepage/fire-edge-screen-and-projector-and-martinlogan-768.webp 768w"
+                                sizes="(max-width: 768px) calc(100vw - 2rem), (max-width: 1200px) 33vw, 361px"
+                                type="image/webp">
+                            <img src="/Video/homepage/fire-edge-screen-and-projector-and-martinlogan-768.webp" alt="Premium Fire Edge Theater with MartinLogan Speakers" loading="lazy" decoding="async" width="800" height="600" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                         </picture>
                         <div class="project-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7)); opacity: 0; transition: opacity 0.3s ease;"></div>
                     </div>
@@ -837,8 +839,11 @@
                 <div class="project-showcase-card" role="article" aria-label="Sound & Light Harmony project" tabindex="0" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; transition: all var(--transition); cursor: pointer;" onclick="window.location.href='/projects/'" onkeydown="if(event.key==='Enter') window.location.href='/projects/'">
                     <div class="project-image-wrapper" style="position: relative; width: 100%; padding-top: 75%; overflow: hidden; background: #000;">
                         <picture>
-                            <source srcset="/Video/Project%20showcases%20/Sound%20%26%20Light%20Harmony.webp" type="image/webp">
-                            <img src="/Video/Project%20showcases%20/Sound%20%26%20Light%20Harmony.jpg" alt="Sound & Light Harmony Installation" loading="lazy" width="800" height="600" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                            <source
+                                srcset="/Video/homepage/sound--light-harmony-480.webp 480w, /Video/homepage/sound--light-harmony-768.webp 768w"
+                                sizes="(max-width: 768px) calc(100vw - 2rem), (max-width: 1200px) 33vw, 361px"
+                                type="image/webp">
+                            <img src="/Video/homepage/sound--light-harmony-768.webp" alt="Sound & Light Harmony Installation" loading="lazy" decoding="async" width="800" height="600" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                         </picture>
                         <div class="project-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7)); opacity: 0; transition: opacity 0.3s ease;"></div>
                     </div>
@@ -851,8 +856,11 @@
                 <div class="project-showcase-card" role="article" aria-label="Modern Media Room project" tabindex="0" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; transition: all var(--transition); cursor: pointer;" onclick="window.location.href='/projects/'" onkeydown="if(event.key==='Enter') window.location.href='/projects/'">
                     <div class="project-image-wrapper" style="position: relative; width: 100%; padding-top: 75%; overflow: hidden; background: #000;">
                         <picture>
-                            <source srcset="/Video/Project%20showcases%20/Media%20Room_edited.webp" type="image/webp">
-                            <img src="/Video/Project%20showcases%20/Media%20Room_edited.jpg" alt="Modern Media Room Installation" loading="lazy" width="800" height="600" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                            <source
+                                srcset="/Video/homepage/media-room_edited-480.webp 480w, /Video/homepage/media-room_edited-768.webp 768w"
+                                sizes="(max-width: 768px) calc(100vw - 2rem), (max-width: 1200px) 33vw, 361px"
+                                type="image/webp">
+                            <img src="/Video/homepage/media-room_edited-768.webp" alt="Modern Media Room Installation" loading="lazy" decoding="async" width="800" height="600" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                         </picture>
                         <div class="project-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7)); opacity: 0; transition: opacity 0.3s ease;"></div>
                     </div>
@@ -924,7 +932,7 @@
                             data-autoplay="true"
                             aria-label="Home theater and smart home demonstration"
                             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; background: #000; cursor: pointer;"
-                            poster="/Video/Project%20showcases%20/Cityscape%20Home%20Theater.webp"
+                            poster="/Video/homepage/cityscape-home-theater-768.webp"
                             preload="none"
                             class="video-player">
                             <source data-src="/Video/Home%20Theater%20Systems%20-%20Denali%20Tech%20-%20Chicago.mp4" type="video/mp4">
@@ -1196,11 +1204,25 @@
             function initHeroVideo() {
                 const heroVideo = document.getElementById('hero-background-video');
                 if (heroVideo) {
+                    const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                    const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+                    const connectionConstrained = Boolean(connection && (connection.saveData || /(?:^|\\b)(slow-2g|2g|3g)(?:\\b|$)/.test(connection.effectiveType || '')));
+                    const shouldUsePosterOnly = window.innerWidth <= 768 || prefersReducedMotion || connectionConstrained;
+
+                    heroVideo.poster = shouldUsePosterOnly
+                        ? '/Video/homepage/hero-poster-mobile.webp'
+                        : '/Video/Denali%20Van.webp';
+
                     // Set video properties for iOS
                     heroVideo.setAttribute('playsinline', '');
                     heroVideo.setAttribute('webkit-playsinline', '');
                     heroVideo.muted = true;
                     heroVideo.loop = true;
+
+                    if (shouldUsePosterOnly) {
+                        heroVideo.dataset.videoHydrated = 'poster-only';
+                        return;
+                    }
                     
                     // Prevent video from capturing touch events on mobile
                     heroVideo.style.pointerEvents = 'none';
@@ -1261,6 +1283,10 @@
             document.addEventListener('DOMContentLoaded', function() {
                 initHeroVideo();
                 const videos = document.querySelectorAll('.video-player');
+                const showcaseVideo = document.querySelector('.video-showcase-section .video-player');
+                if (showcaseVideo && window.innerWidth <= 768) {
+                    showcaseVideo.poster = '/Video/homepage/cityscape-home-theater-480.webp';
+                }
                 let videoObserver = null;
                 if ('IntersectionObserver' in window) {
                     videoObserver = new IntersectionObserver(function(entries) {
