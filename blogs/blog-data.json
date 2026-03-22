@@ -42,7 +42,7 @@
       "publishedDate": "2025-01-11",
       "updatedDate": "2025-01-11",
       "readingTime": 16,
-      "heroImage": "/Video/Blogs imge/Arakins Wifi setup/arakhnis-network-overview-header.png",
+      "heroImage": "/Video/Blogs imge/Arakins Wifi setup/arakhnis-network-overview-header.webp",
       "featured": true
     },
     {
@@ -57,7 +57,7 @@
       "publishedDate": "2025-01-10",
       "updatedDate": "2025-01-10",
       "readingTime": 14,
-      "heroImage": "/Video/Blogs imge/Smart Home Automation in Arlington Heights-Complete Guide 2025.jpg",
+      "heroImage": "/Video/Blogs imge/Smart Home Automation in Arlington Heights-Complete Guide 2025.webp",
       "featured": true
     },
     {
@@ -72,7 +72,7 @@
       "publishedDate": "2025-01-09",
       "updatedDate": "2025-01-09",
       "readingTime": 15,
-      "heroImage": "/Video/Blogs imge/Smart Home Not Working? 10 Common Issues & Professional Solutions.png",
+      "heroImage": "/Video/Blogs imge/Smart Home Not Working? 10 Common Issues & Professional Solutions.webp",
       "featured": true
     },
     {
@@ -117,7 +117,7 @@
       "publishedDate": "2025-01-06",
       "updatedDate": "2025-01-06",
       "readingTime": 9,
-      "heroImage": "/Video/Blogs imge/What is Control4 Complete Guide for Homeowners 2025.png",
+      "heroImage": "/Video/Blogs imge/What is Control4 Complete Guide for Homeowners 2025.webp",
       "featured": true
     },
     {
@@ -132,7 +132,7 @@
       "publishedDate": "2025-01-05",
       "updatedDate": "2025-01-05",
       "readingTime": 7,
-      "heroImage": "/Video/interviewing-av-tech.jpg",
+      "heroImage": "/Video/interviewing-av-tech.webp",
       "featured": true
     },
     {
@@ -147,7 +147,7 @@
       "publishedDate": "2025-01-04",
       "updatedDate": "2025-01-04",
       "readingTime": 8,
-      "heroImage": "/Video/Blogs imge/How to Fix WiFi Dead Zones Complete Guide to Whole-Home WiFi Coverage.jpg",
+      "heroImage": "/Video/Blogs imge/How to Fix WiFi Dead Zones Complete Guide to Whole-Home WiFi Coverage.webp",
       "featured": true
     },
     {
@@ -162,7 +162,7 @@
       "publishedDate": "2025-01-03",
       "updatedDate": "2025-01-03",
       "readingTime": 10,
-      "heroImage": "/Video/Blogs imge/Control4 vs URC.jpg",
+      "heroImage": "/Video/Blogs imge/Control4 vs URC.webp",
       "featured": true
     },
     {
@@ -192,7 +192,7 @@
       "publishedDate": "2024-01-15",
       "updatedDate": "2024-01-15",
       "readingTime": 8,
-      "heroImage": "/blogs/urc-remote-programming-guide/images/urc-mx-990-image-in-living-room-in-hand.jpg",
+      "heroImage": "/blogs/urc-remote-programming-guide/images/urc-mx-990-image-in-living-room-in-hand.webp",
       "featured": true
     },
     {
@@ -207,7 +207,7 @@
       "publishedDate": "2024-01-20",
       "updatedDate": "2024-01-20",
       "readingTime": 12,
-      "heroImage": "/Video/guide imges.webp",
+      "heroImage": "/Video/guide%20imges.webp",
       "featured": true
     },
     {
@@ -319,4 +319,3 @@
     }
   ]
 }
-

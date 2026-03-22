@@ -60,28 +60,28 @@
     
     <!-- Open Graph Meta Tags -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.denalitechs.com/services/">
+    <meta property="og:url" content="https://denalitechs.com/services/">
     <meta property="og:title" content="Home Automation & AV Services | Denali Tech Chicago">
     <meta property="og:description" content="Complete smart home automation services in Chicago. Home theater installation, WiFi networking, security systems, smart lighting control, motorized shades, whole home audio, and Control4 integration.">
-    <meta property="og:image" content="https://www.denalitechs.com/Video/logo icon for web title .jpg">
+    <meta property="og:image" content="https://denalitechs.com/Video/logo-social.jpg">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.denalitechs.com/services/">
+    <link rel="canonical" href="https://denalitechs.com/services/">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://www.denalitechs.com/services/">
+    <meta name="twitter:url" content="https://denalitechs.com/services/">
     <meta name="twitter:title" content="Home Automation & AV Services | Denali Tech Chicago">
     <meta name="twitter:description" content="Complete smart home automation services in Chicago. Home theater installation, WiFi networking, security systems, smart lighting control, motorized shades, whole home audio, and Control4 integration.">
-    <meta name="twitter:image" content="https://www.denalitechs.com/Video/logo icon for web title .jpg">
+    <meta name="twitter:image" content="https://denalitechs.com/Video/logo-social.jpg">
 
     <base href="/">
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="../favicon-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="../favicon-512x512.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png">
     
     <!-- PERFORMANCE: Optimized Font Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1493,13 +1493,13 @@
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.denalitechs.com/"
+          "item": "https://denalitechs.com/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Services",
-          "item": "https://www.denalitechs.com/services/"
+          "item": "https://denalitechs.com/services/"
         }
       ]
     }
@@ -1591,10 +1591,10 @@
     </script>
     
     <!-- Shared Mobile Menu Script -->
-    <script src="../assets/js/mobile-menu.js"></script>
+    <script src="/assets/js/mobile-menu.js" defer></script>
     
     <!-- Shared Mobile Menu Styles -->
-    <link rel="stylesheet" href="../assets/css/mobile-menu.css">
+    <link rel="stylesheet" href="/assets/css/mobile-menu.css">
 </head>
 <body>
     <!-- Skip Navigation Link -->
@@ -1627,8 +1627,8 @@
             <nav class="nav">
                 <a href="/" class="logo" title="Denali Tech">
                     <picture>
-                        <source srcset="Video/logo.webp 1x" type="image/webp">
-                        <img src="Video/logo.JPG" alt="Denali Tech Logo" loading="eager" width="56" height="40" style="width: 56px; height: 40px; margin-right: 6px; object-fit: cover; object-position: 40% center; border-radius: 10px;" fetchpriority="high">
+                        <source srcset="/Video/logo.webp 1x" type="image/webp">
+                        <img src="/Video/logo.JPG" alt="Denali Tech Logo" loading="eager" width="56" height="40" style="width: 56px; height: 40px; margin-right: 6px; object-fit: cover; object-position: 40% center; border-radius: 10px;" fetchpriority="high">
                     </picture>
                     <span class="logo-text">Denali Tech</span>
                 </a>
@@ -1693,11 +1693,12 @@
                         <li>Energy savings through smart scheduling</li>
                     </ul>
                     <p><strong>Perfect for:</strong> Busy families who want convenience and energy savings</p>
-                    <a href="/contact/#booking?service=Smart Home Automation" class="btn-primary" style="margin-top: 1.5rem; display: inline-block;">Get Quote for Smart Home Automation</a>
+                    <a href="/contact/?service=Smart%20Home%20Automation#booking" class="btn-primary" style="margin-top: 1.5rem; display: inline-block;">Get Quote for Smart Home Automation</a>
                 </div>
                 <div class="service-video">
-                    <video autoplay muted loop playsinline poster="Video/logo.JPG" preload="auto" loading="eager" onerror="this.style.display='none'; if(this.poster) { const img = document.createElement('img'); img.src = this.poster; img.style.width='100%'; img.style.height='auto'; img.style.objectFit='cover'; img.style.borderRadius='16px'; this.parentElement.appendChild(img); }">
-                        <source src="Video/Denali tech smart home.mp4" type="video/mp4">
+                    <video autoplay muted loop playsinline poster="/Video/logo.JPG" preload="none" onerror="this.style.display='none'; if(this.poster) { const img = document.createElement('img'); img.src = this.poster; img.style.width='100%'; img.style.height='auto'; img.style.objectFit='cover'; img.style.borderRadius='16px'; this.parentElement.appendChild(img); }">
+                        <source data-src="/Video/Denali%20tech%20smart%20home.mp4" type="video/mp4">
+                        <track kind="captions" src="/assets/captions/no-dialogue.vtt" label="English" srclang="en">
                         Your browser does not support the video tag.
                     </video>
                 </div>
@@ -1717,11 +1718,12 @@
                         <li>Streaming services integration</li>
                     </ul>
                     <p><strong>Perfect for:</strong> Movie lovers and families who want the ultimate entertainment experience</p>
-                    <a href="/contact/#booking?service=Home Theater" class="btn-primary" style="margin-top: 1.5rem; display: inline-block;">Get Quote for Home Theater</a>
+                    <a href="/contact/?service=Home%20Theater#booking" class="btn-primary" style="margin-top: 1.5rem; display: inline-block;">Get Quote for Home Theater</a>
                 </div>
                 <div class="service-video">
-                    <video autoplay muted loop playsinline poster="Video/logo.JPG" preload="auto" loading="eager" onerror="this.style.display='none'; if(this.poster) { const img = document.createElement('img'); img.src = this.poster; img.style.width='100%'; img.style.height='auto'; img.style.objectFit='cover'; img.style.borderRadius='16px'; this.parentElement.appendChild(img); }">
-                        <source src="Video/Home Theater Systems - Denali Tech - Chicago.mp4" type="video/mp4">
+                    <video autoplay muted loop playsinline poster="/Video/logo.JPG" preload="none" onerror="this.style.display='none'; if(this.poster) { const img = document.createElement('img'); img.src = this.poster; img.style.width='100%'; img.style.height='auto'; img.style.objectFit='cover'; img.style.borderRadius='16px'; this.parentElement.appendChild(img); }">
+                        <source data-src="/Video/Home%20Theater%20Systems%20-%20Denali%20Tech%20-%20Chicago.mp4" type="video/mp4">
+                        <track kind="captions" src="/assets/captions/no-dialogue.vtt" label="English" srclang="en">
                         Your browser does not support the video tag.
                     </video>
                 </div>
@@ -1741,11 +1743,12 @@
                         <li>Professional installation and setup</li>
                     </ul>
                     <p><strong>Perfect for:</strong> Families with lots of devices and anyone tired of slow internet</p>
-                    <a href="/contact/#booking?service=WiFi & Networking" class="btn-primary" style="margin-top: 1.5rem; display: inline-block;">Get Quote for WiFi & Networking</a>
+                    <a href="/contact/?service=WiFi%20%26%20Networking#booking" class="btn-primary" style="margin-top: 1.5rem; display: inline-block;">Get Quote for WiFi & Networking</a>
                 </div>
                 <div class="service-video">
-                    <video autoplay muted loop playsinline poster="Video/logo.JPG" preload="auto" loading="eager" onerror="this.style.display='none'; if(this.poster) { const img = document.createElement('img'); img.src = this.poster; img.style.width='100%'; img.style.height='auto'; img.style.objectFit='cover'; img.style.borderRadius='16px'; this.parentElement.appendChild(img); }">
-                        <source src="Video/wifi.mp4" type="video/mp4">
+                    <video autoplay muted loop playsinline poster="/Video/logo.JPG" preload="none" onerror="this.style.display='none'; if(this.poster) { const img = document.createElement('img'); img.src = this.poster; img.style.width='100%'; img.style.height='auto'; img.style.objectFit='cover'; img.style.borderRadius='16px'; this.parentElement.appendChild(img); }">
+                        <source data-src="/Video/wifi.mp4" type="video/mp4">
+                        <track kind="captions" src="/assets/captions/no-dialogue.vtt" label="English" srclang="en">
                         Your browser does not support the video tag.
                     </video>
                 </div>
@@ -1765,11 +1768,12 @@
                         <li>Professional monitoring services available</li>
                     </ul>
                     <p><strong>Perfect for:</strong> Families who want peace of mind and protection</p>
-                    <a href="/contact/#booking?service=Security & Surveillance" class="btn-primary" style="margin-top: 1.5rem; display: inline-block;">Get Quote for Security & Surveillance</a>
+                    <a href="/contact/?service=Security%20%26%20Surveillance#booking" class="btn-primary" style="margin-top: 1.5rem; display: inline-block;">Get Quote for Security & Surveillance</a>
                 </div>
                 <div class="service-video">
-                    <video autoplay muted loop playsinline poster="Video/logo.JPG" preload="auto" loading="eager" onerror="this.style.display='none'; if(this.poster) { const img = document.createElement('img'); img.src = this.poster; img.style.width='100%'; img.style.height='auto'; img.style.objectFit='cover'; img.style.borderRadius='16px'; this.parentElement.appendChild(img); }">
-                        <source src="Video/camera.mp4" type="video/mp4">
+                    <video autoplay muted loop playsinline poster="/Video/logo.JPG" preload="none" onerror="this.style.display='none'; if(this.poster) { const img = document.createElement('img'); img.src = this.poster; img.style.width='100%'; img.style.height='auto'; img.style.objectFit='cover'; img.style.borderRadius='16px'; this.parentElement.appendChild(img); }">
+                        <source data-src="/Video/camera.mp4" type="video/mp4">
+                        <track kind="captions" src="/assets/captions/no-dialogue.vtt" label="English" srclang="en">
                         Your browser does not support the video tag.
                     </video>
                 </div>
@@ -1789,11 +1793,12 @@
                         <li>Voice and phone control</li>
                     </ul>
                     <p><strong>Perfect for:</strong> Anyone who wants convenience and beautiful lighting</p>
-                    <a href="/contact/#booking?service=Smart Lighting" class="btn-primary" style="margin-top: 1.5rem; display: inline-block;">Get Quote for Smart Lighting</a>
+                    <a href="/contact/?service=Smart%20Lighting#booking" class="btn-primary" style="margin-top: 1.5rem; display: inline-block;">Get Quote for Smart Lighting</a>
                 </div>
                 <div class="service-video">
-                    <video autoplay muted loop playsinline poster="Video/logo.JPG" preload="auto" loading="eager" onerror="this.style.display='none'; if(this.poster) { const img = document.createElement('img'); img.src = this.poster; img.style.width='100%'; img.style.height='auto'; img.style.objectFit='cover'; img.style.borderRadius='16px'; this.parentElement.appendChild(img); }">
-                        <source src="Video/Smart lighting Solutions - Denali Tech.mp4" type="video/mp4">
+                    <video autoplay muted loop playsinline poster="/Video/logo.JPG" preload="none" onerror="this.style.display='none'; if(this.poster) { const img = document.createElement('img'); img.src = this.poster; img.style.width='100%'; img.style.height='auto'; img.style.objectFit='cover'; img.style.borderRadius='16px'; this.parentElement.appendChild(img); }">
+                        <source data-src="/Video/Smart%20lighting%20Solutions%20-%20Denali%20Tech.mp4" type="video/mp4">
+                        <track kind="captions" src="/assets/captions/no-dialogue.vtt" label="English" srclang="en">
                         Your browser does not support the video tag.
                     </video>
                 </div>
@@ -1813,11 +1818,12 @@
                         <li>Energy savings through smart scheduling</li>
                     </ul>
                     <p><strong>Perfect for:</strong> Anyone who wants convenience and privacy control</p>
-                    <a href="/contact/#booking?service=Smart Shades" class="btn-primary" style="margin-top: 1.5rem; display: inline-block;">Get Quote for Smart Shades</a>
+                    <a href="/contact/?service=Smart%20Shades#booking" class="btn-primary" style="margin-top: 1.5rem; display: inline-block;">Get Quote for Smart Shades</a>
                 </div>
                 <div class="service-video">
-                    <video autoplay muted loop playsinline poster="Video/logo.JPG" preload="auto" loading="eager" onerror="this.style.display='none'; if(this.poster) { const img = document.createElement('img'); img.src = this.poster; img.style.width='100%'; img.style.height='auto'; img.style.objectFit='cover'; img.style.borderRadius='16px'; this.parentElement.appendChild(img); }">
-                        <source src="Video/shades.mp4" type="video/mp4">
+                    <video autoplay muted loop playsinline poster="/Video/logo.JPG" preload="none" onerror="this.style.display='none'; if(this.poster) { const img = document.createElement('img'); img.src = this.poster; img.style.width='100%'; img.style.height='auto'; img.style.objectFit='cover'; img.style.borderRadius='16px'; this.parentElement.appendChild(img); }">
+                        <source data-src="/Video/shades.mp4" type="video/mp4">
+                        <track kind="captions" src="/assets/captions/no-dialogue.vtt" label="English" srclang="en">
                         Your browser does not support the video tag.
                     </video>
                 </div>
@@ -1837,11 +1843,12 @@
                         <li>Easy control from your phone</li>
                     </ul>
                     <p><strong>Perfect for:</strong> Music lovers and anyone who entertains guests</p>
-                    <a href="/contact/#booking?service=Audio Distribution" class="btn-primary" style="margin-top: 1.5rem; display: inline-block;">Get Quote for Audio Distribution</a>
+                    <a href="/contact/?service=Audio%20Distribution#booking" class="btn-primary" style="margin-top: 1.5rem; display: inline-block;">Get Quote for Audio Distribution</a>
                 </div>
                 <div class="service-video">
-                    <video autoplay muted loop playsinline poster="Video/logo.JPG" preload="auto" loading="eager" onerror="this.style.display='none'; if(this.poster) { const img = document.createElement('img'); img.src = this.poster; img.style.width='100%'; img.style.height='auto'; img.style.objectFit='cover'; img.style.borderRadius='16px'; this.parentElement.appendChild(img); }">
-                        <source src="Video/whole home audio.mp4" type="video/mp4">
+                    <video autoplay muted loop playsinline poster="/Video/logo.JPG" preload="none" onerror="this.style.display='none'; if(this.poster) { const img = document.createElement('img'); img.src = this.poster; img.style.width='100%'; img.style.height='auto'; img.style.objectFit='cover'; img.style.borderRadius='16px'; this.parentElement.appendChild(img); }">
+                        <source data-src="/Video/whole%20home%20audio.mp4" type="video/mp4">
+                        <track kind="captions" src="/assets/captions/no-dialogue.vtt" label="English" srclang="en">
                         Your browser does not support the video tag.
                     </video>
                 </div>
@@ -2167,19 +2174,47 @@
                 });
             }
 
-            // Service Videos - Enhanced Video Handling
+            // Service Videos - load when near view so the page doesn't pull every MP4 on first paint
             const serviceVideos = document.querySelectorAll('.service-video video');
+            const playServiceVideo = (video) => {
+                const playPromise = video.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(() => {
+                        // Autoplay may be blocked until interaction; that's okay.
+                    });
+                }
+            };
+            const hydrateServiceVideo = (video) => {
+                if (video.dataset.hydrated === 'true') return;
+                const sources = video.querySelectorAll('source[data-src]');
+                if (!sources.length) return;
+                sources.forEach(source => {
+                    source.src = source.dataset.src;
+                    source.removeAttribute('data-src');
+                });
+                video.dataset.hydrated = 'true';
+                video.load();
+            };
+            const serviceVideoObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const video = entry.target;
+                    if (!entry.isIntersecting) return;
+                    hydrateServiceVideo(video);
+                    if (video.readyState >= 2) {
+                        playServiceVideo(video);
+                    }
+                });
+            }, { rootMargin: '300px 0px', threshold: 0.15 });
+
             serviceVideos.forEach(video => {
-                // Ensure video properties are set correctly
                 video.setAttribute('playsinline', '');
                 video.setAttribute('webkit-playsinline', '');
                 video.muted = true;
                 video.loop = true;
-                
-                // Error handling - if video fails to load, show poster
-                video.addEventListener('error', function(e) {
-                    console.warn('Video failed to load:', this.src);
-                    // Ensure poster is visible if video fails
+                video.preload = 'none';
+
+                video.addEventListener('error', function() {
+                    console.warn('Video failed to load:', this.currentSrc || this.poster || 'unknown');
                     if (this.poster) {
                         this.style.display = 'none';
                         const posterImg = document.createElement('img');
@@ -2192,78 +2227,43 @@
                     }
                 });
 
-                // Handle video loading
                 video.addEventListener('loadedmetadata', function() {
-                    // Try to play when metadata is loaded
-                    const playPromise = this.play();
-                    if (playPromise !== undefined) {
-                        playPromise.catch(error => {
-                            // Autoplay was prevented - that's okay, browser policy
-                            // Video will play when user interacts with page
-                        });
-                    }
+                    playServiceVideo(this);
                 });
 
-                // Ensure video plays when it becomes visible (Intersection Observer)
-                const videoObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting && entry.target.readyState >= 2) {
-                            const playPromise = entry.target.play();
-                            if (playPromise !== undefined) {
-                                playPromise.catch(() => {
-                                    // Autoplay prevented - will play on user interaction
-                                });
-                            }
-                        }
-                    });
-                }, { threshold: 0.5 });
-
-                videoObserver.observe(video);
-
-                // Ensure video continues playing if paused unexpectedly
                 video.addEventListener('pause', function() {
+                    if (this.dataset.hydrated !== 'true') return;
                     if (!document.hidden && this.currentTime > 0 && !this.ended) {
-                        // Only auto-resume if video was playing and page is visible
                         setTimeout(() => {
                             if (this.paused && !this.ended) {
-                                this.play().catch(() => {});
+                                playServiceVideo(this);
                             }
                         }, 100);
                     }
                 });
 
-                // Ensure video loops properly
                 video.addEventListener('ended', function() {
                     this.currentTime = 0;
-                    this.play().catch(() => {});
+                    playServiceVideo(this);
                 });
 
-                // Handle source errors
-                const sources = video.querySelectorAll('source');
-                sources.forEach(source => {
-                    source.addEventListener('error', function() {
-                        console.warn('Video source failed:', this.src);
-                        // Try next source if available
-                        const nextSource = this.nextElementSibling;
-                        if (nextSource && nextSource.tagName === 'SOURCE') {
-                            video.load();
-                        }
-                    });
-                });
+                serviceVideoObserver.observe(video);
             });
 
-            // Fallback: Try to play all videos on user interaction
-            const playAllVideos = () => {
+            const playVisibleServiceVideos = () => {
                 serviceVideos.forEach(video => {
-                    if (video.paused && video.readyState >= 2) {
-                        video.play().catch(() => {});
+                    const rect = video.getBoundingClientRect();
+                    const isNearViewport = rect.top < window.innerHeight + 300 && rect.bottom > -300;
+                    if (!isNearViewport) return;
+                    hydrateServiceVideo(video);
+                    if (video.readyState >= 2 && video.paused) {
+                        playServiceVideo(video);
                     }
                 });
             };
 
-            // Play videos on first user interaction
             ['click', 'touchstart', 'scroll'].forEach(event => {
-                document.addEventListener(event, playAllVideos, { once: true, passive: true });
+                document.addEventListener(event, playVisibleServiceVideos, { once: true, passive: true });
             });
         });
     </script>

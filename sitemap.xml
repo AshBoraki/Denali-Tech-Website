@@ -2,225 +2,219 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Main Pages - Using clean URLs (no .html) -->
   <url>
-    <loc>https://www.denalitechs.com/</loc>
+    <loc>https://denalitechs.com/</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.denalitechs.com/services/</loc>
+    <loc>https://denalitechs.com/services/</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.denalitechs.com/projects/</loc>
+    <loc>https://denalitechs.com/projects/</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.denalitechs.com/about/</loc>
+    <loc>https://denalitechs.com/about/</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.denalitechs.com/contact/</loc>
+    <loc>https://denalitechs.com/contact/</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.denalitechs.com/brands/</loc>
+    <loc>https://denalitechs.com/brands/</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.denalitechs.com/faq.html</loc>
+    <loc>https://denalitechs.com/faq.html</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.denalitechs.com/privacy/</loc>
+    <loc>https://denalitechs.com/privacy/</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+<!-- Location-Specific Pages for Local SEO -->
   <url>
-    <loc>https://www.denalitechs.com/thank-you/</loc>
-    <lastmod>2025-01-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <!-- Location-Specific Pages for Local SEO -->
-  <url>
-    <loc>https://www.denalitechs.com/services/chicago-smart-home-automation/</loc>
+    <loc>https://denalitechs.com/services/chicago-smart-home-automation/</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.denalitechs.com/services/mt-prospect-home-automation/</loc>
+    <loc>https://denalitechs.com/services/mt-prospect-home-automation/</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.denalitechs.com/services/arlington-heights-smart-home/</loc>
+    <loc>https://denalitechs.com/services/arlington-heights-smart-home/</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.denalitechs.com/services/schaumburg-smart-home/</loc>
+    <loc>https://denalitechs.com/services/schaumburg-smart-home/</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.denalitechs.com/services/elk-grove-village-smart-home/</loc>
+    <loc>https://denalitechs.com/services/elk-grove-village-smart-home/</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.denalitechs.com/services/des-plaines-smart-home/</loc>
+    <loc>https://denalitechs.com/services/des-plaines-smart-home/</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.denalitechs.com/services/park-ridge-smart-home/</loc>
+    <loc>https://denalitechs.com/services/park-ridge-smart-home/</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.denalitechs.com/services/niles-smart-home/</loc>
+    <loc>https://denalitechs.com/services/niles-smart-home/</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.denalitechs.com/services/skokie-smart-home/</loc>
+    <loc>https://denalitechs.com/services/skokie-smart-home/</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.denalitechs.com/services/evanston-smart-home/</loc>
+    <loc>https://denalitechs.com/services/evanston-smart-home/</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.denalitechs.com/services/glenview-smart-home/</loc>
+    <loc>https://denalitechs.com/services/glenview-smart-home/</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.denalitechs.com/services/northbrook-smart-home/</loc>
+    <loc>https://denalitechs.com/services/northbrook-smart-home/</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <!-- Blog Pages -->
   <url>
-    <loc>https://www.denalitechs.com/blogs/</loc>
+    <loc>https://denalitechs.com/blogs/</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.denalitechs.com/blogs/smart-home-automation-for-beginners/</loc>
+    <loc>https://denalitechs.com/blogs/smart-home-automation-for-beginners/</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.denalitechs.com/blogs/how-much-does-smart-home-automation-cost/</loc>
+    <loc>https://denalitechs.com/blogs/how-much-does-smart-home-automation-cost/</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.denalitechs.com/blogs/how-to-choose-smart-home-installer/</loc>
+    <loc>https://denalitechs.com/blogs/how-to-choose-smart-home-installer/</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.denalitechs.com/blogs/what-is-control4-guide/</loc>
+    <loc>https://denalitechs.com/blogs/what-is-control4-guide/</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.denalitechs.com/blogs/control4-vs-urc-comparison/</loc>
+    <loc>https://denalitechs.com/blogs/control4-vs-urc-comparison/</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.denalitechs.com/blogs/control4-remote-review/</loc>
+    <loc>https://denalitechs.com/blogs/control4-remote-review/</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.denalitechs.com/blogs/control4-helo-touch-review/</loc>
+    <loc>https://denalitechs.com/blogs/control4-helo-touch-review/</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.denalitechs.com/blogs/urc-universal-remote-review/</loc>
+    <loc>https://denalitechs.com/blogs/urc-universal-remote-review/</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.denalitechs.com/blogs/urc-mx-990-review/</loc>
+    <loc>https://denalitechs.com/blogs/urc-mx-990-review/</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.denalitechs.com/blogs/urc-remote-programming-guide/</loc>
+    <loc>https://denalitechs.com/blogs/urc-remote-programming-guide/</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.denalitechs.com/blogs/modern-smart-home-remote-review/</loc>
+    <loc>https://denalitechs.com/blogs/modern-smart-home-remote-review/</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.denalitechs.com/blogs/home-theater-installation-guide/</loc>
+    <loc>https://denalitechs.com/blogs/home-theater-installation-guide/</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.denalitechs.com/blogs/wifi-dead-zones-fix-guide/</loc>
+    <loc>https://denalitechs.com/blogs/wifi-dead-zones-fix-guide/</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.denalitechs.com/blogs/smart-home-buyers-guide/</loc>
+    <loc>https://denalitechs.com/blogs/smart-home-buyers-guide/</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.denalitechs.com/blogs/questions-to-ask-installer/</loc>
+    <loc>https://denalitechs.com/blogs/questions-to-ask-installer/</loc>
     <lastmod>2025-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

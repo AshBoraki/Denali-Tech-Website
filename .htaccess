@@ -10,12 +10,18 @@
   
   # Images - Cache for 1 year
   ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/avif "access plus 1 year"
   ExpiresByType image/png "access plus 1 year"
   ExpiresByType image/jpeg "access plus 1 year"
   ExpiresByType image/jpg "access plus 1 year"
   ExpiresByType image/gif "access plus 1 year"
   ExpiresByType image/svg+xml "access plus 1 year"
   ExpiresByType image/x-icon "access plus 1 year"
+
+  # Video - Cache for 1 year
+  ExpiresByType video/mp4 "access plus 1 year"
+  ExpiresByType video/webm "access plus 1 year"
+  ExpiresByType video/quicktime "access plus 1 year"
   
   # CSS and JavaScript - Cache for 1 month
   ExpiresByType text/css "access plus 1 month"
@@ -36,7 +42,12 @@
 # Set Cache-Control headers and Security Headers
 <IfModule mod_headers.c>
   # Images - 1 year cache
-  <FilesMatch "\.(webp|png|jpg|jpeg|gif|svg|ico)$">
+  <FilesMatch "\.(avif|webp|png|jpg|jpeg|gif|svg|ico)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # Video - 1 year cache
+  <FilesMatch "\.(mp4|webm|mov)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
   
@@ -62,14 +73,19 @@
   
   # Referrer Policy
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Strong transport security for HTTPS
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+  # Improve cross-origin isolation posture
+  Header always set Cross-Origin-Opener-Policy "same-origin"
   
   # Permissions Policy (restrict browser features)
   Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
   
   # Content Security Policy (adjust as needed for your site)
-  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://cdn.jsdelivr.net https://js.hcaptcha.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; connect-src 'self' https://api.web3forms.com https://www.googletagmanager.com https://web3forms.com; frame-src https://js.hcaptcha.com;"
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://cdn.jsdelivr.net https://js.hcaptcha.com https://web3forms.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; media-src 'self' https:; connect-src 'self' https://api.web3forms.com https://www.googletagmanager.com https://www.google-analytics.com https://web3forms.com; frame-src https://js.hcaptcha.com https://www.googletagmanager.com; object-src 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com https://web3forms.com; frame-ancestors 'self'; upgrade-insecure-requests;"
 </IfModule>
 
 # Custom Error Pages
 ErrorDocument 404 /404.html
-
