@@ -17,8 +17,15 @@
         const navLinks = document.getElementById('navLinks');
         const desktopThemeToggle = document.getElementById('theme-toggle-switch');
 
+        function removeMobileThemeToggle() {
+            const existing = navLinks?.querySelector('.mobile-theme-toggle');
+            if (existing) {
+                existing.remove();
+            }
+        }
+
         function ensureMobileThemeToggle() {
-            if (!navLinks || !desktopThemeToggle || navLinks.querySelector('.mobile-theme-toggle')) {
+            if (!navLinks || !desktopThemeToggle || window.innerWidth > MOBILE_MENU_BREAKPOINT || navLinks.querySelector('.mobile-theme-toggle')) {
                 return;
             }
 
@@ -57,7 +64,15 @@
             observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
         }
 
-        ensureMobileThemeToggle();
+        function syncResponsiveThemeToggle() {
+            if (window.innerWidth <= MOBILE_MENU_BREAKPOINT) {
+                ensureMobileThemeToggle();
+            } else {
+                removeMobileThemeToggle();
+            }
+        }
+
+        syncResponsiveThemeToggle();
         
         // Create backdrop overlay if it doesn't exist
         let backdrop = document.querySelector('.mobile-menu-backdrop');
@@ -124,6 +139,7 @@
             
             // Close menu on window resize (if resizing to desktop)
             window.addEventListener('resize', () => {
+                syncResponsiveThemeToggle();
                 if (window.innerWidth > MOBILE_MENU_BREAKPOINT && navLinks.classList.contains('active')) {
                     closeMenu();
                 }
