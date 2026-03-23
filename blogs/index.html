@@ -320,6 +320,98 @@
             gap: 1rem;
             flex-shrink: 0;
         }
+
+        .theme-toggle {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .toggle-switch {
+            width: 54px;
+            height: 28px;
+            background: var(--border-color);
+            border-radius: 14px;
+            cursor: pointer;
+            position: relative;
+            transition: background var(--transition);
+        }
+
+        body:not(.light-theme) .toggle-switch {
+            background: rgba(148,163,184,0.28);
+        }
+
+        :root[data-theme='light'] .toggle-switch,
+        body.light-theme .toggle-switch {
+            background: rgba(15,23,42,0.12);
+        }
+
+        .toggle-switch:hover {
+            background: rgba(249,115,22,0.2);
+        }
+
+        .toggle-switch-circle {
+            width: 22px;
+            height: 22px;
+            background: var(--accent-primary);
+            border-radius: 50%;
+            position: absolute;
+            top: 3px;
+            left: 4px;
+            transition: transform var(--transition), background var(--transition);
+            box-shadow: var(--shadow-subtle);
+        }
+
+        :root[data-theme='light'] .toggle-switch-circle,
+        body.light-theme .toggle-switch-circle {
+            transform: translateX(25px);
+            background: var(--accent-hover);
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg,var(--accent-primary),var(--accent-interactive));
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all var(--transition);
+            box-shadow: var(--shadow-subtle);
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .cta-button.call-now-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            white-space: nowrap;
+        }
+
+        .call-now-button .phone-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.2);
+        }
+
+        .call-now-button .phone-icon svg {
+            width: 15px;
+            height: 15px;
+        }
+
+        :root[data-theme='light'] .call-now-button .phone-icon,
+        body.light-theme .call-now-button .phone-icon {
+            background: rgba(0,0,0,0.08);
+        }
         
         @media (min-width: 769px) {
             /* Reserve space to match other pages that have theme toggle and call button */
@@ -852,10 +944,10 @@
 
 
     <!-- Shared Mobile Menu Script -->
-    <script src="/assets/js/mobile-menu.js" defer></script>
+    <script src="/assets/js/mobile-menu.js?v=20260323e" defer></script>
     
     <!-- Shared Mobile Menu Styles -->
-    <link rel="stylesheet" href="/assets/css/mobile-menu.css">
+    <link rel="stylesheet" href="/assets/css/mobile-menu.css?v=20260323e">
 
 </head>
 <body>
@@ -887,6 +979,19 @@
                 </ul>
             </nav>
             <div class="header-actions">
+                <div class="theme-toggle">
+                    <div class="toggle-switch" id="theme-toggle-switch" role="switch" aria-checked="false" aria-label="Toggle between light and dark mode">
+                        <div class="toggle-switch-circle"></div>
+                    </div>
+                </div>
+                <a href="tel:+13124397500" class="cta-button call-now-button">
+                    <span class="phone-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.62a2 2 0 0 1-.45 2.11L8 9.91a16 16 0 0 0 6.09 6.09l1.46-1.23a2 2 0 0 1 2.11-.45c.84.29 1.72.5 2.62.62A2 2 0 0 1 22 16.92Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </span>
+                    <span>Call Now</span>
+                </a>
                 <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
                     <span></span>
                     <span></span>
@@ -1116,13 +1221,40 @@
             });
             renderPosts();
         }
+const storageKey = 'denali-theme';
+const applyTheme = (theme) => {
+    const isLight = theme === 'light';
+    document.body.classList.toggle('light-theme', isLight);
+    document.documentElement.setAttribute('data-theme', isLight ? 'light' : 'dark');
+    window.__currentTheme = theme;
+};
 
-        // Initialize on page load
-        loadBlogData();
+const savedTheme = localStorage.getItem(storageKey);
+const initialTheme = savedTheme === 'light' ? 'light' : 'dark';
+applyTheme(initialTheme);
 
-        // Ensure dark mode is always applied (no theme toggle on blogs)
-        document.body.classList.remove('light-theme');
-        document.documentElement.setAttribute('data-theme', 'dark');
+const themeToggle = document.getElementById('theme-toggle-switch');
+const getCurrentTheme = () => document.body.classList.contains('light-theme') ? 'light' : 'dark';
+const updateTheme = (theme) => {
+    localStorage.setItem(storageKey, theme);
+    applyTheme(theme);
+    if (themeToggle) {
+        themeToggle.setAttribute('aria-checked', String(theme === 'light'));
+    }
+};
+
+if (themeToggle) {
+    themeToggle.setAttribute('aria-checked', String(getCurrentTheme() === 'light'));
+    themeToggle.addEventListener('click', () => {
+        const newTheme = getCurrentTheme() === 'light' ? 'dark' : 'light';
+        updateTheme(newTheme);
+    });
+}
+
+window.__setTheme = updateTheme;
+
+// Initialize on page load
+loadBlogData();
 
     </script>
     </main>
