@@ -26,11 +26,9 @@
             themeItem.className = 'mobile-theme-toggle';
             themeItem.innerHTML = `
                 <button type="button" class="mobile-theme-toggle-btn" aria-label="Toggle theme">
-                    <span class="mobile-theme-toggle-label">
-                        <strong>Theme</strong>
-                        <span>Light or dark mode</span>
-                    </span>
+                    <span class="mobile-theme-toggle-icon mobile-theme-toggle-icon-moon" aria-hidden="true">☾</span>
                     <span class="mobile-theme-toggle-switch" aria-hidden="true"></span>
+                    <span class="mobile-theme-toggle-icon mobile-theme-toggle-icon-sun" aria-hidden="true">☀</span>
                 </button>
             `;
 
