@@ -660,19 +660,193 @@
         })();
     </script>
     
+    <style>
+        .header .container {
+            gap: 1.25rem;
+        }
+
+        .nav {
+            min-width: 0;
+            gap: 1.75rem;
+        }
+
+        .nav-brand-block {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            min-width: 0;
+        }
+
+        .header-proof {
+            display: grid;
+            gap: 0.28rem;
+            min-width: 0;
+        }
+
+        .header-proof-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            width: fit-content;
+            padding: 0.38rem 0.75rem;
+            border-radius: 999px;
+            background: rgba(249, 115, 22, 0.14);
+            border: 1px solid rgba(249, 115, 22, 0.2);
+            color: #fde7d8;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .header-proof-rating {
+            color: var(--text-secondary);
+            font-size: 0.83rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .nav-links {
+            gap: 0.7rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.62rem 0.9rem;
+            border-radius: 999px;
+            border: 1px solid transparent;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .nav-links a:hover,
+        .nav-links a:focus-visible {
+            background: rgba(249, 115, 22, 0.12);
+            border-color: rgba(249, 115, 22, 0.22);
+            color: var(--accent-hover);
+        }
+
+        .nav-links a.nav-link-current {
+            color: #fff;
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.24), rgba(234, 88, 12, 0.18));
+            border-color: rgba(249, 115, 22, 0.28);
+            box-shadow: 0 12px 24px rgba(249, 115, 22, 0.14);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex: 0 0 auto;
+        }
+
+        .header-quote-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 46px;
+            padding: 0.8rem 1.1rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
+            font-weight: 700;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: transform var(--transition), background var(--transition), border-color var(--transition);
+        }
+
+        .header-quote-link:hover,
+        .header-quote-link:focus-visible {
+            transform: translateY(-1px);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.18);
+        }
+
+        .call-now-button {
+            min-height: 46px;
+            padding: 0.82rem 1.2rem;
+            border-radius: 999px;
+            box-shadow: 0 16px 32px rgba(249, 115, 22, 0.22);
+        }
+
+        .call-now-button .phone-icon {
+            display: inline-flex;
+            margin-right: 0.45rem;
+        }
+
+        .call-now-button .cta-helper {
+            display: block;
+            font-size: 0.72rem;
+            font-weight: 600;
+            opacity: 0.82;
+            line-height: 1;
+            margin-top: 0.15rem;
+        }
+
+        @media (max-width: 1120px) {
+            .header-proof {
+                display: none;
+            }
+
+            .nav-links {
+                gap: 0.45rem;
+            }
+
+            .nav-links a {
+                padding-inline: 0.78rem;
+            }
+
+            .header-quote-link {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-brand-block {
+                gap: 0;
+            }
+
+            .nav-links a {
+                border-radius: 10px;
+                justify-content: flex-start;
+                background: transparent;
+                padding: 0.875rem 1rem;
+            }
+
+            .header-actions {
+                gap: 0.55rem;
+            }
+
+            .call-now-button .cta-helper {
+                display: none;
+            }
+        }
+    </style>
+
     <!-- Header -->
     <header class="header">
         <div class="container">
             <nav class="nav">
-                <a href="/" class="logo" title="Denali Tech">
-                    <picture>
-                        <source srcset="/Video/homepage/logo-112.webp 112w" sizes="56px" type="image/webp">
-                        <img src="/Video/homepage/logo-112.webp" alt="Denali Tech Logo" loading="eager" width="56" height="40" style="width: 56px; height: 40px; margin-right: 6px; object-fit: cover; object-position: 40% center; border-radius: 10px;" fetchpriority="high">
-                    </picture>
-                    <span class="logo-text">Denali Tech</span>
-                </a>
+                <div class="nav-brand-block">
+                    <a href="/" class="logo" title="Denali Tech">
+                        <picture>
+                            <source srcset="/Video/homepage/logo-112.webp 112w" sizes="56px" type="image/webp">
+                            <img src="/Video/homepage/logo-112.webp" alt="Denali Tech Logo" loading="eager" width="56" height="40" style="width: 56px; height: 40px; margin-right: 6px; object-fit: cover; object-position: 40% center; border-radius: 10px;" fetchpriority="high">
+                        </picture>
+                        <span class="logo-text">Denali Tech</span>
+                    </a>
+                    <div class="header-proof" aria-label="Business trust highlights">
+                        <span class="header-proof-pill">Chicago Smart Home &amp; Wi-Fi</span>
+                        <span class="header-proof-rating">5.0 Google rating and consultation-first service</span>
+                    </div>
+                </div>
                 <ul class="nav-links" id="navLinks">
-                    <li><a href="/" style="color: var(--accent-primary);">Home</a></li>
+                    <li><a href="/" class="nav-link-current">Home</a></li>
                     <li><a href="/services/">What We Do</a></li>
                     <li><a href="/projects/">Projects</a></li>
                     <li><a href="/about/">About Us</a></li>
@@ -686,6 +860,7 @@
                         <div class="toggle-switch-circle"></div>
                     </div>
                 </div>
+                <a href="/contact/#booking" class="header-quote-link">Free Consultation</a>
                 <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
                     <span></span>
                     <span></span>
@@ -697,7 +872,10 @@
                             <path d="M6.62 10.79a15.07 15.07 0 006.59 6.59l2.2-2.2a1 1 0 011.03-.24 11.62 11.62 0 003.67.59 1 1 0 011 1v3.5a1 1 0 01-1 1A17.5 17.5 0 013 6a1 1 0 011-1h3.5a1 1 0 011 1 11.62 11.62 0 00.59 3.67 1 1 0 01-.24 1.03z"></path>
                         </svg>
                     </span>
-                    <span>Call Now</span>
+                    <span>
+                        Call Now
+                        <span class="cta-helper">(312) 439-7500</span>
+                    </span>
                 </a>
             </div>
         </div>
