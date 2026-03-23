@@ -21,6 +21,11 @@
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
+/* Keep mobile-only theme control hidden unless the dropdown menu is active */
+.mobile-theme-toggle {
+    display: none !important;
+}
+
 .mobile-menu-backdrop.active {
     opacity: 1;
     visibility: visible;
