@@ -710,8 +710,8 @@
     <!-- Hero Section -->
     <section class="hero" id="home" itemscope itemtype="https://schema.org/WebPage">
         <div class="hero-background">
-            <video id="hero-background-video" muted loop playsinline webkit-playsinline preload="none" poster="/Video/Denali%20Van.webp" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center; z-index: 0; opacity: 0.5; pointer-events: none; touch-action: none;">
-                <source data-src="/Video/Denali%20tech%20smart%20home.mp4" type="video/mp4">
+            <video id="hero-background-video" muted loop playsinline webkit-playsinline preload="none" poster="/Video/homepage/hero-poster-desktop.webp" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center; z-index: 0; opacity: 0.5; pointer-events: none; touch-action: none;">
+                <source data-src="/Video/homepage/hero-loop.mp4" type="video/mp4">
                 <track kind="captions" src="/assets/captions/no-dialogue.vtt" label="English" srclang="en">
             </video>
             <div></div>
@@ -1247,17 +1247,19 @@
                     const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
                     const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
                     const connectionConstrained = Boolean(connection && (connection.saveData || /(?:^|\\b)(slow-2g|2g|3g)(?:\\b|$)/.test(connection.effectiveType || '')));
-                    const shouldUsePosterOnly = window.innerWidth <= 768 || prefersReducedMotion || connectionConstrained;
+                    const isMobileViewport = window.innerWidth <= 768;
+                    const shouldUsePosterOnly = prefersReducedMotion || connectionConstrained;
 
-                    heroVideo.poster = shouldUsePosterOnly
+                    heroVideo.poster = isMobileViewport
                         ? '/Video/homepage/hero-poster-mobile.webp'
-                        : '/Video/Denali%20Van.webp';
+                        : '/Video/homepage/hero-poster-desktop.webp';
 
                     // Set video properties for iOS
                     heroVideo.setAttribute('playsinline', '');
                     heroVideo.setAttribute('webkit-playsinline', '');
                     heroVideo.muted = true;
                     heroVideo.loop = true;
+                    heroVideo.autoplay = true;
 
                     if (shouldUsePosterOnly) {
                         heroVideo.dataset.videoHydrated = 'poster-only';
