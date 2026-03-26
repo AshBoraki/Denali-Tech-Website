@@ -68,24 +68,25 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #f3f7fc;
+      --bg: #edf3fb;
       --surface: #ffffff;
-      --line: #d6e2f0;
+      --surface-soft: rgba(255, 255, 255, 0.76);
+      --line: #d2e0f0;
       --text: #0f172a;
-      --muted: #334155;
+      --muted: #31425d;
       --primary: #0d59d8;
       --primary-hover: #0a46ad;
       --accent: #ff6b00;
       --accent-hover: #e45f00;
       --success: #10793d;
       --danger: #c93333;
-      --radius: 12px;
-      --shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
-      --max: 1080px;
+      --radius: 18px;
+      --shadow: 0 20px 50px rgba(15, 23, 42, 0.1);
+      --max: 1140px;
     }
 
     * { box-sizing: border-box; }
@@ -93,20 +94,23 @@
 
     body {
       margin: 0;
-      font-family: "Inter", system-ui, sans-serif;
+      font-family: "Manrope", system-ui, sans-serif;
       color: var(--text);
-      background: var(--bg);
+      background:
+        radial-gradient(circle at top left, rgba(13, 89, 216, 0.1), transparent 34%),
+        radial-gradient(circle at top right, rgba(255, 107, 0, 0.08), transparent 28%),
+        var(--bg);
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
     }
 
     .wrap {
-      width: min(var(--max), calc(100% - 1.5rem));
+      width: min(var(--max), calc(100% - 2rem));
       margin-inline: auto;
     }
 
     section {
-      padding: 30px 0;
+      padding: 56px 0;
     }
 
     h1, h2, h3 {
@@ -116,9 +120,9 @@
     }
 
     h1 {
-      font-size: clamp(1.95rem, 4.2vw, 3rem);
-      margin-bottom: 12px;
-      max-width: 12ch;
+      font-size: clamp(2.35rem, 5vw, 4.25rem);
+      margin-bottom: 16px;
+      max-width: 11ch;
     }
 
     h2 {
@@ -129,76 +133,110 @@
     p {
       margin: 0;
       color: var(--muted);
-      font-size: clamp(0.98rem, 1.4vw, 1.06rem);
+      font-size: clamp(1rem, 1.4vw, 1.08rem);
     }
 
     .card {
-      background: var(--surface);
+      background: var(--surface-soft);
       border: 1px solid var(--line);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
     }
 
     .hero {
-      padding-top: 26px;
-      padding-bottom: 18px;
+      padding-top: 44px;
+      padding-bottom: 34px;
     }
 
     .hero-grid {
       display: grid;
-      gap: 16px;
-      align-items: start;
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .hero-copy-card {
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-copy-card::before {
+      content: "";
+      position: absolute;
+      right: -60px;
+      bottom: -80px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(13, 89, 216, 0.14), transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(13, 89, 216, 0.08);
+      color: #0c4698;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
     }
 
     .hero-sub {
-      margin-bottom: 10px;
-      max-width: 60ch;
+      margin-bottom: 18px;
+      max-width: 58ch;
     }
 
     .hero-list {
       list-style: none;
       padding: 0;
-      margin: 0 0 14px;
+      margin: 0 0 22px;
       display: grid;
-      gap: 8px;
+      gap: 10px;
     }
 
     .hero-list li {
       position: relative;
-      padding-left: 18px;
+      padding-left: 20px;
       color: #1f3d67;
-      font-size: 0.95rem;
-      font-weight: 500;
+      font-size: 0.98rem;
+      font-weight: 700;
     }
 
     .hero-list li::before {
       content: "";
       position: absolute;
       left: 0;
-      top: 8px;
-      width: 7px;
-      height: 7px;
+      top: 9px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
       background: var(--primary);
     }
 
     .hero-value {
-      margin-top: 14px;
-      padding: 12px 13px;
+      margin-top: 22px;
+      padding: 18px 18px 16px;
       border: 1px solid var(--line);
-      border-radius: 10px;
-      background: #fbfdff;
-      max-width: 60ch;
+      border-radius: 16px;
+      background: rgba(251, 253, 255, 0.95);
+      max-width: 62ch;
     }
 
     .hero-value h3 {
-      font-size: 1.04rem;
-      margin-bottom: 6px;
+      font-size: 1.12rem;
+      margin-bottom: 8px;
     }
 
     .hero-value p {
-      font-size: 0.9rem;
-      margin-bottom: 8px;
+      font-size: 0.95rem;
+      margin-bottom: 10px;
     }
 
     .hero-value-list {
@@ -206,22 +244,22 @@
       padding: 0;
       list-style: none;
       display: grid;
-      gap: 6px;
+      gap: 8px;
     }
 
     .hero-value-list li {
       position: relative;
-      padding-left: 16px;
-      font-size: 0.9rem;
+      padding-left: 18px;
+      font-size: 0.94rem;
       color: #1f3f67;
-      font-weight: 500;
+      font-weight: 700;
     }
 
     .hero-value-list li::before {
       content: "";
       position: absolute;
       left: 0;
-      top: 8px;
+      top: 9px;
       width: 6px;
       height: 6px;
       border-radius: 50%;
@@ -234,11 +272,11 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 46px;
-      padding: 11px 20px;
+      min-height: 50px;
+      padding: 12px 22px;
       border-radius: 999px;
-      font-weight: 700;
-      font-size: 0.95rem;
+      font-weight: 800;
+      font-size: 0.96rem;
       cursor: pointer;
       transition: 0.2s ease;
     }
@@ -270,26 +308,32 @@
     }
 
     .cta-row {
-      margin-top: 8px;
+      margin-top: 10px;
       margin-bottom: 12px;
       display: grid;
       grid-template-columns: 1fr;
-      gap: 8px;
+      gap: 10px;
       width: 100%;
-      max-width: 420px;
+      max-width: 470px;
     }
 
     .hero-video {
-      padding: 12px;
+      padding: 18px;
+      align-self: stretch;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .video-box {
-      max-width: 340px;
+      width: 100%;
+      max-width: 360px;
       margin-inline: auto;
       border: 1px solid var(--line);
-      border-radius: 10px;
+      border-radius: 16px;
       overflow: hidden;
       background: #eef4fb;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
     }
 
     .video-box video {
@@ -300,9 +344,9 @@
     }
 
     .video-caption {
-      padding: 9px 10px;
-      font-size: 0.85rem;
-      font-weight: 600;
+      padding: 12px 12px 13px;
+      font-size: 0.88rem;
+      font-weight: 700;
       color: #23486f;
       border-top: 1px solid var(--line);
       background: #f3f8fe;
@@ -311,24 +355,25 @@
     .mini-head {
       text-align: center;
       max-width: 700px;
-      margin: 0 auto 12px;
+      margin: 0 auto 18px;
     }
 
     .compare-grid {
       display: grid;
-      gap: 10px;
-      max-width: 900px;
+      gap: 14px;
+      max-width: 980px;
       margin-inline: auto;
     }
 
     .compare-item {
-      padding: 13px 14px;
-      border-radius: 10px;
+      padding: 20px;
+      border-radius: 16px;
       border: 1px solid var(--line);
-      background: #f8fbff;
-      font-size: 0.93rem;
+      background: rgba(248, 251, 255, 0.92);
+      font-size: 0.97rem;
       color: #1b3a62;
-      font-weight: 500;
+      font-weight: 600;
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
     }
 
     .compare-item strong {
@@ -337,46 +382,47 @@
 
     .proof-row {
       display: grid;
-      gap: 10px;
-      max-width: 900px;
+      gap: 14px;
+      max-width: 980px;
       margin-inline: auto;
       grid-template-columns: 1fr;
     }
 
     .proof {
-      padding: 12px;
+      padding: 18px;
       text-align: center;
       border: 1px solid var(--line);
-      border-radius: 10px;
-      background: #fff;
-      font-size: 0.92rem;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.94);
+      font-size: 0.98rem;
       color: #1e3e67;
-      font-weight: 600;
+      font-weight: 800;
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
     }
 
     .form-card {
-      max-width: 900px;
+      max-width: 980px;
       margin-inline: auto;
-      padding: 16px;
+      padding: 26px;
     }
 
     .form-top {
-      margin-bottom: 10px;
+      margin-bottom: 18px;
     }
 
     .form-top p {
-      font-size: 0.93rem;
+      font-size: 0.98rem;
     }
 
     .form-grid {
       display: grid;
-      gap: 10px;
+      gap: 14px;
       grid-template-columns: 1fr;
     }
 
     .field {
       display: grid;
-      gap: 5px;
+      gap: 7px;
     }
 
     .field.full { grid-column: 1 / -1; }
@@ -393,9 +439,9 @@
       width: 100%;
       min-height: 42px;
       border: 1px solid #bfd2ea;
-      border-radius: 9px;
+      border-radius: 12px;
       background: #fcfdff;
-      padding: 9px 11px;
+      padding: 11px 13px;
       font: inherit;
       color: #16345f;
       font-size: 0.95rem;
@@ -421,18 +467,21 @@
       font-weight: 600;
     }
 
-    .h-captcha { margin-top: 8px; margin-bottom: 6px; }
+    .h-captcha {
+      margin-top: 12px;
+      margin-bottom: 10px;
+    }
 
     .submit-btn {
       width: 100%;
-      min-height: 46px;
+      min-height: 52px;
       border: 0;
-      border-radius: 10px;
-      font-weight: 700;
-      font-size: 0.95rem;
+      border-radius: 14px;
+      font-weight: 800;
+      font-size: 0.98rem;
       color: #fff;
       background: var(--accent);
-      box-shadow: 0 8px 18px rgba(255, 107, 0, 0.24);
+      box-shadow: 0 14px 28px rgba(255, 107, 0, 0.22);
       cursor: pointer;
       transition: 0.2s ease;
     }
@@ -460,26 +509,44 @@
     .form-message.error { color: var(--danger); }
 
     .urgency {
-      padding-top: 20px;
-      padding-bottom: 28px;
+      padding-top: 24px;
+      padding-bottom: 48px;
     }
 
     .urgency-box {
-      max-width: 900px;
+      max-width: 980px;
       margin-inline: auto;
-      padding: 16px;
+      padding: 26px;
       text-align: center;
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      background: #fff;
+      background: rgba(255, 255, 255, 0.96);
       box-shadow: var(--shadow);
     }
 
     .urgency-box p {
-      font-size: 1rem;
+      font-size: 1.04rem;
       font-weight: 700;
       color: #173760;
-      margin-bottom: 10px;
+      margin-bottom: 14px;
+    }
+
+    @media (max-width: 759px) {
+      section {
+        padding: 40px 0;
+      }
+
+      .hero {
+        padding-top: 28px;
+        padding-bottom: 18px;
+      }
+
+      .hero-copy-card,
+      .hero-video,
+      .form-card,
+      .urgency-box {
+        padding: 18px;
+      }
     }
 
     @media (min-width: 760px) {
@@ -502,7 +569,8 @@
 
     @media (min-width: 980px) {
       .hero-grid {
-        grid-template-columns: minmax(0, 1fr) minmax(330px, 380px);
+        grid-template-columns: minmax(0, 1.08fr) minmax(340px, 390px);
+        gap: 30px;
       }
     }
   </style>
@@ -523,7 +591,8 @@
   <main>
     <section class="hero">
       <div class="wrap hero-grid">
-        <div>
+        <div class="card hero-copy-card">
+          <div class="hero-kicker">Chicago Smart Home Network Design</div>
           <h1>A Smart Home Is Only as Good as Its Network</h1>
           <p class="hero-sub">We’re a home automation company, and we know the foundation of every reliable system is a solid network. We design, calibrate, and place the right equipment so your smart home works every day.</p>
           <ul class="hero-list" aria-label="Wi-Fi upgrade benefits">
