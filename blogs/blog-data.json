@@ -81,23 +81,23 @@
       "featured": true
     },
     {
-      "id": "sonos-amp-urc-wall-shelf-guide",
-      "title": "Custom Sonos Amp and URC Wall Shelf Setup for a Cleaner AVR Closet",
-      "slug": "sonos-amp-urc-wall-shelf-guide",
-      "url": "/blogs/sonos-amp-urc-wall-shelf-guide/",
-      "excerpt": "A custom wall shelf for a Sonos Amp and URC gear keeps an AVR closet cleaner, easier to service, and more reliable over time.",
+      "id": "middle-atlantic-av-rack-build-guide",
+      "title": "18U Middle Atlantic AV Rack Build Time-Lapse: What a Clean Rack Installation Should Look Like",
+      "slug": "middle-atlantic-av-rack-build-guide",
+      "url": "/blogs/middle-atlantic-av-rack-build-guide/",
+      "excerpt": "This 18U Middle Atlantic rack build shows how planning, cable discipline, and proper layout create a cleaner and more serviceable AV system.",
       "category": "Smart Home Guide",
       "tags": [
-        "Sonos Amp",
-        "URC",
-        "AVR Closet",
-        "AV Installation"
+        "Middle Atlantic",
+        "AV Rack",
+        "Rack Build",
+        "Home Theater"
       ],
       "author": "Denali Tech Team",
       "publishedDate": "2026-04-09",
       "updatedDate": "2026-04-09",
       "readingTime": 4,
-      "heroImage": "/Video/Blogs imge/YouTube/sonos-amp-urc-wall-shelf-guide.png",
+      "heroImage": "/Video/Blogs imge/YouTube/middle-atlantic-av-rack-build-guide.png",
       "featured": true
     },
     {
