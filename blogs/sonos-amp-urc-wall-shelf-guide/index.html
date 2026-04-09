@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Sonos Amp and URC Wall Shelf Setup for a Cleaner AVR Closet | Denali Tech</title>
+    <meta name="description" content="A custom wall shelf for a Sonos Amp and URC gear keeps an AVR closet cleaner, easier to service, and more reliable over time.">
+    <meta name="keywords" content="Sonos Amp install, URC setup, AVR closet organization, custom AV shelf, Chicago AV installer">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://denalitechs.com/blogs/sonos-amp-urc-wall-shelf-guide/">
+    <meta property="og:title" content="Custom Sonos Amp and URC Wall Shelf Setup for a Cleaner AVR Closet">
+    <meta property="og:description" content="A custom wall shelf for a Sonos Amp and URC gear keeps an AVR closet cleaner, easier to service, and more reliable over time.">
+    <meta property="og:image" content="https://denalitechs.com/Video/Blogs imge/YouTube/sonos-amp-urc-wall-shelf-guide.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://denalitechs.com/blogs/sonos-amp-urc-wall-shelf-guide/">
+    <meta name="twitter:title" content="Custom Sonos Amp and URC Wall Shelf Setup for a Cleaner AVR Closet">
+    <meta name="twitter:description" content="A custom wall shelf for a Sonos Amp and URC gear keeps an AVR closet cleaner, easier to service, and more reliable over time.">
+    <meta name="twitter:image" content="https://denalitechs.com/Video/Blogs imge/YouTube/sonos-amp-urc-wall-shelf-guide.png">
+    <meta name="author" content="Denali Tech">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="article:published_time" content="2026-04-09">
+    <meta name="article:modified_time" content="2026-04-09">
+    <meta name="article:author" content="Denali Tech">
+    <meta name="article:section" content="Smart Home Guide">
+    <link rel="canonical" href="https://denalitechs.com/blogs/sonos-amp-urc-wall-shelf-guide/">
+    <base href="/">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
+    <style>
+        :root {
+            --bg-color: #0a0d18;
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --accent-primary: #f97316;
+            --accent-hover: #fdba74;
+            --border-color: rgba(255, 255, 255, 0.12);
+            --shadow-glow: 0 4px 15px rgba(249, 115, 22, 0.4);
+            --font-main: 'Inter', system-ui, sans-serif;
+            --font-heading: 'Poppins', system-ui, sans-serif;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-main);
+            color: var(--text-primary);
+            background-color: var(--bg-color);
+            line-height: 1.7;
+        }
+        .blog-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 120px 2rem 4rem;
+        }
+        .blog-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .blog-breadcrumb {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+        .blog-breadcrumb a {
+            color: var(--accent-primary);
+            text-decoration: none;
+        }
+        .blog-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        .blog-meta {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+        .blog-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin: 1.5rem 0;
+        }
+        .blog-tag {
+            display: inline-block;
+            padding: 0.4rem 0.8rem;
+            background: rgba(249, 115, 22, 0.15);
+            border: 1px solid rgba(249, 115, 22, 0.3);
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent-primary);
+        }
+        .blog-hero-image {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 16px;
+            margin: 2rem 0;
+            box-shadow: var(--shadow-glow);
+        }
+        .blog-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+        .blog-content h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(1.75rem, 4vw, 2.25rem);
+            color: var(--text-primary);
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+        .blog-content p {
+            margin-bottom: 1.5rem;
+        }
+        .blog-content ul {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+        .blog-content li {
+            margin-bottom: 0.75rem;
+        }
+        .blog-content strong {
+            color: var(--text-primary);
+        }
+        .cta-box {
+            background: rgba(249, 115, 22, 0.1);
+            border: 2px solid var(--accent-primary);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        .cta-box h3 {
+            font-family: var(--font-heading);
+            font-size: 1.75rem;
+            color: var(--accent-primary);
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+        .btn-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-primary), #fb923c);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all var(--transition);
+            box-shadow: var(--shadow-glow);
+        }
+        .highlight-box {
+            background: rgba(249, 115, 22, 0.1);
+            border-left: 4px solid var(--accent-primary);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        .video-embed {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%;
+            margin: 2rem 0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+        }
+        .video-embed iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        a { color: var(--accent-hover); }
+        @media (max-width: 768px) {
+            .blog-container { padding: 100px 1rem 2rem; }
+            .blog-meta { flex-direction: column; gap: 0.5rem; }
+            .cta-box { padding: 1.5rem; }
+        }
+    </style>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Custom Sonos Amp and URC Wall Shelf Setup for a Cleaner AVR Closet", "description": "A custom wall shelf for a Sonos Amp and URC gear keeps an AVR closet cleaner, easier to service, and more reliable over time.", "image": ["https://denalitechs.com/Video/Blogs imge/YouTube/sonos-amp-urc-wall-shelf-guide.png"], "datePublished": "2026-04-09", "dateModified": "2026-04-09", "author": {"@type": "Organization", "name": "Denali Tech", "url": "https://denalitechs.com/"}, "publisher": {"@type": "Organization", "name": "Denali Tech", "logo": {"@type": "ImageObject", "url": "https://denalitechs.com/Video/logo%20no%20back%20greand%20.png", "width": 512, "height": 512}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://denalitechs.com/blogs/sonos-amp-urc-wall-shelf-guide/"}, "articleSection": "Smart Home Guide", "keywords": "Sonos Amp install, URC setup, AVR closet organization, custom AV shelf, Chicago AV installer", "inLanguage": "en-US", "wordCount": "0", "timeRequired": "PT4M"}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://denalitechs.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://denalitechs.com/blogs/"}, {"@type": "ListItem", "position": 3, "name": "Custom Sonos Amp and URC Wall Shelf Setup for a Cleaner AVR Closet", "item": "https://denalitechs.com/blogs/sonos-amp-urc-wall-shelf-guide/"}]}</script>
+</head>
+<body>
+    <main role="main">
+    <article class="blog-container">
+        <div class="blog-header">
+            <div class="blog-breadcrumb">
+                <a href="/">Home</a> / <a href="/blogs/">Blog</a> / Custom Sonos Amp and URC Wall Shelf Setup for a Cleaner AVR Closet
+            </div>
+            <h1 class="blog-title">Custom Sonos Amp and URC Wall Shelf Setup for a Cleaner AVR Closet</h1>
+            <div class="blog-meta">
+                <span>📅 Published: <time datetime="2026-04-09">April 9, 2026</time></span>
+                <span>👤 By: Denali Tech Team</span>
+                <span>⏱️ 4 min read</span>
+                <span>🏷️ Category: Smart Home Guide</span>
+            </div>
+            <div class="blog-tags">
+                <span class="blog-tag">Sonos Amp</span>
+<span class="blog-tag">URC</span>
+<span class="blog-tag">AVR Closet</span>
+<span class="blog-tag">AV Installation</span>
+            </div>
+        </div>
+
+        <img src="/Video/Blogs imge/YouTube/sonos-amp-urc-wall-shelf-guide.png" alt="Custom wall shelf for Sonos Amp and URC equipment" class="blog-hero-image" loading="eager">
+
+        <div class="blog-content">
+            <p>Custom Wall Shelf for Sonos Amp + URC | Clean AVR Closet Setup shows a real Denali Tech project and why clean system design matters for reliability, serviceability, and long-term performance.</p>
+
+            <div class="highlight-box">
+                <p><strong>Quick takeaway:</strong> A custom wall shelf for a Sonos Amp and URC gear keeps an AVR closet cleaner, easier to service, and more reliable over time. This post is tied directly to the real project shown in the video, so homeowners can see what the install actually looked like.</p>
+            </div>
+
+            <h2>What This Project Involved</h2>
+            <p>This is how you guys can build a very cheap and easy shelf for your AV equipment.</p>
+<p>The part you guys need is just 2 U-Shoves, one of those brackets, some screws and plywood.</p>
+<p>So first the stuff would be pre-drill your hole and hit this stuff, the goal is to attach</p>
+<p>that plywood to the drywall and bigger size.</p>
+<p>And then you mount your piece of plywood like that, item to the stud so that it can go anywhere</p>
+<p>next to it would be screwing that shelf to that plywood.</p>
+<p>And that&#x27;s how it turned out.</p>
+<p>The trick is to be flush with that plywood and the shelf so you can use that support item.</p>
+
+            <h2>Why It Matters for Homeowners</h2>
+            <p>Professional low-voltage and AV work is not just about making gear look clean. It reduces troubleshooting time, improves long-term reliability, and makes future upgrades easier.</p>
+
+            <div class="video-embed">
+                <iframe
+                    src="https://www.youtube.com/embed/ZCRFzz2DXYI"
+                    title="Custom Wall Shelf for Sonos Amp + URC | Clean AVR Closet Setup: What This Denali Tech Project Shows"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+
+            <h2>Key Takeaways</h2>
+            <ul>
+<li>The install is built around reliability, not just appearance.</li>
+<li>Clean layout, infrastructure, and planning matter as much as the hardware itself.</li>
+<li>Projects like this work best when the system is designed as a whole instead of added piece by piece.</li>
+</ul>
+
+            <h2>When to Call Denali Tech</h2>
+            <p>If you need help with smart home installation, whole-home Wi-Fi, AV racks, home theater, motorized shades, or structured low-voltage work in the Chicago area, Denali Tech can help.</p>
+<p><a href="https://www.denalitechs.com/contact/" target="_blank" rel="noopener noreferrer">Book a consultation with Denali Tech</a></p>
+
+            <h2>Related Links</h2>
+            <ul>
+                
+            </ul>
+
+            <div class="cta-box">
+                <h3>Need Help With a Similar Project?</h3>
+                <p>Denali Tech designs and installs whole-home Wi-Fi, smart home control, AV racks, home theaters, and low-voltage systems across the Chicago area.</p>
+                <a href="/contact/#booking" class="btn-primary">Schedule a Consultation</a>
+                <p style="margin-top: 1rem; font-size: 0.95rem;">Or call <a href="tel:+13124397500">(312) 439-7500</a></p>
+            </div>
+        </div>
+    </article>
+    </main>
+</body>
+</html>

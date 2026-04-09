@@ -1,13 +1,119 @@
 {
   "posts": [
     {
+      "id": "luxul-network-setup-guide",
+      "title": "Luxul Epic 5 Router and PoE Switch Setup for a Reliable Smart Home Network",
+      "slug": "luxul-network-setup-guide",
+      "url": "/blogs/luxul-network-setup-guide/",
+      "excerpt": "See how a clean Luxul router and PoE switch install improves reliability for Wi-Fi, cameras, AV, and smart home control systems.",
+      "category": "Smart Home Guide",
+      "tags": [
+        "Luxul",
+        "Networking",
+        "PoE Switch",
+        "Smart Home"
+      ],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-04-09",
+      "updatedDate": "2026-04-09",
+      "readingTime": 4,
+      "heroImage": "/Video/Blogs imge/YouTube/luxul-network-setup-guide.png",
+      "featured": true
+    },
+    {
+      "id": "lutron-pico-motorized-shades-guide",
+      "title": "Motorized Shades with Lutron Pico Control: What a Clean Smart Shades Setup Looks Like",
+      "slug": "lutron-pico-motorized-shades-guide",
+      "url": "/blogs/lutron-pico-motorized-shades-guide/",
+      "excerpt": "A practical look at how motorized shades and Lutron Pico control fit into a polished smart home installation.",
+      "category": "Smart Home Guide",
+      "tags": [
+        "Lutron",
+        "Motorized Shades",
+        "Smart Shades",
+        "Home Automation"
+      ],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-04-09",
+      "updatedDate": "2026-04-09",
+      "readingTime": 4,
+      "heroImage": "/Video/Blogs imge/YouTube/lutron-pico-motorized-shades-guide.png",
+      "featured": true
+    },
+    {
+      "id": "av-rack-wire-management-guide",
+      "title": "AV Rack Wire Management Done Right: What Clean Rack Builds Actually Require",
+      "slug": "av-rack-wire-management-guide",
+      "url": "/blogs/av-rack-wire-management-guide/",
+      "excerpt": "Clean AV rack wire management is about reliability and serviceability, not just looks. This guide breaks down what matters in a professional rack build.",
+      "category": "Smart Home Guide",
+      "tags": [
+        "AV Rack",
+        "Wire Management",
+        "Home Theater",
+        "Rack Build"
+      ],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-04-09",
+      "updatedDate": "2026-04-09",
+      "readingTime": 4,
+      "heroImage": "/Video/Blogs imge/YouTube/av-rack-wire-management-guide.png",
+      "featured": true
+    },
+    {
+      "id": "motorized-projector-screen-installation-guide",
+      "title": "190-Inch Motorized Projector Screen Installation: What Goes Into a Serious Theater Build",
+      "slug": "motorized-projector-screen-installation-guide",
+      "url": "/blogs/motorized-projector-screen-installation-guide/",
+      "excerpt": "A large motorized projector screen install requires more than hanging a screen. This post covers planning, mounting, control, and theater integration.",
+      "category": "Smart Home Guide",
+      "tags": [
+        "Projector Screen",
+        "Home Theater",
+        "Motorized Screen",
+        "AV Installation"
+      ],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-04-09",
+      "updatedDate": "2026-04-09",
+      "readingTime": 4,
+      "heroImage": "/Video/Blogs imge/YouTube/motorized-projector-screen-installation-guide.png",
+      "featured": true
+    },
+    {
+      "id": "sonos-amp-urc-wall-shelf-guide",
+      "title": "Custom Sonos Amp and URC Wall Shelf Setup for a Cleaner AVR Closet",
+      "slug": "sonos-amp-urc-wall-shelf-guide",
+      "url": "/blogs/sonos-amp-urc-wall-shelf-guide/",
+      "excerpt": "A custom wall shelf for a Sonos Amp and URC gear keeps an AVR closet cleaner, easier to service, and more reliable over time.",
+      "category": "Smart Home Guide",
+      "tags": [
+        "Sonos Amp",
+        "URC",
+        "AVR Closet",
+        "AV Installation"
+      ],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-04-09",
+      "updatedDate": "2026-04-09",
+      "readingTime": 4,
+      "heroImage": "/Video/Blogs imge/YouTube/sonos-amp-urc-wall-shelf-guide.png",
+      "featured": true
+    },
+    {
       "id": "best-smart-home-brands-chicago-guide",
       "title": "Best Smart Home Brands We Trust for Chicago Homes",
       "slug": "best-smart-home-brands-chicago-guide",
       "url": "/blogs/best-smart-home-brands-chicago-guide/",
       "excerpt": "See the smart home brands Denali Tech trusts for Chicago-area homes, including Control4, URC, Lutron, Sonos, Araknis, OvrC, WattBox, and more.",
       "category": "Buying Guide",
-      "tags": ["Smart Home Brands", "Control4", "Lutron", "Araknis", "Chicago"],
+      "tags": [
+        "Smart Home Brands",
+        "Control4",
+        "Lutron",
+        "Araknis",
+        "Chicago"
+      ],
       "author": "Denali Tech Team",
       "publishedDate": "2026-03-22",
       "updatedDate": "2026-03-22",
@@ -22,7 +128,12 @@
       "url": "/blogs/ovrc-remote-monitoring-guide/",
       "excerpt": "Learn what OvrC is, how remote monitoring helps smart homes, and why professionally installed systems are easier to support, maintain, and fix when problems happen.",
       "category": "Smart Home Guide",
-      "tags": ["OvrC", "Remote Monitoring", "Smart Home Support", "Network Service"],
+      "tags": [
+        "OvrC",
+        "Remote Monitoring",
+        "Smart Home Support",
+        "Network Service"
+      ],
       "author": "Denali Tech Team",
       "publishedDate": "2026-03-22",
       "updatedDate": "2026-03-22",
@@ -37,7 +148,12 @@
       "url": "/blogs/wattbox-power-management-guide/",
       "excerpt": "Learn why WattBox power management matters for reliable smart homes, theaters, and network racks, including remote rebooting, surge protection, and cleaner service support.",
       "category": "Smart Home Guide",
-      "tags": ["WattBox", "Power Management", "Home Theater", "Network Reliability"],
+      "tags": [
+        "WattBox",
+        "Power Management",
+        "Home Theater",
+        "Network Reliability"
+      ],
       "author": "Denali Tech Team",
       "publishedDate": "2026-03-22",
       "updatedDate": "2026-03-22",
@@ -52,7 +168,12 @@
       "url": "/blogs/control4-x4-homeowner-guide/",
       "excerpt": "Learn what homeowners should know about the Control4 X4 experience, including why cleaner interfaces, routines, and better day-to-day usability matter in a professionally installed smart home.",
       "category": "Smart Home Guide",
-      "tags": ["Control4", "X4", "Home Automation", "Smart Home Interface"],
+      "tags": [
+        "Control4",
+        "X4",
+        "Home Automation",
+        "Smart Home Interface"
+      ],
       "author": "Denali Tech Team",
       "publishedDate": "2026-03-22",
       "updatedDate": "2026-03-22",
@@ -67,7 +188,13 @@
       "url": "/blogs/whole-home-audio-sonos-vs-traditional/",
       "excerpt": "Complete comparison of Sonos vs Traditional Multi-Room Audio systems. Learn the differences, pros, cons, costs, and which whole home audio system is right for your Chicago home. Expert guide from professional installers.",
       "category": "Buying Guide",
-      "tags": ["Sonos", "Whole Home Audio", "Multi-Room Audio", "Home Audio", "Audio Systems"],
+      "tags": [
+        "Sonos",
+        "Whole Home Audio",
+        "Multi-Room Audio",
+        "Home Audio",
+        "Audio Systems"
+      ],
       "author": "Denali Tech Team",
       "publishedDate": "2025-01-11",
       "updatedDate": "2025-01-11",
@@ -82,7 +209,13 @@
       "url": "/blogs/lutron-smart-lighting-guide/",
       "excerpt": "Complete guide to Lutron smart lighting systems for Chicago homes. Learn about Lutron dimmers, switches, product lines (Caseta, RA2, RA3, HomeWorks), integration with Control4/URC, costs, and professional installation.",
       "category": "Smart Home Guide",
-      "tags": ["Lutron", "Smart Lighting", "Home Automation", "Chicago", "Product Guide"],
+      "tags": [
+        "Lutron",
+        "Smart Lighting",
+        "Home Automation",
+        "Chicago",
+        "Product Guide"
+      ],
       "author": "Denali Tech Team",
       "publishedDate": "2025-01-11",
       "updatedDate": "2025-01-11",
@@ -97,7 +230,12 @@
       "url": "/blogs/why-professional-network-setup-is-superior/",
       "excerpt": "Learn why professional network installation with Araknis is superior to DIY setups. See real examples of properly installed networks with routers, switches, Wattbox power management, and WiFi 6 access points.",
       "category": "Smart Home Guide",
-      "tags": ["Araknis", "Network Setup", "WiFi Installation", "Professional Installation"],
+      "tags": [
+        "Araknis",
+        "Network Setup",
+        "WiFi Installation",
+        "Professional Installation"
+      ],
       "author": "Denali Tech Team",
       "publishedDate": "2025-01-11",
       "updatedDate": "2025-01-11",
@@ -112,7 +250,12 @@
       "url": "/blogs/smart-home-automation-arlington-heights-guide/",
       "excerpt": "Complete guide to smart home automation in Arlington Heights, IL. Learn about costs, popular features, installation process, and choosing the right system for your Arlington Heights home. Free consultation available.",
       "category": "Smart Home Guide",
-      "tags": ["Arlington Heights", "Local Guide", "Smart Home", "Home Automation"],
+      "tags": [
+        "Arlington Heights",
+        "Local Guide",
+        "Smart Home",
+        "Home Automation"
+      ],
       "author": "Denali Tech Team",
       "publishedDate": "2025-01-10",
       "updatedDate": "2025-01-10",
@@ -127,7 +270,12 @@
       "url": "/blogs/smart-home-not-working-troubleshooting/",
       "excerpt": "Your smart home devices not working? Learn how to fix common smart home problems including connectivity issues, devices not responding, WiFi problems, and more. Professional troubleshooting guide for Chicago homeowners.",
       "category": "Troubleshooting",
-      "tags": ["Troubleshooting", "Smart Home Help", "Problem Solving", "Tech Support"],
+      "tags": [
+        "Troubleshooting",
+        "Smart Home Help",
+        "Problem Solving",
+        "Tech Support"
+      ],
       "author": "Denali Tech Team",
       "publishedDate": "2025-01-09",
       "updatedDate": "2025-01-09",
@@ -142,7 +290,12 @@
       "url": "/blogs/smart-home-automation-for-beginners/",
       "excerpt": "New to smart homes? This beginner's guide explains everything you need to know about smart home automation, from basics to getting started. Simple, easy-to-understand guide.",
       "category": "Smart Home Guide",
-      "tags": ["Beginners", "Smart Home", "Guide", "Getting Started"],
+      "tags": [
+        "Beginners",
+        "Smart Home",
+        "Guide",
+        "Getting Started"
+      ],
       "author": "Denali Tech Team",
       "publishedDate": "2025-01-08",
       "updatedDate": "2025-01-08",
@@ -157,7 +310,12 @@
       "url": "/blogs/home-theater-installation-guide/",
       "excerpt": "Complete guide to home theater installation. Learn about projectors, audio systems, room design, and what to expect. Professional home theater installation in Chicago.",
       "category": "Smart Home Guide",
-      "tags": ["Home Theater", "Installation", "Guide", "Audio Video"],
+      "tags": [
+        "Home Theater",
+        "Installation",
+        "Guide",
+        "Audio Video"
+      ],
       "author": "Denali Tech Team",
       "publishedDate": "2025-01-07",
       "updatedDate": "2025-01-07",
@@ -172,7 +330,12 @@
       "url": "/blogs/what-is-control4-guide/",
       "excerpt": "Learn what Control4 is, how it works, what it can control, and whether it's right for your home. Complete guide from authorized Control4 dealers in Chicago.",
       "category": "Smart Home Guide",
-      "tags": ["Control4", "Smart Home", "Guide", "Automation"],
+      "tags": [
+        "Control4",
+        "Smart Home",
+        "Guide",
+        "Automation"
+      ],
       "author": "Denali Tech Team",
       "publishedDate": "2025-01-06",
       "updatedDate": "2025-01-06",
@@ -187,7 +350,12 @@
       "url": "/blogs/how-to-choose-smart-home-installer/",
       "excerpt": "Don't hire the wrong company. Learn how to choose a smart home installer with our essential guide. Questions to ask, red flags to avoid, and what to look for when hiring.",
       "category": "Tips",
-      "tags": ["Installation", "Hiring", "Tips", "Questions"],
+      "tags": [
+        "Installation",
+        "Hiring",
+        "Tips",
+        "Questions"
+      ],
       "author": "Denali Tech Team",
       "publishedDate": "2025-01-05",
       "updatedDate": "2025-01-05",
@@ -202,7 +370,12 @@
       "url": "/blogs/wifi-dead-zones-fix-guide/",
       "excerpt": "Struggling with WiFi dead zones? Learn how to fix slow WiFi, eliminate dead spots, and get perfect coverage throughout your home. Professional WiFi installation guide for Chicago homeowners.",
       "category": "Smart Home Guide",
-      "tags": ["WiFi", "Networking", "Troubleshooting", "WiFi Dead Zones"],
+      "tags": [
+        "WiFi",
+        "Networking",
+        "Troubleshooting",
+        "WiFi Dead Zones"
+      ],
       "author": "Denali Tech Team",
       "publishedDate": "2025-01-04",
       "updatedDate": "2025-01-04",
@@ -217,7 +390,12 @@
       "url": "/blogs/control4-vs-urc-comparison/",
       "excerpt": "Complete comparison of Control4 vs URC smart home systems. Learn the differences, pros, cons, and which system fits your needs. Expert advice from authorized dealers in Chicago.",
       "category": "Buying Guide",
-      "tags": ["Control4", "URC", "Comparison", "Smart Home Systems"],
+      "tags": [
+        "Control4",
+        "URC",
+        "Comparison",
+        "Smart Home Systems"
+      ],
       "author": "Denali Tech Team",
       "publishedDate": "2025-01-03",
       "updatedDate": "2025-01-03",
@@ -232,42 +410,17 @@
       "url": "/blogs/how-much-does-smart-home-automation-cost/",
       "excerpt": "Smart home automation costs explained. Get transparent pricing for WiFi systems ($2,000+), smart home packages ($8,000-$25,000), and home theaters ($15,000+). Free consultation available in Chicago.",
       "category": "Smart Home Guide",
-      "tags": ["Smart Home Cost", "Pricing Guide", "Home Automation", "Budget Planning"],
+      "tags": [
+        "Smart Home Cost",
+        "Pricing Guide",
+        "Home Automation",
+        "Budget Planning"
+      ],
       "author": "Denali Tech Team",
       "publishedDate": "2025-01-02",
       "updatedDate": "2025-01-02",
       "readingTime": 12,
       "heroImage": "/Video/Blogs imge/How Much Does Smart Home Automation Cost Complete Pricing Guide 2025.webp",
-      "featured": true
-    },
-    {
-      "id": "urc-remote-programming-guide",
-      "title": "URC Remote Programming Guide: Get Your Universal Remote Working Perfectly",
-      "slug": "urc-remote-programming-guide",
-      "url": "/blogs/urc-remote-programming-guide/",
-      "excerpt": "Learn how to program your URC remote control to control everything in your smart home - TV, audio, lights, shades, and more.",
-      "category": "URC Systems",
-      "tags": ["URC", "Remote Control", "Programming", "Smart Home"],
-      "author": "Denali Tech Team",
-      "publishedDate": "2024-01-15",
-      "updatedDate": "2024-01-15",
-      "readingTime": 8,
-      "heroImage": "/blogs/urc-remote-programming-guide/images/urc-mx-990-image-in-living-room-in-hand.webp",
-      "featured": true
-    },
-    {
-      "id": "smart-home-buyers-guide",
-      "title": "Smart Home Buyer's Guide: Everything You Need to Know Before Investing",
-      "slug": "smart-home-buyers-guide",
-      "url": "/blogs/smart-home-buyers-guide/",
-      "excerpt": "Everything you need to know before investing in smart home technology. Expert tips and recommendations.",
-      "category": "Buying Guide",
-      "tags": ["Smart Home", "Buying Guide", "Tips", "Planning"],
-      "author": "Denali Tech Team",
-      "publishedDate": "2024-01-20",
-      "updatedDate": "2024-01-20",
-      "readingTime": 12,
-      "heroImage": "/Video/guide%20imges.webp",
       "featured": true
     },
     {
@@ -277,7 +430,13 @@
       "url": "/blogs/urc-mx-990-review/",
       "excerpt": "Complete review of the URC MX-990 universal remote control. Learn about battery life, features, pros, cons, and whether it's right for your smart home.",
       "category": "Product Review",
-      "tags": ["URC", "Remote Control", "Review", "MX-990", "Product Review"],
+      "tags": [
+        "URC",
+        "Remote Control",
+        "Review",
+        "MX-990",
+        "Product Review"
+      ],
       "author": "Denali Tech Team",
       "publishedDate": "2024-01-30",
       "updatedDate": "2024-01-30",
@@ -292,7 +451,13 @@
       "url": "/blogs/control4-remote-review/",
       "excerpt": "Complete review of the Control4 SR-260 universal remote control. Learn about battery life, features, pros, cons, and whether the SR-260 is right for your smart home.",
       "category": "Product Review",
-      "tags": ["Control4", "Remote Control", "Review", "SR-260", "Product Review"],
+      "tags": [
+        "Control4",
+        "Remote Control",
+        "Review",
+        "SR-260",
+        "Product Review"
+      ],
       "author": "Denali Tech Team",
       "publishedDate": "2024-01-30",
       "updatedDate": "2024-01-30",
@@ -307,7 +472,13 @@
       "url": "/blogs/urc-universal-remote-review/",
       "excerpt": "Complete review of the Control4 Helo remote control (non-touch version). Learn about battery life, features, pros, cons, and whether the Helo is right for your smart home.",
       "category": "Product Review",
-      "tags": ["Control4", "Remote Control", "Review", "Helo", "Product Review"],
+      "tags": [
+        "Control4",
+        "Remote Control",
+        "Review",
+        "Helo",
+        "Product Review"
+      ],
       "author": "Denali Tech Team",
       "publishedDate": "2024-01-30",
       "updatedDate": "2024-01-30",
@@ -322,7 +493,13 @@
       "url": "/blogs/modern-smart-home-remote-review/",
       "excerpt": "Complete review of the Control4 NEEO remote control. Learn about battery life, features, pros, cons, and whether the NEEO is right for your smart home.",
       "category": "Product Review",
-      "tags": ["Control4", "Remote Control", "Review", "NEEO", "Product Review"],
+      "tags": [
+        "Control4",
+        "Remote Control",
+        "Review",
+        "NEEO",
+        "Product Review"
+      ],
       "author": "Denali Tech Team",
       "publishedDate": "2024-01-30",
       "updatedDate": "2024-01-30",
@@ -337,12 +514,58 @@
       "url": "/blogs/control4-helo-touch-review/",
       "excerpt": "Complete review of the Control4 Helo Touch remote control. Learn about battery life, features, pros, cons, and whether the Helo Touch is right for your smart home.",
       "category": "Product Review",
-      "tags": ["Control4", "Remote Control", "Review", "Helo Touch", "Product Review"],
+      "tags": [
+        "Control4",
+        "Remote Control",
+        "Review",
+        "Helo Touch",
+        "Product Review"
+      ],
       "author": "Denali Tech Team",
       "publishedDate": "2024-01-30",
       "updatedDate": "2024-01-30",
       "readingTime": 8,
       "heroImage": "/Video/Helo Touch-C4.webp",
+      "featured": true
+    },
+    {
+      "id": "smart-home-buyers-guide",
+      "title": "Smart Home Buyer's Guide: Everything You Need to Know Before Investing",
+      "slug": "smart-home-buyers-guide",
+      "url": "/blogs/smart-home-buyers-guide/",
+      "excerpt": "Everything you need to know before investing in smart home technology. Expert tips and recommendations.",
+      "category": "Buying Guide",
+      "tags": [
+        "Smart Home",
+        "Buying Guide",
+        "Tips",
+        "Planning"
+      ],
+      "author": "Denali Tech Team",
+      "publishedDate": "2024-01-20",
+      "updatedDate": "2024-01-20",
+      "readingTime": 12,
+      "heroImage": "/Video/guide%20imges.webp",
+      "featured": true
+    },
+    {
+      "id": "urc-remote-programming-guide",
+      "title": "URC Remote Programming Guide: Get Your Universal Remote Working Perfectly",
+      "slug": "urc-remote-programming-guide",
+      "url": "/blogs/urc-remote-programming-guide/",
+      "excerpt": "Learn how to program your URC remote control to control everything in your smart home - TV, audio, lights, shades, and more.",
+      "category": "URC Systems",
+      "tags": [
+        "URC",
+        "Remote Control",
+        "Programming",
+        "Smart Home"
+      ],
+      "author": "Denali Tech Team",
+      "publishedDate": "2024-01-15",
+      "updatedDate": "2024-01-15",
+      "readingTime": 8,
+      "heroImage": "/blogs/urc-remote-programming-guide/images/urc-mx-990-image-in-living-room-in-hand.webp",
       "featured": true
     }
   ],
