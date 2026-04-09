@@ -1004,8 +1004,8 @@
     <main>
         <div class="blog-listing-container">
             <div class="blog-header">
-                <h1>Smart Home Blog</h1>
-                <p>Expert tips, guides, and insights to help you make informed decisions about your smart home technology.</p>
+                <h1>Guides, Projects, and Smart Home Advice</h1>
+                <p>Real project breakdowns, buying guidance, and practical help for smart home, Wi-Fi, theater, audio, and control systems.</p>
                 <p id="postCount" style="font-size: 0.95rem; color: var(--text-secondary); margin-top: 0.5rem;"></p>
                 <a href="/blogs/rss.xml" class="rss-link" aria-label="Subscribe to RSS feed">
                     <span>📡</span>
@@ -1015,10 +1015,10 @@
 
             <div class="blog-controls">
                 <div class="search-box">
-                    <input type="text" id="searchInput" placeholder="Search blog posts..." aria-label="Search blog posts">
+                    <input type="text" id="searchInput" placeholder="Search articles..." aria-label="Search articles">
                 </div>
                 <div class="category-filters" id="categoryFilters">
-                    <button class="filter-btn active" data-category="all">All Posts</button>
+                    <button class="filter-btn active" data-category="all">All Articles</button>
                     <!-- Categories will be populated by JavaScript -->
                 </div>
             </div>
@@ -1026,12 +1026,12 @@
             <div class="blog-grid" id="blogGrid">
                 <!-- Blog posts will be populated by JavaScript -->
                 <div style="grid-column: 1 / -1; text-align: center; padding: 3rem; color: var(--text-secondary);">
-                    <p>Loading blog posts...</p>
+                        <p>Loading articles...</p>
                 </div>
             </div>
 
             <div class="no-results hidden" id="noResults">
-                <h3>No posts found</h3>
+                <h3>No articles found</h3>
                 <p>Try adjusting your search or filter criteria.</p>
             </div>
         </div>
@@ -1042,6 +1042,18 @@
         let blogData = null;
         let filteredPosts = [];
 
+        function displayCategoryLabel(category) {
+            const labels = {
+                'Smart Home Guide': 'Guides',
+                'Buying Guide': 'Planning',
+                'Troubleshooting': 'Fixes',
+                'Tips': 'Advice',
+                'Product Review': 'Reviews',
+                'URC Systems': 'URC'
+            };
+            return labels[category] || category;
+        }
+
         async function loadBlogData() {
             try {
                 const response = await fetch('/blogs/blog-data.json');
@@ -1050,15 +1062,15 @@
                 }
                 blogData = await response.json();
                 if (!blogData || !blogData.posts || blogData.posts.length === 0) {
-                    throw new Error('No blog posts found in data');
+                    throw new Error('No articles found in data');
                 }
                 initializeBlog();
             } catch (error) {
                 const grid = document.getElementById('blogGrid');
                 grid.innerHTML = `
                     <div style="grid-column: 1 / -1; text-align: center; padding: 3rem; color: var(--text-secondary);">
-                        <h3 style="color: var(--text-primary); margin-bottom: 1rem;">Error Loading Blog Posts</h3>
-                        <p>Unable to load blog posts. Please refresh the page or try again later.</p>
+                        <h3 style="color: var(--text-primary); margin-bottom: 1rem;">Error Loading Articles</h3>
+                        <p>Unable to load articles. Please refresh the page or try again later.</p>
                         <p style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.7;">Error: ${error.message}</p>
                     </div>
                 `;
@@ -1089,7 +1101,7 @@
             categories.forEach(category => {
                 const btn = document.createElement('button');
                 btn.className = 'filter-btn';
-                btn.textContent = category;
+                btn.textContent = displayCategoryLabel(category);
                 btn.setAttribute('data-category', category.toLowerCase().replace(/\s+/g, '-'));
                 filtersContainer.appendChild(btn);
             });
@@ -1103,9 +1115,9 @@
             // Update post count display
             if (postCount) {
                 if (filteredPosts.length === blogData.posts.length) {
-                    postCount.textContent = `Showing all ${filteredPosts.length} posts`;
+                    postCount.textContent = `Showing all ${filteredPosts.length} articles`;
                 } else {
-                    postCount.textContent = `Showing ${filteredPosts.length} of ${blogData.posts.length} posts`;
+                    postCount.textContent = `Showing ${filteredPosts.length} of ${blogData.posts.length} articles`;
                 }
             }
             
@@ -1136,7 +1148,7 @@
                     </a>
                     <div class="blog-card-content">
                         <div class="blog-card-meta">
-                            <span class="blog-card-category">${post.category}</span>
+                            <span class="blog-card-category">${displayCategoryLabel(post.category)}</span>
                             <span>📅 ${formatDate(post.publishedDate)}</span>
                         </div>
                         <h2 class="blog-card-title">
@@ -1145,7 +1157,7 @@
                         <p class="blog-card-excerpt">${escapeHtml(post.excerpt)}</p>
                         <div class="blog-card-footer">
                             <span class="blog-card-reading-time">⏱️ ${post.readingTime} min read</span>
-                            <a href="${post.url}" class="blog-card-link">Read More →</a>
+                            <a href="${post.url}" class="blog-card-link">Open Article →</a>
                         </div>
                     </div>
                 </article>
