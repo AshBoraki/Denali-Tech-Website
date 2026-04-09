@@ -101,6 +101,106 @@
       "featured": true
     },
     {
+      "id": "sanus-cfr2127-rack-guide",
+      "title": "SANUS CFR2127 AV Rack Guide: What a Serviceable Home Theater Rack Should Look Like",
+      "slug": "sanus-cfr2127-rack-guide",
+      "url": "/blogs/sanus-cfr2127-rack-guide/",
+      "excerpt": "This SANUS CFR2127 rack walkthrough shows what separates a clean, serviceable theater rack from a pile of expensive gear with no long-term plan.",
+      "category": "Smart Home Guide",
+      "tags": [
+        "SANUS",
+        "AV Rack",
+        "Home Theater",
+        "Rack Build"
+      ],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-04-09",
+      "updatedDate": "2026-04-09",
+      "readingTime": 4,
+      "heroImage": "/Video/Blogs imge/YouTube/sanus-cfr2127-rack-guide.png",
+      "featured": true
+    },
+    {
+      "id": "salamander-oslo-mc255-av-cabinet-guide",
+      "title": "Salamander Oslo 617 with McIntosh MC255: How to Build a Clean High-End AV Cabinet",
+      "slug": "salamander-oslo-mc255-av-cabinet-guide",
+      "url": "/blogs/salamander-oslo-mc255-av-cabinet-guide/",
+      "excerpt": "A high-end AV cabinet should handle ventilation, cable routing, and component layout without compromising the room. This Salamander Oslo build shows how.",
+      "category": "Smart Home Guide",
+      "tags": [
+        "Salamander",
+        "McIntosh",
+        "AV Cabinet",
+        "High-End Audio"
+      ],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-04-09",
+      "updatedDate": "2026-04-09",
+      "readingTime": 4,
+      "heroImage": "/Video/Blogs imge/YouTube/salamander-oslo-mc255-av-cabinet-guide.png",
+      "featured": true
+    },
+    {
+      "id": "mcintosh-bowers-wilkins-listening-room-guide",
+      "title": "McIntosh and Bowers & Wilkins Listening Room Guide: What Luxury Audio Projects Require",
+      "slug": "mcintosh-bowers-wilkins-listening-room-guide",
+      "url": "/blogs/mcintosh-bowers-wilkins-listening-room-guide/",
+      "excerpt": "This high-end listening room shows what luxury audio projects demand: system matching, clean installation, careful layout, and equipment that belongs together.",
+      "category": "Smart Home Guide",
+      "tags": [
+        "McIntosh",
+        "Bowers & Wilkins",
+        "High-End Audio",
+        "Listening Room"
+      ],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-04-09",
+      "updatedDate": "2026-04-09",
+      "readingTime": 4,
+      "heroImage": "/Video/Blogs imge/YouTube/mcintosh-bowers-wilkins-listening-room-guide.png",
+      "featured": true
+    },
+    {
+      "id": "mcintosh-mc452-salamander-cabinet-guide",
+      "title": "McIntosh MC452 in a Salamander Cabinet: What a Proper Hi-Fi Cabinet Install Needs",
+      "slug": "mcintosh-mc452-salamander-cabinet-guide",
+      "url": "/blogs/mcintosh-mc452-salamander-cabinet-guide/",
+      "excerpt": "A premium amplifier install inside furniture only works when heat, cable management, and component spacing are handled correctly. This MC452 setup is a clear example.",
+      "category": "Smart Home Guide",
+      "tags": [
+        "McIntosh",
+        "Salamander",
+        "Hi-Fi",
+        "AV Furniture"
+      ],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-04-09",
+      "updatedDate": "2026-04-09",
+      "readingTime": 12,
+      "heroImage": "/Video/Blogs imge/YouTube/mcintosh-mc452-salamander-cabinet-guide.png",
+      "featured": true
+    },
+    {
+      "id": "sanus-15u-mini-rack-guide",
+      "title": "SANUS 15U Mini AV Rack Guide: How Compact Theater Racks Stay Clean and Reliable",
+      "slug": "sanus-15u-mini-rack-guide",
+      "url": "/blogs/sanus-15u-mini-rack-guide/",
+      "excerpt": "Compact racks need the same discipline as larger builds. This SANUS 15U example shows how to keep a smaller theater rack organized, cool, and serviceable.",
+      "category": "Smart Home Guide",
+      "tags": [
+        "SANUS",
+        "Mini Rack",
+        "Home Theater",
+        "AV Rack"
+      ],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-04-09",
+      "updatedDate": "2026-04-09",
+      "readingTime": 4,
+      "heroImage": "/Video/Blogs imge/YouTube/sanus-15u-mini-rack-guide.png",
+      "featured": true
+    },
+    {
       "id": "best-smart-home-brands-chicago-guide",
       "title": "Best Smart Home Brands We Trust for Chicago Homes",
       "slug": "best-smart-home-brands-chicago-guide",
