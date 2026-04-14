@@ -130,8 +130,8 @@
 <body>
     <main class="shell">
         <div class="eyebrow">DTNT Pro Checkout</div>
-        <h1>DTNT Pro checkout opens soon.</h1>
-        <p id="status-copy">The DTNT launch page is ready, but public checkout should only open after the live Stripe purchase link is in place. Free download stays available now.</p>
+        <h1>DTNT Pro secure checkout.</h1>
+        <p id="status-copy">Secure checkout is hosted by Stripe. The current link is in test mode so the full purchase path can be checked before live launch. Free download stays available now.</p>
 
         <ul class="list">
             <li>DTNT Pro launch price: $59 one time</li>
@@ -140,7 +140,7 @@
         </ul>
 
         <div class="actions">
-            <a class="button button-primary button-disabled" id="checkout-link" href="/Net-tools/" aria-disabled="true">DTNT Pro checkout opens soon</a>
+            <a class="button button-primary button-disabled" id="checkout-link" href="/Net-tools/" aria-disabled="true">Open secure DTNT Pro checkout</a>
             <a class="button button-secondary" href="/Net-tools/">Back to DTNT</a>
             <a class="button button-secondary" href="https://github.com/AshBoraki/Denali-Tech-Website/releases/download/dtnt-2.1.0-a/DTNT-2.1.0-a-win-x64.zip">Download Free</a>
         </div>
@@ -149,7 +149,7 @@
     </main>
 
     <script>
-        const liveCheckoutUrl = "";
+        const liveCheckoutUrl = "https://buy.stripe.com/test_fZu4gsgkE0xuexD6jv63K01";
 
         if (liveCheckoutUrl) {
             const checkoutLink = document.getElementById("checkout-link");
@@ -158,7 +158,7 @@
             checkoutLink.textContent = "Open secure DTNT Pro checkout";
             checkoutLink.removeAttribute("aria-disabled");
             checkoutLink.classList.remove("button-disabled");
-            statusCopy.textContent = "Secure checkout is ready. You are being sent to the DTNT Pro purchase flow now.";
+            statusCopy.textContent = "Secure checkout is ready. You are being sent to the DTNT Pro Stripe checkout now.";
             window.location.replace(liveCheckoutUrl);
         }
     </script>
