@@ -7,9 +7,9 @@ ReleaseChannel: Alpha
 Configuration: Release
 RuntimeIdentifier: win-x64
 SatelliteResourceLanguages: en-US
-PublishedAt: 2026-04-14 00:17:54 -05:00
+PublishedAt: 2026-04-14 08:49:00 -05:00
 Executable: DenaliTech.NetTools.exe
 ApplicationIcon: C:\Users\Hello\OneDrive\Desktop\DTNT\src\DenaliTech.NetTools.Desktop\Assets\dtnt-app.ico
-SigningMode: Unsigned
-TimestampUrl: <none>
+SigningMode: ProductionCertificatePath
+TimestampUrl: http://timestamp.digicert.com
 InstallStyle: Portable folder release
