@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>DTNT Purchase Complete</title>
-    <meta name="description" content="DTNT Pro purchase confirmation from Denali Tech.">
+    <meta name="description" content="DTNT Pro purchase confirmation and delivery steps from Denali Tech.">
     <meta name="robots" content="noindex, nofollow">
     <link rel="canonical" href="https://denalitechs.com/Net-tools/success/">
     <style>
@@ -34,8 +34,22 @@
             border-radius: 8px;
             padding: 28px;
         }
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.54rem 0.9rem;
+            border-radius: 999px;
+            background: #fff0e0;
+            color: var(--accent);
+            border: 1px solid #f1cfb1;
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
         h1 {
             margin: 0;
+            margin-top: 1rem;
             font-size: clamp(2.1rem, 4vw, 3.2rem);
             line-height: 1.04;
         }
@@ -44,6 +58,67 @@
             line-height: 1.7;
             font-size: 1rem;
             max-width: 60ch;
+        }
+        .steps {
+            margin: 1.2rem 0 0;
+            padding: 0;
+            list-style: none;
+            display: grid;
+            gap: 0.9rem;
+        }
+        .step {
+            display: grid;
+            grid-template-columns: 36px minmax(0, 1fr);
+            gap: 0.8rem;
+            align-items: start;
+            padding: 0.95rem 1rem;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.72);
+        }
+        .step-index {
+            width: 36px;
+            height: 36px;
+            display: inline-grid;
+            place-items: center;
+            border-radius: 8px;
+            background: #fff0e0;
+            color: var(--accent);
+            font-weight: 800;
+        }
+        .step strong {
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+        .support {
+            margin-top: 1rem;
+            padding: 1rem;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.7);
+        }
+        .downloads {
+            margin-top: 1rem;
+            padding: 1rem;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.74);
+        }
+        .downloads strong {
+            display: block;
+            margin-bottom: 0.35rem;
+        }
+        .reference {
+            margin-top: 1rem;
+            padding: 0.9rem 1rem;
+            border-radius: 8px;
+            background: rgba(21, 40, 58, 0.04);
+            border: 1px dashed #b9c9d0;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+        .reference strong {
+            color: var(--ink);
         }
         .actions {
             display: flex;
@@ -75,16 +150,62 @@
 </head>
 <body>
     <main class="shell">
-        <h1>Thanks for purchasing DTNT Pro.</h1>
-        <p>Your payment is complete. Keep the Stripe receipt, then follow the delivery step from checkout to get the DTNT Pro build and signed activation file for this Windows release.</p>
-        <p>After you have the file, open DTNT, go to Profiles, import the signed license, and the Pro-only actions unlock on that machine. If you need help, contact <a data-dtnt-support-email href="mailto:Hello@denalitechs.com">Hello@denalitechs.com</a>.</p>
+        <div class="eyebrow" id="status-eyebrow">Payment received</div>
+        <h1 id="success-title">DTNT Pro purchase complete.</h1>
+        <p id="lead-copy">Stripe has finished the checkout. The next step is delivery to the email used at checkout.</p>
+
+        <ol class="steps">
+            <li class="step">
+                <span class="step-index">1</span>
+                <div>
+                    <strong id="step-one-title">Keep the Stripe receipt.</strong>
+                    <span id="step-one-copy">The receipt email is the fastest reference if you need help with delivery.</span>
+                </div>
+            </li>
+            <li class="step">
+                <span class="step-index">2</span>
+                <div>
+                    <strong id="step-two-title">Get your DTNT Pro delivery.</strong>
+                    <span id="step-two-copy">The paid path should deliver the Windows build link and the signed activation file for this release.</span>
+                </div>
+            </li>
+            <li class="step">
+                <span class="step-index">3</span>
+                <div>
+                    <strong id="step-three-title">Import the signed license in Profiles.</strong>
+                    <span id="step-three-copy">Open DTNT, go to Profiles, choose the license import action, and select the activation file.</span>
+                </div>
+            </li>
+        </ol>
+
+        <div class="support">
+            <strong id="support-title">Need help with the order?</strong>
+            <p id="support-copy">If the delivery email does not arrive or the activation file does not import cleanly, contact <a data-dtnt-support-email href="mailto:Hello@denalitechs.com">Hello@denalitechs.com</a> and include the email address used at checkout.</p>
+        </div>
+
+        <div class="downloads">
+            <strong id="downloads-title">Continue with the Windows build now.</strong>
+            <p id="downloads-copy">You can install the current DTNT build right away, then import the signed Pro activation file inside Profiles when it arrives.</p>
+            <div class="actions">
+                <a class="button button-primary" data-dtnt-download="appinstaller" href="/Net-tools/" hidden>Install DTNT</a>
+                <a class="button button-secondary" data-dtnt-download="msix" href="/Net-tools/" hidden>Download MSIX</a>
+                <a class="button button-secondary" data-dtnt-download="free" href="/Net-tools/">Download Portable Zip</a>
+                <a class="button button-secondary" data-dtnt-release-notes href="/Net-tools/" hidden>Release Info</a>
+            </div>
+            <p id="build-copy">Current build: <strong data-dtnt-version>latest</strong></p>
+            <p id="hash-copy">SHA-256: <span data-dtnt-sha256>loading</span></p>
+        </div>
+
+        <div class="reference" id="reference-panel" hidden>
+            <strong>Checkout reference:</strong>
+            <span id="reference-value"></span>
+        </div>
 
         <div class="actions">
             <a class="button button-primary" href="/Net-tools/">Back to DTNT</a>
-            <a class="button button-secondary" data-dtnt-download="free" href="/Net-tools/">Download Free Build</a>
+            <a class="button button-secondary" href="/Net-tools/buy/">View Pro details</a>
+            <a class="button button-secondary" id="support-link" href="mailto:Hello@denalitechs.com">Email support</a>
         </div>
-
-        <p>Current free build: <strong data-dtnt-version>latest</strong></p>
     </main>
 
     <script src="/Net-tools/commerce.js"></script>
@@ -97,6 +218,55 @@
 
             commerce.hydrateSupportEmail(document);
             await commerce.hydrateLatestRelease(document);
+
+            const supportLink = document.getElementById("support-link");
+            const supportTitle = document.getElementById("support-title");
+            const supportCopy = document.getElementById("support-copy");
+            const statusEyebrow = document.getElementById("status-eyebrow");
+            const successTitle = document.getElementById("success-title");
+            const leadCopy = document.getElementById("lead-copy");
+            const stepOneTitle = document.getElementById("step-one-title");
+            const stepOneCopy = document.getElementById("step-one-copy");
+            const stepTwoTitle = document.getElementById("step-two-title");
+            const stepTwoCopy = document.getElementById("step-two-copy");
+            const downloadsTitle = document.getElementById("downloads-title");
+            const downloadsCopy = document.getElementById("downloads-copy");
+            const buildCopy = document.getElementById("build-copy");
+            const hashCopy = document.getElementById("hash-copy");
+            const referencePanel = document.getElementById("reference-panel");
+            const referenceValue = document.getElementById("reference-value");
+            const params = new URLSearchParams(window.location.search);
+            const sessionId = params.get("session_id") || params.get("checkout_session_id");
+            const paymentLinkId = params.get("payment_link");
+
+            const checkoutReference = sessionId || paymentLinkId;
+            if (checkoutReference) {
+                referenceValue.textContent = checkoutReference;
+                referencePanel.hidden = false;
+            }
+
+            supportLink.href = commerce.createSupportMailto(
+                commerce.config.supportSubject,
+                checkoutReference
+                    ? `Hi Denali Tech,\n\nI need help with a DTNT order.\nReference: ${checkoutReference}\n\nThanks.`
+                    : "Hi Denali Tech,\n\nI need help with a DTNT order.\n\nThanks.");
+
+            if (!commerce.checkoutIsLive()) {
+                statusEyebrow.textContent = "Checkout test complete";
+                successTitle.textContent = "DTNT checkout return is working.";
+                leadCopy.textContent = "This page confirms Stripe can send the buyer back to the website after payment.";
+                stepOneTitle.textContent = "Keep this page for the checkout test.";
+                stepOneCopy.textContent = "Use it to verify the route, page copy, and support links before taking real payments.";
+                stepTwoTitle.textContent = "No live customer delivery happens in test mode.";
+                stepTwoCopy.textContent = "Use the test purchase to verify the website return path, not to promise fulfillment.";
+                downloadsTitle.textContent = "Use this page to test the post-checkout handoff.";
+                downloadsCopy.textContent = "The buttons below should prove the buyer has a next step even if Stripe stays on its own confirmation screen.";
+                buildCopy.textContent = "Current test build:";
+                hashCopy.hidden = true;
+                supportTitle.textContent = "Still testing?";
+                supportCopy.innerHTML = `If the Stripe test finishes but the page still feels wrong, send the checkout link and what you saw to <a data-dtnt-support-email href="mailto:${commerce.config.supportEmail}">${commerce.config.supportEmail}</a>.`;
+                commerce.hydrateSupportEmail(document);
+            }
         })();
     </script>
 </body>
