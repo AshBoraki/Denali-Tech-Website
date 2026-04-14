@@ -76,13 +76,28 @@
 <body>
     <main class="shell">
         <h1>Thanks for purchasing DTNT Pro.</h1>
-        <p>Your payment is complete. Denali Tech should send your installer and signed activation file to the email used during checkout. If you do not see that message soon, contact <a href="mailto:ash@denalitechs.com">ash@denalitechs.com</a>.</p>
-        <p>After you receive the activation file, open DTNT, go to the Profiles workspace, import the file, and continue working with the Pro features unlocked.</p>
+        <p>Your payment is complete. Keep the Stripe receipt, then follow the delivery step from checkout to get the DTNT Pro build and signed activation file for this Windows release.</p>
+        <p>After you have the file, open DTNT, go to Profiles, import the signed license, and the Pro-only actions unlock on that machine. If you need help, contact <a data-dtnt-support-email href="mailto:Hello@denalitechs.com">Hello@denalitechs.com</a>.</p>
 
         <div class="actions">
             <a class="button button-primary" href="/Net-tools/">Back to DTNT</a>
-            <a class="button button-secondary" href="https://github.com/AshBoraki/Denali-Tech-Website/releases/download/dtnt-2.1.0-a/DTNT-2.1.0-a-win-x64.zip">Download Free Build</a>
+            <a class="button button-secondary" data-dtnt-download="free" href="/Net-tools/">Download Free Build</a>
         </div>
+
+        <p>Current free build: <strong data-dtnt-version>latest</strong></p>
     </main>
+
+    <script src="/Net-tools/commerce.js"></script>
+    <script>
+        (async () => {
+            const commerce = window.DTNTCommerce;
+            if (!commerce) {
+                return;
+            }
+
+            commerce.hydrateSupportEmail(document);
+            await commerce.hydrateLatestRelease(document);
+        })();
+    </script>
 </body>
 </html>
