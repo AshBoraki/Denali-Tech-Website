@@ -1,4 +1,4 @@
-{
+﻿{
     "product":  "DTNT",
     "channel":  "alpha",
     "version":  "2.1.0-a.1",
@@ -6,5 +6,14 @@
     "downloadUrl":  "https://github.com/AshBoraki/Denali-Tech-Website/releases/download/dtnt-2.1.0-a.1/DTNT-2.1.0-a.1-win-x64.zip",
     "releaseNotesUrl":  "https://denalitechs.com/downloads/dtnt/DTNT-2.1.0-a.1-release-info.txt",
     "sha256":  "F5BE3874D3EEF78695D36999C3C36AA68A259FB0941228786169DDB4FF57F417",
-    "sizeBytes":  72114039
+    "sizeBytes":  72114039,
+    "installer":  {
+                      "available":  true,
+                      "appInstallerUrl":  "https://github.com/AshBoraki/Denali-Tech-Website/releases/download/dtnt-2.1.0-a.1/DTNT-alpha-win-x64.appinstaller",
+                      "msixUrl":  "https://github.com/AshBoraki/Denali-Tech-Website/releases/download/dtnt-2.1.0-a.1/DTNT-2.1.0-a.1-win-x64.msix",
+                      "installNotesUrl":  "https://github.com/AshBoraki/Denali-Tech-Website/releases/download/dtnt-2.1.0-a.1/DTNT-2.1.0-a.1-win-x64-install-notes.txt",
+                      "publisher":  "CN=Denali Tech Inc",
+                      "requiresTrustedCertificate":  true,
+                      "signingReadyForPublicLaunch":  false
+                  }
 }
