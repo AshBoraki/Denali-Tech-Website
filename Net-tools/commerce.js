@@ -2,13 +2,16 @@
     const config = {
         checkoutUrl: "https://buy.stripe.com/test_fZu4gsgkE0xuexD6jv63K01",
         checkoutMode: "test",
-        autoRedirectWhenLive: true,
+        autoRedirectWhenLive: false,
         latestManifestUrl: "/downloads/dtnt/latest.json",
         homeUrl: "/Net-tools/",
         buyUrl: "/Net-tools/buy/",
+        successUrl: "/Net-tools/success/",
+        cancelUrl: "/Net-tools/cancel/",
         pricingUrl: "/Net-tools/#pricing",
         activationUrl: "/Net-tools/#activation",
         supportEmail: "Hello@denalitechs.com",
+        supportSubject: "DTNT order help",
         launchPriceLabel: "$59 one time",
         regularPriceLabel: "$99 after launch"
     };
@@ -39,14 +42,55 @@
 
         const freeDownloadUrl = release.downloadUrl || config.homeUrl;
         const version = release.version || "";
+        const installer = release.installer || {};
+        const appInstallerUrl = installer.appInstallerUrl || "";
+        const msixUrl = installer.msixUrl || "";
+        const releaseNotesUrl = release.releaseNotesUrl || "";
+        const sha256 = release.sha256 || "";
 
         root.querySelectorAll('[data-dtnt-download="free"]').forEach(anchor => {
             anchor.setAttribute("href", freeDownloadUrl);
             anchor.removeAttribute("aria-disabled");
         });
 
+        root.querySelectorAll('[data-dtnt-download="appinstaller"]').forEach(anchor => {
+            if (!appInstallerUrl) {
+                anchor.hidden = true;
+                return;
+            }
+
+            anchor.hidden = false;
+            anchor.setAttribute("href", appInstallerUrl);
+            anchor.removeAttribute("aria-disabled");
+        });
+
+        root.querySelectorAll('[data-dtnt-download="msix"]').forEach(anchor => {
+            if (!msixUrl) {
+                anchor.hidden = true;
+                return;
+            }
+
+            anchor.hidden = false;
+            anchor.setAttribute("href", msixUrl);
+            anchor.removeAttribute("aria-disabled");
+        });
+
+        root.querySelectorAll("[data-dtnt-release-notes]").forEach(anchor => {
+            if (!releaseNotesUrl) {
+                anchor.hidden = true;
+                return;
+            }
+
+            anchor.hidden = false;
+            anchor.setAttribute("href", releaseNotesUrl);
+        });
+
         root.querySelectorAll("[data-dtnt-version]").forEach(node => {
             node.textContent = version;
+        });
+
+        root.querySelectorAll("[data-dtnt-sha256]").forEach(node => {
+            node.textContent = sha256;
         });
 
         return release;
@@ -60,6 +104,25 @@
         });
     }
 
+    function createSupportMailto(subject, body = "") {
+        const parts = [`mailto:${config.supportEmail}`];
+        const query = new URLSearchParams();
+        if (subject) {
+            query.set("subject", subject);
+        }
+
+        if (body) {
+            query.set("body", body);
+        }
+
+        const queryString = query.toString();
+        if (queryString) {
+            parts.push(`?${queryString}`);
+        }
+
+        return parts.join("");
+    }
+
     function checkoutIsConfigured() {
         return typeof config.checkoutUrl === "string" && config.checkoutUrl.trim().length > 0;
     }
@@ -68,12 +131,18 @@
         return checkoutIsConfigured() && config.checkoutMode === "live";
     }
 
+    function absoluteUrl(path) {
+        return new URL(path, window.location.origin).toString();
+    }
+
     window.DTNTCommerce = {
         config,
         loadLatestRelease,
         hydrateLatestRelease,
         hydrateSupportEmail,
+        createSupportMailto,
         checkoutIsConfigured,
-        checkoutIsLive
+        checkoutIsLive,
+        absoluteUrl
     };
 })();

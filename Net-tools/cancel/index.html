@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>DTNT Checkout Not Completed</title>
-    <meta name="description" content="Return to DTNT pricing and download information.">
+    <meta name="description" content="Return to DTNT pricing, checkout, and free download information.">
     <meta name="robots" content="noindex, nofollow">
     <link rel="canonical" href="https://denalitechs.com/Net-tools/cancel/">
     <style>
@@ -34,8 +34,22 @@
             border-radius: 8px;
             padding: 28px;
         }
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.54rem 0.9rem;
+            border-radius: 999px;
+            background: #fff0e0;
+            color: var(--accent);
+            border: 1px solid #f1cfb1;
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
         h1 {
             margin: 0;
+            margin-top: 1rem;
             font-size: clamp(2.1rem, 4vw, 3.2rem);
             line-height: 1.04;
         }
@@ -44,6 +58,13 @@
             line-height: 1.7;
             font-size: 1rem;
             max-width: 60ch;
+        }
+        .support {
+            margin-top: 1rem;
+            padding: 1rem;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.7);
         }
         .actions {
             display: flex;
@@ -75,12 +96,18 @@
 </head>
 <body>
     <main class="shell">
-        <h1>Checkout was not completed.</h1>
-        <p>You can return to the DTNT page, review the launch pricing again, or open the checkout once more when you are ready.</p>
+        <div class="eyebrow" id="status-eyebrow">Checkout paused</div>
+        <h1 id="cancel-title">Checkout was not completed.</h1>
+        <p id="cancel-copy">You can return to the DTNT page, review the launch pricing again, or open the checkout once more when you are ready.</p>
         <div class="actions">
             <a class="button button-primary" href="/Net-tools/#pricing">Back to pricing</a>
             <a class="button button-secondary" href="/Net-tools/buy/">Try checkout again</a>
+            <a class="button button-secondary" href="/Net-tools/success/">I already paid</a>
             <a class="button button-secondary" data-dtnt-download="free" href="/Net-tools/">Download Free Build</a>
+        </div>
+
+        <div class="support">
+            <p id="support-copy">If checkout keeps bouncing or the return path feels wrong, contact <a data-dtnt-support-email href="mailto:Hello@denalitechs.com">Hello@denalitechs.com</a> and include the page you landed on.</p>
         </div>
 
         <p>Current free build: <strong data-dtnt-version>latest</strong></p>
@@ -94,7 +121,16 @@
                 return;
             }
 
+            commerce.hydrateSupportEmail(document);
             await commerce.hydrateLatestRelease(document);
+
+            if (!commerce.checkoutIsLive()) {
+                document.getElementById("status-eyebrow").textContent = "Checkout test cancelled";
+                document.getElementById("cancel-title").textContent = "Stripe test checkout was cancelled.";
+                document.getElementById("cancel-copy").textContent = "This page confirms Stripe can send the buyer back to DTNT when checkout is closed before payment.";
+                document.getElementById("support-copy").innerHTML = `If the test checkout should have come back here and did not, send the path and what you saw to <a data-dtnt-support-email href="mailto:${commerce.config.supportEmail}">${commerce.config.supportEmail}</a>.`;
+                commerce.hydrateSupportEmail(document);
+            }
         })();
     </script>
 </body>
