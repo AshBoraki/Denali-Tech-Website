@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>DTNT | Windows Wi-Fi Analyzer, IP Scanner, and Speed Test App</title>
+    <meta name="description" content="Download DTNT, a Windows desktop app from Denali Tech for Wi-Fi channel analysis, IP discovery, speed tests, saved profiles, and everyday network field checks.">
+    <meta name="keywords" content="DTNT, Denali Tech Net-Tools, Windows Wi-Fi analyzer app, channel analyzer, IP scanner, speed test desktop app, network tools for Windows">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="author" content="Denali Tech">
+    <meta name="theme-color" content="#edf3f0">
+    <link rel="canonical" href="https://denalitechs.com/Net-tools/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://denalitechs.com/Net-tools/">
+    <meta property="og:site_name" content="Denali Tech">
+    <meta property="og:title" content="DTNT Windows Network Tools">
+    <meta property="og:description" content="Windows Wi-Fi analyzer, IP scanner, speed tests, saved profiles, and field checks in one desktop app.">
+    <meta property="og:image" content="https://denalitechs.com/Video/dtnt/screens/dtnt-channel-analyzer-live.png?v=20260413e">
+    <meta property="og:image:alt" content="DTNT channel analyzer showing nearby Wi-Fi radios on Windows">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://denalitechs.com/Net-tools/">
+    <meta name="twitter:title" content="DTNT Windows Network Tools">
+    <meta name="twitter:description" content="Download DTNT for Wi-Fi channel analysis, IP discovery, speed tests, saved profiles, and quick network checks on Windows.">
+    <meta name="twitter:image" content="https://denalitechs.com/Video/dtnt/screens/dtnt-channel-analyzer-live.png?v=20260413e">
+    <meta name="twitter:image:alt" content="DTNT channel analyzer showing nearby Wi-Fi radios on Windows">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "Organization",
+                    "@id": "https://denalitechs.com/#organization",
+                    "name": "Denali Tech",
+                    "url": "https://denalitechs.com/",
+                    "logo": "https://denalitechs.com/Video/dtnt/dtnt-app-mark.png?v=20260413e"
+                },
+                {
+                    "@type": "SoftwareApplication",
+                    "@id": "https://denalitechs.com/Net-tools/#app",
+                    "name": "DTNT",
+                    "alternateName": "Denali Tech Net-Tools",
+                    "url": "https://denalitechs.com/Net-tools/",
+                    "operatingSystem": "Windows 10, Windows 11",
+                    "applicationCategory": "UtilitiesApplication",
+                    "softwareVersion": "2.1.0-a",
+                    "description": "DTNT is a Windows desktop app for Wi-Fi channel analysis, IP discovery, speed tests, saved profile review, and quick network field checks.",
+                    "downloadUrl": "https://github.com/AshBoraki/Denali-Tech-Website/releases/download/dtnt-2.1.0-a/DTNT-2.1.0-a-win-x64.zip",
+                    "fileSize": "72097568 bytes",
+                    "image": "https://denalitechs.com/Video/dtnt/dtnt-app-mark.png?v=20260413e",
+                    "screenshot": [
+                        "https://denalitechs.com/Video/dtnt/screens/dtnt-channel-analyzer-live.png?v=20260413e",
+                        "https://denalitechs.com/Video/dtnt/screens/dtnt-dashboard-live.png?v=20260413e",
+                        "https://denalitechs.com/Video/dtnt/screens/dtnt-speed-test-live.png?v=20260413e",
+                        "https://denalitechs.com/Video/dtnt/screens/dtnt-profiles-live.png?v=20260413e"
+                    ],
+                    "publisher": {
+                        "@id": "https://denalitechs.com/#organization"
+                    },
+                    "offers": [
+                        {
+                            "@type": "Offer",
+                            "name": "DTNT Free",
+                            "price": "0",
+                            "priceCurrency": "USD",
+                            "availability": "https://schema.org/InStock",
+                            "url": "https://github.com/AshBoraki/Denali-Tech-Website/releases/download/dtnt-2.1.0-a/DTNT-2.1.0-a-win-x64.zip"
+                        },
+                        {
+                            "@type": "Offer",
+                            "name": "DTNT Pro Launch",
+                            "price": "59",
+                            "priceCurrency": "USD",
+                            "availability": "https://schema.org/PreOrder",
+                            "url": "https://denalitechs.com/Net-tools/buy/"
+                        }
+                    ]
+                }
+            ]
+        }
+    </script>
+
+    <style>
+        :root {
+            --bg: #edf3f0;
+            --paper: #ffffff;
+            --band: #e7f0ed;
+            --ink: #15283a;
+            --muted: #66798a;
+            --line: #cedbe0;
+            --accent: #d97716;
+            --accent-strong: #bf6510;
+            --accent-soft: #fff0e0;
+            --shadow: 0 18px 36px rgba(21, 40, 58, 0.08);
+        }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Inter, system-ui, sans-serif;
+            color: var(--ink);
+            background: var(--bg);
+        }
+
+        img { display: block; max-width: 100%; }
+        a { color: inherit; }
+
+        .wrap {
+            width: min(1320px, calc(100% - 48px));
+            margin: 0 auto;
+        }
+
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            background: rgba(237, 243, 240, 0.96);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .topbar-inner {
+            min-height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.85rem;
+            text-decoration: none;
+        }
+
+        .brand img {
+            width: 40px;
+            height: 40px;
+            padding: 3px;
+            border-radius: 8px;
+            border: 1px solid var(--line);
+            background: #fff;
+            object-fit: contain;
+        }
+
+        .brand-copy {
+            display: grid;
+            gap: 0.12rem;
+        }
+
+        .brand-copy strong {
+            font-size: 0.98rem;
+            line-height: 1.1;
+        }
+
+        .brand-copy span {
+            color: var(--muted);
+            font-size: 0.89rem;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: var(--muted);
+            font-size: 0.92rem;
+            font-weight: 700;
+        }
+
+        .nav a:hover { color: var(--ink); }
+
+        section { padding: 28px 0; }
+
+        .hero {
+            padding-top: 24px;
+            padding-bottom: 20px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            gap: 28px;
+            align-items: start;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.54rem 0.9rem;
+            border-radius: 999px;
+            background: var(--accent-soft);
+            color: var(--accent);
+            border: 1px solid #f1cfb1;
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        h1, h2, h3 {
+            margin: 0;
+            line-height: 1.01;
+        }
+
+        h1 {
+            margin-top: 1.05rem;
+            font-size: clamp(3rem, 4.8vw, 4.7rem);
+            max-width: none;
+            letter-spacing: 0;
+        }
+
+        h2 {
+            font-size: clamp(1.95rem, 3.7vw, 3.3rem);
+            max-width: none;
+            letter-spacing: 0;
+        }
+
+        h3 {
+            font-size: clamp(1.55rem, 2.6vw, 2rem);
+            line-height: 1.14;
+        }
+
+        .hero-copy,
+        .copy,
+        .proof-copy,
+        .launch-note,
+        .footer-copy {
+            color: var(--muted);
+            line-height: 1.68;
+        }
+
+        .hero-copy {
+            margin-top: 1rem;
+            max-width: 44ch;
+            font-size: 1.08rem;
+        }
+
+        .mini-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 1.3rem;
+            max-width: 640px;
+        }
+
+        .hero .window {
+            margin-top: 66px;
+        }
+
+        .mini-card,
+        .check-card,
+        .price-card,
+        .contact-card {
+            background: rgba(255, 255, 255, 0.72);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(21, 40, 58, 0.03);
+        }
+
+        .mini-card,
+        .check-card {
+            padding: 0.92rem 0.95rem;
+            font-size: 0.95rem;
+            line-height: 1.42;
+            font-weight: 600;
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 0 1.1rem;
+            border-radius: 8px;
+            border: 1px solid transparent;
+            text-decoration: none;
+            font-weight: 800;
+            transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
+        }
+
+        .button-primary {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        .button-primary:hover { background: var(--accent-strong); }
+
+        .button-secondary {
+            background: rgba(255, 255, 255, 0.76);
+            color: var(--ink);
+            border-color: #b9c9d0;
+        }
+
+        .button-secondary:hover { background: #fff; }
+
+        .launch-note {
+            margin-top: 0.75rem;
+            font-size: 0.94rem;
+            font-weight: 600;
+        }
+
+        .window {
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--paper);
+            box-shadow: var(--shadow);
+        }
+
+        .window-body {
+            display: block;
+            aspect-ratio: 1360 / 860;
+            overflow: hidden;
+            background: #f6f9f9;
+        }
+
+        .window-body img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            display: block;
+        }
+
+        .proof-strip {
+            background: var(--paper);
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .proof-item {
+            padding: 12px 0;
+        }
+
+        .proof-value {
+            font-size: 1.18rem;
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        .proof-copy {
+            margin-top: 0.42rem;
+            font-size: 0.97rem;
+        }
+
+        .workflow {
+            background: var(--paper);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .workflow-head {
+            display: grid;
+            grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+            gap: 34px;
+            align-items: center;
+        }
+
+        .workflow-head .copy {
+            margin-top: 0;
+            max-width: none;
+        }
+
+        .workflow-grid,
+        .screens-grid,
+        .pricing-grid,
+        .contact-grid {
+            display: grid;
+            gap: 26px;
+        }
+
+        .workflow-grid {
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            align-items: center;
+            margin-top: 1.7rem;
+        }
+
+        .workflow-copy .copy,
+        .screens-copy .copy,
+        .pricing-copy .copy {
+            margin-top: 0.9rem;
+            max-width: 54ch;
+        }
+
+        .check-grid {
+            display: grid;
+            gap: 12px;
+            margin-top: 1.2rem;
+        }
+
+        .screens {
+            background: var(--band);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .screens-grid {
+            grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+            align-items: center;
+        }
+
+        .screens-media {
+            display: grid;
+            gap: 18px;
+        }
+
+        .pricing {
+            padding-top: 30px;
+            padding-bottom: 24px;
+        }
+
+        .pricing-copy {
+            display: grid;
+            grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+            gap: 34px;
+            align-items: center;
+        }
+
+        .pricing-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            margin-top: 1.35rem;
+        }
+
+        .activation {
+            background: var(--paper);
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .activation-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+            gap: 26px;
+            align-items: start;
+        }
+
+        .step-list {
+            list-style: none;
+            margin: 1.2rem 0 0;
+            padding: 0;
+            display: grid;
+        }
+
+        .step-row {
+            display: grid;
+            grid-template-columns: auto minmax(0, 1fr);
+            gap: 0.95rem;
+            align-items: start;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .step-row:first-child {
+            border-top: 1px solid var(--line);
+        }
+
+        .step-index {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+            background: var(--accent-soft);
+            border: 1px solid #f1cfb1;
+            color: var(--accent);
+            font-size: 0.92rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .step-copy strong {
+            display: block;
+            font-size: 1rem;
+            line-height: 1.2;
+        }
+
+        .step-copy span {
+            display: block;
+            margin-top: 0.32rem;
+            color: var(--muted);
+            line-height: 1.62;
+        }
+
+        .price-card {
+            background: var(--paper);
+            padding: 1.18rem 1.18rem 1.32rem;
+        }
+
+        .price-card.featured {
+            border-color: #efc8a2;
+            box-shadow: 0 0 0 1px rgba(217, 119, 22, 0.10);
+        }
+
+        .price {
+            margin-top: 0.75rem;
+            font-size: 2.45rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .price small {
+            color: var(--muted);
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .price-note {
+            margin-top: 0.52rem;
+            color: var(--muted);
+            line-height: 1.65;
+        }
+
+        .bullet-list {
+            list-style: none;
+            margin: 1rem 0 0;
+            padding: 0;
+            display: grid;
+            gap: 0.72rem;
+        }
+
+        .bullet-list li {
+            position: relative;
+            padding-left: 1rem;
+            line-height: 1.54;
+        }
+
+        .bullet-list li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.66rem;
+            width: 6px;
+            height: 6px;
+            border-radius: 999px;
+            background: #2d8d83;
+        }
+
+        .contact {
+            padding-top: 18px;
+            padding-bottom: 34px;
+        }
+
+        .contact-grid {
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+            align-items: start;
+        }
+
+        .contact-card {
+            background: var(--paper);
+            padding: 1.2rem;
+        }
+
+        .meta-list {
+            display: grid;
+            gap: 0.72rem;
+            margin-top: 1rem;
+        }
+
+        .meta-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 0.84rem 0;
+            border-bottom: 1px solid var(--line);
+            line-height: 1.5;
+        }
+
+        .meta-row:first-child {
+            border-top: 1px solid var(--line);
+        }
+
+        footer {
+            padding: 18px 0 36px;
+        }
+
+        .footer-copy {
+            font-size: 0.94rem;
+        }
+
+        @media (max-width: 1080px) {
+            .hero-grid,
+            .workflow-head,
+            .workflow-grid,
+            .screens-grid,
+            .pricing-copy,
+            .activation-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero .window {
+                margin-top: 0;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .proof-grid,
+            .mini-grid,
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav {
+                display: none;
+            }
+
+            h1 {
+                font-size: clamp(2.7rem, 12vw, 4.4rem);
+                max-width: none;
+            }
+
+            h2 {
+                max-width: none;
+            }
+
+            .meta-row {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="topbar">
+        <div class="wrap topbar-inner">
+            <a class="brand" href="/">
+                <img src="/Video/logo.webp" alt="Denali Tech logo">
+                <span class="brand-copy">
+                    <strong>DTNT</strong>
+                    <span>Denali Tech Net-Tools</span>
+                </span>
+            </a>
+            <nav class="nav" aria-label="Page sections">
+                <a href="#workflow">Workflow</a>
+                <a href="#screens">Screens</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#activation">Activation</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="wrap hero-grid">
+                <div>
+                    <div class="eyebrow">Windows Desktop Software</div>
+                    <h1>Wi-Fi analyzer,<br>IP scanner,<br>speed tests,<br>and field tools.</h1>
+                    <p class="hero-copy">DTNT keeps nearby radios, active network details, IP discovery, speed runs, saved profiles, and quick checks inside one Windows app.</p>
+
+                    <div class="mini-grid">
+                        <div class="mini-card">Live Wi-Fi analyzer with named nearby radios</div>
+                        <div class="mini-card">Current SSID, IPv4, gateway, DNS, and range</div>
+                        <div class="mini-card">IP scan, ping, trace route, and quick checks</div>
+                        <div class="mini-card">Saved profiles and export-ready Pro tools</div>
+                    </div>
+
+                    <div class="actions">
+                        <a class="button button-primary" href="https://github.com/AshBoraki/Denali-Tech-Website/releases/download/dtnt-2.1.0-a/DTNT-2.1.0-a-win-x64.zip">Download Free</a>
+                        <a class="button button-secondary" href="/Net-tools/buy/">Get Pro</a>
+                    </div>
+                    <div class="launch-note">Free starts fast. Pro is $59 during launch, then $99, and unlocks the keep, export, and activation path.</div>
+                </div>
+
+                <div class="window" aria-label="DTNT live channel analyzer screenshot">
+                    <div class="window-body">
+                        <img src="/Video/dtnt/screens/dtnt-channel-analyzer-live.png?v=20260413e" alt="DTNT live channel analyzer with nearby Wi-Fi radios">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="proof-strip">
+            <div class="wrap">
+                <div class="proof-grid">
+                    <div class="proof-item">
+                        <div class="proof-value">Wi-Fi analyzer</div>
+                        <div class="proof-copy">See nearby radios, overlap, and channel pressure live.</div>
+                    </div>
+                    <div class="proof-item">
+                        <div class="proof-value">IP scanner</div>
+                        <div class="proof-copy">Scan the active range and move straight into device checks.</div>
+                    </div>
+                    <div class="proof-item">
+                        <div class="proof-value">Speed history</div>
+                        <div class="proof-copy">Keep download, upload, and latency runs ready for later.</div>
+                    </div>
+                    <div class="proof-item">
+                        <div class="proof-value">Saved profiles</div>
+                        <div class="proof-copy">Review Windows Wi-Fi profile history in one place.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="workflow" id="workflow">
+            <div class="wrap">
+                <div class="workflow-head">
+                    <h2>Start on the live network.<br>Move straight into Wi-Fi<br>and IP work.</h2>
+                    <p class="copy">DTNT opens on the active adapter and current range so the Wi-Fi analyzer, IP scanner, speed test, and tools all start with real local context.</p>
+                </div>
+
+                <div class="workflow-grid">
+                    <div class="window" aria-label="DTNT current network dashboard screenshot">
+                        <div class="window-body">
+                            <img src="/Video/dtnt/screens/dtnt-dashboard-live.png?v=20260413e" alt="DTNT dashboard showing active network details">
+                        </div>
+                    </div>
+
+                    <div class="workflow-copy">
+                        <h3>Work from the network you are on right now.</h3>
+                        <p class="copy">The app opens with the current SSID, IPv4, gateway, DNS, and range already in view.</p>
+                        <div class="check-grid">
+                            <div class="check-card">Jump from the dashboard into Wi-Fi or IP work without losing context.</div>
+                            <div class="check-card">Keep router, DNS, and subnet details close while you scan or troubleshoot.</div>
+                            <div class="check-card">Use the dashboard as the anchor before saving or exporting results.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="screens" id="screens">
+            <div class="wrap screens-grid">
+                <div class="screens-copy">
+                    <h2>Wi-Fi, IP, and speed<br>without the app shuffle.</h2>
+                    <p class="copy">The page works best when the app is doing real work: Wi-Fi analysis up front, IP discovery in the middle, and saved speed results when you need proof.</p>
+                    <div class="check-grid">
+                        <div class="check-card">Lead with the Wi-Fi analyzer because it makes the product feel real fast.</div>
+                        <div class="check-card">Show the IP scanner next so the workflow reads as Wi-Fi and network work, not just one tool.</div>
+                        <div class="check-card">Keep saved speed results visible because that is where repeat jobs and support work start to matter.</div>
+                    </div>
+                </div>
+
+                <div class="screens-media">
+                    <div class="window" aria-label="DTNT IP scanner screenshot">
+                        <div class="window-body">
+                            <img src="/Video/dtnt/screens/dtnt-ip-scanner-live.png?v=20260414a" alt="DTNT IP scanner showing live device discovery on the local network">
+                        </div>
+                    </div>
+
+                    <div class="window" aria-label="DTNT saved speed result screenshot">
+                        <div class="window-body">
+                            <img src="/Video/dtnt/screens/dtnt-speed-test-live.png?v=20260413e" alt="DTNT saved speed test results with measured download, upload, and latency">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pricing" id="pricing">
+            <div class="wrap">
+                <div class="pricing-copy">
+                    <h2>Use every tab free.<br>Upgrade when you need<br>to keep more.</h2>
+                    <p class="copy">Free gives you the full surface. Pro is where saved profile actions, export-ready evidence, and repeatable handoff work open up.</p>
+                </div>
+
+                <div class="pricing-grid">
+                    <div class="price-card">
+                        <h3>Free</h3>
+                        <div class="price">$0 <small>start here</small></div>
+                        <div class="price-note">Use the full app, then upgrade when you need to keep, export, or reveal more.</div>
+                        <ul class="bullet-list">
+                            <li>All tabs stay visible</li>
+                            <li>Wi-Fi analyzer and channel view</li>
+                            <li>IP scan and device discovery</li>
+                            <li>Speed tests and field tools</li>
+                            <li>Saved profile list stays visible</li>
+                            <li>In-app upgrade prompts on Pro-only actions</li>
+                        </ul>
+                    </div>
+
+                    <div class="price-card featured">
+                        <h3>Pro</h3>
+                        <div class="price">$59 <small>launch price</small></div>
+                        <div class="price-note">Unlock the parts of DTNT that help you keep results, prove work, and come back later.</div>
+                        <ul class="bullet-list">
+                            <li>Reveal and copy saved Wi-Fi details</li>
+                            <li>Export JSON and CSV evidence</li>
+                            <li>Keep saved results for repeat jobs</li>
+                            <li>Signed Pro activation file</li>
+                            <li>License import inside Profiles</li>
+                            <li>Planned regular price: $99</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="activation" id="activation">
+            <div class="wrap activation-grid">
+                <div>
+                    <h2>One Pro path.<br>One activation file.<br>Done.</h2>
+                    <p class="copy">The Pro path stays simple: start the secure launch path, get the installer and signed activation file, then import that file inside Profiles.</p>
+                </div>
+
+                <div>
+                    <ol class="step-list">
+                        <li class="step-row">
+                            <span class="step-index">1</span>
+                            <div class="step-copy">
+                                <strong>Start the secure Pro path.</strong>
+                                <span>Launch pricing is $59 one time during the current window.</span>
+                            </div>
+                        </li>
+                        <li class="step-row">
+                            <span class="step-index">2</span>
+                            <div class="step-copy">
+                                <strong>Get the installer and signed activation file.</strong>
+                                <span>The paid delivery includes the DTNT Windows installer and the signed Pro activation file that matches it.</span>
+                            </div>
+                        </li>
+                        <li class="step-row">
+                            <span class="step-index">3</span>
+                            <div class="step-copy">
+                                <strong>Import the file in Profiles.</strong>
+                                <span>DTNT unlocks the saved and export-ready Pro workflows after import.</span>
+                            </div>
+                        </li>
+                    </ol>
+                    <div class="actions">
+                        <a class="button button-primary" href="/Net-tools/buy/">Buy Pro from Denali Tech</a>
+                        <a class="button button-secondary" href="https://github.com/AshBoraki/Denali-Tech-Website/releases/download/dtnt-2.1.0-a/DTNT-2.1.0-a-win-x64.zip">Download Free</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="wrap contact-grid">
+                <div>
+                    <h2>Get DTNT for Windows.</h2>
+                    <p class="copy">Download the free build now, or use the Pro launch path for the keep, export, and activation workflow.</p>
+                    <div class="actions">
+                        <a class="button button-primary" href="https://github.com/AshBoraki/Denali-Tech-Website/releases/download/dtnt-2.1.0-a/DTNT-2.1.0-a-win-x64.zip">Download Free</a>
+                        <a class="button button-secondary" href="/Net-tools/buy/">Get Pro</a>
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <h3 style="font-size:1.2rem;">Launch details</h3>
+                    <div class="meta-list">
+                        <div class="meta-row">
+                            <strong>Current build</strong>
+                            <span>2.1.0-a</span>
+                        </div>
+                        <div class="meta-row">
+                            <strong>Release channel</strong>
+                            <span>Preview</span>
+                        </div>
+                        <div class="meta-row">
+                            <strong>Free build</strong>
+                            <span>DTNT-2.1.0-a-win-x64.zip</span>
+                        </div>
+                        <div class="meta-row">
+                            <strong>Download size</strong>
+                            <span>68.8 MB</span>
+                        </div>
+                        <div class="meta-row">
+                            <strong>Platform</strong>
+                            <span>Windows 10 / 11</span>
+                        </div>
+                        <div class="meta-row">
+                            <strong>Edition model</strong>
+                            <span>Free and Pro</span>
+                        </div>
+                        <div class="meta-row">
+                            <strong>Buy path</strong>
+                            <span>Stripe-hosted checkout on launch</span>
+                        </div>
+                        <div class="meta-row">
+                            <strong>Free download</strong>
+                            <span>Portable zip live now</span>
+                        </div>
+                        <div class="meta-row">
+                            <strong>SHA-256</strong>
+                            <span style="word-break:break-all;">246C7994FE740D07E4EBF529D2C6D16FB4D854BEBF818A4CDB9FE05DE12CE2EE</span>
+                        </div>
+                        <div class="meta-row">
+                            <strong>Release info</strong>
+                            <span>Included with download and mirrored beside the zip</span>
+                        </div>
+                        <div class="meta-row">
+                            <strong>Activation</strong>
+                            <span>Import signed Pro license in Profiles</span>
+                        </div>
+                        <div class="meta-row">
+                            <strong>Installer status</strong>
+                            <span>Portable zip live, signed installer next</span>
+                        </div>
+                        <div class="meta-row">
+                            <strong>Support</strong>
+                            <span>Hello@denalitechs.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="wrap footer-copy">
+            DTNT by Denali Tech for Wi-Fi analysis, IP work, speed tests, and quick field checks on Windows.
+        </div>
+    </footer>
+</body>
+</html>

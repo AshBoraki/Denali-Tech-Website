@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>DTNT Checkout Not Completed</title>
+    <meta name="description" content="Return to DTNT pricing and download information.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="canonical" href="https://denalitechs.com/Net-tools/cancel/">
+    <style>
+        :root {
+            --bg: #edf3f0;
+            --paper: #ffffff;
+            --ink: #15283a;
+            --muted: #66798a;
+            --line: #cedbe0;
+            --accent: #d97716;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            padding: 24px;
+            font-family: "Segoe UI", Inter, system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--ink);
+        }
+        .shell {
+            width: min(760px, 100%);
+            background: rgba(255, 255, 255, 0.84);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            padding: 28px;
+        }
+        h1 {
+            margin: 0;
+            font-size: clamp(2.1rem, 4vw, 3.2rem);
+            line-height: 1.04;
+        }
+        p {
+            color: var(--muted);
+            line-height: 1.7;
+            font-size: 1rem;
+            max-width: 60ch;
+        }
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-top: 1.25rem;
+        }
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 0 1.05rem;
+            border-radius: 8px;
+            border: 1px solid transparent;
+            text-decoration: none;
+            font-weight: 800;
+        }
+        .button-primary {
+            background: var(--accent);
+            color: #fff;
+        }
+        .button-secondary {
+            background: rgba(255, 255, 255, 0.78);
+            color: var(--ink);
+            border-color: #b9c9d0;
+        }
+    </style>
+</head>
+<body>
+    <main class="shell">
+        <h1>Checkout was not completed.</h1>
+        <p>You can return to the DTNT page, review the launch pricing again, or open the checkout once more when you are ready.</p>
+        <div class="actions">
+            <a class="button button-primary" href="/Net-tools/#pricing">Back to pricing</a>
+            <a class="button button-secondary" href="/Net-tools/buy/">Try checkout again</a>
+            <a class="button button-secondary" href="https://github.com/AshBoraki/Denali-Tech-Website/releases/download/dtnt-2.1.0-a/DTNT-2.1.0-a-win-x64.zip">Download Free Build</a>
+        </div>
+    </main>
+</body>
+</html>
