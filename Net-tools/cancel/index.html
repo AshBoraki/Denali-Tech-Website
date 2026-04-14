@@ -80,8 +80,22 @@
         <div class="actions">
             <a class="button button-primary" href="/Net-tools/#pricing">Back to pricing</a>
             <a class="button button-secondary" href="/Net-tools/buy/">Try checkout again</a>
-            <a class="button button-secondary" href="https://github.com/AshBoraki/Denali-Tech-Website/releases/download/dtnt-2.1.0-a/DTNT-2.1.0-a-win-x64.zip">Download Free Build</a>
+            <a class="button button-secondary" data-dtnt-download="free" href="/Net-tools/">Download Free Build</a>
         </div>
+
+        <p>Current free build: <strong data-dtnt-version>latest</strong></p>
     </main>
+
+    <script src="/Net-tools/commerce.js"></script>
+    <script>
+        (async () => {
+            const commerce = window.DTNTCommerce;
+            if (!commerce) {
+                return;
+            }
+
+            await commerce.hydrateLatestRelease(document);
+        })();
+    </script>
 </body>
 </html>
