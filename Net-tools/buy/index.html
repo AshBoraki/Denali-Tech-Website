@@ -131,36 +131,69 @@
     <main class="shell">
         <div class="eyebrow">DTNT Pro Checkout</div>
         <h1>DTNT Pro secure checkout.</h1>
-        <p id="status-copy">Secure checkout is hosted by Stripe. The current link is in test mode so the full purchase path can be checked before live launch. Free download stays available now.</p>
+        <p id="status-copy">Secure checkout is hosted by Stripe. This page is wired so the launch switch is one checkout URL, not a full page rewrite.</p>
 
         <ul class="list">
-            <li>DTNT Pro launch price: $59 one time</li>
-            <li>Includes the Windows installer and signed activation file</li>
-            <li>Planned regular price after launch: $99</li>
+            <li>DTNT Pro launch price: <span id="launch-price">$59 one time</span></li>
+            <li>Profiles is where signed Pro activation gets imported in the app</li>
+            <li>Planned regular price after launch: <span id="regular-price">$99 after launch</span></li>
         </ul>
 
         <div class="actions">
             <a class="button button-primary button-disabled" id="checkout-link" href="/Net-tools/" aria-disabled="true">Open secure DTNT Pro checkout</a>
             <a class="button button-secondary" href="/Net-tools/">Back to DTNT</a>
-            <a class="button button-secondary" href="https://github.com/AshBoraki/Denali-Tech-Website/releases/download/dtnt-2.1.0-a/DTNT-2.1.0-a-win-x64.zip">Download Free</a>
+            <a class="button button-secondary" data-dtnt-download="free" href="/Net-tools/">Download Free</a>
         </div>
 
-        <p class="note">When the live Stripe URL is ready, replace the single checkout URL in this page and keep every DTNT Pro button pointing to <code>/Net-tools/buy/</code>.</p>
+        <p class="note" id="launch-note">Free stays available from the current release while the Pro checkout path is finalized.</p>
     </main>
 
+    <script src="/Net-tools/commerce.js"></script>
     <script>
-        const liveCheckoutUrl = "https://buy.stripe.com/test_fZu4gsgkE0xuexD6jv63K01";
-
-        if (liveCheckoutUrl) {
+        (async () => {
             const checkoutLink = document.getElementById("checkout-link");
             const statusCopy = document.getElementById("status-copy");
-            checkoutLink.href = liveCheckoutUrl;
-            checkoutLink.textContent = "Open secure DTNT Pro checkout";
+            const launchNote = document.getElementById("launch-note");
+            const launchPrice = document.getElementById("launch-price");
+            const regularPrice = document.getElementById("regular-price");
+            const commerce = window.DTNTCommerce;
+
+            if (!commerce) {
+                return;
+            }
+
+            launchPrice.textContent = commerce.config.launchPriceLabel;
+            regularPrice.textContent = commerce.config.regularPriceLabel;
+
+            await commerce.hydrateLatestRelease(document);
+
+            if (!commerce.checkoutIsConfigured()) {
+                statusCopy.textContent = "Secure checkout is not connected yet. Free download stays available while the Stripe launch link is added.";
+                launchNote.textContent = "Keep every Pro button pointed at /Net-tools/buy/ and the launch switch stays in one place.";
+                return;
+            }
+
+            checkoutLink.href = commerce.config.checkoutUrl;
+            checkoutLink.textContent = commerce.checkoutIsLive()
+                ? "Continue to secure DTNT Pro checkout"
+                : "Open launch-rehearsal checkout";
             checkoutLink.removeAttribute("aria-disabled");
             checkoutLink.classList.remove("button-disabled");
-            statusCopy.textContent = "Secure checkout is ready. You are being sent to the DTNT Pro Stripe checkout now.";
-            window.location.replace(liveCheckoutUrl);
-        }
+
+            if (commerce.checkoutIsLive()) {
+                statusCopy.textContent = "Secure checkout is live. Stripe handles payment and returns here after purchase.";
+                launchNote.textContent = "After payment, come back with the signed Pro activation file and import it inside Profiles.";
+
+                if (commerce.config.autoRedirectWhenLive) {
+                    window.location.replace(commerce.config.checkoutUrl);
+                }
+
+                return;
+            }
+
+            statusCopy.textContent = "Secure checkout is in launch rehearsal mode. The current link is still useful for testing the Stripe path, success page, and app activation language before the live swap.";
+            launchNote.textContent = "When the live Stripe URL is ready, switch checkoutMode to live and replace the single checkoutUrl value in /Net-tools/commerce.js.";
+        })();
     </script>
 </body>
 </html>
