@@ -299,6 +299,39 @@
             }
 
             const sleep = ms => new Promise(resolve => window.setTimeout(resolve, ms));
+            let activationObjectUrl = null;
+
+            function releaseActivationObjectUrl() {
+                if (activationObjectUrl) {
+                    URL.revokeObjectURL(activationObjectUrl);
+                    activationObjectUrl = null;
+                }
+            }
+
+            async function wireActivationDownload(downloadUrl, reference) {
+                const safeReference = (reference || "dtnt-pro")
+                    .replace(/[^a-z0-9_-]/gi, "-")
+                    .replace(/-+/g, "-")
+                    .replace(/^-|-$/g, "")
+                    || "dtnt-pro";
+                const fileName = `DTNT-Pro-Activation-${safeReference}.json`;
+
+                releaseActivationObjectUrl();
+                activationDownload.download = fileName;
+
+                try {
+                    const response = await fetch(downloadUrl, { cache: "no-store" });
+                    if (!response.ok) {
+                        throw new Error("Activation download was not ready.");
+                    }
+
+                    const blob = await response.blob();
+                    activationObjectUrl = URL.createObjectURL(blob);
+                    activationDownload.href = activationObjectUrl;
+                } catch {
+                    activationDownload.href = downloadUrl;
+                }
+            }
 
             async function hydrateLiveFulfillment() {
                 if (!checkoutReference || !commerce.fulfillmentStatusIsConfigured()) {
@@ -328,7 +361,7 @@
                             downloadsCopy.textContent = "Install DTNT if needed, download the activation file, then choose Activate Pro inside Profiles.";
                             deliveryTitle.textContent = "Your DTNT Pro delivery is ready.";
                             deliveryCopy.textContent = `Licensed to ${payload.licensedTo}. Download the activation file now, then import it inside Profiles.`;
-                            activationDownload.href = payload.activationUrl;
+                            await wireActivationDownload(payload.activationUrl, checkoutReference);
                             activationDownload.hidden = false;
                             return;
                         }
