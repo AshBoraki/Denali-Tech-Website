@@ -48,9 +48,38 @@
         const msixUrl = installer.msixUrl || "";
         const releaseNotesUrl = release.releaseNotesUrl || "";
         const sha256 = release.sha256 || "";
+        const installerAvailable = Boolean(installer.available && (appInstallerUrl || msixUrl));
+        const installerPublicReady = Boolean(
+            installerAvailable
+            && installer.signingReadyForPublicLaunch === true
+            && installer.requiresTrustedCertificate !== true
+        );
+        const preferredDownloadUrl = installerPublicReady
+            ? (appInstallerUrl || msixUrl || freeDownloadUrl)
+            : freeDownloadUrl;
+        const preferredDownloadMode = installerPublicReady ? "installer" : "portable";
+        const installNote = installerPublicReady
+            ? "Install for Windows is ready. Portable ZIP stays available too."
+            : installerAvailable
+                ? "Portable ZIP is the cleanest way to start right now."
+                : "Start free. Go Pro when you need saved details, exports, and activation.";
+        const installDetail = installerPublicReady
+            ? "Signed Windows install available"
+            : installerAvailable
+                ? "Portable ZIP available now"
+                : "Portable ZIP available now";
 
         root.querySelectorAll('[data-dtnt-download="free"]').forEach(anchor => {
             anchor.setAttribute("href", freeDownloadUrl);
+            anchor.removeAttribute("aria-disabled");
+        });
+
+        root.querySelectorAll('[data-dtnt-download="preferred"]').forEach(anchor => {
+            const installerText = anchor.getAttribute("data-dtnt-installer-text") || "Install for Windows";
+            const fallbackText = anchor.getAttribute("data-dtnt-fallback-text") || "Download Free";
+
+            anchor.setAttribute("href", preferredDownloadUrl);
+            anchor.textContent = preferredDownloadMode === "installer" ? installerText : fallbackText;
             anchor.removeAttribute("aria-disabled");
         });
 
@@ -92,6 +121,18 @@
 
         root.querySelectorAll("[data-dtnt-sha256]").forEach(node => {
             node.textContent = sha256;
+        });
+
+        root.querySelectorAll("[data-dtnt-install-note]").forEach(node => {
+            node.textContent = installNote;
+        });
+
+        root.querySelectorAll("[data-dtnt-install-detail]").forEach(node => {
+            node.textContent = installDetail;
+        });
+
+        root.querySelectorAll("[data-dtnt-installer-row]").forEach(node => {
+            node.hidden = !installerAvailable;
         });
 
         return release;
