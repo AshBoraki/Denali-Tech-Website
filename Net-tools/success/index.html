@@ -108,6 +108,20 @@
             display: block;
             margin-bottom: 0.35rem;
         }
+        .advanced-details {
+            margin-top: 0.9rem;
+            border-top: 1px solid var(--line);
+            padding-top: 0.9rem;
+        }
+        .advanced-details summary {
+            cursor: pointer;
+            font-weight: 700;
+            color: var(--ink);
+        }
+        .advanced-details p {
+            margin: 0.55rem 0 0;
+            font-size: 0.94rem;
+        }
         .reference {
             margin-top: 1rem;
             padding: 0.9rem 1rem;
@@ -196,7 +210,10 @@
                 <a class="button button-secondary" data-dtnt-release-notes href="/Net-tools/" hidden>Release Info</a>
             </div>
             <p id="build-copy">Current build: <strong data-dtnt-version>latest</strong></p>
-            <p id="hash-copy">SHA-256: <span data-dtnt-sha256>loading</span></p>
+            <details class="advanced-details" id="hash-copy">
+                <summary>Verify download hash</summary>
+                <p>SHA-256: <span data-dtnt-sha256>loading</span></p>
+            </details>
         </div>
 
         <div class="support" id="delivery-panel" hidden>
