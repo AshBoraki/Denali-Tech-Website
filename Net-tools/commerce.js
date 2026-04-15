@@ -4,7 +4,7 @@
         checkoutMode: "live",
         autoRedirectWhenLive: false,
         latestManifestUrl: "/downloads/dtnt/latest.json",
-        fulfillmentApiBaseUrl: "https://skill-deploy-88gdr6ys4x-codex-agent-deploys.vercel.app",
+        orderStatusBasePath: "/Net-tools/orders/",
         homeUrl: "/Net-tools/",
         buyUrl: "/Net-tools/buy/",
         successUrl: "/Net-tools/success/",
@@ -136,9 +136,14 @@
         return new URL(path, window.location.origin).toString();
     }
 
-    function fulfillmentApiIsConfigured() {
-        return typeof config.fulfillmentApiBaseUrl === "string"
-            && config.fulfillmentApiBaseUrl.trim().length > 0;
+    function fulfillmentStatusIsConfigured() {
+        return typeof config.orderStatusBasePath === "string"
+            && config.orderStatusBasePath.trim().length > 0;
+    }
+
+    function resolveOrderStatusUrl(sessionId) {
+        const basePath = config.orderStatusBasePath.replace(/\/+$/, "");
+        return absoluteUrl(`${basePath}/${encodeURIComponent(sessionId)}.json`);
     }
 
     window.DTNTCommerce = {
@@ -150,6 +155,7 @@
         checkoutIsConfigured,
         checkoutIsLive,
         absoluteUrl,
-        fulfillmentApiIsConfigured
+        fulfillmentStatusIsConfigured,
+        resolveOrderStatusUrl
     };
 })();
