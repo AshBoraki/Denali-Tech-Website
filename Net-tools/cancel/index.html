@@ -7,6 +7,7 @@
     <meta name="description" content="Return to DTNT pricing, checkout, and free download information.">
     <meta name="robots" content="noindex, nofollow">
     <link rel="canonical" href="https://denalitechs.com/Net-tools/cancel/">
+    <script src="/Net-tools/analytics.js"></script>
     <style>
         :root {
             --bg: #edf3f0;
@@ -173,6 +174,7 @@
     </style>
 </head>
 <body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWPTRPDR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <header class="topbar">
         <div class="wrap topbar-inner">
             <a class="brand" href="/Net-tools/">
@@ -201,7 +203,7 @@
                     <a class="button button-primary" href="/Net-tools/#pricing">Back to pricing</a>
                     <a class="button button-secondary" href="/Net-tools/buy/">Try checkout again</a>
                     <a class="button button-secondary" href="/Net-tools/success/">I already paid</a>
-                    <a class="button button-secondary" data-dtnt-download="free" href="/Net-tools/">Download Free Build</a>
+                    <a class="button button-secondary" data-dtnt-download="free" href="/Net-tools/">Download Portable ZIP</a>
                 </div>
 
                 <div class="support">
@@ -224,6 +226,9 @@
 
             commerce.hydrateSupportEmail(document);
             await commerce.hydrateLatestRelease(document);
+            commerce.trackEvent("dtnt_checkout_cancel_view", {
+                checkout_mode: commerce.checkoutIsLive() ? "live" : "test"
+            });
 
             if (!commerce.checkoutIsLive()) {
                 document.getElementById("status-eyebrow").textContent = "Checkout test cancelled";

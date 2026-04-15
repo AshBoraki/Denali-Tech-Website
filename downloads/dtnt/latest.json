@@ -18,9 +18,9 @@
                   },
     "store":  {
                   "available":  false,
-                  "submissionStatus":  "not-submitted",
-                  "productId":  "",
+                  "submissionStatus":  "in-certification",
+                  "productId":  "9PFKHZ8M32HJ",
                   "storeUrl":  "",
                   "webInstallerUrl":  ""
-                  }
+              }
 }
