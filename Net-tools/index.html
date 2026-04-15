@@ -29,6 +29,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <script src="/Net-tools/analytics.js"></script>
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -669,6 +670,7 @@
     </style>
 </head>
 <body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWPTRPDR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <header class="topbar">
         <div class="wrap topbar-inner">
             <a class="brand" href="/Net-tools/">
@@ -704,10 +706,10 @@
                     </div>
 
                     <div class="actions">
-                        <a class="button button-primary" data-dtnt-download="preferred" data-dtnt-store-text="Install from Microsoft" data-dtnt-installer-text="Install for Windows" data-dtnt-fallback-text="Download Free" href="/Net-tools/">Download Free</a>
-                        <a class="button button-secondary" href="/Net-tools/buy/">Get Pro</a>
+                        <a class="button button-primary" data-dtnt-download="preferred" data-dtnt-store-text="Get it from Microsoft Store" data-dtnt-installer-text="Install for Windows" data-dtnt-fallback-text="Download Portable ZIP" href="/Net-tools/">Download Portable ZIP</a>
+                        <a class="button button-secondary" data-dtnt-buy="overview" href="/Net-tools/buy/">Get Pro</a>
                     </div>
-                    <div class="launch-note" data-dtnt-install-note>Start free. Go Pro when you need saved details, exports, and activation.</div>
+                    <div class="launch-note" data-dtnt-install-note>Portable ZIP is live now. Microsoft Store and signed Windows install follow.</div>
                 </div>
 
                 <div class="window" aria-label="DTNT live channel analyzer screenshot">
@@ -867,8 +869,8 @@
                         </li>
                     </ol>
                     <div class="actions">
-                        <a class="button button-primary" href="/Net-tools/buy/">Buy Pro</a>
-                        <a class="button button-secondary" href="https://github.com/AshBoraki/Denali-Tech-Website/releases/download/dtnt-2.1.0-a.1/DTNT-2.1.0-a.1-win-x64.zip">Download Free</a>
+                        <a class="button button-primary" data-dtnt-buy="activation" href="/Net-tools/buy/">Buy Pro</a>
+                        <a class="button button-secondary" data-dtnt-download="free" href="/Net-tools/">Download Portable ZIP</a>
                     </div>
                     <p class="legal-note">By downloading or buying DTNT, you agree to the <a href="/Net-tools/legal/#eula">EULA</a>, <a href="/Net-tools/legal/#terms">Terms</a>, <a href="/Net-tools/legal/#privacy">Privacy Notice</a>, and <a href="/Net-tools/legal/#refund">Refund Policy</a>.</p>
                 </div>
@@ -879,10 +881,10 @@
             <div class="wrap contact-grid">
                 <div>
                     <h2>Get DTNT for Windows.</h2>
-                    <p class="copy">Start with the free Windows build. Upgrade when you need saved details, exports, and Pro activation.</p>
+                    <p class="copy">Start with the live download path now. Move to Pro when you need saved details, exports, and activation.</p>
                     <div class="actions">
-                        <a class="button button-primary" data-dtnt-download="preferred" data-dtnt-store-text="Install from Microsoft" data-dtnt-installer-text="Install for Windows" data-dtnt-fallback-text="Download Free" href="/Net-tools/">Download Free</a>
-                        <a class="button button-secondary" href="/Net-tools/buy/">Buy Pro</a>
+                        <a class="button button-primary" data-dtnt-download="preferred" data-dtnt-store-text="Get it from Microsoft Store" data-dtnt-installer-text="Install for Windows" data-dtnt-fallback-text="Download Portable ZIP" href="/Net-tools/">Download Portable ZIP</a>
+                        <a class="button button-secondary" data-dtnt-buy="contact" href="/Net-tools/buy/">Buy Pro</a>
                     </div>
                     <p class="legal-note">Need the policy details first? Read the <a href="/Net-tools/legal/#privacy">Privacy Notice</a>, <a href="/Net-tools/legal/#refund">Refund Policy</a>, and the rest of the DTNT legal terms.</p>
                 </div>
@@ -895,12 +897,12 @@
                             <span>Preview <span data-dtnt-version>2.1.0-a.1</span></span>
                         </div>
                         <div class="meta-row">
-                            <strong>Install</strong>
+                            <strong>Best path</strong>
                             <span data-dtnt-install-detail>Portable ZIP available now</span>
                         </div>
-                        <div class="meta-row" data-dtnt-store-row hidden>
-                            <strong>Microsoft</strong>
-                            <span><a data-dtnt-download="store" href="/Net-tools/" hidden>Store install</a></span>
+                        <div class="meta-row" data-dtnt-store-row>
+                            <strong>Store</strong>
+                            <span><span data-dtnt-store-status>Not live yet</span> <a data-dtnt-download="store" href="/Net-tools/" hidden>Open Store</a></span>
                         </div>
                         <div class="meta-row" data-dtnt-installer-row hidden>
                             <strong>Installer</strong>
@@ -908,7 +910,7 @@
                         </div>
                         <div class="meta-row">
                             <strong>Portable</strong>
-                            <span><a data-dtnt-download="free" href="/Net-tools/">ZIP build</a></span>
+                            <span><a data-dtnt-download="free" href="/Net-tools/">Download ZIP</a></span>
                         </div>
                         <div class="meta-row">
                             <strong>Pro</strong>

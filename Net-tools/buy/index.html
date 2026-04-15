@@ -7,6 +7,7 @@
     <meta name="description" content="DTNT Pro secure checkout from Denali Tech.">
     <meta name="robots" content="noindex, nofollow">
     <link rel="canonical" href="https://denalitechs.com/Net-tools/buy/">
+    <script src="/Net-tools/analytics.js"></script>
     <style>
         :root {
             --bg: #edf3f0;
@@ -237,6 +238,7 @@
     </style>
 </head>
 <body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWPTRPDR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <header class="topbar">
         <div class="wrap topbar-inner">
             <a class="brand" href="/Net-tools/">
@@ -270,10 +272,10 @@
                 </ul>
 
                 <div class="actions">
-                    <a class="button button-primary button-disabled" id="checkout-link" href="/Net-tools/" aria-disabled="true">Open secure DTNT Pro checkout</a>
+                    <a class="button button-primary button-disabled" id="checkout-link" data-dtnt-buy="checkout" href="/Net-tools/" aria-disabled="true">Open secure DTNT Pro checkout</a>
                     <a class="button button-secondary" id="paid-link" href="/Net-tools/success/">I already paid</a>
                     <a class="button button-secondary" href="/Net-tools/">Back to DTNT</a>
-                    <a class="button button-secondary" data-dtnt-download="free" href="/Net-tools/">Download Free</a>
+                    <a class="button button-secondary" data-dtnt-download="free" href="/Net-tools/">Download Portable ZIP</a>
                 </div>
 
                 <div class="recovery">
@@ -311,6 +313,10 @@
                 return;
             }
 
+            commerce.trackEvent("dtnt_checkout_view", {
+                checkout_mode: commerce.checkoutIsLive() ? "live" : "test"
+            });
+
             launchPrice.textContent = commerce.config.launchPriceLabel;
             regularPrice.textContent = commerce.config.regularPriceLabel;
             paidLink.href = commerce.config.successUrl;
@@ -333,6 +339,21 @@
                 : "Open launch-rehearsal checkout";
             checkoutLink.removeAttribute("aria-disabled");
             checkoutLink.classList.remove("button-disabled");
+            checkoutLink.addEventListener("click", () => {
+                commerce.trackEvent("begin_checkout", {
+                    currency: "USD",
+                    value: 59,
+                    items: [
+                        {
+                            item_id: "dtnt-pro",
+                            item_name: "DTNT Pro Launch",
+                            price: 59,
+                            quantity: 1
+                        }
+                    ],
+                    checkout_mode: commerce.checkoutIsLive() ? "live" : "test"
+                });
+            }, { once: true });
 
             if (commerce.checkoutIsLive()) {
                 statusCopy.textContent = "Secure checkout is live. Complete payment here, enter a promo code if you have one, then continue into the DTNT success page for install and activation.";

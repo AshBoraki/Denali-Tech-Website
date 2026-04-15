@@ -7,6 +7,7 @@
     <meta name="description" content="DTNT Pro purchase confirmation and delivery steps from Denali Tech.">
     <meta name="robots" content="noindex, nofollow">
     <link rel="canonical" href="https://denalitechs.com/Net-tools/success/">
+    <script src="/Net-tools/analytics.js"></script>
     <style>
         :root {
             --bg: #edf3f0;
@@ -241,6 +242,7 @@
     </style>
 </head>
 <body>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWPTRPDR" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <header class="topbar">
         <div class="wrap topbar-inner">
             <a class="brand" href="/Net-tools/">
@@ -304,7 +306,7 @@
                         <a class="button button-primary" id="activation-download" href="/Net-tools/" hidden>Download Pro activation</a>
                         <a class="button button-primary" data-dtnt-download="appinstaller" href="/Net-tools/" hidden>Install DTNT</a>
                         <a class="button button-secondary" data-dtnt-download="msix" href="/Net-tools/" hidden>Download MSIX</a>
-                        <a class="button button-secondary" data-dtnt-download="free" href="/Net-tools/">Download Portable Zip</a>
+                        <a class="button button-secondary" data-dtnt-download="free" href="/Net-tools/">Download Portable ZIP</a>
                         <a class="button button-secondary" data-dtnt-release-notes href="/Net-tools/" hidden>Release Info</a>
                     </div>
                     <p id="build-copy">Current build: <strong data-dtnt-version>latest</strong></p>
@@ -370,6 +372,34 @@
             const paymentLinkId = params.get("payment_link");
 
             const checkoutReference = sessionId || paymentIntentId || paymentLinkId;
+            commerce.trackEvent("dtnt_checkout_success_view", {
+                checkout_mode: commerce.checkoutIsLive() ? "live" : "test",
+                has_reference: Boolean(checkoutReference),
+                reference_type: sessionId
+                    ? "session"
+                    : paymentIntentId
+                        ? "payment_intent"
+                        : paymentLinkId
+                            ? "payment_link"
+                            : ""
+            });
+            if (checkoutReference) {
+                commerce.trackEvent("purchase", {
+                    transaction_id: checkoutReference,
+                    currency: "USD",
+                    value: 59,
+                    items: [
+                        {
+                            item_id: "dtnt-pro",
+                            item_name: "DTNT Pro Launch",
+                            price: 59,
+                            quantity: 1
+                        }
+                    ],
+                    checkout_mode: commerce.checkoutIsLive() ? "live" : "test"
+                });
+            }
+
             if (checkoutReference) {
                 referenceValue.textContent = checkoutReference;
                 referencePanel.hidden = false;

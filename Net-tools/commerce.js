@@ -19,6 +19,55 @@
 
     let latestReleasePromise;
 
+    function trackEvent(eventName, detail = {}) {
+        if (window.DTNTAnalytics && typeof window.DTNTAnalytics.push === "function") {
+            window.DTNTAnalytics.push(eventName, detail);
+            return;
+        }
+
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: eventName,
+            page_path: window.location.pathname,
+            page_title: document.title,
+            ...detail
+        });
+    }
+
+    function instrumentLinks(root = document, release = null) {
+        root.querySelectorAll("[data-dtnt-download]").forEach(anchor => {
+            if (anchor.dataset.dtntTracked === "true") {
+                return;
+            }
+
+            anchor.dataset.dtntTracked = "true";
+            anchor.addEventListener("click", () => {
+                trackEvent("dtnt_download_click", {
+                    download_mode: anchor.getAttribute("data-dtnt-download") || "",
+                    download_label: anchor.textContent.trim(),
+                    destination_url: anchor.href,
+                    release_version: release?.version || ""
+                });
+            });
+        });
+
+        root.querySelectorAll("[data-dtnt-buy]").forEach(anchor => {
+            if (anchor.dataset.dtntTracked === "true") {
+                return;
+            }
+
+            anchor.dataset.dtntTracked = "true";
+            anchor.addEventListener("click", () => {
+                trackEvent("dtnt_buy_click", {
+                    buy_mode: anchor.getAttribute("data-dtnt-buy") || "",
+                    buy_label: anchor.textContent.trim(),
+                    destination_url: anchor.href,
+                    release_version: release?.version || ""
+                });
+            });
+        });
+    }
+
     async function loadLatestRelease() {
         if (!latestReleasePromise) {
             latestReleasePromise = fetch(config.latestManifestUrl, { cache: "no-store" })
@@ -48,10 +97,13 @@
         const appInstallerUrl = installer.appInstallerUrl || "";
         const msixUrl = installer.msixUrl || "";
         const storeUrl = store.webInstallerUrl || store.storeUrl || "";
+        const storeSubmissionStatus = String(store.submissionStatus || "").toLowerCase();
         const releaseNotesUrl = release.releaseNotesUrl || "";
         const sha256 = release.sha256 || "";
         const installerAvailable = Boolean(installer.available && (appInstallerUrl || msixUrl));
         const storeAvailable = Boolean(store.available === true && storeUrl);
+        const storeInCertification = !storeAvailable && storeSubmissionStatus === "in-certification";
+        const storePreparing = !storeAvailable && !storeInCertification && Boolean(store.productId || storeSubmissionStatus);
         const installerPublicReady = Boolean(
             installerAvailable
             && installer.signingReadyForPublicLaunch === true
@@ -68,19 +120,34 @@
                 ? "installer"
                 : "portable";
         const installNote = storeAvailable
-            ? "Install from Microsoft Store is ready. Portable ZIP stays available too."
+            ? "Microsoft Store install is live. Signed Windows install and the portable ZIP stay available too."
             : installerPublicReady
-                ? "Install for Windows is ready. Portable ZIP stays available too."
+                ? "Signed Windows install is ready. Portable ZIP stays available as the backup download."
+                : storeInCertification
+                ? "Microsoft Store release is in certification. Portable ZIP is live now while the signed installer path is being finished."
+                : storePreparing
+                ? "Portable ZIP is live now. Microsoft Store and the signed Windows installer are still being prepared."
                 : installerAvailable
-                ? "Portable ZIP is the cleanest way to start right now."
+                ? "Portable ZIP is the cleanest download right now while the signed Windows installer path is being tightened up."
                 : "Start free. Go Pro when you need saved details, exports, and activation.";
         const installDetail = storeAvailable
             ? "Microsoft Store install available"
             : installerPublicReady
                 ? "Signed Windows install available"
+                : storeInCertification
+                ? "Portable ZIP live now; Store review in progress"
+                : storePreparing
+                ? "Portable ZIP live now; Store path preparing"
                 : installerAvailable
-                ? "Portable ZIP available now"
+                ? "Portable ZIP live now; signed install next"
                 : "Portable ZIP available now";
+        const storeStatus = storeAvailable
+            ? "Live"
+            : storeInCertification
+                ? "In certification"
+                : storePreparing
+                    ? "Preparing"
+                    : "Not live yet";
 
         root.querySelectorAll('[data-dtnt-download="free"]').forEach(anchor => {
             anchor.setAttribute("href", freeDownloadUrl);
@@ -160,13 +227,19 @@
             node.textContent = installDetail;
         });
 
+        root.querySelectorAll("[data-dtnt-store-status]").forEach(node => {
+            node.textContent = storeStatus;
+        });
+
         root.querySelectorAll("[data-dtnt-installer-row]").forEach(node => {
             node.hidden = !installerPublicReady;
         });
 
         root.querySelectorAll("[data-dtnt-store-row]").forEach(node => {
-            node.hidden = !storeAvailable;
+            node.hidden = false;
         });
+
+        instrumentLinks(root, release);
 
         return release;
     }
@@ -225,6 +298,8 @@
         loadLatestRelease,
         hydrateLatestRelease,
         hydrateSupportEmail,
+        instrumentLinks,
+        trackEvent,
         createSupportMailto,
         checkoutIsConfigured,
         checkoutIsLive,
