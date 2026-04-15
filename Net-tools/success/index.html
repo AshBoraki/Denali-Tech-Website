@@ -15,24 +15,86 @@
             --muted: #66798a;
             --line: #cedbe0;
             --accent: #d97716;
+            --shadow: 0 18px 36px rgba(21, 40, 58, 0.08);
         }
         * { box-sizing: border-box; }
+        a { color: inherit; }
         body {
             margin: 0;
-            min-height: 100vh;
-            display: grid;
-            place-items: center;
-            padding: 24px;
             font-family: "Segoe UI", Inter, system-ui, sans-serif;
             background: var(--bg);
             color: var(--ink);
         }
+        .wrap {
+            width: min(1320px, calc(100% - 48px));
+            margin: 0 auto;
+        }
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            background: rgba(237, 243, 240, 0.96);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--line);
+        }
+        .topbar-inner {
+            min-height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.85rem;
+            text-decoration: none;
+        }
+        .brand img {
+            width: 40px;
+            height: 40px;
+            padding: 3px;
+            border-radius: 8px;
+            border: 1px solid var(--line);
+            background: #fff;
+            object-fit: contain;
+        }
+        .brand-copy {
+            display: grid;
+            gap: 0.12rem;
+        }
+        .brand-copy strong {
+            font-size: 0.98rem;
+            line-height: 1.1;
+        }
+        .brand-copy span {
+            color: var(--muted);
+            font-size: 0.89rem;
+        }
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+        .nav a {
+            text-decoration: none;
+            color: var(--muted);
+            font-size: 0.92rem;
+            font-weight: 700;
+        }
+        .nav a:hover { color: var(--ink); }
+        .page {
+            padding: 30px 0 56px;
+        }
         .shell {
-            width: min(760px, 100%);
+            width: min(860px, 100%);
+            margin: 0 auto;
             background: rgba(255, 255, 255, 0.84);
             border: 1px solid var(--line);
             border-radius: 8px;
             padding: 28px;
+            box-shadow: var(--shadow);
         }
         .eyebrow {
             display: inline-flex;
@@ -160,76 +222,114 @@
             color: var(--ink);
             border-color: #b9c9d0;
         }
+        @media (max-width: 900px) {
+            .nav {
+                display: none;
+            }
+        }
+        @media (max-width: 640px) {
+            .wrap {
+                width: min(100% - 24px, 100%);
+            }
+            .page {
+                padding-top: 22px;
+            }
+            .shell {
+                padding: 22px;
+            }
+        }
     </style>
 </head>
 <body>
-    <main class="shell">
-        <div class="eyebrow" id="status-eyebrow">Payment received</div>
-        <h1 id="success-title">DTNT Pro purchase complete.</h1>
-        <p id="lead-copy">Stripe has finished the checkout. Install the current DTNT build now, then stay here while the signed Pro activation file is prepared.</p>
+    <header class="topbar">
+        <div class="wrap topbar-inner">
+            <a class="brand" href="/Net-tools/">
+                <img src="/Video/dtnt/dtnt-app-mark.png?v=20260413e" alt="DTNT app mark">
+                <span class="brand-copy">
+                    <strong>DTNT</strong>
+                    <span>Denali Tech Net-Tools</span>
+                </span>
+            </a>
+            <nav class="nav" aria-label="Success navigation">
+                <a href="/Net-tools/">Overview</a>
+                <a href="/Net-tools/buy/">Pro</a>
+                <a href="/Net-tools/#activation">Activation</a>
+                <a href="/Net-tools/#contact">Support</a>
+            </nav>
+        </div>
+    </header>
 
-        <ol class="steps">
-            <li class="step">
-                <span class="step-index">1</span>
-                <div>
-                    <strong id="step-one-title">Keep the Stripe receipt.</strong>
-                    <span id="step-one-copy">The receipt email is the fastest reference if you need help with delivery.</span>
+    <main class="page">
+        <div class="wrap">
+            <section class="shell">
+                <div class="eyebrow" id="status-eyebrow">Payment received</div>
+                <h1 id="success-title">DTNT Pro purchase complete.</h1>
+                <p id="lead-copy">Stripe has finished the checkout. Install the current DTNT build now, then stay here while the signed Pro activation file is prepared.</p>
+
+                <ol class="steps">
+                    <li class="step">
+                        <span class="step-index">1</span>
+                        <div>
+                            <strong id="step-one-title">Keep the Stripe receipt.</strong>
+                            <span id="step-one-copy">The receipt email is the fastest reference if you need help with delivery.</span>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <span class="step-index">2</span>
+                        <div>
+                            <strong id="step-two-title">Get your DTNT Pro delivery.</strong>
+                            <span id="step-two-copy">The paid path should deliver the Windows build link and the signed activation file for this release.</span>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <span class="step-index">3</span>
+                        <div>
+                            <strong id="step-three-title">Choose Activate Pro in Profiles.</strong>
+                            <span id="step-three-copy">Open DTNT, go to Profiles, choose Activate Pro, and select the signed activation file.</span>
+                        </div>
+                    </li>
+                </ol>
+
+                <div class="support">
+                    <strong id="support-title">Need help with the order?</strong>
+                    <p id="support-copy">If the delivery email does not arrive or the activation file does not import cleanly, contact <a data-dtnt-support-email href="mailto:Hello@denalitechs.com">Hello@denalitechs.com</a> and include the email address used at checkout.</p>
                 </div>
-            </li>
-            <li class="step">
-                <span class="step-index">2</span>
-                <div>
-                    <strong id="step-two-title">Get your DTNT Pro delivery.</strong>
-                    <span id="step-two-copy">The paid path should deliver the Windows build link and the signed activation file for this release.</span>
+
+                <p>Policy details stay available here: <a href="/Net-tools/legal/#eula">EULA</a>, <a href="/Net-tools/legal/#terms">Terms</a>, <a href="/Net-tools/legal/#privacy">Privacy Notice</a>, and <a href="/Net-tools/legal/#refund">Refund Policy</a>.</p>
+
+                <div class="downloads">
+                    <strong id="downloads-title">Continue with the Windows build now.</strong>
+                    <p id="downloads-copy">You can install the current DTNT build right away, then import the signed Pro activation file inside Profiles when it arrives.</p>
+                    <div class="actions">
+                        <a class="button button-primary" id="activation-download" href="/Net-tools/" hidden>Download Pro activation</a>
+                        <a class="button button-primary" data-dtnt-download="appinstaller" href="/Net-tools/" hidden>Install DTNT</a>
+                        <a class="button button-secondary" data-dtnt-download="msix" href="/Net-tools/" hidden>Download MSIX</a>
+                        <a class="button button-secondary" data-dtnt-download="free" href="/Net-tools/">Download Portable Zip</a>
+                        <a class="button button-secondary" data-dtnt-release-notes href="/Net-tools/" hidden>Release Info</a>
+                    </div>
+                    <p id="build-copy">Current build: <strong data-dtnt-version>latest</strong></p>
+                    <details class="advanced-details" id="hash-copy">
+                        <summary>Verify download hash</summary>
+                        <p>SHA-256: <span data-dtnt-sha256>loading</span></p>
+                    </details>
                 </div>
-            </li>
-            <li class="step">
-                <span class="step-index">3</span>
-                <div>
-                    <strong id="step-three-title">Choose Activate Pro in Profiles.</strong>
-                    <span id="step-three-copy">Open DTNT, go to Profiles, choose Activate Pro, and select the signed activation file.</span>
+
+                <div class="support" id="delivery-panel" hidden>
+                    <strong id="delivery-title">Checking your DTNT Pro delivery.</strong>
+                    <p id="delivery-copy">Stay on this page while the activation file is prepared. This can take a couple of minutes after payment.</p>
                 </div>
-            </li>
-        </ol>
 
-        <div class="support">
-            <strong id="support-title">Need help with the order?</strong>
-            <p id="support-copy">If the delivery email does not arrive or the activation file does not import cleanly, contact <a data-dtnt-support-email href="mailto:Hello@denalitechs.com">Hello@denalitechs.com</a> and include the email address used at checkout.</p>
-        </div>
+                <div class="reference" id="reference-panel" hidden>
+                    <strong>Checkout reference:</strong>
+                    <span id="reference-value"></span>
+                </div>
 
-        <p>Policy details stay available here: <a href="/Net-tools/legal/#eula">EULA</a>, <a href="/Net-tools/legal/#terms">Terms</a>, <a href="/Net-tools/legal/#privacy">Privacy Notice</a>, and <a href="/Net-tools/legal/#refund">Refund Policy</a>.</p>
-
-        <div class="downloads">
-            <strong id="downloads-title">Continue with the Windows build now.</strong>
-            <p id="downloads-copy">You can install the current DTNT build right away, then import the signed Pro activation file inside Profiles when it arrives.</p>
-            <div class="actions">
-                <a class="button button-primary" id="activation-download" href="/Net-tools/" hidden>Download Pro activation</a>
-                <a class="button button-primary" data-dtnt-download="appinstaller" href="/Net-tools/" hidden>Install DTNT</a>
-                <a class="button button-secondary" data-dtnt-download="msix" href="/Net-tools/" hidden>Download MSIX</a>
-                <a class="button button-secondary" data-dtnt-download="free" href="/Net-tools/">Download Portable Zip</a>
-                <a class="button button-secondary" data-dtnt-release-notes href="/Net-tools/" hidden>Release Info</a>
-            </div>
-            <p id="build-copy">Current build: <strong data-dtnt-version>latest</strong></p>
-            <details class="advanced-details" id="hash-copy">
-                <summary>Verify download hash</summary>
-                <p>SHA-256: <span data-dtnt-sha256>loading</span></p>
-            </details>
-        </div>
-
-        <div class="support" id="delivery-panel" hidden>
-            <strong id="delivery-title">Checking your DTNT Pro delivery.</strong>
-            <p id="delivery-copy">Stay on this page while the activation file is prepared. This can take a couple of minutes after payment.</p>
-        </div>
-
-        <div class="reference" id="reference-panel" hidden>
-            <strong>Checkout reference:</strong>
-            <span id="reference-value"></span>
-        </div>
-
-        <div class="actions">
-            <a class="button button-primary" href="/Net-tools/">Back to DTNT</a>
-            <a class="button button-secondary" href="/Net-tools/buy/">View Pro details</a>
-            <a class="button button-secondary" id="support-link" href="mailto:Hello@denalitechs.com">Email support</a>
+                <div class="actions">
+                    <a class="button button-primary" href="/Net-tools/">Back to DTNT</a>
+                    <a class="button button-secondary" href="/Net-tools/buy/">View Pro details</a>
+                    <a class="button button-secondary" id="support-link" href="mailto:Hello@denalitechs.com">Email support</a>
+                </div>
+            </section>
         </div>
     </main>
 

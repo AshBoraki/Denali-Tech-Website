@@ -1,3 +1,11 @@
+# Normalize DTNT product routes so Stripe redirects work even when the path
+# was entered in lowercase.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^net-tools/?$ /Net-tools/ [R=301,L]
+  RewriteRule ^net-tools/(.*)$ /Net-tools/$1 [R=301,L]
+</IfModule>
+
 # Enable Compression (gzip)
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json application/xml application/rss+xml

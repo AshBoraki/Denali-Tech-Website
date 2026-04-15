@@ -17,26 +17,102 @@
             --accent: #d97716;
             --accent-strong: #bf6510;
             --accent-soft: #fff0e0;
+            --shadow: 0 18px 36px rgba(21, 40, 58, 0.08);
         }
 
         * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
             margin: 0;
-            min-height: 100vh;
-            display: grid;
-            place-items: center;
-            padding: 24px;
             font-family: "Segoe UI", Inter, system-ui, sans-serif;
             background: var(--bg);
             color: var(--ink);
         }
 
+        a { color: inherit; }
+
+        .wrap {
+            width: min(1320px, calc(100% - 48px));
+            margin: 0 auto;
+        }
+
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            background: rgba(237, 243, 240, 0.96);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .topbar-inner {
+            min-height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.85rem;
+            text-decoration: none;
+        }
+
+        .brand img {
+            width: 40px;
+            height: 40px;
+            padding: 3px;
+            border-radius: 8px;
+            border: 1px solid var(--line);
+            background: #fff;
+            object-fit: contain;
+        }
+
+        .brand-copy {
+            display: grid;
+            gap: 0.12rem;
+        }
+
+        .brand-copy strong {
+            font-size: 0.98rem;
+            line-height: 1.1;
+        }
+
+        .brand-copy span {
+            color: var(--muted);
+            font-size: 0.89rem;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: var(--muted);
+            font-size: 0.92rem;
+            font-weight: 700;
+        }
+
+        .nav a:hover { color: var(--ink); }
+
+        .page {
+            padding: 30px 0 56px;
+        }
+
         .shell {
-            width: min(760px, 100%);
+            width: min(820px, 100%);
+            margin: 0 auto;
             background: rgba(255, 255, 255, 0.82);
             border: 1px solid var(--line);
             border-radius: 8px;
             padding: 28px;
+            box-shadow: var(--shadow);
         }
 
         .eyebrow {
@@ -138,39 +214,82 @@
             display: block;
             margin-bottom: 0.35rem;
         }
+
+        @media (max-width: 900px) {
+            .nav {
+                display: none;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .wrap {
+                width: min(100% - 24px, 100%);
+            }
+
+            .page {
+                padding-top: 22px;
+            }
+
+            .shell {
+                padding: 22px;
+            }
+        }
     </style>
 </head>
 <body>
-    <main class="shell">
-        <div class="eyebrow">DTNT Pro Checkout</div>
-        <h1>DTNT Pro secure checkout.</h1>
-        <p id="status-copy">Secure checkout is hosted by Stripe. Start Pro here, then come back to the DTNT success page for download and activation steps if you need them.</p>
-
-        <ul class="list">
-            <li>DTNT Pro launch price: <span id="launch-price">$59 one time</span></li>
-            <li>Profiles is where you choose Activate Pro and import the signed license file</li>
-            <li>Planned regular price after launch: <span id="regular-price">$99 after launch</span></li>
-        </ul>
-
-        <div class="actions">
-            <a class="button button-primary button-disabled" id="checkout-link" href="/Net-tools/" aria-disabled="true">Open secure DTNT Pro checkout</a>
-            <a class="button button-secondary" id="paid-link" href="/Net-tools/success/">I already paid</a>
-            <a class="button button-secondary" href="/Net-tools/">Back to DTNT</a>
-            <a class="button button-secondary" data-dtnt-download="free" href="/Net-tools/">Download Free</a>
+    <header class="topbar">
+        <div class="wrap topbar-inner">
+            <a class="brand" href="/Net-tools/">
+                <img src="/Video/dtnt/dtnt-app-mark.png?v=20260413e" alt="DTNT app mark">
+                <span class="brand-copy">
+                    <strong>DTNT</strong>
+                    <span>Denali Tech Net-Tools</span>
+                </span>
+            </a>
+            <nav class="nav" aria-label="Checkout navigation">
+                <a href="/Net-tools/">Overview</a>
+                <a href="/Net-tools/#pricing">Pricing</a>
+                <a href="/Net-tools/#activation">Activation</a>
+                <a href="/Net-tools/#contact">Support</a>
+            </nav>
         </div>
+    </header>
 
-        <div class="recovery">
-            <strong>Paid but not redirected?</strong>
-            <p id="recovery-copy">Open the DTNT success page to continue with the current build, activation steps, and support links.</p>
-            <div class="actions">
-                <a class="button button-secondary" id="success-link" href="/Net-tools/success/">Continue after payment</a>
-                <a class="button button-secondary" id="cancel-link" href="/Net-tools/cancel/">Checkout did not finish</a>
-            </div>
+    <main class="page">
+        <div class="wrap">
+            <section class="shell">
+                <div class="eyebrow">DTNT Pro Checkout</div>
+                <h1>DTNT Pro secure checkout.</h1>
+                <p id="status-copy">Secure checkout is hosted by Stripe. Start Pro here, then come back to the DTNT success page for download and activation steps if you need them.</p>
+
+                <ul class="list">
+                    <li>DTNT Pro launch price: <span id="launch-price">$59 one time</span></li>
+                    <li>Profiles is where you choose Activate Pro and import the signed license file</li>
+                    <li>Have a promo code? Enter it on the Stripe checkout page before you pay</li>
+                    <li>Planned regular price after launch: <span id="regular-price">$99 after launch</span></li>
+                </ul>
+
+                <div class="actions">
+                    <a class="button button-primary button-disabled" id="checkout-link" href="/Net-tools/" aria-disabled="true">Open secure DTNT Pro checkout</a>
+                    <a class="button button-secondary" id="paid-link" href="/Net-tools/success/">I already paid</a>
+                    <a class="button button-secondary" href="/Net-tools/">Back to DTNT</a>
+                    <a class="button button-secondary" data-dtnt-download="free" href="/Net-tools/">Download Free</a>
+                </div>
+
+                <div class="recovery">
+                    <strong>Paid but not redirected?</strong>
+                    <p id="recovery-copy">Open the DTNT success page to continue with the current build, activation steps, and support links.</p>
+                    <div class="actions">
+                        <a class="button button-secondary" id="success-link" href="/Net-tools/success/">Continue after payment</a>
+                        <a class="button button-secondary" id="cancel-link" href="/Net-tools/cancel/">Checkout did not finish</a>
+                    </div>
+                </div>
+
+                <p class="note" id="launch-note">Free stays available while the paid delivery flow is being tightened.</p>
+                <p class="note" id="return-note">Successful checkout should land on the DTNT success page. If you close checkout before paying, come back here or use the DTNT cancel page as the fallback path.</p>
+                <p class="note">By continuing to payment, you agree to the <a href="/Net-tools/legal/#eula">EULA</a>, <a href="/Net-tools/legal/#terms">Terms</a>, <a href="/Net-tools/legal/#privacy">Privacy Notice</a>, and <a href="/Net-tools/legal/#refund">Refund Policy</a>.</p>
+            </section>
         </div>
-
-        <p class="note" id="launch-note">Free stays available while the paid delivery flow is being tightened.</p>
-        <p class="note" id="return-note">Successful checkout should land on the DTNT success page. If you close checkout before paying, come back here or use the DTNT cancel page as the fallback path.</p>
-        <p class="note">By continuing to payment, you agree to the <a href="/Net-tools/legal/#eula">EULA</a>, <a href="/Net-tools/legal/#terms">Terms</a>, <a href="/Net-tools/legal/#privacy">Privacy Notice</a>, and <a href="/Net-tools/legal/#refund">Refund Policy</a>.</p>
     </main>
 
     <script src="/Net-tools/commerce.js"></script>
@@ -216,7 +335,7 @@
             checkoutLink.classList.remove("button-disabled");
 
             if (commerce.checkoutIsLive()) {
-                statusCopy.textContent = "Secure checkout is live. Complete payment here, then continue into the DTNT success page for install and activation.";
+                statusCopy.textContent = "Secure checkout is live. Complete payment here, enter a promo code if you have one, then continue into the DTNT success page for install and activation.";
                 launchNote.textContent = "After payment, the DTNT success page should carry the buyer into download, receipt, and Activate Pro steps.";
                 recoveryCopy.textContent = "If Stripe confirms payment but leaves you on its own page, use Continue after payment so you can reach the DTNT delivery steps.";
                 returnNote.textContent = "Live checkout should return to the DTNT success page after payment. If checkout is closed before payment, use the DTNT cancel page as the fallback path.";
