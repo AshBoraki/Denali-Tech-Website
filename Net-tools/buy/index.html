@@ -144,11 +144,11 @@
     <main class="shell">
         <div class="eyebrow">DTNT Pro Checkout</div>
         <h1>DTNT Pro secure checkout.</h1>
-        <p id="status-copy">Secure checkout is hosted by Stripe. This page keeps the paid path in one place so the launch switch is one checkout URL, not a full rewrite.</p>
+        <p id="status-copy">Secure checkout is hosted by Stripe. Start Pro here, then come back to the DTNT success page for download and activation steps if you need them.</p>
 
         <ul class="list">
             <li>DTNT Pro launch price: <span id="launch-price">$59 one time</span></li>
-            <li>Profiles is where signed Pro activation gets imported in the app</li>
+            <li>Profiles is where you choose Activate Pro and import the signed license file</li>
             <li>Planned regular price after launch: <span id="regular-price">$99 after launch</span></li>
         </ul>
 
@@ -160,16 +160,17 @@
         </div>
 
         <div class="recovery">
-            <strong>If Stripe takes payment but leaves you on its own confirmation page:</strong>
-            <p id="recovery-copy">Come back here and use the DTNT completion page so you can keep moving instead of guessing what happens next.</p>
+            <strong>Paid but not redirected?</strong>
+            <p id="recovery-copy">Open the DTNT success page to continue with the current build, activation steps, and support links.</p>
             <div class="actions">
                 <a class="button button-secondary" id="success-link" href="/Net-tools/success/">Continue after payment</a>
                 <a class="button button-secondary" id="cancel-link" href="/Net-tools/cancel/">Checkout did not finish</a>
             </div>
         </div>
 
-        <p class="note" id="launch-note">Free stays available from the current release while the Pro checkout path is finalized.</p>
-        <p class="note" id="return-note">Successful checkout should land on the DTNT success page. If checkout is cancelled, Stripe should send the buyer back to the DTNT cancel page.</p>
+        <p class="note" id="launch-note">Free stays available while the paid delivery flow is being tightened.</p>
+        <p class="note" id="return-note">Successful checkout should land on the DTNT success page. If you close checkout before paying, come back here or use the DTNT cancel page as the fallback path.</p>
+        <p class="note">By continuing to payment, you agree to the <a href="/Net-tools/legal/#eula">EULA</a>, <a href="/Net-tools/legal/#terms">Terms</a>, <a href="/Net-tools/legal/#privacy">Privacy Notice</a>, and <a href="/Net-tools/legal/#refund">Refund Policy</a>.</p>
     </main>
 
     <script src="/Net-tools/commerce.js"></script>
@@ -200,10 +201,10 @@
             await commerce.hydrateLatestRelease(document);
 
             if (!commerce.checkoutIsConfigured()) {
-                statusCopy.textContent = "Secure checkout is not connected yet. Free download stays available while the Stripe launch link is added.";
-                launchNote.textContent = "Keep every Pro button pointed at /Net-tools/buy/ and the launch switch stays in one place.";
-                recoveryCopy.textContent = "Before live charges, keep the success and cancel pages ready so the site already has a clean return path.";
-                returnNote.textContent = "Before live charges, set Stripe to return to /Net-tools/success/ after payment and /Net-tools/cancel/ if checkout is not completed.";
+                statusCopy.textContent = "Secure checkout is not connected yet. Free download stays available while the Stripe link is added.";
+                launchNote.textContent = "Keep every Pro button pointed at /Net-tools/buy/ so the paid path stays in one place.";
+                recoveryCopy.textContent = "Before live charges, keep the success and cancel pages ready so buyers always have a clear way forward.";
+                returnNote.textContent = "Before live charges, set Stripe to return to /Net-tools/success/ after payment and keep /Net-tools/cancel/ available as the fallback page.";
                 return;
             }
 
@@ -215,18 +216,18 @@
             checkoutLink.classList.remove("button-disabled");
 
             if (commerce.checkoutIsLive()) {
-                statusCopy.textContent = "Secure checkout is live. Open Stripe from here, complete payment, and use the DTNT success page if you need to continue manually.";
-                launchNote.textContent = "After payment, the DTNT success page should carry you into the install and activation steps without leaving you guessing.";
-                recoveryCopy.textContent = "If Stripe confirms the payment but keeps you on its own page, come back here and use Continue after payment so you can reach the DTNT delivery steps.";
-                returnNote.textContent = "Live checkout should return to the DTNT success page after payment and the DTNT cancel page if checkout is closed before payment.";
+                statusCopy.textContent = "Secure checkout is live. Complete payment here, then continue into the DTNT success page for install and activation.";
+                launchNote.textContent = "After payment, the DTNT success page should carry the buyer into download, receipt, and Activate Pro steps.";
+                recoveryCopy.textContent = "If Stripe confirms payment but leaves you on its own page, use Continue after payment so you can reach the DTNT delivery steps.";
+                returnNote.textContent = "Live checkout should return to the DTNT success page after payment. If checkout is closed before payment, use the DTNT cancel page as the fallback path.";
 
                 return;
             }
 
-            statusCopy.textContent = "Secure checkout is in launch rehearsal mode. The current link is still useful for testing the Stripe path, success page, and app activation language before the live swap.";
+            statusCopy.textContent = "This checkout is still in test mode. Use it to verify the Stripe path, success page, and Activate Pro steps before live charges.";
             launchNote.textContent = "When the live Stripe URL is ready, switch checkoutMode to live and replace the single checkoutUrl value in /Net-tools/commerce.js.";
-            recoveryCopy.textContent = "This is also the place to test the manual recovery path if Stripe leaves the buyer on its own confirmation page.";
-            returnNote.textContent = "Test checkout should still return to /Net-tools/success/ after payment and /Net-tools/cancel/ if checkout is cancelled.";
+            recoveryCopy.textContent = "Use this page to test the fallback path too, in case Stripe leaves the buyer on its own confirmation page.";
+            returnNote.textContent = "Test checkout should still return to /Net-tools/success/ after payment. Use /Net-tools/cancel/ as the fallback path if checkout is closed before payment.";
         })();
     </script>
 </body>
