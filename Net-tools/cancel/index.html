@@ -111,6 +111,7 @@
         </div>
 
         <p>Current free build: <strong data-dtnt-version>latest</strong></p>
+        <p>DTNT policy details: <a href="/Net-tools/legal/#eula">EULA</a>, <a href="/Net-tools/legal/#terms">Terms</a>, <a href="/Net-tools/legal/#privacy">Privacy Notice</a>, and <a href="/Net-tools/legal/#refund">Refund Policy</a>.</p>
     </main>
 
     <script src="/Net-tools/commerce.js"></script>
@@ -127,8 +128,8 @@
             if (!commerce.checkoutIsLive()) {
                 document.getElementById("status-eyebrow").textContent = "Checkout test cancelled";
                 document.getElementById("cancel-title").textContent = "Stripe test checkout was cancelled.";
-                document.getElementById("cancel-copy").textContent = "This page confirms Stripe can send the buyer back to DTNT when checkout is closed before payment.";
-                document.getElementById("support-copy").innerHTML = `If the test checkout should have come back here and did not, send the path and what you saw to <a data-dtnt-support-email href="mailto:${commerce.config.supportEmail}">${commerce.config.supportEmail}</a>.`;
+                document.getElementById("cancel-copy").textContent = "This page is the fallback path for a checkout that was closed before payment.";
+                document.getElementById("support-copy").innerHTML = `If the test checkout feels wrong or you expected a different path, send what you saw to <a data-dtnt-support-email href="mailto:${commerce.config.supportEmail}">${commerce.config.supportEmail}</a>.`;
                 commerce.hydrateSupportEmail(document);
             }
         })();

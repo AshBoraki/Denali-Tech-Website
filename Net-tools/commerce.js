@@ -1,9 +1,10 @@
 (() => {
     const config = {
-        checkoutUrl: "https://buy.stripe.com/test_fZu4gsgkE0xuexD6jv63K01",
-        checkoutMode: "test",
+        checkoutUrl: "https://buy.stripe.com/eVq8wO1Kkevj08A2td3ks00",
+        checkoutMode: "live",
         autoRedirectWhenLive: false,
         latestManifestUrl: "/downloads/dtnt/latest.json",
+        fulfillmentApiBaseUrl: "https://skill-deploy-88gdr6ys4x-codex-agent-deploys.vercel.app",
         homeUrl: "/Net-tools/",
         buyUrl: "/Net-tools/buy/",
         successUrl: "/Net-tools/success/",
@@ -135,6 +136,11 @@
         return new URL(path, window.location.origin).toString();
     }
 
+    function fulfillmentApiIsConfigured() {
+        return typeof config.fulfillmentApiBaseUrl === "string"
+            && config.fulfillmentApiBaseUrl.trim().length > 0;
+    }
+
     window.DTNTCommerce = {
         config,
         loadLatestRelease,
@@ -143,6 +149,7 @@
         createSupportMailto,
         checkoutIsConfigured,
         checkoutIsLive,
-        absoluteUrl
+        absoluteUrl,
+        fulfillmentApiIsConfigured
     };
 })();
