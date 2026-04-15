@@ -704,10 +704,10 @@
                     </div>
 
                     <div class="actions">
-                        <a class="button button-primary" href="https://github.com/AshBoraki/Denali-Tech-Website/releases/download/dtnt-2.1.0-a.1/DTNT-2.1.0-a.1-win-x64.zip">Download Free</a>
+                        <a class="button button-primary" data-dtnt-download="preferred" data-dtnt-installer-text="Install for Windows" data-dtnt-fallback-text="Download Free" href="/Net-tools/">Download Free</a>
                         <a class="button button-secondary" href="/Net-tools/buy/">Get Pro</a>
                     </div>
-                    <div class="launch-note">Start free. Go Pro when you need saved details, exports, and activation.</div>
+                    <div class="launch-note" data-dtnt-install-note>Start free. Go Pro when you need saved details, exports, and activation.</div>
                 </div>
 
                 <div class="window" aria-label="DTNT live channel analyzer screenshot">
@@ -881,7 +881,7 @@
                     <h2>Get DTNT for Windows.</h2>
                     <p class="copy">Start with the free Windows build. Upgrade when you need saved details, exports, and Pro activation.</p>
                     <div class="actions">
-                        <a class="button button-primary" href="https://github.com/AshBoraki/Denali-Tech-Website/releases/download/dtnt-2.1.0-a.1/DTNT-2.1.0-a.1-win-x64.zip">Download Free</a>
+                        <a class="button button-primary" data-dtnt-download="preferred" data-dtnt-installer-text="Install for Windows" data-dtnt-fallback-text="Download Free" href="/Net-tools/">Download Free</a>
                         <a class="button button-secondary" href="/Net-tools/buy/">Buy Pro</a>
                     </div>
                     <p class="legal-note">Need the policy details first? Read the <a href="/Net-tools/legal/#privacy">Privacy Notice</a>, <a href="/Net-tools/legal/#refund">Refund Policy</a>, and the rest of the DTNT legal terms.</p>
@@ -892,11 +892,19 @@
                     <div class="meta-list">
                         <div class="meta-row">
                             <strong>Build</strong>
-                            <span>Preview 2.1.0-a.1</span>
+                            <span>Preview <span data-dtnt-version>2.1.0-a.1</span></span>
                         </div>
                         <div class="meta-row">
-                            <strong>Free</strong>
-                            <span>Portable Windows zip available now</span>
+                            <strong>Install</strong>
+                            <span data-dtnt-install-detail>Portable ZIP available now</span>
+                        </div>
+                        <div class="meta-row" data-dtnt-installer-row hidden>
+                            <strong>Installer</strong>
+                            <span><a data-dtnt-download="appinstaller" href="/Net-tools/" hidden>Windows app installer</a></span>
+                        </div>
+                        <div class="meta-row">
+                            <strong>Portable</strong>
+                            <span><a data-dtnt-download="free" href="/Net-tools/">ZIP build</a></span>
                         </div>
                         <div class="meta-row">
                             <strong>Pro</strong>
@@ -927,5 +935,16 @@
             </div>
         </div>
     </footer>
+    <script src="/Net-tools/commerce.js"></script>
+    <script>
+        (async () => {
+            const commerce = window.DTNTCommerce;
+            if (!commerce) {
+                return;
+            }
+
+            await commerce.hydrateLatestRelease(document);
+        })();
+    </script>
 </body>
 </html>
