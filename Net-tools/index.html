@@ -318,6 +318,18 @@
             font-weight: 600;
         }
 
+        .legal-note {
+            margin-top: 0.85rem;
+            font-size: 0.92rem;
+            color: var(--muted);
+            line-height: 1.62;
+        }
+
+        .legal-note a {
+            color: var(--ink);
+            font-weight: 700;
+        }
+
         .window {
             border: 1px solid var(--line);
             border-radius: 8px;
@@ -601,6 +613,19 @@
             font-size: 0.94rem;
         }
 
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 18px;
+            margin-top: 0.75rem;
+            font-size: 0.92rem;
+        }
+
+        .footer-links a {
+            color: var(--muted);
+            text-decoration: none;
+        }
+
         @media (max-width: 1080px) {
             .hero-grid,
             .workflow-head,
@@ -646,8 +671,8 @@
 <body>
     <header class="topbar">
         <div class="wrap topbar-inner">
-            <a class="brand" href="/">
-                <img src="/Video/logo.webp" alt="Denali Tech logo">
+            <a class="brand" href="/Net-tools/">
+                <img src="/Video/dtnt/dtnt-app-mark.png?v=20260413e" alt="DTNT app mark">
                 <span class="brand-copy">
                     <strong>DTNT</strong>
                     <span>Denali Tech Net-Tools</span>
@@ -669,20 +694,20 @@
                 <div>
                     <div class="eyebrow">Windows Desktop Software</div>
                     <h1>Wi-Fi analyzer,<br>IP scanner,<br>speed tests,<br>and field tools.</h1>
-                    <p class="hero-copy">DTNT keeps nearby radios, active network details, IP discovery, speed runs, saved profiles, and quick checks inside one Windows app.</p>
+                    <p class="hero-copy">DTNT puts Wi-Fi, IP discovery, speed checks, and quick troubleshooting in one Windows app.</p>
 
                     <div class="mini-grid">
-                        <div class="mini-card">Live Wi-Fi analyzer with named nearby radios</div>
-                        <div class="mini-card">Current SSID, IPv4, gateway, DNS, and range</div>
-                        <div class="mini-card">IP scan, ping, trace route, and quick checks</div>
-                        <div class="mini-card">Saved profiles and export-ready Pro tools</div>
+                        <div class="mini-card">Live Wi-Fi view with named nearby radios</div>
+                        <div class="mini-card">Current SSID, gateway, DNS, and range</div>
+                        <div class="mini-card">IP scan, ping, trace route, and quick tools</div>
+                        <div class="mini-card">Saved profiles and Pro exports</div>
                     </div>
 
                     <div class="actions">
                         <a class="button button-primary" href="https://github.com/AshBoraki/Denali-Tech-Website/releases/download/dtnt-2.1.0-a.1/DTNT-2.1.0-a.1-win-x64.zip">Download Free</a>
                         <a class="button button-secondary" href="/Net-tools/buy/">Get Pro</a>
                     </div>
-                    <div class="launch-note">Start free today. Pro is $59 during launch, then $99, and unlocks saved details, exports, and license import.</div>
+                    <div class="launch-note">Start free. Go Pro when you need saved details, exports, and activation.</div>
                 </div>
 
                 <div class="window" aria-label="DTNT live channel analyzer screenshot">
@@ -698,19 +723,19 @@
                 <div class="proof-grid">
                     <div class="proof-item">
                         <div class="proof-value">Wi-Fi analyzer</div>
-                        <div class="proof-copy">See nearby radios, overlap, and channel pressure live.</div>
+                        <div class="proof-copy">See overlap and channel pressure live.</div>
                     </div>
                     <div class="proof-item">
                         <div class="proof-value">IP scanner</div>
-                        <div class="proof-copy">Scan the active range and move straight into device checks.</div>
+                        <div class="proof-copy">Scan the active range and open device pages fast.</div>
                     </div>
                     <div class="proof-item">
                         <div class="proof-value">Speed history</div>
-                        <div class="proof-copy">Keep download, upload, and latency runs ready for later.</div>
+                        <div class="proof-copy">Keep download, upload, and latency runs.</div>
                     </div>
                     <div class="proof-item">
                         <div class="proof-value">Saved profiles</div>
-                        <div class="proof-copy">Review Windows Wi-Fi profile history in one place.</div>
+                        <div class="proof-copy">Review Windows Wi-Fi profiles in one place.</div>
                     </div>
                 </div>
             </div>
@@ -719,8 +744,8 @@
         <section class="workflow" id="workflow">
             <div class="wrap">
                 <div class="workflow-head">
-                    <h2>Start on the live network.<br>Move straight into Wi-Fi<br>and IP work.</h2>
-                    <p class="copy">DTNT opens on the active adapter and current range so the Wi-Fi analyzer, IP scanner, speed test, and tools all start with real local context.</p>
+                    <h2>Start on the live network.<br>Move straight into<br>the work.</h2>
+                    <p class="copy">DTNT opens on the active adapter and local range, so you can start scanning right away.</p>
                 </div>
 
                 <div class="workflow-grid">
@@ -731,12 +756,12 @@
                     </div>
 
                     <div class="workflow-copy">
-                        <h3>Work from the network you are on right now.</h3>
-                        <p class="copy">The app opens with the current SSID, IPv4, gateway, DNS, and range already in view.</p>
+                        <h3>Start with the network you are on.</h3>
+                        <p class="copy">SSID, gateway, DNS, and range are already in view.</p>
                         <div class="check-grid">
-                            <div class="check-card">Jump from the dashboard into Wi-Fi or IP work without losing context.</div>
-                            <div class="check-card">Keep router, DNS, and subnet details close while you scan or troubleshoot.</div>
-                            <div class="check-card">Use the dashboard as the anchor before saving or exporting results.</div>
+                            <div class="check-card">Open Wi-Fi and IP tools without losing context.</div>
+                            <div class="check-card">Keep router, DNS, and subnet details close while you work.</div>
+                            <div class="check-card">Save or export after the job is done.</div>
                         </div>
                     </div>
                 </div>
@@ -746,12 +771,12 @@
         <section class="screens" id="screens">
             <div class="wrap screens-grid">
                 <div class="screens-copy">
-                    <h2>Wi-Fi, IP, and speed<br>in one desktop flow.</h2>
-                    <p class="copy">Watch nearby radios, scan the current range, and keep speed results ready for follow-up without jumping between apps.</p>
+                    <h2>Scan Wi-Fi.<br>Find devices.<br>Keep proof.</h2>
+                    <p class="copy">Check nearby radios, scan the active range, and keep speed results without bouncing between apps.</p>
                     <div class="check-grid">
-                        <div class="check-card">See channel overlap and live pressure while nearby radios stay in view.</div>
-                        <div class="check-card">Scan the active range, then move into ping or trace route from the same workflow.</div>
-                        <div class="check-card">Keep download, upload, and latency results ready for proof, support, or the next visit.</div>
+                        <div class="check-card">Compare nearby radios and live channel pressure.</div>
+                        <div class="check-card">Scan the active range, then jump into device checks.</div>
+                        <div class="check-card">Keep speed results ready for support or handoff.</div>
                     </div>
                 </div>
 
@@ -774,15 +799,15 @@
         <section class="pricing" id="pricing">
             <div class="wrap">
                 <div class="pricing-copy">
-                    <h2>Use every tab free.<br>Upgrade when you need<br>to keep more.</h2>
-                    <p class="copy">Free gives you the full surface. Pro is where saved profile actions, export-ready evidence, and repeatable handoff work open up.</p>
+                    <h2>Start free.<br>Go Pro when you need<br>to keep more.</h2>
+                    <p class="copy">Free lets you use the whole app. Pro unlocks saved details, exports, and activation.</p>
                 </div>
 
                 <div class="pricing-grid">
                     <div class="price-card">
                         <h3>Free</h3>
                         <div class="price">$0 <small>start here</small></div>
-                        <div class="price-note">Use the full app, then upgrade when you need to keep, export, or reveal more.</div>
+                        <div class="price-note">Use the app first. Upgrade when you need to keep or reveal more.</div>
                         <ul class="bullet-list">
                             <li>All tabs stay visible</li>
                             <li>Wi-Fi analyzer and channel view</li>
@@ -796,7 +821,7 @@
                     <div class="price-card featured">
                         <h3>Pro</h3>
                         <div class="price">$59 <small>launch price</small></div>
-                        <div class="price-note">Unlock the parts of DTNT that help you keep results, prove work, and come back later.</div>
+                        <div class="price-note">Unlock the parts that help you save results and hand work off cleanly.</div>
                         <ul class="bullet-list">
                             <li>Reveal and copy saved Wi-Fi details</li>
                             <li>Export JSON and CSV evidence</li>
@@ -813,8 +838,8 @@
         <section class="activation" id="activation">
             <div class="wrap activation-grid">
                 <div>
-                    <h2>Buy Pro once.<br>Import once.<br>Done.</h2>
-                    <p class="copy">Checkout stays simple. Buy Pro on Stripe, get the Windows build and signed license file, then import it inside Profiles.</p>
+                    <h2>Buy once.<br>Activate once.<br>Keep moving.</h2>
+                    <p class="copy">Buy Pro on Stripe, get the signed license file, then activate it inside Profiles.</p>
                 </div>
 
                 <div>
@@ -823,21 +848,21 @@
                             <span class="step-index">1</span>
                             <div class="step-copy">
                                 <strong>Buy Pro on the secure checkout.</strong>
-                                <span>Launch pricing is $59 one time during the current window.</span>
+                                <span>$59 one time during launch.</span>
                             </div>
                         </li>
                         <li class="step-row">
                             <span class="step-index">2</span>
                             <div class="step-copy">
-                                <strong>Get the Pro build and signed license file.</strong>
-                                <span>Your paid delivery includes the DTNT Windows build and the signed license file that matches it.</span>
+                                <strong>Get the signed license file.</strong>
+                                <span>Your paid delivery includes the activation file for this build.</span>
                             </div>
                         </li>
                         <li class="step-row">
                             <span class="step-index">3</span>
                             <div class="step-copy">
                                 <strong>Import the file in Profiles.</strong>
-                                <span>DTNT unlocks saved details, exports, and the rest of the Pro workflow after import.</span>
+                                <span>DTNT unlocks the Pro workflow after import.</span>
                             </div>
                         </li>
                     </ol>
@@ -845,6 +870,7 @@
                         <a class="button button-primary" href="/Net-tools/buy/">Buy Pro</a>
                         <a class="button button-secondary" href="https://github.com/AshBoraki/Denali-Tech-Website/releases/download/dtnt-2.1.0-a.1/DTNT-2.1.0-a.1-win-x64.zip">Download Free</a>
                     </div>
+                    <p class="legal-note">By downloading or buying DTNT, you agree to the <a href="/Net-tools/legal/#eula">EULA</a>, <a href="/Net-tools/legal/#terms">Terms</a>, <a href="/Net-tools/legal/#privacy">Privacy Notice</a>, and <a href="/Net-tools/legal/#refund">Refund Policy</a>.</p>
                 </div>
             </div>
         </section>
@@ -853,11 +879,12 @@
             <div class="wrap contact-grid">
                 <div>
                     <h2>Get DTNT for Windows.</h2>
-                    <p class="copy">Start with the free Windows build. Upgrade to Pro when you need saved details, exports, and licensed activation.</p>
+                    <p class="copy">Start with the free Windows build. Upgrade when you need saved details, exports, and Pro activation.</p>
                     <div class="actions">
                         <a class="button button-primary" href="https://github.com/AshBoraki/Denali-Tech-Website/releases/download/dtnt-2.1.0-a.1/DTNT-2.1.0-a.1-win-x64.zip">Download Free</a>
                         <a class="button button-secondary" href="/Net-tools/buy/">Buy Pro</a>
                     </div>
+                    <p class="legal-note">Need the policy details first? Read the <a href="/Net-tools/legal/#privacy">Privacy Notice</a>, <a href="/Net-tools/legal/#refund">Refund Policy</a>, and the rest of the DTNT legal terms.</p>
                 </div>
 
                 <div class="contact-card">
@@ -891,7 +918,13 @@
 
     <footer>
         <div class="wrap footer-copy">
-            DTNT by Denali Tech for Wi-Fi analysis, IP work, speed tests, and quick field checks on Windows.
+            DTNT by Denali Tech for Wi-Fi work, IP discovery, speed tests, and quick field checks on Windows.
+            <div class="footer-links">
+                <a href="/Net-tools/legal/">DTNT Legal</a>
+                <a href="/Net-tools/legal/#eula">EULA</a>
+                <a href="/Net-tools/legal/#privacy">Privacy</a>
+                <a href="/Net-tools/legal/#refund">Refunds</a>
+            </div>
         </div>
     </footer>
 </body>

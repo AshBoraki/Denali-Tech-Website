@@ -15,24 +15,86 @@
             --muted: #66798a;
             --line: #cedbe0;
             --accent: #d97716;
+            --shadow: 0 18px 36px rgba(21, 40, 58, 0.08);
         }
         * { box-sizing: border-box; }
+        a { color: inherit; }
         body {
             margin: 0;
-            min-height: 100vh;
-            display: grid;
-            place-items: center;
-            padding: 24px;
             font-family: "Segoe UI", Inter, system-ui, sans-serif;
             background: var(--bg);
             color: var(--ink);
         }
+        .wrap {
+            width: min(1320px, calc(100% - 48px));
+            margin: 0 auto;
+        }
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            background: rgba(237, 243, 240, 0.96);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--line);
+        }
+        .topbar-inner {
+            min-height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.85rem;
+            text-decoration: none;
+        }
+        .brand img {
+            width: 40px;
+            height: 40px;
+            padding: 3px;
+            border-radius: 8px;
+            border: 1px solid var(--line);
+            background: #fff;
+            object-fit: contain;
+        }
+        .brand-copy {
+            display: grid;
+            gap: 0.12rem;
+        }
+        .brand-copy strong {
+            font-size: 0.98rem;
+            line-height: 1.1;
+        }
+        .brand-copy span {
+            color: var(--muted);
+            font-size: 0.89rem;
+        }
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+        .nav a {
+            text-decoration: none;
+            color: var(--muted);
+            font-size: 0.92rem;
+            font-weight: 700;
+        }
+        .nav a:hover { color: var(--ink); }
+        .page {
+            padding: 30px 0 56px;
+        }
         .shell {
-            width: min(760px, 100%);
+            width: min(820px, 100%);
+            margin: 0 auto;
             background: rgba(255, 255, 255, 0.84);
             border: 1px solid var(--line);
             border-radius: 8px;
             padding: 28px;
+            box-shadow: var(--shadow);
         }
         .eyebrow {
             display: inline-flex;
@@ -92,26 +154,64 @@
             color: var(--ink);
             border-color: #b9c9d0;
         }
+        @media (max-width: 900px) {
+            .nav {
+                display: none;
+            }
+        }
+        @media (max-width: 640px) {
+            .wrap {
+                width: min(100% - 24px, 100%);
+            }
+            .page {
+                padding-top: 22px;
+            }
+            .shell {
+                padding: 22px;
+            }
+        }
     </style>
 </head>
 <body>
-    <main class="shell">
-        <div class="eyebrow" id="status-eyebrow">Checkout paused</div>
-        <h1 id="cancel-title">Checkout was not completed.</h1>
-        <p id="cancel-copy">You can return to the DTNT page, review the launch pricing again, or open the checkout once more when you are ready.</p>
-        <div class="actions">
-            <a class="button button-primary" href="/Net-tools/#pricing">Back to pricing</a>
-            <a class="button button-secondary" href="/Net-tools/buy/">Try checkout again</a>
-            <a class="button button-secondary" href="/Net-tools/success/">I already paid</a>
-            <a class="button button-secondary" data-dtnt-download="free" href="/Net-tools/">Download Free Build</a>
+    <header class="topbar">
+        <div class="wrap topbar-inner">
+            <a class="brand" href="/Net-tools/">
+                <img src="/Video/dtnt/dtnt-app-mark.png?v=20260413e" alt="DTNT app mark">
+                <span class="brand-copy">
+                    <strong>DTNT</strong>
+                    <span>Denali Tech Net-Tools</span>
+                </span>
+            </a>
+            <nav class="nav" aria-label="Cancel navigation">
+                <a href="/Net-tools/">Overview</a>
+                <a href="/Net-tools/#pricing">Pricing</a>
+                <a href="/Net-tools/buy/">Checkout</a>
+                <a href="/Net-tools/#contact">Support</a>
+            </nav>
         </div>
+    </header>
 
-        <div class="support">
-            <p id="support-copy">If checkout keeps bouncing or the return path feels wrong, contact <a data-dtnt-support-email href="mailto:Hello@denalitechs.com">Hello@denalitechs.com</a> and include the page you landed on.</p>
+    <main class="page">
+        <div class="wrap">
+            <section class="shell">
+                <div class="eyebrow" id="status-eyebrow">Checkout paused</div>
+                <h1 id="cancel-title">Checkout was not completed.</h1>
+                <p id="cancel-copy">You can return to the DTNT page, review the launch pricing again, or open the checkout once more when you are ready.</p>
+                <div class="actions">
+                    <a class="button button-primary" href="/Net-tools/#pricing">Back to pricing</a>
+                    <a class="button button-secondary" href="/Net-tools/buy/">Try checkout again</a>
+                    <a class="button button-secondary" href="/Net-tools/success/">I already paid</a>
+                    <a class="button button-secondary" data-dtnt-download="free" href="/Net-tools/">Download Free Build</a>
+                </div>
+
+                <div class="support">
+                    <p id="support-copy">If checkout keeps bouncing or the return path feels wrong, contact <a data-dtnt-support-email href="mailto:Hello@denalitechs.com">Hello@denalitechs.com</a> and include the page you landed on.</p>
+                </div>
+
+                <p>Current free build: <strong data-dtnt-version>latest</strong></p>
+                <p>DTNT policy details: <a href="/Net-tools/legal/#eula">EULA</a>, <a href="/Net-tools/legal/#terms">Terms</a>, <a href="/Net-tools/legal/#privacy">Privacy Notice</a>, and <a href="/Net-tools/legal/#refund">Refund Policy</a>.</p>
+            </section>
         </div>
-
-        <p>Current free build: <strong data-dtnt-version>latest</strong></p>
-        <p>DTNT policy details: <a href="/Net-tools/legal/#eula">EULA</a>, <a href="/Net-tools/legal/#terms">Terms</a>, <a href="/Net-tools/legal/#privacy">Privacy Notice</a>, and <a href="/Net-tools/legal/#refund">Refund Policy</a>.</p>
     </main>
 
     <script src="/Net-tools/commerce.js"></script>

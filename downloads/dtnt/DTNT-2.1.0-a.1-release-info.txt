@@ -1,4 +1,4 @@
-Product: Denali Tech Net-Tools
+﻿Product: Denali Tech Net-Tools
 Company: Denali Tech Inc
 Version: 2.1.0-a.1
 InformationalVersion: 2.1.0-a.1
