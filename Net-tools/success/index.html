@@ -152,7 +152,7 @@
     <main class="shell">
         <div class="eyebrow" id="status-eyebrow">Payment received</div>
         <h1 id="success-title">DTNT Pro purchase complete.</h1>
-        <p id="lead-copy">Stripe has finished the checkout. Install the current DTNT build now, then activate Pro when the signed license file arrives.</p>
+        <p id="lead-copy">Stripe has finished the checkout. Install the current DTNT build now, then stay here while the signed Pro activation file is prepared.</p>
 
         <ol class="steps">
             <li class="step">
@@ -201,7 +201,7 @@
 
         <div class="support" id="delivery-panel" hidden>
             <strong id="delivery-title">Checking your DTNT Pro delivery.</strong>
-            <p id="delivery-copy">Stay on this page for a moment while the activation file is prepared.</p>
+            <p id="delivery-copy">Stay on this page while the activation file is prepared. This can take a couple of minutes after payment.</p>
         </div>
 
         <div class="reference" id="reference-panel" hidden>
@@ -283,21 +283,20 @@
             const sleep = ms => new Promise(resolve => window.setTimeout(resolve, ms));
 
             async function hydrateLiveFulfillment() {
-                if (!sessionId || !commerce.fulfillmentApiIsConfigured()) {
+                if (!sessionId || !commerce.fulfillmentStatusIsConfigured()) {
                     return;
                 }
 
-                const apiBase = commerce.config.fulfillmentApiBaseUrl.replace(/\/+$/, "");
-                const statusUrl = `${apiBase}/api/checkout/${encodeURIComponent(sessionId)}/status`;
+                const statusUrl = commerce.resolveOrderStatusUrl(sessionId);
 
                 deliveryPanel.hidden = false;
                 deliveryTitle.textContent = "Checking your DTNT Pro delivery.";
-                deliveryCopy.textContent = "Stay on this page for a moment while the activation file is prepared.";
+                deliveryCopy.textContent = "Stay on this page while the activation file is prepared. This can take a couple of minutes after payment.";
 
-                for (let attempt = 0; attempt < 8; attempt += 1) {
+                for (let attempt = 0; attempt < 20; attempt += 1) {
                     try {
                         const response = await fetch(statusUrl, { cache: "no-store" });
-                        const payload = await response.json();
+                        const payload = response.ok ? await response.json() : null;
 
                         if (response.ok && payload.status === "fulfilled") {
                             statusEyebrow.textContent = "Delivery ready";
@@ -316,22 +315,22 @@
                             return;
                         }
 
-                        if (response.ok && payload.status === "pending") {
+                        if (response.status === 404 || (response.ok && payload.status === "pending")) {
                             deliveryTitle.textContent = "Finishing your DTNT Pro delivery.";
-                            deliveryCopy.textContent = "Payment is seen, but the activation file is still being prepared. This page will check again in a moment.";
-                            await sleep(2000);
+                            deliveryCopy.textContent = "Payment is seen, but the activation file is still being prepared. This page will keep checking for a few minutes.";
+                            await sleep(15000);
                             continue;
                         }
 
                         break;
                     } catch {
-                        await sleep(1500);
+                        await sleep(15000);
                     }
                 }
 
                 deliveryPanel.hidden = false;
-                deliveryTitle.textContent = "Payment went through, but delivery needs a handoff.";
-                deliveryCopy.innerHTML = `Use the Windows build below and contact <a data-dtnt-support-email href="mailto:${commerce.config.supportEmail}">${commerce.config.supportEmail}</a> with your checkout reference so Denali Tech can finish the order quickly.`;
+                deliveryTitle.textContent = "Payment went through, but delivery still needs a minute.";
+                deliveryCopy.innerHTML = `Keep this page open and check again shortly. If the activation file still has not appeared, contact <a data-dtnt-support-email href="mailto:${commerce.config.supportEmail}">${commerce.config.supportEmail}</a> with your checkout reference so Denali Tech can finish the order quickly.`;
                 commerce.hydrateSupportEmail(document);
             }
 
