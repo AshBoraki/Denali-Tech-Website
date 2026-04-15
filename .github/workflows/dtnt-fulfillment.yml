@@ -1,0 +1,50 @@
+name: DTNT Fulfillment
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fulfill:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: dtnt-fulfillment
+      cancel-in-progress: false
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Build DTNT fulfillment files
+        env:
+          STRIPE_SECRET_KEY: ${{ secrets.DTNT_STRIPE_SECRET_KEY }}
+          DTNT_ACTIVATION_PRIVATE_KEY_BASE64: ${{ secrets.DTNT_ACTIVATION_PRIVATE_KEY_BASE64 }}
+          DTNT_PRODUCT_ID: ${{ secrets.DTNT_PRODUCT_ID }}
+          DTNT_PRICE_ID: ${{ secrets.DTNT_PRICE_ID }}
+          DTNT_PAYMENT_LINK_ID: plink_1TMFzBBdADfeVbcC2PBdHzM9
+          DTNT_PRODUCT_CODE: DTNT-PRO
+          DTNT_DOWNLOAD_URL: https://denalitechs.com/Net-tools/
+          DTNT_SUPPORT_EMAIL: Hello@denalitechs.com
+        run: node ./tools/dtnt-fulfillment/fulfill-orders.cjs
+
+      - name: Commit generated order files
+        run: |
+          if git diff --quiet -- Net-tools/orders Net-tools/licenses; then
+            echo "No fulfillment changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add Net-tools/orders Net-tools/licenses
+          git commit -m "Generate DTNT fulfillment files"
+          git push
