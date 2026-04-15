@@ -249,9 +249,10 @@
             const referenceValue = document.getElementById("reference-value");
             const params = new URLSearchParams(window.location.search);
             const sessionId = params.get("session_id") || params.get("checkout_session_id");
+            const paymentIntentId = params.get("payment_intent");
             const paymentLinkId = params.get("payment_link");
 
-            const checkoutReference = sessionId || paymentLinkId;
+            const checkoutReference = sessionId || paymentIntentId || paymentLinkId;
             if (checkoutReference) {
                 referenceValue.textContent = checkoutReference;
                 referencePanel.hidden = false;
@@ -283,11 +284,11 @@
             const sleep = ms => new Promise(resolve => window.setTimeout(resolve, ms));
 
             async function hydrateLiveFulfillment() {
-                if (!sessionId || !commerce.fulfillmentStatusIsConfigured()) {
+                if (!checkoutReference || !commerce.fulfillmentStatusIsConfigured()) {
                     return;
                 }
 
-                const statusUrl = commerce.resolveOrderStatusUrl(sessionId);
+                const statusUrl = commerce.resolveOrderStatusUrl(checkoutReference);
 
                 deliveryPanel.hidden = false;
                 deliveryTitle.textContent = "Checking your DTNT Pro delivery.";
