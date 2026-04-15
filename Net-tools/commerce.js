@@ -44,28 +44,41 @@
         const freeDownloadUrl = release.downloadUrl || config.homeUrl;
         const version = release.version || "";
         const installer = release.installer || {};
+        const store = release.store || {};
         const appInstallerUrl = installer.appInstallerUrl || "";
         const msixUrl = installer.msixUrl || "";
+        const storeUrl = store.webInstallerUrl || store.storeUrl || "";
         const releaseNotesUrl = release.releaseNotesUrl || "";
         const sha256 = release.sha256 || "";
         const installerAvailable = Boolean(installer.available && (appInstallerUrl || msixUrl));
+        const storeAvailable = Boolean(store.available === true && storeUrl);
         const installerPublicReady = Boolean(
             installerAvailable
             && installer.signingReadyForPublicLaunch === true
             && installer.requiresTrustedCertificate !== true
         );
-        const preferredDownloadUrl = installerPublicReady
-            ? (appInstallerUrl || msixUrl || freeDownloadUrl)
-            : freeDownloadUrl;
-        const preferredDownloadMode = installerPublicReady ? "installer" : "portable";
-        const installNote = installerPublicReady
-            ? "Install for Windows is ready. Portable ZIP stays available too."
-            : installerAvailable
+        const preferredDownloadUrl = storeAvailable
+            ? storeUrl
+            : installerPublicReady
+                ? (appInstallerUrl || msixUrl || freeDownloadUrl)
+                : freeDownloadUrl;
+        const preferredDownloadMode = storeAvailable
+            ? "store"
+            : installerPublicReady
+                ? "installer"
+                : "portable";
+        const installNote = storeAvailable
+            ? "Install from Microsoft Store is ready. Portable ZIP stays available too."
+            : installerPublicReady
+                ? "Install for Windows is ready. Portable ZIP stays available too."
+                : installerAvailable
                 ? "Portable ZIP is the cleanest way to start right now."
                 : "Start free. Go Pro when you need saved details, exports, and activation.";
-        const installDetail = installerPublicReady
-            ? "Signed Windows install available"
-            : installerAvailable
+        const installDetail = storeAvailable
+            ? "Microsoft Store install available"
+            : installerPublicReady
+                ? "Signed Windows install available"
+                : installerAvailable
                 ? "Portable ZIP available now"
                 : "Portable ZIP available now";
 
@@ -75,16 +88,32 @@
         });
 
         root.querySelectorAll('[data-dtnt-download="preferred"]').forEach(anchor => {
+            const storeText = anchor.getAttribute("data-dtnt-store-text") || "Install from Microsoft";
             const installerText = anchor.getAttribute("data-dtnt-installer-text") || "Install for Windows";
             const fallbackText = anchor.getAttribute("data-dtnt-fallback-text") || "Download Free";
 
             anchor.setAttribute("href", preferredDownloadUrl);
-            anchor.textContent = preferredDownloadMode === "installer" ? installerText : fallbackText;
+            anchor.textContent = preferredDownloadMode === "store"
+                ? storeText
+                : preferredDownloadMode === "installer"
+                    ? installerText
+                    : fallbackText;
+            anchor.removeAttribute("aria-disabled");
+        });
+
+        root.querySelectorAll('[data-dtnt-download="store"]').forEach(anchor => {
+            if (!storeAvailable) {
+                anchor.hidden = true;
+                return;
+            }
+
+            anchor.hidden = false;
+            anchor.setAttribute("href", storeUrl);
             anchor.removeAttribute("aria-disabled");
         });
 
         root.querySelectorAll('[data-dtnt-download="appinstaller"]').forEach(anchor => {
-            if (!appInstallerUrl) {
+            if (!installerPublicReady || !appInstallerUrl) {
                 anchor.hidden = true;
                 return;
             }
@@ -132,7 +161,11 @@
         });
 
         root.querySelectorAll("[data-dtnt-installer-row]").forEach(node => {
-            node.hidden = !installerAvailable;
+            node.hidden = !installerPublicReady;
+        });
+
+        root.querySelectorAll("[data-dtnt-store-row]").forEach(node => {
+            node.hidden = !storeAvailable;
         });
 
         return release;
