@@ -23,6 +23,7 @@ const config = {
   paymentLinkId: process.env.DTNT_PAYMENT_LINK_ID || "",
   productId: process.env.DTNT_PRODUCT_ID || "",
   priceId: process.env.DTNT_PRICE_ID || "",
+  expectedAmount: Number(process.env.DTNT_PRICE_AMOUNT || 5900),
   downloadUrl: process.env.DTNT_DOWNLOAD_URL || "https://denalitechs.com/Net-tools/",
   supportEmail: process.env.DTNT_SUPPORT_EMAIL || "Hello@denalitechs.com"
 };
@@ -83,9 +84,41 @@ async function listCheckoutSessions() {
   return sessions;
 }
 
+async function listPaymentIntents() {
+  const paymentIntents = [];
+  let startingAfter = "";
+
+  for (let page = 0; page < 5; page += 1) {
+    const params = new URLSearchParams({ limit: "100" });
+    if (startingAfter) {
+      params.set("starting_after", startingAfter);
+    }
+
+    const payload = await stripeRequest(`/v1/payment_intents?${params.toString()}`);
+    const pagePaymentIntents = Array.isArray(payload.data) ? payload.data : [];
+    paymentIntents.push(...pagePaymentIntents);
+
+    if (!payload.has_more || pagePaymentIntents.length === 0) {
+      break;
+    }
+
+    startingAfter = pagePaymentIntents[pagePaymentIntents.length - 1].id;
+  }
+
+  return paymentIntents;
+}
+
 async function listLineItems(sessionId) {
   const payload = await stripeRequest(`/v1/checkout/sessions/${encodeURIComponent(sessionId)}/line_items?limit=100`);
   return Array.isArray(payload.data) ? payload.data : [];
+}
+
+async function getCharge(chargeId) {
+  if (!chargeId) {
+    return null;
+  }
+
+  return stripeRequest(`/v1/charges/${encodeURIComponent(chargeId)}`);
 }
 
 async function sessionMatches(session) {
@@ -110,11 +143,31 @@ async function sessionMatches(session) {
   });
 }
 
+async function paymentIntentMatches(paymentIntent) {
+  if (!paymentIntent || paymentIntent.status !== "succeeded") {
+    return false;
+  }
+
+  if (config.expectedAmount && paymentIntent.amount !== config.expectedAmount) {
+    return false;
+  }
+
+  return true;
+}
+
 function getLicensedTo(session) {
   const customerDetails = session.customer_details || {};
   return customerDetails.email
     || customerDetails.name
     || session.customer_email
+    || "DTNT Pro Customer";
+}
+
+function getLicensedToFromPaymentIntent(paymentIntent, charge) {
+  const billingDetails = charge && charge.billing_details ? charge.billing_details : {};
+  return paymentIntent.receipt_email
+    || billingDetails.email
+    || billingDetails.name
     || "DTNT Pro Customer";
 }
 
@@ -152,13 +205,33 @@ function buildOrderRecord(session, licenseDocument) {
   };
 }
 
+function buildPaymentIntentOrderRecord(paymentIntent, charge, licenseDocument) {
+  return {
+    status: "fulfilled",
+    paymentIntentId: paymentIntent.id,
+    licensedTo: getLicensedToFromPaymentIntent(paymentIntent, charge),
+    activationUrl: `/Net-tools/licenses/${paymentIntent.id}.json`,
+    downloadUrl: config.downloadUrl,
+    supportEmail: config.supportEmail,
+    paymentStatus: paymentIntent.status,
+    checkoutStatus: "succeeded",
+    licenseKeyHint: licenseDocument.Payload.LicenseKeyHint,
+    amountTotal: paymentIntent.amount,
+    currency: paymentIntent.currency,
+    createdAt: new Date(paymentIntent.created * 1000).toISOString(),
+    paymentLink: null
+  };
+}
+
 async function main() {
   ensureDirectory(ordersDir);
   ensureDirectory(licensesDir);
 
   const sessions = await listCheckoutSessions();
+  const paymentIntents = await listPaymentIntents();
   let changedFiles = 0;
   let matchedSessions = 0;
+  let matchedPaymentIntents = 0;
 
   for (const session of sessions) {
     if (!await sessionMatches(session)) {
@@ -182,12 +255,37 @@ async function main() {
     }
   }
 
+  for (const paymentIntent of paymentIntents) {
+    if (!await paymentIntentMatches(paymentIntent)) {
+      continue;
+    }
+
+    matchedPaymentIntents += 1;
+    const charge = await getCharge(paymentIntent.latest_charge);
+    const licensedTo = getLicensedToFromPaymentIntent(paymentIntent, charge);
+    const issuedAt = new Date(paymentIntent.created * 1000);
+    const licenseDocument = createActivationDocument(config, paymentIntent.id, licensedTo, issuedAt);
+    const orderRecord = buildPaymentIntentOrderRecord(paymentIntent, charge, licenseDocument);
+    const orderPath = path.join(ordersDir, `${paymentIntent.id}.json`);
+    const licensePath = path.join(licensesDir, `${paymentIntent.id}.json`);
+
+    if (writeIfChanged(licensePath, `${JSON.stringify(licenseDocument, null, 2)}\n`)) {
+      changedFiles += 1;
+    }
+
+    if (writeIfChanged(orderPath, `${JSON.stringify(orderRecord, null, 2)}\n`)) {
+      changedFiles += 1;
+    }
+  }
+
   console.log(`Scanned ${sessions.length} checkout sessions.`);
+  console.log(`Scanned ${paymentIntents.length} payment intents.`);
   console.log(`Matched ${matchedSessions} DTNT Pro session(s).`);
+  console.log(`Matched ${matchedPaymentIntents} DTNT Pro payment intent(s).`);
   console.log(`Updated ${changedFiles} file(s).`);
 
-  if (matchedSessions === 0) {
-    console.log(`No paid DTNT sessions found yet for payment link ${config.paymentLinkId || "(not configured)"}.`);
+  if (matchedSessions === 0 && matchedPaymentIntents === 0) {
+    console.log(`No paid DTNT orders found yet for payment link ${config.paymentLinkId || "(not configured)"}.`);
   }
 }
 
