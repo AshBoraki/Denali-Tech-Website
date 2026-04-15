@@ -1,6 +1,11 @@
 (() => {
-    const containerId = "GTM-MWPTRPDR";
-    const gaMeasurementId = "G-SZ465PB5FG";
+    const config = window.DTNTAnalyticsConfig || {};
+    const containerId = typeof config.gtmContainerId === "string"
+        ? config.gtmContainerId.trim()
+        : "";
+    const gaMeasurementId = typeof config.gaMeasurementId === "string"
+        ? config.gaMeasurementId.trim()
+        : "";
 
     window.dataLayer = window.dataLayer || [];
 
