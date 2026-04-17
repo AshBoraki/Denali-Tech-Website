@@ -346,7 +346,7 @@
             <section class="shell">
                 <div class="eyebrow">DTNT Pro Checkout</div>
                 <h1>DTNT Pro secure checkout.</h1>
-                <p id="status-copy">Secure checkout is hosted by Stripe. Start Pro here, then come back to the DTNT success page for download and activation steps if you need them.</p>
+                <p id="status-copy">Secure checkout is hosted by Stripe. If DTNT is already installed from Microsoft Store or the website build, payment is the only step left before activation.</p>
 
                 <ul class="list">
                     <li>DTNT Pro launch price: <span id="launch-price">$59 one time</span></li>
@@ -359,19 +359,19 @@
                     <a class="button button-primary button-disabled" id="checkout-link" data-dtnt-buy="checkout" href="/Net-tools/" aria-disabled="true">Open secure DTNT Pro checkout</a>
                     <a class="button button-secondary" id="paid-link" href="/Net-tools/success/">I already paid</a>
                     <a class="button button-secondary" href="/Net-tools/">Back to DTNT</a>
-                    <a class="button button-secondary" data-dtnt-download="free" href="/Net-tools/">Download Portable ZIP</a>
+                    <a class="button button-secondary" data-dtnt-download="preferred" data-dtnt-store-text="Get DTNT from Microsoft Store" data-dtnt-installer-text="Install DTNT for Windows" data-dtnt-fallback-text="Get DTNT for Windows" href="/Net-tools/">Get DTNT for Windows</a>
                 </div>
 
                 <div class="recovery">
                     <strong>Paid but not redirected?</strong>
-                    <p id="recovery-copy">Open the DTNT success page to continue with the current build, activation steps, and support links.</p>
+                    <p id="recovery-copy">Open the DTNT success page to continue with install options, activation steps, and support links.</p>
                     <div class="actions">
                         <a class="button button-secondary" id="success-link" href="/Net-tools/success/">Continue after payment</a>
                         <a class="button button-secondary" id="cancel-link" href="/Net-tools/cancel/">Checkout did not finish</a>
                     </div>
                 </div>
 
-                <p class="note" id="launch-note">Free stays available while the paid delivery flow is being tightened.</p>
+                <p class="note" id="launch-note">Install DTNT first if you want, then buy Pro when you need saved details, exports, and activation.</p>
                 <p class="note" id="return-note">Successful checkout should land on the DTNT success page. If you close checkout before paying, come back here or use the DTNT cancel page as the fallback path.</p>
                 <p class="note">By continuing to payment, you agree to the <a href="/Net-tools/legal/#eula">EULA</a>, <a href="/Net-tools/legal/#terms">Terms</a>, <a href="/Net-tools/legal/#privacy">Privacy Notice</a>, and <a href="/Net-tools/legal/#refund">Refund Policy</a>.</p>
             </section>
@@ -441,9 +441,9 @@
             }, { once: true });
 
             if (commerce.checkoutIsLive()) {
-                statusCopy.textContent = "Secure checkout is live. Complete payment here, enter a promo code if you have one, then continue into the DTNT success page for install and activation.";
-                launchNote.textContent = "After payment, the DTNT success page should carry the buyer into download, receipt, and Activate Pro steps.";
-                recoveryCopy.textContent = "If Stripe confirms payment but leaves you on its own page, use Continue after payment so you can reach the DTNT delivery steps.";
+                statusCopy.textContent = "Secure checkout is live. Complete payment here, enter a promo code if you have one, then continue into the DTNT success page for activation and install help if you still need the app.";
+                launchNote.textContent = "If DTNT is already installed, the paid path is mainly the receipt, delivery email, and Activate Pro steps.";
+                recoveryCopy.textContent = "If Stripe confirms payment but leaves you on its own page, use Continue after payment so you can reach the DTNT delivery and activation steps.";
                 returnNote.textContent = "Live checkout should return to the DTNT success page after payment. If checkout is closed before payment, use the DTNT cancel page as the fallback path.";
 
                 return;
