@@ -427,12 +427,12 @@
             checkoutLink.addEventListener("click", () => {
                 commerce.trackEvent("begin_checkout", {
                     currency: "USD",
-                    value: 59,
+                    value: commerce.config.launchPriceAmountUsd,
                     items: [
                         {
                             item_id: "dtnt-pro",
                             item_name: "DTNT Pro Launch",
-                            price: 59,
+                            price: commerce.config.launchPriceAmountUsd,
                             quantity: 1
                         }
                     ],
