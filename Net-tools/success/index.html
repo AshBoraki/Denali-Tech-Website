@@ -458,6 +458,7 @@
             const paymentLinkId = params.get("payment_link");
 
             const checkoutReference = sessionId || paymentIntentId || paymentLinkId;
+            let purchaseTracked = false;
             commerce.trackEvent("dtnt_checkout_success_view", {
                 checkout_mode: commerce.checkoutIsLive() ? "live" : "test",
                 has_reference: Boolean(checkoutReference),
@@ -469,23 +470,6 @@
                             ? "payment_link"
                             : ""
             });
-            if (checkoutReference) {
-                commerce.trackEvent("purchase", {
-                    transaction_id: checkoutReference,
-                    currency: "USD",
-                    value: 59,
-                    items: [
-                        {
-                            item_id: "dtnt-pro",
-                            item_name: "DTNT Pro Launch",
-                            price: 59,
-                            quantity: 1
-                        }
-                    ],
-                    checkout_mode: commerce.checkoutIsLive() ? "live" : "test"
-                });
-            }
-
             if (checkoutReference) {
                 referenceValue.textContent = checkoutReference;
                 referencePanel.hidden = false;
@@ -522,6 +506,36 @@
                     URL.revokeObjectURL(activationObjectUrl);
                     activationObjectUrl = null;
                 }
+            }
+
+            function trackPurchaseOnce(reference, payload = null) {
+                if (purchaseTracked || !reference) {
+                    return;
+                }
+
+                const purchaseValue = typeof payload?.amountTotal === "number"
+                    ? payload.amountTotal
+                    : commerce.config.launchPriceAmountUsd;
+                const purchaseCurrency = typeof payload?.currency === "string" && payload.currency.trim()
+                    ? payload.currency.trim().toUpperCase()
+                    : "USD";
+
+                commerce.trackEvent("purchase", {
+                    transaction_id: reference,
+                    currency: purchaseCurrency,
+                    value: purchaseValue,
+                    items: [
+                        {
+                            item_id: "dtnt-pro",
+                            item_name: "DTNT Pro Launch",
+                            price: purchaseValue,
+                            quantity: 1
+                        }
+                    ],
+                    checkout_mode: commerce.checkoutIsLive() ? "live" : "test"
+                });
+
+                purchaseTracked = true;
             }
 
             async function wireActivationDownload(downloadUrl, reference) {
@@ -566,6 +580,7 @@
                         const payload = response.ok ? await response.json() : null;
 
                         if (response.ok && payload.status === "fulfilled") {
+                            trackPurchaseOnce(checkoutReference, payload);
                             statusEyebrow.textContent = "Delivery ready";
                             successTitle.textContent = "DTNT Pro is ready.";
                             leadCopy.textContent = "Your payment is matched and the DTNT Pro delivery is ready.";

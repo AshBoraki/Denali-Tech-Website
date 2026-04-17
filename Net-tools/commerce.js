@@ -15,6 +15,7 @@
         supportEmail: "Hello@denalitechs.com",
         supportSubject: "DTNT order help",
         launchPriceLabel: "$59 one time",
+        launchPriceAmountUsd: 59,
         regularPriceLabel: "$99 after launch"
     };
 
