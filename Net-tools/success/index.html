@@ -350,7 +350,7 @@
             <section class="shell">
                 <div class="eyebrow" id="status-eyebrow">Payment received</div>
                 <h1 id="success-title">DTNT Pro purchase complete.</h1>
-                <p id="lead-copy">Stripe has finished the checkout. Install the current DTNT build now, then stay here while the signed Pro activation file is prepared.</p>
+                <p id="lead-copy">Stripe has finished the checkout. Install the current DTNT build now, then stay here while the Pro activation email and fallback file are prepared.</p>
 
                 <ol class="steps">
                     <li class="step">
@@ -364,30 +364,30 @@
                         <span class="step-index">2</span>
                         <div>
                             <strong id="step-two-title">Get your DTNT Pro delivery.</strong>
-                            <span id="step-two-copy">The paid path should deliver the Windows build link and the signed activation file for this release.</span>
+                            <span id="step-two-copy">The paid path should deliver the Windows build link plus the activation email for this release.</span>
                         </div>
                     </li>
                     <li class="step">
                         <span class="step-index">3</span>
                         <div>
                             <strong id="step-three-title">Choose Activate Pro in Profiles.</strong>
-                            <span id="step-three-copy">Open DTNT, go to Profiles, choose Activate Pro, and select the signed activation file.</span>
+                            <span id="step-three-copy">Open DTNT, go to Profiles, choose Activate Pro, and enter the purchase email plus activation code from the delivery email.</span>
                         </div>
                     </li>
                 </ol>
 
                 <div class="support">
                     <strong id="support-title">Need help with the order?</strong>
-                    <p id="support-copy">If the delivery email does not arrive or the activation file does not import cleanly, contact <a data-dtnt-support-email href="mailto:Hello@denalitechs.com">Hello@denalitechs.com</a> and include the email address used at checkout.</p>
+                    <p id="support-copy">If the delivery email does not arrive or activation does not go through cleanly, contact <a data-dtnt-support-email href="mailto:Hello@denalitechs.com">Hello@denalitechs.com</a> and include the email address used at checkout.</p>
                 </div>
 
                 <p>Policy details stay available here: <a href="/Net-tools/legal/#eula">EULA</a>, <a href="/Net-tools/legal/#terms">Terms</a>, <a href="/Net-tools/legal/#privacy">Privacy Notice</a>, and <a href="/Net-tools/legal/#refund">Refund Policy</a>.</p>
 
                 <div class="downloads">
                     <strong id="downloads-title">Continue with the Windows build now.</strong>
-                    <p id="downloads-copy">You can install the current DTNT build right away, then import the signed Pro activation file inside Profiles when it arrives.</p>
+                    <p id="downloads-copy">You can install the current DTNT build right away, then activate inside Profiles with the purchase email and activation code when the delivery email arrives.</p>
                     <div class="actions">
-                        <a class="button button-primary" id="activation-download" href="/Net-tools/" hidden>Download Pro activation</a>
+                        <a class="button button-primary" id="activation-download" href="/Net-tools/" hidden>Download fallback activation file</a>
                         <a class="button button-primary" data-dtnt-download="appinstaller" href="/Net-tools/" hidden>Install DTNT</a>
                         <a class="button button-secondary" data-dtnt-download="msix" href="/Net-tools/" hidden>Download MSIX</a>
                         <a class="button button-secondary" data-dtnt-download="free" href="/Net-tools/">Download Portable ZIP</a>
@@ -402,7 +402,7 @@
 
                 <div class="support" id="delivery-panel" hidden>
                     <strong id="delivery-title">Checking your DTNT Pro delivery.</strong>
-                    <p id="delivery-copy">Stay on this page while the activation file is prepared. This can take a couple of minutes after payment.</p>
+                    <p id="delivery-copy">Stay on this page while the activation email and fallback file are prepared. This can take a couple of minutes after payment.</p>
                 </div>
 
                 <div class="reference" id="reference-panel" hidden>
@@ -557,7 +557,7 @@
 
                 deliveryPanel.hidden = false;
                 deliveryTitle.textContent = "Checking your DTNT Pro delivery.";
-                deliveryCopy.textContent = "Stay on this page while the activation file is prepared. This can take a couple of minutes after payment.";
+                deliveryCopy.textContent = "Stay on this page while the activation email and fallback file are prepared. This can take a couple of minutes after payment.";
 
                 for (let attempt = 0; attempt < 20; attempt += 1) {
                     try {
@@ -567,15 +567,15 @@
                         if (response.ok && payload.status === "fulfilled") {
                             statusEyebrow.textContent = "Delivery ready";
                             successTitle.textContent = "DTNT Pro is ready.";
-                            leadCopy.textContent = "Your payment is matched and the activation file is ready for download.";
+                            leadCopy.textContent = "Your payment is matched and the DTNT Pro delivery is ready.";
                             stepOneTitle.textContent = "Install the current DTNT build.";
                             stepOneCopy.textContent = "Use the Windows build below if DTNT is not already on this machine.";
-                            stepTwoTitle.textContent = "Download the Pro activation file.";
-                            stepTwoCopy.textContent = "Keep the activation file somewhere easy to find, then import it inside Profiles.";
+                            stepTwoTitle.textContent = "Check the delivery email for the activation code.";
+                            stepTwoCopy.textContent = "Use the purchase email plus activation code inside Profiles. The file download stays here as a fallback.";
                             downloadsTitle.textContent = "Finish with install and activation.";
-                            downloadsCopy.textContent = "Install DTNT if needed, download the activation file, then choose Activate Pro inside Profiles.";
+                            downloadsCopy.textContent = "Install DTNT if needed, then choose Activate Pro inside Profiles and enter the purchase email plus activation code.";
                             deliveryTitle.textContent = "Your DTNT Pro delivery is ready.";
-                            deliveryCopy.textContent = `Licensed to ${payload.licensedTo}. Download the activation file now, then import it inside Profiles.`;
+                            deliveryCopy.textContent = `Licensed to ${payload.licensedTo}. Check the delivery email for the activation code, then activate inside Profiles.`;
                             await wireActivationDownload(payload.activationUrl, checkoutReference);
                             activationDownload.hidden = false;
                             return;
@@ -583,7 +583,7 @@
 
                         if (response.status === 404 || (response.ok && payload.status === "pending")) {
                             deliveryTitle.textContent = "Finishing your DTNT Pro delivery.";
-                            deliveryCopy.textContent = "Payment is seen, but the activation file is still being prepared. This page will keep checking for a few minutes.";
+                            deliveryCopy.textContent = "Payment is seen, but the activation email and fallback file are still being prepared. This page will keep checking for a few minutes.";
                             await sleep(15000);
                             continue;
                         }
@@ -596,7 +596,7 @@
 
                 deliveryPanel.hidden = false;
                 deliveryTitle.textContent = "Payment went through, but delivery still needs a minute.";
-                deliveryCopy.innerHTML = `Keep this page open and check again shortly. If the activation file still has not appeared, contact <a data-dtnt-support-email href="mailto:${commerce.config.supportEmail}">${commerce.config.supportEmail}</a> with your checkout reference so Denali Tech can finish the order quickly.`;
+                deliveryCopy.innerHTML = `Keep this page open and check again shortly. If the activation email still has not appeared, contact <a data-dtnt-support-email href="mailto:${commerce.config.supportEmail}">${commerce.config.supportEmail}</a> with your checkout reference so Denali Tech can finish the order quickly.`;
                 commerce.hydrateSupportEmail(document);
             }
 
