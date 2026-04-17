@@ -1,9 +1,10 @@
 (() => {
     const config = {
-        checkoutUrl: "https://buy.stripe.com/eVq8wO1Kkevj08A2td3ks00",
+        checkoutUrl: "https://buy.stripe.com/bJeaEW4Wwfzn8F66Jt3ks01",
         checkoutMode: "live",
         autoRedirectWhenLive: false,
         latestManifestUrl: "/downloads/dtnt/latest.json",
+        fulfillmentApiBaseUrl: "https://dtnt-fulfillment-a07d.azurewebsites.net",
         orderStatusBasePath: "/Net-tools/orders/",
         homeUrl: "/Net-tools/",
         buyUrl: "/Net-tools/buy/",
@@ -284,11 +285,25 @@
     }
 
     function fulfillmentStatusIsConfigured() {
-        return typeof config.orderStatusBasePath === "string"
-            && config.orderStatusBasePath.trim().length > 0;
+        return Boolean(resolveFulfillmentApiBaseUrl())
+            || (typeof config.orderStatusBasePath === "string"
+                && config.orderStatusBasePath.trim().length > 0);
+    }
+
+    function resolveFulfillmentApiBaseUrl() {
+        if (typeof config.fulfillmentApiBaseUrl !== "string") {
+            return "";
+        }
+
+        return config.fulfillmentApiBaseUrl.trim().replace(/\/+$/, "");
     }
 
     function resolveOrderStatusUrl(sessionId) {
+        const fulfillmentApiBaseUrl = resolveFulfillmentApiBaseUrl();
+        if (fulfillmentApiBaseUrl) {
+            return `${fulfillmentApiBaseUrl}/api/checkout/${encodeURIComponent(sessionId)}/status`;
+        }
+
         const basePath = config.orderStatusBasePath.replace(/\/+$/, "");
         return absoluteUrl(`${basePath}/${encodeURIComponent(sessionId)}.json`);
     }
