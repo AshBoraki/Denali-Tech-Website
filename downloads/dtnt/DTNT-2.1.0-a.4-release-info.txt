@@ -7,7 +7,7 @@ ReleaseChannel: Alpha
 Configuration: Release
 RuntimeIdentifier: win-x64
 SatelliteResourceLanguages: en-US
-PublishedAt: 2026-04-17 02:09:07 -05:00
+PublishedAt: 2026-04-17 02:45:23 -05:00
 Launcher: Open DTNT.cmd
 PayloadFolder: App
 Executable: App\DenaliTech.NetTools.exe
