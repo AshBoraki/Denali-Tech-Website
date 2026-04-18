@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>DTNT | Windows Wi-Fi Analyzer, IP Scanner, and Speed Test App</title>
-    <meta name="description" content="Download DTNT, a Windows desktop app from Denali Tech for Wi-Fi channel analysis, IP discovery, speed tests, saved profiles, and everyday network field checks.">
+    <title>Denali Tech Net-Tools (DTNT) | Wi-Fi Analyzer, IP Scanner, and Speed Test for Windows</title>
+    <meta name="description" content="Denali Tech Net-Tools (DTNT) is a Windows desktop app for Wi-Fi analysis, channel visibility, IP scanning, speed testing, saved profiles, and network diagnostics.">
     <meta name="keywords" content="DTNT, Denali Tech Net-Tools, Windows Wi-Fi analyzer app, channel analyzer, IP scanner, speed test desktop app, network tools for Windows">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <meta name="author" content="Denali Tech">
@@ -14,15 +14,15 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://denalitechs.com/Net-tools/">
     <meta property="og:site_name" content="Denali Tech">
-    <meta property="og:title" content="DTNT Windows Network Tools">
-    <meta property="og:description" content="Windows Wi-Fi analyzer, IP scanner, speed tests, saved profiles, and field checks in one desktop app.">
+    <meta property="og:title" content="Denali Tech Net-Tools (DTNT)">
+    <meta property="og:description" content="Windows Wi-Fi analyzer, IP scanner, speed test, saved profiles, and network diagnostics from Denali Tech.">
     <meta property="og:image" content="https://denalitechs.com/Video/dtnt/screens/dtnt-channel-analyzer-live.png?v=20260413e">
     <meta property="og:image:alt" content="DTNT channel analyzer showing nearby Wi-Fi radios on Windows">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://denalitechs.com/Net-tools/">
-    <meta name="twitter:title" content="DTNT Windows Network Tools">
-    <meta name="twitter:description" content="Download DTNT for Wi-Fi channel analysis, IP discovery, speed tests, saved profiles, and quick network checks on Windows.">
+    <meta name="twitter:title" content="Denali Tech Net-Tools (DTNT)">
+    <meta name="twitter:description" content="Windows Wi-Fi analyzer, IP scanner, speed test, saved profiles, and network diagnostics from Denali Tech.">
     <meta name="twitter:image" content="https://denalitechs.com/Video/dtnt/screens/dtnt-channel-analyzer-live.png?v=20260413e">
     <meta name="twitter:image:alt" content="DTNT channel analyzer showing nearby Wi-Fi radios on Windows">
 
@@ -45,14 +45,15 @@
                 {
                     "@type": "SoftwareApplication",
                     "@id": "https://denalitechs.com/Net-tools/#app",
-                    "name": "DTNT",
-                    "alternateName": "Denali Tech Net-Tools",
+                    "name": "Denali Tech Net-Tools",
+                    "alternateName": "DTNT",
                     "url": "https://denalitechs.com/Net-tools/",
                     "operatingSystem": "Windows 10, Windows 11",
-                    "applicationCategory": "UtilitiesApplication",
+                    "applicationCategory": "NetworkingApplication",
                     "softwareVersion": "2.1.0-a.4",
-                    "description": "DTNT is a Windows desktop app for Wi-Fi channel analysis, IP discovery, speed tests, saved profile review, and quick network field checks.",
+                    "description": "Denali Tech Net-Tools (DTNT) is a Windows desktop app for Wi-Fi channel analysis, IP discovery, speed tests, saved profile review, and network diagnostics.",
     "downloadUrl": "https://apps.microsoft.com/detail/9PFKHZ8M32HJ",
+                    "installUrl": "https://apps.microsoft.com/detail/9PFKHZ8M32HJ",
                     "fileSize": "75681323 bytes",
                     "image": "https://denalitechs.com/Video/dtnt/dtnt-app-mark.png?v=20260413e",
                     "screenshot": [
@@ -82,7 +83,44 @@
                             "url": "https://denalitechs.com/Net-tools/buy/"
                         }
                     ]
-                }
+                },
+                {
+                    "@type": "FAQPage",
+                    "@id": "https://denalitechs.com/Net-tools/#faq",
+                    "mainEntity": [
+                        {
+                            "@type": "Question",
+                            "name": "Does DTNT work on Windows only?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Yes. DTNT is a Windows desktop app built for Windows 10 and Windows 11."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "Should I install DTNT from Microsoft Store or the website?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Microsoft Store is the preferred install path. The website path remains useful as a direct install and backup delivery route."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "Can I use DTNT before buying Pro?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Yes. DTNT keeps the core workflows available so you can use the app first and move to Pro when you need saved detail, exports, or activation."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "How does Pro activation work?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Buy Pro through the DTNT checkout, then use the purchase email and activation code from the delivery email inside the Profiles workspace."
+                            }
+                        }
+                    ]
             ]
         }
     </script>
@@ -573,6 +611,63 @@
             border-color: #efc8a2;
             box-shadow: 0 0 0 1px rgba(217, 119, 22, 0.10);
         }
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 18px;
+            margin-top: 1.4rem;
+        }
+
+        .resource-card {
+            display: grid;
+            gap: 0.8rem;
+            padding: 1.25rem;
+            border-radius: 18px;
+            border: 1px solid var(--line);
+            background: var(--paper);
+            box-shadow: var(--shadow);
+        }
+
+        .resource-card h3 {
+            font-size: 1.08rem;
+        }
+
+        .resource-card p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .resource-card a {
+            color: var(--accent-strong);
+            font-weight: 800;
+            text-decoration: none;
+        }
+
+        .resource-card a:hover {
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+            margin-top: 1.35rem;
+        }
+
+        .faq-card {
+            padding: 1.15rem 1.2rem;
+            border-radius: 20px;
+            border: 1px solid var(--line);
+            background: var(--paper);
+            box-shadow: var(--shadow);
+        }
+
+        .faq-card p {
+            margin: 0.55rem 0 0;
+            color: var(--muted);
+            line-height: 1.68;
+        }
 
         .price {
             margin-top: 0.75rem;
@@ -961,6 +1056,68 @@
             </div>
         </section>
 
+        <section id="faq-home">
+            <div class="wrap">
+                <h2>Frequently asked questions.</h2>
+                <p class="copy">These are the questions most people ask before they install DTNT, move to Pro, or decide whether the Store path or website path fits their machine.</p>
+                <div class="faq-grid">
+                    <article class="faq-card">
+                        <h3>Does DTNT work on Windows only?</h3>
+                        <p>Yes. DTNT is built for Windows 10 and Windows 11.</p>
+                    </article>
+                    <article class="faq-card">
+                        <h3>Should I install DTNT from Microsoft Store or the website?</h3>
+                        <p>Microsoft Store is the preferred path. The website remains useful as a direct install and backup delivery route.</p>
+                    </article>
+                    <article class="faq-card">
+                        <h3>Can I use DTNT before buying Pro?</h3>
+                        <p>Yes. The free core lets you use the app first and move to Pro when you need saved detail, exports, or activation.</p>
+                    </article>
+                    <article class="faq-card">
+                        <h3>How does Pro activation work?</h3>
+                        <p>Buy Pro through the secure checkout, then activate inside Profiles with the purchase email and activation code from the DTNT delivery email.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section id="product-pages">
+            <div class="wrap">
+                <h2>Explore the DTNT product site.</h2>
+                <p class="copy">Use the dedicated product pages below to compare features, choose an install path, review activation steps, and see the latest product updates without leaving the DTNT section.</p>
+                <div class="resource-grid">
+                    <article class="resource-card">
+                        <h3>Features</h3>
+                        <p>See how DTNT handles Wi-Fi surveying, channel analysis, device discovery, speed tests, and saved profile review.</p>
+                        <a href="/Net-tools/features/">Open feature guide</a>
+                    </article>
+                    <article class="resource-card">
+                        <h3>Download</h3>
+                        <p>Get DTNT from Microsoft Store, review install paths, and check platform support before deployment.</p>
+                        <a href="/Net-tools/download/">Open download guide</a>
+                    </article>
+                    <article class="resource-card">
+                        <h3>Activation</h3>
+                        <p>Review the Pro activation flow, delivery expectations, and support fallback guidance before customer handoff.</p>
+                        <a href="/Net-tools/activation/">Open activation guide</a>
+                    </article>
+                    <article class="resource-card">
+                        <h3>Pricing</h3>
+                        <p>Compare free and Pro positioning so the commercial offer stays easy to understand for first-time buyers.</p>
+                        <a href="/Net-tools/pricing/">Open pricing guide</a>
+                    </article>
+                    <article class="resource-card">
+                        <h3>FAQ</h3>
+                        <p>Answer common questions about installs, updates, Store availability, licenses, and the Windows support path.</p>
+                        <a href="/Net-tools/faq/">Open FAQ</a>
+                    </article>
+                    <article class="resource-card">
+                        <h3>Changelog</h3>
+                        <p>Track DTNT product changes and release improvements as the app keeps moving toward a customer-ready build.</p>
+                        <a href="/Net-tools/changelog/">Open changelog</a>
+                    </article>
+                </div>
+            </div>
+        </section>
         <section class="contact" id="contact">
             <div class="wrap contact-grid">
                 <div>
@@ -1039,3 +1196,5 @@
     </script>
 </body>
 </html>
+
+
