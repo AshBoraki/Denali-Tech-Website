@@ -1,0 +1,39 @@
+name: PropoKit Stripe Setup
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "20"
+
+      - name: Create or reuse PropoKit live Stripe prices
+        id: propokit-stripe
+        env:
+          STRIPE_SECRET_KEY: ${{ secrets.DTNT_STRIPE_SECRET_KEY }}
+          PROPOKIT_PRODUCT_NAME: PropoKit
+          PROPOKIT_STARTER_AMOUNT: "2900"
+          PROPOKIT_PRO_AMOUNT: "5900"
+          PROPOKIT_CURRENCY: usd
+        run: node ./tools/stripe/setup-propokit-live.cjs
+
+      - name: Print live PropoKit Stripe IDs
+        run: |
+          {
+            echo "### PropoKit live Stripe IDs"
+            echo ""
+            echo "- Product: \`${{ steps.propokit-stripe.outputs.product_id }}\`"
+            echo "- Starter price: \`${{ steps.propokit-stripe.outputs.starter_price_id }}\`"
+            echo "- Pro price: \`${{ steps.propokit-stripe.outputs.pro_price_id }}\`"
+          } >> "$GITHUB_STEP_SUMMARY"
