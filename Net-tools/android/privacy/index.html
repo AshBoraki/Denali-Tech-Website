@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>DTNT Android Privacy Notice | Denali Tech Net-Tools</title>
+    <meta name="description" content="Privacy notice for the Android build of Denali Tech Net-Tools, including nearby Wi-Fi access, local subnet scanning, speed tests, and Google Play Billing.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://denalitechs.com/Net-tools/android/privacy/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://denalitechs.com/Net-tools/android/privacy/">
+    <meta property="og:site_name" content="Denali Tech">
+    <meta property="og:title" content="DTNT Android Privacy Notice">
+    <meta property="og:description" content="Privacy details for the Android build of Denali Tech Net-Tools and its Google Play purchase flow.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://denalitechs.com/Net-tools/android/privacy/">
+    <meta name="twitter:title" content="DTNT Android Privacy Notice">
+    <meta name="twitter:description" content="Privacy details for the Android build of Denali Tech Net-Tools and its Google Play purchase flow.">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <script src="/Net-tools/analytics-config.js"></script>
+    <script src="/Net-tools/analytics.js"></script>
+    <style>
+        :root {
+            --bg: #edf3f0;
+            --paper: rgba(255, 255, 255, 0.88);
+            --ink: #15283a;
+            --muted: #66798a;
+            --line: #cedbe0;
+            --accent: #d97716;
+            --accent-soft: #fff0e0;
+        }
+
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Inter, system-ui, sans-serif;
+            color: var(--ink);
+            background: var(--bg);
+        }
+
+        a { color: inherit; }
+
+        .wrap {
+            width: min(1040px, calc(100% - 40px));
+            margin: 0 auto;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            backdrop-filter: blur(16px);
+            background: rgba(237, 243, 240, 0.92);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .topbar {
+            min-height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            font-weight: 800;
+        }
+
+        .brand-mark {
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+            border: 1px solid var(--line);
+            background: #fff;
+            display: grid;
+            place-items: center;
+            overflow: hidden;
+        }
+
+        .brand-mark img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .brand-copy small,
+        .hero-copy,
+        .section-copy,
+        .meta,
+        .policy p,
+        .policy li,
+        .footer-copy {
+            color: var(--muted);
+            line-height: 1.68;
+        }
+
+        .nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 0.95rem;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: var(--muted);
+        }
+
+        main {
+            padding: 34px 0 44px;
+        }
+
+        .hero,
+        .policy,
+        .support-card,
+        .meta-card {
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--paper);
+        }
+
+        .hero,
+        .policy,
+        .support-card {
+            padding: 26px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.54rem 0.9rem;
+            border-radius: 999px;
+            background: var(--accent-soft);
+            color: var(--accent);
+            border: 1px solid #f1cfb1;
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin: 1rem 0 0;
+            font-size: clamp(2.3rem, 5vw, 4.2rem);
+            line-height: 0.98;
+        }
+
+        h2 {
+            margin: 0;
+            font-size: clamp(1.7rem, 3vw, 2.4rem);
+            line-height: 1.08;
+        }
+
+        h3 {
+            margin: 1.2rem 0 0.5rem;
+            font-size: 1.08rem;
+        }
+
+        .hero-copy {
+            margin-top: 1rem;
+            max-width: 64ch;
+            font-size: 1.04rem;
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 1.2rem;
+        }
+
+        .meta-card {
+            padding: 0.95rem;
+        }
+
+        .meta-card strong {
+            display: block;
+            margin-bottom: 0.32rem;
+            font-size: 1rem;
+        }
+
+        .jump-links,
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.25rem;
+        }
+
+        .jump-links a,
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 46px;
+            padding: 0 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--line);
+            background: #fff;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .button-primary {
+            background: #15283a;
+            color: #fff;
+            border-color: #15283a;
+        }
+
+        .layout {
+            display: grid;
+            gap: 18px;
+            margin-top: 22px;
+        }
+
+        .policy {
+            scroll-margin-top: 92px;
+        }
+
+        footer {
+            padding: 0 0 36px;
+        }
+
+        .footer-copy {
+            color: var(--muted);
+        }
+
+        @media (max-width: 860px) {
+            .meta-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 640px) {
+            .wrap {
+                width: min(100%, calc(100% - 28px));
+            }
+
+            .topbar,
+            .nav,
+            .jump-links,
+            .actions {
+                gap: 12px;
+            }
+
+            .meta-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero,
+            .policy,
+            .support-card {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="wrap topbar">
+            <a class="brand" href="/Net-tools/">
+                <span class="brand-mark">
+                    <img src="/Video/dtnt/dtnt-app-mark.png?v=20260413e" alt="DTNT mark">
+                </span>
+                <span class="brand-copy">
+                    <span>DTNT Android</span><br>
+                    <small>Denali Tech Net-Tools</small>
+                </span>
+            </a>
+            <nav class="nav" aria-label="Android privacy navigation">
+                <a href="/Net-tools/">Windows Product</a>
+                <a href="/Net-tools/android/">Android Home</a>
+                <a href="/Net-tools/legal/">Windows Legal</a>
+                <a href="/Net-tools/android/privacy/#notice">Privacy</a>
+                <a href="/Net-tools/android/support/">Support</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="wrap">
+            <section class="hero">
+                <div class="eyebrow">Android Privacy</div>
+                <h1>Privacy details for the Android build and its Google Play purchase flow.</h1>
+                <p class="hero-copy">This notice covers the Android build of Denali Tech Net-Tools distributed through Google Play. Effective date: April 20, 2026.</p>
+
+                <div class="meta-grid">
+                    <div class="meta-card">
+                        <strong>App name</strong>
+                        <div class="meta">Denali Tech Net-Tools</div>
+                    </div>
+                    <div class="meta-card">
+                        <strong>Android package</strong>
+                        <div class="meta">com.denalitech.nettools.android</div>
+                    </div>
+                    <div class="meta-card">
+                        <strong>Paid unlock</strong>
+                        <div class="meta">Google Play Billing for <code>dtnt_pro</code></div>
+                    </div>
+                    <div class="meta-card">
+                        <strong>Support contact</strong>
+                        <div class="meta"><a href="mailto:Hello@denalitechs.com">Hello@denalitechs.com</a></div>
+                    </div>
+                </div>
+
+                <div class="jump-links">
+                    <a href="#notice">Privacy Notice</a>
+                    <a href="#sharing">Sharing</a>
+                    <a href="#choices">Choices</a>
+                    <a href="/Net-tools/android/">Android Home</a>
+                    <a href="/Net-tools/android/support/">Android Support</a>
+                </div>
+            </section>
+
+            <div class="layout">
+                <article class="policy" id="notice">
+                    <h2>DTNT Android Privacy Notice</h2>
+                    <p class="section-copy">DTNT Android is built as a field tool that keeps most working data on the device. The app does not require a Denali Tech account to run its current Android workflows.</p>
+
+                    <h3>1. Information the Android app can access</h3>
+                    <ul>
+                        <li>Active network state, adapter details, IPv4 address, gateway, subnet, and DNS information from Android networking services.</li>
+                        <li>Nearby Wi-Fi scan results when you grant the app nearby Wi-Fi access on Android 13 and later, or location-based Wi-Fi access on older Android versions.</li>
+                        <li>Local subnet responses during IP Scanner runs, including responsive IP addresses, hostnames, and likely local web targets on the range you choose to inspect.</li>
+                        <li>Saved in-app history such as remembered hosts, speed-test history, and local workspace state stored on your device.</li>
+                        <li>Google Play Billing state needed to show price, purchase, pending purchase, restore status, and entitlement for DTNT Pro.</li>
+                    </ul>
+
+                    <h3>2. What the app sends off the device</h3>
+                    <p>DTNT Android only talks to outside services when a feature needs it.</p>
+                    <ul>
+                        <li>Google Play Billing is used for product details, purchase flow, pending state, acknowledgement, and restore checks for the one-time DTNT Pro product.</li>
+                        <li>The speed-test workflow sends download and upload traffic to Cloudflare speed-test endpoints at <code>speed.cloudflare.com</code>.</li>
+                        <li>The IP Scanner can send ping, socket, DNS, and short local HTTP or HTTPS requests to devices on the subnet you scan.</li>
+                        <li>If you tap links, contact support, or use platform sharing actions, Android or the selected app handles that communication.</li>
+                    </ul>
+
+                    <h3>3. What Denali Tech does not currently collect from the Android app</h3>
+                    <ul>
+                        <li>Nearby Wi-Fi radio lists are not uploaded to Denali Tech by the current Android build.</li>
+                        <li>Saved speed-test history, remembered hosts, and local scan state are not synced to Denali Tech servers by the current Android build.</li>
+                        <li>The current Android build is not configured with Firebase Analytics, Crashlytics, ad SDKs, or third-party ad networks.</li>
+                        <li>The current Android build does not ask for a Denali Tech login, profile account, or website checkout account.</li>
+                    </ul>
+
+                    <h3>4. On-device storage</h3>
+                    <p>DTNT Android stores working history on the device so the app can remember prior scans and recent speed tests. That local data is used for the app experience on that device and is not automatically forwarded to Denali Tech.</p>
+                </article>
+
+                <article class="policy" id="sharing">
+                    <h2>Sharing and Retention</h2>
+                    <p class="section-copy">The Android build relies on platform and infrastructure providers for the pieces they directly power.</p>
+
+                    <h3>1. Service providers</h3>
+                    <p>Google Play handles Play-distributed installs, billing, purchase restoration, and related transaction state. Cloudflare handles the speed-test transfer path when you run a speed test. Your local network devices handle the responses generated by the subnet tools you choose to run.</p>
+
+                    <h3>2. Sale of personal information</h3>
+                    <p>Denali Tech does not sell personal information from the current Android app flow.</p>
+
+                    <h3>3. Retention</h3>
+                    <p>Local history stays on your device until you clear app data, uninstall the app, or replace it with later app behavior. Support emails and direct support records sent to Denali Tech are retained for as long as reasonably needed to answer the request, resolve disputes, and protect customers and systems.</p>
+                </article>
+
+                <article class="policy" id="choices">
+                    <h2>Permissions and Choices</h2>
+                    <p class="section-copy">The app is meant to stay understandable about what it needs and why.</p>
+
+                    <h3>1. Nearby Wi-Fi access</h3>
+                    <p>Scanner and Channel Analyzer need nearby Wi-Fi access in order to read the current radio environment. On Android 13 and later, DTNT requests <code>NEARBY_WIFI_DEVICES</code> with the Android flag that marks it as not being used for physical location. On older supported Android versions, Android requires location-gated Wi-Fi access for the same feature class.</p>
+
+                    <h3>2. Network tools</h3>
+                    <p>The network diagnostics surfaces depend on internet and local-network communication because they are network tools by design. If you do not run a speed test or subnet scan, those specific network requests are not triggered.</p>
+
+                    <h3>3. Requests and contact</h3>
+                    <p>You can contact <a href="mailto:Hello@denalitechs.com">Hello@denalitechs.com</a> about privacy or support questions for DTNT Android. If your question is about a Google Play purchase, include the Google Play order reference and the account email tied to the Play purchase when possible.</p>
+                </article>
+            </div>
+
+            <section class="support-card">
+                <h2>Need Android help?</h2>
+                <p class="section-copy">For app behavior, permissions, or Play entitlement questions, contact Denali Tech. For Google Play charge disputes or refund processing, Google Play is the billing merchant for Play-distributed purchases.</p>
+                <div class="actions">
+                    <a class="button" href="/Net-tools/android/">Android home</a>
+                    <a class="button button-primary" href="/Net-tools/android/support/">Open Android support</a>
+                    <a class="button" href="/Net-tools/legal/">Windows legal page</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="wrap footer-copy">
+            Denali Tech Net-Tools for Android keeps local network inspection, Google Play purchase state, and field diagnostics straightforward.
+        </div>
+    </footer>
+</body>
+</html>

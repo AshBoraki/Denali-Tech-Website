@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>DTNT Android Support | Denali Tech Net-Tools</title>
+    <meta name="description" content="Support details for Denali Tech Net-Tools on Android, including Google Play Billing help, permissions, and issue reporting.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://denalitechs.com/Net-tools/android/support/">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <script src="/Net-tools/analytics-config.js"></script>
+    <script src="/Net-tools/analytics.js"></script>
+    <style>
+        :root {
+            --bg: #edf3f0;
+            --paper: rgba(255, 255, 255, 0.88);
+            --ink: #15283a;
+            --muted: #66798a;
+            --line: #cedbe0;
+            --accent: #d97716;
+            --accent-soft: #fff0e0;
+        }
+
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Inter, system-ui, sans-serif;
+            color: var(--ink);
+            background: var(--bg);
+        }
+
+        a { color: inherit; }
+
+        .wrap {
+            width: min(1040px, calc(100% - 40px));
+            margin: 0 auto;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            backdrop-filter: blur(16px);
+            background: rgba(237, 243, 240, 0.92);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .topbar {
+            min-height: 68px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            font-weight: 800;
+        }
+
+        .brand-mark {
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+            border: 1px solid var(--line);
+            background: #fff;
+            display: grid;
+            place-items: center;
+            overflow: hidden;
+        }
+
+        .brand-mark img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .brand-copy small,
+        .lead,
+        .body-copy,
+        li,
+        .footer-copy,
+        .meta {
+            color: var(--muted);
+            line-height: 1.68;
+        }
+
+        .nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 0.95rem;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: var(--muted);
+        }
+
+        main {
+            padding: 34px 0 44px;
+        }
+
+        .hero,
+        .card,
+        .meta-card {
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--paper);
+        }
+
+        .hero,
+        .card {
+            padding: 26px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.54rem 0.9rem;
+            border-radius: 999px;
+            background: var(--accent-soft);
+            color: var(--accent);
+            border: 1px solid #f1cfb1;
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin: 1rem 0 0;
+            font-size: clamp(2.3rem, 5vw, 4.1rem);
+            line-height: 0.98;
+        }
+
+        h2 {
+            margin: 0;
+            font-size: clamp(1.6rem, 3vw, 2.3rem);
+            line-height: 1.08;
+        }
+
+        h3 {
+            margin: 1.1rem 0 0.45rem;
+            font-size: 1.08rem;
+        }
+
+        .lead {
+            margin-top: 1rem;
+            max-width: 64ch;
+            font-size: 1.04rem;
+        }
+
+        .meta-grid,
+        .card-grid {
+            display: grid;
+            gap: 12px;
+            margin-top: 1.2rem;
+        }
+
+        .meta-grid {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        .card-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            margin-top: 22px;
+        }
+
+        .meta-card {
+            padding: 0.95rem;
+        }
+
+        .meta-card strong {
+            display: block;
+            margin-bottom: 0.32rem;
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.25rem;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 46px;
+            padding: 0 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--line);
+            background: #fff;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .button-primary {
+            background: #15283a;
+            color: #fff;
+            border-color: #15283a;
+        }
+
+        footer {
+            padding: 0 0 36px;
+        }
+
+        @media (max-width: 860px) {
+            .meta-grid,
+            .card-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .wrap {
+                width: min(100%, calc(100% - 28px));
+            }
+
+            .meta-grid,
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero,
+            .card {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="wrap topbar">
+            <a class="brand" href="/Net-tools/">
+                <span class="brand-mark">
+                    <img src="/Video/dtnt/dtnt-app-mark.png?v=20260413e" alt="DTNT mark">
+                </span>
+                <span class="brand-copy">
+                    <span>DTNT Android</span><br>
+                    <small>Denali Tech Net-Tools</small>
+                </span>
+            </a>
+            <nav class="nav" aria-label="Android support navigation">
+                <a href="/Net-tools/">Windows Product</a>
+                <a href="/Net-tools/android/">Android Home</a>
+                <a href="/Net-tools/android/privacy/">Privacy</a>
+                <a href="mailto:Hello@denalitechs.com">Email Support</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="wrap">
+            <section class="hero">
+                <div class="eyebrow">Android Support</div>
+                <h1>Help for install, permissions, scanning, and Google Play purchases.</h1>
+                <p class="lead">If DTNT Android is not reading nearby radios, not restoring Pro, or not behaving the way a field tool should, send the basics and Denali Tech can work the issue faster.</p>
+
+                <div class="meta-grid">
+                    <div class="meta-card">
+                        <strong>Support email</strong>
+                        <div class="meta"><a href="mailto:Hello@denalitechs.com">Hello@denalitechs.com</a></div>
+                    </div>
+                    <div class="meta-card">
+                        <strong>Android package</strong>
+                        <div class="meta">com.denalitech.nettools.android</div>
+                    </div>
+                    <div class="meta-card">
+                        <strong>Google Play product</strong>
+                        <div class="meta">dtnt_pro</div>
+                    </div>
+                    <div class="meta-card">
+                        <strong>Billing merchant</strong>
+                        <div class="meta">Google Play for Play-distributed purchases</div>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <a class="button button-primary" href="mailto:Hello@denalitechs.com?subject=DTNT%20Android%20support">Email Android support</a>
+                    <a class="button" href="/Net-tools/android/">Open Android home</a>
+                    <a class="button" href="/Net-tools/android/privacy/">Read Android privacy notice</a>
+                </div>
+            </section>
+
+            <div class="card-grid">
+                <section class="card">
+                    <h2>What to include</h2>
+                    <ul>
+                        <li>The Android device model and Android version.</li>
+                        <li>Whether the issue is about Wi-Fi scanning, IP scanning, speed tests, or Pro purchase restore.</li>
+                        <li>A screenshot of the screen where the issue appears.</li>
+                        <li>The Google Play order number if the question is about a Play purchase.</li>
+                        <li>What network you were connected to when the issue happened.</li>
+                    </ul>
+                </section>
+
+                <section class="card">
+                    <h2>Permissions</h2>
+                    <p class="body-copy">Scanner and Channel Analyzer need nearby Wi-Fi access to read the current radio picture. On Android 13 and later that is the nearby Wi-Fi permission. On older supported Android versions, Android still ties Wi-Fi scanning to location-gated access.</p>
+                    <p class="body-copy">If those tabs stay on fallback or empty data, check the app permission state first.</p>
+                </section>
+
+                <section class="card">
+                    <h2>Google Play purchases</h2>
+                    <p class="body-copy">DTNT Pro on Android is meant to purchase and restore through Google Play. If Google Play handled the charge, Google Play also controls the order history and refund rails.</p>
+                    <ul>
+                        <li>Use Google Play account order history for billing disputes and refund requests.</li>
+                        <li>Use Denali Tech support when the purchase exists but the app is not showing the expected entitlement state.</li>
+                        <li>Include the Play account email tied to the purchase when you contact support.</li>
+                    </ul>
+                </section>
+
+                <section class="card">
+                    <h2>Network tools</h2>
+                    <p class="body-copy">IP Scanner only sees devices that answer on the current subnet and within the limits of Android-safe probing. Speed Test depends on a live internet path and the Cloudflare speed-test edge used by the app.</p>
+                    <p class="body-copy">If a result looks thin, include whether you were on Wi-Fi, mobile data, hotspot, or a filtered enterprise network.</p>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="wrap footer-copy">
+            For DTNT Android app help, email Denali Tech and include the device, Android version, and the shortest path to reproduce the issue.
+        </div>
+    </footer>
+</body>
+</html>
