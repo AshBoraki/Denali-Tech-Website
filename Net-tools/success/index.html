@@ -364,7 +364,7 @@
                         <span class="step-index">2</span>
                         <div>
                             <strong id="step-two-title">Watch for the DTNT delivery email.</strong>
-                            <span id="step-two-copy">The paid path should deliver the activation email for this release, plus a support fallback file if you ever need it.</span>
+                            <span id="step-two-copy">The paid path should deliver the activation email for this release with the purchase email reference and activation code you need in the app.</span>
                         </div>
                     </li>
                     <li class="step">
@@ -388,10 +388,10 @@
                     <p id="downloads-copy">If DTNT is already on this machine, open it and activate inside Profiles. If not, use the Microsoft Store path below and come right back.</p>
                     <div class="actions">
                         <a class="button button-primary" data-dtnt-download="preferred" data-dtnt-store-text="Get DTNT from Microsoft Store" data-dtnt-installer-text="Install DTNT for Windows" data-dtnt-fallback-text="Get DTNT for Windows" href="/Net-tools/">Get DTNT for Windows</a>
-                        <a class="button button-primary" id="activation-download" href="/Net-tools/" hidden>Download fallback activation file</a>
+                        <a class="button button-primary" id="activation-download" href="/Net-tools/" hidden>Download backup activation file</a>
                         <a class="button button-primary" data-dtnt-download="appinstaller" href="/Net-tools/" hidden>Install DTNT</a>
                         <a class="button button-secondary" data-dtnt-download="msix" href="/Net-tools/" hidden>Download MSIX</a>
-                        <a class="button button-secondary" data-dtnt-download="free" href="/Net-tools/">Download Portable ZIP fallback</a>
+                        <a class="button button-secondary" data-dtnt-download="free" href="/Net-tools/">Download Portable ZIP</a>
                         <a class="button button-secondary" data-dtnt-release-notes href="/Net-tools/" hidden>Release Info</a>
                     </div>
                     <p id="build-copy">Current build: <strong data-dtnt-version>latest</strong></p>
@@ -572,7 +572,7 @@
 
                 deliveryPanel.hidden = false;
                 deliveryTitle.textContent = "Checking your DTNT Pro delivery.";
-                deliveryCopy.textContent = "Stay on this page while the activation email is prepared. The backup file stays here only if support asks you to use it.";
+                deliveryCopy.textContent = "Stay on this page while the activation email is prepared. This page will keep checking until your delivery is ready.";
 
                 for (let attempt = 0; attempt < 20; attempt += 1) {
                     try {
@@ -587,11 +587,11 @@
                             stepOneTitle.textContent = "Install or open DTNT.";
                             stepOneCopy.textContent = "If DTNT is already installed from Microsoft Store or the website build, skip straight to Profiles.";
                             stepTwoTitle.textContent = "Check the delivery email for the activation code.";
-                            stepTwoCopy.textContent = "Use the purchase email plus activation code inside Profiles. The attached file stays here only as a support fallback.";
+                            stepTwoCopy.textContent = "Use the purchase email plus activation code inside Profiles. The backup file stays here only if support asks you to use it.";
                             downloadsTitle.textContent = "Finish with install and activation.";
                             downloadsCopy.textContent = "Use Microsoft Store or the current Windows build if you still need the app, then choose Activate Pro inside Profiles and enter the purchase email plus activation code.";
                             deliveryTitle.textContent = "Your DTNT Pro delivery is ready.";
-                            deliveryCopy.textContent = `Licensed to ${payload.licensedTo}. Check the delivery email for the activation code, then activate inside Profiles. Use the backup file only if support asks for it.`;
+                            deliveryCopy.textContent = `Licensed to ${payload.licensedTo}. Check the delivery email for the activation code, then activate inside Profiles. The backup file is here only for support cases.`;
                             await wireActivationDownload(payload.activationUrl, checkoutReference);
                             activationDownload.hidden = false;
                             return;
@@ -599,7 +599,7 @@
 
                         if (response.status === 404 || (response.ok && payload.status === "pending")) {
                             deliveryTitle.textContent = "Finishing your DTNT Pro delivery.";
-                            deliveryCopy.textContent = "Payment is seen, but the activation email is still being prepared. This page will keep checking for a few minutes while the support fallback is readied in the background.";
+                            deliveryCopy.textContent = "Payment is seen, and the activation email is still being prepared. This page will keep checking for a few minutes while delivery finishes.";
                             await sleep(15000);
                             continue;
                         }
