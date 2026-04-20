@@ -122,7 +122,7 @@
                 ? "installer"
                 : "portable";
         const installNote = storeAvailable
-            ? "Microsoft Store install is live. Signed Windows install and the portable ZIP stay available too."
+            ? "Microsoft Store install is live. Portable ZIP stays available as the backup download."
             : installerPublicReady
                 ? "Signed Windows install is ready. Portable ZIP stays available as the backup download."
                 : storeInCertification
