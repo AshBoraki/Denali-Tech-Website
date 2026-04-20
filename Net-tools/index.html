@@ -221,7 +221,7 @@
         a { color: inherit; }
 
         .wrap {
-            width: min(1320px, calc(100% - 48px));
+            width: min(1280px, calc(100% - 40px));
             margin: 0 auto;
         }
 
@@ -231,11 +231,11 @@
             z-index: 40;
             background: rgba(237, 243, 240, 0.96);
             backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--line);
+            box-shadow: 0 8px 22px rgba(21, 40, 58, 0.05);
         }
 
         .topbar-inner {
-            min-height: 72px;
+            min-height: 68px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -247,6 +247,7 @@
             align-items: center;
             gap: 0.85rem;
             text-decoration: none;
+            min-width: 0;
         }
 
         .brand img {
@@ -272,12 +273,13 @@
         .brand-copy span {
             color: var(--muted);
             font-size: 0.89rem;
+            white-space: nowrap;
         }
 
         .nav {
             display: flex;
             align-items: center;
-            gap: 1.2rem;
+            gap: 1rem;
             flex-wrap: wrap;
         }
 
@@ -370,9 +372,10 @@
 
         h1 {
             margin-top: 1.05rem;
-            font-size: clamp(3rem, 4.8vw, 4.7rem);
+            font-size: clamp(2.7rem, 4.5vw, 4.2rem);
             max-width: none;
             letter-spacing: 0;
+            line-height: 1.03;
         }
 
         h2 {
@@ -397,8 +400,8 @@
 
         .hero-copy {
             margin-top: 1rem;
-            max-width: 44ch;
-            font-size: 1.08rem;
+            max-width: 40ch;
+            font-size: 1.02rem;
         }
 
         .mini-grid {
@@ -410,7 +413,7 @@
         }
 
         .hero .window {
-            margin-top: 66px;
+            margin-top: 30px;
         }
 
         .mini-card,
@@ -691,7 +694,7 @@
             display: grid;
             gap: 0.8rem;
             padding: 1.25rem;
-            border-radius: 18px;
+            border-radius: 8px;
             border: 1px solid var(--line);
             background: var(--paper);
             box-shadow: var(--shadow);
@@ -726,7 +729,7 @@
 
         .faq-card {
             padding: 1.15rem 1.2rem;
-            border-radius: 20px;
+            border-radius: 8px;
             border: 1px solid var(--line);
             background: var(--paper);
             box-shadow: var(--shadow);
@@ -848,6 +851,11 @@
                 grid-template-columns: 1fr;
             }
 
+            .proof-grid,
+            .resource-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
             .hero .window {
                 margin-top: 0;
             }
@@ -856,8 +864,13 @@
         @media (max-width: 900px) {
             .proof-grid,
             .mini-grid,
-            .pricing-grid {
+            .pricing-grid,
+            .faq-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .resource-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
 
             .nav-shell {
@@ -895,7 +908,7 @@
             }
 
             h1 {
-                font-size: clamp(2.7rem, 12vw, 4.4rem);
+                font-size: clamp(2.2rem, 10vw, 3.2rem);
                 max-width: none;
             }
 
@@ -905,6 +918,55 @@
 
             .meta-row {
                 flex-direction: column;
+            }
+        }
+
+        @media (max-width: 720px) {
+            .wrap {
+                width: min(100% - 24px, 1280px);
+            }
+
+            .topbar-inner {
+                min-height: 62px;
+                gap: 0.75rem;
+            }
+
+            .brand img {
+                width: 36px;
+                height: 36px;
+            }
+
+            .brand-copy strong {
+                font-size: 0.92rem;
+            }
+
+            .brand-copy span {
+                font-size: 0.8rem;
+            }
+
+            .hero {
+                padding-top: 18px;
+                padding-bottom: 14px;
+            }
+
+            section {
+                padding: 22px 0;
+            }
+
+            .actions {
+                gap: 0.7rem;
+            }
+
+            .actions .button {
+                width: 100%;
+            }
+
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .window-body {
+                aspect-ratio: 4 / 3;
             }
         }
     </style>
