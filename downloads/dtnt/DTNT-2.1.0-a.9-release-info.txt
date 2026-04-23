@@ -1,0 +1,19 @@
+﻿Product: Denali Tech Net-Tools
+Company: Denali Tech Inc
+Version: 2.1.0-a.9
+InformationalVersion: 2.1.0-a.9
+FileVersion: 2.1.0.9
+ReleaseChannel: Alpha
+Configuration: Release
+RuntimeIdentifier: win-x64
+SatelliteResourceLanguages: en-US
+PublishedAt: 2026-04-23 13:46:54 -05:00
+Launcher: Open DTNT.cmd
+PayloadFolder: App
+Executable: App\DenaliTech.NetTools.exe
+ApplicationIcon: C:\Users\Hello\OneDrive\Desktop\DTNT\src\DenaliTech.NetTools.Desktop\Assets\dtnt-app.ico
+SigningMode: Unsigned
+ArtifactSigningMetadataPath: <none>
+ArtifactSigningDlibPath: <none>
+TimestampUrl: <none>
+InstallStyle: Portable folder release
