@@ -1,12 +1,12 @@
 ﻿{
     "product":  "DTNT",
     "channel":  "alpha",
-    "version":  "2.1.0-a.8",
-    "publishedAt":  "2026-04-23T13:39:38-05:00",
-    "downloadUrl":  "https://denalitechs.com/downloads/dtnt/DTNT-for-Windows-2.1.0-a.8.zip",
-    "releaseNotesUrl":  "https://denalitechs.com/downloads/dtnt/DTNT-2.1.0-a.8-release-info.txt",
-    "sha256":  "08167BC908C908CA4DA58F26470E82824CC3762D97AD5FD2E53A6DA3413BF762",
-    "sizeBytes":  76833511,
+    "version":  "2.1.0-a.9",
+    "publishedAt":  "2026-04-23T13:46:54-05:00",
+    "downloadUrl":  "https://denalitechs.com/downloads/dtnt/DTNT-for-Windows-2.1.0-a.9.zip",
+    "releaseNotesUrl":  "https://denalitechs.com/downloads/dtnt/DTNT-2.1.0-a.9-release-info.txt",
+    "sha256":  "4B8E512D9D2586998F46710E0E21BECBF70B6C4E3868D8D3B1D476F0303731C4",
+    "sizeBytes":  76833555,
     "store":  {
                   "available":  true,
                   "productId":  "9PFKHZ8M32HJ",
