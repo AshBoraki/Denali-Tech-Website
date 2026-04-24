@@ -93,7 +93,7 @@
         }
 
         const freeDownloadUrl = release.downloadUrl || config.homeUrl;
-        const version = release.version || "";
+        const version = release.displayVersion || release.version || "";
         const installer = release.installer || {};
         const store = release.store || {};
         const appInstallerUrl = installer.appInstallerUrl || "";
@@ -131,7 +131,7 @@
                 ? "Portable ZIP is live now. Microsoft Store and the signed Windows installer are still being prepared."
                 : installerAvailable
                 ? "Portable ZIP is the cleanest download right now while the signed Windows installer path is being tightened up."
-                : "Start free. Go Pro when you need saved details, exports, and activation.";
+                : "Start free. Go Pro when you need saved results, exports, and activation.";
         const installDetail = storeAvailable
             ? "Microsoft Store install available"
             : installerPublicReady
