@@ -1,6 +1,27 @@
 {
   "posts": [
     {
+      "id": "dtnt-microsoft-store-launch",
+      "title": "DTNT Is Live on Microsoft Store: A Field-Tech Network Tool from Denali Tech",
+      "slug": "dtnt-microsoft-store-launch",
+      "url": "/blogs/dtnt-microsoft-store-launch/",
+      "excerpt": "Denali Tech published DTNT as a Microsoft Store-first Windows app for Wi-Fi analysis, IP scanning, speed tests, saved profiles, and practical field network checks.",
+      "category": "Smart Home Guide",
+      "tags": [
+        "DTNT",
+        "Microsoft Store",
+        "Wi-Fi Analyzer",
+        "IP Scanner",
+        "Field Tools"
+      ],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-04-24",
+      "updatedDate": "2026-04-24",
+      "readingTime": 4,
+      "heroImage": "/Video/dtnt/screens/dtnt-channel-analyzer-live.png",
+      "featured": true
+    },
+    {
       "id": "luxul-network-setup-guide",
       "title": "Luxul Epic 5 Router and PoE Switch Setup for a Reliable Smart Home Network",
       "slug": "luxul-network-setup-guide",
