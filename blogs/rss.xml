@@ -6,13 +6,22 @@
         <link>https://denalitechs.com/blogs/</link>
         <description>Expert tips, guides, and insights about smart home technology, home automation, and AV systems from Chicago's trusted smart home experts.</description>
         <language>en-us</language>
-        <lastBuildDate>Wed, 08 Jan 2025 12:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 24 Apr 2026 05:30:00 GMT</lastBuildDate>
         <atom:link href="https://denalitechs.com/blogs/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://denalitechs.com/Video/logo.JPG</url>
             <title>Denali Tech Blog</title>
             <link>https://denalitechs.com/blogs/</link>
         </image>
+
+        <item>
+            <title>DTNT Is Live on Microsoft Store: A Field-Tech Network Tool from Denali Tech</title>
+            <link>https://denalitechs.com/blogs/dtnt-microsoft-store-launch/</link>
+            <description>Denali Tech published DTNT as a Microsoft Store-first Windows app for Wi-Fi analysis, IP scanning, speed tests, saved profiles, and practical field network checks.</description>
+            <pubDate>Fri, 24 Apr 2026 05:30:00 GMT</pubDate>
+            <guid isPermaLink="true">https://denalitechs.com/blogs/dtnt-microsoft-store-launch/</guid>
+            <category>Smart Home Guide</category>
+        </item>
         
         <item>
             <title>Smart Home Automation for Beginners: Complete Starter Guide 2026</title>
