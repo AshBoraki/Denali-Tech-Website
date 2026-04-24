@@ -153,6 +153,40 @@
             padding: 1.5rem;
             margin: 2rem 0;
         }
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+            margin: 2rem 0 2.5rem;
+        }
+        .screenshot-card {
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+        }
+        .screenshot-card img {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16 / 10;
+            object-fit: cover;
+            background: #050814;
+        }
+        .screenshot-card figcaption {
+            margin: 0;
+            padding: 0.85rem 1rem;
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+            line-height: 1.45;
+        }
+        .screenshot-card strong {
+            display: block;
+            margin-bottom: 0.2rem;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
         .cta-box {
             background: rgba(249, 115, 22, 0.1);
             border: 1px solid rgba(249, 115, 22, 0.45);
@@ -198,12 +232,13 @@
         @media (max-width: 768px) {
             .blog-container { padding: 96px 1rem 2rem; }
             .blog-meta { flex-direction: column; gap: 0.45rem; }
+            .screenshot-grid { grid-template-columns: 1fr; }
             .cta-box { padding: 1.5rem; }
             .actions { flex-direction: column; }
             .btn-primary, .btn-secondary { width: 100%; }
         }
     </style>
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"DTNT Is Live on Microsoft Store: A Field-Tech Network Tool from Denali Tech","description":"Denali Tech published DTNT as a Microsoft Store-first Windows app for Wi-Fi analysis, IP scanning, speed tests, saved profiles, and practical field network checks.","image":["https://denalitechs.com/Video/dtnt/screens/dtnt-channel-analyzer-live.png?v=20260413e"],"datePublished":"2026-04-24","dateModified":"2026-04-24","author":{"@type":"Organization","name":"Denali Tech","url":"https://denalitechs.com/"},"publisher":{"@type":"Organization","name":"Denali Tech","logo":{"@type":"ImageObject","url":"https://denalitechs.com/Video/dtnt/dtnt-app-mark.png?v=20260413e","width":512,"height":512}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://denalitechs.com/blogs/dtnt-microsoft-store-launch/"},"articleSection":"Smart Home Guide","keywords":"DTNT, Denali Tech Net-Tools, Microsoft Store network tool, Wi-Fi analyzer for Windows, IP scanner for Windows, AV technician network tool","inLanguage":"en-US","wordCount":"760","timeRequired":"PT4M"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"DTNT Is Live on Microsoft Store: A Field-Tech Network Tool from Denali Tech","description":"Denali Tech published DTNT as a Microsoft Store-first Windows app for Wi-Fi analysis, IP scanning, speed tests, saved profiles, and practical field network checks.","image":["https://denalitechs.com/Video/dtnt/screens/dtnt-channel-analyzer-live.png?v=20260413e","https://denalitechs.com/Video/dtnt/screens/dtnt-ip-scanner-live.png?v=20260414a","https://denalitechs.com/Video/dtnt/screens/dtnt-speed-test-live.png?v=20260413e","https://denalitechs.com/Video/dtnt/screens/dtnt-profiles-live.png?v=20260413e"],"datePublished":"2026-04-24","dateModified":"2026-04-24","author":{"@type":"Organization","name":"Denali Tech","url":"https://denalitechs.com/"},"publisher":{"@type":"Organization","name":"Denali Tech","logo":{"@type":"ImageObject","url":"https://denalitechs.com/Video/dtnt/dtnt-app-mark.png?v=20260413e","width":512,"height":512}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://denalitechs.com/blogs/dtnt-microsoft-store-launch/"},"articleSection":"Smart Home Guide","keywords":"DTNT, Denali Tech Net-Tools, Microsoft Store network tool, Wi-Fi analyzer for Windows, IP scanner for Windows, AV technician network tool","inLanguage":"en-US","wordCount":"860","timeRequired":"PT4M"}</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://denalitechs.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://denalitechs.com/blogs/"},{"@type":"ListItem","position":3,"name":"DTNT Is Live on Microsoft Store","item":"https://denalitechs.com/blogs/dtnt-microsoft-store-launch/"}]}</script>
 </head>
 <body>
@@ -229,7 +264,7 @@
                 </div>
             </div>
 
-            <img src="/Video/dtnt/screens/dtnt-channel-analyzer-live.png?v=20260413e" alt="DTNT channel analyzer showing nearby Wi-Fi radios on Windows" class="blog-hero-image" loading="eager">
+            <img src="https://denalitechs.com/Video/dtnt/screens/dtnt-channel-analyzer-live.png?v=20260413e" alt="DTNT channel analyzer showing nearby Wi-Fi radios on Windows" class="blog-hero-image" loading="eager">
 
             <div class="blog-content">
                 <p>DTNT started from a simple field problem: network work often turns into a shuffle between separate utilities. On a real AV, smart-home, or low-voltage job, a technician needs to understand the Wi-Fi, find devices on the local range, run quick speed checks, and save the right details before leaving the site.</p>
@@ -256,6 +291,28 @@
                     <li><strong>Saved profiles:</strong> Keep useful Wi-Fi and field details available for repeat work.</li>
                     <li><strong>Exports:</strong> Turn scan results into something easier to review later or share with a project team.</li>
                 </ul>
+
+                <h2>A closer look at the app</h2>
+                <p>The best way to understand DTNT is to see the actual workflow: read the Wi-Fi environment, check the local device picture, test the connection, then keep useful site details for later.</p>
+
+                <div class="screenshot-grid" aria-label="DTNT app screenshots">
+                    <figure class="screenshot-card">
+                        <img src="https://denalitechs.com/Video/dtnt/screens/dtnt-channel-analyzer-live.png?v=20260413e" alt="DTNT Wi-Fi channel analyzer showing nearby radios and channel activity" loading="lazy">
+                        <figcaption><strong>Wi-Fi channel analyzer</strong>See nearby radios, signal behavior, security, and channel pressure.</figcaption>
+                    </figure>
+                    <figure class="screenshot-card">
+                        <img src="https://denalitechs.com/Video/dtnt/screens/dtnt-ip-scanner-live.png?v=20260414a" alt="DTNT IP scanner showing discovered devices on the local network" loading="lazy">
+                        <figcaption><strong>IP scanner</strong>Find local devices, spot web interfaces, and keep the network picture moving.</figcaption>
+                    </figure>
+                    <figure class="screenshot-card">
+                        <img src="https://denalitechs.com/Video/dtnt/screens/dtnt-speed-test-live.png?v=20260413e" alt="DTNT speed test with download, upload, latency, jitter, and packet loss results" loading="lazy">
+                        <figcaption><strong>Speed test</strong>Check download, upload, latency, jitter, and packet-loss behavior.</figcaption>
+                    </figure>
+                    <figure class="screenshot-card">
+                        <img src="https://denalitechs.com/Video/dtnt/screens/dtnt-profiles-live.png?v=20260413e" alt="DTNT profiles workspace for saved Wi-Fi profile and activation details" loading="lazy">
+                        <figcaption><strong>Profiles workspace</strong>Keep saved Wi-Fi profile details and Pro activation in one place.</figcaption>
+                    </figure>
+                </div>
 
                 <h2>Why Microsoft Store matters</h2>
                 <p>For public release, the cleanest path is the Microsoft Store. It gives Windows users a more familiar install experience and gives DTNT a trusted public listing instead of forcing every customer through a manual file download first.</p>
