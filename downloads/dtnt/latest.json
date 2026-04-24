@@ -2,6 +2,7 @@
     "product":  "DTNT",
     "channel":  "alpha",
     "version":  "2.1.0-a.12",
+    "displayVersion":  "2.1.0",
     "publishedAt":  "2026-04-23T23:47:43-05:00",
     "downloadUrl":  "https://denalitechs.com/downloads/dtnt/DTNT-for-Windows-2.1.0-a.12.zip",
     "releaseNotesUrl":  "https://denalitechs.com/downloads/dtnt/DTNT-2.1.0-a.12-release-info.txt",
