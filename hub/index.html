@@ -503,7 +503,7 @@
 
         .feature-band {
             display: grid;
-            grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+            grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
             gap: 2rem;
             align-items: center;
             padding: 32px;
@@ -514,11 +514,60 @@
                 rgba(255, 255, 255, 0.035);
         }
 
-        .feature-band img {
-            width: 100%;
-            border-radius: 8px;
+        .feature-media {
+            aspect-ratio: 16 / 10;
+            display: grid;
+            place-items: center;
+            overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.04);
             box-shadow: 0 24px 60px rgba(0, 0, 0, 0.32);
+        }
+
+        .feature-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .propokit-band {
+            margin-top: 1rem;
+            background:
+                linear-gradient(90deg, rgba(249, 115, 22, 0.12), transparent 58%),
+                rgba(255, 255, 255, 0.035);
+        }
+
+        .propokit-points {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.8rem;
+            margin: 1.25rem 0 0;
+        }
+
+        .propokit-point {
+            min-height: 98px;
+            padding: 0.9rem;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .propokit-point strong {
+            display: block;
+            color: #fff;
+            font-family: var(--font-heading);
+            font-size: 0.96rem;
+            line-height: 1.2;
+        }
+
+        .propokit-point span {
+            display: block;
+            margin-top: 0.35rem;
+            color: var(--muted);
+            font-size: 0.9rem;
+            line-height: 1.45;
         }
 
         .feature-copy p {
@@ -689,6 +738,10 @@
                 padding: 24px 0;
                 background: transparent;
             }
+
+            .propokit-points {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 640px) {
@@ -839,15 +892,15 @@
                     <span class="panel-action"><span>Open DTNT</span><span aria-hidden="true">></span></span>
                 </a>
 
-                <a class="link-panel" href="https://propokit.com" target="_blank" rel="noopener noreferrer">
-                    <span class="panel-top">
-                        <span class="panel-mark dark">PK</span>
-                        <span>
-                            <h3>PropoKit SaaS</h3>
-                            <p>A SaaS platform for clean scopes, products, services, pricing, and client-ready proposal documents.</p>
-                        </span>
-                    </span>
-                    <span class="panel-action"><span>Visit PropoKit</span><span aria-hidden="true">></span></span>
+	                <a class="link-panel" href="https://propokit.com" target="_blank" rel="noopener noreferrer">
+	                    <span class="panel-top">
+	                        <span class="panel-mark dark">PK</span>
+	                        <span>
+	                            <h3>PropoKit SaaS</h3>
+	                            <p>Client-ready proposal SaaS for building, sharing, tracking, and reusing scopes, pricing, products, and services.</p>
+	                        </span>
+	                    </span>
+	                    <span class="panel-action"><span>Visit PropoKit</span><span aria-hidden="true">></span></span>
                 </a>
 
                 <a class="link-panel" href="/projects/">
@@ -901,11 +954,45 @@
                         <a class="secondary-button" href="/blogs/dtnt-microsoft-store-launch/">Read launch post</a>
                     </div>
                 </div>
-                <img src="../Video/dtnt/screens/dtnt-channel-analyzer-live.png" alt="DTNT channel analyzer running on Windows" loading="lazy" width="1600" height="1000">
-            </div>
-        </section>
+	                <div class="feature-media">
+	                    <img src="../Video/dtnt/screens/dtnt-channel-analyzer-live.png" alt="DTNT channel analyzer running on Windows" loading="lazy" width="2422" height="1550">
+	                </div>
+	            </div>
+	        </section>
 
-        <section class="section" aria-labelledby="blog-title">
+	        <section class="section" aria-labelledby="propokit-title">
+	            <div class="feature-band propokit-band">
+	                <div class="feature-copy">
+	                    <p class="section-kicker">SaaS product</p>
+	                    <h2 id="propokit-title">PropoKit builds client-ready proposals faster.</h2>
+	                    <p>PropoKit is proposal SaaS by Denali Tech Inc. It helps contractors, home automation teams, low-voltage teams, service businesses, consultants, and small teams build clean proposals without rebuilding every quote from scratch.</p>
+	                    <div class="hero-buttons">
+	                        <a class="primary-button" href="https://propokit.com" target="_blank" rel="noopener noreferrer">Visit PropoKit</a>
+	                        <a class="secondary-button" href="https://propokit.com#pricing" target="_blank" rel="noopener noreferrer">See pricing</a>
+	                    </div>
+	                </div>
+	                <div class="propokit-points" aria-label="PropoKit SaaS highlights">
+	                    <div class="propokit-point">
+	                        <strong>Proposal builder</strong>
+	                        <span>Create structured proposals in minutes with clean scopes, line items, and totals.</span>
+	                    </div>
+	                    <div class="propokit-point">
+	                        <strong>Product & service library</strong>
+	                        <span>Save repeat work once, then reuse products, services, and pricing.</span>
+	                    </div>
+	                    <div class="propokit-point">
+	                        <strong>Client-ready links</strong>
+	                        <span>Share proposals without messy attachments so clients can review from any device.</span>
+	                    </div>
+	                    <div class="propokit-point">
+	                        <strong>QuickBooks workflow</strong>
+	                        <span>Sync customer details and create invoices from accepted proposals.</span>
+	                    </div>
+	                </div>
+	            </div>
+	        </section>
+
+	        <section class="section" aria-labelledby="blog-title">
             <div class="blog-strip">
                 <div class="section-header">
                     <p class="section-kicker">Latest notes</p>
