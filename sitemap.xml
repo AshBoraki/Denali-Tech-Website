@@ -187,6 +187,12 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://denalitechs.com/hub/</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://denalitechs.com/Net-tools/</loc>
     <lastmod>2026-04-24</lastmod>
     <changefreq>monthly</changefreq>
