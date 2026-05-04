@@ -1,18 +1,15 @@
-﻿{
-    "product":  "DTNT",
-    "channel":  "alpha",
-    "version":  "2.1.0-a.12",
-    "displayVersion":  "2.1.0",
-    "publishedAt":  "2026-04-23T23:47:43-05:00",
-    "downloadUrl":  "https://denalitechs.com/downloads/dtnt/DTNT-for-Windows-2.1.0-a.12.zip",
-    "releaseNotesUrl":  "https://denalitechs.com/downloads/dtnt/DTNT-2.1.0-a.12-release-info.txt",
-    "sha256":  "EEB9BD1EE062B83B8E13CE316091DCA3DB6D75958D523DFB959AD8143C788191",
-    "sizeBytes":  76843972,
-    "store":  {
-                  "available":  true,
-                  "productId":  "9PFKHZ8M32HJ",
-                  "submissionStatus":  "live",
-                  "storeUrl":  "https://apps.microsoft.com/detail/9PFKHZ8M32HJ",
-                  "webInstallerUrl":  "https://apps.microsoft.com/detail/9PFKHZ8M32HJ"
-              }
+{
+  "product": "DTNT",
+  "channel": "store",
+  "version": "2.1.0-a.14",
+  "displayVersion": "2.1.0-a.14",
+  "publishedAt": "2026-05-04T16:23:44-05:00",
+  "releaseNotesUrl": "https://denalitechs.com/downloads/dtnt/DTNT-2.1.0-a.14-release-info.txt",
+  "store": {
+    "available": true,
+    "productId": "9PFKHZ8M32HJ",
+    "submissionStatus": "live",
+    "storeUrl": "https://apps.microsoft.com/detail/9PFKHZ8M32HJ",
+    "webInstallerUrl": "https://apps.microsoft.com/detail/9PFKHZ8M32HJ"
+  }
 }
