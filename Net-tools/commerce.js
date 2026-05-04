@@ -92,7 +92,7 @@
             return null;
         }
 
-        const freeDownloadUrl = release.downloadUrl || config.homeUrl;
+        const freeDownloadUrl = release.downloadUrl || "";
         const version = release.displayVersion || release.version || "";
         const installer = release.installer || {};
         const store = release.store || {};
@@ -122,7 +122,7 @@
                 ? "installer"
                 : "portable";
         const installNote = storeAvailable
-            ? "Microsoft Store install is live. Portable ZIP stays available as the backup download."
+            ? "Microsoft Store install is live and is the recommended path for the approved Windows build."
             : installerPublicReady
                 ? "Signed Windows install is ready. Portable ZIP stays available as the backup download."
                 : storeInCertification
@@ -133,7 +133,7 @@
                 ? "Portable ZIP is the cleanest download right now while the signed Windows installer path is being tightened up."
                 : "Start free. Go Pro when you need saved results, exports, and activation.";
         const installDetail = storeAvailable
-            ? "Microsoft Store install available"
+            ? "Microsoft Store install recommended"
             : installerPublicReady
                 ? "Signed Windows install available"
                 : storeInCertification
@@ -152,6 +152,12 @@
                     : "Not live yet";
 
         root.querySelectorAll('[data-dtnt-download="free"]').forEach(anchor => {
+            if (!freeDownloadUrl) {
+                anchor.hidden = true;
+                return;
+            }
+
+            anchor.hidden = false;
             anchor.setAttribute("href", freeDownloadUrl);
             anchor.removeAttribute("aria-disabled");
         });
@@ -221,6 +227,10 @@
             node.textContent = sha256;
         });
 
+        root.querySelectorAll("[data-dtnt-hash-details]").forEach(node => {
+            node.hidden = !sha256;
+        });
+
         root.querySelectorAll("[data-dtnt-install-note]").forEach(node => {
             node.textContent = installNote;
         });
@@ -239,6 +249,10 @@
 
         root.querySelectorAll("[data-dtnt-store-row]").forEach(node => {
             node.hidden = false;
+        });
+
+        root.querySelectorAll("[data-dtnt-portable-row]").forEach(node => {
+            node.hidden = !freeDownloadUrl;
         });
 
         instrumentLinks(root, release);
