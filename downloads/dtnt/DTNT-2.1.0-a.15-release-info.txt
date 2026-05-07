@@ -1,0 +1,18 @@
+Product: Denali Tech Net-Tools
+Company: Denali Tech Inc
+Version: 2.1.0-a.15
+InformationalVersion: 2.1.0-a.15
+ReleaseChannel: Store submission
+RuntimeIdentifier: win-x64
+PublishedAt: 2026-05-07 00:21:04 -05:00
+InstallStyle: Microsoft Store
+StoreProductId: 9PFKHZ8M32HJ
+StoreUrl: https://apps.microsoft.com/detail/9PFKHZ8M32HJ
+SubmissionStatus: Prepared for Microsoft Store certification
+
+Release notes:
+- Prepared the next Microsoft Store package for Denali Tech Net-Tools.
+- IP Scanner keeps the selected-device TCP port check workflow from the prepared 2.1.0-a.14 release pass.
+- Channel Analyzer now keeps its custom RF chart colors aligned with the active light or dark app theme.
+- Speed Test now keeps its custom analog gauge colors aligned with the active light or dark app theme.
+- Public website current-build metadata should remain on the latest approved Store version until Microsoft approves this package.
