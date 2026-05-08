@@ -32,7 +32,7 @@ jobs:
           DTNT_PRICE_ID: ${{ secrets.DTNT_PRICE_ID }}
           DTNT_PAYMENT_LINK_ID: plink_1TMFzBBdADfeVbcC2PBdHzM9
           DTNT_PRODUCT_CODE: DTNT-PRO
-          DTNT_DOWNLOAD_URL: https://denalitechs.com/Net-tools/
+          DTNT_DOWNLOAD_URL: https://dt-nt.com/
           DTNT_SUPPORT_EMAIL: Hello@denalitechs.com
         run: node ./tools/dtnt-fulfillment/fulfill-orders.cjs
 
