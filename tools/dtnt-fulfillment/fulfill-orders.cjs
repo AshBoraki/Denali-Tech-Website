@@ -24,7 +24,7 @@ const config = {
   productId: process.env.DTNT_PRODUCT_ID || "",
   priceId: process.env.DTNT_PRICE_ID || "",
   expectedAmount: Number(process.env.DTNT_PRICE_AMOUNT || 5900),
-  downloadUrl: process.env.DTNT_DOWNLOAD_URL || "https://denalitechs.com/Net-tools/",
+  downloadUrl: process.env.DTNT_DOWNLOAD_URL || "https://dt-nt.com/",
   supportEmail: process.env.DTNT_SUPPORT_EMAIL || "Hello@denalitechs.com"
 };
 
@@ -192,7 +192,7 @@ function buildOrderRecord(session, licenseDocument) {
     status: "fulfilled",
     sessionId: session.id,
     licensedTo: getLicensedTo(session),
-    activationUrl: `/Net-tools/licenses/${session.id}.json`,
+    activationUrl: `https://dt-nt.com/activation/`,
     downloadUrl: config.downloadUrl,
     supportEmail: config.supportEmail,
     paymentStatus: session.payment_status,
@@ -210,7 +210,7 @@ function buildPaymentIntentOrderRecord(paymentIntent, charge, licenseDocument) {
     status: "fulfilled",
     paymentIntentId: paymentIntent.id,
     licensedTo: getLicensedToFromPaymentIntent(paymentIntent, charge),
-    activationUrl: `/Net-tools/licenses/${paymentIntent.id}.json`,
+    activationUrl: `https://dt-nt.com/activation/`,
     downloadUrl: config.downloadUrl,
     supportEmail: config.supportEmail,
     paymentStatus: paymentIntent.status,

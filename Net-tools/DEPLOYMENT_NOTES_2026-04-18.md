@@ -4,7 +4,7 @@ Date: 2026-04-18
 
 ### Current setup
 
-- Live product hub: `https://denalitechs.com/Net-tools/`
+- Live product hub: `https://dt-nt.com/`
 - Custom domain is defined in the repo `CNAME` as `denalitechs.com`
 - Live responses show `Server: GitHub.com`, which indicates GitHub Pages is serving the site
 - Website source repo remote is `https://github.com/AshBoraki/Denali-Tech-Website.git`
@@ -12,17 +12,17 @@ Date: 2026-04-18
 
 ### What is live right now
 
-- `https://denalitechs.com/Net-tools/` returns `200`
-- `https://denalitechs.com/Net-tools/sitemap.xml` is live, but currently only lists:
-  - `/Net-tools/`
-  - `/Net-tools/legal/`
+- `https://dt-nt.com/` returns `200`
+- `https://dt-nt.com/sitemap.xml` is live, but currently only lists:
+  - `https://dt-nt.com/`
+  - `https://dt-nt.com/legal/`
 - The new DTNT child pages currently return `404` on the live site:
-  - `/Net-tools/features/`
-  - `/Net-tools/download/`
-  - `/Net-tools/pricing/`
-  - `/Net-tools/activation/`
-  - `/Net-tools/faq/`
-  - `/Net-tools/changelog/`
+  - `https://dt-nt.com/features/`
+  - `https://dt-nt.com/download/`
+  - `https://dt-nt.com/pricing/`
+  - `https://dt-nt.com/activation/`
+  - `https://dt-nt.com/faq/`
+  - `https://dt-nt.com/changelog/`
 
 ### What exists locally in this repo
 
@@ -56,7 +56,7 @@ Because the site is public commerce-facing content, this publish step should be 
 
 ### Recommended post-publish checks
 
-1. Open `/Net-tools/`
+1. Open `https://dt-nt.com/`
 2. Open each new child page and confirm `200`
-3. Open `/Net-tools/sitemap.xml` and confirm the new URLs are present
+3. Open `https://dt-nt.com/sitemap.xml` and confirm the new URLs are present
 4. Re-check Search Console sitemap status after Google re-reads the files
