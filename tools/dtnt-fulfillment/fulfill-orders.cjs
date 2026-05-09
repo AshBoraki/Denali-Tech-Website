@@ -25,7 +25,7 @@ const config = {
   priceId: process.env.DTNT_PRICE_ID || "",
   expectedAmount: Number(process.env.DTNT_PRICE_AMOUNT || 5900),
   downloadUrl: process.env.DTNT_DOWNLOAD_URL || "https://dt-nt.com/",
-  supportEmail: process.env.DTNT_SUPPORT_EMAIL || "Hello@denalitechs.com"
+  supportEmail: process.env.DTNT_SUPPORT_EMAIL || "support@dt-nt.com"
 };
 
 function stripeRequest(requestPath) {
