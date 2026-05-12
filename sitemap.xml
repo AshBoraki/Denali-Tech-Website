@@ -61,12 +61,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://denalitechs.com/blogs/dtnt-microsoft-store-launch/</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://denalitechs.com/blogs/lutron-smart-lighting-guide/</loc>
     <lastmod>2026-03-21</lastmod>
     <changefreq>monthly</changefreq>
@@ -187,12 +181,6 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://denalitechs.com/hub/</loc>
-    <lastmod>2026-04-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://denalitechs.com/privacy/</loc>
     <lastmod>2026-03-23</lastmod>
     <changefreq>yearly</changefreq>
@@ -281,11 +269,5 @@
     <lastmod>2026-03-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://denalitechs.com/company-hub/</loc>
-    <lastmod>2026-05-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
   </url>
 </urlset>
