@@ -1,6 +1,66 @@
 {
   "posts": [
     {
+      "id": "whole-home-network-assessment-what-we-check",
+      "title": "Whole-Home Network Assessment: What We Check Before Recommending Gear",
+      "slug": "whole-home-network-assessment-what-we-check",
+      "url": "/blogs/whole-home-network-assessment-what-we-check/",
+      "excerpt": "A practical guide to what Denali Tech checks before recommending routers, access points, wiring, or smart home network upgrades.",
+      "category": "Networking",
+      "tags": [
+        "Whole-Home Wi-Fi",
+        "Networking",
+        "Smart Home",
+        "Network Assessment"
+      ],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-05-19",
+      "updatedDate": "2026-05-19",
+      "readingTime": 5,
+      "heroImage": "/Video/IMG_5331-poster.jpg",
+      "featured": true
+    },
+    {
+      "id": "why-smart-homes-fail-when-network-is-weak",
+      "title": "Why Smart Homes Fail When the Network Is Weak",
+      "slug": "why-smart-homes-fail-when-network-is-weak",
+      "url": "/blogs/why-smart-homes-fail-when-network-is-weak/",
+      "excerpt": "Smart home problems often come from the network behind the system. Learn how weak Wi-Fi, poor wiring, and bad placement can make cameras, lighting, shades, and control apps feel unreliable.",
+      "category": "Troubleshooting",
+      "tags": [
+        "Smart Home",
+        "Troubleshooting",
+        "Networking",
+        "Cameras"
+      ],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-05-19",
+      "updatedDate": "2026-05-19",
+      "readingTime": 5,
+      "heroImage": "/Video/IMG_5331-poster.jpg",
+      "featured": true
+    },
+    {
+      "id": "smart-home-control-that-actually-gets-used",
+      "title": "Smart Home Control That Actually Gets Used",
+      "slug": "smart-home-control-that-actually-gets-used",
+      "url": "/blogs/smart-home-control-that-actually-gets-used/",
+      "excerpt": "Smart home control should be simple enough for the whole household. Learn how Denali Tech thinks about scenes, remotes, keypads, apps, voice control, and reliable infrastructure.",
+      "category": "Smart Home Guide",
+      "tags": [
+        "Smart Home Control",
+        "Automation",
+        "Lighting",
+        "AV"
+      ],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-05-19",
+      "updatedDate": "2026-05-19",
+      "readingTime": 5,
+      "heroImage": "/Video/IMG_5331-poster.jpg",
+      "featured": true
+    },
+    {
       "id": "luxul-network-setup-guide",
       "title": "Luxul Epic 5 Router and PoE Switch Setup for a Reliable Smart Home Network",
       "slug": "luxul-network-setup-guide",
@@ -719,6 +779,11 @@
       "name": "Troubleshooting",
       "slug": "troubleshooting",
       "description": "Troubleshooting guides and solutions for smart home problems"
+    },
+    {
+      "name": "Networking",
+      "slug": "networking",
+      "description": "Whole-home Wi-Fi, wired network, rack, and network reliability guides"
     }
   ]
 }
