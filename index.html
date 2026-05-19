@@ -561,6 +561,8 @@
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+1-312-439-7500",
+        "email": "Hello@denalitechs.com",
+        "url": "https://wa.me/13124397500",
         "contactType": "Customer Service",
         "areaServed": "US",
         "availableLanguage": "English"
@@ -577,6 +579,47 @@
         "bestRating": "5",
         "worstRating": "1"
       }
+    }
+    </script>
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What areas does Denali Tech serve?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Denali Tech serves the Chicago metro area including Mt Prospect, Arlington Heights, Schaumburg, Evanston, Skokie, Glenview, Niles, Des Plaines, Park Ridge, Elk Grove Village, Northbrook, and surrounding suburbs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does smart home automation or a WiFi upgrade cost?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Project cost depends on home size, equipment, wiring, and the final system design. Simple WiFi and networking upgrades can start around $2,000, while larger smart-home, theater, lighting, or whole-home systems can be higher. Denali Tech can review project details by WhatsApp or email before a call."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I start with WhatsApp or email instead of a phone call?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Homeowners can start by WhatsApp or email with photos, room details, WiFi issues, smart-home problems, or project goals. A call can happen later only if it is useful."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if something breaks after installation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Denali Tech supports installed systems after the project. Products include manufacturer warranties, and the team can help with fixes, updates, programming questions, and troubleshooting."
+          }
+        }
+      ]
     }
     </script>
     <!-- Review Schema -->
@@ -1858,11 +1901,15 @@
             <div class="faq-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
                 <div class="faq-item-quick" style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; transition: all var(--transition);">
                     <h3 style="font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: 1rem; color: var(--text-primary);">What areas do you serve?</h3>
-                    <p style="color: var(--text-secondary); line-height: 1.6; margin: 0;">We serve the entire Chicago metro area including Mt Prospect, Arlington Heights, Schaumburg, Evanston, Skokie, and surrounding suburbs. <a href="/contact/" class="faq-link" style="color: #f97316 !important; text-decoration-color: #f97316; font-weight: 600;">Contact us</a> to confirm we serve your area.</p>
+                    <p style="color: var(--text-secondary); line-height: 1.6; margin: 0;">We serve the entire Chicago metro area including Mt Prospect, Arlington Heights, Schaumburg, Evanston, Skokie, and surrounding suburbs. <a href="mailto:Hello@denalitechs.com?subject=Service%20area%20question" class="faq-link denali-contact-track" data-contact-method="email_service_area" style="color: #f97316 !important; text-decoration-color: #f97316; font-weight: 600;">Email us</a> to confirm we serve your area.</p>
                 </div>
                 <div class="faq-item-quick" style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; transition: all var(--transition);">
                     <h3 style="font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: 1rem; color: var(--text-primary);">How much does smart home automation cost?</h3>
-                    <p style="color: var(--text-secondary); line-height: 1.6; margin: 0;">Costs vary based on your home size and needs. Simple WiFi upgrades start around $2,000, while complete whole-home automation can range from $15,000-$50,000+. <a href="/contact/#booking" class="faq-link" style="color: #f97316 !important; text-decoration-color: #f97316; font-weight: 600;">Get a free quote</a> tailored to your home.</p>
+                    <p style="color: var(--text-secondary); line-height: 1.6; margin: 0;">Costs vary based on your home size and needs. Simple WiFi upgrades start around $2,000, while complete whole-home automation can range from $15,000-$50,000+. <a href="mailto:Hello@denalitechs.com?subject=Denali%20Tech%20project%20estimate&body=Hi%20Denali%20Tech%2C%0A%0AI%20want%20an%20estimate%20for%3A%0AMy%20home%20or%20business%20is%20in%3A%0ABest%20way%20to%20reach%20me%3A" class="faq-link denali-contact-track" data-contact-method="email_faq_estimate" style="color: #f97316 !important; text-decoration-color: #f97316; font-weight: 600;">Email project details</a> for a tailored estimate.</p>
+                </div>
+                <div class="faq-item-quick" style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; transition: all var(--transition);">
+                    <h3 style="font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: 1rem; color: var(--text-primary);">Can I start by message instead of a call?</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.6; margin: 0;">Yes. Send photos, WiFi issues, room details, or smart-home goals by <a href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20want%20help%20with%20my%20home%20network%20or%20smart%20home." class="faq-link denali-contact-track" data-contact-method="whatsapp_faq" target="_blank" rel="noopener noreferrer" style="color: #f97316 !important; text-decoration-color: #f97316; font-weight: 600;">WhatsApp</a> or email first. We can schedule a call later only if it helps.</p>
                 </div>
                 <div class="faq-item-quick" style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; transition: all var(--transition);">
                     <h3 style="font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: 1rem; color: var(--text-primary);">What if something breaks?</h3>
