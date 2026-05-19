@@ -1,0 +1,60 @@
+{
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "HomeImprovementContractor"],
+  "@id": "https://denalitechs.com/#denali-tech",
+  "name": "Denali Tech",
+  "legalName": "Denali Tech Inc",
+  "url": "https://denalitechs.com/",
+  "telephone": "+1-312-439-7500",
+  "email": "Hello@denalitechs.com",
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "telephone": "+1-312-439-7500",
+      "email": "Hello@denalitechs.com",
+      "url": "https://wa.me/13124397500",
+      "availableLanguage": ["English"],
+      "areaServed": "US-IL"
+    }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Mount Prospect",
+    "addressRegion": "IL",
+    "postalCode": "60056",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    "Mount Prospect, IL",
+    "Chicago, IL",
+    "Arlington Heights, IL",
+    "Schaumburg, IL",
+    "Evanston, IL",
+    "Skokie, IL",
+    "Glenview, IL",
+    "Niles, IL",
+    "Des Plaines, IL",
+    "Park Ridge, IL",
+    "Elk Grove Village, IL",
+    "Northbrook, IL"
+  ],
+  "description": "Denali Tech designs and installs smart home automation, home theater, whole-home WiFi, security cameras, lighting, shades, and whole-home audio systems for Chicagoland homes and businesses.",
+  "sameAs": [
+    "https://www.facebook.com/Denali.Tech",
+    "https://www.instagram.com/denalitechs/",
+    "https://www.linkedin.com/company/denalitechs",
+    "https://www.trustpilot.com/review/denalitechs.com",
+    "https://www.bbb.org/us/il/mount-prospect/profile/home-automation/denali-tech-inc-0654-1000040414",
+    "https://www.n49.com/biz/6042167/denali-tech-home-automation-custom-av-solutions-in-chicago-il-mount-prospect-800-west-central-road/"
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "17:00"
+    }
+  ],
+  "dateModified": "2026-05-19"
+}
