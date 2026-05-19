@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Denali Tech
+ORG:Denali Tech Inc
+TEL;TYPE=WORK,VOICE:+1-312-439-7500
+EMAIL;TYPE=WORK:Hello@denalitechs.com
+URL:https://denalitechs.com/
+X-SOCIALPROFILE;TYPE=facebook:https://www.facebook.com/Denali.Tech
+X-SOCIALPROFILE;TYPE=instagram:https://www.instagram.com/denalitechs/
+X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/company/denalitechs
+NOTE:Preferred first contact is WhatsApp, email, or website form. Denali Tech serves smart home, AV, networking, theater, lighting, shades, and surveillance projects in Chicagoland.
+END:VCARD
