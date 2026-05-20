@@ -654,8 +654,9 @@
             <div class="hero-proof">Smart-home focused</div>
           </div>
           <div class="cta-row" aria-label="Primary actions">
-            <a class="btn btn-primary" href="#consultation-form">Book My Wi-Fi Consultation</a>
-            <a class="btn btn-outline" href="tel:+13124397500">Call 312-439-7500</a>
+            <a class="btn btn-primary denali-contact-track" data-contact-method="whatsapp_landing_hero" href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20want%20help%20with%20my%20whole-home%20WiFi%20or%20smart%20home%20network." target="_blank" rel="noopener noreferrer">Message on WhatsApp</a>
+            <a class="btn btn-outline denali-contact-track" data-contact-method="email_landing_hero" href="mailto:Hello@denalitechs.com?subject=Whole-home%20WiFi%20or%20smart%20home%20network%20help&body=Hi%20Denali%20Tech%2C%0A%0AI%20want%20help%20with%3A%0AMy%20home%20or%20business%20is%20in%3A%0ABest%20way%20to%20reach%20me%3A">Email Project Details</a>
+            <a class="btn btn-outline denali-contact-track" data-contact-method="form_landing_hero" href="#consultation-form">Use Quick Form</a>
           </div>
           <div class="hero-value" aria-label="What you get with Denali Tech">
             <h3>What You Get</h3>
@@ -688,18 +689,18 @@
           <div class="form-top">
             <div class="form-eyebrow">Free Consultation Request</div>
             <h2 id="form-title">Tell Us What Is Going Wrong</h2>
-            <p>Leave your name and best contact method. We will follow up to talk through the Wi-Fi problem and next steps.</p>
+            <p>Leave your name and the best way to reach you. WhatsApp, text, or email is fine; a call can come later only if it helps.</p>
             <div class="form-trust" aria-label="Form reassurance">
               <div>Fast response from Denali Tech</div>
-              <div>No long questionnaire</div>
+              <div>No pressure call required</div>
             </div>
           </div>
 
           <form id="wifi-consult-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
             <input type="hidden" name="access_key" value="9007b329-be2c-40a8-af09-d652f0f5b566">
-            <input type="hidden" name="subject" value="Facebook Ads - Wi-Fi Consultation Request">
+            <input type="hidden" name="subject" value="Denali Tech - Whole-Home WiFi Consultation Request">
             <input type="hidden" name="from_name" value="Denali Tech Wi-Fi Landing Page">
-            <input type="hidden" name="to_email" value="services@denalitechs.com">
+            <input type="hidden" name="to_email" value="Hello@denalitechs.com">
             <input type="hidden" name="redirect" value="https://denalitechs.com/thank-you/">
             <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
             <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -711,6 +712,8 @@
             <input type="hidden" name="utm_content" id="utm-content" value="">
             <input type="hidden" name="utm_term" id="utm-term" value="">
             <input type="hidden" name="fbclid" id="fbclid" value="">
+            <input type="hidden" name="msclkid" id="msclkid" value="">
+            <input type="hidden" name="gclid" id="gclid" value="">
             <input type="hidden" name="landing_page" id="landing-page" value="">
             <input type="hidden" name="referrer" id="referrer" value="">
 
@@ -722,23 +725,24 @@
               </div>
 
               <div class="field">
-                <label for="phone">Phone</label>
-                <input type="tel" id="phone" name="phone" autocomplete="tel" required>
+                <label for="phone">Phone or WhatsApp number</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="Optional if you prefer email">
                 <span class="field-error" id="phone-error" role="alert"></span>
               </div>
 
               <div class="field">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" autocomplete="email" placeholder="Optional">
+                <input type="email" id="email" name="email" autocomplete="email" placeholder="Optional if you prefer WhatsApp/text">
                 <span class="field-error" id="email-error" role="alert"></span>
               </div>
 
               <div class="field">
                 <label for="contact-preference">Best way to reach you</label>
                 <select id="contact-preference" name="contact_preference">
-                  <option value="Call">Call</option>
+                  <option value="WhatsApp or Text">WhatsApp or text</option>
                   <option value="Text">Text</option>
                   <option value="Email">Email</option>
+                  <option value="Call">Call if needed</option>
                 </select>
                 <span class="field-error" id="contact-preference-error" role="alert"></span>
               </div>
@@ -895,11 +899,44 @@
         setHiddenField('utm-content', params.get('utm_content'));
         setHiddenField('utm-term', params.get('utm_term'));
         setHiddenField('fbclid', params.get('fbclid'));
+        setHiddenField('msclkid', params.get('msclkid'));
+        setHiddenField('gclid', params.get('gclid'));
         setHiddenField('landing-page', window.location.href);
         setHiddenField('referrer', document.referrer || '');
       }
 
       captureAttribution();
+
+      function trackDenaliIntent(method, source) {
+        var payload = {
+          contact_method: method || 'unknown',
+          source: source || 'network_consultation_landing',
+          lead_type: 'network_consultation'
+        };
+
+        if (window.dataLayer && typeof window.dataLayer.push === 'function') {
+          window.dataLayer.push({
+            event: 'denali_contact_intent',
+            contact_method: payload.contact_method,
+            lead_type: payload.lead_type,
+            source: payload.source
+          });
+        }
+
+        window.uetq = window.uetq || [];
+        window.uetq.push('event', 'lead_intent', {
+          event_category: 'lead',
+          event_label: payload.contact_method,
+          contact_method: payload.contact_method,
+          lead_type: payload.lead_type
+        });
+      }
+
+      document.querySelectorAll('.denali-contact-track').forEach(function (link) {
+        link.addEventListener('click', function () {
+          trackDenaliIntent(link.getAttribute('data-contact-method'), 'landing_click');
+        });
+      });
 
       function validate() {
         clearErrors();
@@ -928,10 +965,11 @@
           ok = false;
         }
 
-        if (!fields.phone.value.trim()) {
-          setError('phone-error', 'Please enter your phone number.');
+        if (!fields.phone.value.trim() && !fields.email.value.trim()) {
+          setError('phone-error', 'Please enter a phone/WhatsApp number or an email.');
+          setError('email-error', 'Please enter an email or a phone/WhatsApp number.');
           ok = false;
-        } else if (!validPhone(fields.phone.value)) {
+        } else if (fields.phone.value.trim() && !validPhone(fields.phone.value)) {
           setError('phone-error', 'Please enter a valid phone number.');
           ok = false;
         }
@@ -943,6 +981,11 @@
 
         if (fields.contactPreference && fields.contactPreference.value === 'Email' && !fields.email.value.trim()) {
           setError('email-error', 'Please enter your email if you want an email reply.');
+          ok = false;
+        }
+
+        if (fields.contactPreference && fields.contactPreference.value !== 'Email' && !fields.phone.value.trim()) {
+          setError('phone-error', 'Please enter your phone or WhatsApp number for text or WhatsApp replies.');
           ok = false;
         }
 
@@ -995,6 +1038,14 @@
                   form_id: 'network-consultation-form'
                 });
               }
+              trackDenaliIntent('form_submit', 'landing_form_success');
+              window.uetq = window.uetq || [];
+              window.uetq.push('event', 'generate_lead', {
+                event_category: 'lead',
+                event_label: 'network_consultation_form',
+                lead_type: 'network_consultation',
+                form_id: 'network-consultation-form'
+              });
               rememberSubmitTime();
               setMessage('Thanks. Redirecting...', false);
               window.location.href = form.querySelector('[name="redirect"]').value;
