@@ -6,7 +6,7 @@
         <link>https://denalitechs.com/blogs/</link>
         <description>Expert tips, guides, and insights about smart home technology, home automation, and AV systems from Chicago's trusted smart home experts.</description>
         <language>en-us</language>
-        <lastBuildDate>Tue, 19 May 2026 12:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 24 Apr 2026 05:30:00 GMT</lastBuildDate>
         <atom:link href="https://denalitechs.com/blogs/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://denalitechs.com/Video/logo.JPG</url>
@@ -14,34 +14,7 @@
             <link>https://denalitechs.com/blogs/</link>
         </image>
 
-
         <item>
-            <title>Whole-Home Network Assessment: What We Check Before Recommending Gear</title>
-            <link>https://denalitechs.com/blogs/whole-home-network-assessment-what-we-check/</link>
-            <description>A practical guide to what Denali Tech checks before recommending routers, access points, wiring, or smart home network upgrades.</description>
-            <pubDate>Tue, 19 May 2026 12:00:00 GMT</pubDate>
-            <guid isPermaLink="true">https://denalitechs.com/blogs/whole-home-network-assessment-what-we-check/</guid>
-            <category>Networking</category>
-        </item>
-
-        <item>
-            <title>Why Smart Homes Fail When the Network Is Weak</title>
-            <link>https://denalitechs.com/blogs/why-smart-homes-fail-when-network-is-weak/</link>
-            <description>Smart home problems often come from the network behind the system. Learn how weak Wi-Fi, poor wiring, and bad placement can make cameras, lighting, shades, and control apps feel unreliable.</description>
-            <pubDate>Tue, 19 May 2026 12:00:00 GMT</pubDate>
-            <guid isPermaLink="true">https://denalitechs.com/blogs/why-smart-homes-fail-when-network-is-weak/</guid>
-            <category>Troubleshooting</category>
-        </item>
-
-        <item>
-            <title>Smart Home Control That Actually Gets Used</title>
-            <link>https://denalitechs.com/blogs/smart-home-control-that-actually-gets-used/</link>
-            <description>Smart home control should be simple enough for the whole household. Learn how Denali Tech thinks about scenes, remotes, keypads, apps, voice control, and reliable infrastructure.</description>
-            <pubDate>Tue, 19 May 2026 12:00:00 GMT</pubDate>
-            <guid isPermaLink="true">https://denalitechs.com/blogs/smart-home-control-that-actually-gets-used/</guid>
-            <category>Smart Home Guide</category>
-        </item>
-<item>
             <title>Smart Home Automation for Beginners: Complete Starter Guide 2026</title>
             <link>https://denalitechs.com/blogs/smart-home-automation-for-beginners/</link>
             <description>New to smart homes? This beginner's guide explains everything you need to know about smart home automation, from basics to getting started. Simple, easy-to-understand guide.</description>
@@ -49,7 +22,7 @@
             <guid isPermaLink="true">https://denalitechs.com/blogs/smart-home-automation-for-beginners/</guid>
             <category>Smart Home Guide</category>
         </item>
-
+        
         <item>
             <title>Home Theater Installation Guide: Everything You Need to Know</title>
             <link>https://denalitechs.com/blogs/home-theater-installation-guide/</link>
@@ -58,7 +31,7 @@
             <guid isPermaLink="true">https://denalitechs.com/blogs/home-theater-installation-guide/</guid>
             <category>Smart Home Guide</category>
         </item>
-
+        
         <item>
             <title>What is Control4? Complete Guide for Homeowners 2026</title>
             <link>https://denalitechs.com/blogs/what-is-control4-guide/</link>
@@ -67,7 +40,7 @@
             <guid isPermaLink="true">https://denalitechs.com/blogs/what-is-control4-guide/</guid>
             <category>Smart Home Guide</category>
         </item>
-
+        
         <item>
             <title>How to Choose a Smart Home Installer: 10 Essential Questions to Ask</title>
             <link>https://denalitechs.com/blogs/how-to-choose-smart-home-installer/</link>
@@ -76,7 +49,7 @@
             <guid isPermaLink="true">https://denalitechs.com/blogs/how-to-choose-smart-home-installer/</guid>
             <category>Tips</category>
         </item>
-
+        
         <item>
             <title>How to Fix WiFi Dead Zones: Complete Guide to Whole-Home WiFi Coverage</title>
             <link>https://denalitechs.com/blogs/wifi-dead-zones-fix-guide/</link>
@@ -85,7 +58,7 @@
             <guid isPermaLink="true">https://denalitechs.com/blogs/wifi-dead-zones-fix-guide/</guid>
             <category>Smart Home Guide</category>
         </item>
-
+        
         <item>
             <title>Control4 vs URC: Which Smart Home System is Right for You?</title>
             <link>https://denalitechs.com/blogs/control4-vs-urc-comparison/</link>
@@ -94,7 +67,7 @@
             <guid isPermaLink="true">https://denalitechs.com/blogs/control4-vs-urc-comparison/</guid>
             <category>Buying Guide</category>
         </item>
-
+        
         <item>
             <title>How Much Does Smart Home Automation Cost? Complete Pricing Guide 2026</title>
             <link>https://denalitechs.com/blogs/how-much-does-smart-home-automation-cost/</link>
@@ -103,7 +76,7 @@
             <guid isPermaLink="true">https://denalitechs.com/blogs/how-much-does-smart-home-automation-cost/</guid>
             <category>Smart Home Guide</category>
         </item>
-
+        
         <item>
             <title>URC Remote Programming Guide: Get Your Universal Remote Working Perfectly</title>
             <link>https://denalitechs.com/blogs/urc-remote-programming-guide/</link>
@@ -112,7 +85,7 @@
             <guid isPermaLink="true">https://denalitechs.com/blogs/urc-remote-programming-guide/</guid>
             <category>URC Systems</category>
         </item>
-
+        
         <item>
             <title>Smart Home Buyer's Guide: Everything You Need to Know Before Investing</title>
             <link>https://denalitechs.com/blogs/smart-home-buyers-guide/</link>
@@ -121,7 +94,7 @@
             <guid isPermaLink="true">https://denalitechs.com/blogs/smart-home-buyers-guide/</guid>
             <category>Buying Guide</category>
         </item>
-
+        
         <item>
             <title>10 Questions to Ask Your Installer Before Hiring</title>
             <link>https://denalitechs.com/blogs/questions-to-ask-installer/</link>
@@ -130,7 +103,7 @@
             <guid isPermaLink="true">https://denalitechs.com/blogs/questions-to-ask-installer/</guid>
             <category>Tips</category>
         </item>
-
+        
         <item>
             <title>URC MX-990 Remote Review: Complete Analysis</title>
             <link>https://denalitechs.com/blogs/urc-mx-990-review/</link>
@@ -139,7 +112,7 @@
             <guid isPermaLink="true">https://denalitechs.com/blogs/urc-mx-990-review/</guid>
             <category>Product Review</category>
         </item>
-
+        
         <item>
             <title>Control4 SR-260 Remote Review: Complete Analysis</title>
             <link>https://denalitechs.com/blogs/control4-remote-review/</link>
@@ -148,7 +121,7 @@
             <guid isPermaLink="true">https://denalitechs.com/blogs/control4-remote-review/</guid>
             <category>Product Review</category>
         </item>
-
+        
         <item>
             <title>Control4 Helo Remote Review: Non-Touch Version</title>
             <link>https://denalitechs.com/blogs/urc-universal-remote-review/</link>
@@ -157,7 +130,7 @@
             <guid isPermaLink="true">https://denalitechs.com/blogs/urc-universal-remote-review/</guid>
             <category>Product Review</category>
         </item>
-
+        
         <item>
             <title>Control4 NEEO Remote Review: Sleek Design &amp; Features</title>
             <link>https://denalitechs.com/blogs/modern-smart-home-remote-review/</link>
@@ -166,7 +139,7 @@
             <guid isPermaLink="true">https://denalitechs.com/blogs/modern-smart-home-remote-review/</guid>
             <category>Product Review</category>
         </item>
-
+        
         <item>
             <title>Control4 Helo Touch Remote Review: Complete Analysis</title>
             <link>https://denalitechs.com/blogs/control4-helo-touch-review/</link>
