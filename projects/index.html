@@ -5,7 +5,7 @@
     <script>
     window.dataLayer = window.dataLayer || [];
     var gtmLoaded = false;
-    
+
     function loadGTM() {
         if (gtmLoaded) return;
         gtmLoaded = true;
@@ -15,7 +15,7 @@
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-MWPTRPDR');
     }
-    
+
     // Load GTM after page is fully loaded and idle, or on user interaction
     function initGTM() {
         // Wait for page to be fully loaded
@@ -35,7 +35,7 @@
                 }
             });
         }
-        
+
         // Load on first user interaction as fallback (scroll, click, touchstart)
         var interactionEvents = ['scroll', 'click', 'touchstart', 'keydown'];
         var loadOnInteraction = function() {
@@ -48,7 +48,7 @@
             document.addEventListener(event, loadOnInteraction, { passive: true, once: true });
         });
     }
-    
+
     initGTM();
     </script>
     <!-- End Google Tag Manager -->
@@ -97,7 +97,7 @@
     <title>Project Showcase - Denali Tech | Smart Home Installations Chicago</title>
     <meta name="description" content="Explore Denali Tech's completed smart home projects in Chicago. View our premium home theater installations, automation systems, outdoor entertainment, and more.">
     <meta name="keywords" content="smart home projects chicago, home theater installations, control4 installations, automation projects, custom home theater, outdoor entertainment systems, gaming room setup, smart home showcase">
-    
+
     <base href="/">
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -105,14 +105,14 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://denalitechs.com/projects/">
     <meta property="og:title" content="Project Showcase - Denali Tech | Smart Home Installations Chicago">
     <meta property="og:description" content="Explore Denali Tech's completed smart home projects in Chicago. View our premium home theater installations, automation systems, outdoor entertainment, and more.">
     <meta property="og:image" content="https://denalitechs.com/Video/Project%20showcases%20/denali-tech-project-showcases-social.jpg">
-    
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://denalitechs.com/projects/">
@@ -122,7 +122,7 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://denalitechs.com/projects/">
     <meta name="twitter:image" content="https://denalitechs.com/Video/Project%20showcases%20/denali-tech-project-showcases-social.jpg">
-    
+
     <!-- PERFORMANCE: Optimized Font Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -133,7 +133,7 @@
     <style>
         /* Font fallback to prevent FOIT (Flash of Invisible Text) */
         body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
-    
+
             /* Enhanced Focus Indicators for Better Accessibility */
             a:focus-visible,
             button:focus-visible,
@@ -152,13 +152,13 @@
                 outline-offset: 3px;
                 border-radius: 6px;
             }
-            
+
             /* Fallback for older browsers */
             a:focus:not(:focus-visible),
             button:focus:not(:focus-visible) {
                 outline: none;
             }
-            
+
             a:focus,
             button:focus {
                 outline: 3px solid var(--accent-primary);
@@ -167,7 +167,7 @@
             }
 
     </style>
-    
+
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
     {
@@ -217,9 +217,9 @@
       }
     }
     </script>
-    
+
     <style>
-        /* 
+        /*
         ============================================
         DENALI TECH PROJECT SHOWCASE PAGE
         Exact copy of website design
@@ -555,7 +555,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
+            background:
                 radial-gradient(circle at 20% 50%, var(--bg-aurora-1) 0%, transparent 50%),
                 radial-gradient(circle at 80% 80%, var(--bg-aurora-2) 0%, transparent 50%),
                 radial-gradient(circle at 40% 20%, var(--bg-aurora-3) 0%, transparent 50%);
@@ -1292,11 +1292,11 @@
             .header-actions {
                 gap: 0.6rem;
             }
-            
+
             .theme-toggle {
                 order: -1; /* Show theme toggle first on mobile */
             }
-            
+
             .header-actions .cta-button {
                 display: none;
             }
@@ -1493,13 +1493,13 @@
             };
         })();
     </script>
-    
+
     <!-- Shared Mobile Menu Script -->
     <script src="/assets/js/mobile-menu.js?v=20260323d" defer></script>
-    
+
     <!-- Shared Mobile Menu Styles -->
     <link rel="stylesheet" href="/assets/css/mobile-menu.css?v=20260323d">
-    
+
     <!-- HEADER -->
     <header class="header">
         <div class="container">
@@ -1507,7 +1507,7 @@
                 <a href="/" class="logo" title="Denali Tech">
                     <picture>
                         <source srcset="/Video/logo.webp" type="image/webp">
-                        <img src="/Video/logo.JPG" alt="Denali Tech Logo" loading="eager" width="56" height="40" style="width: 56px; height: 40px; margin-right: 6px; object-fit: cover; object-position: 40% center; border-radius: 10px;">
+                        <img src="/Video/logo.JPG" alt="Denali Tech Logo" onerror="this.style.display='none'" loading="eager" width="56" height="40" style="width: 56px; height: 40px; margin-right: 6px; object-fit: cover; object-position: 40% center; border-radius: 10px;">
                     </picture>
                     <span class="logo-text">Denali Tech</span>
                 </a>
@@ -1531,13 +1531,13 @@
                     <span></span>
                     <span></span>
                 </button>
-                <a href="tel:+13124397500" class="cta-button call-now-button">
+                <a href="https://wa.me/13124397500" target="_blank" rel="noopener noreferrer" class="cta-button call-now-button">
                     <span class="phone-icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                             <path d="M6.62 10.79a15.07 15.07 0 006.59 6.59l2.2-2.2a1 1 0 011.03-.24 11.62 11.62 0 003.67.59 1 1 0 011 1v3.5a1 1 0 01-1 1A17.5 17.5 0 013 6a1 1 0 011-1h3.5a1 1 0 011 1 11.62 11.62 0 00.59 3.67 1 1 0 01-.24 1.03z"></path>
                         </svg>
                     </span>
-                    <span>Call Now</span>
+                    <span>Message Us</span>
                 </a>
             </div>
         </div>
@@ -1572,7 +1572,7 @@
     <!-- PROJECTS GRID -->
     <section class="projects-section">
         <div class="projects-grid" id="projectsGrid">
-            
+
             <!-- Project 1 -->
             <div class="project-card" data-category="home-theater" data-id="cityscape">
                 <div class="project-image-wrapper">
@@ -1819,8 +1819,8 @@
             <div class="footer-main-grid">
                 <div class="footer-brand">
                     <h3>Denali Tech</h3>
-                    <p>Premier home automation and A/V solutions for the modern home. Experience cutting-edge technology, simplified and tailored to your lifestyle.</p>
-                    <a href="/contact/#booking" class="cta-button">Request a Consultation</a>
+                    <p>Smart home, AV, WiFi, lighting, security, shades, theater, and audio systems installed cleanly for Chicago-area homes.</p>
+                    <a href="/contact/#booking" class="cta-button">Send Project Details</a>
                 </div>
 
                 <div class="footer-column">
@@ -1849,10 +1849,8 @@
                 </div>
 
                 <div class="footer-column">
-                    <h4>Products & Brands</h4>
+                    <h4>Trusted Platforms</h4>
                     <ul>
-                        <li><a href="https://dt-nt.com/">DTNT.com</a></li>
-                        <li><a href="https://propokit.com" target="_blank" rel="noopener noreferrer">PropoKit</a></li>
                         <li><a href="/brands/">Our Brands</a></li>
                         <li><a href="https://www.control4.com/" target="_blank" rel="noopener noreferrer">Control4</a></li>
                         <li><a href="https://www.urc-automation.com/" target="_blank" rel="noopener noreferrer">URC Automation</a></li>
@@ -2106,7 +2104,7 @@
             const modalImage = document.getElementById('modalImage');
             const modalTitle = document.getElementById('modalTitle');
             const modalDescription = document.getElementById('modalDescription');
-            
+
             // Only proceed if modal elements exist
             if (modal && modalClose && modalImage && modalTitle && modalDescription && projectCards.length > 0) {
 
@@ -2169,7 +2167,7 @@
             },
             'fire-edge-martinlogan': {
                 title: 'Premium Fire Edge Theater',
-                description: 'Ultra-premium home theater installation featuring a fire edge projection screen that creates a stunning, frameless viewing experience. High-end 4K laser projector provides exceptional picture quality with perfect color accuracy. Premium MartinLogan speakers deliver reference-grade audio with electrostatic clarity and precision. This installation showcases the pinnacle of home cinema technology, combining cutting-edge video projection with world-class audio performance. Professional acoustic treatment and room calibration ensure optimal sound staging and immersive surround sound experience. Perfect for discerning clients who demand the absolute best in home entertainment.'
+                description: 'Ultra-premium home theater installation featuring a fire edge projection screen that creates a stunning, frameless viewing experience. High-end 4K laser projector provides exceptional picture quality with perfect color accuracy. Premium MartinLogan speakers deliver reference-grade audio with electrostatic clarity and precision. This installation showcases the pinnacle of home cinema technology, combining professional video projection with world-class audio performance. Professional acoustic treatment and room calibration ensure optimal sound staging and immersive surround sound experience. Perfect for discerning clients who demand the absolute best in home entertainment.'
             }
         };
 
@@ -2234,7 +2232,7 @@
                     const newProjectId = projectIds[currentProjectIndex];
                     const newProject = projectDetails[newProjectId];
                     const newCard = document.querySelector(`[data-id="${newProjectId}"]`);
-                    
+
                     if (newCard && newProject) {
                         const imageSrc = newCard.querySelector('.project-image').src;
                         modalImage.src = imageSrc;
@@ -2260,7 +2258,7 @@
                     const newProjectId = projectIds[currentProjectIndex];
                     const newProject = projectDetails[newProjectId];
                     const newCard = document.querySelector(`[data-id="${newProjectId}"]`);
-                    
+
                     if (newCard && newProject) {
                         const imageSrc = newCard.querySelector('.project-image').src;
                         modalImage.src = imageSrc;
@@ -2272,7 +2270,7 @@
                     const newProjectId = projectIds[currentProjectIndex];
                     const newProject = projectDetails[newProjectId];
                     const newCard = document.querySelector(`[data-id="${newProjectId}"]`);
-                    
+
                     if (newCard && newProject) {
                         const imageSrc = newCard.querySelector('.project-image').src;
                         modalImage.src = imageSrc;

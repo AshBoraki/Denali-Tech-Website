@@ -5,7 +5,7 @@
     <script>
     window.dataLayer = window.dataLayer || [];
     var gtmLoaded = false;
-    
+
     function loadGTM() {
         if (gtmLoaded) return;
         gtmLoaded = true;
@@ -15,7 +15,7 @@
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-MWPTRPDR');
     }
-    
+
     // Load GTM after page is fully loaded and idle, or on user interaction
     function initGTM() {
         // Wait for page to be fully loaded
@@ -35,7 +35,7 @@
                 }
             });
         }
-        
+
         // Load on first user interaction as fallback (scroll, click, touchstart)
         var interactionEvents = ['scroll', 'click', 'touchstart', 'keydown'];
         var loadOnInteraction = function() {
@@ -48,7 +48,7 @@
             document.addEventListener(event, loadOnInteraction, { passive: true, once: true });
         });
     }
-    
+
     initGTM();
     </script>
     <!-- End Google Tag Manager -->
@@ -95,19 +95,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Contact Denali Tech | Smart Home, Wi-Fi & AV Consultation</title>
-    <meta name="description" content="Contact Denali Tech for smart home, Wi-Fi, home theater, lighting, shades, and AV projects in Chicago. Call (312) 439-7500, email Hello@denalitechs.com, or request a consultation online.">
+    <meta name="description" content="Contact Denali Tech for smart home, Wi-Fi, home theater, lighting, shades, and AV projects in Chicago. Message us, email Hello@denalitechs.com, or send project details online.">
     <meta name="keywords" content="smart home consultation Chicago, Wi-Fi consultation Chicago, home theater consultation Chicago, AV installer contact, Denali Tech phone number, smart home installation quote, home networking consultation, Chicago low voltage installer">
-    
+
     <!-- Open Graph Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://denalitechs.com/contact/">
     <meta property="og:title" content="Contact Denali Tech | Smart Home, Wi-Fi & AV Consultation">
-    <meta property="og:description" content="Contact Denali Tech for smart home, Wi-Fi, home theater, lighting, shades, and AV projects in Chicago. Call (312) 439-7500, email Hello@denalitechs.com, or request a consultation online.">
+    <meta property="og:description" content="Contact Denali Tech for smart home, Wi-Fi, home theater, lighting, shades, and AV projects in Chicago. Message us, email Hello@denalitechs.com, or send project details online.">
     <meta property="og:image" content="https://denalitechs.com/Video/logo-social.jpg">
-    
+
     <!-- Canonical URL -->
     <link rel="canonical" href="https://denalitechs.com/contact/">
-    
+
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://denalitechs.com/contact/">
@@ -122,7 +122,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png">
-    
+
     <!-- PERFORMANCE: Optimized Font Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -133,7 +133,7 @@
     <style>
         /* Font fallback to prevent FOIT (Flash of Invisible Text) */
         body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
-    
+
             /* Enhanced Focus Indicators for Better Accessibility */
             a:focus-visible,
             button:focus-visible,
@@ -152,13 +152,13 @@
                 outline-offset: 3px;
                 border-radius: 6px;
             }
-            
+
             /* Fallback for older browsers */
             a:focus:not(:focus-visible),
             button:focus:not(:focus-visible) {
                 outline: none;
             }
-            
+
             a:focus,
             button:focus {
                 outline: 3px solid var(--accent-primary);
@@ -169,7 +169,7 @@
     </style>
 
     <style>
-        /* 
+        /*
         ============================================
         DENALI TECH CONTACT PAGE
         Simple Contact & Consultation Booking
@@ -1119,9 +1119,9 @@
             left: 0;
             right: 0;
             height: 1px;
-            background: linear-gradient(90deg, 
-                transparent, 
-                rgba(249, 115, 22, 0.5), 
+            background: linear-gradient(90deg,
+                transparent,
+                rgba(249, 115, 22, 0.5),
                 transparent);
             opacity: 0.6;
         }
@@ -1839,11 +1839,11 @@
             .header-actions {
                 gap: 0.6rem;
             }
-            
+
             .theme-toggle {
                 order: -1; /* Show theme toggle first on mobile */
             }
-            
+
             .cta-button {
                 display: none;
             }
@@ -2185,7 +2185,7 @@
     </script>
     <!-- Shared Mobile Menu Script -->
     <script src="/assets/js/mobile-menu.js?v=20260323d" defer></script>
-    
+
     <!-- Shared Mobile Menu Styles -->
     <link rel="stylesheet" href="/assets/css/mobile-menu.css?v=20260323d">
 
@@ -2221,7 +2221,7 @@
                 <a href="/" class="logo" title="Denali Tech">
                     <picture>
                         <source srcset="/Video/logo.webp" type="image/webp">
-                        <img src="/Video/logo.JPG" alt="Denali Tech Logo" loading="eager" width="56" height="40" style="width: 56px; height: 40px; margin-right: 6px; object-fit: cover; object-position: 40% center; border-radius: 10px;">
+                        <img src="/Video/logo.JPG" alt="Denali Tech Logo" onerror="this.style.display='none'" loading="eager" width="56" height="40" style="width: 56px; height: 40px; margin-right: 6px; object-fit: cover; object-position: 40% center; border-radius: 10px;">
                     </picture>
                     <span class="logo-text">Denali Tech</span>
                 </a>
@@ -2245,13 +2245,13 @@
                         <span></span>
                         <span></span>
                     </button>
-                    <a href="tel:+13124397500" class="cta-button call-now-button">
+                    <a href="https://wa.me/13124397500" target="_blank" rel="noopener noreferrer" class="cta-button call-now-button">
                         <span class="phone-icon" aria-hidden="true">
                             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                 <path d="M6.62 10.79a15.07 15.07 0 006.59 6.59l2.2-2.2a1 1 0 011.03-.24 11.62 11.62 0 003.67.59 1 1 0 011 1v3.5a1 1 0 01-1 1A17.5 17.5 0 013 6a1 1 0 011-1h3.5a1 1 0 011 1 11.62 11.62 0 00.59 3.67 1 1 0 01-.24 1.03z"></path>
                             </svg>
                         </span>
-                        <span>Call Now</span>
+                        <span>Message Us</span>
                     </a>
                 </div>
         </div>
@@ -2272,7 +2272,7 @@
         <div class="container">
             <div class="booking-form-container">
                 <div style="text-align: center; margin-bottom: 1.1rem;">
-                    <h2 style="font-family: var(--font-heading); font-size: clamp(1.5rem, 3vw, 1.95rem); font-weight: 700; color: var(--text-primary); margin-bottom: 0.6rem; line-height: 1.2;">Request a Consultation</h2>
+                    <h2 style="font-family: var(--font-heading); font-size: clamp(1.5rem, 3vw, 1.95rem); font-weight: 700; color: var(--text-primary); margin-bottom: 0.6rem; line-height: 1.2;">Send Project Details</h2>
                     <p style="font-size: 1rem; color: var(--text-secondary); max-width: 620px; margin: 0 auto 1rem; line-height: 1.55;">Tell us what you want built, fixed, or upgraded. Most homeowners hear back within one business day.</p>
                     <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; margin-bottom: 0.9rem;">
                         <a href="tel:+13124397500" style="display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.65rem 1.1rem; background: rgba(249, 115, 22, 0.1); border: 1px solid rgba(249, 115, 22, 0.3); border-radius: 8px; color: var(--accent-primary); text-decoration: none; font-weight: 600; transition: all var(--transition);">
@@ -2296,27 +2296,27 @@
                         </a>
                     </div>
                 </div>
-                
+
                 <!-- Trust Signals - Compact Design -->
                 <div style="margin: 0.85rem 0 1rem; padding: 0.7rem 0.9rem; background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(249, 115, 22, 0.05)); border-radius: 12px; border: 1px solid rgba(249, 115, 22, 0.2); text-align: center;">
                     <p style="margin: 0; font-size: 0.92rem; color: var(--text-secondary); line-height: 1.5;">
                         <strong style="color: var(--text-primary);">5.0 Google rating</strong> • Reply within 24 hours • Clear recommendations
                     </p>
                 </div>
-                
+
                 <form class="booking-form" id="booking-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
                     <input type="hidden" name="access_key" value="9007b329-be2c-40a8-af09-d652f0f5b566">
-                    <input type="hidden" name="subject" value="New Consultation Booking Request">
+                    <input type="hidden" name="subject" value="New Denali Tech Project Details">
                     <input type="hidden" name="from_name" value="Denali Tech Website">
                     <input type="hidden" name="to_email" value="services@denalitechs.com">
                     <input type="hidden" name="redirect" value="https://denalitechs.com/thank-you/">
                     <!-- Honeypot fields to catch bots -->
                     <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
                     <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
-                    
+
                     <!-- Success/Error Messages -->
                     <div id="booking-form-message" role="alert" aria-live="polite"></div>
-                    
+
                     <!-- Step 1: Contact Information -->
                     <fieldset class="form-step" data-step="1">
                         <legend>Contact Information</legend>
@@ -2400,19 +2400,19 @@
                             </p>
                         </div>
                     </fieldset>
-                    
+
                     <!-- Captcha -->
                     <div class="form-group" style="margin-top: 1rem;">
                         <div class="h-captcha" data-captcha="true"></div>
                         <span class="field-error" id="captcha-error" role="alert"></span>
                     </div>
-                    
+
                     <!-- Submit Button -->
                     <button type="submit" class="booking-form-submit" id="submit-btn">
                         <span class="btn-text">Send Message</span>
                         <span class="btn-loader" style="display: none;">⏳</span>
                     </button>
-                    
+
                     <!-- Privacy Notice -->
                     <p style="text-align: center; margin-top: 1rem; font-size: 0.875rem; color: var(--text-secondary); line-height: 1.5;">
                         We keep your information private and only use it to respond to your request.
@@ -2454,7 +2454,7 @@
                     <button class="service-area-toggle-btn" id="serviceAreaToggle" onclick="const list = document.getElementById('serviceAreaList'); const btn = document.getElementById('serviceAreaToggle'); list.classList.toggle('service-area-list-collapsed'); btn.textContent = list.classList.contains('service-area-list-collapsed') ? 'Show All Areas' : 'Show Less';" style="display: block; width: 100%; margin-top: 1rem; padding: 0.875rem 1.5rem; background: rgba(249,115,22,0.1); border: 1px solid rgba(249,115,22,0.3); border-radius: 10px; color: var(--accent-primary); font-weight: 600; font-size: 0.95rem; cursor: pointer; transition: all var(--transition);">
                         Show All Areas
                     </button>
-                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">Not sure if you are in range? Call or text us and we will tell you quickly.</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-secondary);">Not sure if you are in range? Message or email us and we will tell you quickly.</p>
                 </div>
                 <div class="service-area-map" style="background: rgba(255,255,255,0.05); border-radius: 16px; overflow: hidden; border: 1px solid var(--border-color); height: 400px;">
                     <div id="serviceAreaMapPlaceholder" style="width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem; background: linear-gradient(135deg, rgba(249,115,22,0.12), rgba(13,148,136,0.08));">
@@ -2512,8 +2512,8 @@
             <div class="footer-main-grid">
                 <div class="footer-brand">
                     <h3>Denali Tech</h3>
-                    <p>Premier home automation and A/V solutions for the modern home. Experience cutting-edge technology, simplified and tailored to your lifestyle.</p>
-                    <a href="/contact/#booking" class="cta-button">Request a Consultation</a>
+                    <p>Smart home, AV, WiFi, lighting, security, shades, theater, and audio systems installed cleanly for Chicago-area homes.</p>
+                    <a href="/contact/#booking" class="cta-button">Send Project Details</a>
                 </div>
 
                 <div class="footer-column">
@@ -2542,10 +2542,8 @@
                 </div>
 
                 <div class="footer-column">
-                    <h4>Products & Brands</h4>
+                    <h4>Trusted Platforms</h4>
                     <ul>
-                        <li><a href="https://dt-nt.com/">DTNT.com</a></li>
-                        <li><a href="https://propokit.com" target="_blank" rel="noopener noreferrer">PropoKit</a></li>
                         <li><a href="/brands/">Our Brands</a></li>
                         <li><a href="https://www.control4.com/" target="_blank" rel="noopener noreferrer">Control4</a></li>
                         <li><a href="https://www.urc-automation.com/" target="_blank" rel="noopener noreferrer">URC Automation</a></li>
@@ -2621,14 +2619,14 @@
         document.addEventListener('DOMContentLoaded', function () {
             const form = document.getElementById('consultation-form');
             if (!form) return;
-            
+
             // Rate limiting: prevent rapid submissions
             let lastSubmissionTime = 0;
             const minTimeBetweenSubmissions = 5000; // 5 seconds
-            
+
             form.addEventListener('submit', async function (e) {
                 e.preventDefault();
-                
+
                 // Check honeypot fields - if filled, it's a bot
                 const honeypot1 = form.querySelector('input[name="website"]');
                 const honeypot2 = form.querySelector('input[name="_gotcha"]');
@@ -2636,7 +2634,7 @@
                     // Bot detected - silently reject
                     return;
                 }
-                
+
                 // Check hCaptcha - wait a moment for it to load if needed
                 let hCaptcha = form.querySelector('textarea[name="h-captcha-response"]');
                 if (!hCaptcha) {
@@ -2644,7 +2642,7 @@
                     await new Promise(resolve => setTimeout(resolve, 500));
                     hCaptcha = form.querySelector('textarea[name="h-captcha-response"]');
                 }
-                
+
                 if (!hCaptcha || !hCaptcha.value) {
                     e.preventDefault();
                     const messageDiv = document.getElementById('consultation-form-message') || form.querySelector('.form-message');
@@ -2659,7 +2657,7 @@
                     }
                     return;
                 }
-                
+
                 // Rate limiting check
                 const now = Date.now();
                 if (now - lastSubmissionTime < minTimeBetweenSubmissions) {
@@ -2675,7 +2673,7 @@
                     return;
                 }
                 lastSubmissionTime = now;
-                
+
                 const submitBtn = form.querySelector('button[type="submit"]');
                 const originalBtnText = submitBtn ? submitBtn.innerHTML : '';
                 if (submitBtn) {
@@ -2685,23 +2683,23 @@
                     submitBtn.style.cursor = 'not-allowed';
                 }
                 const formData = new FormData(form);
-                
+
                 // Add CSRF token (timestamp-based nonce)
                 const csrfToken = Date.now().toString(36) + Math.random().toString(36).substr(2);
                 formData.append('_csrf', csrfToken);
-                
+
                     try {
                         const res = await fetch('https://api.web3forms.com/submit', {
                             method: 'POST',
-                            headers: { 
+                            headers: {
                                 'Accept': 'application/json',
                                 'X-Requested-With': 'XMLHttpRequest'
                             },
                             body: formData
                         });
-                        
+
                         const responseData = await res.json().catch(() => null);
-                        
+
                         if (res.ok && responseData && responseData.success) {
                             window.location.href = '/thank-you/';
                         } else {
@@ -2941,49 +2939,49 @@
             const messageDiv = document.getElementById('booking-form-message');
             const formProgress = document.getElementById('form-progress');
             const formProgressBar = document.getElementById('form-progress-bar');
-            
+
             // Enhanced Form Progress with Percentage
             function updateFormProgress() {
                 if (!bookingForm || !formProgressBar) return;
-                
+
                 const requiredFields = bookingForm.querySelectorAll('input[required], select[required], textarea[required]');
                 const filledFields = Array.from(requiredFields).filter(field => {
                     if (field.type === 'checkbox') return field.checked;
                     if (field.tagName === 'SELECT') return field.value !== '';
                     return field.value.trim() !== '';
                 });
-                
+
                 const progress = Math.round((filledFields.length / requiredFields.length) * 100);
                 formProgressBar.style.width = progress + '%';
-                
+
                 const progressText = document.getElementById('form-progress-text');
                 if (progressText) {
                     progressText.textContent = `${progress}% Complete`;
                 }
-                
+
                 if (progress > 0 && !formProgress.classList.contains('active')) {
                     formProgress.classList.add('active');
                 } else if (progress === 0) {
                     formProgress.classList.remove('active');
                 }
             }
-            
+
             // Form progress tracking
             if (bookingForm) {
                 bookingForm.addEventListener('input', function() {
                     updateFormProgress();
                 });
-                
+
                 bookingForm.addEventListener('change', function() {
                     updateFormProgress();
                 });
-                
+
                 // Clear any old form data on successful submission
                 bookingForm.addEventListener('submit', function() {
                     setTimeout(clearFormData, 1000);
                 });
             }
-            
+
             // Enhanced keyboard navigation for form steps
             if (bookingForm) {
                 const formSteps = bookingForm.querySelectorAll('.form-step');
@@ -2991,7 +2989,7 @@
                     const fields = step.querySelectorAll('input, select, textarea, button');
                     const firstField = fields[0];
                     const lastField = fields[fields.length - 1];
-                    
+
                     // Handle Tab key navigation
                     lastField?.addEventListener('keydown', function(e) {
                         if (e.key === 'Tab' && !e.shiftKey && index < formSteps.length - 1) {
@@ -3001,7 +2999,7 @@
                             nextFirstField?.focus();
                         }
                     });
-                    
+
                     firstField?.addEventListener('keydown', function(e) {
                         if (e.key === 'Tab' && e.shiftKey && index > 0) {
                             e.preventDefault();
@@ -3012,7 +3010,7 @@
                     });
                 });
             }
-            
+
             // Enhanced ARIA live regions for better screen reader support
             const ariaLiveRegion = document.createElement('div');
             ariaLiveRegion.setAttribute('role', 'status');
@@ -3021,14 +3019,14 @@
             ariaLiveRegion.className = 'sr-only';
             ariaLiveRegion.style.cssText = 'position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0;';
             document.body.appendChild(ariaLiveRegion);
-            
+
             function announceToScreenReader(message) {
                 ariaLiveRegion.textContent = message;
                 setTimeout(() => {
                     ariaLiveRegion.textContent = '';
                 }, 1000);
             }
-            
+
             // Announce form progress to screen readers
             if (bookingForm && formProgressBar) {
                 const originalUpdateProgress = updateFormProgress;
@@ -3042,12 +3040,12 @@
                     }
                 };
             }
-            
+
             // Track form field changes
             if (bookingForm) {
                 updateFormProgress(); // Initial check
             }
-            
+
             // Form Analytics & Tracking
             const formAnalytics = {
                 startTime: Date.now(),
@@ -3090,7 +3088,7 @@
                         });
                     }
                 },
-                
+
                 trackFieldInteraction(fieldName) {
                     if (!this.fieldInteractions[fieldName]) {
                         this.fieldInteractions[fieldName] = {
@@ -3101,7 +3099,7 @@
                     }
                     this.fieldInteractions[fieldName].interactions++;
                 },
-                
+
                 trackError(fieldName, errorMessage) {
                     this.errors.push({
                         field: fieldName,
@@ -3109,7 +3107,7 @@
                         timestamp: Date.now()
                     });
                 },
-                
+
                 trackSubmission(success) {
                     this.timeOnForm = Date.now() - this.startTime;
                     const analyticsData = {
@@ -3119,7 +3117,7 @@
                         success: success,
                         timestamp: Date.now()
                     };
-                    
+
                     // You can send this to your analytics service here
                     // Example: sendToAnalytics(analyticsData);
                     if (success) {
@@ -3127,7 +3125,7 @@
                     }
                 }
             };
-            
+
             // Track field interactions
             if (bookingForm) {
                 const formInputs = bookingForm.querySelectorAll('input, select, textarea');
@@ -3136,7 +3134,7 @@
                         formAnalytics.trackFieldInteraction(this.name || this.id);
                     });
                 });
-                
+
                 // Track errors
                 bookingForm.addEventListener('invalid', function(e) {
                     e.preventDefault();
@@ -3144,7 +3142,7 @@
                     formAnalytics.trackError(field.name || field.id, field.validationMessage);
                 }, true);
             }
-            
+
             // Pre-fill service type from URL parameter
             const urlParams = new URLSearchParams(window.location.search);
             const serviceParam = urlParams.get('service');
@@ -3156,7 +3154,7 @@
                     if (matchingOption) {
                         serviceSelect.value = matchingOption.value;
                     } else {
-                        const partialMatch = options.find(opt => 
+                        const partialMatch = options.find(opt =>
                             opt.text.toLowerCase().includes(serviceParam.toLowerCase()) ||
                             serviceParam.toLowerCase().includes(opt.text.toLowerCase())
                         );
@@ -3172,7 +3170,7 @@
                     }, 300);
                 }
             }
-            
+
             // Set minimum date to today
             if (bookingDateInput) {
                 const today = new Date();
@@ -3182,7 +3180,7 @@
 
             // Debounced validation for performance
             const validationTimeouts = new Map();
-            
+
             // Enhanced Real-time Validation with Error Messages
             function validateField(field, immediate = false) {
                 const errorId = field.id + '-error';
@@ -3192,12 +3190,12 @@
 
                 // Remove previous error styling
                 field.classList.remove('error');
-                
+
                 // Clear existing timeout for this field
                 if (validationTimeouts.has(field.id)) {
                     clearTimeout(validationTimeouts.get(field.id));
                 }
-                
+
                 const performValidation = () => {
                     if (field.hasAttribute('required')) {
                         if (field.type === 'email' && field.value) {
@@ -3250,7 +3248,7 @@
 
                     return isValid;
                 };
-                
+
                 // Debounce validation (except for blur events)
                 if (immediate) {
                     return performValidation();
@@ -3282,7 +3280,7 @@
                             this.classList.remove('valid', 'error');
                         }
                     });
-                    
+
                     // Character count for textarea
                     if (input.tagName === 'TEXTAREA' && input.id === 'booking-details') {
                         const countElement = document.getElementById('details-count');
@@ -3290,7 +3288,7 @@
                             input.addEventListener('input', function() {
                                 const length = this.value.length;
                                 countElement.textContent = `${length} character${length !== 1 ? 's' : ''}`;
-                                
+
                                 // Color coding for character count
                                 if (length < 10) {
                                     countElement.style.color = '#ef4444';
@@ -3302,23 +3300,23 @@
                             });
                         }
                     }
-                    
+
                     // Add focus ring for keyboard navigation
                     input.addEventListener('focus', function() {
                         this.classList.add('keyboard-focused');
                     });
-                    
+
                     input.addEventListener('blur', function() {
                         this.classList.remove('keyboard-focused');
                     });
-                    
+
                     // Detect mouse vs keyboard usage
                     let isMouseUser = false;
                     document.addEventListener('mousedown', () => {
                         isMouseUser = true;
                         setTimeout(() => { isMouseUser = false; }, 100);
                     });
-                    
+
                     input.addEventListener('focus', function() {
                         if (!isMouseUser) {
                             this.classList.add('keyboard-navigation');
@@ -3343,7 +3341,7 @@
                         }
                     });
                 }
-                
+
             }
 
             // Enhanced security: Rate limiting and spam detection
@@ -3352,15 +3350,15 @@
             const minTimeBetweenSubmissions = 5000; // 5 seconds
             const maxSubmissionsPerHour = 3;
             const submissionHistory = JSON.parse(localStorage.getItem('form_submission_history') || '[]');
-            
+
             function checkRateLimit() {
                 const now = Date.now();
                 const oneHourAgo = now - (60 * 60 * 1000);
-                
+
                 // Clean old submissions
                 const recentSubmissions = submissionHistory.filter(time => time > oneHourAgo);
                 localStorage.setItem('form_submission_history', JSON.stringify(recentSubmissions));
-                
+
                 // Check if too many submissions
                 if (recentSubmissions.length >= maxSubmissionsPerHour) {
                     return {
@@ -3368,7 +3366,7 @@
                         message: `Too many submission attempts. Please wait ${Math.ceil((recentSubmissions[0] + (60 * 60 * 1000) - now) / 60000)} minutes before trying again.`
                     };
                 }
-                
+
                 // Check minimum time between submissions
                 if (now - lastSubmissionTime < minTimeBetweenSubmissions) {
                     return {
@@ -3376,26 +3374,26 @@
                         message: 'Please wait a moment before submitting again.'
                     };
                 }
-                
+
                 return { allowed: true };
             }
-            
+
             function recordSubmission() {
                 const now = Date.now();
                 lastSubmissionTime = now;
                 submissionAttempts++;
-                
+
                 const history = JSON.parse(localStorage.getItem('form_submission_history') || '[]');
                 history.push(now);
                 localStorage.setItem('form_submission_history', JSON.stringify(history));
             }
-            
+
             if (bookingForm) {
                 // Enhanced rate limiting: prevent rapid submissions
-                
+
                 bookingForm.addEventListener('submit', async function(e) {
                     e.preventDefault();
-                    
+
                     // Check honeypot fields - if filled, it's a bot
                     const honeypot1 = bookingForm.querySelector('input[name="website"]');
                     const honeypot2 = bookingForm.querySelector('input[name="_gotcha"]');
@@ -3406,7 +3404,7 @@
                         }
                         return;
                     }
-                    
+
                     // Check hCaptcha - wait a moment for it to load if needed
                     let hCaptcha = bookingForm.querySelector('textarea[name="h-captcha-response"]');
                     if (!hCaptcha) {
@@ -3414,7 +3412,7 @@
                         await new Promise(resolve => setTimeout(resolve, 500));
                         hCaptcha = bookingForm.querySelector('textarea[name="h-captcha-response"]');
                     }
-                    
+
                     if (!hCaptcha || !hCaptcha.value) {
                         if (messageDiv) {
                             const errorDiv = document.createElement('div');
@@ -3427,7 +3425,7 @@
                         }
                         return;
                     }
-                    
+
                     // Enhanced rate limiting check
                     const rateLimitCheck = checkRateLimit();
                     if (!rateLimitCheck.allowed) {
@@ -3449,24 +3447,24 @@
                         }
                         return;
                     }
-                    
+
                     recordSubmission();
 
                     const submitBtn = bookingForm.querySelector('button[type="submit"]');
                     const btnText = submitBtn?.querySelector('.btn-text');
                     const btnLoader = submitBtn?.querySelector('.btn-loader');
-                    
+
                     if (submitBtn) {
                         submitBtn.disabled = true;
                         submitBtn.classList.add('submitting');
                         if (btnText) btnText.textContent = 'Submitting...';
                         if (btnLoader) btnLoader.style.display = 'inline';
-                        
+
                         // Add loading animation
                         submitBtn.style.position = 'relative';
                         submitBtn.style.overflow = 'hidden';
                     }
-                    
+
                     // Show submission progress
                     if (messageDiv) {
                         const infoDiv = document.createElement('div');
@@ -3478,7 +3476,7 @@
                     }
 
                     const formData = new FormData(bookingForm);
-                    
+
                     try {
                         const res = await fetch('https://api.web3forms.com/submit', {
                             method: 'POST',
@@ -3529,7 +3527,7 @@
             }
         });
     </script>
-    
+
     <!-- Web3Forms hCaptcha Script (Zero-Config) -->
     <script src="https://web3forms.com/client/script.js" async defer></script>
 </body>

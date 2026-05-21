@@ -5,7 +5,7 @@
     <script>
     window.dataLayer = window.dataLayer || [];
     var gtmLoaded = false;
-    
+
     function loadGTM() {
         if (gtmLoaded) return;
         gtmLoaded = true;
@@ -15,7 +15,7 @@
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-MWPTRPDR');
     }
-    
+
     // Load GTM after page is fully loaded and idle, or on user interaction
     function initGTM() {
         // Wait for page to be fully loaded
@@ -35,7 +35,7 @@
                 }
             });
         }
-        
+
         // Load on first user interaction as fallback (scroll, click, touchstart)
         var interactionEvents = ['scroll', 'click', 'touchstart', 'keydown'];
         var loadOnInteraction = function() {
@@ -48,7 +48,7 @@
             document.addEventListener(event, loadOnInteraction, { passive: true, once: true });
         });
     }
-    
+
     initGTM();
     </script>
     <!-- End Google Tag Manager -->
@@ -97,24 +97,24 @@
     <title>About Denali Tech | Chicago Home Automation Experts</title>
     <meta name="description" content="Meet Ashkan Boraki and learn how Denali Tech was built around real AV, networking, automation, and practical problem-solving for Chicago-area homes.">
     <meta name="keywords" content="Denali Tech founder, Chicago home automation experts, smart home company Chicago, residential AV experts, home technology specialists, Control4 certified installer, custom smart home design, professional home automation team, trusted AV integrator, home automation process">
-    
+
     <!-- Open Graph Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://denalitechs.com/about/">
     <meta property="og:title" content="About Denali Tech | Chicago Home Automation Experts">
     <meta property="og:description" content="Meet Ashkan Boraki and learn how Denali Tech was built around real AV, networking, automation, and practical problem-solving for Chicago-area homes.">
     <meta property="og:image" content="https://denalitechs.com/Video/logo-social.jpg">
-    
+
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://denalitechs.com/about/">
     <meta name="twitter:title" content="About Denali Tech | Chicago Home Automation Experts">
     <meta name="twitter:description" content="Meet Ashkan Boraki and learn how Denali Tech was built around real AV, networking, automation, and practical problem-solving.">
     <meta name="twitter:image" content="https://denalitechs.com/Video/logo-social.jpg">
-    
+
     <!-- Canonical URL -->
     <link rel="canonical" href="https://denalitechs.com/about/">
-    
+
     <base href="/">
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -122,7 +122,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png">
-    
+
     <!-- PERFORMANCE: Optimized Font Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -133,7 +133,7 @@
     <style>
         /* Font fallback to prevent FOIT (Flash of Invisible Text) */
         body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
-    
+
     /* Skip Navigation Link for Accessibility */
     .skip-link {
         position: absolute;
@@ -173,13 +173,13 @@
                 outline-offset: 3px;
                 border-radius: 6px;
             }
-            
+
             /* Fallback for older browsers */
             a:focus:not(:focus-visible),
             button:focus:not(:focus-visible) {
                 outline: none;
             }
-            
+
             a:focus,
             button:focus {
                 outline: 3px solid var(--accent-primary);
@@ -188,7 +188,7 @@
             }
 
     </style>
-    
+
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
     {
@@ -202,7 +202,7 @@
         "@type": "LocalBusiness",
         "name": "Denali Tech",
         "alternateName": "Denali Tech Inc",
-        "description": "Premier home automation and A/V solutions provider",
+        "description": "Smart home, AV, WiFi, lighting, security, shades, theater, and audio systems installed cleanly for Chicago-area homes.",
         "url": "https://denalitechs.com",
         "telephone": "+1-312-439-7500",
         "email": "Hello@denalitechs.com",
@@ -231,9 +231,9 @@
       }
     }
     </script>
-    
+
     <style>
-        /* 
+        /*
         ============================================
         DENALI TECH ABOUT PAGE
         Trust-Building Design for Non-Tech Customers
@@ -1267,11 +1267,11 @@
             .header-actions {
                 gap: 0.6rem;
             }
-            
+
             .theme-toggle {
                 order: -1; /* Show theme toggle first on mobile */
             }
-            
+
             .header-actions .cta-button {
                 display: none;
             }
@@ -1462,7 +1462,7 @@
 
     <!-- Shared Mobile Menu Script -->
     <script src="/assets/js/mobile-menu.js?v=20260323d" defer></script>
-    
+
     <!-- Shared Mobile Menu Styles -->
     <link rel="stylesheet" href="/assets/css/mobile-menu.css?v=20260323d">
 
@@ -1500,7 +1500,7 @@
                 <a href="/" class="logo" title="Denali Tech">
                     <picture>
                         <source srcset="/Video/logo.webp" type="image/webp">
-                        <img src="/Video/logo.JPG" alt="Denali Tech Logo" loading="eager" width="56" height="40" style="width: 56px; height: 40px; margin-right: 6px; object-fit: cover; object-position: 40% center; border-radius: 10px;">
+                        <img src="/Video/logo.JPG" alt="Denali Tech Logo" onerror="this.style.display='none'" loading="eager" width="56" height="40" style="width: 56px; height: 40px; margin-right: 6px; object-fit: cover; object-position: 40% center; border-radius: 10px;">
                     </picture>
                     <span class="logo-text">Denali Tech</span>
                 </a>
@@ -1524,13 +1524,13 @@
                     <span></span>
                     <span></span>
                 </button>
-                <a href="tel:+13124397500" class="cta-button call-now-button">
+                <a href="https://wa.me/13124397500" target="_blank" rel="noopener noreferrer" class="cta-button call-now-button">
                     <span class="phone-icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                             <path d="M6.62 10.79a15.07 15.07 0 006.59 6.59l2.2-2.2a1 1 0 011.03-.24 11.62 11.62 0 003.67.59 1 1 0 011 1v3.5a1 1 0 01-1 1A17.5 17.5 0 013 6a1 1 0 011-1h3.5a1 1 0 011 1 11.62 11.62 0 00.59 3.67 1 1 0 01-.24 1.03z"></path>
                         </svg>
                     </span>
-                    <span>Call Now</span>
+                    <span>Message Us</span>
                 </a>
             </div>
         </div>
@@ -1590,14 +1590,14 @@
             <div class="mission-content">
                 <div class="mission-text">
                     <h3>Making Smart Homes Simple</h3>
-                    <p>We believe smart home technology should enhance your life, not complicate it. Our mission is to make cutting-edge automation accessible to everyone—no tech expertise required.</p>
+                    <p>We believe smart home technology should enhance your life, not complicate it. Our mission is to make professional smart-home systems clear, reliable, and easy to use after installation.</p>
                     <p>We've helped 100+ homeowners transform their homes with smart technology. Every project starts with understanding your lifestyle, then we design and install systems that work seamlessly in the background. You get the convenience and control you want, without the complexity.</p>
                 </div>
                 <div class="mission-image">
                     <div style="width: 100%; height: 400px; background: linear-gradient(135deg, rgba(249,115,22,0.1), rgba(13,148,136,0.1)); border-radius: 16px; box-shadow: var(--shadow-glow); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 3rem; border: 2px solid var(--border-color);">
                         <picture style="display: block; margin-bottom: 2rem;">
                             <source srcset="/Video/logo.webp" type="image/webp">
-                            <img src="/Video/logo.JPG" alt="Denali Tech Logo" width="200" height="143" style="width: 200px; height: auto; max-width: 100%; border-radius: 12px; box-shadow: 0 8px 24px rgba(249,115,22,0.3);">
+                            <img src="/Video/logo.JPG" alt="Denali Tech Logo" onerror="this.style.display='none'" width="200" height="143" style="width: 200px; height: auto; max-width: 100%; border-radius: 12px; box-shadow: 0 8px 24px rgba(249,115,22,0.3);">
                         </picture>
                         <div style="text-align: center; color: var(--text-primary);">
                             <p style="font-size: 1.5rem; font-weight: 700; font-family: var(--font-heading); margin-bottom: 0.5rem; color: var(--accent-primary);">Denali Tech</p>
@@ -1620,7 +1620,7 @@
                 <div class="value-card">
                     <div class="value-icon">🤝</div>
                     <h3>Client Focus</h3>
-                    <p>We don't just provide solutions; we tailor them to fit your unique needs and desires, exceeding expectations at every turn. We listen to what you actually want and make it simple. Every consultation is free, with no pressure—just honest advice.</p>
+                    <p>We listen to what you actually want, explain the real options, and make the system simple to live with. No pressure, no overselling, just honest advice before the work starts.</p>
                 </div>
                 <div class="value-card">
                     <div class="value-icon">🏆</div>
@@ -1667,7 +1667,7 @@
                 <div class="value-card">
                     <div class="value-icon">🎯</div>
                     <h3>No-Pressure Approach</h3>
-                    <p>Our free consultations are exactly that—free, with no obligation. We listen to what you actually need and provide honest advice. We won't push unnecessary gadgets or oversell you.</p>
+                    <p>We start by listening to what you actually need and giving honest advice. We won't push unnecessary gadgets or oversell you.</p>
                 </div>
                 <div class="value-card">
                     <div class="value-icon">✅</div>
@@ -1710,8 +1710,8 @@
     <section class="cta-section">
         <div class="container">
             <h2>Need a Smart Home Team That Can Actually Finish the Job?</h2>
-            <p>Book a free consultation and get clear recommendations, honest scope, and a plan that fits your home instead of a generic package.</p>
-            <a href="/contact/#booking" class="btn-primary">Book Free Consultation</a>
+            <p>Send your project details and get clear recommendations, honest scope, and a plan that fits your home instead of a generic package.</p>
+            <a href="/contact/#booking" class="btn-primary">Send Project Details</a>
         </div>
     </section>
 
@@ -1726,8 +1726,8 @@
             <div class="footer-main-grid">
                 <div class="footer-brand">
                     <h3>Denali Tech</h3>
-                    <p>Premier home automation and A/V solutions for the modern home. Experience cutting-edge technology, simplified and tailored to your lifestyle.</p>
-                    <a href="/contact/#booking" class="cta-button">Request a Consultation</a>
+                    <p>Smart home, AV, WiFi, lighting, security, shades, theater, and audio systems installed cleanly for Chicago-area homes.</p>
+                    <a href="/contact/#booking" class="cta-button">Send Project Details</a>
                 </div>
 
                 <div class="footer-column">
@@ -1756,10 +1756,8 @@
                 </div>
 
                 <div class="footer-column">
-                    <h4>Products & Brands</h4>
+                    <h4>Trusted Platforms</h4>
                     <ul>
-                        <li><a href="https://dt-nt.com/">DTNT.com</a></li>
-                        <li><a href="https://propokit.com" target="_blank" rel="noopener noreferrer">PropoKit</a></li>
                         <li><a href="/brands/">Our Brands</a></li>
                         <li><a href="https://www.control4.com/" target="_blank" rel="noopener noreferrer">Control4</a></li>
                         <li><a href="https://www.urc-automation.com/" target="_blank" rel="noopener noreferrer">URC Automation</a></li>
