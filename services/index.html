@@ -95,14 +95,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Smart Home, WiFi, AV & Theater Installation | Denali Tech Chicago</title>
-    <meta name="description" content="Denali Tech handles the design, installation, programming, and support behind whole-home WiFi, smart control, AV, theater, lighting, shades, security, and audio systems.">
-    <meta name="keywords" content="home automation services Chicago, Control4 installation Chicago, smart home installation Mt Prospect, home theater setup Chicago, Dolby Atmos installation, 4K home theater Chicago, WiFi 6 installation Chicago, mesh network installation, home security camera installation Chicago, video doorbell installation, smart lighting installation Chicago, Lutron lighting control, motorized shades Chicago, Hunter Douglas shades, whole home audio Chicago, Sonos installation, multi-room audio Chicago, surveillance camera systems Chicago, home networking Chicago, smart thermostat installation, automated blinds Chicago, home cinema design Chicago, custom AV solutions Chicago, residential automation installation">
+    <meta name="description" content="Explore Denali Tech smart home, WiFi, home theater, AV, lighting, shades, security camera, and audio services for Chicago and nearby suburbs.">
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://denalitechs.com/services/">
     <meta property="og:title" content="Smart Home, WiFi, AV & Theater Installation | Denali Tech Chicago">
-    <meta property="og:description" content="Denali Tech handles the design, installation, programming, and support behind whole-home WiFi, smart control, AV, theater, lighting, shades, security, and audio systems.">
+    <meta property="og:description" content="Explore Denali Tech smart home, WiFi, home theater, AV, lighting, shades, security camera, and audio services for Chicago and nearby suburbs.">
     <meta property="og:image" content="https://denalitechs.com/Video/logo-social.jpg">
 
     <!-- Canonical URL -->
@@ -112,7 +111,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://denalitechs.com/services/">
     <meta name="twitter:title" content="Smart Home, WiFi, AV & Theater Installation | Denali Tech Chicago">
-    <meta name="twitter:description" content="Denali Tech handles the design, installation, programming, and support behind whole-home WiFi, smart control, AV, theater, lighting, shades, security, and audio systems.">
+    <meta name="twitter:description" content="Explore Denali Tech smart home, WiFi, home theater, AV, lighting, shades, security camera, and audio services for Chicago and nearby suburbs.">
     <meta name="twitter:image" content="https://denalitechs.com/Video/logo-social.jpg">
 
     <base href="/">
@@ -650,6 +649,81 @@
             margin-right: auto;
         }
 
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--text-primary);
+            padding: 1rem 1.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.05rem;
+            transition: all var(--transition);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent-primary);
+            color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .hero-trust-strip,
+        .service-jump {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .hero-trust-strip {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .hero-trust-strip span,
+        .service-jump a,
+        .trust-chip {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--text-secondary);
+            padding: 0.65rem 0.85rem;
+        }
+
+        .service-jump {
+            max-width: 980px;
+            margin: 2.5rem auto 0;
+        }
+
+        .service-jump a {
+            min-height: 44px;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 700;
+            transition: all var(--transition);
+        }
+
+        .service-jump a:hover,
+        .service-jump a:focus-visible {
+            border-color: var(--accent-primary);
+            color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
         .btn-primary {
             background: linear-gradient(135deg, var(--accent-primary), var(--accent-interactive));
             color: white;
@@ -678,6 +752,52 @@
         .services-section {
             padding: 80px 5%;
             background: var(--bg-color);
+        }
+
+        .services-hub-intro,
+        .local-proof-card {
+            max-width: 980px;
+            margin: 0 auto 4rem;
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.04);
+            text-align: center;
+        }
+
+        .services-hub-intro h2,
+        .local-proof-card h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            color: var(--text-primary);
+            margin: 0 0 1rem;
+        }
+
+        .services-hub-intro p,
+        .local-proof-card p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .local-proof-section {
+            padding: 80px 5%;
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.05), rgba(13, 148, 136, 0.03));
+        }
+
+        .trust-chip-row {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin: 1.5rem 0;
+        }
+
+        .local-area-line {
+            margin-top: 1.5rem !important;
+            font-size: 1rem !important;
         }
 
         .service-detail {
@@ -723,6 +843,41 @@
             line-height: 1.7;
             word-wrap: break-word;
             overflow-wrap: break-word;
+        }
+
+        .service-meta {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-top: -0.4rem;
+        }
+
+        .detail-link {
+            color: var(--accent-primary);
+            font-weight: 700;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            margin-bottom: 0.75rem;
+            display: inline-flex;
+            width: fit-content;
+        }
+
+        .detail-link:hover,
+        .detail-link:focus-visible {
+            color: var(--accent-hover);
+        }
+
+        .service-email-link {
+            color: var(--text-secondary);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            margin-top: 0.75rem;
+            width: fit-content;
+        }
+
+        .service-email-link:hover,
+        .service-email-link:focus-visible {
+            color: var(--accent-primary);
         }
 
         .service-features {
@@ -1342,8 +1497,8 @@
 
             .service-detail {
                 grid-template-columns: 1fr;
-                gap: 2rem;
-                margin-bottom: 60px;
+                gap: 1.5rem;
+                margin-bottom: 42px;
             }
 
             .service-detail:nth-child(even) {
@@ -1351,17 +1506,41 @@
             }
 
             .service-content {
-                order: 2;
+                order: 1;
             }
 
             .service-video {
-                order: 1;
-                margin-top: 0;
-                margin-bottom: 2rem;
+                order: 2;
+                margin-top: 0.5rem;
+                margin-bottom: 0;
                 padding: 0;
                 position: static;
                 height: auto;
                 max-height: none;
+            }
+
+            .service-content h2 {
+                font-size: clamp(1.65rem, 7vw, 1.95rem);
+                margin-bottom: 0.8rem;
+            }
+
+            .service-content h3 {
+                font-size: clamp(1.05rem, 4.5vw, 1.2rem);
+                margin-bottom: 0.75rem;
+            }
+
+            .service-content p {
+                font-size: 1rem;
+                line-height: 1.58;
+                margin-bottom: 1rem;
+            }
+
+            .service-features {
+                margin: 1rem 0 1.25rem;
+            }
+
+            .service-features li {
+                margin-bottom: 0.55rem;
             }
 
             .service-video video {
@@ -1397,6 +1576,33 @@
                 font-size: 1rem;
                 line-height: 1.4;
             }
+
+            .hero-actions,
+            .hero-actions .btn-primary,
+            .hero-actions .btn-secondary {
+                width: 100%;
+            }
+
+            .hero-trust-strip,
+            .service-jump {
+                justify-content: flex-start;
+            }
+
+            .service-jump {
+                gap: 0.5rem;
+            }
+
+            .service-jump a {
+                flex: 1 1 calc(50% - 0.5rem);
+                text-align: center;
+            }
+
+            .services-hub-intro,
+            .local-proof-card {
+                padding: 1.25rem;
+                margin-bottom: 2.25rem;
+                text-align: left;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1424,17 +1630,17 @@
             }
 
             .service-detail {
-                margin-bottom: 50px;
+                margin-bottom: 36px;
             }
 
             .service-content {
-                order: 2;
+                order: 1;
             }
 
             .service-video {
-                order: 1;
-                margin-top: 0;
-                margin-bottom: 1.5rem;
+                order: 2;
+                margin-top: 0.5rem;
+                margin-bottom: 0;
                 border: 2px solid var(--border-color);
                 padding: 0;
                 position: static;
@@ -1573,7 +1779,7 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Smart Home Automation",
+              "name": "Smart Home Control",
               "description": "Control4 and URC home automation systems installation and programming"
             }
           },
@@ -1581,7 +1787,7 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Home Theater Installation",
+              "name": "Home Theater and Media Room Installation",
               "description": "4K/8K home cinema with Dolby Atmos surround sound systems"
             }
           },
@@ -1589,23 +1795,23 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "WiFi Network Installation",
-              "description": "Professional WiFi 6 mesh network installation and setup"
+              "name": "Whole-Home WiFi and Network Installation",
+              "description": "Reliable home networking, WiFi coverage, and smart home network setup"
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Security Camera Installation",
-              "description": "4K surveillance camera systems and video doorbell installation"
+              "name": "Security Camera and Access Control Installation",
+              "description": "Security camera placement, wiring, alerts, and remote access setup"
             }
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Smart Lighting Installation",
+              "name": "Lighting Control Installation",
               "description": "Automated lighting control and Lutron system installation"
             }
           },
@@ -1614,7 +1820,7 @@
             "itemOffered": {
               "@type": "Service",
               "name": "Motorized Shades Installation",
-              "description": "Hunter Douglas and Lutron motorized window treatment installation"
+              "description": "Motorized shade setup that works with lighting and smart home scenes"
             }
           },
           {
@@ -1711,28 +1917,52 @@
     <section class="hero">
         <div class="hero-background"></div>
         <div class="hero-content">
-            <h1>Smart Home Systems That Feel Easy to Use</h1>
-            <p>Denali Tech designs and installs WiFi, AV, lighting, cameras, shades, theater, audio, and whole-home control systems for Chicago-area homes.</p>
-            <a href="/contact/#booking" class="btn-primary">Start a Project</a>
+            <h1>What We Do</h1>
+            <p>Denali Tech designs and installs the home systems people rely on every day: WiFi, smart control, theater, lighting, shades, cameras, and audio.</p>
+            <div class="hero-actions">
+                <a href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20need%20help%20with%20my%20home%20technology.%20I%20can%20send%20photos.%20My%20home%20is%20in%3A" target="_blank" rel="noopener noreferrer" class="btn-primary">Message Us on WhatsApp</a>
+                <a href="mailto:Hello@denalitechs.com?subject=Home%20Technology%20Project%20Help&body=Hi%20Denali%20Tech%2C%0A%0AI%20need%20help%20with%3A%0AMy%20home%20is%20in%3A%0APhotos%20attached%20if%20helpful.%0A" class="btn-secondary">Email Project Details</a>
+            </div>
+            <div class="hero-trust-strip" aria-label="Denali Tech local trust points">
+                <span>Mount Prospect based</span>
+                <span>Chicago-area homes</span>
+                <span>Control4 / URC</span>
+                <span>Clean installs &amp; support</span>
+            </div>
+            <nav class="service-jump" aria-label="Jump to a service">
+                <a href="#automation">Control</a>
+                <a href="#theater">Theater</a>
+                <a href="#networking">WiFi</a>
+                <a href="#surveillance">Cameras</a>
+                <a href="#lighting">Lighting</a>
+                <a href="#shades">Shades</a>
+                <a href="#audio">Audio</a>
+            </nav>
         </div>
     </section>
 
     <!-- Services Details -->
     <section class="services-section">
         <div class="container">
+            <div class="services-hub-intro">
+                <h2>Home Technology Built Around Real Life</h2>
+                <p>Start with what is not working, what you want to make easier, or the room you want to enjoy more. We help you choose the right system and keep the setup practical.</p>
+            </div>
             <!-- Smart Home Automation -->
             <div class="service-detail" id="automation">
                 <div class="service-content">
                     <h2>Smart Home Control</h2>
                     <h3>One simple way to control the house</h3>
-                    <p>Bring lights, climate, locks, cameras, music, and entertainment into one clean control system that your family can actually use.</p>
+                    <p>Bring lights, climate, shades, music, cameras, and entertainment into one reliable control system your family can actually use.</p>
                     <ul class="service-features">
                         <li>Control rooms, scenes, and schedules from one app</li>
                         <li>Make daily routines easier with custom automations</li>
                         <li>Get a cleaner setup than scattered DIY devices</li>
                     </ul>
-                    <p><strong>Best for:</strong> Families who want comfort, convenience, and fewer apps.</p>
-                    <a href="/contact/?service=Smart%20Home%20Automation#booking" class="btn-primary" style="margin-top: 1.5rem; display: inline-block;">Start a Smart Home Project</a>
+                    <p class="service-meta"><strong>Best for:</strong> one reliable way to control the systems you use every day. We work with platforms like Control4 and URC when the home needs dependable whole-home control.</p>
+                    <a href="/smart-home-control/" class="detail-link">Learn more about smart home control installation</a>
+                    <a href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20want%20help%20with%20smart%20home%20control.%20My%20home%20is%20in%3A" target="_blank" rel="noopener noreferrer" class="btn-primary" style="margin-top: 1rem; display: inline-flex;">Message About Smart Home Control</a>
+                    <a href="mailto:Hello@denalitechs.com?subject=Smart%20Home%20Control%20Project&body=Hi%20Denali%20Tech%2C%0A%0AI%20want%20help%20with%20smart%20home%20control.%0AMy%20home%20is%20in%3A%0APhotos%20attached%20if%20helpful.%0A" class="service-email-link">Or email details/photos</a>
                 </div>
                 <div class="service-video">
                     <video autoplay muted loop playsinline poster="/Video/logo.JPG" preload="none" onerror="this.style.display='none'; if(this.poster) { const img = document.createElement('img'); img.src = this.poster; img.style.width='100%'; img.style.height='auto'; img.style.objectFit='cover'; img.style.borderRadius='16px'; this.parentElement.appendChild(img); }">
@@ -1745,16 +1975,18 @@
             <!-- Home Theater -->
             <div class="service-detail" id="theater">
                 <div class="service-content">
-                    <h2>Home Theater</h2>
+                    <h2>Home Theater &amp; Media Rooms</h2>
                     <h3>Big sound, sharp picture, clean installation</h3>
-                    <p>We design theater spaces that look polished, sound immersive, and are simple to turn on when it is time to watch.</p>
+                    <p>Build a room that looks clean, sounds right, and turns on without a pile of remotes.</p>
                     <ul class="service-features">
                         <li>Projectors, screens, TVs, speakers, and receivers</li>
                         <li>Surround sound tuned for the room</li>
                         <li>Simple controls for movies, sports, and streaming</li>
                     </ul>
-                    <p><strong>Best for:</strong> Movie nights, sports rooms, media rooms, and dedicated theaters.</p>
-                    <a href="/contact/?service=Home%20Theater#booking" class="btn-primary" style="margin-top: 1.5rem; display: inline-block;">Plan a Theater Setup</a>
+                    <p class="service-meta"><strong>Best for:</strong> movie nights, sports rooms, media rooms, dedicated theaters, and cleaner TV/AV setups.</p>
+                    <a href="/home-theater-room/" class="detail-link">Learn more about home theater installation</a>
+                    <a href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20want%20help%20with%20a%20theater%20or%20TV%20setup.%20My%20home%20is%20in%3A" target="_blank" rel="noopener noreferrer" class="btn-primary" style="margin-top: 1rem; display: inline-flex;">Message About a Theater or TV Setup</a>
+                    <a href="mailto:Hello@denalitechs.com?subject=Home%20Theater%20or%20TV%20Project&body=Hi%20Denali%20Tech%2C%0A%0AI%20want%20help%20with%20a%20theater%20or%20TV%20setup.%0AMy%20home%20is%20in%3A%0APhotos%20attached%20if%20helpful.%0A" class="service-email-link">Or email details/photos</a>
                 </div>
                 <div class="service-video">
                     <video autoplay muted loop playsinline poster="/Video/logo.JPG" preload="none" onerror="this.style.display='none'; if(this.poster) { const img = document.createElement('img'); img.src = this.poster; img.style.width='100%'; img.style.height='auto'; img.style.objectFit='cover'; img.style.borderRadius='16px'; this.parentElement.appendChild(img); }">
@@ -1767,16 +1999,18 @@
             <!-- WiFi Networking -->
             <div class="service-detail" id="networking">
                 <div class="service-content">
-                    <h2>WiFi That Actually Works</h2>
+                    <h2>Whole-Home WiFi &amp; Networking</h2>
                     <h3>Fast, stable coverage across the home</h3>
-                    <p>We design and install home networks around your layout, wiring, devices, and smart-home needs.</p>
+                    <p>Reliable coverage for streaming, work, cameras, gaming, and smart home devices, with equipment placed and wired properly.</p>
                     <ul class="service-features">
                         <li>Stronger coverage in problem rooms and dead zones</li>
                         <li>Reliable performance for cameras, TVs, work, gaming, and smart control</li>
                         <li>Cleaner network equipment, setup, and support</li>
                     </ul>
-                    <p><strong>Best for:</strong> Homes with dead zones, dropped cameras, buffering TVs, or messy network gear.</p>
-                    <a href="/contact/?service=WiFi%20%26%20Networking#booking" class="btn-primary" style="margin-top: 1.5rem; display: inline-block;">Fix My WiFi</a>
+                    <p class="service-meta"><strong>Best for:</strong> dead zones, dropped cameras, buffering TVs, work-from-home issues, or messy network gear.</p>
+                    <a href="/residential-wifi-network/" class="detail-link">Learn more about whole-home WiFi installation</a>
+                    <a href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20need%20help%20fixing%20my%20WiFi%20or%20home%20network.%20My%20home%20is%20in%3A" target="_blank" rel="noopener noreferrer" class="btn-primary" style="margin-top: 1rem; display: inline-flex;">Fix My WiFi</a>
+                    <a href="mailto:Hello@denalitechs.com?subject=WiFi%20or%20Home%20Network%20Help&body=Hi%20Denali%20Tech%2C%0A%0AI%20need%20help%20with%20WiFi%20or%20home%20networking.%0AMy%20home%20is%20in%3A%0APhotos%20attached%20if%20helpful.%0A" class="service-email-link">Or email details/photos</a>
                 </div>
                 <div class="service-video">
                     <video autoplay muted loop playsinline poster="/Video/logo.JPG" preload="none" onerror="this.style.display='none'; if(this.poster) { const img = document.createElement('img'); img.src = this.poster; img.style.width='100%'; img.style.height='auto'; img.style.objectFit='cover'; img.style.borderRadius='16px'; this.parentElement.appendChild(img); }">
@@ -1789,16 +2023,18 @@
             <!-- Home Security -->
             <div class="service-detail" id="surveillance">
                 <div class="service-content">
-                    <h2>Security and Surveillance</h2>
-                    <h3>Know what is happening at home</h3>
-                    <p>Get cleanly installed cameras, alerts, and access control that help you check the property without fighting unreliable gear.</p>
+                    <h2>Cameras &amp; Access Control</h2>
+                    <h3>Clear coverage without unreliable gear</h3>
+                    <p>Cameras, alerts, and remote access set up so you can check the property without fighting the system.</p>
                     <ul class="service-features">
                         <li>Indoor, outdoor, and doorbell camera options</li>
                         <li>Phone access for live view and alerts</li>
                         <li>Professional placement, wiring, and setup</li>
                     </ul>
-                    <p><strong>Best for:</strong> Homeowners who want visibility, deterrence, and peace of mind.</p>
-                    <a href="/contact/?service=Security%20%26%20Surveillance#booking" class="btn-primary" style="margin-top: 1.5rem; display: inline-block;">Talk About Security</a>
+                    <p class="service-meta"><strong>Best for:</strong> doors, driveways, yards, garages, deliveries, and key spaces around the home.</p>
+                    <a href="/security-cameras/" class="detail-link">Learn more about security camera installation</a>
+                    <a href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20want%20help%20with%20cameras%20or%20security.%20My%20home%20is%20in%3A" target="_blank" rel="noopener noreferrer" class="btn-primary" style="margin-top: 1rem; display: inline-flex;">Message About Cameras or Security</a>
+                    <a href="mailto:Hello@denalitechs.com?subject=Cameras%20or%20Security%20Project&body=Hi%20Denali%20Tech%2C%0A%0AI%20want%20help%20with%20cameras%20or%20security.%0AMy%20home%20is%20in%3A%0APhotos%20attached%20if%20helpful.%0A" class="service-email-link">Or email details/photos</a>
                 </div>
                 <div class="service-video">
                     <video autoplay muted loop playsinline poster="/Video/logo.JPG" preload="none" onerror="this.style.display='none'; if(this.poster) { const img = document.createElement('img'); img.src = this.poster; img.style.width='100%'; img.style.height='auto'; img.style.objectFit='cover'; img.style.borderRadius='16px'; this.parentElement.appendChild(img); }">
@@ -1811,16 +2047,18 @@
             <!-- Smart Lighting -->
             <div class="service-detail" id="lighting">
                 <div class="service-content">
-                    <h2>Smart Lighting</h2>
-                    <h3>Better Light, Less Effort</h3>
-                    <p>Smart lighting makes the home feel more comfortable, polished, and responsive, from morning routines to movie night.</p>
+                    <h2>Lighting Control</h2>
+                    <h3>Lighting that feels natural</h3>
+                    <p>Dimmers, scenes, keypads, and schedules that make rooms easier to use from morning to night.</p>
                     <ul class="service-features">
                         <li>Dimmers, switches, scenes, and schedules</li>
                         <li>Lighting that works with voice or app control</li>
                         <li>Cleaner control than plug-in bulbs everywhere</li>
                     </ul>
-                    <p><strong>Best for:</strong> Kitchens, living rooms, bedrooms, theaters, and whole-home upgrades.</p>
-                    <a href="/contact/?service=Smart%20Lighting#booking" class="btn-primary" style="margin-top: 1.5rem; display: inline-block;">Upgrade My Lighting</a>
+                    <p class="service-meta"><strong>Best for:</strong> kitchens, living rooms, bedrooms, theaters, pathways, and whole-home lighting scenes.</p>
+                    <a href="/smart-lighting-shades/" class="detail-link">Learn more about smart lighting and shades</a>
+                    <a href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20want%20help%20with%20lighting%20control.%20My%20home%20is%20in%3A" target="_blank" rel="noopener noreferrer" class="btn-primary" style="margin-top: 1rem; display: inline-flex;">Message About Lighting</a>
+                    <a href="mailto:Hello@denalitechs.com?subject=Lighting%20Control%20Project&body=Hi%20Denali%20Tech%2C%0A%0AI%20want%20help%20with%20lighting%20control.%0AMy%20home%20is%20in%3A%0APhotos%20attached%20if%20helpful.%0A" class="service-email-link">Or email details/photos</a>
                 </div>
                 <div class="service-video">
                     <video autoplay muted loop playsinline poster="/Video/logo.JPG" preload="none" onerror="this.style.display='none'; if(this.poster) { const img = document.createElement('img'); img.src = this.poster; img.style.width='100%'; img.style.height='auto'; img.style.objectFit='cover'; img.style.borderRadius='16px'; this.parentElement.appendChild(img); }">
@@ -1833,16 +2071,18 @@
             <!-- Smart Shades -->
             <div class="service-detail" id="shades">
                 <div class="service-content">
-                    <h2>Smart Shades and Blinds</h2>
+                    <h2>Motorized Shades</h2>
                     <h3>Privacy and Light, On Schedule</h3>
-                    <p>Motorized shades help manage glare, privacy, heat, and daily routines without walking room to room.</p>
+                    <p>Shades that handle privacy, glare, heat, and daily routines without walking room to room.</p>
                     <ul class="service-features">
                         <li>Open, close, or schedule shades from your phone</li>
                         <li>Pair shades with lighting and smart home scenes</li>
                         <li>Improve privacy and comfort throughout the day</li>
                     </ul>
-                    <p><strong>Best for:</strong> Large windows, bedrooms, media rooms, and hard-to-reach shades.</p>
-                    <a href="/contact/?service=Smart%20Shades#booking" class="btn-primary" style="margin-top: 1.5rem; display: inline-block;">Discuss Smart Shades</a>
+                    <p class="service-meta"><strong>Best for:</strong> large windows, bedrooms, media rooms, privacy schedules, and hard-to-reach shades.</p>
+                    <a href="/smart-lighting-shades/" class="detail-link">Learn more about smart shades and lighting</a>
+                    <a href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20want%20help%20with%20motorized%20shades.%20My%20home%20is%20in%3A" target="_blank" rel="noopener noreferrer" class="btn-primary" style="margin-top: 1rem; display: inline-flex;">Message About Shades</a>
+                    <a href="mailto:Hello@denalitechs.com?subject=Motorized%20Shades%20Project&body=Hi%20Denali%20Tech%2C%0A%0AI%20want%20help%20with%20motorized%20shades.%0AMy%20home%20is%20in%3A%0APhotos%20attached%20if%20helpful.%0A" class="service-email-link">Or email details/photos</a>
                 </div>
                 <div class="service-video">
                     <video autoplay muted loop playsinline poster="/Video/logo.JPG" preload="none" onerror="this.style.display='none'; if(this.poster) { const img = document.createElement('img'); img.src = this.poster; img.style.width='100%'; img.style.height='auto'; img.style.objectFit='cover'; img.style.borderRadius='16px'; this.parentElement.appendChild(img); }">
@@ -1857,14 +2097,15 @@
                 <div class="service-content">
                     <h2>Whole-Home Audio</h2>
                     <h3>Music where you want it, without clutter</h3>
-                    <p>Enjoy music in one room, every room, or different zones with speakers and controls designed around how you live.</p>
+                    <p>Music where you want it, with speakers and controls chosen for the rooms you actually use.</p>
                     <ul class="service-features">
                         <li>In-ceiling, in-wall, outdoor, and hidden speaker options</li>
                         <li>Room-by-room or whole-home listening</li>
                         <li>Easy streaming from the services you already use</li>
                     </ul>
-                    <p><strong>Best for:</strong> Entertaining, everyday listening, patios, kitchens, and open living spaces.</p>
-                    <a href="/contact/?service=Audio%20Distribution#booking" class="btn-primary" style="margin-top: 1.5rem; display: inline-block;">Plan Whole-Home Audio</a>
+                    <p class="service-meta"><strong>Best for:</strong> entertaining, everyday listening, patios, kitchens, and open living spaces. We can keep it simple with Sonos or design a larger AV system when the room calls for it.</p>
+                    <a href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20want%20help%20with%20speakers%20or%20whole-home%20audio.%20My%20home%20is%20in%3A" target="_blank" rel="noopener noreferrer" class="btn-primary" style="margin-top: 1rem; display: inline-flex;">Message About Speakers or Audio</a>
+                    <a href="mailto:Hello@denalitechs.com?subject=Whole-Home%20Audio%20Project&body=Hi%20Denali%20Tech%2C%0A%0AI%20want%20help%20with%20speakers%20or%20whole-home%20audio.%0AMy%20home%20is%20in%3A%0APhotos%20attached%20if%20helpful.%0A" class="service-email-link">Or email details/photos</a>
                 </div>
                 <div class="service-video">
                     <video autoplay muted loop playsinline poster="/Video/logo.JPG" preload="none" onerror="this.style.display='none'; if(this.poster) { const img = document.createElement('img'); img.src = this.poster; img.style.width='100%'; img.style.height='auto'; img.style.objectFit='cover'; img.style.borderRadius='16px'; this.parentElement.appendChild(img); }">
@@ -1906,12 +2147,32 @@
         </div>
     </section>
 
+    <!-- Local Trust Section -->
+    <section class="local-proof-section">
+        <div class="container">
+            <div class="local-proof-card">
+                <h2>Local Smart Home, WiFi, and AV Help</h2>
+                <p>Denali Tech is based in Mount Prospect and works with homeowners across Chicago and nearby suburbs on WiFi, theater, lighting, shades, cameras, audio, and smart control projects.</p>
+                <div class="trust-chip-row" aria-label="Denali Tech proof points">
+                    <span class="trust-chip">5.0 Google rating</span>
+                    <span class="trust-chip">100+ homes automated</span>
+                    <span class="trust-chip">Serving since 2022</span>
+                    <span class="trust-chip">Authorized Control4 / URC</span>
+                </div>
+                <p class="local-area-line">Common service areas include Mount Prospect, Chicago, Arlington Heights, Park Ridge, Glenview, Northbrook, Schaumburg, Skokie, Evanston, and nearby communities. Not sure if you are in range? Message us.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <h2>Ready to Make the System Feel Simple?</h2>
-            <p>Send a few details about your home and what you want to improve. We will recommend a practical starting point and a clean path forward.</p>
-            <a href="/contact/#booking" class="btn-primary">Start a Project</a>
+            <h2>Not Sure What You Need Yet?</h2>
+            <p>Send a quick message with what is happening, where you are located, and a few photos if helpful. We will reply with a practical next step.</p>
+            <div class="hero-actions">
+                <a href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20need%20help%20with%20my%20home%20technology.%20I%20can%20send%20photos.%20My%20home%20is%20in%3A" target="_blank" rel="noopener noreferrer" class="btn-primary">Message on WhatsApp</a>
+                <a href="mailto:Hello@denalitechs.com?subject=Home%20Technology%20Project%20Help&body=Hi%20Denali%20Tech%2C%0A%0AI%20need%20help%20with%3A%0AMy%20home%20is%20in%3A%0APhotos%20attached%20if%20helpful.%0A" class="btn-secondary">Email Project Details</a>
+            </div>
         </div>
     </section>
 
