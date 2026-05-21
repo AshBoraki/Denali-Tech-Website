@@ -5,7 +5,7 @@
     <script>
     window.dataLayer = window.dataLayer || [];
     var gtmLoaded = false;
-    
+
     function loadGTM() {
         if (gtmLoaded) return;
         gtmLoaded = true;
@@ -15,7 +15,7 @@
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-MWPTRPDR');
     }
-    
+
     // Load GTM after page is fully loaded and idle, or on user interaction
     function initGTM() {
         // Wait for page to be fully loaded
@@ -35,7 +35,7 @@
                 }
             });
         }
-        
+
         // Load on first user interaction as fallback (scroll, click, touchstart)
         var interactionEvents = ['scroll', 'click', 'touchstart', 'keydown'];
         var loadOnInteraction = function() {
@@ -48,7 +48,7 @@
             document.addEventListener(event, loadOnInteraction, { passive: true, once: true });
         });
     }
-    
+
     initGTM();
     </script>
     <!-- End Google Tag Manager -->
@@ -97,7 +97,7 @@
     <title>Trusted Brands & Partners | Denali Tech</title>
     <meta name="description" content="Denali Tech partners with only the most trusted brands in home automation and AV. We're authorized dealers offering genuine products with full warranty and USA support.">
     <meta name="keywords" content="authorized Control4 dealer, authorized Lutron dealer, smart home brands, home automation brands, AV equipment brands, trusted smart home products, authorized reseller, warranty support, USA support">
-    
+
     <base href="/">
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -111,7 +111,7 @@
     <meta property="og:title" content="Trusted Brands & Partners | Denali Tech">
     <meta property="og:description" content="Denali Tech partners with only the most trusted brands in home automation and AV. We're authorized dealers offering genuine products with full warranty and USA support.">
     <meta property="og:image" content="https://denalitechs.com/Video/logo-social.jpg">
-    
+
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://denalitechs.com/brands/">
@@ -122,7 +122,7 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://denalitechs.com/brands/">
 
-    
+
     <!-- PERFORMANCE: Optimized Font Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -133,7 +133,7 @@
     <style>
         /* Font fallback to prevent FOIT (Flash of Invisible Text) */
         body { font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
-    
+
             /* Enhanced Focus Indicators for Better Accessibility */
             a:focus-visible,
             button:focus-visible,
@@ -152,13 +152,13 @@
                 outline-offset: 3px;
                 border-radius: 6px;
             }
-            
+
             /* Fallback for older browsers */
             a:focus:not(:focus-visible),
             button:focus:not(:focus-visible) {
                 outline: none;
             }
-            
+
             a:focus,
             button:focus {
                 outline: 3px solid var(--accent-primary);
@@ -167,7 +167,7 @@
             }
 
     </style>
-    
+
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
     {
@@ -221,9 +221,9 @@
       }
     }
     </script>
-    
+
     <style>
-        /* 
+        /*
         ============================================
         DENALI TECH BRANDS PAGE
         Showcase Trusted Partners
@@ -511,11 +511,11 @@
             .header-actions {
                 gap: 0.6rem;
             }
-            
+
             .theme-toggle {
                 order: -1; /* Show theme toggle first on mobile */
             }
-            
+
             .header-actions .cta-button,
             .cta-button.call-now-button {
                 display: none;
@@ -1430,7 +1430,7 @@
 
     <!-- Shared Mobile Menu Script -->
     <script src="/assets/js/mobile-menu.js?v=20260323d" defer></script>
-    
+
     <!-- Shared Mobile Menu Styles -->
     <link rel="stylesheet" href="/assets/css/mobile-menu.css?v=20260323d">
 
@@ -1467,7 +1467,7 @@
                     <picture>
                         <!-- Use srcset to hint browser about image size, though ideally a smaller logo file (112x80px) should be created -->
                         <source srcset="/Video/logo.webp 1x" type="image/webp">
-                        <img src="/Video/logo.JPG" alt="Denali Tech Logo" loading="eager" width="56" height="40" style="width: 56px; height: 40px; margin-right: 6px; object-fit: cover; object-position: 40% center; border-radius: 10px;" fetchpriority="high">
+                        <img src="/Video/logo.JPG" alt="Denali Tech Logo" onerror="this.style.display='none'" loading="eager" width="56" height="40" style="width: 56px; height: 40px; margin-right: 6px; object-fit: cover; object-position: 40% center; border-radius: 10px;" fetchpriority="high">
                     </picture>
                     <span class="logo-text">Denali Tech</span>
                 </a>
@@ -1492,13 +1492,13 @@
                     <span></span>
                     <span></span>
                 </button>
-                    <a href="tel:+13124397500" class="cta-button call-now-button">
+                    <a href="https://wa.me/13124397500" target="_blank" rel="noopener noreferrer" class="cta-button call-now-button">
                         <span class="phone-icon" aria-hidden="true">
                             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                 <path d="M6.62 10.79a15.07 15.07 0 006.59 6.59l2.2-2.2a1 1 0 011.03-.24 11.62 11.62 0 003.67.59 1 1 0 011 1v3.5a1 1 0 01-1 1A17.5 17.5 0 013 6a1 1 0 011-1h3.5a1 1 0 011 1 11.62 11.62 0 00.59 3.67 1 1 0 01-.24 1.03z"></path>
                             </svg>
                         </span>
-                        <span>Call Now</span>
+                        <span>Message Us</span>
                     </a>
                 </div>
         </div>
@@ -1674,7 +1674,7 @@
         <div class="container">
             <h2>Ready to Get Started?</h2>
             <p>Shop with confidence knowing you're getting genuine products from an authorized dealer with full warranty and support.</p>
-            <a href="/contact/#booking" class="btn-secondary">Get Your Free Consultation</a>
+            <a href="/contact/#booking" class="btn-secondary">Send Project Details</a>
         </div>
     </section>
 
@@ -1689,8 +1689,8 @@
             <div class="footer-main-grid">
                 <div class="footer-brand">
                     <h3>Denali Tech</h3>
-                    <p>Premier home automation and A/V solutions for the modern home. Experience cutting-edge technology, simplified and tailored to your lifestyle.</p>
-                    <a href="/contact/#booking" class="cta-button">Request a Consultation</a>
+                    <p>Smart home, AV, WiFi, lighting, security, shades, theater, and audio systems installed cleanly for Chicago-area homes.</p>
+                    <a href="/contact/#booking" class="cta-button">Send Project Details</a>
                 </div>
 
                 <div class="footer-column">
@@ -1719,10 +1719,8 @@
                 </div>
 
                 <div class="footer-column">
-                    <h4>Products & Brands</h4>
+                    <h4>Trusted Platforms</h4>
                     <ul>
-                        <li><a href="https://dt-nt.com/">DTNT.com</a></li>
-                        <li><a href="https://propokit.com" target="_blank" rel="noopener noreferrer">PropoKit</a></li>
                         <li><a href="/brands/">Our Brands</a></li>
                         <li><a href="https://www.control4.com/" target="_blank" rel="noopener noreferrer">Control4</a></li>
                         <li><a href="https://www.urc-automation.com/" target="_blank" rel="noopener noreferrer">URC Automation</a></li>
