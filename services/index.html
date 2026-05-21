@@ -757,7 +757,7 @@
         .services-hub-intro,
         .local-proof-card {
             max-width: 980px;
-            margin: 0 auto 4rem;
+            margin: 0 auto 5.5rem;
             padding: 2rem;
             border: 1px solid var(--border-color);
             border-radius: 12px;
@@ -800,41 +800,34 @@
             font-size: 1rem !important;
         }
 
-        .service-detail-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 1.5rem;
-            align-items: stretch;
-        }
-
         .service-detail {
-            display: flex;
-            flex-direction: column;
-            gap: 1.15rem;
-            min-height: 100%;
-            padding: 1.5rem;
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.04);
-            transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+            margin-bottom: 150px;
+            padding-bottom: 48px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: start;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        .service-detail:hover {
-            border-color: rgba(249, 115, 22, 0.55);
-            box-shadow: 0 14px 34px rgba(0, 0, 0, 0.18);
-            transform: translateY(-3px);
+        .service-detail:last-of-type {
+            margin-bottom: 90px;
+            border-bottom: 0;
         }
 
-        .service-detail:nth-child(even),
+        .service-detail:nth-child(even) {
+            direction: rtl;
+        }
+
         .service-detail:nth-child(even) > * {
             direction: ltr;
         }
 
         .service-content h2 {
             font-family: var(--font-heading);
-            font-size: clamp(1.45rem, 3vw, 2rem);
+            font-size: clamp(2rem, 4vw, 3rem);
             font-weight: 700;
-            margin: 0 0 0.65rem;
+            margin-bottom: 1.5rem;
             color: var(--text-primary);
             word-wrap: break-word;
             overflow-wrap: break-word;
@@ -842,28 +835,28 @@
 
         .service-content h3 {
             font-family: var(--font-heading);
-            font-size: 1.05rem;
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
             font-weight: 600;
-            margin: 0 0 0.85rem;
+            margin-bottom: 1rem;
             color: var(--accent-primary);
             word-wrap: break-word;
             overflow-wrap: break-word;
         }
 
         .service-content p {
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: var(--text-secondary);
-            margin-bottom: 1rem;
-            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
             word-wrap: break-word;
             overflow-wrap: break-word;
         }
 
         .service-meta {
             color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.55;
-            margin-top: 0;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-top: -0.4rem;
         }
 
         .detail-link {
@@ -871,7 +864,7 @@
             font-weight: 700;
             text-decoration: underline;
             text-underline-offset: 3px;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
             display: inline-flex;
             width: fit-content;
         }
@@ -897,16 +890,14 @@
         .service-features {
             list-style: none;
             padding: 0;
-            margin: 1rem 0;
+            margin: 2rem 0;
         }
 
         .service-features li {
             color: var(--text-secondary);
-            margin-bottom: 0.55rem;
+            margin-bottom: 0.8rem;
             padding-left: 1.5rem;
             position: relative;
-            font-size: 0.95rem;
-            line-height: 1.5;
         }
 
         .service-features li::before {
@@ -939,30 +930,30 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            flex: 1;
         }
 
         .service-video {
-            position: relative;
-            border-radius: 10px;
+            position: sticky;
+            top: 100px;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: none;
+            box-shadow: var(--shadow-glow);
             background: #1a1a1a;
-            border: 1px solid var(--border-color);
+            border: 2px solid var(--border-color);
             padding: 0;
             margin: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 180px;
-            max-height: 180px;
+            height: fit-content;
+            max-height: 600px;
         }
 
         .service-video video {
             width: 100%;
-            height: 100%;
-            min-height: 180px;
-            max-height: 180px;
+            height: auto;
+            min-height: 300px;
+            max-height: 500px;
             aspect-ratio: 16 / 9;
             object-fit: cover;
             transition: transform var(--transition);
@@ -974,7 +965,7 @@
 
         /* Ensure video container has minimum height */
         .service-video {
-            min-height: 180px;
+            min-height: 300px;
         }
 
         .service-video:hover video {
@@ -1511,14 +1502,11 @@
                 }
             }
 
-            .service-detail-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
             .service-detail {
-                gap: 1rem;
-                padding: 1.15rem;
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                margin-bottom: 84px;
+                padding-bottom: 42px;
             }
 
             .service-detail:nth-child(even) {
@@ -1530,12 +1518,13 @@
             }
 
             .service-video {
-                display: none;
-            }
-
-            .service-meta,
-            .service-email-link {
-                display: none;
+                order: 2;
+                margin-top: 0.5rem;
+                margin-bottom: 0;
+                padding: 0;
+                position: static;
+                height: auto;
+                max-height: none;
             }
 
             .service-content h2 {
@@ -1560,6 +1549,20 @@
 
             .service-features li {
                 margin-bottom: 0.55rem;
+            }
+
+            .service-video video {
+                height: auto;
+                min-height: 250px;
+                max-height: 400px;
+                aspect-ratio: 16 / 9;
+                object-fit: cover;
+                width: 100%;
+                background: #000;
+            }
+
+            .service-video {
+                min-height: 250px;
             }
 
             .footer-main-grid {
@@ -1605,7 +1608,7 @@
             .services-hub-intro,
             .local-proof-card {
                 padding: 1.25rem;
-                margin-bottom: 2.25rem;
+                margin-bottom: 3rem;
                 text-align: left;
             }
         }
@@ -1634,12 +1637,38 @@
                 padding: 60px 5%;
             }
 
+            .service-detail {
+                margin-bottom: 74px;
+                padding-bottom: 36px;
+            }
+
             .service-content {
                 order: 1;
             }
 
             .service-video {
-                display: none;
+                order: 2;
+                margin-top: 0.5rem;
+                margin-bottom: 0;
+                border: 2px solid var(--border-color);
+                padding: 0;
+                position: static;
+                height: auto;
+                max-height: none;
+            }
+
+            .service-video video {
+                height: auto;
+                min-height: 200px;
+                max-height: 300px;
+                aspect-ratio: 16 / 9;
+                object-fit: cover;
+                width: 100%;
+                background: #000;
+            }
+
+            .service-video {
+                min-height: 200px;
             }
 
             .footer-main-grid {
@@ -1928,7 +1957,6 @@
                 <h2>Home Technology Built Around Real Life</h2>
                 <p>Start with what is not working, what you want to make easier, or the room you want to enjoy more. We help you choose the right system and keep the setup practical.</p>
             </div>
-            <div class="service-detail-grid">
             <!-- Smart Home Automation -->
             <div class="service-detail" id="automation">
                 <div class="service-content">
@@ -2095,6 +2123,35 @@
                     </video>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Related Services Section -->
+    <section class="related-services-section" style="padding: 80px 5%; background: var(--bg-color);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Popular Starting Points</h2>
+                <p>Not sure where to begin? These are the systems homeowners ask us about most.</p>
+            </div>
+            <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <div class="service-card" style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; transition: all var(--transition);">
+                    <div class="service-icon" style="font-size: 3rem; margin-bottom: 1rem;">🏠</div>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">Smart Home Automation</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">One app for lights, locks, climate, media, and scenes.</p>
+                    <a href="/smart-home-control/" class="service-link" style="color: var(--accent-primary); text-decoration: none; font-weight: 600;">View Control Options →</a>
+                </div>
+                <div class="service-card" style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; transition: all var(--transition);">
+                    <div class="service-icon" style="font-size: 3rem; margin-bottom: 1rem;">🔒</div>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">Security & Surveillance</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">See doors, driveways, yards, and key spaces from your phone.</p>
+                    <a href="/security-cameras/" class="service-link" style="color: var(--accent-primary); text-decoration: none; font-weight: 600;">View Security Options →</a>
+                </div>
+                <div class="service-card" style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; transition: all var(--transition);">
+                    <div class="service-icon" style="font-size: 3rem; margin-bottom: 1rem;">💡</div>
+                    <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary);">Smart Lighting</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Make rooms feel better with dimmers, scenes, and schedules.</p>
+                    <a href="/smart-lighting-shades/" class="service-link" style="color: var(--accent-primary); text-decoration: none; font-weight: 600;">View Lighting Options →</a>
+                </div>
             </div>
         </div>
     </section>
