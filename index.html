@@ -992,26 +992,27 @@
                     text-align: center;
                     margin-left: auto;
                     margin-right: auto;
-                    max-width: 34rem;
-                    gap: 0.95rem;
+                    max-width: 35rem;
+                    gap: 1.05rem;
                 }
 
                 .hero-content h1 {
-                    max-width: 12ch;
-                    font-size: clamp(2.55rem, 13vw, 4rem);
-                    line-height: 1;
+                    max-width: 11ch;
+                    font-size: clamp(2.45rem, 10.5vw, 3.65rem);
+                    line-height: 0.98;
                 }
 
                 .hero-subcopy {
-                    max-width: 31ch;
+                    max-width: 33ch;
                     margin-top: 0;
-                    font-size: 1rem;
-                    line-height: 1.5;
+                    font-size: 1.08rem;
+                    line-height: 1.45;
                 }
 
                 .hero-trust {
-                    max-width: 32ch;
-                    font-size: 0.9rem;
+                    max-width: 31ch;
+                    font-size: 0.98rem;
+                    line-height: 1.45;
                 }
 
                 .hero-buttons {
@@ -1019,17 +1020,147 @@
                     margin-top: 0.75rem;
                 }
             }
+
+            /* Final mobile hero override: keep the first screen clean and readable */
+            @media (max-width: 768px) {
+                .hero {
+                    min-height: auto !important;
+                    padding-top: calc(var(--mobile-header-height) + 2rem) !important;
+                    padding-bottom: 3.5rem !important;
+                    align-items: flex-start !important;
+                }
+
+                .hero-content {
+                    width: 100%;
+                    max-width: min(100%, 22rem);
+                    padding-inline: 1rem !important;
+                    gap: 1rem;
+                }
+
+                .hero-eyebrow {
+                    max-width: 100%;
+                    font-size: 0.72rem;
+                    letter-spacing: 0.12em;
+                    line-height: 1.35;
+                    white-space: normal;
+                }
+
+                .hero-content h1 {
+                    max-width: 9.5ch;
+                    font-size: clamp(2.1rem, 9vw, 3rem);
+                    line-height: 1.04;
+                    overflow-wrap: normal;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .hero-subcopy {
+                    max-width: 28ch;
+                    font-size: 1rem;
+                    line-height: 1.5;
+                    font-weight: 500;
+                }
+
+                .hero-trust {
+                    max-width: 28ch;
+                    font-size: 0.92rem;
+                    line-height: 1.5;
+                    font-weight: 600;
+                }
+
+                .hero-buttons {
+                    width: 100%;
+                    gap: 0.85rem;
+                }
+
+                .hero-buttons .btn-primary,
+                .hero-buttons .btn-secondary {
+                    max-width: 17rem;
+                    min-height: 52px;
+                    padding: 0.9rem 1.25rem;
+                    font-size: 1rem;
+                    border-radius: 10px;
+                }
+            }
         </style>
         <div class="hero-content">
-            <div class="hero-eyebrow">Denali Tech · Chicago Area</div>
-            <h1>Home Technology, Built Properly</h1>
-            <p class="hero-subcopy">Whole-home WiFi, smart control, AV, lighting, security, shades, and audio.</p>
-            <p class="hero-trust">Serving Mount Prospect, Chicago, and nearby suburbs with clean installs and support after the walkthrough.</p>
+            <div class="hero-eyebrow">Mount Prospect + Chicago Area</div>
+            <h1>Smart Home &amp; WiFi Installed Right</h1>
+            <p class="hero-subcopy">Reliable WiFi, smart control, AV, lighting, cameras, shades, and audio.</p>
+            <p class="hero-trust">Clean work, clear planning, and support after install.</p>
             <div class="hero-buttons">
-                <a href="/contact/#booking" class="btn-primary" aria-label="Send Denali Tech your project details">Send Project Details</a>
-                <a href="/services/" class="btn-secondary" aria-label="Learn about our services">See Services</a>
+                <a href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20need%20help%20with%20WiFi%20or%20smart%20home%20work.%20I%20can%20send%20photos.%20My%20home%20is%20in%3A" target="_blank" rel="noopener noreferrer" class="btn-primary" aria-label="Message Denali Tech on WhatsApp">Message Us</a>
+                <a href="/contact/#booking" class="btn-secondary" aria-label="Send Denali Tech your project details">Send Details</a>
             </div>
         </div>
+    </section>
+
+    <!-- Mobile-first homeowner problem shortcuts -->
+    <section class="quick-help-section" aria-labelledby="quick-help-heading" style="padding: 72px 5%; background: var(--bg-color); border-top: 1px solid var(--border-color);">
+        <div class="container">
+            <div class="section-header" style="margin-bottom: 2rem;">
+                <h2 id="quick-help-heading">What Do You Need Help With?</h2>
+                <p>Start with the problem. We will help you find the clean path forward.</p>
+            </div>
+            <div class="quick-help-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1rem;">
+                <a href="/residential-wifi-network/" class="quick-help-card" style="display: block; padding: 1.2rem; border: 1px solid var(--border-color); border-radius: 12px; background: rgba(255,255,255,0.045); color: var(--text-primary); text-decoration: none;">
+                    <strong style="display: block; margin-bottom: 0.45rem; font-size: 1.05rem;">My WiFi drops</strong>
+                    <span style="display: block; color: var(--text-secondary); line-height: 1.5;">Dead zones, slow rooms, buffering, or cameras disconnecting.</span>
+                </a>
+                <a href="/services/#automation" class="quick-help-card" style="display: block; padding: 1.2rem; border: 1px solid var(--border-color); border-radius: 12px; background: rgba(255,255,255,0.045); color: var(--text-primary); text-decoration: none;">
+                    <strong style="display: block; margin-bottom: 0.45rem; font-size: 1.05rem;">I want one control</strong>
+                    <span style="display: block; color: var(--text-secondary); line-height: 1.5;">Lights, AV, climate, shades, and scenes in one simple setup.</span>
+                </a>
+                <a href="/services/#theater" class="quick-help-card" style="display: block; padding: 1.2rem; border: 1px solid var(--border-color); border-radius: 12px; background: rgba(255,255,255,0.045); color: var(--text-primary); text-decoration: none;">
+                    <strong style="display: block; margin-bottom: 0.45rem; font-size: 1.05rem;">I want a theater room</strong>
+                    <span style="display: block; color: var(--text-secondary); line-height: 1.5;">Picture, sound, seating, lighting, and controls that feel easy.</span>
+                </a>
+                <a href="/services/#surveillance" class="quick-help-card" style="display: block; padding: 1.2rem; border: 1px solid var(--border-color); border-radius: 12px; background: rgba(255,255,255,0.045); color: var(--text-primary); text-decoration: none;">
+                    <strong style="display: block; margin-bottom: 0.45rem; font-size: 1.05rem;">I need cameras</strong>
+                    <span style="display: block; color: var(--text-secondary); line-height: 1.5;">Cleaner camera placement, alerts, and phone access.</span>
+                </a>
+                <a href="/services/#lighting" class="quick-help-card" style="display: block; padding: 1.2rem; border: 1px solid var(--border-color); border-radius: 12px; background: rgba(255,255,255,0.045); color: var(--text-primary); text-decoration: none;">
+                    <strong style="display: block; margin-bottom: 0.45rem; font-size: 1.05rem;">Lights or shades</strong>
+                    <span style="display: block; color: var(--text-secondary); line-height: 1.5;">Scenes, schedules, privacy, comfort, and less daily friction.</span>
+                </a>
+                <a href="/contact/#booking" class="quick-help-card" style="display: block; padding: 1.2rem; border: 1px solid rgba(249,115,22,0.4); border-radius: 12px; background: rgba(249,115,22,0.12); color: var(--text-primary); text-decoration: none;">
+                    <strong style="display: block; margin-bottom: 0.45rem; font-size: 1.05rem;">Not sure yet</strong>
+                    <span style="display: block; color: var(--text-secondary); line-height: 1.5;">Send a short note or photos. We will tell you the next step.</span>
+                </a>
+            </div>
+        </div>
+        <style>
+            .quick-help-card {
+                transition: border-color var(--transition), transform var(--transition), background var(--transition);
+            }
+
+            .quick-help-card:hover,
+            .quick-help-card:focus-visible {
+                border-color: var(--accent-primary) !important;
+                background: rgba(249,115,22,0.1) !important;
+                transform: translateY(-2px);
+            }
+
+            @media (max-width: 480px) {
+                .quick-help-section {
+                    padding: 52px 4% !important;
+                }
+
+                .quick-help-section .section-header {
+                    margin-bottom: 1.25rem !important;
+                }
+
+                .quick-help-section .section-header h2 {
+                    font-size: clamp(1.65rem, 8vw, 2.15rem);
+                    line-height: 1.1;
+                }
+
+                .quick-help-grid {
+                    grid-template-columns: 1fr !important;
+                    gap: 0.8rem !important;
+                }
+            }
+        </style>
     </section>
 
     <!-- Featured Projects Showcase -->
@@ -1059,14 +1190,14 @@
                                 srcset="/Video/homepage/fire-edge-screen-and-projector-and-martinlogan-480.webp 480w, /Video/homepage/fire-edge-screen-and-projector-and-martinlogan-768.webp 768w"
                                 sizes="(max-width: 768px) calc(100vw - 2rem), (max-width: 1200px) 33vw, 361px"
                                 type="image/webp">
-                            <img src="/Video/homepage/fire-edge-screen-and-projector-and-martinlogan-768.webp" alt="Premium Fire Edge Theater with MartinLogan Speakers" loading="lazy" decoding="async" width="800" height="600" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                            <img src="/Video/homepage/fire-edge-screen-and-projector-and-martinlogan-768.webp" alt="Fire Edge Theater with MartinLogan speakers" loading="lazy" decoding="async" width="800" height="600" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                         </picture>
                         <div class="project-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7)); opacity: 0; transition: opacity 0.3s ease;"></div>
                     </div>
                     <div class="project-info util-p-1-5">
                         <span style="display: inline-block; background: var(--accent-primary); color: white; padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.75rem;">Home Theater</span>
-                        <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">Premium Fire Edge Theater</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">Fire edge projection screen, 4K laser projector, and premium MartinLogan speakers for exceptional audio clarity.</p>
+                        <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">Fire Edge Theater</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">Fire edge projection screen, 4K laser projector, and MartinLogan speakers for clear, balanced sound.</p>
                     </div>
                 </div>
                 <div class="project-showcase-card" role="article" aria-label="Sound & Light Harmony project" tabindex="0" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; transition: all var(--transition); cursor: pointer;" onclick="window.location.href='/projects/'" onkeydown="if(event.key==='Enter') window.location.href='/projects/'">
@@ -1083,7 +1214,7 @@
                     <div class="project-info util-p-1-5">
                         <span style="display: inline-block; background: var(--accent-primary); color: white; padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.75rem;">Smart Automation</span>
                         <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">Sound & Light Harmony</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">Integrated audio and lighting control creating the perfect ambiance for any occasion.</p>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">Audio and lighting scenes people can actually use every day.</p>
                     </div>
                 </div>
                 <div class="project-showcase-card" role="article" aria-label="Modern Media Room project" tabindex="0" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; transition: all var(--transition); cursor: pointer;" onclick="window.location.href='/projects/'" onkeydown="if(event.key==='Enter') window.location.href='/projects/'">
@@ -1100,7 +1231,7 @@
                     <div class="project-info util-p-1-5">
                         <span style="display: inline-block; background: var(--accent-primary); color: white; padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.75rem;">Media Room</span>
                         <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">Modern Media Room</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">Clean, contemporary design with seamless technology integration for an entertainment space that is easy to use.</p>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">Clean design and controls that make the entertainment space easy to use.</p>
                     </div>
                 </div>
             </div>
@@ -2552,8 +2683,8 @@
     </script>
 
 
-    <!-- Smart Floating Message Button - Only shows on mobile/tablet -->
-    <div id="floating-call-btn" style="position: fixed; bottom: 100px; right: 20px; z-index: 998; display: none;">
+    <!-- Floating message button disabled: primary CTAs already route mobile leads to WhatsApp/email -->
+    <div id="floating-call-btn" style="position: fixed; bottom: 100px; right: 20px; z-index: 998; display: none;" hidden>
         <a href="https://wa.me/13124397500" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, var(--accent-primary), var(--accent-interactive)); border-radius: 50%; box-shadow: 0 4px 15px rgba(249, 115, 22, 0.4); text-decoration: none; transition: all 0.3s; animation: pulse 2s infinite;" aria-label="Message Denali Tech" title="Message Denali Tech">
             <svg viewBox="0 0 24 24" fill="#ffffff" width="24" height="24" aria-hidden="true">
                 <path d="M6.62 10.79a15.07 15.07 0 006.59 6.59l2.2-2.2a1 1 0 011.03-.24 11.62 11.62 0 003.67.59 1 1 0 011 1v3.5a1 1 0 01-1 1A17.5 17.5 0 013 6a1 1 0 011-1h3.5a1 1 0 011 1 11.62 11.62 0 00.59 3.67 1 1 0 01-.24 1.03z"></path>
@@ -2564,13 +2695,14 @@
 
     <style>
         @keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.05);}}
-        @media (min-width:769px){#floating-call-btn{display:none !important;}}
+        #floating-call-btn{display:none !important;}
     </style>
     <script>
         // Show floating message button only on mobile/tablet after scroll
         window.addEventListener('load', () => {
             const floatingBtn = document.getElementById('floating-call-btn');
             if (!floatingBtn) return;
+            return;
 
             // Check if mobile/tablet using media query to avoid forced reflow
             const mediaQuery = window.matchMedia('(max-width: 768px)');
