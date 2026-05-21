@@ -94,22 +94,21 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>About Denali Tech | Chicago Home Automation Experts</title>
-    <meta name="description" content="Meet Ashkan Boraki and learn how Denali Tech was built around real AV, networking, automation, and practical problem-solving for Chicago-area homes.">
-    <meta name="keywords" content="Denali Tech founder, Chicago home automation experts, smart home company Chicago, residential AV experts, home technology specialists, Control4 certified installer, custom smart home design, professional home automation team, trusted AV integrator, home automation process">
+    <title>About Denali Tech | Chicago Smart Home, WiFi & AV Installer</title>
+    <meta name="description" content="Meet Ash Boraki and learn how Denali Tech helps Chicago-area homeowners with clean WiFi, smart control, AV, cameras, lighting, shades, and support after installation.">
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://denalitechs.com/about/">
-    <meta property="og:title" content="About Denali Tech | Chicago Home Automation Experts">
-    <meta property="og:description" content="Meet Ashkan Boraki and learn how Denali Tech was built around real AV, networking, automation, and practical problem-solving for Chicago-area homes.">
+    <meta property="og:title" content="About Denali Tech | Chicago Smart Home, WiFi & AV Installer">
+    <meta property="og:description" content="Meet Ash Boraki and learn how Denali Tech helps Chicago-area homeowners with clean WiFi, smart control, AV, cameras, lighting, shades, and support after installation.">
     <meta property="og:image" content="https://denalitechs.com/Video/logo-social.jpg">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://denalitechs.com/about/">
-    <meta name="twitter:title" content="About Denali Tech | Chicago Home Automation Experts">
-    <meta name="twitter:description" content="Meet Ashkan Boraki and learn how Denali Tech was built around real AV, networking, automation, and practical problem-solving.">
+    <meta name="twitter:title" content="About Denali Tech | Chicago Smart Home, WiFi & AV Installer">
+    <meta name="twitter:description" content="Meet Ash Boraki and learn how Denali Tech helps Chicago-area homeowners with clean WiFi, smart control, AV, cameras, lighting, shades, and support after installation.">
     <meta name="twitter:image" content="https://denalitechs.com/Video/logo-social.jpg">
 
     <!-- Canonical URL -->
@@ -195,7 +194,7 @@
       "@context": "https://schema.org",
       "@type": "AboutPage",
       "name": "About Us | Denali Tech",
-      "description": "Meet Ashkan Boraki and learn about Denali Tech, a home automation and A/V solutions provider built around real installs, reliable systems, and practical support.",
+      "description": "Meet Ash Boraki and learn about Denali Tech, a home technology company built around clean installs, reliable systems, and practical support for Chicago-area homes.",
       "url": "https://denalitechs.com/about/",
       "image": "https://denalitechs.com/Video/logo%20no%20back%20greand%20.png",
       "mainEntity": {
@@ -221,7 +220,7 @@
         "priceRange": "$$",
         "founder": {
           "@type": "Person",
-          "name": "Ashkan Boraki"
+          "name": "Ash Boraki"
         },
         "sameAs": [
           "https://www.linkedin.com/company/denali-tech-inc",
@@ -597,6 +596,65 @@
             margin-right: auto;
         }
 
+        .hero-actions,
+        .trust-chip-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-actions {
+            margin: 1.5rem 0;
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--text-primary);
+            padding: 1rem 1.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.05rem;
+            transition: all var(--transition);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+        }
+
+        .btn-secondary:hover,
+        .btn-secondary:focus-visible {
+            border-color: var(--accent-primary);
+            color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        .hero-trust-strip,
+        .story-proof-card,
+        .service-pill,
+        .trust-chip {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .hero-trust-strip {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .hero-trust-strip span,
+        .trust-chip {
+            padding: 0.65rem 0.85rem;
+        }
+
         /* CONTENT SECTIONS */
         .content-section {
             padding: 80px 5%;
@@ -644,6 +702,56 @@
             color: var(--text-secondary);
             margin-bottom: 1.5rem;
             line-height: 1.7;
+        }
+
+        .story-proof-grid,
+        .service-pill-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .story-proof-grid {
+            grid-template-columns: repeat(3, 1fr);
+            margin-top: 2rem;
+        }
+
+        .story-proof-card {
+            padding: 1rem;
+            text-align: left;
+        }
+
+        .story-proof-card strong {
+            display: block;
+            color: var(--accent-primary);
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .story-proof-card span {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .service-pill-grid {
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            margin-top: 2rem;
+        }
+
+        .service-pill {
+            color: var(--text-primary);
+            padding: 0.9rem 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all var(--transition);
+        }
+
+        .service-pill:hover,
+        .service-pill:focus-visible {
+            border-color: var(--accent-primary);
+            color: var(--accent-hover);
+            transform: translateY(-2px);
         }
 
         .mission-image {
@@ -1329,6 +1437,24 @@
                 gap: 2rem;
             }
 
+            .hero-actions,
+            .hero-actions .btn-primary,
+            .hero-actions .btn-secondary {
+                width: 100%;
+            }
+
+            .hero-trust-strip {
+                justify-content: flex-start;
+            }
+
+            .story-proof-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-pill-grid {
+                grid-template-columns: 1fr;
+            }
+
             .founder-story {
                 grid-template-columns: 1fr !important;
                 gap: 2rem !important;
@@ -1542,7 +1668,17 @@
         <div class="hero-background"></div>
         <div class="hero-content">
             <h1>About Denali Tech</h1>
-            <p>Denali Tech helps homeowners get smart-home and AV systems that actually work. We serve Chicago and the nearby suburbs with clear planning, clean installation, and support after the job is done.</p>
+            <p>Denali Tech is a Mount Prospect based home technology company serving Chicago-area homes with clean WiFi, smart control, AV, cameras, lighting, shades, and support after installation.</p>
+            <div class="hero-actions">
+                <a href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20want%20help%20with%20my%20home%20technology.%20My%20home%20is%20in%3A" target="_blank" rel="noopener noreferrer" class="btn-primary">Message Us on WhatsApp</a>
+                <a href="mailto:Hello@denalitechs.com?subject=Home%20Technology%20Project%20Help&body=Hi%20Denali%20Tech%2C%0A%0AI%20need%20help%20with%3A%0AMy%20home%20is%20in%3A%0APhotos%20attached%20if%20helpful.%0A" class="btn-secondary">Email Project Details</a>
+            </div>
+            <div class="hero-trust-strip" aria-label="Denali Tech trust points">
+                <span>Mount Prospect based</span>
+                <span>100+ homes</span>
+                <span>5.0 Google rating</span>
+                <span>Control4 / URC</span>
+            </div>
         </div>
     </section>
 
@@ -1550,30 +1686,45 @@
     <section class="content-section" style="background: linear-gradient(180deg, rgba(249,115,22,0.05), rgba(13,148,136,0.04));">
         <div class="container">
             <div class="section-header">
-                <h2>Our Founder's Story: Ashkan Boraki</h2>
-                <p>Real install work, real product building, and a direct approach to making technology easier to live with.</p>
+                <h2>Built by Ash Boraki</h2>
+                <p>Real install work, product building, and a direct approach to making home technology easier to live with.</p>
             </div>
 
             <div class="founder-story" style="display: grid; grid-template-columns: 300px 1fr; gap: 3rem; align-items: start; margin-top: 3rem;">
                 <div class="founder-image-side" style="text-align: center;">
                     <picture>
                         <source srcset="/Video/funder.webp" type="image/webp">
-                        <img src="/Video/funder.jpg" alt="Ashkan Boraki, Founder of Denali Tech" loading="lazy" width="800" height="800" style="width: 280px; height: 280px; object-fit: cover; border-radius: 50%; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); border: 5px solid var(--accent-primary); max-width: 100%;">
+                        <img src="/Video/funder.jpg" alt="Ash Boraki, founder of Denali Tech" loading="lazy" width="800" height="800" style="width: 280px; height: 280px; object-fit: cover; border-radius: 50%; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); border: 5px solid var(--accent-primary); max-width: 100%;">
                     </picture>
                 </div>
 
                 <div class="founder-content">
                     <p style="font-size: 1.1rem; line-height: 1.9; margin-bottom: 1.5rem; color: var(--text-primary);">
-                        Ashkan Boraki built Denali Tech from years of hands-on work in AV, automation, networking, troubleshooting, and lead programming. The standard was simple from the start: do the work right, keep it clean, and make sure the system actually works the way people need it to.
+                        Ash Boraki built Denali Tech from hands-on work in AV, automation, networking, troubleshooting, and lead programming. The standard was simple from the start: do the work right, keep it clean, and make sure the system actually works the way people need it to.
                     </p>
 
                     <p style="font-size: 1.1rem; line-height: 1.9; margin-bottom: 1.5rem; color: var(--text-primary);">
-                        After experience at Magnolia Best Buy and in real-world installs, he started Denali Tech in 2022 to build the kind of company he wanted to see more of: practical, reliable, and still there after the install is done.
+                        After experience at Magnolia Best Buy and in real-world installs, Ash started Denali Tech in 2022 to build the kind of company he wanted to see more of: practical, reliable, and still there after the install is done.
                     </p>
 
                     <p style="font-size: 1.1rem; line-height: 1.9; margin-bottom: 1.5rem; color: var(--text-primary);">
-                        Today, Denali Tech stays focused on practical systems that make homes easier to enjoy: clean networking, smart control, reliable AV, and support that continues after installation day.
+                        Today, Denali Tech stays focused on the systems homeowners use every day: clean networking, smart control, reliable AV, useful cameras, lighting, shades, audio, and support that continues after installation day.
                     </p>
+
+                    <div class="story-proof-grid" aria-label="Denali Tech proof points">
+                        <div class="story-proof-card">
+                            <strong>2022</strong>
+                            <span>Serving Chicago-area homes from Mount Prospect.</span>
+                        </div>
+                        <div class="story-proof-card">
+                            <strong>100+</strong>
+                            <span>Homes improved with smart control, WiFi, AV, and support.</span>
+                        </div>
+                        <div class="story-proof-card">
+                            <strong>5.0</strong>
+                            <span>Google rating from homeowners who trusted the work.</span>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -1584,14 +1735,22 @@
     <section class="content-section">
         <div class="container">
             <div class="section-header">
-                <h2>Our Mission</h2>
-                <p>Making technology simple for everyone</p>
+                <h2>What Denali Tech Is Built For</h2>
+                <p>Technology should make the home easier, not turn every room into a puzzle.</p>
             </div>
             <div class="mission-content">
                 <div class="mission-text">
-                    <h3>Making Smart Homes Simple</h3>
-                    <p>We believe smart home technology should enhance your life, not complicate it. Our mission is to make professional smart-home systems clear, reliable, and easy to use after installation.</p>
-                    <p>We've helped 100+ homeowners make their systems easier to use and support. Every project starts with understanding the home, then we design and install systems that work cleanly in the background.</p>
+                    <h3>Clean systems, not gadget clutter</h3>
+                    <p>We start with what is not working, what you want to make easier, and how your family actually uses the home. Then we design the system around the layout, wiring, devices, and long-term support.</p>
+                    <p>The goal is not to sell every possible device. The goal is a home that feels easier to live in: stronger WiFi, simple controls, clean AV, useful cameras, better lighting, and fewer daily frustrations.</p>
+                    <div class="service-pill-grid" aria-label="Denali Tech service focus">
+                        <a href="/residential-wifi-network/" class="service-pill">Whole-Home WiFi</a>
+                        <a href="/smart-home-control/" class="service-pill">Smart Home Control</a>
+                        <a href="/home-theater-room/" class="service-pill">Theater &amp; Media Rooms</a>
+                        <a href="/security-cameras/" class="service-pill">Cameras &amp; Access</a>
+                        <a href="/smart-lighting-shades/" class="service-pill">Lighting &amp; Shades</a>
+                        <a href="/services/#audio" class="service-pill">Whole-Home Audio</a>
+                    </div>
                 </div>
                 <div class="mission-image">
                     <div style="width: 100%; height: 400px; background: linear-gradient(135deg, rgba(249,115,22,0.1), rgba(13,148,136,0.1)); border-radius: 16px; box-shadow: var(--shadow-glow); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 3rem; border: 2px solid var(--border-color);">
@@ -1601,7 +1760,7 @@
                         </picture>
                         <div style="text-align: center; color: var(--text-primary);">
                             <p style="font-size: 1.5rem; font-weight: 700; font-family: var(--font-heading); margin-bottom: 0.5rem; color: var(--accent-primary);">Denali Tech</p>
-                            <p style="font-size: 1rem; margin-top: 0.5rem; color: var(--text-secondary);">Your Trusted Technology Partner</p>
+                            <p style="font-size: 1rem; margin-top: 0.5rem; color: var(--text-secondary);">Clean installs. Simple control. Support after the job.</p>
                         </div>
                     </div>
                 </div>
@@ -1613,23 +1772,23 @@
     <section class="content-section">
         <div class="container">
             <div class="section-header">
-                <h2>Our Core Values</h2>
-                <p>These are the principles that guide everything we do:</p>
+                <h2>How We Work</h2>
+                <p>The principles that guide every project:</p>
             </div>
             <div class="values-grid">
                 <div class="value-card">
                     <div class="value-icon">🤝</div>
-                    <h3>Client Focus</h3>
+                    <h3>Listen First</h3>
                     <p>We listen to what you actually want, explain the real options, and make the system simple to live with. No pressure, no overselling, just honest advice before the work starts.</p>
                 </div>
                 <div class="value-card">
                     <div class="value-icon">🏆</div>
-                    <h3>Authorized & Certified</h3>
-                    <p>As authorized Control4 and URC dealers, we're certified installers with access to genuine products, full warranties, and manufacturer support.</p>
+                    <h3>Use Gear We Can Support</h3>
+                    <p>As authorized Control4 and URC dealers, we can install genuine products with manufacturer support and choose platforms that make sense for the home.</p>
                 </div>
                 <div class="value-card">
                     <div class="value-icon">⭐</div>
-                    <h3>Quality & Support</h3>
+                    <h3>Finish Cleanly</h3>
                     <p>Every project includes professional installation, clear walkthroughs, and support after the work is done. If something needs attention, we want to be reachable.</p>
                 </div>
             </div>
@@ -1640,39 +1799,39 @@
     <section class="content-section">
         <div class="container">
             <div class="section-header">
-                <h2>Why Choose Denali Tech?</h2>
-                <p>What sets us apart from other smart home companies:</p>
+                <h2>Why Homeowners Choose Denali Tech</h2>
+                <p>Practical reasons homeowners trust us with the systems they use every day:</p>
             </div>
             <div class="values-grid" style="margin-top: 3rem;">
                 <div class="value-card">
                     <div class="value-icon">📍</div>
                     <h3>Local & Trusted</h3>
-                    <p>Based right here in Mt Prospect, IL, we're your neighbors. We understand Chicago-area homes and have been serving the community since 2022. When you call, you're talking to local experts who care about your home.</p>
+                    <p>Based in Mt Prospect, we work across Chicago and nearby suburbs. You are dealing with a local team that understands the homes, wiring, rooms, and expectations here.</p>
                 </div>
                 <div class="value-card">
                     <div class="value-icon">🎓</div>
-                    <h3>Authorized Dealers</h3>
-                    <p>We're authorized Control4 and URC dealers, which means you get genuine products, manufacturer warranties, and access to the latest technology. Our certified installers are trained by the manufacturers themselves.</p>
+                    <h3>Real System Knowledge</h3>
+                    <p>We work across networking, AV, automation, cameras, lighting, shades, and audio, so the pieces are planned as one home system instead of isolated gadgets.</p>
                 </div>
                 <div class="value-card">
                     <div class="value-icon">💰</div>
-                    <h3>Transparent Pricing</h3>
-                    <p>No hidden fees, no surprises. All our prices include professional installation, programming, training, and lifetime support. We provide clear quotes upfront so you know exactly what you're getting.</p>
+                    <h3>Clear Scope</h3>
+                    <p>We explain what is needed, what can wait, and what is not worth spending on. You get a clear plan before work starts.</p>
                 </div>
                 <div class="value-card">
                     <div class="value-icon">🛡️</div>
-                    <h3>Lifetime Support</h3>
-                    <p>We don't disappear after installation. We provide lifetime support—24/7 availability for when you need help. If something doesn't work right, we'll fix it quickly, often at no charge for programming issues.</p>
+                    <h3>Support After Install</h3>
+                    <p>We do not want the relationship to end when the tools are packed up. If something needs attention, you can message us and get a real next step.</p>
                 </div>
                 <div class="value-card">
                     <div class="value-icon">🎯</div>
                     <h3>No-Pressure Approach</h3>
-                    <p>We start by listening to what you actually need and giving honest advice. We won't push unnecessary gadgets or oversell you.</p>
+                    <p>We start by listening to what you actually need and giving honest advice. We do not push unnecessary devices or oversell the project.</p>
                 </div>
                 <div class="value-card">
                     <div class="value-icon">✅</div>
                     <h3>Proven Track Record</h3>
-                    <p>With 100+ homes automated, a 5.0-star Google rating, and 13+ satisfied customer reviews, our work speaks for itself. We're committed to your complete satisfaction on every project.</p>
+                    <p>With 100+ homes improved and a 5.0 Google rating, the work has to speak clearly: clean installation, useful control, and reliable systems.</p>
                 </div>
             </div>
         </div>
@@ -1699,8 +1858,8 @@
                     <span class="stat-label">Serving Chicago Since</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">24/7</span>
-                    <span class="stat-label">Lifetime Support</span>
+                    <span class="stat-number">After</span>
+                    <span class="stat-label">Install Support</span>
                 </div>
             </div>
         </div>
@@ -1709,9 +1868,12 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <h2>Need a Smart Home Team That Can Actually Finish the Job?</h2>
-            <p>Send your project details and get clear recommendations, honest scope, and a plan that fits your home instead of a generic package.</p>
-            <a href="/contact/#booking" class="btn-primary">Send Project Details</a>
+            <h2>Need Help With Your Home Technology?</h2>
+            <p>Send a quick message with what is happening, where you are located, and a few photos if helpful. We will reply with a practical next step.</p>
+            <div class="hero-actions">
+                <a href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20need%20help%20with%20my%20home%20technology.%20My%20home%20is%20in%3A" target="_blank" rel="noopener noreferrer" class="btn-primary">Message on WhatsApp</a>
+                <a href="mailto:Hello@denalitechs.com?subject=Home%20Technology%20Project%20Help&body=Hi%20Denali%20Tech%2C%0A%0AI%20need%20help%20with%3A%0AMy%20home%20is%20in%3A%0APhotos%20attached%20if%20helpful.%0A" class="btn-secondary">Email Project Details</a>
+            </div>
         </div>
     </section>
 
