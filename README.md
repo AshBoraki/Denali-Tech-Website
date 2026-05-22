@@ -177,7 +177,7 @@ Denali-Tech-Website/
 
 ## 📞 Contact
 - **Phone:** (312) 439-7500
-- **Email:** Hello@denalitechs.com
+- **Email:** ash@denalitechs.com
 - **Location:** Mt Prospect, IL 60056
 - **Google Business:** [View Profile](https://share.google/5v7QlOZP27cn87Vqo)
 - **LinkedIn:** [Denali Tech Inc](https://www.linkedin.com/company/denali-tech-inc)
