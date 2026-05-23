@@ -1009,6 +1009,28 @@
                 margin-top: 1.15rem;
             }
 
+            .hero-title-main,
+            .hero-title-action {
+                display: block;
+            }
+
+            .header {
+                background: rgba(255, 255, 255, 0.94) !important;
+                border-bottom: 1px solid rgba(15, 23, 42, 0.12) !important;
+                box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12) !important;
+            }
+
+            .header .logo,
+            .header .logo-text,
+            .header .nav-links a {
+                color: #0f172a !important;
+                text-shadow: none !important;
+            }
+
+            .header .menu-toggle span {
+                background: #0f172a !important;
+            }
+
             @media (max-width: 768px) {
                 .hero-content {
                     align-items: center;
@@ -1046,31 +1068,59 @@
 
             /* Final mobile hero override: keep the first screen clean and readable */
             @media (max-width: 768px) {
+                .header {
+                    background: rgba(255, 255, 255, 0.94) !important;
+                    border-bottom: 1px solid rgba(15, 23, 42, 0.12) !important;
+                    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12) !important;
+                }
+
+                .header .logo,
+                .header .logo-text {
+                    color: #0f172a !important;
+                    text-shadow: none !important;
+                }
+
+                .header .menu-toggle span {
+                    background: #0f172a !important;
+                }
+
+                .nav-links.active {
+                    background: rgba(255, 255, 255, 0.98) !important;
+                    border-bottom: 1px solid rgba(15, 23, 42, 0.12) !important;
+                    box-shadow: 0 14px 34px rgba(15, 23, 42, 0.16) !important;
+                }
+
+                .nav-links.active li a {
+                    color: #0f172a !important;
+                }
+
                 .hero {
                     min-height: max(690px, 100svh) !important;
-                    padding-top: calc(var(--mobile-header-height) + 1.75rem) !important;
-                    padding-bottom: 4.75rem !important;
-                    align-items: center !important;
-                    justify-content: center !important;
+                    padding-top: calc(var(--mobile-header-height) + 2rem) !important;
+                    padding-bottom: 4.25rem !important;
+                    align-items: flex-end !important;
+                    justify-content: flex-end !important;
                 }
 
                 .hero::before {
                     top: var(--mobile-header-height);
                     height: calc(100% - var(--mobile-header-height));
                     background:
-                        radial-gradient(ellipse at center 49%, rgba(10, 13, 24, 0.56) 0%, rgba(10, 13, 24, 0.42) 42%, rgba(10, 13, 24, 0.22) 68%, rgba(10, 13, 24, 0.5) 100%),
-                        linear-gradient(180deg, rgba(10, 13, 24, 0.2) 0%, rgba(10, 13, 24, 0.28) 36%, rgba(10, 13, 24, 0.58) 100%);
+                        linear-gradient(180deg, rgba(255, 255, 255, 0.34) 0%, rgba(255, 255, 255, 0.04) 28%, rgba(10, 13, 24, 0.2) 48%, rgba(10, 13, 24, 0.78) 100%),
+                        radial-gradient(ellipse at 72% 20%, rgba(20, 184, 166, 0.22) 0%, rgba(20, 184, 166, 0.06) 34%, rgba(10, 13, 24, 0) 64%),
+                        radial-gradient(ellipse at 28% 80%, rgba(249, 115, 22, 0.24) 0%, rgba(249, 115, 22, 0.08) 36%, rgba(10, 13, 24, 0) 68%);
                 }
 
                 .hero-background video {
-                    opacity: 0.5 !important;
+                    opacity: 0.66 !important;
                 }
 
                 .hero-content {
                     width: 100%;
-                    max-width: min(88vw, 20.5rem) !important;
-                    padding-inline: 0.75rem !important;
-                    gap: 0.92rem;
+                    max-width: min(92vw, 23rem) !important;
+                    padding-inline: 1.2rem !important;
+                    padding-bottom: 0.35rem !important;
+                    gap: 0.98rem;
                     align-items: flex-start !important;
                     text-align: left !important;
                 }
@@ -1082,13 +1132,15 @@
                     line-height: 1.35;
                     white-space: normal;
                     color: #fed7aa;
+                    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.72);
                 }
 
                 .hero-content h1 {
-                    max-width: 9.7em;
-                    font-size: clamp(1.66rem, 7vw, 1.96rem);
-                    line-height: 1.16;
+                    max-width: 10.6em;
+                    font-size: clamp(1.82rem, 7.4vw, 2.18rem);
+                    line-height: 1.12;
                     overflow-wrap: normal;
+                    filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.78));
                 }
 
                 .hero-subcopy,
@@ -1096,25 +1148,26 @@
                     text-align: left;
                     margin-left: 0;
                     margin-right: 0;
+                    color: rgba(255, 255, 255, 0.94);
+                    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.82);
                 }
 
                 .hero-title-main,
                 .hero-title-action {
-                    display: block;
                     white-space: nowrap;
                 }
             }
 
             @media (max-width: 480px) {
                 .hero-content {
-                    max-width: min(88vw, 19rem) !important;
-                    gap: 0.86rem;
+                    max-width: min(92vw, 21rem) !important;
+                    gap: 0.92rem;
                 }
 
                 .hero-content h1 {
-                    max-width: 9.8em;
-                    font-size: clamp(1.56rem, 6.9vw, 1.78rem);
-                    line-height: 1.18;
+                    max-width: 10.5em;
+                    font-size: clamp(1.74rem, 7.2vw, 2.02rem);
+                    line-height: 1.13;
                 }
 
                 .hero-title-main {
