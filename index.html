@@ -1024,9 +1024,9 @@
             /* Final mobile hero override: keep the first screen clean and readable */
             @media (max-width: 768px) {
                 .hero {
-                    min-height: auto !important;
+                    min-height: max(650px, calc(100svh - var(--mobile-header-height))) !important;
                     padding-top: calc(var(--mobile-header-height) + 2rem) !important;
-                    padding-bottom: 3.5rem !important;
+                    padding-bottom: 5rem !important;
                     align-items: flex-start !important;
                 }
 
