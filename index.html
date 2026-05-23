@@ -1122,7 +1122,6 @@
                     max-width: min(92vw, 23rem) !important;
                     padding-inline: 1.2rem !important;
                     padding-bottom: 0 !important;
-                    min-height: calc(100svh - var(--mobile-header-height) - 5.15rem);
                     gap: 0.98rem;
                     display: flex !important;
                     flex-direction: column !important;
@@ -1132,8 +1131,8 @@
 
                 .hero-buttons {
                     width: 100%;
-                    margin-top: auto !important;
-                    padding-top: 2.25rem;
+                    margin-top: clamp(6rem, 18svh, 9.5rem) !important;
+                    padding-top: 0;
                     align-items: stretch !important;
                 }
 
