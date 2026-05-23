@@ -734,6 +734,43 @@
             line-height: 1.5;
         }
 
+        .founder-content {
+            display: grid;
+            gap: 1.1rem;
+        }
+
+        .founder-story-lead {
+            margin: 0;
+            color: var(--text-primary);
+            font-size: clamp(1.08rem, 2vw, 1.22rem);
+            line-height: 1.65;
+            font-weight: 600;
+            max-width: 64ch;
+        }
+
+        .founder-story-block {
+            padding: 1rem 1.15rem;
+            border-left: 3px solid rgba(249, 115, 22, 0.75);
+            background: rgba(255, 255, 255, 0.035);
+            border-radius: 0 8px 8px 0;
+        }
+
+        .founder-story-block h3 {
+            margin: 0 0 0.45rem;
+            color: var(--accent-hover);
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            letter-spacing: 0.03em;
+        }
+
+        .founder-story-block p {
+            margin: 0;
+            color: var(--text-secondary);
+            font-size: 0.98rem;
+            line-height: 1.62;
+            max-width: 58ch;
+        }
+
         .service-pill-grid {
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             margin-top: 2rem;
@@ -1449,6 +1486,43 @@
 
             .story-proof-grid {
                 grid-template-columns: 1fr;
+                gap: 0.85rem;
+                margin-top: 1.25rem;
+            }
+
+            .founder-content {
+                gap: 0.95rem;
+            }
+
+            .founder-story-lead {
+                font-size: 1rem;
+                line-height: 1.62;
+            }
+
+            .founder-story-block {
+                padding: 0.9rem 1rem;
+            }
+
+            .founder-story-block h3 {
+                font-size: 0.95rem;
+            }
+
+            .founder-story-block p {
+                font-size: 0.94rem;
+                line-height: 1.58;
+            }
+
+            .story-proof-card {
+                padding: 0.85rem;
+            }
+
+            .story-proof-card strong {
+                font-size: 1rem;
+            }
+
+            .story-proof-card span {
+                font-size: 0.9rem;
+                line-height: 1.45;
             }
 
             .service-pill-grid {
@@ -1457,7 +1531,10 @@
 
             .founder-story {
                 grid-template-columns: 1fr !important;
-                gap: 2rem !important;
+                gap: 1.5rem !important;
+                max-width: 760px;
+                margin-left: auto !important;
+                margin-right: auto !important;
             }
 
             .founder-image-side {
@@ -1690,26 +1767,26 @@
                 <p>Home automation is the passion. Systems thinking is the edge.</p>
             </div>
 
-            <div class="founder-story" style="display: grid; grid-template-columns: 300px 1fr; gap: 3rem; align-items: start; margin-top: 3rem;">
-                <div class="founder-image-side" style="text-align: center;">
-                    <picture>
-                        <source srcset="/Video/funder.webp" type="image/webp">
-                        <img src="/Video/funder.jpg" alt="Ash Boraki, founder of Denali Tech" loading="lazy" width="800" height="800" style="width: 280px; height: 280px; object-fit: cover; border-radius: 50%; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); border: 5px solid var(--accent-primary); max-width: 100%;">
-                    </picture>
-                </div>
-
+            <div class="founder-story" style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; align-items: start; margin: 3rem auto 0; max-width: 760px;">
                 <div class="founder-content">
-                    <p style="font-size: 1.1rem; line-height: 1.9; margin-bottom: 1.5rem; color: var(--text-primary);">
-                        Ash Boraki is a technologist, software builder, and home automation specialist who likes the hard middle ground where networks, AV, control systems, devices, and real people all have to work together.
+                    <p class="founder-story-lead">
+                        Ash Boraki builds Denali Tech from the same place he builds software: understand the system first, then make it easier for real people to use.
                     </p>
 
-                    <p style="font-size: 1.1rem; line-height: 1.9; margin-bottom: 1.5rem; color: var(--text-primary);">
-                        Denali Tech grew from that point of view. The work starts by understanding the home, the people using it, and the technology path that actually makes sense. Sometimes that means smart control. Sometimes it means fixing the network first. Sometimes the right answer is simpler than the expensive one.
-                    </p>
+                    <div class="founder-story-block">
+                        <h3>What Ash cares about</h3>
+                        <p>Home automation is the passion. WiFi, lighting, audio, cameras, shades, and control should feel like one clean system.</p>
+                    </div>
 
-                    <p style="font-size: 1.1rem; line-height: 1.9; margin-bottom: 1.5rem; color: var(--text-primary);">
-                        Ash also builds software tools, including the PropoKit proposal management platform and DT-NT for network diagnostics. That same builder mindset shapes Denali Tech: plan clearly, diagnose before guessing, choose the right platform, and leave the homeowner with a system they can trust.
-                    </p>
+                    <div class="founder-story-block">
+                        <h3>How Denali Tech works</h3>
+                        <p>We look at the home first, then fix the right layer: network, control, AV, cameras, or support. The best answer is often the simplest one.</p>
+                    </div>
+
+                    <div class="founder-story-block">
+                        <h3>Why the software side matters</h3>
+                        <p>Ash also builds PropoKit and DT-NT. That mindset carries into Denali Tech: diagnose, document, choose the right platform, and support the system after install.</p>
+                    </div>
 
                     <div class="story-proof-grid" aria-label="Denali Tech proof points">
                         <div class="story-proof-card">
