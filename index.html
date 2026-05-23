@@ -1107,6 +1107,7 @@
                     top: var(--mobile-header-height);
                     height: calc(100% - var(--mobile-header-height));
                     background:
+                        radial-gradient(ellipse at 12% 22%, rgba(10, 13, 24, 0.64) 0%, rgba(10, 13, 24, 0.42) 42%, rgba(10, 13, 24, 0.08) 72%, rgba(10, 13, 24, 0) 100%),
                         linear-gradient(180deg, rgba(255, 255, 255, 0.34) 0%, rgba(255, 255, 255, 0.04) 28%, rgba(10, 13, 24, 0.2) 48%, rgba(10, 13, 24, 0.78) 100%),
                         radial-gradient(ellipse at 72% 20%, rgba(20, 184, 166, 0.22) 0%, rgba(20, 184, 166, 0.06) 34%, rgba(10, 13, 24, 0) 64%),
                         radial-gradient(ellipse at 28% 80%, rgba(249, 115, 22, 0.24) 0%, rgba(249, 115, 22, 0.08) 36%, rgba(10, 13, 24, 0) 68%);
@@ -1157,11 +1158,14 @@
 
                 .hero-subcopy,
                 .hero-trust {
+                    max-width: 29ch;
                     text-align: left;
                     margin-left: 0;
                     margin-right: 0;
-                    color: rgba(255, 255, 255, 0.94);
-                    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.82);
+                    color: #ffffff;
+                    text-shadow:
+                        0 2px 10px rgba(0, 0, 0, 0.9),
+                        0 5px 22px rgba(0, 0, 0, 0.78);
                 }
 
                 .hero-title-main,
@@ -1187,17 +1191,17 @@
                 }
 
                 .hero-subcopy {
-                    max-width: 28ch;
-                    font-size: 1.02rem;
-                    line-height: 1.48;
-                    font-weight: 600;
+                    max-width: 29ch;
+                    font-size: 1.08rem;
+                    line-height: 1.44;
+                    font-weight: 750;
                 }
 
                 .hero-trust {
-                    max-width: 28ch;
-                    font-size: 0.94rem;
-                    line-height: 1.46;
-                    font-weight: 700;
+                    max-width: 29ch;
+                    font-size: 1rem;
+                    line-height: 1.42;
+                    font-weight: 800;
                 }
 
                 .hero-buttons {
