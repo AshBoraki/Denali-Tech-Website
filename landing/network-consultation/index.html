@@ -913,6 +913,7 @@
           source: source || 'network_consultation_landing',
           lead_type: 'network_consultation'
         };
+        var isDirectLead = /^whatsapp|^email/.test(payload.contact_method);
 
         if (window.dataLayer && typeof window.dataLayer.push === 'function') {
           window.dataLayer.push({
@@ -921,6 +922,15 @@
             lead_type: payload.lead_type,
             source: payload.source
           });
+
+          if (isDirectLead) {
+            window.dataLayer.push({
+              event: 'denali_generate_lead',
+              contact_method: payload.contact_method,
+              lead_type: payload.lead_type,
+              source: payload.source
+            });
+          }
         }
 
         window.uetq = window.uetq || [];
@@ -930,6 +940,15 @@
           contact_method: payload.contact_method,
           lead_type: payload.lead_type
         });
+
+        if (isDirectLead) {
+          window.uetq.push('event', 'generate_lead', {
+            event_category: 'lead',
+            event_label: payload.contact_method,
+            contact_method: payload.contact_method,
+            lead_type: payload.lead_type
+          });
+        }
       }
 
       document.querySelectorAll('.denali-contact-track').forEach(function (link) {
