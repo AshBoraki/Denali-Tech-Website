@@ -1,15 +1,659 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="robots" content="noindex,follow">
-    <meta http-equiv="refresh" content="0; url=/">
-    <title>Redirecting | Denali Tech</title>
-    <script>
-        window.location.replace("/");
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ash Boraki / Denali Tech Hub</title>
+  <meta name="description" content="Choose the right Denali Tech path: home technology installs, PropoKit proposal software, DTNT network tools, projects, videos, and contact links.">
+  <link rel="canonical" href="https://denalitechs.com/hub/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ash Boraki / Denali Tech Hub">
+  <meta property="og:description" content="Home tech, proposal software, network tools, projects, videos, and contact links from Ash Boraki and Denali Tech.">
+  <meta property="og:url" content="https://denalitechs.com/hub/">
+  <meta property="og:image" content="https://denalitechs.com/Video/logo.webp">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Ash Boraki / Denali Tech Hub">
+  <meta name="twitter:description" content="Pick the right path for Denali Tech, PropoKit, DTNT, projects, videos, and contact.">
+  <meta name="twitter:image" content="https://denalitechs.com/Video/logo.webp">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #020617;
+      --ink: #f8fafc;
+      --muted: #b8c4d6;
+      --soft: rgba(248, 250, 252, 0.68);
+      --line: rgba(148, 163, 184, 0.24);
+      --line-strong: rgba(147, 197, 253, 0.46);
+      --blue: #2f80ff;
+      --blue-soft: #8ec5ff;
+      --panel: rgba(15, 23, 42, 0.62);
+      --font-main: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-heading: Poppins, Inter, ui-sans-serif, system-ui, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-main);
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .site-shell {
+      min-height: 100vh;
+      background:
+        linear-gradient(180deg, rgba(47, 128, 255, 0.08) 0%, rgba(2, 6, 23, 0) 330px),
+        linear-gradient(90deg, rgba(2, 6, 23, 1) 0%, rgba(7, 15, 35, 1) 100%);
+    }
+
+    .topbar {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(2, 6, 23, 0.82);
+      -webkit-backdrop-filter: blur(18px);
+      backdrop-filter: blur(18px);
+    }
+
+    .topbar-inner {
+      width: min(1120px, calc(100% - 32px));
+      min-height: 72px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      min-width: 0;
+    }
+
+    .brand img {
+      width: 48px;
+      height: 36px;
+      object-fit: cover;
+      object-position: 40% center;
+      border-radius: 8px;
+    }
+
+    .brand span {
+      font-family: var(--font-heading);
+      font-size: clamp(1.02rem, 3vw, 1.24rem);
+      font-weight: 850;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: rgba(248, 250, 252, 0.78);
+      font-size: 0.92rem;
+      font-weight: 780;
+    }
+
+    .nav a {
+      text-decoration: none;
+    }
+
+    .nav a:hover,
+    .nav a:focus-visible {
+      color: var(--blue-soft);
+    }
+
+    .hero {
+      min-height: 100svh;
+      padding: 118px 0 72px;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-inner {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.04fr) minmax(280px, 0.72fr);
+      gap: clamp(36px, 8vw, 88px);
+      align-items: center;
+    }
+
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--blue-soft);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 9.7ch;
+      margin: 0;
+      font-family: var(--font-heading);
+      font-size: clamp(4.3rem, 10vw, 9.8rem);
+      line-height: 0.86;
+      letter-spacing: 0;
+    }
+
+    .hero-copy {
+      max-width: 620px;
+      margin: 28px 0 0;
+      color: rgba(248, 250, 252, 0.84);
+      font-size: clamp(1.04rem, 2vw, 1.28rem);
+      line-height: 1.55;
+      font-weight: 650;
+    }
+
+    .hero-actions,
+    .route-actions,
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-actions {
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0.86rem 1.2rem;
+      border-radius: 8px;
+      border: 1px solid var(--line-strong);
+      background: rgba(15, 23, 42, 0.56);
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 850;
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-2px);
+      border-color: rgba(147, 197, 253, 0.86);
+      background: rgba(30, 41, 59, 0.72);
+    }
+
+    .btn-primary {
+      border-color: transparent;
+      background: #2f80ff;
+      color: #fff;
+      box-shadow: 0 18px 34px rgba(47, 128, 255, 0.28);
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible {
+      background: #5aa2ff;
+    }
+
+    .identity-panel {
+      position: relative;
+      min-height: 520px;
+      border-left: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .identity-panel::before {
+      content: "";
+      position: absolute;
+      inset: 8% 0 8% auto;
+      width: min(72vw, 520px);
+      border: 1px solid rgba(147, 197, 253, 0.16);
+      border-right: 0;
+      opacity: 0.72;
+    }
+
+    .identity-mark {
+      position: relative;
+      width: min(100%, 360px);
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line-strong);
+      border-radius: 50%;
+      background: rgba(15, 23, 42, 0.38);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+    }
+
+    .identity-mark::before,
+    .identity-mark::after {
+      content: "";
+      position: absolute;
+      inset: 18%;
+      border: 1px solid rgba(147, 197, 253, 0.22);
+      border-radius: 50%;
+    }
+
+    .identity-mark::after {
+      inset: 36%;
+      background: rgba(2, 6, 23, 0.8);
+    }
+
+    .identity-mark img {
+      position: relative;
+      z-index: 2;
+      width: clamp(112px, 16vw, 164px);
+      height: auto;
+      border-radius: 16px;
+    }
+
+    .lane-list {
+      position: absolute;
+      right: 0;
+      bottom: 44px;
+      display: grid;
+      gap: 10px;
+      width: min(100%, 280px);
+    }
+
+    .lane-list span {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(2, 6, 23, 0.72);
+      padding: 0.75rem 0.9rem;
+      color: rgba(248, 250, 252, 0.82);
+      font-size: 0.88rem;
+      font-weight: 800;
+    }
+
+    .lane-list i {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--blue);
+      font-style: normal;
+    }
+
+    .main {
+      background: var(--bg);
+    }
+
+    .section {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 82px 0;
+    }
+
+    .section-header {
+      display: grid;
+      grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+      gap: 36px;
+      align-items: end;
+      padding-bottom: 30px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h2 {
+      margin: 0;
+      font-family: var(--font-heading);
+      font-size: clamp(2.25rem, 5vw, 4.4rem);
+      line-height: 0.96;
+      letter-spacing: 0;
+    }
+
+    .section-header p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.7;
+    }
+
+    .route-list {
+      display: grid;
+    }
+
+    .route {
+      display: grid;
+      grid-template-columns: minmax(96px, 0.28fr) minmax(0, 1fr) minmax(250px, 0.45fr);
+      gap: clamp(18px, 4vw, 42px);
+      align-items: start;
+      padding: clamp(28px, 5vw, 48px) 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .route-number {
+      color: rgba(147, 197, 253, 0.36);
+      font-family: var(--font-heading);
+      font-size: clamp(2.4rem, 6vw, 4.9rem);
+      font-weight: 850;
+      line-height: 0.9;
+    }
+
+    .route h3 {
+      margin: 0;
+      font-family: var(--font-heading);
+      font-size: clamp(1.55rem, 3.4vw, 3rem);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .route p {
+      max-width: 650px;
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+      line-height: 1.65;
+    }
+
+    .route-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .route-meta span {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0.42rem 0.62rem;
+      color: var(--soft);
+      font-size: 0.82rem;
+      font-weight: 750;
+    }
+
+    .route-actions {
+      justify-content: flex-end;
+      align-items: flex-start;
+    }
+
+    .route-actions .btn {
+      width: min(100%, 230px);
+    }
+
+    .signal {
+      color: var(--blue-soft);
+    }
+
+    .contact-band {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 28px;
+      align-items: center;
+      margin-top: 44px;
+      padding: clamp(28px, 5vw, 44px) 0 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .contact-band h2 {
+      max-width: 13ch;
+      font-size: clamp(2.2rem, 5.4vw, 4.9rem);
+    }
+
+    .contact-band p {
+      max-width: 620px;
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.7;
+    }
+
+    .footer {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 34px 0 46px;
+      border-top: 1px solid var(--line);
+      color: rgba(248, 250, 252, 0.58);
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 0.94rem;
+    }
+
+    .footer a {
+      color: rgba(248, 250, 252, 0.78);
+      text-decoration: none;
+    }
+
+    @media (max-width: 900px) {
+      .nav {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 104px 0 52px;
+      }
+
+      .hero-inner,
+      .section-header,
+      .route,
+      .contact-band {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        max-width: 8.4ch;
+        font-size: clamp(3.25rem, 17vw, 5.4rem);
+      }
+
+      .identity-panel {
+        min-height: 290px;
+        border-left: 0;
+        border-top: 1px solid var(--line);
+        justify-content: flex-start;
+        padding-top: 30px;
+      }
+
+      .identity-mark {
+        width: 210px;
+      }
+
+      .lane-list {
+        position: static;
+        width: 100%;
+        margin-left: 18px;
+      }
+
+      .route-actions {
+        justify-content: flex-start;
+      }
+
+      .route-actions .btn,
+      .hero-actions .btn,
+      .contact-band .btn {
+        width: 100%;
+      }
+
+      .section {
+        padding: 58px 0;
+      }
+
+      .route-number {
+        font-size: 2.6rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
 </head>
 <body>
-    <p>This page has moved to <a href="/">Denali Tech</a>.</p>
+  <div class="site-shell">
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="../index.html" aria-label="Open Denali Tech home">
+          <img src="../Video/logo.JPG" alt="Denali Tech logo" width="56" height="40">
+          <span>Denali Tech Hub</span>
+        </a>
+        <nav class="nav" aria-label="Primary hub links">
+          <a href="../index.html">Home Tech</a>
+          <a href="https://propokit.com/">PropoKit</a>
+          <a href="https://dt-nt.com/">DTNT</a>
+          <a href="../contact/index.html#booking">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hub-title">
+        <div class="hero-inner">
+          <div>
+            <p class="eyebrow">Ash Boraki / Denali Tech</p>
+            <h1 id="hub-title">One hub. Three lanes.</h1>
+            <p class="hero-copy">Home technology, proposal software, and field network tools. Start here, pick the lane, and go straight to the right place.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="../contact/index.html#booking">Tell Me What You Need</a>
+              <a class="btn" href="#paths">See Every Path</a>
+            </div>
+          </div>
+
+          <aside class="identity-panel" aria-label="Denali Tech hub identity">
+            <div class="identity-mark">
+              <img src="../Video/logo.webp" alt="Denali Tech logo" width="300" height="214">
+            </div>
+            <div class="lane-list" aria-label="Hub lanes">
+              <span>Home Tech <i></i></span>
+              <span>PropoKit <i></i></span>
+              <span>DTNT Tools <i></i></span>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <div class="main">
+        <section class="section" id="paths" aria-labelledby="paths-title">
+          <div class="section-header">
+            <h2 id="paths-title">Pick by intent.</h2>
+            <p>Use this page from LinkedIn, YouTube, Instagram, QR codes, or email signatures. It routes homeowners, service teams, and field techs without making them guess which Denali project they need.</p>
+          </div>
+
+          <div class="route-list">
+            <article class="route">
+              <div class="route-number">01</div>
+              <div>
+                <h3><span class="signal">Homeowners</span> needing WiFi, smart home, AV, or cameras.</h3>
+                <p>Denali Tech designs and installs reliable home networks, smart control, theater, lighting, shades, cameras, and audio for Chicago-area homes.</p>
+                <div class="route-meta" aria-label="Denali Tech focus areas">
+                  <span>Smart home control</span>
+                  <span>Whole-home WiFi</span>
+                  <span>AV and theater</span>
+                  <span>Cameras</span>
+                </div>
+              </div>
+              <div class="route-actions">
+                <a class="btn btn-primary" href="../contact/index.html#booking">Get a Home Tech Plan</a>
+                <a class="btn" href="../projects/index.html">View Projects</a>
+              </div>
+            </article>
+
+            <article class="route">
+              <div class="route-number">02</div>
+              <div>
+                <h3><span class="signal">Service businesses</span> that send proposals.</h3>
+                <p>PropoKit keeps projects, saved items, proposal PDFs, signing links, status, and accepted-work QuickBooks handoff in one proposal workspace.</p>
+                <div class="route-meta" aria-label="PropoKit focus areas">
+                  <span>Projects</span>
+                  <span>Saved item library</span>
+                  <span>PDF and signing links</span>
+                  <span>QuickBooks handoff</span>
+                </div>
+              </div>
+              <div class="route-actions">
+                <a class="btn btn-primary" href="https://propokit.com/">Open PropoKit</a>
+                <a class="btn" href="https://propokit.com/#pricing">See Plans</a>
+              </div>
+            </article>
+
+            <article class="route">
+              <div class="route-number">03</div>
+              <div>
+                <h3><span class="signal">Field techs</span> checking networks on Windows.</h3>
+                <p>DTNT gives installers a Windows app for WiFi surveys, IP discovery, speed tests, saved profile review, and Pro diagnostics without juggling separate tools.</p>
+                <div class="route-meta" aria-label="DTNT focus areas">
+                  <span>WiFi analyzer</span>
+                  <span>IP scanner</span>
+                  <span>Speed tests</span>
+                  <span>Windows app</span>
+                </div>
+              </div>
+              <div class="route-actions">
+                <a class="btn btn-primary" href="https://dt-nt.com/">Open DTNT</a>
+                <a class="btn" href="https://dt-nt.com/features/">View Features</a>
+              </div>
+            </article>
+
+            <article class="route">
+              <div class="route-number">04</div>
+              <div>
+                <h3>Proof, videos, and posts.</h3>
+                <p>See real projects, read the smart-home blog, follow Denali Tech updates, or watch the YouTube channel before choosing a path.</p>
+                <div class="route-meta" aria-label="Content links">
+                  <span>Projects</span>
+                  <span>Blog</span>
+                  <span>LinkedIn</span>
+                  <span>YouTube</span>
+                </div>
+              </div>
+              <div class="route-actions">
+                <a class="btn btn-primary" href="../projects/index.html">Project Showcase</a>
+                <a class="btn" href="https://www.linkedin.com/company/denalitechs">LinkedIn</a>
+                <a class="btn" href="https://www.youtube.com/@denalitechav">YouTube</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="contact-band" aria-labelledby="contact-title">
+            <div>
+              <h2 id="contact-title">Not sure where to start?</h2>
+              <p>Send the problem, the goal, or the link you came from. We will point you to the right Denali Tech path.</p>
+            </div>
+            <div class="social-links">
+              <a class="btn btn-primary" href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20came%20from%20the%20hub%20and%20need%20help%20with%3A" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+              <a class="btn" href="../contact/index.html#booking">Contact Form</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <span>Denali Tech Inc. Home technology, software, and field tools.</span>
+      <span><a href="../index.html">Denali Tech</a> / <a href="https://propokit.com/">PropoKit</a> / <a href="https://dt-nt.com/">DTNT</a></span>
+    </footer>
+  </div>
 </body>
 </html>
