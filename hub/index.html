@@ -4,15 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ash Boraki / Denali Tech Hub</title>
-  <meta name="description" content="A simple hub for Ash Boraki, Denali Tech, PropoKit, DTNT, projects, videos, and contact links.">
+  <meta name="description" content="A direct hub for Denali Tech, PropoKit, DTNT, projects, videos, updates, and contact links.">
   <link rel="canonical" href="https://denalitechs.com/hub/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Ash Boraki / Denali Tech Hub">
-  <meta property="og:description" content="Denali Tech installs, PropoKit proposal software, DTNT network tools, projects, videos, and contact links.">
+  <meta property="og:description" content="Choose the right path for Denali Tech installs, PropoKit proposal software, DTNT network tools, proof, videos, and contact.">
   <meta property="og:url" content="https://denalitechs.com/hub/">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Ash Boraki / Denali Tech Hub">
-  <meta name="twitter:description" content="Denali Tech installs, PropoKit proposal software, DTNT network tools, projects, videos, and contact links.">
+  <meta name="twitter:description" content="Choose the right path for Denali Tech installs, PropoKit proposal software, DTNT network tools, proof, videos, and contact.">
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
@@ -20,12 +20,13 @@
     :root {
       color-scheme: dark;
       --bg: #0a0d18;
-      --panel: rgba(255, 255, 255, 0.04);
-      --panel-strong: rgba(255, 255, 255, 0.07);
+      --surface: rgba(255, 255, 255, 0.04);
+      --surface-hover: rgba(255, 255, 255, 0.065);
       --ink: #f8fafc;
       --muted: #cbd5e1;
       --soft: #94a3b8;
       --line: rgba(255, 255, 255, 0.12);
+      --line-warm: rgba(249, 115, 22, 0.38);
       --accent: #f97316;
       --accent-hover: #fb923c;
       --font-main: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -53,9 +54,9 @@
     }
 
     .wrap {
-      width: min(760px, calc(100% - 32px));
+      width: min(980px, calc(100% - 32px));
       margin: 0 auto;
-      padding: 28px 0 42px;
+      padding: 28px 0 44px;
     }
 
     .top {
@@ -63,23 +64,25 @@
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      padding-bottom: 28px;
+      padding-bottom: 24px;
       border-bottom: 1px solid var(--line);
+    }
+
+    .brand,
+    .top-link {
+      text-decoration: none;
+      font-weight: 800;
     }
 
     .brand {
       font-family: var(--font-heading);
       font-size: 1rem;
-      font-weight: 800;
-      text-decoration: none;
       letter-spacing: 0;
     }
 
     .top-link {
       color: var(--muted);
       font-size: 0.92rem;
-      font-weight: 700;
-      text-decoration: none;
     }
 
     .top-link:hover,
@@ -88,7 +91,11 @@
     }
 
     .intro {
-      padding: 44px 0 26px;
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(260px, 0.55fr);
+      gap: clamp(24px, 6vw, 60px);
+      align-items: end;
+      padding: clamp(34px, 7vw, 68px) 0 30px;
     }
 
     .eyebrow {
@@ -100,25 +107,30 @@
       text-transform: uppercase;
     }
 
-    h1 {
-      margin: 0;
+    h1,
+    h2,
+    h3 {
       font-family: var(--font-heading);
-      font-size: clamp(2.45rem, 8vw, 4.5rem);
-      line-height: 1.02;
       letter-spacing: 0;
     }
 
-    .intro p {
-      max-width: 640px;
-      margin: 18px 0 0;
+    h1 {
+      max-width: 11ch;
+      margin: 0;
+      font-size: clamp(2.65rem, 8vw, 5.5rem);
+      line-height: 0.98;
+    }
+
+    .intro-copy {
+      margin: 0;
       color: var(--muted);
-      font-size: clamp(1.05rem, 2.5vw, 1.22rem);
+      font-size: clamp(1.02rem, 2vw, 1.18rem);
       line-height: 1.65;
       font-weight: 560;
     }
 
     .primary-actions,
-    .link-actions,
+    .board-actions,
     .footer-links {
       display: flex;
       flex-wrap: wrap;
@@ -126,27 +138,28 @@
     }
 
     .primary-actions {
-      margin-top: 22px;
+      margin-top: 18px;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 46px;
-      padding: 0.75rem 1rem;
+      min-height: 44px;
+      padding: 0.72rem 0.95rem;
       border: 1px solid var(--line);
       border-radius: 8px;
       background: transparent;
       color: var(--ink);
       text-decoration: none;
+      font-size: 0.95rem;
       font-weight: 800;
     }
 
     .btn:hover,
     .btn:focus-visible {
-      border-color: rgba(249, 115, 22, 0.72);
-      color: #fff;
+      border-color: var(--line-warm);
+      background: rgba(249, 115, 22, 0.08);
     }
 
     .btn-primary {
@@ -161,66 +174,74 @@
       background: var(--accent-hover);
     }
 
-    .links {
+    .board-grid {
       display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 12px;
-      padding: 18px 0 28px;
+      padding: 12px 0 28px;
     }
 
-    .link-row {
+    .board {
+      display: flex;
+      flex-direction: column;
+      min-height: 230px;
+      padding: 20px;
       border: 1px solid var(--line);
       border-radius: 8px;
-      background: var(--panel);
-      padding: 18px;
+      background: var(--surface);
     }
 
-    .link-row:hover {
-      background: var(--panel-strong);
-      border-color: rgba(249, 115, 22, 0.42);
+    .board:hover {
+      border-color: var(--line-warm);
+      background: var(--surface-hover);
     }
 
-    .link-row h2 {
+    .board-kicker {
+      margin: 0 0 14px;
+      color: var(--accent-hover);
+      font-size: 0.72rem;
+      font-weight: 850;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .board h2 {
       margin: 0;
-      font-family: var(--font-heading);
-      font-size: clamp(1.25rem, 4vw, 1.65rem);
-      line-height: 1.18;
-      letter-spacing: 0;
+      font-size: clamp(1.32rem, 3vw, 1.85rem);
+      line-height: 1.12;
     }
 
-    .link-row p {
-      margin: 8px 0 0;
+    .board p {
+      margin: 10px 0 0;
       color: var(--muted);
       line-height: 1.58;
       font-weight: 560;
     }
 
-    .link-actions {
-      margin-top: 14px;
+    .board-actions {
+      margin-top: auto;
+      padding-top: 18px;
     }
 
-    .link-actions .btn {
-      min-height: 42px;
-      padding: 0.64rem 0.9rem;
-      font-size: 0.94rem;
-    }
-
-    .contact {
-      margin-top: 8px;
-      padding: 22px;
-      border: 1px solid rgba(249, 115, 22, 0.34);
+    .fallback {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 20px;
+      align-items: center;
+      padding: 24px;
+      border: 1px solid var(--line-warm);
       border-radius: 8px;
       background: rgba(249, 115, 22, 0.08);
     }
 
-    .contact h2 {
+    .fallback h2 {
       margin: 0;
-      font-family: var(--font-heading);
-      font-size: clamp(1.45rem, 4vw, 2rem);
-      line-height: 1.15;
+      font-size: clamp(1.45rem, 4vw, 2.1rem);
+      line-height: 1.12;
     }
 
-    .contact p {
-      margin: 10px 0 0;
+    .fallback p {
+      margin: 8px 0 0;
       color: var(--muted);
       line-height: 1.6;
       font-weight: 560;
@@ -249,30 +270,44 @@
       color: var(--accent-hover);
     }
 
-    @media (max-width: 620px) {
+    @media (max-width: 760px) {
       .wrap {
-        width: min(100% - 28px, 760px);
+        width: min(100% - 28px, 980px);
         padding-top: 22px;
+      }
+
+      .top,
+      .intro,
+      .fallback {
+        grid-template-columns: 1fr;
       }
 
       .top {
         align-items: flex-start;
         flex-direction: column;
-        padding-bottom: 22px;
+        padding-bottom: 20px;
       }
 
       .intro {
         padding: 34px 0 22px;
       }
 
-      .btn,
-      .link-actions .btn {
-        width: 100%;
+      h1 {
+        max-width: 10ch;
       }
 
-      .link-row,
-      .contact {
-        padding: 16px;
+      .board-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .board {
+        min-height: 0;
+        padding: 18px;
+      }
+
+      .btn,
+      .fallback .btn {
+        width: 100%;
       }
     }
   </style>
@@ -281,66 +316,92 @@
   <div class="wrap">
     <header class="top">
       <a class="brand" href="../index.html">Denali Tech Hub</a>
-      <a class="top-link" href="../contact/index.html#booking">Contact</a>
+      <a class="top-link" href="../contact/index.html#booking">Contact Ash</a>
     </header>
 
     <main>
       <section class="intro" aria-labelledby="hub-title">
-        <p class="eyebrow">Ash Boraki / Denali Tech</p>
-        <h1 id="hub-title">Simple links. Real work.</h1>
-        <p>One place for Denali Tech, PropoKit, DTNT, project proof, videos, and contact. Pick what you need and go straight there.</p>
-        <div class="primary-actions">
-          <a class="btn btn-primary" href="../contact/index.html#booking">Ask Where To Start</a>
-          <a class="btn" href="../projects/index.html">See Projects</a>
+        <div>
+          <p class="eyebrow">Ash Boraki / Denali Tech</p>
+          <h1 id="hub-title">Choose the right lane.</h1>
+        </div>
+        <div>
+          <p class="intro-copy">This is the starting point for the work around Denali Tech: home technology, proposal software, network tools, project proof, videos, and direct contact.</p>
+          <div class="primary-actions">
+            <a class="btn btn-primary" href="../contact/index.html#booking">Ask Where To Start</a>
+            <a class="btn" href="../projects/index.html">View Project Proof</a>
+          </div>
         </div>
       </section>
 
-      <section class="links" aria-label="Hub links">
-        <article class="link-row">
-          <h2>Denali Tech</h2>
-          <p>Smart home, WiFi, AV, cameras, lighting, shades, theater, and support for Chicago-area homes.</p>
-          <div class="link-actions">
+      <section class="board-grid" aria-label="Denali Tech hub boards">
+        <article class="board">
+          <p class="board-kicker">Home projects</p>
+          <h2>Denali Tech installs the system.</h2>
+          <p>For homeowners who need WiFi, smart home control, AV, cameras, lighting, shades, theater, or support in the Chicago area.</p>
+          <div class="board-actions">
             <a class="btn btn-primary" href="../contact/index.html#booking">Get a Plan</a>
             <a class="btn" href="../index.html">Main Website</a>
           </div>
         </article>
 
-        <article class="link-row">
-          <h2>PropoKit</h2>
-          <p>Proposal software for service businesses that need saved items, PDFs, signing links, and a cleaner workflow.</p>
-          <div class="link-actions">
+        <article class="board">
+          <p class="board-kicker">Proof</p>
+          <h2>See the kind of work we do.</h2>
+          <p>Use this if you want to see project examples, service areas, finished rooms, and the way Denali Tech thinks through a home.</p>
+          <div class="board-actions">
+            <a class="btn btn-primary" href="../projects/index.html">Projects</a>
+            <a class="btn" href="../index.html#process">Process</a>
+          </div>
+        </article>
+
+        <article class="board">
+          <p class="board-kicker">Software</p>
+          <h2>PropoKit helps service businesses quote.</h2>
+          <p>For contractors and service companies that need saved items, clean proposal PDFs, signing links, and a better sales workflow.</p>
+          <div class="board-actions">
             <a class="btn btn-primary" href="https://propokit.com/">Open PropoKit</a>
             <a class="btn" href="https://propokit.com/#pricing">Plans</a>
           </div>
         </article>
 
-        <article class="link-row">
-          <h2>DTNT</h2>
-          <p>Network tools for WiFi checks, IP scans, speed tests, saved profiles, and field diagnostics.</p>
-          <div class="link-actions">
+        <article class="board">
+          <p class="board-kicker">Network tools</p>
+          <h2>DTNT is for field diagnostics.</h2>
+          <p>For techs who need WiFi checks, IP scans, speed tests, saved profiles, and practical network tools while they are on site.</p>
+          <div class="board-actions">
             <a class="btn btn-primary" href="https://dt-nt.com/">Open DTNT</a>
             <a class="btn" href="https://dt-nt.com/features/">Features</a>
           </div>
         </article>
 
-        <article class="link-row">
-          <h2>Projects and videos</h2>
-          <p>See finished work, smart-home guides, LinkedIn updates, and the Denali Tech YouTube channel.</p>
-          <div class="link-actions">
-            <a class="btn btn-primary" href="../projects/index.html">Projects</a>
-            <a class="btn" href="https://www.youtube.com/@denalitechav">YouTube</a>
+        <article class="board">
+          <p class="board-kicker">Video</p>
+          <h2>Watch the ideas and walkthroughs.</h2>
+          <p>Use this for smart-home videos, practical explanations, project thinking, and updates from Denali Tech.</p>
+          <div class="board-actions">
+            <a class="btn btn-primary" href="https://www.youtube.com/@denalitechav">YouTube</a>
             <a class="btn" href="https://www.linkedin.com/company/denalitechs">LinkedIn</a>
+          </div>
+        </article>
+
+        <article class="board">
+          <p class="board-kicker">Direct help</p>
+          <h2>Tell me what you are trying to do.</h2>
+          <p>If you are not sure which path fits, send the short version. I will point you to the right place or tell you what I would do first.</p>
+          <div class="board-actions">
+            <a class="btn btn-primary" href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20came%20from%20the%20hub%20and%20need%20help%20with%3A" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a class="btn" href="../contact/index.html#booking">Contact Form</a>
           </div>
         </article>
       </section>
 
-      <section class="contact" aria-labelledby="contact-title">
-        <h2 id="contact-title">Not sure where to start?</h2>
-        <p>Send a short note. If it is a home project, software question, or network-tool question, I will point you to the right place.</p>
-        <div class="primary-actions">
-          <a class="btn btn-primary" href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20came%20from%20the%20hub%20and%20need%20help%20with%3A" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-          <a class="btn" href="../contact/index.html#booking">Contact Form</a>
+      <section class="fallback" aria-labelledby="fallback-title">
+        <div>
+          <h2 id="fallback-title">Wrong place? Start here anyway.</h2>
+          <p>A short message is enough. Home project, software, network issue, partnership, or content idea, I will route it.</p>
         </div>
+        <a class="btn btn-primary" href="../contact/index.html#booking">Send a Note</a>
       </section>
     </main>
 
