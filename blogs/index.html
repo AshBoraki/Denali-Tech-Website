@@ -322,53 +322,6 @@
             flex-shrink: 0;
         }
 
-        .theme-toggle {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .toggle-switch {
-            width: 54px;
-            height: 28px;
-            background: var(--border-color);
-            border-radius: 14px;
-            cursor: pointer;
-            position: relative;
-            transition: background var(--transition);
-        }
-
-        body:not(.light-theme) .toggle-switch {
-            background: rgba(148,163,184,0.28);
-        }
-
-        :root[data-theme='light'] .toggle-switch,
-        body.light-theme .toggle-switch {
-            background: rgba(15,23,42,0.12);
-        }
-
-        .toggle-switch:hover {
-            background: rgba(249,115,22,0.2);
-        }
-
-        .toggle-switch-circle {
-            width: 22px;
-            height: 22px;
-            background: var(--accent-primary);
-            border-radius: 50%;
-            position: absolute;
-            top: 3px;
-            left: 4px;
-            transition: transform var(--transition), background var(--transition);
-            box-shadow: var(--shadow-subtle);
-        }
-
-        :root[data-theme='light'] .toggle-switch-circle,
-        body.light-theme .toggle-switch-circle {
-            transform: translateX(25px);
-            background: var(--accent-hover);
-        }
-
         .cta-button {
             background: linear-gradient(135deg,var(--accent-primary),var(--accent-interactive));
             color: white;
@@ -981,11 +934,6 @@
                 </ul>
             </nav>
             <div class="header-actions">
-                <div class="theme-toggle">
-                    <div class="toggle-switch" id="theme-toggle-switch" role="switch" aria-checked="false" aria-label="Toggle between light and dark mode">
-                        <div class="toggle-switch-circle"></div>
-                    </div>
-                </div>
                 <a href="tel:+13124397500" class="cta-button call-now-button">
                     <span class="phone-icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24" fill="none">
@@ -1237,37 +1185,6 @@
             });
             renderPosts();
         }
-const storageKey = 'denali-theme';
-const applyTheme = (theme) => {
-    const isLight = theme === 'light';
-    document.body.classList.toggle('light-theme', isLight);
-    document.documentElement.setAttribute('data-theme', isLight ? 'light' : 'dark');
-    window.__currentTheme = theme;
-};
-
-const savedTheme = localStorage.getItem(storageKey);
-const initialTheme = savedTheme === 'light' ? 'light' : 'dark';
-applyTheme(initialTheme);
-
-const themeToggle = document.getElementById('theme-toggle-switch');
-const getCurrentTheme = () => document.body.classList.contains('light-theme') ? 'light' : 'dark';
-const updateTheme = (theme) => {
-    localStorage.setItem(storageKey, theme);
-    applyTheme(theme);
-    if (themeToggle) {
-        themeToggle.setAttribute('aria-checked', String(theme === 'light'));
-    }
-};
-
-if (themeToggle) {
-    themeToggle.setAttribute('aria-checked', String(getCurrentTheme() === 'light'));
-    themeToggle.addEventListener('click', () => {
-        const newTheme = getCurrentTheme() === 'light' ? 'dark' : 'light';
-        updateTheme(newTheme);
-    });
-}
-
-window.__setTheme = updateTheme;
 
 // Initialize on page load
 loadBlogData();

@@ -4,7 +4,6 @@
     function persistLightTheme() {
         try {
             localStorage.setItem('theme', 'light');
-            localStorage.setItem('denali-theme', 'light');
         } catch (error) {}
     }
 

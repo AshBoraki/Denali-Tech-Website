@@ -649,22 +649,7 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWPTRPDR"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-
-    <script>
-        (function () {
-            const storageKey = 'theme';
-            const applyTheme = (theme) => {
-                const isLight = theme === 'light';
-                document.body.classList.toggle('light-theme', isLight);
-                document.documentElement.setAttribute('data-theme', theme);
-            };
-            const savedTheme = localStorage.getItem(storageKey);
-            const initialTheme = savedTheme === 'dark' ? 'dark' : 'light';
-            applyTheme(initialTheme);
-        })();
-    </script>
-
-    <!-- Header -->
+<!-- Header -->
     <header>
         <div class="container">
             <a href="/">Denali Tech</a>
