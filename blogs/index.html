@@ -1137,14 +1137,16 @@
                 const isWebp = post.heroImage.toLowerCase().endsWith('.webp');
                 // URL encode the image path to handle spaces and special characters in filenames
                 // Split path and encode each segment to properly handle ? and & characters
-                const pathParts = post.heroImage.split('/');
+                const postUrl = post.url.startsWith('/') ? post.url : `/${post.url}`;
+                const heroImagePath = post.heroImage.startsWith('/') ? post.heroImage.slice(1) : post.heroImage;
+                const pathParts = heroImagePath.split('/');
                 const encodedImagePath = pathParts.map(part => encodeURIComponent(part)).join('/');
 
                 return `
                 <article class="blog-card">
-                    <a href="/${post.url}" class="blog-card-image-link" style="text-decoration: none; color: inherit; display: block;">
+                    <a href="${postUrl}" class="blog-card-image-link" style="text-decoration: none; color: inherit; display: block;">
                         <div class="blog-image-wrapper">
-                            <img src="https://denalitechs.com/${encodedImagePath}" alt="${escapeHtml(post.title)}" loading="lazy" width="400" height="225" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #667eea 0%, #764ba2 100%)';">
+                            <img src="/${encodedImagePath}" alt="${escapeHtml(post.title)}" loading="lazy" width="400" height="225" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #667eea 0%, #764ba2 100%)';">
                         </div>
                     </a>
                     <div class="blog-card-content">
@@ -1153,12 +1155,12 @@
                             <span>📅 ${formatDate(post.publishedDate)}</span>
                         </div>
                         <h2 class="blog-card-title">
-                            <a href="/${post.url}">${escapeHtml(post.title)}</a>
+                            <a href="${postUrl}">${escapeHtml(post.title)}</a>
                         </h2>
                         <p class="blog-card-excerpt">${escapeHtml(post.excerpt)}</p>
                         <div class="blog-card-footer">
                             <span class="blog-card-reading-time">⏱️ ${post.readingTime} min read</span>
-                            <a href="/${post.url}" class="blog-card-link">Open Article →</a>
+                            <a href="${postUrl}" class="blog-card-link">Open Article →</a>
                         </div>
                     </div>
                 </article>
