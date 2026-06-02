@@ -504,7 +504,7 @@
 
         /* HERO SECTION */
         .hero {
-            padding: 96px 0 34px;
+            padding: 84px 0 24px;
             background: var(--bg-color);
             text-align: center;
             position: relative;
@@ -554,16 +554,16 @@
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 800px;
+            max-width: 760px;
             margin: 0 auto;
             padding: 0 2rem;
         }
 
         .hero h1 {
             font-family: var(--font-heading);
-            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-size: clamp(2.35rem, 4.6vw, 3.55rem);
             font-weight: 700;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             line-height: 1.2;
             background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-primary) 100%);
             -webkit-background-clip: text;
@@ -572,9 +572,9 @@
         }
 
         .hero p {
-            font-size: 1.3rem;
+            font-size: clamp(1.05rem, 2vw, 1.22rem);
             color: var(--text-secondary);
-            margin-bottom: 2rem;
+            margin-bottom: 0;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
@@ -820,21 +820,6 @@
             color: #1e293b;
         }
 
-        /* Enhanced Form Validation Feedback */
-        .form-group input:valid:not(:placeholder-shown),
-        .form-group select:valid:not([value=""]),
-        .form-group textarea:valid:not(:placeholder-shown) {
-            border-color: rgba(34, 197, 94, 0.5);
-            background: rgba(34, 197, 94, 0.05);
-        }
-
-        .form-group input:invalid:not(:placeholder-shown):not(:focus),
-        .form-group select:invalid:not([value=""]):not(:focus),
-        .form-group textarea:invalid:not(:placeholder-shown):not(:focus) {
-            border-color: rgba(239, 68, 68, 0.5);
-            background: rgba(239, 68, 68, 0.05);
-        }
-
         /* Form Progress Indicator */
         .form-progress {
             display: none;
@@ -899,40 +884,36 @@
 
         /* Field Error Messages */
         .field-error {
-            display: flex;
+            display: none;
             align-items: center;
             gap: 0.5rem;
             color: #ef4444;
             font-size: 0.875rem;
             margin-top: 0.5rem;
-            min-height: 1.25rem;
-            opacity: 0;
+            min-height: 0;
+            opacity: 1;
             transition: opacity 0.3s ease, transform 0.3s ease;
-            transform: translateY(-5px);
+            transform: translateY(0);
         }
 
         .field-error::before {
-            content: '⚠️';
+            content: '';
             font-size: 1rem;
         }
 
         .field-error.show {
-            opacity: 1;
-            transform: translateY(0);
+            display: flex;
             animation: errorShake 0.4s ease;
+        }
+
+        .field-error.show::before {
+            content: '⚠️';
         }
 
         @keyframes errorShake {
             0%, 100% { transform: translateX(0); }
             25% { transform: translateX(-5px); }
             75% { transform: translateX(5px); }
-        }
-
-        .form-group input:invalid:not(:placeholder-shown):not(:focus),
-        .form-group select:invalid:not([value=""]):not(:focus),
-        .form-group textarea:invalid:not(:placeholder-shown):not(:focus) {
-            border-color: #ef4444;
-            box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
         }
 
         .form-group {
@@ -1075,19 +1056,20 @@
 
         /* BOOKING FORM SECTION */
         .booking-section {
-            padding: 56px 5%;
+            padding: 34px 5% 56px;
             background: var(--bg-color);
+            scroll-margin-top: 92px;
         }
 
         .booking-form-container {
-            max-width: 780px;
+            max-width: 820px;
             margin: 0 auto;
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(20px) saturate(180%);
             -webkit-backdrop-filter: blur(20px) saturate(180%);
             border: 1px solid rgba(255, 255, 255, 0.18);
             border-radius: 18px;
-            padding: 1.75rem;
+            padding: clamp(1.1rem, 2.8vw, 1.65rem);
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37),
                         0 0 0 1px rgba(255, 255, 255, 0.05) inset;
             position: relative;
@@ -1125,12 +1107,14 @@
 
         /* Quick Contact Buttons */
         .booking-form-container a[href^="tel:"],
-        .booking-form-container a[href^="mailto:"] {
+        .booking-form-container a[href^="mailto:"],
+        .booking-form-container a[href*="wa.me"] {
             transition: all var(--transition);
         }
 
         .booking-form-container a[href^="tel:"]:hover,
-        .booking-form-container a[href^="mailto:"]:hover {
+        .booking-form-container a[href^="mailto:"]:hover,
+        .booking-form-container a[href*="wa.me"]:hover {
             background: rgba(249, 115, 22, 0.2) !important;
             border-color: var(--accent-primary) !important;
             transform: translateY(-2px);
@@ -1138,7 +1122,8 @@
         }
 
         .booking-form-container a[href^="tel:"]:active,
-        .booking-form-container a[href^="mailto:"]:active {
+        .booking-form-container a[href^="mailto:"]:active,
+        .booking-form-container a[href*="wa.me"]:active {
             transform: translateY(0);
         }
 
@@ -1836,7 +1821,7 @@
 
             .contact-section,
             .booking-section {
-                padding: 44px 4%;
+                padding: 32px 4% 44px;
             }
 
             .contact-section:first-of-type {
@@ -1866,7 +1851,8 @@
             }
 
             .booking-form-container > div > div:first-of-type a[href^="tel:"],
-            .booking-form-container > div > div:first-of-type a[href^="mailto:"] {
+            .booking-form-container > div > div:first-of-type a[href^="mailto:"],
+            .booking-form-container > div > div:first-of-type a[href*="wa.me"] {
                 width: 100%;
                 justify-content: center;
                 padding: 0.875rem 1.25rem;
@@ -1925,12 +1911,26 @@
             }
 
             .hero {
-                padding: 84px 0 28px;
+                padding: 78px 0 20px;
+            }
+
+            .hero-content {
+                padding: 0 1rem;
+            }
+
+            .hero h1 {
+                font-size: clamp(2rem, 11vw, 2.65rem);
+                margin-bottom: 0.85rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+                line-height: 1.55;
             }
 
             .contact-section,
             .booking-section {
-                padding: 36px 3%;
+                padding: 24px 3% 36px;
             }
 
             .booking-form-container {
@@ -2172,8 +2172,8 @@
         <div class="container">
             <div class="booking-form-container">
                 <div style="text-align: center; margin-bottom: 1.1rem;">
-                    <h2 style="font-family: var(--font-heading); font-size: clamp(1.5rem, 3vw, 1.95rem); font-weight: 700; color: var(--text-primary); margin-bottom: 0.6rem; line-height: 1.2;">Send the Details</h2>
-                    <p style="font-size: 1rem; color: var(--text-secondary); max-width: 620px; margin: 0 auto 1rem; line-height: 1.55;">Tell us the problem, the room, and the city. If photos help, send the router, rack, TV, windows, cameras, wiring, or problem area.</p>
+                    <h2 style="font-family: var(--font-heading); font-size: clamp(1.5rem, 3vw, 1.95rem); font-weight: 700; color: var(--text-primary); margin-bottom: 0.6rem; line-height: 1.2;">Send the Room, Issue, and City</h2>
+                    <p style="font-size: 1rem; color: var(--text-secondary); max-width: 620px; margin: 0 auto 1rem; line-height: 1.55;">A short note is enough. Photos help most for racks, routers, TVs, cameras, wiring, shades, and problem areas.</p>
                     <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; margin-bottom: 0.9rem;">
                         <a href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20need%20help%20with%20WiFi%20or%20smart%20home%20work.%20I%20can%20send%20photos.%20My%20home%20is%20in%3A" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.65rem 1.1rem; background: rgba(37, 211, 102, 0.1); border: 1px solid rgba(37, 211, 102, 0.3); border-radius: 8px; color: #25d366; text-decoration: none; font-weight: 600; transition: all var(--transition);">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -2200,7 +2200,7 @@
                 <!-- Trust Signals - Compact Design -->
                 <div style="margin: 0.85rem 0 1rem; padding: 0.7rem 0.9rem; background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(249, 115, 22, 0.05)); border-radius: 12px; border: 1px solid rgba(249, 115, 22, 0.2); text-align: center;">
                     <p style="margin: 0; font-size: 0.92rem; color: var(--text-secondary); line-height: 1.5;">
-                        <strong style="color: var(--text-primary);">5.0 Google rating</strong> • Reply within 24 hours • Clear recommendations
+                        <strong style="color: var(--text-primary);">5.0 Google rating</strong> • WhatsApp or email is fine • Clear next step
                     </p>
                 </div>
 
@@ -2224,17 +2224,17 @@
                             <div class="form-group">
                                 <label for="booking-name">Name *</label>
                                 <input type="text" id="booking-name" name="name" autocomplete="name" required aria-required="true" placeholder="Your name">
-                                <span class="field-error" id="name-error" role="alert"></span>
+                                <span class="field-error" id="name-error" aria-live="polite" aria-hidden="true"></span>
                             </div>
                             <div class="form-group">
                                 <label for="booking-phone">Phone / WhatsApp</label>
                                 <input type="tel" id="booking-phone" name="phone" autocomplete="tel" aria-required="false" placeholder="Optional" pattern="[0-9\s\(\)\-]+">
-                                <span class="field-error" id="phone-error" role="alert"></span>
+                                <span class="field-error" id="phone-error" aria-live="polite" aria-hidden="true"></span>
                             </div>
                             <div class="form-group">
                                 <label for="booking-email">Email *</label>
                                 <input type="email" id="booking-email" name="email" autocomplete="email" required aria-required="true" placeholder="you@example.com" inputmode="email">
-                                <span class="field-error" id="email-error" role="alert"></span>
+                                <span class="field-error" id="email-error" aria-live="polite" aria-hidden="true"></span>
                             </div>
                         </div>
                     </fieldset>
@@ -2257,13 +2257,13 @@
                                     <option value="Multiple Services">Multiple Services</option>
                                     <option value="Not Sure / Need a Plan">Not Sure / Need a Plan</option>
                                 </select>
-                                <span class="field-error" id="service-error" role="alert"></span>
+                                <span class="field-error" id="service-error" aria-live="polite" aria-hidden="true"></span>
                             </div>
                         </div>
                         <div class="form-group full-width">
                             <label for="booking-details">What is happening? *</label>
                             <textarea id="booking-details" name="project_details" placeholder="Example: WiFi drops in the back rooms, cameras disconnect, Control4 is slow, TV buffers, the router area is messy, or I want smart lighting/audio added." required rows="4" aria-required="true" minlength="10"></textarea>
-                            <span class="field-error" id="details-error" role="alert"></span>
+                            <span class="field-error" id="details-error" aria-live="polite" aria-hidden="true"></span>
                             <small class="field-hint" style="color: var(--text-secondary); font-size: 0.875rem;">A few words are fine.</small>
                         </div>
                     </fieldset>
@@ -2276,7 +2276,7 @@
                             <div class="form-group">
                                 <label for="booking-date">Preferred Date</label>
                                 <input type="date" id="booking-date" name="preferred_date" aria-required="false" min="">
-                                <span class="field-error" id="date-error" role="alert"></span>
+                                <span class="field-error" id="date-error" aria-live="polite" aria-hidden="true"></span>
                                 <small style="display: block; margin-top: 0.5rem; color: var(--text-secondary); font-size: 0.875rem;">Optional</small>
                             </div>
                             <div class="form-group">
@@ -2289,7 +2289,7 @@
                                     <option value="Flexible">Flexible</option>
                                     <option value="Not scheduling - just have questions">Not scheduling - just have questions</option>
                                 </select>
-                                <span class="field-error" id="time-error" role="alert"></span>
+                                <span class="field-error" id="time-error" aria-live="polite" aria-hidden="true"></span>
                             </div>
                         </div>
 
@@ -2304,12 +2304,12 @@
                     <!-- Captcha -->
                     <div class="form-group" style="margin-top: 1rem;">
                         <div class="h-captcha" data-captcha="true"></div>
-                        <span class="field-error" id="captcha-error" role="alert"></span>
+                        <span class="field-error" id="captcha-error" aria-live="polite" aria-hidden="true"></span>
                     </div>
 
                     <!-- Submit Button -->
                     <button type="submit" class="booking-form-submit" id="submit-btn">
-                        <span class="btn-text">Send My Plan Request</span>
+                        <span class="btn-text">Send Project Details</span>
                         <span class="btn-loader" style="display: none;">⏳</span>
                     </button>
 
@@ -2607,7 +2607,7 @@
                             if (err) {
                                 const errorMsg = responseData?.message || 'There was an error submitting your request.';
                                 err.style.display = 'block';
-                                err.textContent = `❌ ${errorMsg} Please try again or call us at (312) 439-7500.`;
+                                err.textContent = `❌ ${errorMsg} Please try again or message us on WhatsApp.`;
                             }
                             if (submitBtn) {
                                 submitBtn.disabled = false;
@@ -2620,7 +2620,7 @@
                         const errBox = document.getElementById('form-error');
                         if (errBox) {
                             errBox.style.display = 'block';
-                            errBox.textContent = '❌ Network error. Please check your connection and try again, or call us at (312) 439-7500.';
+                            errBox.textContent = '❌ Network error. Please check your connection and try again, or message us on WhatsApp.';
                         }
                         if (submitBtn) {
                             submitBtn.disabled = false;
@@ -3055,10 +3055,23 @@
             // Debounced validation for performance
             const validationTimeouts = new Map();
 
+            function getFieldErrorElement(field) {
+                const fieldErrorIds = {
+                    'booking-name': 'name-error',
+                    'booking-phone': 'phone-error',
+                    'booking-email': 'email-error',
+                    'booking-service': 'service-error',
+                    'booking-details': 'details-error',
+                    'booking-date': 'date-error',
+                    'booking-time': 'time-error'
+                };
+                const errorId = fieldErrorIds[field.id] || field.id + '-error';
+                return document.getElementById(errorId);
+            }
+
             // Enhanced Real-time Validation with Error Messages
             function validateField(field, immediate = false) {
-                const errorId = field.id + '-error';
-                const errorElement = document.getElementById(errorId);
+                const errorElement = getFieldErrorElement(field);
                 let isValid = true;
                 let errorMessage = '';
 
@@ -3110,11 +3123,13 @@
                         if (isValid) {
                             errorElement.classList.remove('show');
                             errorElement.textContent = '';
+                            errorElement.setAttribute('aria-hidden', 'true');
                             field.classList.add('valid');
                             announceToScreenReader(`${field.labels?.[0]?.textContent || 'Field'} is valid`);
                         } else {
                             errorElement.classList.add('show');
                             errorElement.textContent = errorMessage;
+                            errorElement.setAttribute('aria-hidden', 'false');
                             field.classList.add('error');
                             announceToScreenReader(`Error in ${field.labels?.[0]?.textContent || 'field'}: ${errorMessage}`);
                         }
@@ -3146,10 +3161,11 @@
                         if (this.value.trim()) {
                             validateField(this, false);
                         } else {
-                            const errorId = this.id + '-error';
-                            const errorElement = document.getElementById(errorId);
+                            const errorElement = getFieldErrorElement(this);
                             if (errorElement) {
                                 errorElement.classList.remove('show');
+                                errorElement.textContent = '';
+                                errorElement.setAttribute('aria-hidden', 'true');
                             }
                             this.classList.remove('valid', 'error');
                         }
@@ -3279,6 +3295,22 @@
                         return;
                     }
 
+                    const requiredFields = bookingForm.querySelectorAll('input[required], select[required], textarea[required]');
+                    const invalidFields = Array.from(requiredFields).filter(field => !validateField(field, true));
+                    if (invalidFields.length) {
+                        if (messageDiv) {
+                            const errorDiv = document.createElement('div');
+                            errorDiv.className = 'form-error-message';
+                            errorDiv.textContent = 'Please complete the highlighted fields, then send the details.';
+                            messageDiv.textContent = '';
+                            messageDiv.appendChild(errorDiv);
+                            messageDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }
+                        invalidFields[0].focus({ preventScroll: true });
+                        invalidFields[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        return;
+                    }
+
                     // Check hCaptcha - wait a moment for it to load if needed
                     let hCaptcha = bookingForm.querySelector('textarea[name="h-captcha-response"]');
                     if (!hCaptcha) {
@@ -3316,7 +3348,7 @@
                             submitBtn.disabled = false;
                             const btnText = submitBtn.querySelector('.btn-text');
                             const btnLoader = submitBtn.querySelector('.btn-loader');
-                            if (btnText) btnText.textContent = 'Send Message';
+                            if (btnText) btnText.textContent = 'Send Project Details';
                             if (btnLoader) btnLoader.style.display = 'none';
                         }
                         return;
@@ -3371,14 +3403,14 @@
                             const errorMsg = responseData?.message || 'There was an error submitting your request.';
                             const errorDiv = document.createElement('div');
                             errorDiv.className = 'form-error-message';
-                            errorDiv.textContent = `❌ ${errorMsg} Please try again or call us at (312) 439-7500.`;
+                            errorDiv.textContent = `❌ ${errorMsg} Please try again or message us on WhatsApp.`;
                             messageDiv.textContent = '';
                             messageDiv.appendChild(errorDiv);
                             if (submitBtn) {
                                 submitBtn.disabled = false;
                                 const btnText = submitBtn.querySelector('.btn-text');
                                 const btnLoader = submitBtn.querySelector('.btn-loader');
-                                if (btnText) btnText.textContent = 'Send Message';
+                                if (btnText) btnText.textContent = 'Send Project Details';
                                 if (btnLoader) btnLoader.style.display = 'none';
                             }
                         }
@@ -3393,7 +3425,7 @@
                             submitBtn.disabled = false;
                             const btnText = submitBtn.querySelector('.btn-text');
                             const btnLoader = submitBtn.querySelector('.btn-loader');
-                            if (btnText) btnText.textContent = 'Send Message';
+                            if (btnText) btnText.textContent = 'Send Project Details';
                             if (btnLoader) btnLoader.style.display = 'none';
                         }
                     }
