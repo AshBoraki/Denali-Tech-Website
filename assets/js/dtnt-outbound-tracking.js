@@ -10,6 +10,7 @@
     };
 
     window.uetq.push('event', 'outbound_click', payload);
+    window.uetq.push('event', 'dtnt_download_click', payload);
     window.uetq.push('event', 'DTNT Store Click', payload);
   }
 
