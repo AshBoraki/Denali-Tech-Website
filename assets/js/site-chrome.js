@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  var version = "20260602f";
+  var version = "20260602g";
   var whatsappHref = "https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20need%20a%20clear%20plan%20for%20my%20home%20technology.%20I%20can%20send%20photos.%20My%20home%20is%20in%3A";
 
   var navItems = [
@@ -159,6 +159,7 @@
       button.setAttribute("aria-expanded", String(!open));
       button.setAttribute("aria-label", open ? "Open navigation menu" : "Close navigation menu");
       header.classList.toggle("dt-menu-open", !open);
+      document.body.classList.toggle("dt-site-menu-lock", !open);
     });
 
     links.addEventListener("click", function (event) {
@@ -166,6 +167,7 @@
       button.setAttribute("aria-expanded", "false");
       button.setAttribute("aria-label", "Open navigation menu");
       header.classList.remove("dt-menu-open");
+      document.body.classList.remove("dt-site-menu-lock");
     });
 
     document.addEventListener("keydown", function (event) {
@@ -173,6 +175,7 @@
       button.setAttribute("aria-expanded", "false");
       button.setAttribute("aria-label", "Open navigation menu");
       header.classList.remove("dt-menu-open");
+      document.body.classList.remove("dt-site-menu-lock");
     });
 
     nav.appendChild(brand);
@@ -251,12 +254,12 @@
     logo.appendChild(makeElement("span", "", "Denali Tech"));
 
     var kicker = makeElement("p", "dt-site-footer-kicker", "Chicago-area smart home, WiFi, AV, and control help");
-    var title = makeElement("h2", "", "Fix the right thing before buying more gear.");
+    var title = makeElement("h2", "", "Fix the right thing first.");
     title.id = "dt-footer-title";
     var description = makeElement(
       "p",
       "dt-site-footer-lead",
-      "Tell us what is not working. Send photos if you have them. We will help you find the practical next step before you spend big."
+      "Send the problem, photos, and city. We will help you find the practical next step before you buy more gear."
     );
 
     var actions = makeElement("div", "dt-site-footer-actions");
