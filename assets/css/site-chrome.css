@@ -8,6 +8,8 @@
   --dt-chrome-line: #d9e2ec;
   --dt-chrome-accent: #f97316;
   --dt-chrome-accent-strong: #ea580c;
+  --dt-chrome-whatsapp: #128c7e;
+  --dt-chrome-whatsapp-strong: #075e54;
   --dt-chrome-shadow: 0 14px 36px rgba(15, 23, 42, 0.10);
 }
 
@@ -289,10 +291,10 @@ body.dt-site-menu-lock {
   justify-content: center;
   min-height: 44px;
   padding: 0 16px;
-  color: var(--dt-chrome-text);
-  border: 1px solid var(--dt-chrome-line);
+  color: var(--dt-chrome-whatsapp-strong);
+  border: 1px solid rgba(18, 140, 126, 0.28);
   border-radius: 8px;
-  background: #ffffff;
+  background: rgba(37, 211, 102, 0.08);
   text-decoration: none;
   font-size: 0.92rem;
   font-weight: 850;
@@ -302,10 +304,26 @@ body.dt-site-menu-lock {
 
 .dt-site-footer-secondary:hover,
 .dt-site-footer-secondary:focus-visible {
-  color: var(--dt-chrome-accent-strong);
-  border-color: rgba(249, 115, 22, 0.34);
-  outline: 3px solid rgba(249, 115, 22, 0.16);
+  color: var(--dt-chrome-whatsapp-strong);
+  border-color: rgba(18, 140, 126, 0.45);
+  background: rgba(37, 211, 102, 0.13);
+  outline: 3px solid rgba(37, 211, 102, 0.18);
   outline-offset: 2px;
+}
+
+.dt-whatsapp-upgraded.phone-link {
+  color: var(--dt-chrome-whatsapp) !important;
+  font-weight: 850 !important;
+}
+
+.dt-whatsapp-upgraded.call-now-button {
+  background: linear-gradient(135deg, var(--dt-chrome-whatsapp), #25d366) !important;
+  border-color: rgba(18, 140, 126, 0.36) !important;
+  color: #ffffff !important;
+}
+
+.dt-whatsapp-upgraded.contact-item {
+  color: var(--dt-chrome-whatsapp-strong) !important;
 }
 
 .dt-site-footer-proof {

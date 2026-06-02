@@ -1,8 +1,9 @@
 (function () {
   "use strict";
 
-  var version = "20260602g";
+  var version = "20260602h";
   var whatsappHref = "https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20need%20a%20clear%20plan%20for%20my%20home%20technology.%20I%20can%20send%20photos.%20My%20home%20is%20in%3A";
+  var whatsappCallHref = "https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20would%20rather%20use%20WhatsApp.%20Can%20you%20help%20me%20with%3A";
 
   var navItems = [
     { label: "Home", href: "/" },
@@ -267,8 +268,10 @@
     cta.href = whatsappHref;
     cta.target = "_blank";
     cta.rel = "noopener noreferrer";
-    var call = makeElement("a", "dt-site-footer-secondary", "Call (312) 439-7500");
-    call.href = "tel:+13124397500";
+    var call = makeElement("a", "dt-site-footer-secondary", "WhatsApp / Call");
+    call.href = whatsappCallHref;
+    call.target = "_blank";
+    call.rel = "noopener noreferrer";
     actions.appendChild(cta);
     actions.appendChild(call);
 
@@ -334,6 +337,42 @@
     return footer;
   }
 
+  function setContactActionText(anchor, text) {
+    var spans = Array.prototype.slice.call(anchor.querySelectorAll("span"));
+    var target = spans.find(function (span) {
+      return !span.classList.contains("phone-icon") && !span.classList.contains("copy-feedback");
+    });
+
+    if (target) {
+      target.textContent = text;
+      return;
+    }
+
+    anchor.textContent = text;
+  }
+
+  function upgradePhoneLinks() {
+    document.querySelectorAll('a[href^="tel:+13124397500"], a[href^="tel:13124397500"]').forEach(function (anchor) {
+      if (anchor.dataset.denaliKeepTel === "true") return;
+
+      anchor.href = whatsappCallHref;
+      anchor.target = "_blank";
+      anchor.rel = "noopener noreferrer";
+      anchor.classList.add("dt-whatsapp-upgraded");
+
+      var ownText = anchor.textContent.replace(/\s+/g, " ").trim().toLowerCase();
+      var parentText = anchor.parentElement ? anchor.parentElement.textContent.toLowerCase() : "";
+      var isContactAction =
+        anchor.classList.contains("call-now-button") ||
+        anchor.classList.contains("phone-link") ||
+        anchor.classList.contains("contact-item") ||
+        ownText === "call now" ||
+        parentText.indexOf("call") !== -1;
+
+      if (isContactAction) setContactActionText(anchor, "WhatsApp / Call");
+    });
+  }
+
   function init() {
     if (document.body.dataset.denaliChromeReady === "true") return;
     document.body.dataset.denaliChromeReady = "true";
@@ -348,6 +387,7 @@
     document.body.insertBefore(header, document.body.firstChild);
     document.body.insertBefore(spacer, header.nextSibling);
     document.body.appendChild(buildFooter());
+    upgradePhoneLinks();
   }
 
   if (document.readyState === "loading") {
