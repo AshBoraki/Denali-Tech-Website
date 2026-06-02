@@ -15,60 +15,10 @@
         // Enhanced Mobile Menu Toggle - MUST run first, before any early returns
         const menuToggle = document.getElementById('menuToggle') || document.getElementById('menu-toggle');
         const navLinks = document.getElementById('navLinks');
-        const desktopThemeToggle = document.getElementById('theme-toggle-switch');
-
-        function removeMobileThemeToggle() {
+        function syncResponsiveThemeToggle() {
             const existing = navLinks?.querySelector('.mobile-theme-toggle');
             if (existing) {
                 existing.remove();
-            }
-        }
-
-        function ensureMobileThemeToggle() {
-            if (!navLinks || !desktopThemeToggle || window.innerWidth > MOBILE_MENU_BREAKPOINT || navLinks.querySelector('.mobile-theme-toggle')) {
-                return;
-            }
-
-            const themeItem = document.createElement('li');
-            themeItem.className = 'mobile-theme-toggle';
-            themeItem.innerHTML = `
-                <button type="button" class="mobile-theme-toggle-btn" aria-label="Toggle theme">
-                    <span class="mobile-theme-toggle-icon mobile-theme-toggle-icon-moon" aria-hidden="true">☾</span>
-                    <span class="mobile-theme-toggle-switch" aria-hidden="true"></span>
-                    <span class="mobile-theme-toggle-icon mobile-theme-toggle-icon-sun" aria-hidden="true">☀</span>
-                </button>
-            `;
-
-            const callButton = navLinks.querySelector('.mobile-call-btn');
-            if (callButton) {
-                navLinks.insertBefore(themeItem, callButton);
-            } else {
-                navLinks.appendChild(themeItem);
-            }
-
-            const mobileThemeButton = themeItem.querySelector('button');
-            const syncThemeState = () => {
-                const isLight = document.body.classList.contains('light-theme') || document.documentElement.getAttribute('data-theme') === 'light';
-                mobileThemeButton.setAttribute('aria-checked', isLight ? 'light' : 'dark');
-            };
-
-            mobileThemeButton.addEventListener('click', () => {
-                desktopThemeToggle.click();
-                syncThemeState();
-            });
-
-            syncThemeState();
-
-            const observer = new MutationObserver(syncThemeState);
-            observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
-            observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
-        }
-
-        function syncResponsiveThemeToggle() {
-            if (window.innerWidth <= MOBILE_MENU_BREAKPOINT) {
-                ensureMobileThemeToggle();
-            } else {
-                removeMobileThemeToggle();
             }
         }
 

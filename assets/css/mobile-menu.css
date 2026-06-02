@@ -21,7 +21,9 @@
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* Keep mobile-only theme control hidden unless the dropdown menu is active */
+/* The public site now uses one light theme, so legacy theme controls stay hidden. */
+.theme-toggle,
+.toggle-switch,
 .mobile-theme-toggle {
     display: none !important;
 }
