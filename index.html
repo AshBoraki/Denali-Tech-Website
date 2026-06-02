@@ -651,11 +651,11 @@
                 document.documentElement.setAttribute('data-theme', theme);
                 window.__currentTheme = theme;
             };
-            const initialTheme = 'dark';
+            const initialTheme = 'light';
             applyTheme(initialTheme);
             window.__setTheme = (theme) => {
-                localStorage.setItem(storageKey, 'dark');
-                applyTheme('dark');
+                localStorage.setItem(storageKey, 'light');
+                applyTheme('light');
             };
         })();
     </script>
@@ -1316,27 +1316,27 @@
             :root,
             body,
             body.light-theme {
-                --bg-color: #0a0d18;
-                --bg-aurora-1: rgba(249, 115, 22, 0.14);
-                --bg-aurora-2: rgba(249, 115, 22, 0.08);
-                --bg-aurora-3: rgba(249, 115, 22, 0.05);
-                --text-primary: #f8fafc;
-                --text-secondary: #cbd5e1;
+                --bg-color: #f8fafc;
+                --bg-aurora-1: rgba(249, 115, 22, 0.08);
+                --bg-aurora-2: rgba(249, 115, 22, 0.04);
+                --bg-aurora-3: rgba(15, 23, 42, 0.03);
+                --text-primary: #0f172a;
+                --text-secondary: #475569;
                 --accent-primary: #f97316;
-                --accent-hover: #fdba74;
+                --accent-hover: #ea580c;
                 --accent-interactive: #fb923c;
-                --border-color: rgba(255, 255, 255, 0.12);
-                --shadow-glow: 0 10px 30px rgba(249, 115, 22, 0.26);
-                --shadow-subtle: 0 10px 28px rgba(0, 0, 0, 0.22);
+                --border-color: rgba(15, 23, 42, 0.12);
+                --shadow-glow: 0 10px 28px rgba(249, 115, 22, 0.22);
+                --shadow-subtle: 0 10px 28px rgba(15, 23, 42, 0.1);
             }
 
             .header,
             .header.scrolled,
             body.light-theme .header,
             :root[data-theme='light'] .header {
-                background: rgba(10, 13, 24, 0.94) !important;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.24) !important;
+                background: rgba(255, 255, 255, 0.96) !important;
+                border-bottom: 1px solid rgba(15, 23, 42, 0.1) !important;
+                box-shadow: 0 8px 26px rgba(15, 23, 42, 0.1) !important;
             }
 
             .header .logo,
@@ -1345,7 +1345,7 @@
             body.light-theme .header .logo,
             body.light-theme .header .logo-text,
             body.light-theme .header .nav-links a {
-                color: #f8fafc !important;
+                color: #0f172a !important;
                 text-shadow: none !important;
             }
 
@@ -1357,20 +1357,60 @@
 
             .header .menu-toggle span,
             body.light-theme .header .menu-toggle span {
-                background: #f8fafc !important;
+                background: #0f172a !important;
             }
 
             .nav-links.active,
             body.light-theme .nav-links.active,
             :root[data-theme='light'] .nav-links.active {
-                background: rgba(10, 13, 24, 0.98) !important;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
-                box-shadow: 0 18px 34px rgba(0, 0, 0, 0.34) !important;
+                background: rgba(255, 255, 255, 0.98) !important;
+                border-bottom: 1px solid rgba(15, 23, 42, 0.12) !important;
+                box-shadow: 0 18px 34px rgba(15, 23, 42, 0.16) !important;
             }
 
             .nav-links.active li a,
             body.light-theme .nav-links.active li a {
-                color: #f8fafc !important;
+                color: #0f172a !important;
+            }
+
+            .hero {
+                --text-primary: #f8fafc;
+                --text-secondary: #e2e8f0;
+                --border-color: rgba(255, 255, 255, 0.22);
+            }
+
+            .hero .btn-secondary {
+                color: #fff !important;
+                border-color: var(--accent-primary) !important;
+                background: rgba(10, 13, 24, 0.24) !important;
+            }
+
+            @media (max-width: 768px) {
+                .hero .hero-content {
+                    --text-primary: #0f172a;
+                    --text-secondary: #475569;
+                }
+
+                .hero .hero-eyebrow {
+                    color: var(--accent-primary) !important;
+                }
+
+                .hero .hero-content h1 {
+                    background: linear-gradient(135deg, #0f172a 0%, var(--accent-primary) 100%) !important;
+                    -webkit-background-clip: text !important;
+                    background-clip: text !important;
+                }
+
+                .hero .hero-subcopy,
+                .hero .hero-trust {
+                    color: var(--text-secondary) !important;
+                }
+
+                .hero .btn-secondary {
+                    color: #0f172a !important;
+                    background: #ffffff !important;
+                    border-color: var(--accent-primary) !important;
+                }
             }
 
             .theme-toggle {
@@ -1664,14 +1704,14 @@
     </section>
 
     <!-- Video Showcase Section -->
-    <section class="video-showcase-section" style="padding: 72px 5%; background: rgba(255,255,255,0.03); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); position: relative;">
+    <section class="video-showcase-section" style="padding: 84px 5%; background: #ffffff; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); position: relative;">
         <div class="container">
             <div class="section-header">
                 <h2>See Our Work</h2>
-                <p>Real projects, real homes, and a quick look at what smart home upgrades feel like day to day.</p>
+                <p>Real project photos are more useful than a dark promo block. This is the kind of finished work homeowners should expect.</p>
             </div>
-            <div class="video-grid" style="display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.9fr); gap: 1.5rem; margin-top: 2rem; max-width: 1200px; margin-left: auto; margin-right: auto; align-items: stretch;">
-                <div class="video-card" style="background: rgba(255,255,255,0.02); border: 2px solid var(--border-color); border-radius: 20px; overflow: hidden; position: relative; box-shadow: var(--shadow-subtle);">
+            <div class="video-grid" style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-top: 2rem; max-width: 1120px; margin-left: auto; margin-right: auto; align-items: stretch;">
+                <div class="video-card" aria-hidden="true" style="display: none; background: rgba(255,255,255,0.02); border: 2px solid var(--border-color); border-radius: 20px; overflow: hidden; position: relative; box-shadow: var(--shadow-subtle);">
                     <div class="video-wrapper" style="position: relative; width: 100%; padding-top: 56.25%; background: rgba(249,115,22,0.08);">
                         <video
                             playsinline
@@ -1700,28 +1740,41 @@
                         <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.7; margin: 0;">A quick look at the kind of theater, lighting, and control upgrades we build for everyday living.</p>
                     </div>
                 </div>
-                <aside class="video-highlights" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 20px; padding: 1.75rem; box-shadow: var(--shadow-subtle); display: flex; flex-direction: column; justify-content: space-between;">
-                    <div>
-                        <p style="margin: 0 0 0.5rem; color: var(--accent-primary); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;">Homeowner Favorites</p>
-                        <h3 style="font-family: var(--font-heading); font-size: 1.5rem; line-height: 1.25; margin: 0 0 1rem; color: var(--text-primary);">The upgrades people ask us for most</h3>
-                        <div style="display: grid; gap: 0.85rem;">
-                            <div style="padding: 0.9rem 1rem; border-radius: 12px; background: rgba(255,255,255,0.04);">
-                                <strong style="display: block; color: var(--text-primary); margin-bottom: 0.2rem;">Better WiFi</strong>
-                                <span style="color: var(--text-secondary);">Strong coverage in every room without dead spots.</span>
+                <aside class="video-highlights" style="background: transparent; border: 0; border-radius: 0; padding: 0;">
+                    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem;" class="work-proof-grid">
+                        <a href="projects/index.html" style="display: block; color: inherit; text-decoration: none; border: 1px solid var(--border-color); border-radius: 12px; overflow: hidden; background: #fff;">
+                            <div style="position: relative; aspect-ratio: 4 / 3; background: #0f172a; overflow: hidden;">
+                                <img src="Video/homepage/fire-edge-screen-and-projector-and-martinlogan-768.webp" alt="Finished home theater with projector and speakers" loading="lazy" decoding="async" width="800" height="600" style="width: 100%; height: 100%; object-fit: cover;">
                             </div>
-                            <div style="padding: 0.9rem 1rem; border-radius: 12px; background: rgba(255,255,255,0.04);">
-                                <strong style="display: block; color: var(--text-primary); margin-bottom: 0.2rem;">Simple Control</strong>
-                                <span style="color: var(--text-secondary);">Lights, music, shades, and TVs that are easy to use.</span>
+                            <div style="padding: 1rem;">
+                                <p style="margin: 0 0 0.35rem; color: var(--accent-primary); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;">Theater</p>
+                                <h3 style="margin: 0 0 0.45rem; font-family: var(--font-heading); color: var(--text-primary); font-size: 1.15rem;">Clean room, clean sound.</h3>
+                                <p style="margin: 0; color: var(--text-secondary); line-height: 1.55;">Projection, speakers, and setup built around the room.</p>
                             </div>
-                            <div style="padding: 0.9rem 1rem; border-radius: 12px; background: rgba(255,255,255,0.04);">
-                                <strong style="display: block; color: var(--text-primary); margin-bottom: 0.2rem;">Clean Installation</strong>
-                                <span style="color: var(--text-secondary);">A polished setup that fits your home instead of taking it over.</span>
+                        </a>
+                        <a href="projects/index.html" style="display: block; color: inherit; text-decoration: none; border: 1px solid var(--border-color); border-radius: 12px; overflow: hidden; background: #fff;">
+                            <div style="position: relative; aspect-ratio: 4 / 3; background: #0f172a; overflow: hidden;">
+                                <img src="Video/homepage/sound--light-harmony-768.webp" alt="Smart lighting and audio installation" loading="lazy" decoding="async" width="800" height="600" style="width: 100%; height: 100%; object-fit: cover;">
                             </div>
-                        </div>
+                            <div style="padding: 1rem;">
+                                <p style="margin: 0 0 0.35rem; color: var(--accent-primary); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;">Control</p>
+                                <h3 style="margin: 0 0 0.45rem; font-family: var(--font-heading); color: var(--text-primary); font-size: 1.15rem;">Lighting and audio that make sense.</h3>
+                                <p style="margin: 0; color: var(--text-secondary); line-height: 1.55;">Scenes and controls your family can actually use.</p>
+                            </div>
+                        </a>
+                        <a href="projects/index.html" style="display: block; color: inherit; text-decoration: none; border: 1px solid var(--border-color); border-radius: 12px; overflow: hidden; background: #fff;">
+                            <div style="position: relative; aspect-ratio: 4 / 3; background: #0f172a; overflow: hidden;">
+                                <img src="Video/homepage/media-room_edited-768.webp" alt="Modern media room installation" loading="lazy" decoding="async" width="800" height="600" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <div style="padding: 1rem;">
+                                <p style="margin: 0 0 0.35rem; color: var(--accent-primary); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;">Media room</p>
+                                <h3 style="margin: 0 0 0.45rem; font-family: var(--font-heading); color: var(--text-primary); font-size: 1.15rem;">Finished, not overdone.</h3>
+                                <p style="margin: 0; color: var(--text-secondary); line-height: 1.55;">A polished setup that fits the home instead of taking it over.</p>
+                            </div>
+                        </a>
                     </div>
-                    <div style="margin-top: 1.25rem;">
-                        <p style="color: var(--text-secondary); line-height: 1.6; margin: 0 0 1rem;">We help you choose what makes sense for your home, not just what sounds impressive.</p>
-                        <a href="contact/index.html#booking" class="btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 700;">Get My Plan -></a>
+                    <div style="display: flex; justify-content: center; margin-top: 1.5rem;">
+                        <a href="projects/index.html" class="btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 700;">View Project Proof -></a>
                     </div>
                 </aside>
             </div>
@@ -1864,6 +1917,9 @@
                     padding: 0 !important;
                     box-sizing: border-box !important;
                     overflow-x: hidden !important;
+                }
+                .work-proof-grid {
+                    grid-template-columns: 1fr !important;
                 }
                 .video-card {
                     border-radius: 16px;
@@ -2034,7 +2090,7 @@
                 const videos = document.querySelectorAll('.video-player');
                 const showcaseVideo = document.querySelector('.video-showcase-section .video-player');
                 if (showcaseVideo && window.innerWidth <= 768) {
-                    showcaseVideo.poster = '/Video/homepage/cityscape-home-theater-480.webp';
+                    showcaseVideo.poster = '/Video/homepage/cityscape-home-theater-768.webp';
                 }
                 let videoObserver = null;
                 if ('IntersectionObserver' in window) {
