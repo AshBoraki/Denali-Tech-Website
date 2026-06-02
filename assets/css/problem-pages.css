@@ -238,6 +238,17 @@ h3 {
   object-fit: contain;
 }
 
+.control4-logo-tile {
+  min-height: 86px;
+  background: linear-gradient(135deg, #ffffff 0%, #f3f7fb 100%);
+}
+
+.control4-logo-tile img {
+  width: min(78%, 280px);
+  max-height: 64px;
+  filter: brightness(0) saturate(100%) invert(11%) sepia(22%) saturate(1247%) hue-rotate(178deg) brightness(94%) contrast(96%);
+}
+
 .brand-note {
   margin: 0;
   color: var(--muted);
