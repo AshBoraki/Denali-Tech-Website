@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  var version = "20260602d";
+  var version = "20260602e";
   var whatsappHref = "https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20need%20a%20clear%20plan%20for%20my%20home%20technology.%20I%20can%20send%20photos.%20My%20home%20is%20in%3A";
 
   var navItems = [
