@@ -956,6 +956,32 @@
             .hero-buttons {
                 justify-content: flex-start;
                 margin-top: 1.15rem;
+                display: flex;
+                align-items: center;
+                gap: 0.85rem;
+                filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.45));
+            }
+
+            .hero-buttons .btn-primary,
+            .hero-buttons .btn-secondary {
+                min-height: 48px;
+                padding: 0.84rem 1.15rem;
+                border-radius: 8px;
+                font-size: 0.95rem;
+                line-height: 1;
+                white-space: nowrap;
+            }
+
+            .hero-buttons .btn-primary {
+                border: 1px solid rgba(255, 255, 255, 0.18);
+            }
+
+            .hero-buttons .btn-secondary {
+                border-width: 1px;
+                color: #f8fafc !important;
+                background: rgba(15, 23, 42, 0.72) !important;
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
             }
 
             .hero-title-main,
@@ -1012,6 +1038,7 @@
                 .hero-buttons {
                     justify-content: center;
                     margin-top: 0.75rem;
+                    filter: none;
                 }
             }
 
@@ -1142,6 +1169,7 @@
                     grid-template-columns: 1fr 1fr;
                     gap: 0.72rem !important;
                     align-items: stretch !important;
+                    filter: none;
                 }
 
                 .hero-eyebrow {
@@ -1511,11 +1539,11 @@
     </section>
 
     <!-- Featured Projects Showcase -->
-    <section class="featured-projects-section" style="padding: 120px 5%; background: var(--bg-color); position: relative; overflow: hidden;">
+    <section class="featured-projects-section" style="padding: 88px 5%; background: var(--bg-color); position: relative; overflow: hidden;">
         <div class="container">
             <div class="section-header" style="opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease;">
-                <h2>Our Featured Projects</h2>
-                <p>Real Chicago-area projects with clean installation, reliable control, and technology that fits the way each home is used.</p>
+                <h2>See Our Work</h2>
+                <p>One clean look at real project photos, then the page moves on. No repeated gallery blocks.</p>
             </div>
             <script>
                 // Animate section header on load
@@ -1583,13 +1611,37 @@
                 </div>
             </div>
             <div style="text-align: center; margin-top: 3rem;">
-                <a href="/projects/" class="btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 700;">View All Projects →</a>
+                <a href="/projects/" class="btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 700;">View Projects -></a>
             </div>
         </div>
         <style>
             .project-showcase-card:focus {
                 outline: 3px solid var(--accent-primary);
                 outline-offset: 3px;
+            }
+            .featured-projects-section .projects-showcase-grid {
+                grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)) !important;
+                gap: 1rem !important;
+                margin-top: 2rem !important;
+            }
+            .featured-projects-section .project-showcase-card {
+                border-radius: 10px !important;
+                background: #fff !important;
+            }
+            .featured-projects-section .project-image-wrapper {
+                aspect-ratio: 16 / 10;
+                padding-top: 0 !important;
+            }
+            .featured-projects-section .project-info {
+                padding: 1rem !important;
+            }
+            .featured-projects-section .project-info h3 {
+                font-size: 1.08rem !important;
+                line-height: 1.2 !important;
+            }
+            .featured-projects-section .project-info p {
+                font-size: 0.9rem !important;
+                line-height: 1.45 !important;
             }
             @media (hover: hover) and (pointer: fine) {
                 .project-showcase-card:hover {
@@ -1606,7 +1658,7 @@
             }
             @media (max-width: 768px) {
                 .featured-projects-section {
-                    padding: 60px 1rem !important;
+                    padding: 56px 1rem !important;
                 }
                 .projects-showcase-grid {
                     grid-template-columns: 1fr;
@@ -1624,459 +1676,6 @@
                 }
             }
         </style>
-    </section>
-
-    <!-- Video Showcase Section -->
-    <section class="video-showcase-section" style="padding: 84px 5%; background: #ffffff; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); position: relative;">
-        <div class="container">
-            <div class="section-header">
-                <h2>See Our Work</h2>
-                <p>Real project photos are more useful than a dark promo block. This is the kind of finished work homeowners should expect.</p>
-            </div>
-            <div class="video-grid" style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-top: 2rem; max-width: 1120px; margin-left: auto; margin-right: auto; align-items: stretch;">
-                <div class="video-card" aria-hidden="true" style="display: none; background: rgba(255,255,255,0.02); border: 2px solid var(--border-color); border-radius: 20px; overflow: hidden; position: relative; box-shadow: var(--shadow-subtle);">
-                    <div class="video-wrapper" style="position: relative; width: 100%; padding-top: 56.25%; background: rgba(249,115,22,0.08);">
-                        <video
-                            playsinline
-                            loop
-                            muted
-                            data-autoplay="true"
-                            aria-label="Home theater and smart home demonstration"
-                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; background: #000; cursor: pointer;"
-                            poster="Video/homepage/cityscape-home-theater-768.webp"
-                            preload="none"
-                            class="video-player">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div class="play-indicator" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80px; height: 80px; background: rgba(249,115,22,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; pointer-events: none; opacity: 0; transition: opacity 0.3s ease; z-index: 2;">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="white" aria-hidden="true">
-                                <path d="M8 5v14l11-7z"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div style="padding: 1.5rem; background: rgba(255,255,255,0.02);">
-                        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.75rem;">
-                            <div style="width: 4px; height: 24px; background: var(--accent-primary); border-radius: 2px;"></div>
-                            <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--text-primary); margin: 0;">Smart Home Experience</h3>
-                        </div>
-                        <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.7; margin: 0;">A quick look at the kind of theater, lighting, and control upgrades we build for everyday living.</p>
-                    </div>
-                </div>
-                <aside class="video-highlights" style="background: transparent; border: 0; border-radius: 0; padding: 0;">
-                    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem;" class="project-work-grid">
-                        <a href="/projects/" style="display: block; color: inherit; text-decoration: none; border: 1px solid var(--border-color); border-radius: 12px; overflow: hidden; background: #fff;">
-                            <div style="position: relative; aspect-ratio: 4 / 3; background: #0f172a; overflow: hidden;">
-                                <img src="Video/homepage/fire-edge-screen-and-projector-and-martinlogan-768.webp" alt="Finished home theater with projector and speakers" loading="lazy" decoding="async" width="800" height="600" style="width: 100%; height: 100%; object-fit: cover;">
-                            </div>
-                            <div style="padding: 1rem;">
-                                <p style="margin: 0 0 0.35rem; color: var(--accent-primary); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;">Theater</p>
-                                <h3 style="margin: 0 0 0.45rem; font-family: var(--font-heading); color: var(--text-primary); font-size: 1.15rem;">Clean room, clean sound.</h3>
-                                <p style="margin: 0; color: var(--text-secondary); line-height: 1.55;">Projection, speakers, and setup built around the room.</p>
-                            </div>
-                        </a>
-                        <a href="/projects/" style="display: block; color: inherit; text-decoration: none; border: 1px solid var(--border-color); border-radius: 12px; overflow: hidden; background: #fff;">
-                            <div style="position: relative; aspect-ratio: 4 / 3; background: #0f172a; overflow: hidden;">
-                                <img src="Video/homepage/sound--light-harmony-768.webp" alt="Smart lighting and audio installation" loading="lazy" decoding="async" width="800" height="600" style="width: 100%; height: 100%; object-fit: cover;">
-                            </div>
-                            <div style="padding: 1rem;">
-                                <p style="margin: 0 0 0.35rem; color: var(--accent-primary); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;">Control</p>
-                                <h3 style="margin: 0 0 0.45rem; font-family: var(--font-heading); color: var(--text-primary); font-size: 1.15rem;">Lighting and audio that make sense.</h3>
-                                <p style="margin: 0; color: var(--text-secondary); line-height: 1.55;">Scenes and controls your family can actually use.</p>
-                            </div>
-                        </a>
-                        <a href="/projects/" style="display: block; color: inherit; text-decoration: none; border: 1px solid var(--border-color); border-radius: 12px; overflow: hidden; background: #fff;">
-                            <div style="position: relative; aspect-ratio: 4 / 3; background: #0f172a; overflow: hidden;">
-                                <img src="Video/homepage/media-room_edited-768.webp" alt="Modern media room installation" loading="lazy" decoding="async" width="800" height="600" style="width: 100%; height: 100%; object-fit: cover;">
-                            </div>
-                            <div style="padding: 1rem;">
-                                <p style="margin: 0 0 0.35rem; color: var(--accent-primary); font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;">Media room</p>
-                                <h3 style="margin: 0 0 0.45rem; font-family: var(--font-heading); color: var(--text-primary); font-size: 1.15rem;">Finished, not overdone.</h3>
-                                <p style="margin: 0; color: var(--text-secondary); line-height: 1.55;">A polished setup that fits the home instead of taking it over.</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div style="display: flex; justify-content: center; margin-top: 1.5rem;">
-                        <a href="/projects/" class="btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 700;">View Projects -></a>
-                    </div>
-                </aside>
-            </div>
-        </div>
-
-        <style>
-            .service-card:focus-within,
-            .why-card:focus-within,
-            .testimonial-card:focus-within,
-            .pricing-card:focus-within,
-            .faq-item-quick:focus-within,
-            .video-card:focus-within {
-                outline: 3px solid var(--accent-primary);
-                outline-offset: 3px;
-                border-radius: 16px;
-            }
-            /* Enhanced Focus Indicators for Better Accessibility */
-            .service-link:focus-visible,
-            .btn-primary:focus-visible,
-            .btn-secondary:focus-visible,
-            .cta-button:focus-visible,
-            .google-profile-link:focus-visible,
-            .service-area-toggle-btn:focus-visible,
-            .logo:focus-visible,
-            .nav-links a:focus-visible,
-            .footer-column a:focus-visible,
-            .social-icon:focus-visible,
-            .contact-item:focus-visible {
-                outline: 3px solid var(--accent-primary);
-                outline-offset: 3px;
-                border-radius: 6px;
-            }
-
-            /* Fallback for older browsers */
-            .service-link:focus,
-            .btn-primary:focus,
-            .btn-secondary:focus,
-            .cta-button:focus,
-            .google-profile-link:focus,
-            .service-area-toggle-btn:focus,
-            .logo:focus,
-            .footer-column a:focus,
-            .social-icon:focus,
-            .contact-item:focus {
-                outline: 3px solid var(--accent-primary);
-                outline-offset: 3px;
-                border-radius: 6px;
-            }
-
-            /* Remove outline on mouse clicks - only show for keyboard navigation */
-            .nav-links a:focus:not(:focus-visible) {
-                outline: none;
-            }
-            .video-card {
-                position: relative;
-                touch-action: pan-y !important;
-            }
-            .video-wrapper {
-                position: relative;
-                touch-action: pan-y !important;
-            }
-            .video-player {
-                border-radius: 16px 16px 0 0;
-                touch-action: pan-y !important;
-                -webkit-user-select: none;
-                user-select: none;
-                -webkit-tap-highlight-color: transparent;
-            }
-            .video-card:hover .play-indicator {
-                opacity: 0;
-            }
-            /* Hide all video controls */
-            .video-player::-webkit-media-controls-panel {
-                display: none !important;
-            }
-            .video-player::-webkit-media-controls-play-button {
-                display: none !important;
-            }
-            .video-player::-webkit-media-controls-start-playback-button {
-                display: none !important;
-            }
-            .video-player::-webkit-media-controls {
-                display: none !important;
-            }
-            video::-webkit-media-controls-overlay-play-button {
-                display: none !important;
-            }
-            video::-webkit-media-controls-timeline {
-                display: none !important;
-            }
-            video::-webkit-media-controls-current-time-display {
-                display: none !important;
-            }
-            video::-webkit-media-controls-time-remaining-display {
-                display: none !important;
-            }
-            video::-webkit-media-controls-mute-button {
-                display: none !important;
-            }
-            video::-webkit-media-controls-volume-slider {
-                display: none !important;
-            }
-            video::-webkit-media-controls-fullscreen-button {
-                display: none !important;
-            }
-            @media (hover: hover) and (pointer: fine) {
-                @media (hover: hover) and (pointer: fine) {
-                    .video-card:hover {
-                        transform: translateY(-8px);
-                        border-color: var(--accent-primary);
-                        box-shadow: var(--shadow-glow);
-                    }
-                }
-
-                @media (hover: none) and (pointer: coarse) {
-                    .video-card:hover {
-                        transform: none;
-                    }
-                    .video-card:active {
-                        transform: scale(0.98);
-                    }
-                }
-            }
-            @media (max-width: 768px) {
-                .video-showcase-section {
-                    padding: 60px 1rem !important;
-                    overflow-x: hidden !important;
-                    width: 100% !important;
-                    max-width: 100vw !important;
-                    position: relative !important;
-                }
-                .video-grid {
-                    grid-template-columns: 1fr !important;
-                    gap: 1.5rem !important;
-                    margin-top: 1.5rem !important;
-                    width: 100% !important;
-                    max-width: 100% !important;
-                    margin-left: 0 !important;
-                    margin-right: 0 !important;
-                    padding: 0 !important;
-                    box-sizing: border-box !important;
-                    overflow-x: hidden !important;
-                }
-                .project-work-grid {
-                    grid-template-columns: 1fr !important;
-                }
-                .video-card {
-                    border-radius: 16px;
-                    width: 100% !important;
-                    max-width: 100% !important;
-                    margin: 0 !important;
-                    box-sizing: border-box !important;
-                    overflow: hidden !important;
-                    touch-action: pan-y !important;
-                    transform: none !important;
-                    transition: none !important;
-                }
-
-                .video-card:active {
-                    transform: scale(0.98) !important;
-                }
-
-                .video-wrapper {
-                    width: 100% !important;
-                    max-width: 100% !important;
-                    overflow: hidden !important;
-                    touch-action: pan-y !important;
-                }
-
-                .video-wrapper video,
-                .video-player {
-                    width: 100% !important;
-                    max-width: 100% !important;
-                    height: auto !important;
-                    object-fit: contain !important;
-                    touch-action: pan-y !important;
-                    pointer-events: auto !important;
-                    -webkit-user-select: none !important;
-                    user-select: none !important;
-                    -webkit-tap-highlight-color: transparent !important;
-                }
-                .video-highlights {
-                    padding: 1.25rem !important;
-                }
-            }
-            /* Ensure videos are visible and playable */
-            video {
-                min-height: 200px;
-            }
-            video:focus {
-                outline: 3px solid var(--accent-primary);
-                outline-offset: 2px;
-            }
-        </style>
-        <script>
-            function hydrateVideoSource(video) {
-                if (!video || video.dataset.videoHydrated === 'true') {
-                    return;
-                }
-                const sources = video.querySelectorAll('source[data-src]');
-                if (!sources.length) {
-                    video.dataset.videoHydrated = 'true';
-                    return;
-                }
-                sources.forEach(source => {
-                    if (!source.getAttribute('src')) {
-                        source.setAttribute('src', source.dataset.src);
-                    }
-                });
-                video.dataset.videoHydrated = 'true';
-                video.load();
-            }
-
-            function playVideoWhenReady(video) {
-                if (!video) {
-                    return;
-                }
-                hydrateVideoSource(video);
-                const attemptPlay = function() {
-                    video.play().catch(function() {});
-                };
-                if (video.readyState >= 2) {
-                    attemptPlay();
-                } else {
-                    video.addEventListener('loadeddata', attemptPlay, { once: true });
-                }
-            }
-
-            // Force autoplay for hero background video on iOS
-            function initHeroVideo() {
-                const heroVideo = document.getElementById('hero-background-video');
-                if (heroVideo) {
-                    const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-                    const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-                    const connectionConstrained = Boolean(connection && (connection.saveData || /(?:^|\\b)(slow-2g|2g|3g)(?:\\b|$)/.test(connection.effectiveType || '')));
-                    const isMobileViewport = window.innerWidth <= 768;
-                    const shouldUsePosterOnly = prefersReducedMotion || connectionConstrained;
-
-                    heroVideo.poster = isMobileViewport
-                        ? '/Video/homepage/hero-poster-mobile.webp'
-                        : '/Video/Denali%20Van.webp';
-
-                    // Set video properties for iOS
-                    heroVideo.setAttribute('playsinline', '');
-                    heroVideo.setAttribute('webkit-playsinline', '');
-                    heroVideo.muted = true;
-                    heroVideo.loop = true;
-                    heroVideo.autoplay = true;
-
-                    if (shouldUsePosterOnly) {
-                        heroVideo.dataset.videoHydrated = 'poster-only';
-                        return;
-                    }
-
-                    // Prevent video from capturing touch events on mobile
-                    heroVideo.style.pointerEvents = 'none';
-                    heroVideo.style.touchAction = 'none';
-
-                    // Prevent all touch events from being captured by video on mobile
-                    if (window.innerWidth <= 768) {
-                        const preventVideoTouch = function(e) {
-                            e.stopPropagation();
-                        };
-                        heroVideo.addEventListener('touchstart', preventVideoTouch, { passive: true });
-                        heroVideo.addEventListener('touchmove', preventVideoTouch, { passive: true });
-                        heroVideo.addEventListener('touchend', preventVideoTouch, { passive: true });
-                    }
-
-                    const startHeroVideo = function() {
-                        playVideoWhenReady(heroVideo);
-                    };
-
-                    if ('requestIdleCallback' in window) {
-                        requestIdleCallback(startHeroVideo, { timeout: 1500 });
-                    } else {
-                        setTimeout(startHeroVideo, 600);
-                    }
-
-                    // Retry on interaction if autoplay is blocked
-                    heroVideo.addEventListener('error', function() {
-                        heroVideo.dataset.videoHydrated = 'false';
-                    });
-
-                    // If autoplay fails, try again on user interaction
-                    const playPromise = heroVideo.play();
-                    if (playPromise !== undefined) {
-                        playPromise.catch(function() {
-                            // If autoplay fails, try again on user interaction
-                            const tryPlay = () => {
-                                playVideoWhenReady(heroVideo);
-                                document.removeEventListener('touchstart', tryPlay);
-                                document.removeEventListener('scroll', tryPlay);
-                                document.removeEventListener('click', tryPlay);
-                            };
-                            document.addEventListener('touchstart', tryPlay, { once: true, passive: true });
-                            document.addEventListener('scroll', tryPlay, { once: true, passive: true });
-                            document.addEventListener('click', tryPlay, { once: true, passive: true });
-                        });
-                    }
-
-                    // Ensure video continues playing if paused
-                    heroVideo.addEventListener('pause', function() {
-                        if (!document.hidden) {
-                            this.play().catch(() => {});
-                        }
-                    });
-                }
-            }
-
-            // Enhance video playback experience
-            document.addEventListener('DOMContentLoaded', function() {
-                initHeroVideo();
-                const videos = document.querySelectorAll('.video-player');
-                const showcaseVideo = document.querySelector('.video-showcase-section .video-player');
-                if (showcaseVideo && window.innerWidth <= 768) {
-                    showcaseVideo.poster = '/Video/homepage/cityscape-home-theater-768.webp';
-                }
-                let videoObserver = null;
-                if ('IntersectionObserver' in window) {
-                    videoObserver = new IntersectionObserver(function(entries) {
-                        entries.forEach(function(entry) {
-                            if (!entry.isIntersecting) {
-                                return;
-                            }
-                            const video = entry.target;
-                            hydrateVideoSource(video);
-                            if (video.dataset.autoplay === 'true') {
-                                playVideoWhenReady(video);
-                            }
-                            videoObserver.unobserve(video);
-                        });
-                    }, { rootMargin: '300px 0px' });
-                }
-                videos.forEach(video => {
-                    // Ensure loop is set
-                    video.loop = true;
-
-                    // Add click to play/pause
-                    video.addEventListener('click', function(e) {
-                        hydrateVideoSource(video);
-                        if (video.paused) {
-                            video.play();
-                        } else {
-                            video.pause();
-                        }
-                    });
-
-                    // Show play indicator when paused
-                    video.addEventListener('play', function() {
-                        const indicator = this.parentElement.querySelector('.play-indicator');
-                        if (indicator) indicator.style.opacity = '0';
-                    });
-
-                    video.addEventListener('pause', function() {
-                        const indicator = this.parentElement.querySelector('.play-indicator');
-                        if (indicator) indicator.style.opacity = '0.7';
-                    });
-
-                    // Ensure video loops when it ends
-                    video.addEventListener('ended', function() {
-                        this.currentTime = 0;
-                        this.play();
-                    });
-
-                    // Preload on hover for better UX
-                    const card = video.closest('.video-card');
-                    if (card) {
-                        card.addEventListener('mouseenter', function() {
-                            hydrateVideoSource(video);
-                        }, { once: true });
-                    }
-
-                    if (videoObserver) {
-                        videoObserver.observe(video);
-                    } else {
-                        hydrateVideoSource(video);
-                    }
-                });
-            });
-        </script>
     </section>
 
     <!-- Services Section -->
@@ -3111,7 +2710,7 @@
                 lazyImages.forEach(img => imageObserver.observe(img));
 
                 // Scroll-triggered animations for sections
-                const animatedElements = document.querySelectorAll('.service-card, .why-card, .testimonial-card, .project-showcase-card, .video-card, .pricing-card, .faq-item-quick, .process-step-card');
+                const animatedElements = document.querySelectorAll('.service-card, .why-card, .testimonial-card, .project-showcase-card, .pricing-card, .faq-item-quick, .process-step-card');
 
                 const animationObserver = new IntersectionObserver((entries) => {
                     entries.forEach((entry, index) => {
