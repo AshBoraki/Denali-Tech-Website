@@ -15,15 +15,7 @@
         // Enhanced Mobile Menu Toggle - MUST run first, before any early returns
         const menuToggle = document.getElementById('menuToggle') || document.getElementById('menu-toggle');
         const navLinks = document.getElementById('navLinks');
-        function syncResponsiveThemeToggle() {
-            const existing = navLinks?.querySelector('.mobile-theme-toggle');
-            if (existing) {
-                existing.remove();
-            }
-        }
 
-        syncResponsiveThemeToggle();
-        
         // Create backdrop overlay if it doesn't exist
         let backdrop = document.querySelector('.mobile-menu-backdrop');
         if (!backdrop) {
@@ -98,7 +90,6 @@
             
             // Close menu on window resize (if resizing to desktop)
             window.addEventListener('resize', () => {
-                syncResponsiveThemeToggle();
                 if (window.innerWidth > MOBILE_MENU_BREAKPOINT && navLinks.classList.contains('active')) {
                     closeMenu();
                 }

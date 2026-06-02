@@ -21,13 +21,6 @@
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* The public site now uses one light theme, so legacy theme controls stay hidden. */
-.theme-toggle,
-.toggle-switch,
-.mobile-theme-toggle {
-    display: none !important;
-}
-
 .mobile-menu-backdrop.active {
     opacity: 1;
     visibility: visible;
@@ -64,12 +57,6 @@
 
     .header-actions {
         gap: 0.6rem !important;
-    }
-
-    .header-actions .theme-toggle,
-    .header-actions .call-now-button,
-    .header-actions .cta-button {
-        display: none !important;
     }
 
     .nav-links.active {
@@ -271,85 +258,6 @@
         animation: fadeInMenuItem 0.4s ease forwards !important;
         opacity: 0;
         animation-delay: 0.4s !important;
-    }
-
-    .nav-links.active .mobile-theme-toggle {
-        display: block !important;
-        margin-top: 0.5rem !important;
-        animation: fadeInMenuItem 0.4s ease forwards !important;
-        opacity: 0;
-        animation-delay: 0.38s !important;
-    }
-
-    .nav-links.active .mobile-theme-toggle button {
-        width: 100% !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        gap: 0.9rem !important;
-        padding: 0.9rem 1.25rem !important;
-        background: rgba(255, 255, 255, 0.04) !important;
-        color: var(--text-primary) !important;
-        border: 1px solid var(--border-color) !important;
-        border-radius: 12px !important;
-        font: inherit !important;
-        cursor: pointer !important;
-    }
-
-    .nav-links.active .mobile-theme-toggle-icon {
-        display: inline-flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        width: 24px !important;
-        height: 24px !important;
-        color: var(--text-secondary) !important;
-        font-size: 1.05rem !important;
-        line-height: 1 !important;
-        transition: color 0.25s ease, transform 0.25s ease, opacity 0.25s ease !important;
-    }
-
-    .nav-links.active .mobile-theme-toggle button[aria-checked='dark'] .mobile-theme-toggle-icon-moon,
-    .nav-links.active .mobile-theme-toggle button[aria-checked='light'] .mobile-theme-toggle-icon-sun {
-        color: var(--accent-primary) !important;
-        transform: scale(1.08) !important;
-        opacity: 1 !important;
-    }
-
-    .nav-links.active .mobile-theme-toggle button[aria-checked='dark'] .mobile-theme-toggle-icon-sun,
-    .nav-links.active .mobile-theme-toggle button[aria-checked='light'] .mobile-theme-toggle-icon-moon {
-        opacity: 0.55 !important;
-    }
-
-    .nav-links.active .mobile-theme-toggle-switch {
-        width: 54px !important;
-        height: 28px !important;
-        border-radius: 999px !important;
-        background: var(--border-color) !important;
-        position: relative !important;
-        flex: 0 0 auto !important;
-        transition: background 0.25s ease !important;
-    }
-
-    .nav-links.active .mobile-theme-toggle-switch::after {
-        content: '' !important;
-        position: absolute !important;
-        top: 3px !important;
-        left: 4px !important;
-        width: 22px !important;
-        height: 22px !important;
-        border-radius: 50% !important;
-        background: var(--accent-primary) !important;
-        transition: transform 0.25s ease, background 0.25s ease !important;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25) !important;
-    }
-
-    .nav-links.active .mobile-theme-toggle button[aria-checked='light'] .mobile-theme-toggle-switch::after {
-        transform: translateX(25px) !important;
-        background: var(--accent-hover) !important;
-    }
-
-    .nav-links.active .mobile-theme-toggle button:active {
-        transform: scale(0.98) !important;
     }
     
     .nav-links.active .mobile-call-btn a {
