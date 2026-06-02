@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  var version = "20260602e";
+  var version = "20260602f";
   var whatsappHref = "https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20need%20a%20clear%20plan%20for%20my%20home%20technology.%20I%20can%20send%20photos.%20My%20home%20is%20in%3A";
 
   var navItems = [
@@ -201,13 +201,48 @@
     parent.appendChild(column);
   }
 
+  function appendSimpleLink(parent, label, href) {
+    var a = makeElement("a", "", label);
+    a.href = href;
+    parent.appendChild(a);
+  }
+
+  function buildFooterLinkGroup(title, links) {
+    var group = makeElement("div", "dt-site-footer-link-group");
+    var heading = makeElement("h3", "", title);
+    var list = makeElement("div", "dt-site-footer-link-list");
+
+    links.forEach(function (item) {
+      appendSimpleLink(list, item.label, item.href);
+    });
+
+    group.appendChild(heading);
+    group.appendChild(list);
+    return group;
+  }
+
+  function buildProofList(items) {
+    var list = makeElement("ul", "dt-site-footer-proof-list");
+
+    items.forEach(function (item) {
+      var li = document.createElement("li");
+      li.appendChild(makeElement("strong", "", item.title));
+      li.appendChild(makeElement("span", "", item.copy));
+      list.appendChild(li);
+    });
+
+    return list;
+  }
+
   function buildFooter() {
     var footer = makeElement("footer", "dt-site-footer");
     footer.setAttribute("data-denali-chrome", "site-footer");
 
     var inner = makeElement("div", "dt-site-footer-inner");
-    var grid = makeElement("div", "dt-site-footer-grid");
-    var brandColumn = makeElement("section", "dt-site-footer-brand");
+    var close = makeElement("section", "dt-site-footer-close");
+    close.setAttribute("aria-labelledby", "dt-footer-title");
+
+    var closeCopy = makeElement("div", "dt-site-footer-close-copy");
 
     var logo = makeElement("a", "dt-site-footer-logo");
     logo.href = "/";
@@ -215,45 +250,82 @@
     addLogoImage(logo);
     logo.appendChild(makeElement("span", "", "Denali Tech"));
 
+    var kicker = makeElement("p", "dt-site-footer-kicker", "Chicago-area smart home, WiFi, AV, and control help");
+    var title = makeElement("h2", "", "Fix the right thing before buying more gear.");
+    title.id = "dt-footer-title";
     var description = makeElement(
       "p",
-      "",
-      "Smart home, WiFi, theater, lighting, shades, cameras, audio, and control systems installed cleanly for Chicago-area homes."
+      "dt-site-footer-lead",
+      "Tell us what is not working. Send photos if you have them. We will help you find the practical next step before you spend big."
     );
 
+    var actions = makeElement("div", "dt-site-footer-actions");
     var cta = makeElement("a", "dt-site-cta", "Send Project Details");
     cta.href = whatsappHref;
     cta.target = "_blank";
     cta.rel = "noopener noreferrer";
+    var call = makeElement("a", "dt-site-footer-secondary", "Call (312) 439-7500");
+    call.href = "tel:+13124397500";
+    actions.appendChild(cta);
+    actions.appendChild(call);
 
-    brandColumn.appendChild(logo);
-    brandColumn.appendChild(description);
-    brandColumn.appendChild(cta);
-    grid.appendChild(brandColumn);
+    var proof = makeElement("aside", "dt-site-footer-proof");
+    proof.appendChild(makeElement("h3", "", "Why homeowners call Denali Tech"));
+    proof.appendChild(buildProofList([
+      {
+        title: "Clear diagnosis first",
+        copy: "We look for the real failure before recommending equipment."
+      },
+      {
+        title: "Clean installs",
+        copy: "WiFi, theater, lighting, cameras, audio, shades, and control work built to be usable."
+      },
+      {
+        title: "Local support",
+        copy: "Mount Prospect based and serving Chicago-area homes."
+      }
+    ]));
 
-    footerGroups.forEach(function (group) {
-      appendFooterColumn(grid, group);
-    });
+    closeCopy.appendChild(logo);
+    closeCopy.appendChild(kicker);
+    closeCopy.appendChild(title);
+    closeCopy.appendChild(description);
+    closeCopy.appendChild(actions);
+    close.appendChild(closeCopy);
+    close.appendChild(proof);
 
-    appendFooterColumn(grid, {
-      title: "Contact",
-      links: [
-        { label: "(312) 439-7500", href: "tel:+13124397500" },
-        { label: "ash@denalitechs.com", href: "mailto:ash@denalitechs.com" },
-        { label: "LinkedIn", href: "https://www.linkedin.com/company/denali-tech-inc" },
-        { label: "YouTube", href: "https://www.youtube.com/@denalitechav" }
-      ]
-    });
+    var linkBar = makeElement("nav", "dt-site-footer-linkbar");
+    linkBar.setAttribute("aria-label", "Footer navigation");
+    linkBar.appendChild(buildFooterLinkGroup("Fix", [
+      { label: "Smart Home Control", href: "/smart-home-control/" },
+      { label: "Home Theater", href: "/home-theater-room/" },
+      { label: "WiFi & Networking", href: "/residential-wifi-network/" },
+      { label: "Lighting & Shades", href: "/smart-lighting-shades/" }
+    ]));
+    linkBar.appendChild(buildFooterLinkGroup("Proof", [
+      { label: "Projects", href: "/projects/" },
+      { label: "About Us", href: "/about/" },
+      { label: "Control4 Help", href: "/control4-installer-chicago/" },
+      { label: "URC Programming", href: "/urc-programming-chicago/" }
+    ]));
+    linkBar.appendChild(buildFooterLinkGroup("Start", [
+      { label: "Contact", href: "/contact/" },
+      { label: "Blog", href: "/blogs/" },
+      { label: "FAQ", href: "/faq.html" },
+      { label: "Hub", href: "/hub/" }
+    ]));
 
     var bottom = makeElement("div", "dt-site-footer-bottom");
-    bottom.appendChild(makeElement("span", "", "Copyright " + new Date().getFullYear() + " Denali Tech Inc. Serving Chicago and nearby suburbs."));
+    bottom.appendChild(makeElement("span", "", "Copyright " + new Date().getFullYear() + " Denali Tech Inc."));
+    bottom.appendChild(makeElement("span", "", "Mount Prospect based. Serving Chicago and nearby suburbs."));
     var legal = makeElement("span", "");
     var privacy = makeElement("a", "", "Privacy & Terms");
     privacy.href = "/privacy/";
     legal.appendChild(privacy);
     bottom.appendChild(legal);
 
-    inner.appendChild(grid);
+    inner.appendChild(close);
+    inner.appendChild(linkBar);
     inner.appendChild(bottom);
     footer.appendChild(inner);
     return footer;
