@@ -19,6 +19,11 @@ body.dt-unified-chrome {
   color-scheme: light;
 }
 
+body.dt-site-menu-lock {
+  overflow: hidden !important;
+  touch-action: none;
+}
+
 .dt-site-header,
 .dt-site-footer,
 .dt-site-header *,
@@ -424,16 +429,21 @@ body.dt-unified-chrome {
   }
 
   .dt-site-nav-links {
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 68px;
     left: 0;
     right: 0;
     display: none;
     width: 100%;
-    padding: 12px 16px 16px;
+    max-height: calc(100svh - 68px);
+    padding: 12px 16px calc(16px + env(safe-area-inset-bottom));
     background: #ffffff;
     border-bottom: 1px solid var(--dt-chrome-line);
     box-shadow: var(--dt-chrome-shadow);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    align-items: stretch;
+    justify-content: stretch;
   }
 
   .dt-site-header.dt-menu-open .dt-site-nav-links {
@@ -446,6 +456,7 @@ body.dt-unified-chrome {
     min-height: 46px;
     justify-content: flex-start;
     padding: 0 14px;
+    font-size: 1rem;
   }
 
   .dt-site-nav-links .dt-site-mobile-cta {
@@ -484,27 +495,76 @@ body.dt-unified-chrome {
     width: min(100% - 24px, 1180px);
   }
 
+  .dt-site-header-spacer {
+    height: 64px;
+  }
+
+  .dt-site-nav {
+    min-height: 64px;
+    gap: 12px;
+  }
+
   .dt-site-brand {
-    font-size: 1rem;
+    font-size: 0.98rem;
+    gap: 9px;
   }
 
   .dt-site-brand img {
-    width: 48px;
-    height: 35px;
+    width: 44px;
+    height: 32px;
+    border-radius: 7px;
+  }
+
+  .dt-site-menu-button {
+    width: 44px;
+    height: 44px;
+  }
+
+  .dt-site-nav-links {
+    top: 64px;
+    max-height: calc(100svh - 64px);
+    padding: 10px 12px calc(14px + env(safe-area-inset-bottom));
+  }
+
+  .dt-site-nav-links a {
+    min-height: 50px;
+    padding: 0 13px;
+    border-radius: 8px;
   }
 
   .dt-site-footer {
-    padding: 50px 0 24px;
+    padding: 42px 0 22px;
   }
 
   .dt-site-footer-close {
-    gap: 28px;
-    padding-bottom: 34px;
+    gap: 24px;
+    padding-bottom: 28px;
+  }
+
+  .dt-site-footer-logo {
+    font-size: 1.02rem;
+  }
+
+  .dt-site-footer-logo img {
+    width: 42px;
+    height: 30px;
+    border-radius: 7px;
+  }
+
+  .dt-site-footer-kicker {
+    font-size: 0.72rem;
+    line-height: 1.35;
   }
 
   .dt-site-footer-close h2 {
-    max-width: 12ch;
-    font-size: clamp(2.35rem, 12vw, 3.55rem);
+    max-width: 11ch;
+    font-size: clamp(2.1rem, 9.8vw, 2.85rem);
+    line-height: 1.02;
+  }
+
+  .dt-site-footer-lead {
+    font-size: 1rem;
+    line-height: 1.5;
   }
 
   .dt-site-footer-actions {
@@ -518,16 +578,25 @@ body.dt-unified-chrome {
   }
 
   .dt-site-footer-proof {
-    gap: 16px;
-    padding-top: 24px;
+    gap: 14px;
+    padding-top: 22px;
   }
 
   .dt-site-footer-proof-list {
-    gap: 16px;
+    gap: 14px;
+  }
+
+  .dt-site-footer-proof-list strong {
+    font-size: 0.98rem;
+  }
+
+  .dt-site-footer-proof-list span {
+    font-size: 0.92rem;
   }
 
   .dt-site-footer-linkbar {
-    padding: 28px 0;
+    padding: 24px 0;
+    gap: 22px;
   }
 
   .dt-site-footer-link-list {
@@ -542,5 +611,27 @@ body.dt-unified-chrome {
   .dt-site-footer-bottom {
     display: grid;
     gap: 8px;
+    font-size: 0.84rem;
+  }
+
+  .dt-unified-chrome .back-to-top {
+    width: 44px !important;
+    height: 44px !important;
+    min-width: 44px !important;
+    min-height: 44px !important;
+    right: 14px !important;
+    bottom: calc(14px + env(safe-area-inset-bottom)) !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .dt-site-brand span {
+    max-width: 9.8rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .dt-site-footer-close h2 {
+    font-size: clamp(1.95rem, 9vw, 2.25rem);
   }
 }
