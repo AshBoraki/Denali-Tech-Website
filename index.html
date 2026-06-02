@@ -1970,8 +1970,8 @@
         <div class="container">
             <div class="google-reviews-container">
                 <div class="google-reviews-header">
-                    <h2>What Our Customers Say</h2>
-                    <p>See what homeowners say about working with Denali Tech.</p>
+                    <h2>Google Reviews Are the Proof.</h2>
+                    <p>Use the public Google profile for the full review history. The homepage should stay focused on the next step.</p>
                 </div>
 
                 <!-- Testimonials Grid -->
@@ -2011,7 +2011,7 @@
                 <div class="google-rating-box" style="margin-top: 3rem;">
                     <div class="google-stars">⭐⭐⭐⭐⭐</div>
                     <div class="google-rating-number">5.0</div>
-                    <div class="google-review-text">Read More Reviews on Google</div>
+                    <div class="google-review-text">5.0 rating on Google. Read the current reviews before you book.</div>
                     <a href="https://share.google/PfmLvv3g2ul8NTO6Y" target="_blank" rel="noopener noreferrer" class="google-profile-link">
                         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                             <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
@@ -2069,6 +2069,384 @@
             }
         </style>
     </section>
+
+    <style id="homepage-layout-review-pass">
+        .dt-unified-chrome main#main-content {
+            background: #f8fafc;
+        }
+
+        .dt-unified-chrome .hero {
+            min-height: min(780px, calc(100svh - 74px)) !important;
+            padding: 0 !important;
+            align-items: center !important;
+            overflow: hidden !important;
+            background: #0f172a !important;
+        }
+
+        .dt-unified-chrome .hero-background {
+            position: absolute !important;
+            inset: 0 !important;
+            top: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        .dt-unified-chrome .hero-background-image {
+            object-position: center center !important;
+            filter: brightness(0.86) contrast(1.08) saturate(1.03) !important;
+        }
+
+        .dt-unified-chrome .hero::before {
+            display: block !important;
+            top: 0 !important;
+            height: 100% !important;
+            background:
+                radial-gradient(ellipse at 23% 52%, rgba(15, 23, 42, 0.74) 0%, rgba(15, 23, 42, 0.48) 35%, rgba(15, 23, 42, 0.12) 68%, rgba(15, 23, 42, 0.08) 100%),
+                linear-gradient(90deg, rgba(15, 23, 42, 0.72) 0%, rgba(15, 23, 42, 0.22) 48%, rgba(15, 23, 42, 0.06) 100%) !important;
+        }
+
+        .dt-unified-chrome .hero-content {
+            max-width: 610px !important;
+            margin-left: clamp(1.5rem, 9vw, 8rem) !important;
+            padding: 0 1.25rem !important;
+            gap: 0.9rem !important;
+        }
+
+        .dt-unified-chrome .hero-content h1 {
+            max-width: 12.5ch !important;
+            font-size: clamp(3rem, 5.7vw, 5.15rem) !important;
+            letter-spacing: 0 !important;
+        }
+
+        .dt-unified-chrome .hero-subcopy {
+            max-width: 34rem !important;
+        }
+
+        .dt-unified-chrome .hero-trust {
+            max-width: 32rem !important;
+        }
+
+        .dt-unified-chrome .offer-plan-section,
+        .dt-unified-chrome .quick-help-section,
+        .dt-unified-chrome .featured-projects-section,
+        .dt-unified-chrome .process-section,
+        .dt-unified-chrome .brands-showcase-section,
+        .dt-unified-chrome .google-reviews-section,
+        .dt-unified-chrome .quick-faq-section {
+            padding: clamp(48px, 6.5vw, 76px) 5% !important;
+        }
+
+        .dt-unified-chrome .section-header {
+            margin-bottom: 1.9rem !important;
+        }
+
+        .dt-unified-chrome .section-header h2,
+        .dt-unified-chrome .google-reviews-header h2 {
+            font-size: clamp(1.85rem, 3.4vw, 2.85rem) !important;
+            line-height: 1.08 !important;
+            margin-bottom: 0.75rem !important;
+        }
+
+        .dt-unified-chrome .section-header p,
+        .dt-unified-chrome .google-reviews-header p {
+            font-size: 1.02rem !important;
+            line-height: 1.55 !important;
+        }
+
+        .dt-unified-chrome .trust-strip {
+            margin-bottom: clamp(1.3rem, 3vw, 2rem) !important;
+        }
+
+        .dt-unified-chrome .quick-help-section,
+        .dt-unified-chrome .process-section,
+        .dt-unified-chrome .quick-faq-section {
+            background: #ffffff !important;
+        }
+
+        .dt-unified-chrome .services,
+        .dt-unified-chrome .testimonials-grid {
+            display: none !important;
+        }
+
+        .dt-unified-chrome .quick-help-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        }
+
+        .dt-unified-chrome .quick-help-card,
+        .dt-unified-chrome .project-showcase-card,
+        .dt-unified-chrome .pricing-card,
+        .dt-unified-chrome .faq-item-quick {
+            border-radius: 8px !important;
+            box-shadow: none !important;
+        }
+
+        .dt-unified-chrome .project-showcase-card,
+        .dt-unified-chrome .pricing-card,
+        .dt-unified-chrome .faq-item-quick,
+        .dt-unified-chrome .process-step-card,
+        .dt-unified-chrome .why-card,
+        .dt-unified-chrome img[loading="lazy"] {
+            opacity: 1 !important;
+            transform: none !important;
+        }
+
+        .dt-unified-chrome .featured-projects-section .projects-showcase-grid {
+            margin-top: 1.5rem !important;
+            gap: 1.25rem !important;
+        }
+
+        .dt-unified-chrome .featured-projects-section .project-image-wrapper {
+            padding-top: 62% !important;
+        }
+
+        .dt-unified-chrome .process-steps-container {
+            grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+            gap: 0 !important;
+            margin-top: 1.7rem !important;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .dt-unified-chrome .process-connector,
+        .dt-unified-chrome .process-step-card > div[style*="font-size: 3rem"] {
+            display: none !important;
+        }
+
+        .dt-unified-chrome .process-step-card {
+            background: transparent !important;
+            border: 0 !important;
+            border-left: 1px solid var(--border-color) !important;
+            border-radius: 0 !important;
+            padding: 1.35rem !important;
+            text-align: left !important;
+            opacity: 1 !important;
+            transform: none !important;
+        }
+
+        .dt-unified-chrome .process-step-card:first-of-type {
+            border-left: 0 !important;
+        }
+
+        .dt-unified-chrome .step-number-circle {
+            width: 38px !important;
+            height: 38px !important;
+            margin: 0 0 0.9rem !important;
+            font-size: 1rem !important;
+            box-shadow: none !important;
+        }
+
+        .dt-unified-chrome .process-section .why-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+            gap: 1rem !important;
+            margin-top: 1.4rem !important;
+        }
+
+        .dt-unified-chrome .process-section .why-card {
+            text-align: left !important;
+            padding: 1.35rem !important;
+        }
+
+        .dt-unified-chrome .brands-showcase-grid {
+            display: none !important;
+        }
+
+        .dt-unified-chrome #process > .container > div[style*="margin-top: 4rem"],
+        .dt-unified-chrome #process > .container > div[style*="text-align: center; margin-top: 4rem"] {
+            display: none !important;
+        }
+
+        .dt-unified-chrome .pricing-snapshot {
+            max-width: 980px !important;
+            margin-top: 1.6rem !important;
+            border-radius: 10px !important;
+            padding: 1.5rem !important;
+        }
+
+        .dt-unified-chrome .google-rating-box {
+            max-width: 720px !important;
+            margin: 1.6rem auto 0 !important;
+            border-radius: 10px !important;
+            padding: 1.7rem !important;
+        }
+
+        .dt-unified-chrome .faq-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+            gap: 1rem !important;
+            margin-top: 1.5rem !important;
+        }
+
+        .dt-unified-chrome .faq-item-quick {
+            padding: 1.3rem !important;
+        }
+
+        @media (max-width: 900px) {
+            .dt-unified-chrome .quick-help-grid,
+            .dt-unified-chrome .process-steps-container,
+            .dt-unified-chrome .process-section .why-grid,
+            .dt-unified-chrome .faq-grid {
+                grid-template-columns: 1fr 1fr !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .dt-unified-chrome .hero {
+                min-height: calc(100svh - 64px) !important;
+                padding: 0 0 1.25rem !important;
+                justify-content: flex-end !important;
+                align-items: stretch !important;
+            }
+
+            .dt-unified-chrome .hero-background {
+                position: absolute !important;
+                inset: 0 !important;
+                height: 100% !important;
+                z-index: 0 !important;
+            }
+
+            .dt-unified-chrome .hero-background::before {
+                background:
+                    linear-gradient(180deg, rgba(15, 23, 42, 0.05) 0%, rgba(15, 23, 42, 0.24) 42%, rgba(15, 23, 42, 0.9) 100%) !important;
+            }
+
+            .dt-unified-chrome .hero::before {
+                background:
+                    linear-gradient(180deg, rgba(15, 23, 42, 0.02) 0%, rgba(15, 23, 42, 0.28) 42%, rgba(15, 23, 42, 0.92) 100%) !important;
+            }
+
+            .dt-unified-chrome .hero-content {
+                max-width: none !important;
+                margin: 0 !important;
+                padding: 0 1.1rem !important;
+                gap: 0.62rem !important;
+                align-items: flex-start !important;
+                text-align: left !important;
+                color: #ffffff !important;
+                z-index: 3 !important;
+            }
+
+            .dt-unified-chrome .hero-content h1 {
+                max-width: 11.4ch !important;
+                font-size: clamp(2.28rem, 10.5vw, 3rem) !important;
+                line-height: 1 !important;
+                background: linear-gradient(135deg, #ffffff 0%, #fed7aa 100%) !important;
+                -webkit-background-clip: text !important;
+                background-clip: text !important;
+                filter: drop-shadow(0 5px 18px rgba(0, 0, 0, 0.55)) !important;
+            }
+
+            .dt-unified-chrome .hero-eyebrow {
+                color: #fdba74 !important;
+                text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6) !important;
+            }
+
+            .dt-unified-chrome .hero-subcopy,
+            .dt-unified-chrome .hero-trust {
+                max-width: 32ch !important;
+                color: rgba(248, 250, 252, 0.92) !important;
+                text-shadow: 0 2px 12px rgba(0, 0, 0, 0.64) !important;
+            }
+
+            .dt-unified-chrome .hero-subcopy {
+                font-size: 0.98rem !important;
+                line-height: 1.42 !important;
+            }
+
+            .dt-unified-chrome .hero-trust {
+                font-size: 0.84rem !important;
+                line-height: 1.35 !important;
+            }
+
+            .dt-unified-chrome .hero-buttons {
+                max-width: 100% !important;
+                grid-template-columns: 1fr 1fr !important;
+                margin-top: 0.55rem !important;
+            }
+
+            .dt-unified-chrome .hero-buttons .btn-primary,
+            .dt-unified-chrome .hero-buttons .btn-secondary {
+                min-height: 48px !important;
+                padding: 0.75rem 0.6rem !important;
+                font-size: 0.88rem !important;
+                border-radius: 8px !important;
+            }
+
+            .dt-unified-chrome .offer-plan-section,
+            .dt-unified-chrome .quick-help-section,
+            .dt-unified-chrome .featured-projects-section,
+            .dt-unified-chrome .process-section,
+            .dt-unified-chrome .brands-showcase-section,
+            .dt-unified-chrome .google-reviews-section,
+            .dt-unified-chrome .quick-faq-section {
+                padding: 38px 1rem !important;
+            }
+
+            .dt-unified-chrome .trust-strip,
+            .dt-unified-chrome .offer-plan,
+            .dt-unified-chrome .quick-help-grid,
+            .dt-unified-chrome .process-steps-container,
+            .dt-unified-chrome .process-section .why-grid,
+            .dt-unified-chrome .faq-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .dt-unified-chrome .trust-strip {
+                gap: 0.55rem !important;
+                margin-bottom: 1.2rem !important;
+            }
+
+            .dt-unified-chrome .trust-point {
+                padding: 0.7rem 0 !important;
+            }
+
+            .dt-unified-chrome .section-header h2,
+            .dt-unified-chrome .google-reviews-header h2 {
+                font-size: clamp(1.55rem, 7vw, 2.15rem) !important;
+            }
+
+            .dt-unified-chrome .featured-projects-section .projects-showcase-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+                margin-top: 1rem !important;
+            }
+
+            .dt-unified-chrome .project-info {
+                padding: 1rem !important;
+            }
+
+            .dt-unified-chrome .process-steps-container {
+                border-top: 0 !important;
+            }
+
+            .dt-unified-chrome .process-step-card {
+                border-left: 0 !important;
+                border-top: 1px solid var(--border-color) !important;
+                padding: 1rem 0 !important;
+            }
+
+            .dt-unified-chrome .process-section [style*="margin-top: 4rem"] {
+                margin-top: 1.5rem !important;
+                padding-top: 1.5rem !important;
+            }
+
+            .dt-unified-chrome .pricing-snapshot {
+                margin-top: 1rem !important;
+                padding: 1rem !important;
+            }
+
+            .dt-unified-chrome .google-rating-box {
+                padding: 1.25rem !important;
+            }
+
+            .dt-unified-chrome .trust-strip {
+                display: none !important;
+            }
+
+            .dt-unified-chrome .featured-projects-section .project-showcase-card:nth-child(n+2),
+            .dt-unified-chrome .quick-faq-section .faq-item-quick:nth-child(3) {
+                display: none !important;
+            }
+        }
+    </style>
 
     <!-- Footer -->
     <footer class="prestige-footer" id="main-footer">
