@@ -84,20 +84,29 @@
         
         function openMenu() {
             if (navLinks) navLinks.classList.add('active');
-            if (menuToggle) menuToggle.classList.add('active');
+            if (menuToggle) {
+                menuToggle.classList.add('active');
+                menuToggle.setAttribute('aria-expanded', 'true');
+            }
             backdrop.classList.add('active');
             document.body.classList.add('menu-open');
         }
-        
+
         function closeMenu() {
             if (navLinks) navLinks.classList.remove('active');
-            if (menuToggle) menuToggle.classList.remove('active');
+            if (menuToggle) {
+                menuToggle.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            }
             backdrop.classList.remove('active');
             document.body.classList.remove('menu-open');
         }
         
         // Only proceed if menu elements exist
         if (menuToggle && navLinks) {
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.setAttribute('aria-controls', navLinks.id || 'navLinks');
+
             // Toggle menu on button click
             menuToggle.addEventListener('click', (e) => {
                 e.stopPropagation();
