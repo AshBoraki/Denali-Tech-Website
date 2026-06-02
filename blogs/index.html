@@ -86,7 +86,7 @@
     <meta property="og:image" content="https://denalitechs.com/Video/logo-social.jpg">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://denalitechs.com/blogs/">
+    <link rel="canonical" href="index.html">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
@@ -97,12 +97,12 @@
     
 
     
-    <base href="/">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png">
+    <base href="">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="../favicon-512x512.png">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -111,7 +111,7 @@
     <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
     
     <!-- RSS Feed -->
-    <link rel="alternate" type="application/rss+xml" title="Denali Tech Blog RSS Feed" href="/blogs/rss.xml">
+    <link rel="alternate" type="application/rss+xml" title="Denali Tech Blog RSS Feed" href="rss.xml">
     
     <!-- Enhanced Meta Tags -->
     <meta name="author" content="Denali Tech">
@@ -944,16 +944,16 @@
 
 
     <!-- Shared Mobile Menu Script -->
-    <script src="/assets/js/mobile-menu.js?v=20260323e" defer></script>
+    <script src="../assets/js/mobile-menu.js%3Fv=20260323e" defer></script>
     
     <!-- Shared Mobile Menu Styles -->
-    <link rel="stylesheet" href="/assets/css/mobile-menu.css?v=20260323e">
+    <link rel="stylesheet" href="../assets/css/mobile-menu.css%3Fv=20260323e.css">
 
-<script src="/assets/js/microsoft-uet.js" defer></script>
+<script src="../assets/js/microsoft-uet.js" defer></script>
 </head>
 <body>
     <!-- Skip Navigation Link -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="../index.html#main-content" class="skip-link">Skip to main content</a>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWPTRPDR"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -963,20 +963,20 @@
     <header class="header">
         <div class="container">
             <nav class="nav">
-                <a href="/" class="logo" title="Denali Tech">
+                <a href="../index.html" class="logo" title="Denali Tech">
                     <picture>
-                        <source srcset="/Video/logo.webp 1x" type="image/webp">
-                        <img src="/Video/logo.JPG" alt="Denali Tech Logo" loading="eager" width="56" height="40" style="width: 56px; height: 40px; margin-right: 6px; object-fit: cover; object-position: 40% center; border-radius: 10px;" fetchpriority="high">
+                        <source srcset="../Video/logo.webp 1x" type="image/webp">
+                        <img src="../Video/logo.JPG" alt="Denali Tech Logo" loading="eager" width="56" height="40" style="width: 56px; height: 40px; margin-right: 6px; object-fit: cover; object-position: 40% center; border-radius: 10px;" fetchpriority="high">
                     </picture>
                     <span class="logo-text">Denali Tech</span>
                 </a>
                 <ul class="nav-links" id="navLinks">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/services/">What We Do</a></li>
-                    <li><a href="/projects/">Projects</a></li>
-                    <li><a href="/about/">About Us</a></li>
-                    <li><a href="/blogs/" style="color: var(--accent-primary);">Blog</a></li>
-                    <li><a href="/contact/">Contact</a></li>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../services/index.html">What We Do</a></li>
+                    <li><a href="../projects/index.html">Projects</a></li>
+                    <li><a href="../about/index.html">About Us</a></li>
+                    <li><a href="index.html" style="color: var(--accent-primary);">Blog</a></li>
+                    <li><a href="../contact/index.html">Contact</a></li>
                 </ul>
             </nav>
             <div class="header-actions">
@@ -1008,7 +1008,7 @@
                 <h1>Guides, Projects, and Smart Home Advice</h1>
                 <p>Real project breakdowns, buying guidance, and practical help for smart home, Wi-Fi, theater, audio, and control systems.</p>
                 <p id="postCount" style="font-size: 0.95rem; color: var(--text-secondary); margin-top: 0.5rem;"></p>
-                <a href="/blogs/rss.xml" class="rss-link" aria-label="Subscribe to RSS feed">
+                <a href="rss.xml" class="rss-link" aria-label="Subscribe to RSS feed">
                     <span>📡</span>
                     <span>RSS Feed</span>
                 </a>
@@ -1142,9 +1142,9 @@
                 
                 return `
                 <article class="blog-card">
-                    <a href="${post.url}" class="blog-card-image-link" style="text-decoration: none; color: inherit; display: block;">
+                    <a href="https://denalitechs.com/${post.url}" class="blog-card-image-link" style="text-decoration: none; color: inherit; display: block;">
                         <div class="blog-image-wrapper">
-                            <img src="${encodedImagePath}" alt="${escapeHtml(post.title)}" loading="lazy" width="400" height="225" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #667eea 0%, #764ba2 100%)';">
+                            <img src="https://denalitechs.com/${encodedImagePath}" alt="${escapeHtml(post.title)}" loading="lazy" width="400" height="225" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #667eea 0%, #764ba2 100%)';">
                         </div>
                     </a>
                     <div class="blog-card-content">
@@ -1153,12 +1153,12 @@
                             <span>📅 ${formatDate(post.publishedDate)}</span>
                         </div>
                         <h2 class="blog-card-title">
-                            <a href="${post.url}">${escapeHtml(post.title)}</a>
+                            <a href="https://denalitechs.com/${post.url}">${escapeHtml(post.title)}</a>
                         </h2>
                         <p class="blog-card-excerpt">${escapeHtml(post.excerpt)}</p>
                         <div class="blog-card-footer">
                             <span class="blog-card-reading-time">⏱️ ${post.readingTime} min read</span>
-                            <a href="${post.url}" class="blog-card-link">Open Article →</a>
+                            <a href="https://denalitechs.com/${post.url}" class="blog-card-link">Open Article →</a>
                         </div>
                     </div>
                 </article>
