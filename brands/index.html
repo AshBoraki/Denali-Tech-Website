@@ -111,14 +111,14 @@
     <meta property="og:url" content="https://denalitechs.com/brands/">
     <meta property="og:title" content="Brands Denali Tech Installs | Smart Home &amp; AV Partners">
     <meta property="og:description" content="See the smart home, AV, networking, lighting, audio, and control brands Denali Tech installs and supports for Chicago-area homes.">
-    <meta property="og:image" content="https://denalitechs.com/Video/logo-social.jpg">
+    <meta property="og:image" content="https://denalitechs.com/assets/brandfolder/adi/strong-rack-banner.jpg">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://denalitechs.com/brands/">
     <meta name="twitter:title" content="Brands Denali Tech Installs | Smart Home &amp; AV Partners">
     <meta name="twitter:description" content="See the smart home, AV, networking, lighting, audio, and control brands Denali Tech installs and supports for Chicago-area homes.">
-    <meta name="twitter:image" content="https://denalitechs.com/Video/logo-social.jpg">
+    <meta name="twitter:image" content="https://denalitechs.com/assets/brandfolder/adi/strong-rack-banner.jpg">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://denalitechs.com/brands/">
@@ -795,6 +795,50 @@
         }
 
         /* CTA SECTION */
+
+        .brand-proof-section {
+            padding: 80px 5%;
+            background: var(--bg-color);
+        }
+
+        .brand-proof-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+            margin-top: 34px;
+        }
+
+        .brand-proof-card {
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: rgba(255,255,255,0.05);
+        }
+
+        .brand-proof-card img {
+            display: block;
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .brand-proof-card div {
+            padding: 18px;
+        }
+
+        .brand-proof-card h3 {
+            margin: 0 0 8px;
+            color: var(--text-primary);
+            font-family: var(--font-heading);
+            font-size: 1.05rem;
+        }
+
+        .brand-proof-card p {
+            margin: 0;
+            color: var(--text-secondary);
+            line-height: 1.55;
+        }
+
         .cta-section {
             padding: 80px 5%;
             background: linear-gradient(135deg, var(--accent-primary), var(--accent-interactive));
@@ -1202,6 +1246,8 @@
                 max-width: 100%;
             }
 
+            .brand-proof-grid { grid-template-columns: 1fr; }
+            .brand-proof-card img { height: 190px; }
             .brands-grid {
                 grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
                 gap: 1.5rem;
@@ -1564,6 +1610,30 @@
                         <img src="../Video/Brands/Denali%20Tech%20strong%20Strong.png" alt="Strong" loading="lazy">
                     </picture>
                 </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="brand-proof-section">
+        <div class="container">
+            <div class="brands-intro">
+                <h2>Product Context, Not Just Logos</h2>
+                <p>The useful brand story is what the equipment does in a real install: power recovery, rack serviceability, outdoor viewing, cameras, wiring, and video distribution.</p>
+            </div>
+            <div class="brand-proof-grid">
+                <article class="brand-proof-card">
+                    <img src="/assets/brandfolder/adi/wattbox-rack-install.jpg" alt="WattBox rack power management marketing asset" loading="lazy" width="243" height="162">
+                    <div><h3>WattBox and OvrC</h3><p>Remote power reset and monitoring are important because serviceable systems recover faster.</p></div>
+                </article>
+                <article class="brand-proof-card">
+                    <img src="/assets/brandfolder/adi/strong-rack-cables.jpg" alt="Strong rack wiring marketing asset" loading="lazy" width="243" height="162">
+                    <div><h3>Strong racks and structured wiring</h3><p>Clean racks make theater, networking, audio, and camera systems easier to support.</p></div>
+                </article>
+                <article class="brand-proof-card">
+                    <img src="/assets/brandfolder/adi/binary-fiber-hdmi-pull-strength.jpg" alt="Binary HDMI cable marketing asset" loading="lazy" width="550" height="367">
+                    <div><h3>Binary video paths</h3><p>Video distribution depends on choosing the right cable, extender, or AV-over-IP path.</p></div>
+                </article>
             </div>
         </div>
     </section>

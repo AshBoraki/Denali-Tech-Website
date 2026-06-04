@@ -11,7 +11,7 @@
   <meta property="og:title" content="Whole-Home WiFi & Home Networking in Chicago | Denali Tech">
   <meta property="og:description" content="Fix weak coverage, unstable cameras, slow roaming, and smart-home network problems with a properly designed home network.">
   <meta property="og:url" content="https://denalitechs.com/residential-wifi-network/">
-  <meta property="og:image" content="https://denalitechs.com/Video/logo-social.jpg">
+  <meta property="og:image" content="https://denalitechs.com/Video/services-real/whole-home-wifi-network.webp">
   <script src="../assets/js/microsoft-uet.js" defer></script>
   <style>
     :root {
@@ -240,6 +240,44 @@
       color: var(--muted);
       font-weight: 700;
     }
+
+    .visual-proof {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+    .asset-strip {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .asset-strip figure {
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.055);
+    }
+    .asset-strip img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+    .asset-strip figcaption {
+      padding: 10px 12px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+    .asset-note {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.6;
+    }
     .cta {
       text-align: center;
       border-top: 1px solid var(--line);
@@ -272,6 +310,8 @@
       .nav { min-height: 70px; }
       .nav-links { display: none; }
       .hero { min-height: auto; padding: 54px 0 38px; }
+      .visual-proof { grid-template-columns: 1fr; }
+      .asset-strip { grid-template-columns: 1fr; }
       .hero-grid, .split { grid-template-columns: 1fr; gap: 28px; }
       h1 { max-width: 11ch; font-size: clamp(2.65rem, 13vw, 4.1rem); }
       .cards { grid-template-columns: 1fr; }
@@ -461,8 +501,8 @@
         </div>
         <aside class="panel">
           <picture class="hero-media">
-            <source srcset="../Video/homepage/denali-tech-hero-field-team.webp" type="image/webp">
-            <img src="../Video/homepage/denali-tech-hero-field-team.webp" alt="Denali Tech field team using a laptop beside the service van" width="2752" height="1536" loading="eager">
+            <source srcset="/Video/services-real/whole-home-wifi-network.webp" type="image/webp">
+            <img src="/Video/services-real/whole-home-wifi-network.webp" alt="Real home network rack with router, switch, power management, and WiFi equipment" width="1376" height="768" loading="eager">
           </picture>
           <h2>Good WiFi starts before the access points.</h2>
           <ul class="check-list">
@@ -515,6 +555,18 @@
       <p class="service-area">Serving Mount Prospect, Arlington Heights, Des Plaines, Park Ridge, Glenview, Northbrook, Schaumburg, Skokie, Evanston, Chicago, and nearby communities.</p>
     </section>
 
+
+    <section class="section visual-proof">
+      <div>
+        <div class="eyebrow">Planning visuals</div>
+        <h2>The network page now shows the gear story, not only a service truck.</h2>
+        <p class="asset-note">These ADI/Snap One references support the parts of a reliable home network customers rarely see: wiring, rack layout, and remote power recovery.</p>
+      </div>
+      <div class="asset-strip" aria-label="Home network planning visuals">
+        <figure><img src="/assets/brandfolder/adi/araknis-network-wiring.jpg" alt="Araknis network wiring planning reference" loading="lazy" width="243" height="162"><figcaption>Network wiring and access points</figcaption></figure>
+        <figure><img src="/assets/brandfolder/adi/wattbox-rack-install.jpg" alt="WattBox rack power management reference" loading="lazy" width="243" height="162"><figcaption>Remote power reset and serviceability</figcaption></figure>
+      </div>
+    </section>
     <section class="section cta">
       <h2>Send the WiFi problem and a few photos of your equipment area.</h2>
       <p>A quick photo of the modem/router, network closet, rack, or problem room helps us tell you whether the next step is placement, wiring, access points, cleanup, or a full network redesign.</p>
