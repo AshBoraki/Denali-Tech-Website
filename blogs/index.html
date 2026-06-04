@@ -1091,7 +1091,13 @@
                 const postUrl = post.url.startsWith('/') ? post.url : `/${post.url}`;
                 const heroImagePath = post.heroImage.startsWith('/') ? post.heroImage.slice(1) : post.heroImage;
                 const pathParts = heroImagePath.split('/');
-                const encodedImagePath = pathParts.map(part => encodeURIComponent(part)).join('/');
+                const encodedImagePath = pathParts.map(part => {
+                    try {
+                        return encodeURIComponent(decodeURIComponent(part));
+                    } catch (error) {
+                        return encodeURIComponent(part);
+                    }
+                }).join('/');
 
                 return `
                 <article class="blog-card">
