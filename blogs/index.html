@@ -76,15 +76,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Smart Home Guides &amp; Project Advice | Denali Tech</title>
-    <meta name="description" content="Practical Denali Tech guides for WiFi, smart control, AV racks, lighting, shades, audio, and home theater decisions in Chicago-area homes.">
-    <meta name="keywords" content="smart home blog, home automation blog, smart home tips, home automation guides, smart home advice, home automation articles">
+    <meta name="description" content="Start with the right Denali Tech guide for your project: WiFi problems, smart home control, AV racks, lighting, shades, audio, theater, cameras, prewire, and system takeover help.">
+    <meta name="keywords" content="smart home guide, home automation planning, smart home support, home automation guides, home theater planning, smart home prewire, AV rack guide">
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://denalitechs.com/blogs/">
     <meta property="og:title" content="Smart Home Guides &amp; Project Advice | Denali Tech">
-    <meta property="og:description" content="Practical Denali Tech guides for WiFi, smart control, AV racks, lighting, shades, audio, and home theater decisions in Chicago-area homes.">
-    <meta property="og:image" content="https://denalitechs.com/Video/logo-social.jpg">
+    <meta property="og:description" content="Start with the right Denali Tech guide for your project: WiFi problems, smart home control, AV racks, lighting, shades, audio, theater, cameras, prewire, and takeover help.">
+    <meta property="og:image" content="https://denalitechs.com/Video/services-real/smart-home-control.webp">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://denalitechs.com/blogs/">
@@ -93,8 +93,8 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://denalitechs.com/blogs/">
     <meta name="twitter:title" content="Smart Home Guides &amp; Project Advice | Denali Tech">
-    <meta name="twitter:description" content="Practical Denali Tech guides for WiFi, smart control, AV racks, lighting, shades, audio, and home theater decisions.">
-    <meta name="twitter:image" content="https://denalitechs.com/Video/logo-social.jpg">
+    <meta name="twitter:description" content="Start with the right Denali Tech guide for your project: WiFi, smart control, AV racks, lighting, shades, audio, theater, cameras, prewire, and takeover help.">
+    <meta name="twitter:image" content="https://denalitechs.com/Video/services-real/smart-home-control.webp">
 
 
 
@@ -126,7 +126,7 @@
         "@context": "https://schema.org",
         "@type": "Blog",
         "name": "Denali Tech Smart Home Blog",
-        "description": "Practical Denali Tech guides for WiFi, smart control, AV racks, lighting, shades, audio, and home theater decisions.",
+        "description": "Start with the right Denali Tech guide for your project: WiFi problems, smart home control, AV racks, lighting, shades, audio, theater, cameras, prewire, and system takeover help.",
         "url": "https://denalitechs.com/blogs/",
         "publisher": {
             "@type": "Organization",
@@ -473,6 +473,127 @@
             color: var(--text-secondary);
             max-width: 700px;
             margin: 0 auto 2rem;
+        }
+
+        .decision-hub {
+            margin: 0 0 3rem;
+            display: grid;
+            gap: 1.25rem;
+        }
+
+        .decision-hub-intro {
+            max-width: 840px;
+            margin: 0 auto 0.5rem;
+            text-align: center;
+        }
+
+        .decision-hub-intro h2 {
+            margin: 0 0 0.85rem;
+            font-family: var(--font-heading);
+            font-size: clamp(1.8rem, 3vw, 2.55rem);
+            line-height: 1.12;
+            color: var(--text-primary);
+        }
+
+        .decision-hub-intro p {
+            margin: 0 auto;
+            max-width: 720px;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.65;
+        }
+
+        .decision-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .decision-card {
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+            padding: 1.2rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.045);
+            text-decoration: none;
+            transition: border-color var(--transition), transform var(--transition), background var(--transition);
+        }
+
+        :root[data-theme='light'] .decision-card,
+        body.light-theme .decision-card {
+            background: rgba(255, 255, 255, 0.78);
+        }
+
+        .decision-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-primary);
+            background: rgba(249, 115, 22, 0.08);
+        }
+
+        .decision-card strong {
+            color: var(--text-primary);
+            font-family: var(--font-heading);
+            font-size: 1.04rem;
+            line-height: 1.28;
+        }
+
+        .decision-card span {
+            display: block;
+            margin-top: 0.6rem;
+            color: var(--text-secondary);
+            font-size: 0.94rem;
+            line-height: 1.55;
+        }
+
+        .starter-links {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            padding: 1.25rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0.12), rgba(255, 255, 255, 0.035));
+        }
+
+        .starter-links h3 {
+            margin: 0 0 0.65rem;
+            color: var(--text-primary);
+            font-family: var(--font-heading);
+            font-size: 1.05rem;
+        }
+
+        .starter-links p {
+            margin: 0;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.55;
+        }
+
+        .starter-link-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            align-content: start;
+        }
+
+        .starter-link-list a {
+            display: inline-flex;
+            align-items: center;
+            min-height: 40px;
+            padding: 0.5rem 0.75rem;
+            border: 1px solid rgba(249, 115, 22, 0.45);
+            border-radius: 8px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 0.9rem;
+        }
+
+        .starter-link-list a:hover {
+            background: var(--accent-primary);
+            color: #fff;
         }
 
         .blog-controls {
@@ -823,6 +944,11 @@
                 flex-direction: column;
             }
 
+            .decision-grid,
+            .starter-links {
+                grid-template-columns: 1fr;
+            }
+
             .search-box {
                 width: 100%;
                 max-width: 100%;
@@ -957,13 +1083,52 @@
         <div class="blog-listing-container">
             <div class="blog-header">
                 <h1>Smart Home Advice You Can Actually Use</h1>
-                <p>Real project breakdowns, buying guidance, and practical help before you spend money on WiFi, theater, audio, lighting, shades, or control.</p>
+                <p>Real project breakdowns, buying guidance, and practical help before you spend money on WiFi, theater, audio, lighting, shades, cameras, wiring, or control.</p>
                 <p id="postCount" style="font-size: 0.95rem; color: var(--text-secondary); margin-top: 0.5rem;"></p>
                 <a href="rss.xml" class="rss-link" aria-label="Subscribe to RSS feed">
                     <span>📡</span>
                     <span>RSS Feed</span>
                 </a>
             </div>
+
+            <section class="decision-hub" aria-labelledby="start-here-heading">
+                <div class="decision-hub-intro">
+                    <h2 id="start-here-heading">Start with the situation, not the brand.</h2>
+                    <p>The best smart-home plan starts by naming the real problem: weak coverage, too many remotes, a remodel that needs wiring, an outdoor space, or an existing system that needs support.</p>
+                </div>
+                <div class="decision-grid">
+                    <a class="decision-card" href="/blogs/smart-home-takeover-service-guide/">
+                        <strong>Existing system not working</strong>
+                        <span>Read takeover and troubleshooting guides before replacing everything.</span>
+                    </a>
+                    <a class="decision-card" href="/blogs/smart-home-prewire-builders-guide/">
+                        <strong>Building or remodeling</strong>
+                        <span>Plan wiring, rack space, network, shades, speakers, cameras, and TVs before walls close.</span>
+                    </a>
+                    <a class="decision-card" href="/blogs/wifi-dead-zones-fix-guide/">
+                        <strong>WiFi, cameras, or smart devices drop</strong>
+                        <span>Start with network design and equipment placement instead of buying more random gear.</span>
+                    </a>
+                    <a class="decision-card" href="/blogs/snap-one-brand-stack-smart-home-guide/">
+                        <strong>Trying to understand the equipment stack</strong>
+                        <span>See how Control4, Araknis, WattBox, Luma, Binary, Strong, and other systems fit together.</span>
+                    </a>
+                </div>
+                <div class="starter-links">
+                    <div>
+                        <h3>Most useful supporting pages</h3>
+                        <p>These are service pages, not blog posts. Use them when you already know what kind of help you need.</p>
+                    </div>
+                    <div class="starter-link-list" aria-label="Supporting service pages">
+                        <a href="/smart-home-control/">Smart Home Control</a>
+                        <a href="/residential-wifi-network/">WiFi & Networking</a>
+                        <a href="/home-theater-room/">Theater Rooms</a>
+                        <a href="/security-cameras/">Security Cameras</a>
+                        <a href="/smart-lighting-shades/">Lighting & Shades</a>
+                        <a href="/brands/">Brands We Support</a>
+                    </div>
+                </div>
+            </section>
 
             <div class="blog-controls">
                 <div class="search-box">
