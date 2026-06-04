@@ -760,6 +760,46 @@
             margin: 0 auto;
         }
 
+        .project-path-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1rem;
+            margin: -3.5rem 0 5.5rem;
+        }
+
+        .project-path-card {
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+            padding: 1.3rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.045);
+            text-decoration: none;
+            transition: border-color var(--transition), transform var(--transition), background var(--transition);
+        }
+
+        .project-path-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-primary);
+            background: rgba(249, 115, 22, 0.1);
+        }
+
+        .project-path-card strong {
+            color: var(--text-primary);
+            font-family: var(--font-heading);
+            font-size: 1.02rem;
+            line-height: 1.3;
+        }
+
+        .project-path-card span {
+            display: block;
+            margin-top: 0.65rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.55;
+        }
+
         .local-work-section {
             padding: 80px 5%;
             background: linear-gradient(135deg, rgba(249, 115, 22, 0.05), rgba(13, 148, 136, 0.03));
@@ -1539,6 +1579,11 @@
                 margin-bottom: 3rem;
                 text-align: left;
             }
+
+            .project-path-grid {
+                grid-template-columns: 1fr;
+                margin: -2rem 0 3.5rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1854,6 +1899,24 @@
             <div class="services-hub-intro">
                 <h2>Home Technology Built Around Real Life</h2>
                 <p>Start with the room, the pain point, or the system that keeps failing. We help you choose the right fix and keep the setup practical.</p>
+            </div>
+            <div class="project-path-grid" aria-label="Choose the right starting point">
+                <a class="project-path-card" href="/blogs/smart-home-takeover-service-guide/">
+                    <strong>Something already installed is not working</strong>
+                    <span>Start with takeover, troubleshooting, network cleanup, and remote/control review.</span>
+                </a>
+                <a class="project-path-card" href="/blogs/smart-home-prewire-builders-guide/">
+                    <strong>You are building or remodeling</strong>
+                    <span>Plan wiring, rack space, TVs, speakers, shades, cameras, and access points before walls close.</span>
+                </a>
+                <a class="project-path-card" href="/blogs/questions-to-ask-installer/">
+                    <strong>You are comparing installers</strong>
+                    <span>Use practical questions about design, support, warranty, programming, and who owns the system later.</span>
+                </a>
+                <a class="project-path-card" href="/blogs/snap-one-brand-stack-smart-home-guide/">
+                    <strong>You want to understand the gear</strong>
+                    <span>See how control, networking, power, video, cameras, racks, and audio fit into one supportable system.</span>
+                </a>
             </div>
             <!-- Smart Home Automation -->
             <div class="service-detail" id="automation">
