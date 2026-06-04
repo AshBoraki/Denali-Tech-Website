@@ -1,6 +1,148 @@
 {
   "posts": [
     {
+      "id": 1,
+      "title": "WattBox and OvrC Remote Power Reset: Why Smart Homes Need Serviceable Power",
+      "slug": "wattbox-ovrc-remote-power-reset-guide",
+      "excerpt": "A homeowner guide to WattBox power management, OvrC remote resets, rack planning, UPS choices, and why reliable smart homes need controllable power.",
+      "category": "Smart Home Guide",
+      "tags": [
+        "WattBox",
+        "OvrC",
+        "Power Management",
+        "Remote Support"
+      ],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-06-04",
+      "updatedDate": "2026-06-04",
+      "readingTime": 8,
+      "featured": false,
+      "heroImage": "/Video/Blogs%20imge/Arakins%20Wifi%20setup/snapav-wattbox-800-ipvm-power-management.jpg",
+      "url": "/blogs/wattbox-ovrc-remote-power-reset-guide/"
+    },
+    {
+      "id": 2,
+      "title": "WattBox vs a Basic Surge Protector: What Homeowners Should Know",
+      "slug": "wattbox-surge-protector-vs-power-management-guide",
+      "excerpt": "Understand the difference between basic surge protection and managed power for smart homes, theater racks, network gear, TVs, and support after installation.",
+      "category": "Buying Guide",
+      "tags": [
+        "WattBox",
+        "Surge Protection",
+        "Smart Home Reliability",
+        "AV Rack"
+      ],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-06-04",
+      "updatedDate": "2026-06-04",
+      "readingTime": 7,
+      "featured": false,
+      "heroImage": "/Video/Brands/Denali%20tech%20Wattbox.webp",
+      "url": "/blogs/wattbox-surge-protector-vs-power-management-guide/"
+    },
+    {
+      "id": 3,
+      "title": "Binary Video Distribution: When HDMI, Fiber or AV-over-IP Makes Sense",
+      "slug": "binary-video-distribution-hdmi-matrix-guide",
+      "excerpt": "A practical guide to Binary HDMI, fiber, matrix switching, AV-over-IP, cable planning, and distributed video decisions for Chicago-area homes.",
+      "category": "Smart Home Guide",
+      "tags": [
+        "Binary",
+        "Video Distribution",
+        "HDMI",
+        "AV over IP"
+      ],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-06-04",
+      "updatedDate": "2026-06-04",
+      "readingTime": 8,
+      "featured": false,
+      "heroImage": "/assets/brandfolder/adi/binary-fiber-hdmi-pull-strength.jpg",
+      "url": "/blogs/binary-video-distribution-hdmi-matrix-guide/"
+    },
+    {
+      "id": 4,
+      "title": "Strong AV Racks and Mounts: Why the Rack Shape Matters",
+      "slug": "strong-av-rack-mounting-guide",
+      "excerpt": "A homeowner guide to AV racks, wall cabinets, ventilation, service access, TV backing, cable paths, and why clean mounting makes systems easier to support.",
+      "category": "Smart Home Guide",
+      "tags": [
+        "Strong",
+        "AV Rack",
+        "TV Mounting",
+        "Wire Management"
+      ],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-06-04",
+      "updatedDate": "2026-06-04",
+      "readingTime": 7,
+      "featured": false,
+      "heroImage": "/Video/Brands/Denali%20Tech%20strong%20Strong.webp",
+      "url": "/blogs/strong-av-rack-mounting-guide/"
+    },
+    {
+      "id": 5,
+      "title": "SunBrite Outdoor TV Planning: Weather, Glare, Sound and Service Access",
+      "slug": "sunbrite-outdoor-tv-weather-guide",
+      "excerpt": "Plan an outdoor TV system with weather-rated displays, sound, WiFi, power, mounting, shade, and service access for real Chicago-area conditions.",
+      "category": "Smart Home Guide",
+      "tags": [
+        "SunBrite",
+        "Outdoor TV",
+        "Outdoor Audio",
+        "Backyard AV"
+      ],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-06-04",
+      "updatedDate": "2026-06-04",
+      "readingTime": 8,
+      "featured": false,
+      "heroImage": "/Video/Project%20showcases%20/outdoor-tv-and-surround-system.webp",
+      "url": "/blogs/sunbrite-outdoor-tv-weather-guide/"
+    },
+    {
+      "id": 6,
+      "title": "Wirepath Structured Wiring: The Prewire Decisions That Protect a Smart Home",
+      "slug": "wirepath-structured-wiring-prewire-guide",
+      "excerpt": "A practical structured wiring guide for Ethernet, speaker wire, camera wire, TV locations, low-voltage panels, labels, conduit, and future service.",
+      "category": "Buying Guide",
+      "tags": [
+        "Wirepath",
+        "Structured Wiring",
+        "Prewire",
+        "Low Voltage"
+      ],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-06-04",
+      "updatedDate": "2026-06-04",
+      "readingTime": 8,
+      "featured": false,
+      "heroImage": "/Video/Blogs%20imge/YouTube/av-rack-wire-management-guide.png",
+      "url": "/blogs/wirepath-structured-wiring-prewire-guide/"
+    },
+    {
+      "id": 7,
+      "title": "Control4, Araknis, WattBox, Luma, Binary and Episode: How the Smart Home Stack Fits Together",
+      "slug": "snap-one-brand-stack-smart-home-guide",
+      "excerpt": "A plain-English guide to the Snap One-style smart home stack: control, network, power, cameras, video distribution, audio, racks, and remote support.",
+      "category": "Smart Home Guide",
+      "tags": [
+        "Control4",
+        "Araknis",
+        "WattBox",
+        "Luma",
+        "Binary",
+        "Episode"
+      ],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-06-04",
+      "updatedDate": "2026-06-04",
+      "readingTime": 9,
+      "featured": false,
+      "heroImage": "/Video/Brands/Denali%20techControl4.webp",
+      "url": "/blogs/snap-one-brand-stack-smart-home-guide/"
+    },
+    {
       "id": "control4-scenes-routines-guide",
       "title": "Control4 Scenes and Routines: How a Smart Home Should Feel Day to Day",
       "slug": "control4-scenes-routines-guide",

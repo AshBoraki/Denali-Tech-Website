@@ -1,243 +1,219 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<?xml-stylesheet type="text/xsl" href="/blogs/rss-style.xsl"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
     <channel>
-        <title>Denali Tech Blog - Smart Home Tips &amp; Guides</title>
+        <title>Denali Tech Blog</title>
         <link>https://denalitechs.com/blogs/</link>
-        <description>Expert tips, guides, and insights about smart home technology, home automation, and AV systems from Chicago's trusted smart home experts.</description>
-        <language>en-us</language>
-        <lastBuildDate>Wed, 03 Jun 2026 12:00:00 GMT</lastBuildDate>
-        <atom:link href="https://denalitechs.com/blogs/rss.xml" rel="self" type="application/rss+xml"/>
-        <image>
-            <url>https://denalitechs.com/Video/logo.JPG</url>
-            <title>Denali Tech Blog</title>
-            <link>https://denalitechs.com/blogs/</link>
-        </image>
-
+        <description>Smart home, AV, network, lighting, camera, and support guides from Denali Tech.</description>
+        
+        <item>
+            <title>WattBox and OvrC Remote Power Reset: Why Smart Homes Need Serviceable Power</title>
+            <link>https://denalitechs.com/blogs/wattbox-ovrc-remote-power-reset-guide/</link>
+            <guid>https://denalitechs.com/blogs/wattbox-ovrc-remote-power-reset-guide/</guid>
+            <description>A homeowner guide to WattBox power management, OvrC remote resets, rack planning, UPS choices, and why reliable smart homes need controllable power.</description>
+            <pubDate>Thu, 04 Jun 2026 12:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title>WattBox vs a Basic Surge Protector: What Homeowners Should Know</title>
+            <link>https://denalitechs.com/blogs/wattbox-surge-protector-vs-power-management-guide/</link>
+            <guid>https://denalitechs.com/blogs/wattbox-surge-protector-vs-power-management-guide/</guid>
+            <description>Understand the difference between basic surge protection and managed power for smart homes, theater racks, network gear, TVs, and support after installation.</description>
+            <pubDate>Thu, 04 Jun 2026 12:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title>Binary Video Distribution: When HDMI, Fiber or AV-over-IP Makes Sense</title>
+            <link>https://denalitechs.com/blogs/binary-video-distribution-hdmi-matrix-guide/</link>
+            <guid>https://denalitechs.com/blogs/binary-video-distribution-hdmi-matrix-guide/</guid>
+            <description>A practical guide to Binary HDMI, fiber, matrix switching, AV-over-IP, cable planning, and distributed video decisions for Chicago-area homes.</description>
+            <pubDate>Thu, 04 Jun 2026 12:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title>Strong AV Racks and Mounts: Why the Rack Shape Matters</title>
+            <link>https://denalitechs.com/blogs/strong-av-rack-mounting-guide/</link>
+            <guid>https://denalitechs.com/blogs/strong-av-rack-mounting-guide/</guid>
+            <description>A homeowner guide to AV racks, wall cabinets, ventilation, service access, TV backing, cable paths, and why clean mounting makes systems easier to support.</description>
+            <pubDate>Thu, 04 Jun 2026 12:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title>SunBrite Outdoor TV Planning: Weather, Glare, Sound and Service Access</title>
+            <link>https://denalitechs.com/blogs/sunbrite-outdoor-tv-weather-guide/</link>
+            <guid>https://denalitechs.com/blogs/sunbrite-outdoor-tv-weather-guide/</guid>
+            <description>Plan an outdoor TV system with weather-rated displays, sound, WiFi, power, mounting, shade, and service access for real Chicago-area conditions.</description>
+            <pubDate>Thu, 04 Jun 2026 12:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title>Wirepath Structured Wiring: The Prewire Decisions That Protect a Smart Home</title>
+            <link>https://denalitechs.com/blogs/wirepath-structured-wiring-prewire-guide/</link>
+            <guid>https://denalitechs.com/blogs/wirepath-structured-wiring-prewire-guide/</guid>
+            <description>A practical structured wiring guide for Ethernet, speaker wire, camera wire, TV locations, low-voltage panels, labels, conduit, and future service.</description>
+            <pubDate>Thu, 04 Jun 2026 12:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title>Control4, Araknis, WattBox, Luma, Binary and Episode: How the Smart Home Stack Fits Together</title>
+            <link>https://denalitechs.com/blogs/snap-one-brand-stack-smart-home-guide/</link>
+            <guid>https://denalitechs.com/blogs/snap-one-brand-stack-smart-home-guide/</guid>
+            <description>A plain-English guide to the Snap One-style smart home stack: control, network, power, cameras, video distribution, audio, racks, and remote support.</description>
+            <pubDate>Thu, 04 Jun 2026 12:00:00 GMT</pubDate>
+        </item>
         <item>
             <title>Control4 Scenes and Routines: How a Smart Home Should Feel Day to Day</title>
             <link>https://denalitechs.com/blogs/control4-scenes-routines-guide/</link>
+            <guid>https://denalitechs.com/blogs/control4-scenes-routines-guide/</guid>
             <description>A practical homeowner guide to Control4 scenes, routines, room control, and why smart home automation should feel calm instead of complicated.</description>
-            <pubDate>Wed, 03 Jun 2026 12:00:00 GMT</pubDate>
-            <guid isPermaLink="true">https://denalitechs.com/blogs/control4-scenes-routines-guide/</guid>
-            <category>Smart Home Guide</category>
+            <pubDate>Thu, 04 Jun 2026 12:00:00 GMT</pubDate>
         </item>
-
         <item>
             <title>Control4 and Apple HomeKit: What Homeowners Should Understand</title>
             <link>https://denalitechs.com/blogs/control4-apple-homekit-guide/</link>
+            <guid>https://denalitechs.com/blogs/control4-apple-homekit-guide/</guid>
             <description>Learn how to think about Control4, Apple HomeKit, phones, tablets, and voice control without turning your smart home into a pile of competing apps.</description>
-            <pubDate>Wed, 03 Jun 2026 12:00:00 GMT</pubDate>
-            <guid isPermaLink="true">https://denalitechs.com/blogs/control4-apple-homekit-guide/</guid>
-            <category>Smart Home Guide</category>
+            <pubDate>Thu, 04 Jun 2026 12:00:00 GMT</pubDate>
         </item>
-
         <item>
             <title>Smart Home Takeover Service: When an Existing System Needs a Reset</title>
             <link>https://denalitechs.com/blogs/smart-home-takeover-service-guide/</link>
+            <guid>https://denalitechs.com/blogs/smart-home-takeover-service-guide/</guid>
             <description>A homeowner guide to taking over an existing Control4, URC, lighting, AV, WiFi, or theater system without tearing everything out first.</description>
-            <pubDate>Wed, 03 Jun 2026 12:00:00 GMT</pubDate>
-            <guid isPermaLink="true">https://denalitechs.com/blogs/smart-home-takeover-service-guide/</guid>
-            <category>Troubleshooting</category>
+            <pubDate>Thu, 04 Jun 2026 12:00:00 GMT</pubDate>
         </item>
-
         <item>
             <title>Araknis Access Point Placement: How Reliable Smart Home WiFi Gets Designed</title>
             <link>https://denalitechs.com/blogs/araknis-access-point-placement-guide/</link>
+            <guid>https://denalitechs.com/blogs/araknis-access-point-placement-guide/</guid>
             <description>A practical guide to access point placement, wiring, coverage, and why serious smart homes need planned WiFi instead of random boosters.</description>
-            <pubDate>Wed, 03 Jun 2026 12:00:00 GMT</pubDate>
-            <guid isPermaLink="true">https://denalitechs.com/blogs/araknis-access-point-placement-guide/</guid>
-            <category>Smart Home Guide</category>
+            <pubDate>Thu, 04 Jun 2026 12:00:00 GMT</pubDate>
         </item>
-
         <item>
             <title>Outdoor TV, Speakers and WiFi for Chicago Backyards: What to Plan First</title>
             <link>https://denalitechs.com/blogs/outdoor-tv-audio-chicago-guide/</link>
+            <guid>https://denalitechs.com/blogs/outdoor-tv-audio-chicago-guide/</guid>
             <description>Plan a reliable outdoor entertainment system with weather-rated displays, speakers, WiFi, wiring, power, lighting, and control that can survive real Chicago use.</description>
-            <pubDate>Wed, 03 Jun 2026 12:00:00 GMT</pubDate>
-            <guid isPermaLink="true">https://denalitechs.com/blogs/outdoor-tv-audio-chicago-guide/</guid>
-            <category>Smart Home Guide</category>
+            <pubDate>Thu, 04 Jun 2026 12:00:00 GMT</pubDate>
         </item>
-
         <item>
             <title>Triad Home Theater Speaker Planning: What to Decide Before the Room Is Built</title>
             <link>https://denalitechs.com/blogs/triad-home-theater-speaker-planning-guide/</link>
+            <guid>https://denalitechs.com/blogs/triad-home-theater-speaker-planning-guide/</guid>
             <description>A plain-English guide to theater speaker planning, room layout, screen placement, subwoofers, in-wall speakers, and why design choices should happen early.</description>
-            <pubDate>Wed, 03 Jun 2026 12:00:00 GMT</pubDate>
-            <guid isPermaLink="true">https://denalitechs.com/blogs/triad-home-theater-speaker-planning-guide/</guid>
-            <category>Smart Home Guide</category>
+            <pubDate>Thu, 04 Jun 2026 12:00:00 GMT</pubDate>
         </item>
-
         <item>
             <title>Episode Speakers and Whole-Home Audio: What to Plan Before Cutting Holes</title>
             <link>https://denalitechs.com/blogs/episode-whole-home-audio-planning-guide/</link>
+            <guid>https://denalitechs.com/blogs/episode-whole-home-audio-planning-guide/</guid>
             <description>A homeowner guide to distributed audio zones, speaker placement, volume control, outdoor audio, and whole-home music planning.</description>
-            <pubDate>Wed, 03 Jun 2026 12:00:00 GMT</pubDate>
-            <guid isPermaLink="true">https://denalitechs.com/blogs/episode-whole-home-audio-planning-guide/</guid>
-            <category>Smart Home Guide</category>
+            <pubDate>Thu, 04 Jun 2026 12:00:00 GMT</pubDate>
         </item>
-
         <item>
             <title>Smart Home Prewire Checklist for Builders and Remodels</title>
             <link>https://denalitechs.com/blogs/smart-home-prewire-builders-guide/</link>
+            <guid>https://denalitechs.com/blogs/smart-home-prewire-builders-guide/</guid>
             <description>A practical prewire checklist for builders, remodels, and homeowners planning smart lighting, shades, WiFi, cameras, audio, theater, and future service.</description>
-            <pubDate>Wed, 03 Jun 2026 12:00:00 GMT</pubDate>
-            <guid isPermaLink="true">https://denalitechs.com/blogs/smart-home-prewire-builders-guide/</guid>
-            <category>Buying Guide</category>
+            <pubDate>Thu, 04 Jun 2026 12:00:00 GMT</pubDate>
         </item>
-
         <item>
             <title>Smart Home Planning for Designers and Architects: Keep Technology Clean</title>
             <link>https://denalitechs.com/blogs/smart-home-designers-architects-guide/</link>
+            <guid>https://denalitechs.com/blogs/smart-home-designers-architects-guide/</guid>
             <description>How designers and architects can plan smart lighting, shades, AV, speakers, WiFi, cameras, and controls without cluttering the finished space.</description>
-            <pubDate>Wed, 03 Jun 2026 12:00:00 GMT</pubDate>
-            <guid isPermaLink="true">https://denalitechs.com/blogs/smart-home-designers-architects-guide/</guid>
-            <category>Smart Home Guide</category>
+            <pubDate>Thu, 04 Jun 2026 12:00:00 GMT</pubDate>
         </item>
-
         <item>
             <title>Luma Security Camera Planning: What Homeowners Should Decide Before Installation</title>
             <link>https://denalitechs.com/blogs/luma-security-camera-planning-guide/</link>
+            <guid>https://denalitechs.com/blogs/luma-security-camera-planning-guide/</guid>
             <description>Plan a cleaner camera system by deciding camera goals, viewing angles, recorder location, network wiring, app access, and privacy before installation starts.</description>
-            <pubDate>Wed, 03 Jun 2026 12:00:00 GMT</pubDate>
-            <guid isPermaLink="true">https://denalitechs.com/blogs/luma-security-camera-planning-guide/</guid>
-            <category>Smart Home Guide</category>
+            <pubDate>Thu, 04 Jun 2026 12:00:00 GMT</pubDate>
         </item>
-
         <item>
-            <title>Smart Home Automation for Beginners: Complete Starter Guide 2026</title>
-            <link>https://denalitechs.com/blogs/smart-home-automation-for-beginners/</link>
-            <description>New to smart homes? This beginner's guide explains everything you need to know about smart home automation, from basics to getting started. Simple, easy-to-understand guide.</description>
-            <pubDate>Wed, 08 Jan 2025 12:00:00 GMT</pubDate>
-            <guid isPermaLink="true">https://denalitechs.com/blogs/smart-home-automation-for-beginners/</guid>
-            <category>Smart Home Guide</category>
+            <title>Luxul Epic 5 Router and PoE Switch Setup for a Reliable Smart Home Network</title>
+            <link>https://denalitechs.com/blogs/luxul-network-setup-guide/</link>
+            <guid>https://denalitechs.com/blogs/luxul-network-setup-guide/</guid>
+            <description>See how a clean Luxul router and PoE switch install improves reliability for Wi-Fi, cameras, AV, and smart home control systems.</description>
+            <pubDate>Thu, 04 Jun 2026 12:00:00 GMT</pubDate>
         </item>
-        
         <item>
-            <title>Home Theater Installation Guide: Everything You Need to Know</title>
-            <link>https://denalitechs.com/blogs/home-theater-installation-guide/</link>
-            <description>Complete guide to home theater installation. Learn about projectors, audio systems, room design, and what to expect. Professional home theater installation in Chicago.</description>
-            <pubDate>Tue, 07 Jan 2025 12:00:00 GMT</pubDate>
-            <guid isPermaLink="true">https://denalitechs.com/blogs/home-theater-installation-guide/</guid>
-            <category>Smart Home Guide</category>
+            <title>Motorized Shades with Lutron Pico Control: What a Clean Smart Shades Setup Looks Like</title>
+            <link>https://denalitechs.com/blogs/lutron-pico-motorized-shades-guide/</link>
+            <guid>https://denalitechs.com/blogs/lutron-pico-motorized-shades-guide/</guid>
+            <description>A practical look at how motorized shades and Lutron Pico control fit into a polished smart home installation.</description>
+            <pubDate>Thu, 04 Jun 2026 12:00:00 GMT</pubDate>
         </item>
-        
         <item>
-            <title>What is Control4? Complete Guide for Homeowners 2026</title>
-            <link>https://denalitechs.com/blogs/what-is-control4-guide/</link>
-            <description>Learn what Control4 is, how it works, what it can control, and whether it's right for your home. Complete guide from authorized Control4 dealers in Chicago.</description>
-            <pubDate>Mon, 06 Jan 2025 12:00:00 GMT</pubDate>
-            <guid isPermaLink="true">https://denalitechs.com/blogs/what-is-control4-guide/</guid>
-            <category>Smart Home Guide</category>
+            <title>AV Rack Wire Management Done Right: What Clean Rack Builds Actually Require</title>
+            <link>https://denalitechs.com/blogs/av-rack-wire-management-guide/</link>
+            <guid>https://denalitechs.com/blogs/av-rack-wire-management-guide/</guid>
+            <description>Clean AV rack wire management is about reliability and serviceability, not just looks. This guide breaks down what matters in a professional rack build.</description>
+            <pubDate>Thu, 04 Jun 2026 12:00:00 GMT</pubDate>
         </item>
-        
         <item>
-            <title>How to Choose a Smart Home Installer: 10 Essential Questions to Ask</title>
-            <link>https://denalitechs.com/blogs/how-to-choose-smart-home-installer/</link>
-            <description>Don't hire the wrong company. Learn how to choose a smart home installer with our essential guide. Questions to ask, red flags to avoid, and what to look for when hiring.</description>
-            <pubDate>Sun, 05 Jan 2025 12:00:00 GMT</pubDate>
-            <guid isPermaLink="true">https://denalitechs.com/blogs/how-to-choose-smart-home-installer/</guid>
-            <category>Tips</category>
+            <title>190-Inch Motorized Projector Screen Installation: What Goes Into a Serious Theater Build</title>
+            <link>https://denalitechs.com/blogs/motorized-projector-screen-installation-guide/</link>
+            <guid>https://denalitechs.com/blogs/motorized-projector-screen-installation-guide/</guid>
+            <description>A large motorized projector screen install requires more than hanging a screen. This post covers planning, mounting, control, and theater integration.</description>
+            <pubDate>Thu, 04 Jun 2026 12:00:00 GMT</pubDate>
         </item>
-        
         <item>
-            <title>How to Fix WiFi Dead Zones: Complete Guide to Whole-Home WiFi Coverage</title>
-            <link>https://denalitechs.com/blogs/wifi-dead-zones-fix-guide/</link>
-            <description>Struggling with WiFi dead zones? Learn how to fix slow WiFi, eliminate dead spots, and get perfect coverage throughout your home. Professional WiFi installation guide for Chicago homeowners.</description>
-            <pubDate>Sat, 04 Jan 2025 12:00:00 GMT</pubDate>
-            <guid isPermaLink="true">https://denalitechs.com/blogs/wifi-dead-zones-fix-guide/</guid>
-            <category>Smart Home Guide</category>
+            <title>18U Middle Atlantic AV Rack Build Time-Lapse: What a Clean Rack Installation Should Look Like</title>
+            <link>https://denalitechs.com/blogs/middle-atlantic-av-rack-build-guide/</link>
+            <guid>https://denalitechs.com/blogs/middle-atlantic-av-rack-build-guide/</guid>
+            <description>This 18U Middle Atlantic rack build shows how planning, cable discipline, and proper layout create a cleaner and more serviceable AV system.</description>
+            <pubDate>Thu, 04 Jun 2026 12:00:00 GMT</pubDate>
         </item>
-        
         <item>
-            <title>Control4 vs URC: Which Smart Home System is Right for You?</title>
-            <link>https://denalitechs.com/blogs/control4-vs-urc-comparison/</link>
-            <description>Complete comparison of Control4 vs URC smart home systems. Learn the differences, pros, cons, and which system fits your needs. Expert advice from authorized dealers in Chicago.</description>
-            <pubDate>Fri, 03 Jan 2025 12:00:00 GMT</pubDate>
-            <guid isPermaLink="true">https://denalitechs.com/blogs/control4-vs-urc-comparison/</guid>
-            <category>Buying Guide</category>
+            <title>SANUS CFR2127 AV Rack Guide: What a Serviceable Home Theater Rack Should Look Like</title>
+            <link>https://denalitechs.com/blogs/sanus-cfr2127-rack-guide/</link>
+            <guid>https://denalitechs.com/blogs/sanus-cfr2127-rack-guide/</guid>
+            <description>This SANUS CFR2127 rack walkthrough shows what separates a clean, serviceable theater rack from a pile of expensive gear with no long-term plan.</description>
+            <pubDate>Thu, 04 Jun 2026 12:00:00 GMT</pubDate>
         </item>
-        
         <item>
-            <title>How Much Does Smart Home Automation Cost? Complete Pricing Guide 2026</title>
-            <link>https://denalitechs.com/blogs/how-much-does-smart-home-automation-cost/</link>
-            <description>Smart home automation costs explained. Get transparent pricing for WiFi systems ($2,000+), smart home packages ($8,000-$25,000), and home theaters ($15,000+). Free consultation available in Chicago.</description>
-            <pubDate>Thu, 02 Jan 2025 12:00:00 GMT</pubDate>
-            <guid isPermaLink="true">https://denalitechs.com/blogs/how-much-does-smart-home-automation-cost/</guid>
-            <category>Smart Home Guide</category>
+            <title>Salamander Oslo 617 with McIntosh MC255: How to Build a Clean High-End AV Cabinet</title>
+            <link>https://denalitechs.com/blogs/salamander-oslo-mc255-av-cabinet-guide/</link>
+            <guid>https://denalitechs.com/blogs/salamander-oslo-mc255-av-cabinet-guide/</guid>
+            <description>A high-end AV cabinet should handle ventilation, cable routing, and component layout without compromising the room. This Salamander Oslo build shows how.</description>
+            <pubDate>Thu, 04 Jun 2026 12:00:00 GMT</pubDate>
         </item>
-        
         <item>
-            <title>URC Remote Programming Guide: Get Your Universal Remote Working Perfectly</title>
-            <link>https://denalitechs.com/blogs/urc-remote-programming-guide/</link>
-            <description>Learn how to program your URC remote control to control everything in your smart home - TV, audio, lights, shades, and more.</description>
-            <pubDate>Mon, 15 Jan 2024 12:00:00 GMT</pubDate>
-            <guid isPermaLink="true">https://denalitechs.com/blogs/urc-remote-programming-guide/</guid>
-            <category>URC Systems</category>
+            <title>McIntosh and Bowers &amp; Wilkins Listening Room Guide: What high-end listening rooms Require</title>
+            <link>https://denalitechs.com/blogs/mcintosh-bowers-wilkins-listening-room-guide/</link>
+            <guid>https://denalitechs.com/blogs/mcintosh-bowers-wilkins-listening-room-guide/</guid>
+            <description>This high-end listening room shows what high-end listening rooms demand: system matching, clean installation, careful layout, and equipment that belongs together.</description>
+            <pubDate>Thu, 04 Jun 2026 12:00:00 GMT</pubDate>
         </item>
-        
         <item>
-            <title>Smart Home Buyer's Guide: Everything You Need to Know Before Investing</title>
-            <link>https://denalitechs.com/blogs/smart-home-buyers-guide/</link>
-            <description>Everything you need to know before investing in smart home technology. Expert tips and recommendations.</description>
-            <pubDate>Sat, 20 Jan 2024 12:00:00 GMT</pubDate>
-            <guid isPermaLink="true">https://denalitechs.com/blogs/smart-home-buyers-guide/</guid>
-            <category>Buying Guide</category>
+            <title>McIntosh MC452 in a Salamander Cabinet: What a Proper Hi-Fi Cabinet Install Needs</title>
+            <link>https://denalitechs.com/blogs/mcintosh-mc452-salamander-cabinet-guide/</link>
+            <guid>https://denalitechs.com/blogs/mcintosh-mc452-salamander-cabinet-guide/</guid>
+            <description>A large amplifier install inside furniture only works when heat, cable management, and component spacing are handled correctly. This MC452 setup is a clear example.</description>
+            <pubDate>Thu, 04 Jun 2026 12:00:00 GMT</pubDate>
         </item>
-        
         <item>
-            <title>10 Questions to Ask Your Installer Before Hiring</title>
-            <link>https://denalitechs.com/blogs/questions-to-ask-installer/</link>
-            <description>Make sure you're hiring the right company. Essential questions every homeowner should ask.</description>
-            <pubDate>Thu, 25 Jan 2024 12:00:00 GMT</pubDate>
-            <guid isPermaLink="true">https://denalitechs.com/blogs/questions-to-ask-installer/</guid>
-            <category>Tips</category>
+            <title>SANUS 15U Mini AV Rack Guide: How Compact Theater Racks Stay Clean and Reliable</title>
+            <link>https://denalitechs.com/blogs/sanus-15u-mini-rack-guide/</link>
+            <guid>https://denalitechs.com/blogs/sanus-15u-mini-rack-guide/</guid>
+            <description>Compact racks need the same discipline as larger builds. This SANUS 15U example shows how to keep a smaller theater rack organized, cool, and serviceable.</description>
+            <pubDate>Thu, 04 Jun 2026 12:00:00 GMT</pubDate>
         </item>
-        
         <item>
-            <title>URC MX-990 Remote Review: Complete Analysis</title>
-            <link>https://denalitechs.com/blogs/urc-mx-990-review/</link>
-            <description>Complete review of the URC MX-990 universal remote control. Learn about battery life, features, pros, cons, and whether it's right for your smart home.</description>
-            <pubDate>Tue, 30 Jan 2024 12:00:00 GMT</pubDate>
-            <guid isPermaLink="true">https://denalitechs.com/blogs/urc-mx-990-review/</guid>
-            <category>Product Review</category>
+            <title>Plex Media Server Build Guide: What a Reliable Home Media Server Actually Needs</title>
+            <link>https://denalitechs.com/blogs/plex-media-server-build-guide/</link>
+            <guid>https://denalitechs.com/blogs/plex-media-server-build-guide/</guid>
+            <description>A Plex media server only works well when storage, airflow, power, and system layout are planned correctly. This build shows what that looks like in practice.</description>
+            <pubDate>Thu, 04 Jun 2026 12:00:00 GMT</pubDate>
         </item>
-        
         <item>
-            <title>Control4 SR-260 Remote Review: Complete Analysis</title>
-            <link>https://denalitechs.com/blogs/control4-remote-review/</link>
-            <description>Complete review of the Control4 SR-260 universal remote control. Learn about battery life, features, pros, cons, and whether the SR-260 is right for your smart home.</description>
-            <pubDate>Tue, 30 Jan 2024 12:00:00 GMT</pubDate>
-            <guid isPermaLink="true">https://denalitechs.com/blogs/control4-remote-review/</guid>
-            <category>Product Review</category>
+            <title>Best Smart Home Brands We Trust for Chicago Homes</title>
+            <link>https://denalitechs.com/blogs/best-smart-home-brands-chicago-guide/</link>
+            <guid>https://denalitechs.com/blogs/best-smart-home-brands-chicago-guide/</guid>
+            <description>See the smart home brands Denali Tech trusts for Chicago-area homes, including Control4, URC, Lutron, Sonos, Araknis, OvrC, WattBox, and more.</description>
+            <pubDate>Thu, 04 Jun 2026 12:00:00 GMT</pubDate>
         </item>
-        
         <item>
-            <title>Control4 Helo Remote Review: Non-Touch Version</title>
-            <link>https://denalitechs.com/blogs/urc-universal-remote-review/</link>
-            <description>Complete review of the Control4 Helo remote control (non-touch version). Learn about battery life, features, pros, cons, and whether the Helo is right for your smart home.</description>
-            <pubDate>Tue, 30 Jan 2024 12:00:00 GMT</pubDate>
-            <guid isPermaLink="true">https://denalitechs.com/blogs/urc-universal-remote-review/</guid>
-            <category>Product Review</category>
-        </item>
-        
-        <item>
-            <title>Control4 NEEO Remote Review: Sleek Design &amp; Features</title>
-            <link>https://denalitechs.com/blogs/modern-smart-home-remote-review/</link>
-            <description>Complete review of the Control4 NEEO remote control. Learn about battery life, features, pros, cons, and whether the NEEO is right for your smart home.</description>
-            <pubDate>Tue, 30 Jan 2024 12:00:00 GMT</pubDate>
-            <guid isPermaLink="true">https://denalitechs.com/blogs/modern-smart-home-remote-review/</guid>
-            <category>Product Review</category>
-        </item>
-        
-        <item>
-            <title>Control4 Helo Touch Remote Review: Complete Analysis</title>
-            <link>https://denalitechs.com/blogs/control4-helo-touch-review/</link>
-            <description>Complete review of the Control4 Helo Touch remote control. Learn about battery life, features, pros, cons, and whether the Helo Touch is right for your smart home.</description>
-            <pubDate>Tue, 30 Jan 2024 12:00:00 GMT</pubDate>
-            <guid isPermaLink="true">https://denalitechs.com/blogs/control4-helo-touch-review/</guid>
-            <category>Product Review</category>
+            <title>What Is OvrC? Why Remote Monitoring Matters for Smart Homes</title>
+            <link>https://denalitechs.com/blogs/ovrc-remote-monitoring-guide/</link>
+            <guid>https://denalitechs.com/blogs/ovrc-remote-monitoring-guide/</guid>
+            <description>Learn what OvrC is, how remote monitoring helps smart homes, and why professionally installed systems are easier to support, maintain, and fix when problems happen.</description>
+            <pubDate>Thu, 04 Jun 2026 12:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
-
