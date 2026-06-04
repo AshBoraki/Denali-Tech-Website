@@ -278,6 +278,44 @@
       font-size: 0.94rem;
       line-height: 1.6;
     }
+    .stage-grid,
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: clamp(24px, 5vw, 56px);
+      align-items: start;
+    }
+    .faq-grid {
+      grid-template-columns: 0.82fr 1.18fr;
+    }
+    .stage-list,
+    .faq-list {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .stage-item,
+    .faq-item {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.055);
+    }
+    .stage-item strong,
+    .faq-item strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--text);
+      font-size: 1.02rem;
+    }
+    .stage-item p,
+    .faq-item p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
     .cta {
       text-align: center;
       border-top: 1px solid var(--line);
@@ -310,7 +348,7 @@
       .nav { min-height: 70px; }
       .nav-links { display: none; }
       .hero { min-height: auto; padding: 54px 0 38px; }
-      .visual-proof { grid-template-columns: 1fr; }
+      .visual-proof, .stage-grid, .faq-grid { grid-template-columns: 1fr; }
       .asset-strip { grid-template-columns: 1fr; }
       .hero-grid, .split { grid-template-columns: 1fr; gap: 28px; }
       h1 { max-width: 11ch; font-size: clamp(2.65rem, 13vw, 4.1rem); }
@@ -462,6 +500,38 @@
     ]
   }
   </script>
+  <script type="application/ld+json" data-faq>
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do I need more WiFi access points or better placement?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sometimes the answer is placement, wiring, or router cleanup. Denali Tech checks the network backbone before adding hardware."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can network problems affect cameras and smart home gear?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Dropping cameras, slow app control, unreliable lighting, and remote-control issues often trace back to network or power problems."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I send before a home WiFi visit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Send photos of the modem, router, network closet, access points, camera recorder, and the rooms or devices having problems."
+        }
+      }
+    ]
+  }
+  </script>
     <link rel="stylesheet" href="/assets/css/site-chrome.css?v=20260602h">
     <script src="/assets/js/site-chrome.js?v=20260602h" defer></script>
 </head>
@@ -534,6 +604,21 @@
     </section>
 
     <section class="section">
+      <div class="stage-grid">
+        <div>
+          <div class="eyebrow">Start here</div>
+          <h2>Network work depends on what is failing.</h2>
+          <p class="service-area">A real network page should help someone describe the problem: coverage, speed, roaming, smart-home drops, cameras, or a messy equipment area.</p>
+        </div>
+        <ul class="stage-list" aria-label="Home network project paths">
+          <li class="stage-item"><strong>Existing WiFi problems</strong><p>We check internet service, router placement, access points, wiring, roaming, interference, and device load before selling gear.</p></li>
+          <li class="stage-item"><strong>New build or remodel</strong><p>We plan wired drops, access point locations, rack space, PoE switching, cameras, TVs, audio, and future smart-home devices.</p></li>
+          <li class="stage-item"><strong>Smart-home reliability</strong><p>We stabilize the network that cameras, remotes, lighting, shades, thermostats, and control processors depend on every day.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
       <div class="split">
         <div>
           <div class="eyebrow">Our approach</div>
@@ -565,6 +650,19 @@
       <div class="asset-strip" aria-label="Home network planning visuals">
         <figure><img src="/assets/brandfolder/adi/araknis-network-wiring.jpg" alt="Araknis network wiring planning reference" loading="lazy" width="243" height="162"><figcaption>Network wiring and access points</figcaption></figure>
         <figure><img src="/assets/brandfolder/adi/wattbox-rack-install.jpg" alt="WattBox rack power management reference" loading="lazy" width="243" height="162"><figcaption>Remote power reset and serviceability</figcaption></figure>
+      </div>
+    </section>
+    <section class="section">
+      <div class="faq-grid">
+        <div>
+          <div class="eyebrow">Common questions</div>
+          <h2>What homeowners ask before WiFi work.</h2>
+        </div>
+        <ul class="faq-list" aria-label="Home network questions">
+          <li class="faq-item"><strong>Do I need more access points or better placement?</strong><p>Sometimes the answer is placement, wiring, or router cleanup. We check the backbone before adding hardware.</p></li>
+          <li class="faq-item"><strong>Can network problems affect cameras and smart home gear?</strong><p>Yes. Dropping cameras, slow app control, unreliable lighting, and remote-control issues often trace back to network or power problems.</p></li>
+          <li class="faq-item"><strong>What should I send before a visit?</strong><p>Send photos of the modem, router, network closet, access points, camera recorder, and the rooms or devices having problems.</p></li>
+        </ul>
       </div>
     </section>
     <section class="section cta">
