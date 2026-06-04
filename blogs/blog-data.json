@@ -1,6 +1,206 @@
 {
   "posts": [
     {
+      "id": "control4-scenes-routines-guide",
+      "title": "Control4 Scenes and Routines: How a Smart Home Should Feel Day to Day",
+      "slug": "control4-scenes-routines-guide",
+      "url": "/blogs/control4-scenes-routines-guide/",
+      "excerpt": "A practical homeowner guide to Control4 scenes, routines, room control, and why smart home automation should feel calm instead of complicated.",
+      "category": "Smart Home Guide",
+      "tags": [
+        "Control4",
+        "Scenes",
+        "Routines",
+        "Home Automation"
+      ],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-06-03",
+      "updatedDate": "2026-06-03",
+      "readingTime": 7,
+      "heroImage": "/Video/Blogs%20imge/What%20is%20Control4%20Complete%20Guide%20for%20Homeowners%202025.webp",
+      "featured": true
+    },
+    {
+      "id": "control4-apple-homekit-guide",
+      "title": "Control4 and Apple HomeKit: What Homeowners Should Understand",
+      "slug": "control4-apple-homekit-guide",
+      "url": "/blogs/control4-apple-homekit-guide/",
+      "excerpt": "Learn how to think about Control4, Apple HomeKit, phones, tablets, and voice control without turning your smart home into a pile of competing apps.",
+      "category": "Smart Home Guide",
+      "tags": [
+        "Control4",
+        "Apple HomeKit",
+        "Smart Home Apps",
+        "Voice Control"
+      ],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-06-03",
+      "updatedDate": "2026-06-03",
+      "readingTime": 7,
+      "heroImage": "/Video/Brands/Denali%20techControl4.webp",
+      "featured": true
+    },
+    {
+      "id": "smart-home-takeover-service-guide",
+      "title": "Smart Home Takeover Service: When an Existing System Needs a Reset",
+      "slug": "smart-home-takeover-service-guide",
+      "url": "/blogs/smart-home-takeover-service-guide/",
+      "excerpt": "A homeowner guide to taking over an existing Control4, URC, lighting, AV, WiFi, or theater system without tearing everything out first.",
+      "category": "Troubleshooting",
+      "tags": [
+        "Smart Home Support",
+        "Control4 Service",
+        "System Takeover",
+        "Troubleshooting"
+      ],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-06-03",
+      "updatedDate": "2026-06-03",
+      "readingTime": 8,
+      "heroImage": "/Video/Blogs%20imge/Smart%20Home%20Not%20Working%3F%2010%20Common%20Issues%20%26%20Professional%20Solutions.webp",
+      "featured": true
+    },
+    {
+      "id": "araknis-access-point-placement-guide",
+      "title": "Araknis Access Point Placement: How Reliable Smart Home WiFi Gets Designed",
+      "slug": "araknis-access-point-placement-guide",
+      "url": "/blogs/araknis-access-point-placement-guide/",
+      "excerpt": "A practical guide to access point placement, wiring, coverage, and why serious smart homes need planned WiFi instead of random boosters.",
+      "category": "Smart Home Guide",
+      "tags": [
+        "Araknis",
+        "WiFi",
+        "Access Points",
+        "Networking"
+      ],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-06-03",
+      "updatedDate": "2026-06-03",
+      "readingTime": 7,
+      "heroImage": "/Video/Brands/Denali%20tech%20raknis.webp",
+      "featured": true
+    },
+    {
+      "id": "outdoor-tv-audio-chicago-guide",
+      "title": "Outdoor TV, Speakers and WiFi for Chicago Backyards: What to Plan First",
+      "slug": "outdoor-tv-audio-chicago-guide",
+      "url": "/blogs/outdoor-tv-audio-chicago-guide/",
+      "excerpt": "Plan a reliable outdoor entertainment system with weather-rated displays, speakers, WiFi, wiring, power, lighting, and control that can survive real Chicago use.",
+      "category": "Smart Home Guide",
+      "tags": [
+        "Outdoor TV",
+        "Outdoor Audio",
+        "SunBrite",
+        "Backyard AV"
+      ],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-06-03",
+      "updatedDate": "2026-06-03",
+      "readingTime": 8,
+      "heroImage": "/Video/Project%20showcases%20/outdoor-tv-and-surround-system.webp",
+      "featured": true
+    },
+    {
+      "id": "triad-home-theater-speaker-planning-guide",
+      "title": "Triad Home Theater Speaker Planning: What to Decide Before the Room Is Built",
+      "slug": "triad-home-theater-speaker-planning-guide",
+      "url": "/blogs/triad-home-theater-speaker-planning-guide/",
+      "excerpt": "A plain-English guide to theater speaker planning, room layout, screen placement, subwoofers, in-wall speakers, and why design choices should happen early.",
+      "category": "Smart Home Guide",
+      "tags": [
+        "Triad",
+        "Home Theater",
+        "Speakers",
+        "Media Room"
+      ],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-06-03",
+      "updatedDate": "2026-06-03",
+      "readingTime": 8,
+      "heroImage": "/Video/Project%20showcases%20/basement%20home%20theater%20and%20sets.webp",
+      "featured": true
+    },
+    {
+      "id": "episode-whole-home-audio-planning-guide",
+      "title": "Episode Speakers and Whole-Home Audio: What to Plan Before Cutting Holes",
+      "slug": "episode-whole-home-audio-planning-guide",
+      "url": "/blogs/episode-whole-home-audio-planning-guide/",
+      "excerpt": "A homeowner guide to distributed audio zones, speaker placement, volume control, outdoor audio, and whole-home music planning.",
+      "category": "Smart Home Guide",
+      "tags": [
+        "Episode",
+        "Whole Home Audio",
+        "Speakers",
+        "Distributed Audio"
+      ],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-06-03",
+      "updatedDate": "2026-06-03",
+      "readingTime": 7,
+      "heroImage": "/Video/Blogs%20imge/Whole%20Home%20Audio%20Systems-Sonos%20vs%20Traditional%20Multi-Room-Audio.webp",
+      "featured": true
+    },
+    {
+      "id": "smart-home-prewire-builders-guide",
+      "title": "Smart Home Prewire Checklist for Builders and Remodels",
+      "slug": "smart-home-prewire-builders-guide",
+      "url": "/blogs/smart-home-prewire-builders-guide/",
+      "excerpt": "A practical prewire checklist for builders, remodels, and homeowners planning smart lighting, shades, WiFi, cameras, audio, theater, and future service.",
+      "category": "Buying Guide",
+      "tags": [
+        "Prewire",
+        "Builders",
+        "Remodeling",
+        "Smart Home Planning"
+      ],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-06-03",
+      "updatedDate": "2026-06-03",
+      "readingTime": 9,
+      "heroImage": "/Video/Blogs%20imge/YouTube/av-rack-wire-management-guide.png",
+      "featured": true
+    },
+    {
+      "id": "smart-home-designers-architects-guide",
+      "title": "Smart Home Planning for Designers and Architects: Keep Technology Clean",
+      "slug": "smart-home-designers-architects-guide",
+      "url": "/blogs/smart-home-designers-architects-guide/",
+      "excerpt": "How designers and architects can plan smart lighting, shades, AV, speakers, WiFi, cameras, and controls without cluttering the finished space.",
+      "category": "Smart Home Guide",
+      "tags": [
+        "Designers",
+        "Architects",
+        "Hidden AV",
+        "Smart Home Planning"
+      ],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-06-03",
+      "updatedDate": "2026-06-03",
+      "readingTime": 8,
+      "heroImage": "/Video/Project%20showcases%20/Sound%20%26%20Light%20Harmony.webp",
+      "featured": true
+    },
+    {
+      "id": "luma-security-camera-planning-guide",
+      "title": "Luma Security Camera Planning: What Homeowners Should Decide Before Installation",
+      "slug": "luma-security-camera-planning-guide",
+      "url": "/blogs/luma-security-camera-planning-guide/",
+      "excerpt": "Plan a cleaner camera system by deciding camera goals, viewing angles, recorder location, network wiring, app access, and privacy before installation starts.",
+      "category": "Smart Home Guide",
+      "tags": [
+        "Luma",
+        "Security Cameras",
+        "Surveillance",
+        "Smart Home Security"
+      ],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-06-03",
+      "updatedDate": "2026-06-03",
+      "readingTime": 7,
+      "heroImage": "/Video/Brands/%20Denali%20tech%20Luma.webp",
+      "featured": true
+    },
+    {
       "id": "luxul-network-setup-guide",
       "title": "Luxul Epic 5 Router and PoE Switch Setup for a Reliable Smart Home Network",
       "slug": "luxul-network-setup-guide",

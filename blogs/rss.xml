@@ -6,13 +6,103 @@
         <link>https://denalitechs.com/blogs/</link>
         <description>Expert tips, guides, and insights about smart home technology, home automation, and AV systems from Chicago's trusted smart home experts.</description>
         <language>en-us</language>
-        <lastBuildDate>Fri, 24 Apr 2026 05:30:00 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 03 Jun 2026 12:00:00 GMT</lastBuildDate>
         <atom:link href="https://denalitechs.com/blogs/rss.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://denalitechs.com/Video/logo.JPG</url>
             <title>Denali Tech Blog</title>
             <link>https://denalitechs.com/blogs/</link>
         </image>
+
+        <item>
+            <title>Control4 Scenes and Routines: How a Smart Home Should Feel Day to Day</title>
+            <link>https://denalitechs.com/blogs/control4-scenes-routines-guide/</link>
+            <description>A practical homeowner guide to Control4 scenes, routines, room control, and why smart home automation should feel calm instead of complicated.</description>
+            <pubDate>Wed, 03 Jun 2026 12:00:00 GMT</pubDate>
+            <guid isPermaLink="true">https://denalitechs.com/blogs/control4-scenes-routines-guide/</guid>
+            <category>Smart Home Guide</category>
+        </item>
+
+        <item>
+            <title>Control4 and Apple HomeKit: What Homeowners Should Understand</title>
+            <link>https://denalitechs.com/blogs/control4-apple-homekit-guide/</link>
+            <description>Learn how to think about Control4, Apple HomeKit, phones, tablets, and voice control without turning your smart home into a pile of competing apps.</description>
+            <pubDate>Wed, 03 Jun 2026 12:00:00 GMT</pubDate>
+            <guid isPermaLink="true">https://denalitechs.com/blogs/control4-apple-homekit-guide/</guid>
+            <category>Smart Home Guide</category>
+        </item>
+
+        <item>
+            <title>Smart Home Takeover Service: When an Existing System Needs a Reset</title>
+            <link>https://denalitechs.com/blogs/smart-home-takeover-service-guide/</link>
+            <description>A homeowner guide to taking over an existing Control4, URC, lighting, AV, WiFi, or theater system without tearing everything out first.</description>
+            <pubDate>Wed, 03 Jun 2026 12:00:00 GMT</pubDate>
+            <guid isPermaLink="true">https://denalitechs.com/blogs/smart-home-takeover-service-guide/</guid>
+            <category>Troubleshooting</category>
+        </item>
+
+        <item>
+            <title>Araknis Access Point Placement: How Reliable Smart Home WiFi Gets Designed</title>
+            <link>https://denalitechs.com/blogs/araknis-access-point-placement-guide/</link>
+            <description>A practical guide to access point placement, wiring, coverage, and why serious smart homes need planned WiFi instead of random boosters.</description>
+            <pubDate>Wed, 03 Jun 2026 12:00:00 GMT</pubDate>
+            <guid isPermaLink="true">https://denalitechs.com/blogs/araknis-access-point-placement-guide/</guid>
+            <category>Smart Home Guide</category>
+        </item>
+
+        <item>
+            <title>Outdoor TV, Speakers and WiFi for Chicago Backyards: What to Plan First</title>
+            <link>https://denalitechs.com/blogs/outdoor-tv-audio-chicago-guide/</link>
+            <description>Plan a reliable outdoor entertainment system with weather-rated displays, speakers, WiFi, wiring, power, lighting, and control that can survive real Chicago use.</description>
+            <pubDate>Wed, 03 Jun 2026 12:00:00 GMT</pubDate>
+            <guid isPermaLink="true">https://denalitechs.com/blogs/outdoor-tv-audio-chicago-guide/</guid>
+            <category>Smart Home Guide</category>
+        </item>
+
+        <item>
+            <title>Triad Home Theater Speaker Planning: What to Decide Before the Room Is Built</title>
+            <link>https://denalitechs.com/blogs/triad-home-theater-speaker-planning-guide/</link>
+            <description>A plain-English guide to theater speaker planning, room layout, screen placement, subwoofers, in-wall speakers, and why design choices should happen early.</description>
+            <pubDate>Wed, 03 Jun 2026 12:00:00 GMT</pubDate>
+            <guid isPermaLink="true">https://denalitechs.com/blogs/triad-home-theater-speaker-planning-guide/</guid>
+            <category>Smart Home Guide</category>
+        </item>
+
+        <item>
+            <title>Episode Speakers and Whole-Home Audio: What to Plan Before Cutting Holes</title>
+            <link>https://denalitechs.com/blogs/episode-whole-home-audio-planning-guide/</link>
+            <description>A homeowner guide to distributed audio zones, speaker placement, volume control, outdoor audio, and whole-home music planning.</description>
+            <pubDate>Wed, 03 Jun 2026 12:00:00 GMT</pubDate>
+            <guid isPermaLink="true">https://denalitechs.com/blogs/episode-whole-home-audio-planning-guide/</guid>
+            <category>Smart Home Guide</category>
+        </item>
+
+        <item>
+            <title>Smart Home Prewire Checklist for Builders and Remodels</title>
+            <link>https://denalitechs.com/blogs/smart-home-prewire-builders-guide/</link>
+            <description>A practical prewire checklist for builders, remodels, and homeowners planning smart lighting, shades, WiFi, cameras, audio, theater, and future service.</description>
+            <pubDate>Wed, 03 Jun 2026 12:00:00 GMT</pubDate>
+            <guid isPermaLink="true">https://denalitechs.com/blogs/smart-home-prewire-builders-guide/</guid>
+            <category>Buying Guide</category>
+        </item>
+
+        <item>
+            <title>Smart Home Planning for Designers and Architects: Keep Technology Clean</title>
+            <link>https://denalitechs.com/blogs/smart-home-designers-architects-guide/</link>
+            <description>How designers and architects can plan smart lighting, shades, AV, speakers, WiFi, cameras, and controls without cluttering the finished space.</description>
+            <pubDate>Wed, 03 Jun 2026 12:00:00 GMT</pubDate>
+            <guid isPermaLink="true">https://denalitechs.com/blogs/smart-home-designers-architects-guide/</guid>
+            <category>Smart Home Guide</category>
+        </item>
+
+        <item>
+            <title>Luma Security Camera Planning: What Homeowners Should Decide Before Installation</title>
+            <link>https://denalitechs.com/blogs/luma-security-camera-planning-guide/</link>
+            <description>Plan a cleaner camera system by deciding camera goals, viewing angles, recorder location, network wiring, app access, and privacy before installation starts.</description>
+            <pubDate>Wed, 03 Jun 2026 12:00:00 GMT</pubDate>
+            <guid isPermaLink="true">https://denalitechs.com/blogs/luma-security-camera-planning-guide/</guid>
+            <category>Smart Home Guide</category>
+        </item>
 
         <item>
             <title>Smart Home Automation for Beginners: Complete Starter Guide 2026</title>
