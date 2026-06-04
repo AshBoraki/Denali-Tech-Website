@@ -180,6 +180,25 @@ Observed asset themes:
 - Keep the blog about homeowner outcomes first, products second.
 - Avoid copying manufacturer marketing copy word-for-word.
 
+## Current ADI Brandfolder review - June 3, 2026
+
+Live ADI Brandfolder evidence:
+- Marketing Materials now shows 19 collections and 14,556 assets.
+- Control4 Marketing and Sales Materials shows current X4, routines, HomeKit, tablet, mobile, theater, lighting, Halo, Triad, SunBrite, Episode, Luma, and outdoor asset themes.
+- The visible ADI content agreement allows marketing, sales, and promotional use related to the products and services, with basic crop/resize/format edits, but says not to misrepresent products, imply endorsement/certification where none exists, or significantly alter context.
+
+Ten must-have Denali blog topics added from this review:
+1. Control4 Scenes and Routines
+2. Control4 and Apple HomeKit
+3. Smart Home Takeover Service
+4. Araknis Access Point Placement
+5. Outdoor TV, Speakers and WiFi
+6. Triad Home Theater Speaker Planning
+7. Episode Whole-Home Audio Planning
+8. Smart Home Prewire for Builders and Remodels
+9. Smart Home Planning for Designers and Architects
+10. Luma Security Camera Planning
+
 ## Current website support already available locally
 Local Denali Tech images already support these brand blogs:
 - Control4
