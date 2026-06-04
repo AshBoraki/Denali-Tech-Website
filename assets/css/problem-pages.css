@@ -273,6 +273,52 @@ h3 {
   line-height: 1.65;
 }
 
+.stage-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(24px, 5vw, 56px);
+  align-items: start;
+}
+
+.stage-list,
+.faq-list {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stage-item,
+.faq-item {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.78);
+  padding: 18px;
+}
+
+.stage-item strong,
+.faq-item strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--text);
+  font-size: 1.02rem;
+}
+
+.stage-item p,
+.faq-item p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  gap: clamp(22px, 4vw, 46px);
+  align-items: start;
+}
+
 .check-list {
   display: grid;
   gap: 16px;
@@ -411,7 +457,9 @@ h3 {
   }
 
   .hero-grid,
-  .split {
+  .split,
+  .stage-grid,
+  .faq-grid {
     grid-template-columns: 1fr;
   }
 
