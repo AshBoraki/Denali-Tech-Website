@@ -254,13 +254,13 @@
     addLogoImage(logo);
     logo.appendChild(makeElement("span", "", "Denali Tech"));
 
-    var kicker = makeElement("p", "dt-site-footer-kicker", "Chicago-area smart home, WiFi, AV, and control help");
-    var title = makeElement("h2", "", "Fix the right thing first.");
+    var kicker = makeElement("p", "dt-site-footer-kicker", "Chicago-area home automation, WiFi, AV, and control services");
+    var title = makeElement("h2", "", "Plan the right system from the start.");
     title.id = "dt-footer-title";
     var description = makeElement(
       "p",
       "dt-site-footer-lead",
-      "Send the problem, photos, and city. We will help you find the practical next step before you buy more gear."
+      "Send the room, the system, or the upgrade you want. We will help you map the right next step before the work starts."
     );
 
     var actions = makeElement("div", "dt-site-footer-actions");
@@ -279,8 +279,8 @@
     proof.appendChild(makeElement("h3", "", "Why homeowners call Denali Tech"));
     proof.appendChild(buildProofList([
       {
-        title: "Clear diagnosis first",
-        copy: "We look for the real failure before recommending equipment."
+        title: "Clear scope first",
+        copy: "We map the right system, equipment, and project path before recommending work."
       },
       {
         title: "Clean installs",
@@ -302,7 +302,7 @@
 
     var linkBar = makeElement("nav", "dt-site-footer-linkbar");
     linkBar.setAttribute("aria-label", "Footer navigation");
-    linkBar.appendChild(buildFooterLinkGroup("Fix", [
+    linkBar.appendChild(buildFooterLinkGroup("Services", [
       { label: "Smart Home Control", href: "/smart-home-control/" },
       { label: "Home Theater", href: "/home-theater-room/" },
       { label: "WiFi & Networking", href: "/residential-wifi-network/" },
