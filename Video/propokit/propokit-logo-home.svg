@@ -1,0 +1,11 @@
+<svg width="128" height="128" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="propokit-stroke" x1="3" y1="3" x2="20" y2="21" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FF6B35"/>
+      <stop offset="0.55" stop-color="#F7931E"/>
+      <stop offset="1" stop-color="#FFC857"/>
+    </linearGradient>
+  </defs>
+  <path d="M12 2L2 7V17L12 22L22 17V7L12 2Z" stroke="url(#propokit-stroke)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M2 7L12 12M12 22V12M22 7L12 12M17 4.5L7 9.5" stroke="url(#propokit-stroke)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
