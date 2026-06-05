@@ -1,39 +1,44 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="/assets/js/theme.js?v=20260602"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Denali Tech Hub | DTNT, PropoKit & Home Automation</title>
+  <meta
+    name="description"
+    content="Choose the right Denali Tech path: DTNT Windows desktop software, PropoKit proposal workflow software, or Denali Tech home automation and custom AV solutions."
+  />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://ash2denalitechs.com/hub/" />
+  <meta property="og:title" content="Denali Tech Hub" />
+  <meta
+    property="og:description"
+    content="Three simple links for DTNT, PropoKit, and Denali Tech home automation."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ash2denalitechs.com/hub/" />
+  <meta property="og:image" content="https://ash2denalitechs.com/Video/logo.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script src="/assets/js/theme.js?v=20260602"></script>
   <script src="/assets/js/microsoft-uet.js" defer></script>
   <script src="/assets/js/dtnt-outbound-tracking.js" defer></script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Denali Tech Hub | Projects, Tools, Software &amp; Contact</title>
-  <meta name="description" content="Start with the right Denali Tech path: home projects, real install work, PropoKit, DTNT network tools, videos, updates, and direct contact.">
-  <link rel="canonical" href="https://denalitechs.com/hub/">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Denali Tech Hub | Projects, Tools, Software &amp; Contact">
-  <meta property="og:description" content="Start with the right Denali Tech path: home projects, real install work, PropoKit, DTNT network tools, videos, updates, and direct contact.">
-  <meta property="og:url" content="https://denalitechs.com/hub/">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Denali Tech Hub | Projects, Tools, Software &amp; Contact">
-  <meta name="twitter:description" content="Start with the right Denali Tech path: home projects, real install work, PropoKit, DTNT network tools, videos, updates, and direct contact.">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
   <style>
     :root {
-      color-scheme: dark;
-      --bg: #0a0d18;
-      --surface: rgba(255, 255, 255, 0.04);
-      --surface-hover: rgba(255, 255, 255, 0.065);
-      --ink: #f8fafc;
-      --muted: #cbd5e1;
-      --soft: #94a3b8;
-      --line: rgba(255, 255, 255, 0.12);
-      --line-warm: rgba(249, 115, 22, 0.38);
-      --accent: #f97316;
-      --accent-hover: #fb923c;
-      --font-main: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      --font-heading: Poppins, Inter, ui-sans-serif, system-ui, sans-serif;
+      --hub-ink: #111827;
+      --hub-muted: #5f6b7a;
+      --hub-line: #dce3eb;
+      --hub-soft: #f7f9fb;
+      --hub-card: #ffffff;
+      --hub-blue: #1f5eff;
+      --hub-green: #16836b;
+      --hub-gold: #a35f05;
+      --hub-shadow: 0 18px 46px rgba(17, 24, 39, 0.09);
     }
 
     * {
@@ -46,378 +51,338 @@
 
     body {
       margin: 0;
-      min-height: 100vh;
-      background: var(--bg);
-      color: var(--ink);
-      font-family: var(--font-main);
+      color: var(--hub-ink);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        linear-gradient(180deg, rgba(247, 249, 251, 0.96) 0%, rgba(255, 255, 255, 1) 48%),
+        radial-gradient(circle at top left, rgba(31, 94, 255, 0.08), transparent 32%),
+        #fff;
     }
 
     a {
       color: inherit;
     }
 
-    .wrap {
-      width: min(980px, calc(100% - 32px));
+    .hub-shell-header {
+      width: min(1120px, calc(100% - 40px));
       margin: 0 auto;
-      padding: 28px 0 44px;
+      padding: 24px 0 0;
     }
 
-    .top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding-bottom: 24px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .brand,
-    .top-link {
-      text-decoration: none;
-      font-weight: 800;
-    }
-
-    .brand {
-      font-family: var(--font-heading);
-      font-size: 1rem;
-      letter-spacing: 0;
-    }
-
-    .top-link {
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .top-link:hover,
-    .top-link:focus-visible {
-      color: var(--accent-hover);
-    }
-
-    .intro {
-      display: grid;
-      grid-template-columns: minmax(0, 0.95fr) minmax(260px, 0.55fr);
-      gap: clamp(24px, 6vw, 60px);
-      align-items: end;
-      padding: clamp(34px, 7vw, 68px) 0 30px;
-    }
-
-    .eyebrow {
-      margin: 0 0 12px;
-      color: var(--accent-hover);
-      font-size: 0.78rem;
-      font-weight: 850;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    h1,
-    h2,
-    h3 {
-      font-family: var(--font-heading);
-      letter-spacing: 0;
-    }
-
-    h1 {
-      max-width: 11ch;
-      margin: 0;
-      font-size: clamp(2.65rem, 8vw, 5.5rem);
-      line-height: 0.98;
-    }
-
-    .intro-copy {
-      margin: 0;
-      color: var(--muted);
-      font-size: clamp(1.02rem, 2vw, 1.18rem);
-      line-height: 1.65;
-      font-weight: 560;
-    }
-
-    .primary-actions,
-    .board-actions,
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .primary-actions {
-      margin-top: 18px;
-    }
-
-    .btn {
+    .hub-brand {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      min-height: 44px;
-      padding: 0.72rem 0.95rem;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: transparent;
-      color: var(--ink);
-      text-decoration: none;
-      font-size: 0.95rem;
+      gap: 10px;
+      color: var(--hub-ink);
       font-weight: 800;
+      text-decoration: none;
     }
 
-    .btn:hover,
-    .btn:focus-visible {
-      border-color: var(--line-warm);
-      background: rgba(249, 115, 22, 0.08);
-    }
-
-    .btn-primary {
-      border-color: var(--accent);
-      background: var(--accent);
-      color: #fff;
-    }
-
-    .btn-primary:hover,
-    .btn-primary:focus-visible {
-      border-color: var(--accent-hover);
-      background: var(--accent-hover);
-    }
-
-    .board-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      padding: 12px 0 28px;
-    }
-
-    .board {
-      display: flex;
-      flex-direction: column;
-      min-height: 230px;
-      padding: 20px;
-      border: 1px solid var(--line);
+    .hub-brand img {
+      width: 34px;
+      height: 34px;
       border-radius: 8px;
-      background: var(--surface);
+      object-fit: cover;
     }
 
-    .board:hover {
-      border-color: var(--line-warm);
-      background: var(--surface-hover);
+    .skip-link {
+      position: absolute;
+      left: 16px;
+      top: -80px;
+      z-index: 100;
+      padding: 10px 14px;
+      border-radius: 8px;
+      background: #111827;
+      color: #fff;
+      text-decoration: none;
+      transition: top 160ms ease;
     }
 
-    .board-kicker {
-      margin: 0 0 14px;
-      color: var(--accent-hover);
-      font-size: 0.72rem;
-      font-weight: 850;
-      letter-spacing: 0.1em;
+    .skip-link:focus {
+      top: 16px;
+    }
+
+    .hub-page {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 58px 0 42px;
+    }
+
+    .hub-intro {
+      max-width: 720px;
+      margin: 0 auto 30px;
+      text-align: center;
+    }
+
+    .hub-eyebrow {
+      margin: 0 0 12px;
+      color: var(--hub-blue);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0;
       text-transform: uppercase;
     }
 
-    .board h2 {
+    .hub-intro h1 {
       margin: 0;
-      font-size: clamp(1.32rem, 3vw, 1.85rem);
-      line-height: 1.12;
+      color: var(--hub-ink);
+      font-family: Manrope, Inter, sans-serif;
+      font-size: clamp(2.35rem, 5vw, 4.6rem);
+      line-height: 0.96;
+      letter-spacing: 0;
     }
 
-    .board p {
-      margin: 10px 0 0;
-      color: var(--muted);
-      line-height: 1.58;
-      font-weight: 560;
+    .hub-intro p:last-child {
+      max-width: 540px;
+      margin: 18px auto 0;
+      color: var(--hub-muted);
+      font-size: 1.08rem;
+      line-height: 1.65;
     }
 
-    .board-actions {
-      margin-top: auto;
-      padding-top: 18px;
-    }
-
-    .fallback {
+    .hub-links {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 20px;
-      align-items: center;
-      padding: 24px;
-      border: 1px solid var(--line-warm);
-      border-radius: 8px;
-      background: rgba(249, 115, 22, 0.08);
-    }
-
-    .fallback h2 {
-      margin: 0;
-      font-size: clamp(1.45rem, 4vw, 2.1rem);
-      line-height: 1.12;
-    }
-
-    .fallback p {
-      margin: 8px 0 0;
-      color: var(--muted);
-      line-height: 1.6;
-      font-weight: 560;
-    }
-
-    .footer {
-      margin-top: 30px;
-      padding-top: 24px;
-      border-top: 1px solid var(--line);
-      color: var(--soft);
-      display: flex;
-      justify-content: space-between;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
-      flex-wrap: wrap;
-      font-size: 0.9rem;
+      align-items: stretch;
     }
 
-    .footer a {
-      color: var(--muted);
+    .hub-card {
+      display: flex;
+      min-height: 310px;
+      flex-direction: column;
+      gap: 16px;
+      padding: 24px;
+      border: 1px solid var(--hub-line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: var(--hub-shadow);
       text-decoration: none;
-      font-weight: 750;
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
     }
 
-    .footer a:hover,
-    .footer a:focus-visible {
-      color: var(--accent-hover);
+    .hub-card:hover,
+    .hub-card:focus-visible {
+      transform: translateY(-3px);
+      border-color: rgba(31, 94, 255, 0.34);
+      box-shadow: 0 22px 54px rgba(17, 24, 39, 0.13);
+      outline: none;
     }
 
-    @media (max-width: 760px) {
-      .wrap {
-        width: min(100% - 28px, 980px);
-        padding-top: 22px;
+    .hub-card-top {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-height: 60px;
+    }
+
+    .hub-mark,
+    .hub-logo {
+      display: grid;
+      width: 56px;
+      height: 56px;
+      flex: 0 0 56px;
+      place-items: center;
+      overflow: hidden;
+      border: 1px solid rgba(17, 24, 39, 0.08);
+      border-radius: 8px;
+      background: var(--hub-soft);
+      color: var(--hub-ink);
+      font-weight: 800;
+    }
+
+    .hub-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hub-mark.dtnt {
+      background: #eef4ff;
+      color: var(--hub-blue);
+    }
+
+    .hub-logo.propokit {
+      background: #fff8ec;
+    }
+
+    .hub-mark.denali {
+      background: #fff7e8;
+      color: var(--hub-gold);
+    }
+
+    .hub-kicker {
+      margin: 0;
+      color: var(--hub-muted);
+      font-size: 0.84rem;
+      font-weight: 800;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .hub-card h2 {
+      margin: 0;
+      color: var(--hub-ink);
+      font-family: Manrope, Inter, sans-serif;
+      font-size: 1.42rem;
+      line-height: 1.16;
+      letter-spacing: 0;
+    }
+
+    .hub-card p:not(.hub-kicker) {
+      margin: 0;
+      color: var(--hub-muted);
+      font-size: 0.98rem;
+      line-height: 1.58;
+    }
+
+    .hub-card-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: auto;
+      color: var(--hub-ink);
+      font-weight: 800;
+    }
+
+    .hub-card-action::after {
+      content: "→";
+      color: var(--hub-blue);
+      font-size: 1.1rem;
+    }
+
+    .hub-footer {
+      margin-top: 24px;
+      color: var(--hub-muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    @media (max-width: 860px) {
+      .hub-page {
+        width: min(680px, calc(100% - 28px));
+        padding-top: 42px;
       }
 
-      .top,
-      .intro,
-      .fallback {
+      .hub-links {
         grid-template-columns: 1fr;
       }
 
-      .top {
-        align-items: flex-start;
-        flex-direction: column;
-        padding-bottom: 20px;
-      }
-
-      .intro {
-        padding: 34px 0 22px;
-      }
-
-      h1 {
-        max-width: 10ch;
-      }
-
-      .board-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .board {
+      .hub-card {
         min-height: 0;
-        padding: 18px;
+        padding: 20px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .hub-page {
+        width: min(100% - 24px, 430px);
+        padding-top: 34px;
       }
 
-      .btn,
-      .fallback .btn {
-        width: 100%;
+      .hub-shell-header {
+        width: min(100% - 24px, 430px);
+        padding-top: 18px;
+      }
+
+      .hub-intro {
+        margin-bottom: 22px;
+        text-align: left;
+      }
+
+      .hub-intro h1 {
+        font-size: 2.35rem;
+        line-height: 1;
+      }
+
+      .hub-intro p:last-child {
+        margin-top: 14px;
+        font-size: 1rem;
+      }
+
+      .hub-card-top {
+        min-height: 54px;
+      }
+
+      .hub-mark,
+      .hub-logo {
+        width: 50px;
+        height: 50px;
+        flex-basis: 50px;
+      }
+
+      .hub-card h2 {
+        font-size: 1.24rem;
       }
     }
   </style>
-    <link rel="stylesheet" href="/assets/css/site-chrome.css?v=20260602h">
-    <script src="/assets/js/site-chrome.js?v=20260602h" defer></script>
 </head>
 <body>
-  <div class="wrap">
-    <header class="top">
-      <a class="brand" href="/">Denali Tech Hub</a>
-      <a class="top-link" href="/contact/#booking">Contact Ash</a>
-    </header>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="hub-shell-header" aria-label="Denali Tech Hub">
+    <a class="hub-brand" href="/" aria-label="Denali Tech home">
+      <img src="/Video/logo.webp" alt="" />
+      <span>Denali Tech</span>
+    </a>
+  </header>
+  <main class="hub-page" id="main-content">
+    <section class="hub-intro" aria-labelledby="hub-title">
+      <p class="hub-eyebrow">Denali Tech Hub</p>
+      <h1 id="hub-title">Choose the right path.</h1>
+      <p>Three simple links for our software, proposal workflow, and home technology work.</p>
+    </section>
 
-    <main>
-      <section class="intro" aria-labelledby="hub-title">
-        <div>
-          <p class="eyebrow">Ash Boraki / Denali Tech</p>
-          <h1 id="hub-title">Start in the right place.</h1>
+    <section class="hub-links" aria-label="Denali Tech hub links">
+      <a
+        class="hub-card"
+        href="https://dt-nt.com/"
+        target="_blank"
+        rel="noopener"
+        data-outbound-brand="dtnt"
+      >
+        <div class="hub-card-top">
+          <span class="hub-logo" aria-hidden="true">
+            <img src="/Video/dtnt/dtnt-app-mark.png" alt="" loading="lazy" />
+          </span>
+          <p class="hub-kicker">DTNT</p>
         </div>
-        <div>
-          <p class="intro-copy">Pick the right starting point: home install help, real project work, PropoKit, DTNT, videos, or direct contact.</p>
-          <div class="primary-actions">
-            <a class="btn btn-primary" href="/contact/#booking">Contact Ash</a>
-            <a class="btn" href="/projects/">View Projects</a>
-          </div>
+        <h2>Windows Desktop Software</h2>
+        <p>The Wi-Fi analyzer and IP scanner.</p>
+        <span class="hub-card-action">Open DTNT</span>
+      </a>
+
+      <a
+        class="hub-card"
+        href="https://propokit.com/"
+        target="_blank"
+        rel="noopener"
+        data-outbound-brand="propokit"
+      >
+        <div class="hub-card-top">
+          <span class="hub-logo propokit" aria-hidden="true">
+            <img src="/Video/propokit/propokit-logo-home.svg" alt="" loading="lazy" />
+          </span>
+          <p class="hub-kicker">PropoKit</p>
         </div>
-      </section>
+        <h2>Proposal workflow software</h2>
+        <p>For contractors and service businesses.</p>
+        <span class="hub-card-action">Open PropoKit</span>
+      </a>
 
-      <section class="board-grid" aria-label="Denali Tech hub boards">
-        <article class="board">
-          <p class="board-kicker">Home projects</p>
-          <h2>Denali Tech installs the system.</h2>
-          <p>For homeowners who need WiFi, smart home control, AV, cameras, lighting, shades, theater, or support in the Chicago area.</p>
-          <div class="board-actions">
-            <a class="btn btn-primary" href="/contact/#booking">Start a Home Project</a>
-            <a class="btn" href="/">Main Website</a>
-          </div>
-        </article>
-
-        <article class="board">
-          <p class="board-kicker">Projects</p>
-          <h2>See real install work.</h2>
-          <p>Use this if you want to see rooms, racks, controls, outdoor audio, and the way Denali Tech thinks through a home.</p>
-          <div class="board-actions">
-            <a class="btn btn-primary" href="/projects/">Projects</a>
-            <a class="btn" href="/#process">Process</a>
-          </div>
-        </article>
-
-        <article class="board">
-          <p class="board-kicker">Software</p>
-          <h2>PropoKit helps service businesses quote.</h2>
-          <p>For contractors and service companies that need saved items, clean proposal PDFs, signing links, and a better sales workflow.</p>
-          <div class="board-actions">
-            <a class="btn btn-primary" href="https://propokit.com/">Open PropoKit</a>
-            <a class="btn" href="https://propokit.com/#pricing">Plans</a>
-          </div>
-        </article>
-
-        <article class="board">
-          <p class="board-kicker">Network tools</p>
-          <h2>DTNT is for field diagnostics.</h2>
-          <p>For techs who need WiFi checks, IP scans, speed tests, saved profiles, and practical network tools while they are on site.</p>
-          <div class="board-actions">
-            <a class="btn btn-primary" href="https://dt-nt.com/">Open DTNT</a>
-            <a class="btn" href="https://dt-nt.com/features/">Features</a>
-          </div>
-        </article>
-
-        <article class="board">
-          <p class="board-kicker">Video</p>
-          <h2>Watch the ideas and walkthroughs.</h2>
-          <p>Use this for smart-home videos, practical explanations, project thinking, and updates from Denali Tech.</p>
-          <div class="board-actions">
-            <a class="btn btn-primary" href="https://www.youtube.com/@denalitechav">YouTube</a>
-            <a class="btn" href="https://www.linkedin.com/company/denalitechs">LinkedIn</a>
-          </div>
-        </article>
-
-        <article class="board">
-          <p class="board-kicker">Direct help</p>
-          <h2>Tell me what you are trying to do.</h2>
-          <p>If you are not sure which path fits, send the short version. I will point you to the right place or tell you what I would do first.</p>
-          <div class="board-actions">
-            <a class="btn btn-primary" href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20came%20from%20the%20hub%20and%20need%20help%20with%3A" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-            <a class="btn" href="/contact/#booking">Contact Form</a>
-          </div>
-        </article>
-      </section>
-
-      <section class="fallback" aria-labelledby="fallback-title">
-        <div>
-          <h2 id="fallback-title">Wrong place? Start here anyway.</h2>
-          <p>A short message is enough. Home project, software, network issue, partnership, or content idea, I will route it.</p>
+      <a class="hub-card" href="/">
+        <div class="hub-card-top">
+          <span class="hub-logo" aria-hidden="true">
+            <img src="/Video/logo.webp" alt="" loading="lazy" />
+          </span>
+          <p class="hub-kicker">Denali Tech</p>
         </div>
-        <a class="btn btn-primary" href="/contact/#booking">Send a Note</a>
-      </section>
-    </main>
+        <h2>Home Automation &amp; Custom AV Solutions</h2>
+        <p>Smart home, AV, WiFi, cameras, lighting, shades, and support.</p>
+        <span class="hub-card-action">Open Denali Tech</span>
+      </a>
+    </section>
 
-    <footer class="footer">
-      <span>Denali Tech Inc.</span>
-      <div class="footer-links">
-        <a href="/">Website</a>
-        <a href="https://propokit.com/">PropoKit</a>
-        <a href="https://dt-nt.com/">DTNT</a>
-      </div>
-    </footer>
-  </div>
+    <p class="hub-footer">Denali Tech Inc.</p>
+  </main>
 </body>
 </html>
