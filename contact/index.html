@@ -607,7 +607,7 @@
         .contact-form {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--border-color);
-            border-radius: 16px;
+            border-radius: 6px;
             padding: 3rem;
         }
 
@@ -639,12 +639,10 @@
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 0.75rem 0.875rem;
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            padding: 0.8rem 0.9rem;
+            border: 1px solid rgba(15, 23, 42, 0.16);
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.96);
             color: var(--text-primary);
             font-family: var(--font-main);
             font-size: 16px; /* Prevents iOS zoom on focus */
@@ -659,10 +657,10 @@
         .form-group input:hover,
         .form-group select:hover,
         .form-group textarea:hover {
-            border-color: rgba(249, 115, 22, 0.3);
-            background: rgba(255, 255, 255, 0.07);
-            transform: translateY(-1px);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-color: rgba(15, 23, 42, 0.34);
+            background: #ffffff;
+            transform: none;
+            box-shadow: none;
         }
 
         .form-group textarea {
@@ -708,11 +706,10 @@
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: var(--accent-primary);
-            box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.15),
-                        0 4px 12px rgba(249, 115, 22, 0.2);
-            background: rgba(255, 255, 255, 0.08);
-            transform: translateY(-2px);
+            border-color: #111827;
+            box-shadow: 0 0 0 2px rgba(17, 24, 39, 0.08);
+            background: #ffffff;
+            transform: none;
         }
 
         .form-group input:focus-visible,
@@ -795,7 +792,7 @@
             background: rgba(10, 13, 24, 0.95);
             backdrop-filter: blur(20px);
             border: 1px solid var(--border-color);
-            border-radius: 12px;
+            border-radius: 4px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             margin-top: 4px;
             z-index: 10000 !important;
@@ -890,10 +887,12 @@
         .form-step legend {
             margin-bottom: 0.65rem !important;
             padding-bottom: 0.4rem !important;
-            border-bottom: 2px solid var(--border-color);
+            border-bottom: 1px solid rgba(15, 23, 42, 0.16);
             width: 100%;
-            font-size: 1.05rem;
-            font-weight: 600;
+            font-size: 0.86rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
             color: var(--text-primary);
         }
 
@@ -1001,7 +1000,7 @@
             color: white;
             padding: 1.1rem 2rem;
             border: none;
-            border-radius: 12px;
+            border-radius: 4px;
             font-weight: 700;
             font-size: 1.2rem;
             cursor: pointer;
@@ -1053,7 +1052,7 @@
             color: var(--accent-primary);
             padding: 1rem 2rem;
             border: 2px solid var(--accent-primary);
-            border-radius: 12px;
+            border-radius: 4px;
             text-decoration: none;
             font-weight: 600;
             font-size: 1.1rem;
@@ -1079,11 +1078,11 @@
         .booking-form-container {
             max-width: 900px;
             margin: 0 auto;
-            background: rgba(255, 255, 255, 0.74);
-            border: 1px solid rgba(15, 23, 42, 0.1);
-            border-radius: 12px;
-            padding: clamp(1.1rem, 2.8vw, 1.65rem);
-            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+            background: #ffffff;
+            border: 1px solid rgba(15, 23, 42, 0.14);
+            border-radius: 4px;
+            padding: clamp(1.2rem, 2.8vw, 1.85rem);
+            box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
             position: relative;
             overflow: hidden;
         }
@@ -1094,12 +1093,9 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 1px;
-            background: linear-gradient(90deg,
-                transparent,
-                rgba(249, 115, 22, 0.5),
-                transparent);
-            opacity: 0.6;
+            height: 3px;
+            background: #111827;
+            opacity: 1;
         }
 
         .booking-form-container h2 {
@@ -1168,7 +1164,7 @@
             justify-content: center;
             gap: 0.45rem;
             padding: 0.7rem 1.1rem;
-            border-radius: 8px;
+            border-radius: 4px;
             text-decoration: none;
             font-weight: 700;
             transition: all var(--transition);
@@ -1201,8 +1197,8 @@
             min-height: 44px;
             padding: 0.58rem 0.7rem;
             border: 1px solid rgba(249, 115, 22, 0.24);
-            border-left: 3px solid rgba(249, 115, 22, 0.78);
-            border-radius: 8px;
+            border-left: 3px solid rgba(17, 24, 39, 0.78);
+            border-radius: 3px;
             background: #fff;
             color: #0f172a;
             text-decoration: none;
@@ -1217,17 +1213,16 @@
         }
 
         .booking-form-submit {
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-interactive));
+            background: #111827;
             color: white;
             padding: 0.9rem 1.5rem;
-            border: none;
-            border-radius: 10px;
+            border: 1px solid #111827;
+            border-radius: 4px;
             font-size: 1rem;
             font-weight: 700;
             cursor: pointer;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3);
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 18px rgba(17, 24, 39, 0.12);
             margin-top: 1rem;
             position: relative;
             overflow: hidden;
@@ -1254,9 +1249,9 @@
         }
 
         .booking-form-submit:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(249, 115, 22, 0.4);
-            background: linear-gradient(135deg, #fb923c, var(--accent-interactive));
+            transform: none;
+            box-shadow: 0 10px 22px rgba(17, 24, 39, 0.16);
+            background: #0f172a;
         }
 
         .loading-spinner {
@@ -1310,7 +1305,7 @@
         .form-success-message,
         .form-error-message {
             padding: 1rem;
-            border-radius: 8px;
+            border-radius: 4px;
             margin-top: 1rem;
             text-align: center;
             font-weight: 500;
@@ -2203,8 +2198,8 @@
     <link rel="stylesheet" href="/assets/css/mobile-menu.css">
 
 <script src="../assets/js/microsoft-uet.js" defer></script>
-    <link rel="stylesheet" href="/assets/css/site-chrome.css?v=20260602h">
-    <script src="/assets/js/site-chrome.js?v=20260602h" defer></script>
+    <link rel="stylesheet" href="/assets/css/site-chrome.css?v=20260605a">
+    <script src="/assets/js/site-chrome.js?v=20260605a" defer></script>
 </head>
 <body class="light-theme">
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -2256,8 +2251,8 @@
     <section class="hero">
         <div class="hero-background"></div>
         <div class="hero-content">
-            <h1>Send Photos. Get a Clear Plan.</h1>
-            <p>Denali Tech helps Chicago-area homeowners with WiFi, smart home control, AV, cameras, lighting, shades, theater, and existing systems that need help.</p>
+            <h1>See If We Are A Fit For Your Project.</h1>
+            <p>Tell us about the home, the system, and what you want changed. We handle Control4, WiFi, AV, cameras, lighting, shades, theater, and existing systems.</p>
         </div>
     </section>
 
@@ -2266,16 +2261,16 @@
         <div class="container">
             <div class="booking-form-container">
                 <div style="text-align: center; margin-bottom: 1.1rem;">
-                    <h2 style="font-family: var(--font-heading); font-size: clamp(1.5rem, 3vw, 1.95rem); font-weight: 700; color: var(--text-primary); margin-bottom: 0.6rem; line-height: 1.2;">Tell Us What Is Going On</h2>
-                    <p style="font-size: 1rem; color: var(--text-secondary); max-width: 660px; margin: 0 auto 1rem; line-height: 1.55;">A few details are enough: what room or system, what is not working, what you want changed, and your suburb. Photos help us give a better first answer.</p>
+                    <h2 style="font-family: var(--font-heading); font-size: clamp(1.5rem, 3vw, 1.95rem); font-weight: 700; color: var(--text-primary); margin-bottom: 0.6rem; line-height: 1.2;">Tell Us About The Project</h2>
+                    <p style="font-size: 1rem; color: var(--text-secondary); max-width: 660px; margin: 0 auto 1rem; line-height: 1.55;">Keep it simple: what room, what system, what you want changed, and where the house is. Photos help us tell you the right next step.</p>
                     <div class="contact-action-row">
-                        <a href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20need%20help%20with%20WiFi%20or%20smart%20home%20work.%20I%20can%20send%20photos.%20My%20home%20is%20in%3A" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.65rem 1.1rem; background: rgba(37, 211, 102, 0.1); border: 1px solid rgba(37, 211, 102, 0.3); border-radius: 8px; color: #25d366; text-decoration: none; font-weight: 600; transition: all var(--transition);">
+                        <a href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20need%20help%20with%20WiFi%20or%20smart%20home%20work.%20I%20can%20send%20photos.%20My%20home%20is%20in%3A" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.65rem 1.1rem; background: rgba(37, 211, 102, 0.1); border: 1px solid rgba(37, 211, 102, 0.3); border-radius: 4px; color: #25d366; text-decoration: none; font-weight: 600; transition: all var(--transition);">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
                             </svg>
                             <span>Send Photos on WhatsApp</span>
                         </a>
-                        <a href="mailto:ash@denalitechs.com?subject=WiFi%20%2F%20Smart%20Home%20Project%20Help&body=Hi%20Denali%20Tech%2C%0A%0AI%20need%20help%20with%3A%0AMy%20home%20is%20in%3A%0ABest%20way%20to%20reach%20me%3A%0APhotos%20attached%20if%20helpful.%0A" style="display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.65rem 1.1rem; background: rgba(249, 115, 22, 0.1); border: 1px solid rgba(249, 115, 22, 0.3); border-radius: 8px; color: var(--accent-primary); text-decoration: none; font-weight: 600; transition: all var(--transition);">
+                        <a href="mailto:ash@denalitechs.com?subject=WiFi%20%2F%20Smart%20Home%20Project%20Help&body=Hi%20Denali%20Tech%2C%0A%0AI%20need%20help%20with%3A%0AMy%20home%20is%20in%3A%0ABest%20way%20to%20reach%20me%3A%0APhotos%20attached%20if%20helpful.%0A" style="display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.65rem 1.1rem; background: rgba(249, 115, 22, 0.1); border: 1px solid rgba(249, 115, 22, 0.3); border-radius: 4px; color: var(--accent-primary); text-decoration: none; font-weight: 600; transition: all var(--transition);">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                                 <polyline points="22,6 12,13 2,6"></polyline>
@@ -2337,7 +2332,7 @@
                         <legend>Project Details</legend>
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="booking-service">What do you need help with? *</label>
+                                <label for="booking-service">What do you need? *</label>
                                 <select id="booking-service" name="service_type" required aria-required="true" aria-describedby="service-error">
                                     <option value="">Choose a service...</option>
                                     <option value="Smart Home Automation">Smart Home Automation</option>
@@ -2355,8 +2350,8 @@
                             </div>
                         </div>
                         <div class="form-group full-width">
-                            <label for="booking-details">What is going on? *</label>
-                            <textarea id="booking-details" name="project_details" placeholder="Example: WiFi drops in the basement, Control4 remote stopped working, adding shades, planning a theater, cameras, lighting, or whole-home audio." required rows="4" aria-required="true" aria-describedby="details-error details-hint"></textarea>
+                            <label for="booking-details">Project details *</label>
+                            <textarea id="booking-details" name="project_details" placeholder="Example: Control4 update, new lighting and shades, WiFi upgrade, theater plan, camera system, or takeover of an existing setup." required rows="4" aria-required="true" aria-describedby="details-error details-hint"></textarea>
                             <span class="field-error" id="details-error" aria-live="polite" aria-hidden="true"></span>
                             <small class="field-hint" id="details-hint" style="color: var(--text-secondary); font-size: 0.875rem;">A few words are fine. Photos help if you use WhatsApp or email.</small>
                         </div>
@@ -2387,9 +2382,9 @@
                             </div>
                         </div>
 
-                        <div style="margin-top: 1rem; padding: 1rem; background: rgba(249, 115, 22, 0.1); border-radius: 10px; border-left: 3px solid var(--accent-primary);">
+                        <div style="margin-top: 1rem; padding: 1rem; background: rgba(249, 115, 22, 0.1); border-radius: 4px; border-left: 3px solid var(--accent-primary);">
                             <p style="margin: 0; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
-                                <strong style="color: var(--text-primary); display: block; margin-bottom: 0.4rem;">Next</strong>
+                                <strong style="color: var(--text-primary); display: block; margin-bottom: 0.4rem;">What happens next</strong>
                                 We will reply within 24 hours and confirm availability if you picked a date and time.
                             </p>
                         </div>
@@ -2409,7 +2404,7 @@
                     </button>
 
                     <p style="text-align: center; margin: 0.85rem 0 0; font-size: 0.92rem; color: var(--text-secondary); line-height: 1.5;">
-                        We review the details, reply within 24 hours, and tell you whether this needs a quote, walkthrough, programming help, or a smaller fix.
+                        We review the details, reply within 24 hours, and tell you whether this needs a quote, walkthrough, programming visit, system upgrade, or full project scope.
                     </p>
 
                     <!-- Privacy Notice -->
