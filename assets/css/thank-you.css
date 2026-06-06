@@ -83,6 +83,15 @@ p a {
   transition: color 0.3s ease;
 }
 
+.thank-you-link {
+  white-space: nowrap;
+}
+
+.tag-manager-noscript-frame {
+  display: none;
+  visibility: hidden;
+}
+
 p a:hover {
   color: var(--accent-hover);
 }

@@ -63,6 +63,10 @@ p {
   font-size: clamp(1rem, 1.4vw, 1.08rem);
 }
 
+.lp-honeypot {
+  display: none;
+}
+
 .card {
   background: var(--surface-soft);
   border: 1px solid var(--line);
