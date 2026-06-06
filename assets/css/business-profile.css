@@ -1,0 +1,125 @@
+:root {
+  --bg: #f7f7f5;
+  --surface: #ffffff;
+  --line: rgba(15, 23, 42, 0.12);
+  --text: #111827;
+  --muted: #4b5563;
+  --accent: #f97316;
+  --shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--accent);
+}
+
+.profile-shell {
+  width: min(920px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 40px 0 64px;
+}
+
+.profile-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.profile-brand img {
+  width: 56px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.profile-hero {
+  margin-top: 28px;
+}
+
+.profile-eyebrow {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.profile-hero h1 {
+  margin: 0 0 10px;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.05;
+}
+
+.profile-lead {
+  max-width: 56rem;
+  margin: 0;
+  color: var(--muted);
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.profile-card,
+.profile-section {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.profile-card {
+  padding: 16px;
+}
+
+.profile-label {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.profile-value {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.profile-section {
+  margin-top: 18px;
+  padding: 18px;
+}
+
+.profile-section h2 {
+  margin: 0 0 10px;
+  font-size: 1.15rem;
+}
+
+.profile-section p {
+  margin: 0;
+  color: var(--muted);
+}
+
+@media (max-width: 640px) {
+  .profile-shell {
+    width: min(100% - 24px, 920px);
+    padding: 24px 0 48px;
+  }
+}
