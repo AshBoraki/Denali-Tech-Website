@@ -1,6 +1,27 @@
-<!DOCTYPE html><html lang="en" data-theme="light"><head>
-    
-    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="/assets/js/theme.js?v=20260602"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    var gtmLoaded = false;
+    function loadGTM() {
+        if (gtmLoaded) return;
+        gtmLoaded = true;
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MWPTRPDR');
+    }
+    window.addEventListener('load', function() {
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(loadGTM, { timeout: 3000 });
+        } else {
+            setTimeout(loadGTM, 2000);
+        }
+    });
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Triad Home Theater Speaker Planning: What to Decide Before the Room Is Built | Denali Tech</title>
@@ -25,34 +46,50 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    
-    
-    
-    
-    <link rel="stylesheet" href="/assets/css/legacy-blog-shell-b.css">
-    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"BlogPosting","headline":"Triad Home Theater Speaker Planning: What to Decide Before the Room Is Built","description":"A plain-English guide to theater speaker planning, room layout, screen placement, subwoofers, in-wall speakers, and why design choices should happen early.","image":"https://denalitechs.com/Video/Project%20showcases%20/basement%20home%20theater%20and%20sets.webp","author":{"@type":"Organization","name":"Denali Tech Team"},"publisher":{"@type":"Organization","name":"Denali Tech","logo":{"@type":"ImageObject","url":"https://denalitechs.com/Video/homepage/logo-112.webp","width":112,"height":80}},"datePublished":"2026-06-03","dateModified":"2026-06-03","mainEntityOfPage":"https://denalitechs.com/blogs/triad-home-theater-speaker-planning-guide/","articleSection":"Smart Home Guide","keywords":"Triad, Home Theater, Speakers, Media Room"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://denalitechs.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://denalitechs.com/blogs/"},{"@type":"ListItem","position":3,"name":"Triad Home Theater Speaker Planning: What to Decide Before the Room Is Built","item":"https://denalitechs.com/blogs/triad-home-theater-speaker-planning-guide/"}]}]</script>
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
+    <style>
+        :root { --bg:#0a0d18; --panel:#101726; --text:#f8fafc; --muted:#cbd5e1; --accent:#f97316; --accent-soft:rgba(249,115,22,.14); --border:rgba(255,255,255,.12); --font-main:'Inter',system-ui,sans-serif; --font-heading:'Poppins',system-ui,sans-serif; }
+        * { box-sizing:border-box; }
+        body { margin:0; font-family:var(--font-main); background:var(--bg); color:var(--text); line-height:1.75; }
+        .blog-container { max-width:900px; margin:0 auto; padding:120px 24px 72px; }
+        .blog-header { text-align:center; margin-bottom:40px; }
+        .blog-breadcrumb, .blog-meta { color:var(--muted); font-size:.95rem; }
+        .blog-breadcrumb a, .blog-share a, .cta-box a, .blog-content a { color:var(--accent); text-decoration:none; }
+        .blog-title { font-family:var(--font-heading); font-size:clamp(2.1rem,5vw,3.2rem); line-height:1.15; margin:16px 0; }
+        .blog-meta { display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin-bottom:18px; }
+        .blog-tags { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin:18px 0 0; }
+        .blog-tag { padding:8px 12px; border-radius:999px; background:var(--accent-soft); border:1px solid rgba(249,115,22,.3); color:var(--accent); font-weight:600; font-size:.85rem; }
+        .blog-hero-image { width:100%; height:auto; max-height:520px; object-fit:cover; border-radius:20px; margin:28px 0 12px; display:block; }
+        .blog-image-caption { text-align:center; color:var(--muted); font-size:.92rem; margin-top:0; }
+        .blog-content { color:var(--muted); font-size:1.08rem; }
+        .blog-content h2, .blog-content h3 { color:var(--text); font-family:var(--font-heading); line-height:1.25; }
+        .blog-content h2 { margin-top:40px; font-size:clamp(1.6rem,4vw,2.2rem); }
+        .blog-content h3 { margin-top:28px; font-size:1.25rem; }
+        .blog-content strong { color:var(--text); }
+        .highlight-box, .cta-box { background:var(--panel); border:1px solid var(--border); border-radius:20px; padding:22px; margin:28px 0; }
+        .cta-box { text-align:center; }
+        .btn-primary { display:inline-block; margin-top:10px; background:var(--accent); color:#fff !important; padding:14px 22px; border-radius:999px; font-weight:700; }
+        .blog-share { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-top:32px; }
+        .share-btn { display:inline-flex; gap:8px; align-items:center; background:var(--panel); border:1px solid var(--border); color:var(--text); border-radius:999px; padding:10px 14px; }
+        .related-posts { margin-top:44px; }
+        .related-posts-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; }
+        .related-post-card { background:var(--panel); border:1px solid var(--border); border-radius:18px; padding:18px; color:var(--text); text-decoration:none; }
+        .related-post-category { color:var(--accent); font-size:.82rem; font-weight:700; text-transform:uppercase; letter-spacing:.05em; }
+        .related-post-title { margin:10px 0 0; font-size:1.05rem; }
+        ul, ol { padding-left:22px; }
+        @media (max-width: 640px) { .blog-container { padding:96px 18px 56px; } .blog-meta { gap:10px; } }
+    </style>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BlogPosting","headline":"Triad Home Theater Speaker Planning: What to Decide Before the Room Is Built","description":"A plain-English guide to theater speaker planning, room layout, screen placement, subwoofers, in-wall speakers, and why design choices should happen early.","image":"https://denalitechs.com/Video/Project%20showcases%20/basement%20home%20theater%20and%20sets.webp","author":{"@type":"Organization","name":"Denali Tech Team"},"publisher":{"@type":"Organization","name":"Denali Tech","logo":{"@type":"ImageObject","url":"https://denalitechs.com/favicon-512x512.png"}},"datePublished":"2026-06-03","dateModified":"2026-06-03","mainEntityOfPage":"https://denalitechs.com/blogs/triad-home-theater-speaker-planning-guide/","articleSection":"Smart Home Guide","keywords":"Triad, Home Theater, Speakers, Media Room"}
+    </script>
+    <script src="/assets/js/microsoft-uet.js" defer></script>
     <link rel="stylesheet" href="/assets/css/site-chrome.css?v=20260605a">
-    
-<link rel="stylesheet" href="/assets/css/legacy-blog-utility.css"><script src="/assets/js/site-chrome-nav.js?v=20260606c" defer=""></script><meta name="article:author" content="Denali Tech Team"><link rel="stylesheet" href="/assets/css/blog-next-step.css"></head>
-<body class="light-theme dt-unified-chrome"><header class="dt-site-header" data-denali-chrome="site-header">
-  <nav class="dt-site-nav" aria-label="Main navigation">
-    <a class="dt-site-brand" href="/" aria-label="Denali Tech home">
-      <picture>
-        <source srcset="/Video/logo.webp?v=20260602h" type="image/webp">
-        <img src="/Video/homepage/logo-112.webp" alt="Denali Tech" width="52" height="38" decoding="async" loading="eager">
-      </picture>
-      <span>Denali Tech</span>
-    </a>
-    <ul class="dt-site-nav-links" id="dt-site-nav-links">
-      <li><a href="/">Home</a></li><li><a href="/services/">What We Do</a></li><li><a href="/projects/">Projects</a></li><li><a href="/about/">About Us</a></li><li><a href="/blogs/" aria-current="page">Blog</a></li><li><a href="/contact/">Contact</a></li>
-      <li><a class="dt-site-mobile-cta" href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20need%20a%20clear%20plan%20for%20my%20home%20technology.%20I%20can%20send%20photos.%20My%20home%20is%20in%3A" target="_blank" rel="noopener noreferrer">Get a Project Plan</a></li>
-    </ul>
-    <a class="dt-site-cta" href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20need%20a%20clear%20plan%20for%20my%20home%20technology.%20I%20can%20send%20photos.%20My%20home%20is%20in%3A" target="_blank" rel="noopener noreferrer">Get a Project Plan</a>
-    <button class="dt-site-menu-button" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="dt-site-nav-links"><span></span></button>
-  </nav>
-</header>
-<div class="dt-site-header-spacer" aria-hidden="true" data-denali-chrome="site-header-spacer"></div>
+    <script src="/assets/js/site-chrome.js?v=20260605a" defer></script>
+</head>
+<body>
     <main role="main">
         <article class="blog-container">
             <div class="blog-header">
@@ -103,8 +140,8 @@
                 <div class="cta-box">
                     <h3>Want this planned the right way?</h3>
                     <p>If you are building a theater or media room, Denali Tech can help plan speaker locations, wiring, rack space, and control before the room gets locked in.</p>
-                    <a href="/contact/" class="btn-primary">Send Project Details</a>
-                    <p class="legacy-mt-14">Or message us on <a href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20would%20rather%20use%20WhatsApp.%20Can%20you%20help%20me%20with%3A" target="_blank" rel="noopener noreferrer">WhatsApp</a></p>
+                    <a href="/contact/#booking" class="btn-primary">Send Project Details</a>
+                    <p style="margin-top:14px;">Or message us on <a href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20would%20rather%20use%20WhatsApp.%20Can%20you%20help%20me%20with%3A" target="_blank" rel="noopener noreferrer">WhatsApp</a></p>
                 </div>
 
                 <h2>Final thought</h2>
@@ -114,7 +151,7 @@
                     <span>Share:</span>
                     <a href="https://www.facebook.com/sharer/sharer.php?u=https://denalitechs.com/blogs/triad-home-theater-speaker-planning-guide/" target="_blank" rel="noopener noreferrer" class="share-btn">Facebook</a>
                     <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://denalitechs.com/blogs/triad-home-theater-speaker-planning-guide/" target="_blank" rel="noopener noreferrer" class="share-btn">LinkedIn</a>
-                    <button class="share-btn legacy-copy-link-btn" type="button" data-copy-link="">Copy Link</button>
+                    <button onclick="copyToClipboard()" class="share-btn" style="cursor:pointer;border:none;font-family:inherit;">Copy Link</button>
                 </div>
 
                 <div class="related-posts">
@@ -134,82 +171,15 @@
                         </a>
                     </div>
                 </div>
-            
-    <section class="denali-next-step" aria-label="Related service">
-      <div class="denali-next-step__card">
-        <p class="denali-next-step__eyebrow">Related service</p>
-        <h2>If the room needs better AV planning, use the theater page next.</h2>
-        <p>Use the theater and media room page when the real job is speakers, displays, racks, wiring, room flow, or family-friendly control.</p>
-        <div class="denali-next-step__actions">
-          <a class="denali-next-step__primary" href="/home-theater-room/" data-lead-action="service-cta">Open Home theater and media room service page</a>
-          <a class="denali-next-step__secondary" href="/contact/" data-lead-action="contact">Send project details</a>
-        </div>
-      </div>
-    </section>
-  </div>
+            </div>
         </article>
     </main>
-    
-
-
-<footer class="dt-site-footer" data-denali-chrome="site-footer">
-  <div class="dt-site-footer-inner">
-    <section class="dt-site-footer-close" aria-labelledby="dt-footer-title">
-      <div class="dt-site-footer-close-copy">
-        <a class="dt-site-footer-logo" href="/" aria-label="Denali Tech home">
-          <picture>
-            <source srcset="/Video/logo.webp?v=20260602h" type="image/webp">
-            <img src="/Video/homepage/logo-112.webp" alt="Denali Tech" width="50" height="36" decoding="async" loading="lazy">
-          </picture>
-          <span>Denali Tech</span>
-        </a>
-        <p class="dt-site-footer-kicker">Chicago-area home automation, WiFi, AV, and control services</p>
-        <h2 id="dt-footer-title">Plan the right system from the start.</h2>
-        <p class="dt-site-footer-lead">Send the room, the system, or the upgrade you want. We will help you map the right next step before the work starts.</p>
-        <div class="dt-site-footer-actions">
-          <a class="dt-site-cta" href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20need%20a%20clear%20plan%20for%20my%20home%20technology.%20I%20can%20send%20photos.%20My%20home%20is%20in%3A" target="_blank" rel="noopener noreferrer">Send Project Details</a>
-          <a class="dt-site-footer-secondary" href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20would%20rather%20use%20WhatsApp.%20Can%20you%20help%20me%20with%3A" target="_blank" rel="noopener noreferrer">WhatsApp / Call</a>
-        </div>
-      </div>
-      <aside class="dt-site-footer-proof">
-        <h3>Why homeowners call Denali Tech</h3>
-        <ul class="dt-site-footer-proof-list">
-          <li><strong>Clear scope first</strong><span>We map the right system, equipment, and project path before recommending work.</span></li>
-          <li><strong>Clean installs</strong><span>WiFi, theater, lighting, cameras, audio, shades, and control work built to be usable.</span></li>
-          <li><strong>Local support</strong><span>Mount Prospect based and serving Chicago-area homes.</span></li>
-        </ul>
-      </aside>
-    </section>
-    <nav class="dt-site-footer-linkbar" aria-label="Footer navigation">
-      
-    <div class="dt-site-footer-link-group">
-      <h3>Services</h3>
-      <div class="dt-site-footer-link-list">
-        <a href="/smart-home-control/">Smart Home Control</a><a href="/home-theater-room/">Home Theater</a><a href="/residential-wifi-network/">WiFi &amp; Networking</a><a href="/smart-lighting-shades/">Lighting &amp; Shades</a>
-      </div>
-    </div>
-  
-      
-    <div class="dt-site-footer-link-group">
-      <h3>Proof</h3>
-      <div class="dt-site-footer-link-list">
-        <a href="/projects/">Projects</a><a href="/about/">About Us</a><a href="/control4-installer-chicago/">Control4 Help</a><a href="/urc-programming-chicago/">URC Programming</a>
-      </div>
-    </div>
-  
-      
-    <div class="dt-site-footer-link-group">
-      <h3>Start</h3>
-      <div class="dt-site-footer-link-list">
-        <a href="/contact/">Contact</a><a href="/blogs/">Blog</a><a href="/faq.html">FAQ</a><a href="/hub/">Hub</a>
-      </div>
-    </div>
-  
-    </nav>
-    <div class="dt-site-footer-bottom">
-      <span>Copyright 2026 Denali Tech Inc.</span>
-      <span>Mount Prospect based. Serving Chicago and nearby suburbs.</span>
-      <span><a href="/privacy/">Privacy &amp; Terms</a></span>
-    </div>
-  </div>
-</footer></body></html>
+    <script>
+        function copyToClipboard() {
+            navigator.clipboard.writeText(window.location.href).then(function() {
+                alert('Link copied to clipboard!');
+            });
+        }
+    </script>
+</body>
+</html>

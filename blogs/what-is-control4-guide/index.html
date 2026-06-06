@@ -1,10 +1,77 @@
-<!DOCTYPE html><html lang="en" data-theme="light"><head>
-    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="/assets/js/theme.js?v=20260602"></script>
     <!-- Google Tag Manager -->
-    
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    var gtmLoaded = false;
+    function loadGTM() {
+        if (gtmLoaded) return;
+        gtmLoaded = true;
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MWPTRPDR');
+    }
+    if (document.readyState === 'complete') {
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(loadGTM, { timeout: 3000 });
+        } else {
+            setTimeout(loadGTM, 2000);
+        }
+    } else {
+        window.addEventListener('load', function() {
+            if ('requestIdleCallback' in window) {
+                requestIdleCallback(loadGTM, { timeout: 3000 });
+            } else {
+                setTimeout(loadGTM, 2000);
+            }
+        });
+    }
+    </script>
     <!-- End Google Tag Manager -->
-    
-    
+    <meta name="facebook-pixel-id" content="1475625250840344">
+    <script>
+    (function() {
+        var pixelId = "1475625250840344";
+
+        if (!window.fbq) {
+            !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";
+            n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;
+            s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document, "script",
+            "https://connect.facebook.net/en_US/fbevents.js");
+        }
+
+        try {
+            window.fbq("init", pixelId);
+            window.fbq("track", "PageView");
+        } catch (error) {}
+
+        window.denaliMetaPixel = window.denaliMetaPixel || {};
+        window.denaliMetaPixel.pixelId = pixelId;
+        window.denaliMetaPixel.trackLeadOnce = function(details) {
+            var now = Date.now();
+
+            try {
+                var key = "denali_meta_last_lead_at";
+                var last = parseInt(sessionStorage.getItem(key) || "0", 10);
+                if (last && (now - last) < 1800000) return false;
+                sessionStorage.setItem(key, String(now));
+            } catch (error) {}
+
+            if (typeof window.fbq === "function") {
+                window.fbq("track", "Lead", details || {});
+                return true;
+            }
+
+            return false;
+        };
+    })();
+    </script>
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,37 +114,308 @@
     <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png">
     
     <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
     
-    
-    
-    
-    
-    <link rel="stylesheet" href="/assets/css/legacy-blog-shell-f.css">
+    <style>
+        :root {
+            --bg-color: #0a0d18;
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --accent-primary: #f97316;
+            --accent-hover: #fdba74;
+            --border-color: rgba(255, 255, 255, 0.12);
+            --shadow-glow: 0 4px 15px rgba(249, 115, 22, 0.4);
+            --font-main: 'Inter', system-ui, sans-serif;
+            --font-heading: 'Poppins', system-ui, sans-serif;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        :root[data-theme='light'],
+        body.light-theme {
+            --bg-color: #f9fafb;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --border-color: rgba(0, 0, 0, 0.12);
+        }
+        
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-main);
+            color: var(--text-primary);
+            background-color: var(--bg-color);
+            line-height: 1.7;
+        }
+        
+        .blog-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 120px 2rem 4rem;
+        }
+        
+        .blog-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .blog-breadcrumb {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .blog-breadcrumb a {
+            color: var(--accent-primary);
+            text-decoration: none;
+        }
+        
+        .blog-breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        .blog-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            color: var(--text-primary);
+        }
+        
+        .blog-meta {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+        
+        .blog-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin: 1.5rem 0;
+        }
+        
+        .blog-tag {
+            display: inline-block;
+            padding: 0.4rem 0.8rem;
+            background: rgba(249, 115, 22, 0.15);
+            border: 1px solid rgba(249, 115, 22, 0.3);
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent-primary);
+        }
+        
+        .blog-hero-image {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 16px;
+            margin: 2rem 0;
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .blog-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+        
+        .blog-content h2 {
+            font-family: var(--font-heading);
+            font-size: clamp(1.75rem, 4vw, 2.25rem);
+            color: var(--text-primary);
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+        
+        .blog-content h3 {
+            font-family: var(--font-heading);
+            font-size: clamp(1.5rem, 3vw, 1.75rem);
+            color: var(--text-primary);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .blog-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .blog-content ul,
+        .blog-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+        
+        .blog-content li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .blog-content strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        
+        .blog-image {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        .cta-box {
+            background: rgba(249, 115, 22, 0.1);
+            border: 2px solid var(--accent-primary);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .cta-box h3 {
+            font-family: var(--font-heading);
+            font-size: 1.75rem;
+            color: var(--accent-primary);
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-box p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .btn-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-primary), #fb923c);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all var(--transition);
+            box-shadow: var(--shadow-glow);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(249, 115, 22, 0.4);
+        }
+        
+        .highlight-box {
+            background: rgba(249, 115, 22, 0.1);
+            border-left: 4px solid var(--accent-primary);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .highlight-box p {
+            margin-bottom: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .blog-container {
+                padding: 100px 1rem 2rem;
+            }
+            
+            .blog-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .cta-box {
+                padding: 1.5rem;
+            }
+        }
+    </style>
     <!-- Enhanced Schema Markup: BlogPosting + BreadcrumbList -->
-    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"BlogPosting","headline":"What is Control4? Complete Guide for Homeowners 2026","description":"Learn what Control4 is, how it works, what it can control, and whether it's right for your home. Complete guide from authorized Control4 dealers in Chicago.","image":["https://denalitechs.com/Video/Blogs%20imge/What%20is%20Control4%20Complete%20Guide%20for%20Homeowners%202025.webp"],"datePublished":"2025-01-06T00:00:00+00:00","dateModified":"2026-03-21","author":{"@type":"Organization","name":"Denali Tech","url":"https://denalitechs.com/"},"publisher":{"@type":"Organization","name":"Denali Tech","logo":{"@type":"ImageObject","url":"https://denalitechs.com/Video/homepage/logo-112.webp","width":112,"height":80}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://denalitechs.com/blogs/what-is-control4-guide/"},"articleSection":"Smart Home Guide","keywords":"what is Control4, Control4 smart home, Control4 system, Control4 automation, Control4 explained, Control4 guide, Control4 dealer Chicago, Control4 home automation","inLanguage":"en-US","isPartOf":{"@type":"Blog","name":"Denali Tech Smart Home Blog","url":"https://denalitechs.com/blogs/"},"wordCount":"2200","timeRequired":"PT9M"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://denalitechs.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://denalitechs.com/blogs/"},{"@type":"ListItem","position":3,"name":"What is Control4?","item":"https://denalitechs.com/blogs/what-is-control4-guide/"}]}]</script>
-    
-
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "What is Control4? Complete Guide for Homeowners 2026",
+        "description": "Learn what Control4 is, how it works, what it can control, and whether it's right for your home. Complete guide from authorized Control4 dealers in Chicago.",
+        "image": [
+            "https://denalitechs.com/Video/Blogs imge/What is Control4 Complete Guide for Homeowners 2025.webp"
+        ],
+        "datePublished": "2025-01-06T00:00:00+00:00",
+        "dateModified": "2026-03-21",
+        "author": {
+            "@type": "Organization",
+            "name": "Denali Tech",
+            "url": "https://denalitechs.com/"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Denali Tech",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://denalitechs.com/Video/logo%20no%20back%20greand%20.png",
+                "width": 512,
+                "height": 512
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://denalitechs.com/blogs/what-is-control4-guide/"
+        },
+        "articleSection": "Smart Home Guide",
+        "keywords": "what is Control4, Control4 smart home, Control4 system, Control4 automation, Control4 explained, Control4 guide, Control4 dealer Chicago, Control4 home automation",
+        "inLanguage": "en-US",
+        "isPartOf": {
+            "@type": "Blog",
+            "name": "Denali Tech Smart Home Blog",
+            "url": "https://denalitechs.com/blogs/"
+        },
+        "wordCount": "2200",
+        "timeRequired": "PT9M"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://denalitechs.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://denalitechs.com/blogs/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "What is Control4?",
+                "item": "https://denalitechs.com/blogs/what-is-control4-guide/"
+            }
+        ]
+    }
+    </script>
+<script src="/assets/js/microsoft-uet.js" defer></script>
     <link rel="stylesheet" href="/assets/css/site-chrome.css?v=20260605a">
-    
-<link rel="stylesheet" href="/assets/css/legacy-blog-utility.css"><script src="/assets/js/site-chrome-nav.js?v=20260606c" defer=""></script><link rel="stylesheet" href="/assets/css/blog-next-step.css"></head>
-<body class="light-theme dt-unified-chrome"><header class="dt-site-header" data-denali-chrome="site-header">
-  <nav class="dt-site-nav" aria-label="Main navigation">
-    <a class="dt-site-brand" href="/" aria-label="Denali Tech home">
-      <picture>
-        <source srcset="/Video/logo.webp?v=20260602h" type="image/webp">
-        <img src="/Video/homepage/logo-112.webp" alt="Denali Tech" width="52" height="38" decoding="async" loading="eager">
-      </picture>
-      <span>Denali Tech</span>
-    </a>
-    <ul class="dt-site-nav-links" id="dt-site-nav-links">
-      <li><a href="/">Home</a></li><li><a href="/services/">What We Do</a></li><li><a href="/projects/">Projects</a></li><li><a href="/about/">About Us</a></li><li><a href="/blogs/" aria-current="page">Blog</a></li><li><a href="/contact/">Contact</a></li>
-      <li><a class="dt-site-mobile-cta" href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20need%20a%20clear%20plan%20for%20my%20home%20technology.%20I%20can%20send%20photos.%20My%20home%20is%20in%3A" target="_blank" rel="noopener noreferrer">Get a Project Plan</a></li>
-    </ul>
-    <a class="dt-site-cta" href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20need%20a%20clear%20plan%20for%20my%20home%20technology.%20I%20can%20send%20photos.%20My%20home%20is%20in%3A" target="_blank" rel="noopener noreferrer">Get a Project Plan</a>
-    <button class="dt-site-menu-button" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="dt-site-nav-links"><span></span></button>
-  </nav>
-</header>
-<div class="dt-site-header-spacer" aria-hidden="true" data-denali-chrome="site-header-spacer"></div>
+    <script src="/assets/js/site-chrome.js?v=20260605a" defer></script>
+</head>
+<body>
     <main role="main">
     <article class="blog-container">
         <div class="blog-header">
@@ -99,7 +437,7 @@
             </div>
         </div>
         
-        <img src="/Video/Blogs%20imge/What%20is%20Control4%20Complete%20Guide%20for%20Homeowners%202025.webp" alt="Control4 Smart Home System" class="blog-hero-image" loading="eager" width="704" height="469">
+        <img src="/Video/Blogs%20imge/What%20is%20Control4%20Complete%20Guide%20for%20Homeowners%202025.webp" alt="Control4 Smart Home System" class="blog-hero-image" loading="eager">
         
         <div class="blog-content">
             <p><strong>"What is Control4?"</strong> If you're researching smart home automation, you've probably heard this name. But what exactly is Control4? How does it work? And is it right for your home?</p>
@@ -179,7 +517,7 @@
                 <li>Home theaters</li>
             </ul>
             
-            <h3>Security &amp; Surveillance</h3>
+            <h3>Security & Surveillance</h3>
             <ul>
                 <li>Security cameras</li>
                 <li>Door locks</li>
@@ -321,7 +659,7 @@
                 <h3>Ready to Learn More About Control4?</h3>
                 <p>Get a project review from Chicago's authorized Control4 dealers. If you already have a Control4 system, Denali Tech can also help with programming changes, system takeover, OS upgrade planning, troubleshooting, and support.</p>
                 <a href="/control4-installer-chicago/" class="btn-primary">Control4 Installer Help</a>
-                <p class="legacy-note">Or message us on <a href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20would%20rather%20use%20WhatsApp.%20Can%20you%20help%20me%20with%3A" target="_blank" rel="noopener noreferrer" class="legacy-link-accent-strong">WhatsApp</a></p>
+                <p style="margin-top: 1rem; font-size: 0.9rem;">Or message us on <a href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20would%20rather%20use%20WhatsApp.%20Can%20you%20help%20me%20with%3A" style="color: var(--accent-primary); font-weight: 600;" target="_blank" rel="noopener noreferrer">WhatsApp</a></p>
             </div>
             
             <h2>Final Thoughts</h2>
@@ -337,83 +675,10 @@
                 <p>Want to see Control4 in action or fix a system already in the home? Start with Denali Tech's Control4 installer and programming page.</p>
                 <a href="/control4-installer-chicago/" class="btn-primary">Get Control4 Help</a>
             </div>
-        
-    <section class="denali-next-step" aria-label="Related service">
-      <div class="denali-next-step__card">
-        <p class="denali-next-step__eyebrow">Related service</p>
-        <h2>Need real Control4 help, not another general article?</h2>
-        <p>Use the Control4 page when the next step is takeover work, programming, updates, remotes, or a cleaner day-to-day smart-home setup.</p>
-        <div class="denali-next-step__actions">
-          <a class="denali-next-step__primary" href="/control4-installer-chicago/" data-lead-action="service-cta">Open Control4 service page</a>
-          <a class="denali-next-step__secondary" href="/contact/" data-lead-action="contact">Send project details</a>
         </div>
-      </div>
-    </section>
-  </div>
     </article>
     </main>
-
-    
-
-
-<footer class="dt-site-footer" data-denali-chrome="site-footer">
-  <div class="dt-site-footer-inner">
-    <section class="dt-site-footer-close" aria-labelledby="dt-footer-title">
-      <div class="dt-site-footer-close-copy">
-        <a class="dt-site-footer-logo" href="/" aria-label="Denali Tech home">
-          <picture>
-            <source srcset="/Video/logo.webp?v=20260602h" type="image/webp">
-            <img src="/Video/homepage/logo-112.webp" alt="Denali Tech" width="50" height="36" decoding="async" loading="lazy">
-          </picture>
-          <span>Denali Tech</span>
-        </a>
-        <p class="dt-site-footer-kicker">Chicago-area home automation, WiFi, AV, and control services</p>
-        <h2 id="dt-footer-title">Plan the right system from the start.</h2>
-        <p class="dt-site-footer-lead">Send the room, the system, or the upgrade you want. We will help you map the right next step before the work starts.</p>
-        <div class="dt-site-footer-actions">
-          <a class="dt-site-cta" href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20need%20a%20clear%20plan%20for%20my%20home%20technology.%20I%20can%20send%20photos.%20My%20home%20is%20in%3A" target="_blank" rel="noopener noreferrer">Send Project Details</a>
-          <a class="dt-site-footer-secondary" href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20would%20rather%20use%20WhatsApp.%20Can%20you%20help%20me%20with%3A" target="_blank" rel="noopener noreferrer">WhatsApp / Call</a>
-        </div>
-      </div>
-      <aside class="dt-site-footer-proof">
-        <h3>Why homeowners call Denali Tech</h3>
-        <ul class="dt-site-footer-proof-list">
-          <li><strong>Clear scope first</strong><span>We map the right system, equipment, and project path before recommending work.</span></li>
-          <li><strong>Clean installs</strong><span>WiFi, theater, lighting, cameras, audio, shades, and control work built to be usable.</span></li>
-          <li><strong>Local support</strong><span>Mount Prospect based and serving Chicago-area homes.</span></li>
-        </ul>
-      </aside>
-    </section>
-    <nav class="dt-site-footer-linkbar" aria-label="Footer navigation">
-      
-    <div class="dt-site-footer-link-group">
-      <h3>Services</h3>
-      <div class="dt-site-footer-link-list">
-        <a href="/smart-home-control/">Smart Home Control</a><a href="/home-theater-room/">Home Theater</a><a href="/residential-wifi-network/">WiFi &amp; Networking</a><a href="/smart-lighting-shades/">Lighting &amp; Shades</a>
-      </div>
-    </div>
-  
-      
-    <div class="dt-site-footer-link-group">
-      <h3>Proof</h3>
-      <div class="dt-site-footer-link-list">
-        <a href="/projects/">Projects</a><a href="/about/">About Us</a><a href="/control4-installer-chicago/">Control4 Help</a><a href="/urc-programming-chicago/">URC Programming</a>
-      </div>
-    </div>
-  
-      
-    <div class="dt-site-footer-link-group">
-      <h3>Start</h3>
-      <div class="dt-site-footer-link-list">
-        <a href="/contact/">Contact</a><a href="/blogs/">Blog</a><a href="/faq.html">FAQ</a><a href="/hub/">Hub</a>
-      </div>
-    </div>
-  
-    </nav>
-    <div class="dt-site-footer-bottom">
-      <span>Copyright 2026 Denali Tech Inc.</span>
-      <span>Mount Prospect based. Serving Chicago and nearby suburbs.</span>
-      <span><a href="/privacy/">Privacy &amp; Terms</a></span>
-    </div>
-  </div>
-</footer></body></html>
+</article>
+    </main>
+</body>
+</html>
