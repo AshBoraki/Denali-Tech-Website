@@ -1,198 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <script src="/assets/js/theme.js?v=20260602"></script>
-    <script src="/assets/js/microsoft-uet.js" defer></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 - Page Not Found | Denali Tech</title>
-    <meta name="description" content="The page you're looking for doesn't exist. Return to Denali Tech's homepage or browse our services.">
-    <meta name="robots" content="noindex, follow">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://denalitechs.com/404.html">
-    <meta property="og:title" content="404 - Page Not Found | Denali Tech">
-    <meta property="og:description" content="The page you're looking for doesn't exist. Return to Denali Tech's homepage or browse our services.">
-    <meta property="og:image" content="https://denalitechs.com/Video/logo-social.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://denalitechs.com/404.html">
-    <meta name="twitter:title" content="404 - Page Not Found | Denali Tech">
-    <meta name="twitter:description" content="The page you're looking for doesn't exist. Return to Denali Tech's homepage or browse our services.">
-    <meta name="twitter:image" content="https://denalitechs.com/Video/logo-social.jpg">
-    
-    <link rel="canonical" href="https://denalitechs.com/404.html">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png">
-    
-    <base href="/">
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #0a0d18 0%, #1a1f35 100%);
-            color: #f8fafc;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-            line-height: 1.6;
-        }
-        
-        .error-container {
-            text-align: center;
-            max-width: 600px;
-            width: 100%;
-        }
-        
-        .error-code {
-            font-size: 8rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1rem;
-            line-height: 1;
-        }
-        
-        .error-title {
-            font-size: 2rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: #f8fafc;
-        }
-        
-        .error-message {
-            font-size: 1.125rem;
-            color: #cbd5e1;
-            margin-bottom: 2.5rem;
-        }
-        
-        .error-actions {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 0.875rem 2rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            font-size: 1rem;
-        }
-        
-        .btn-primary {
-            background: #f97316;
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            background: #fb923c;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
-        }
-        
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.1);
-            color: #f8fafc;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-2px);
-        }
-        
-        .quick-links {
-            margin-top: 3rem;
-            padding-top: 3rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .quick-links h3 {
-            font-size: 1.25rem;
-            margin-bottom: 1.5rem;
-            color: #f8fafc;
-        }
-        
-        .quick-links ul {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-        
-        .quick-links a {
-            color: #cbd5e1;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .quick-links a:hover {
-            color: #f97316;
-        }
-        
-        @media (max-width: 640px) {
-            .error-code {
-                font-size: 5rem;
-            }
-            
-            .error-title {
-                font-size: 1.5rem;
-            }
-            
-            .error-message {
-                font-size: 1rem;
-            }
-            
-            .btn {
-                padding: 0.75rem 1.5rem;
-                font-size: 0.875rem;
-            }
-        }
-    </style>
-    <link rel="stylesheet" href="/assets/css/site-chrome.css?v=20260605a">
-    <script src="/assets/js/site-chrome.js?v=20260605a" defer></script>
-</head>
-<body>
-    <div class="error-container">
-        <div class="error-code">404</div>
-        <h1 class="error-title">Page Not Found</h1>
-        <p class="error-message">
-            Oops! The page you're looking for doesn't exist or has been moved. 
-            Let's get you back on track.
-        </p>
-        
-        <div class="error-actions">
-            <a href="/" class="btn btn-primary">Go to Homepage</a>
-            <a href="/contact/" class="btn btn-secondary">Contact Us</a>
-        </div>
-        
-        <div class="quick-links">
-            <h3>Popular Pages</h3>
-            <ul>
-                <li><a href="/services/">Our Services</a></li>
-                <li><a href="/about/">About Us</a></li>
-                <li><a href="/projects/">Project Gallery</a></li>
-                <li><a href="/blogs/">Blog</a></li>
-                <li><a href="/brands/">Our Brands</a></li>
-            </ul>
-        </div>
-    </div>
-</body>
-</html>
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Page Not Found | Denali Tech</title><meta name="description" content="The page you requested is not available. Start from Denali Tech services, projects, or contact."><meta name="robots" content="noindex,follow"><meta name="theme-color" content="#f97316"><link rel="canonical" href="https://denalitechs.com/404/"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta property="og:type" content="website"><meta property="og:title" content="Page Not Found | Denali Tech"><meta property="og:description" content="The page you requested is not available. Start from Denali Tech services, projects, or contact."><meta property="og:url" content="https://denalitechs.com/404/"><meta property="og:image" content="https://denalitechs.com/Video/homepage/denali-tech-hero-field-team.webp"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Page Not Found | Denali Tech"><meta name="twitter:description" content="The page you requested is not available. Start from Denali Tech services, projects, or contact."><meta name="twitter:image" content="https://denalitechs.com/Video/homepage/denali-tech-hero-field-team.webp"><meta name="denali-page-job" content="utility"><script src="/assets/js/theme.js?v=20260602" defer></script><script src="/assets/js/microsoft-uet.js" defer></script><script>
+      window.dataLayer = window.dataLayer || [];
+      window.denaliLeadTrack = function(type, label) {
+        try {
+          window.dataLayer.push({
+            event: "denali_lead_action",
+            lead_type: type,
+            lead_label: label || ""
+          });
+        } catch (error) {}
+      };
+      document.addEventListener("click", function(event) {
+        var target = event.target.closest("[data-lead-action]");
+        if (!target) return;
+        window.denaliLeadTrack(target.getAttribute("data-lead-action"), target.textContent.trim());
+      });
+      document.addEventListener("submit", function(event) {
+        var form = event.target.closest("form[data-lead-action]");
+        if (!form) return;
+        window.denaliLeadTrack(form.getAttribute("data-lead-action"), form.getAttribute("id") || "form");
+      });
+    </script><link rel="stylesheet" href="/_astro/index.JxH_grfL.css"></head> <body> <header class="site-header"> <div class="shell site-header__inner"> <a href="/" class="brand-mark"> <img src="/Video/homepage/logo-112.webp" alt="Denali Tech logo" width="56" height="40"> <span>Denali Tech</span> </a> <nav class="site-nav" aria-label="Main navigation"> <a href="/">Home</a><a href="/services/">Services</a><a href="/projects/">Projects</a><a href="/about/">About</a><a href="/blogs/">Blog</a><a href="/contact/">Contact</a> </nav> <div class="site-header__actions"> <a class="button button--ghost" href="tel:+13124397500" data-lead-action="phone"> (312) 439-7500 </a> <a class="button button--primary" href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20want%20a%20clear%20plan%20for%20my%20home%20technology.%20My%20home%20is%20in%3A" target="_blank" rel="noopener noreferrer" data-lead-action="whatsapp">
+Send Project Details
+</a> </div> </div> </header> <main>  <section class="section hero"> <div class="shell split-grid"> <div class="hero-copy"> <p class="eyebrow">404</p> <h1>That page is not here anymore.</h1> <p>Go back to services, projects, blog guidance, or the contact page.</p> <div class="hero-actions"> <a class="button button--primary" href="/services/">Services</a> <a class="button button--ghost" href="/contact/">Contact</a> </div> </div> </div> </section>  </main> <footer class="site-footer"> <div class="shell site-footer__grid"> <section> <p class="eyebrow">Chicago-area home automation</p> <h2>Clear plan first. Clean install after.</h2> <p class="muted">
+Denali Tech helps homeowners with smart home control, WiFi, theater, cameras,
+        lighting, shades, and AV systems that are easier to use and easier to support.
+</p> <div class="footer-actions"> <a class="button button--primary" href="/contact/" data-lead-action="contact">
+Contact Denali Tech
+</a> <a class="button button--ghost" href="tel:+13124397500" data-lead-action="phone"> (312) 439-7500 </a> </div> </section> <section> <h3>Services</h3> <ul class="footer-list"> <li><a href="/smart-home-control/">Smart Home Control</a></li><li><a href="/home-theater-room/">Home Theater</a></li><li><a href="/residential-wifi-network/">WiFi &amp; Networking</a></li><li><a href="/security-cameras/">Cameras &amp; Doorbells</a></li><li><a href="/smart-lighting-shades/">Lighting &amp; Shades</a></li> </ul> </section><section> <h3>Trust</h3> <ul class="footer-list"> <li><a href="/projects/">Projects</a></li><li><a href="/about/">About</a></li><li><a href="/brands/">Brands</a></li><li><a href="/contact/">Contact</a></li> </ul> </section><section> <h3>Guides</h3> <ul class="footer-list"> <li><a href="/blogs/">Blog Hub</a></li><li><a href="/control4-installer-chicago/">Control4 Help</a></li><li><a href="/urc-programming-chicago/">URC Programming</a></li><li><a href="/faq.html">FAQ</a></li> </ul> </section> </div> <div class="shell site-footer__bottom"> <span>Denali Tech Inc.</span> <span>Mount Prospect, IL · Chicago and nearby suburbs</span> <a href="mailto:ash@denalitechs.com" data-lead-action="email">ash@denalitechs.com</a> </div> </footer> </body></html>
