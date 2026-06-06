@@ -7,4 +7,4 @@
   t.src = "https://www.clarity.ms/tag/" + i;
   y = l.getElementsByTagName(r)[0];
   y.parentNode.insertBefore(t, y);
-})(window, document, "clarity", "script", "x2x6r5w5xy");
+})(window, document, "clarity", "script", "x2xgvr7dj9");
