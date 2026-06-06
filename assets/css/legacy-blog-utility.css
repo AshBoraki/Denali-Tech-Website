@@ -71,3 +71,13 @@
 .legacy-text-right {
   text-align: right;
 }
+
+body.dt-unified-chrome article.blog-container {
+  padding-top: clamp(40px, 7vw, 72px);
+}
+
+body.dt-unified-chrome article.blog-container > .blog-container {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
