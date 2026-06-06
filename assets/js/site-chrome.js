@@ -7,7 +7,7 @@
 
   var navItems = [
     { label: "Home", href: "/" },
-    { label: "What We Do", href: "/services/" },
+    { label: "Services", href: "/services/" },
     { label: "Projects", href: "/projects/" },
     { label: "About Us", href: "/about/" },
     { label: "Blog", href: "/blogs/" },
@@ -41,7 +41,7 @@
       title: "Platforms",
       links: [
         { label: "Our Brands", href: "/brands/" },
-        { label: "Control4 Help", href: "/control4-installer-chicago/" },
+        { label: "Control4 Installer", href: "/control4-installer-chicago/" },
         { label: "URC Programming", href: "/urc-programming-chicago/" },
         { label: "Hub", href: "/hub/" }
       ]
@@ -311,7 +311,7 @@
     linkBar.appendChild(buildFooterLinkGroup("Proof", [
       { label: "Projects", href: "/projects/" },
       { label: "About Us", href: "/about/" },
-      { label: "Control4 Help", href: "/control4-installer-chicago/" },
+      { label: "Control4 Installer", href: "/control4-installer-chicago/" },
       { label: "URC Programming", href: "/urc-programming-chicago/" }
     ]));
     linkBar.appendChild(buildFooterLinkGroup("Start", [
