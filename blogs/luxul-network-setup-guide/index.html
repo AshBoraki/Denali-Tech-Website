@@ -252,6 +252,24 @@
           color: inherit !important;
         }
       </style>
+    
+      <script id="denali-article-lead-track">
+        window.dataLayer = window.dataLayer || [];
+        window.denaliLeadTrack = function(type, label) {
+          try {
+            window.dataLayer.push({
+              event: "denali_lead_action",
+              lead_type: type,
+              lead_label: label || ""
+            });
+          } catch (error) {}
+        };
+        document.addEventListener("click", function(event) {
+          var target = event.target.closest("[data-lead-action]");
+          if (!target) return;
+          window.denaliLeadTrack(target.getAttribute("data-lead-action"), target.textContent.trim());
+        });
+      </script>
     </head>
 <body>
     <main role="main">
@@ -329,8 +347,8 @@
         <h2>If the network is the real bottleneck, start here next.</h2>
         <p>Use the WiFi and networking page when the problem is dead zones, dropped devices, unstable cameras, bad roaming, or messy equipment layout.</p>
         <div class="denali-next-step__actions">
-          <a class="denali-next-step__primary" href="/residential-wifi-network/">Open WiFi and networking service page</a>
-          <a class="denali-next-step__secondary" href="/contact/">Send project details</a>
+          <a class="denali-next-step__primary" href="/residential-wifi-network/" data-lead-action="service-cta">Open WiFi and networking service page</a>
+          <a class="denali-next-step__secondary" href="/contact/" data-lead-action="contact">Send project details</a>
         </div>
       </div>
     </section>

@@ -252,6 +252,24 @@
           color: inherit !important;
         }
       </style>
+    
+      <script id="denali-article-lead-track">
+        window.dataLayer = window.dataLayer || [];
+        window.denaliLeadTrack = function(type, label) {
+          try {
+            window.dataLayer.push({
+              event: "denali_lead_action",
+              lead_type: type,
+              lead_label: label || ""
+            });
+          } catch (error) {}
+        };
+        document.addEventListener("click", function(event) {
+          var target = event.target.closest("[data-lead-action]");
+          if (!target) return;
+          window.denaliLeadTrack(target.getAttribute("data-lead-action"), target.textContent.trim());
+        });
+      </script>
     </head>
 <body>
     <main role="main">
@@ -328,8 +346,8 @@
         <h2>If the room needs better AV planning, use the theater page next.</h2>
         <p>Use the theater and media room page when the real job is speakers, displays, racks, wiring, room flow, or family-friendly control.</p>
         <div class="denali-next-step__actions">
-          <a class="denali-next-step__primary" href="/home-theater-room/">Open Home theater and media room service page</a>
-          <a class="denali-next-step__secondary" href="/contact/">Send project details</a>
+          <a class="denali-next-step__primary" href="/home-theater-room/" data-lead-action="service-cta">Open Home theater and media room service page</a>
+          <a class="denali-next-step__secondary" href="/contact/" data-lead-action="contact">Send project details</a>
         </div>
       </div>
     </section>

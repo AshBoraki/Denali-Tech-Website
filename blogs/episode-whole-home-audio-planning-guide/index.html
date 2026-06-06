@@ -1,25 +1,6 @@
 <!DOCTYPE html><html lang="en"><head>
     <script src="/assets/js/theme.js?v=20260602"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    var gtmLoaded = false;
-    function loadGTM() {
-        if (gtmLoaded) return;
-        gtmLoaded = true;
-        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-MWPTRPDR');
-    }
-    window.addEventListener('load', function() {
-        if ('requestIdleCallback' in window) {
-            requestIdleCallback(loadGTM, { timeout: 3000 });
-        } else {
-            setTimeout(loadGTM, 2000);
-        }
-    });
-    </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Episode Speakers and Whole-Home Audio: What to Plan Before Cutting Holes | Denali Tech</title>
@@ -137,6 +118,24 @@
           color: inherit !important;
         }
       </style>
+    
+      <script id="denali-article-lead-track">
+        window.dataLayer = window.dataLayer || [];
+        window.denaliLeadTrack = function(type, label) {
+          try {
+            window.dataLayer.push({
+              event: "denali_lead_action",
+              lead_type: type,
+              lead_label: label || ""
+            });
+          } catch (error) {}
+        };
+        document.addEventListener("click", function(event) {
+          var target = event.target.closest("[data-lead-action]");
+          if (!target) return;
+          window.denaliLeadTrack(target.getAttribute("data-lead-action"), target.textContent.trim());
+        });
+      </script>
     </head>
 <body>
     <main role="main">
@@ -228,8 +227,8 @@
         <h2>If the room needs better AV planning, use the theater page next.</h2>
         <p>Use the theater and media room page when the real job is speakers, displays, racks, wiring, room flow, or family-friendly control.</p>
         <div class="denali-next-step__actions">
-          <a class="denali-next-step__primary" href="/home-theater-room/">Open Home theater and media room service page</a>
-          <a class="denali-next-step__secondary" href="/contact/">Send project details</a>
+          <a class="denali-next-step__primary" href="/home-theater-room/" data-lead-action="service-cta">Open Home theater and media room service page</a>
+          <a class="denali-next-step__secondary" href="/contact/" data-lead-action="contact">Send project details</a>
         </div>
       </div>
     </section>
