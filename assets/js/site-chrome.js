@@ -43,7 +43,7 @@
         { label: "Our Brands", href: "/brands/" },
         { label: "Control4 Installer", href: "/control4-installer-chicago/" },
         { label: "URC Programming", href: "/urc-programming-chicago/" },
-        { label: "Hub", href: "/hub/" }
+        { label: "Smart Home Control", href: "/smart-home-control/" }
       ]
     }
   ];
@@ -318,7 +318,7 @@
       { label: "Contact", href: "/contact/" },
       { label: "Blog", href: "/blogs/" },
       { label: "FAQ", href: "/faq.html" },
-      { label: "Hub", href: "/hub/" }
+      { label: "Smart Home Control", href: "/smart-home-control/" }
     ]));
 
     var bottom = makeElement("div", "dt-site-footer-bottom");
