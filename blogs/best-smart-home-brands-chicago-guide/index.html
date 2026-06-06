@@ -1,43 +1,8 @@
 <!DOCTYPE html><html lang="en"><head>
     <script src="/assets/js/theme.js?v=20260602"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    var gtmLoaded = false;
-    function loadGTM() {
-        if (gtmLoaded) return;
-        gtmLoaded = true;
-        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-MWPTRPDR');
-    }
-    window.addEventListener('load', function() {
-        if ('requestIdleCallback' in window) {
-            requestIdleCallback(loadGTM, { timeout: 3000 });
-        } else {
-            setTimeout(loadGTM, 2000);
-        }
-    });
-    </script>
-    <meta name="facebook-pixel-id" content="1475625250840344">
-    <script>
-    (function() {
-        var pixelId = '1475625250840344';
-        if (!window.fbq) {
-            !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;
-            s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document, 'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-        }
-        try {
-            window.fbq('init', pixelId);
-            window.fbq('track', 'PageView');
-        } catch (error) {}
-    })();
-    </script>
+    
+    
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Best Smart Home Brands We Trust for Chicago Homes | Denali Tech</title>
@@ -156,6 +121,24 @@
           color: inherit !important;
         }
       </style>
+    
+      <script id="denali-article-lead-track">
+        window.dataLayer = window.dataLayer || [];
+        window.denaliLeadTrack = function(type, label) {
+          try {
+            window.dataLayer.push({
+              event: "denali_lead_action",
+              lead_type: type,
+              lead_label: label || ""
+            });
+          } catch (error) {}
+        };
+        document.addEventListener("click", function(event) {
+          var target = event.target.closest("[data-lead-action]");
+          if (!target) return;
+          window.denaliLeadTrack(target.getAttribute("data-lead-action"), target.textContent.trim());
+        });
+      </script>
     </head>
 <body>
     <main role="main">
@@ -313,8 +296,8 @@
         <h2>Need real Control4 help, not another general article?</h2>
         <p>Use the Control4 page when the next step is takeover work, programming, updates, remotes, or a cleaner day-to-day smart-home setup.</p>
         <div class="denali-next-step__actions">
-          <a class="denali-next-step__primary" href="/control4-installer-chicago/">Open Control4 service page</a>
-          <a class="denali-next-step__secondary" href="/contact/">Send project details</a>
+          <a class="denali-next-step__primary" href="/control4-installer-chicago/" data-lead-action="service-cta">Open Control4 service page</a>
+          <a class="denali-next-step__secondary" href="/contact/" data-lead-action="contact">Send project details</a>
         </div>
       </div>
     </section>
