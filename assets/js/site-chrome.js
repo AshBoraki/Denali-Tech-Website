@@ -23,7 +23,7 @@
         { label: "WiFi & Networking", href: "/residential-wifi-network/" },
         { label: "Security Cameras", href: "/security-cameras/" },
         { label: "Lighting & Shades", href: "/smart-lighting-shades/" },
-        { label: "Video Distribution", href: "/video-distribution/" }
+        { label: "Whole-Home Audio", href: "/services/#audio" }
       ]
     },
     {
