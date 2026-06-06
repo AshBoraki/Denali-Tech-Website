@@ -1,26 +1,324 @@
-<!DOCTYPE html><html lang="en" data-theme="light"><head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Denali Tech Hub | DTNT, PropoKit &amp; Home Automation</title>
-  <meta name="description" content="Pick the right Denali Tech company: DTNT software, PropoKit proposal workflow, or Denali Tech home automation and custom AV.">
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="https://denalitechs.com/hub/">
-  <meta property="og:title" content="Denali Tech Hub">
-  <meta property="og:description" content="Three direct links for DTNT, PropoKit, and Denali Tech.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://denalitechs.com/hub/">
-  <meta property="og:image" content="https://denalitechs.com/Video/logo.webp">
-  <meta name="twitter:card" content="summary_large_image">
-  
-  
-  <script src="/assets/js/dtnt-outbound-tracking.js" defer=""></script>
-  <link rel="stylesheet" href="/assets/css/hub.css?v=20260606a">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Denali Tech Hub | DTNT, PropoKit & Home Automation</title>
+  <meta
+    name="description"
+    content="Pick the right Denali Tech company: DTNT software, PropoKit proposal workflow, or Denali Tech home automation and custom AV."
+  />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://denalitechs.com/hub/" />
+  <meta property="og:title" content="Denali Tech Hub" />
+  <meta
+    property="og:description"
+    content="Three direct links for DTNT, PropoKit, and Denali Tech."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://denalitechs.com/hub/" />
+  <meta property="og:image" content="https://denalitechs.com/Video/logo.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script src="/assets/js/theme.js?v=20260602"></script>
+  <script src="/assets/js/microsoft-uet.js" defer></script>
+  <script src="/assets/js/dtnt-outbound-tracking.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    :root {
+      --hub-ink: #111827;
+      --hub-muted: #5f6b7a;
+      --hub-line: #dce3eb;
+      --hub-soft: #f7f9fb;
+      --hub-card: #ffffff;
+      --hub-blue: #1f5eff;
+      --hub-green: #16836b;
+      --hub-gold: #a35f05;
+      --hub-shadow: 0 18px 46px rgba(17, 24, 39, 0.09);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--hub-ink);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #f8fafc 0%, #ffffff 38%);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .hub-shell-header {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 24px 0 0;
+    }
+
+    .hub-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--hub-ink);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .hub-brand img {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 16px;
+      top: -80px;
+      z-index: 100;
+      padding: 10px 14px;
+      border-radius: 8px;
+      background: #111827;
+      color: #fff;
+      text-decoration: none;
+      transition: top 160ms ease;
+    }
+
+    .skip-link:focus {
+      top: 16px;
+    }
+
+    .hub-page {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 58px 0 42px;
+    }
+
+    .hub-intro {
+      max-width: 780px;
+      margin: 0 auto 30px;
+      text-align: center;
+    }
+
+    .hub-eyebrow {
+      margin: 0 0 12px;
+      color: var(--hub-blue);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .hub-intro h1 {
+      margin: 0;
+      color: var(--hub-ink);
+      font-family: Manrope, Inter, sans-serif;
+      font-size: clamp(2.35rem, 5vw, 4.6rem);
+      line-height: 0.96;
+      letter-spacing: 0;
+    }
+
+    .hub-intro p:last-child {
+      max-width: 660px;
+      margin: 18px auto 0;
+      color: var(--hub-muted);
+      font-size: 1.04rem;
+      line-height: 1.6;
+    }
+
+    .hub-links {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .hub-card {
+      display: flex;
+      min-height: 332px;
+      flex-direction: column;
+      gap: 16px;
+      padding: 24px;
+      border: 1px solid #cfd8e3;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 14px 34px rgba(17, 24, 39, 0.06);
+      text-decoration: none;
+      transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+    }
+
+    .hub-card:hover,
+    .hub-card:focus-visible {
+      transform: translateY(-3px);
+      border-color: rgba(17, 24, 39, 0.22);
+      box-shadow: 0 20px 48px rgba(17, 24, 39, 0.11);
+      outline: none;
+    }
+
+    .hub-card-top {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-height: 60px;
+    }
+
+    .hub-mark,
+    .hub-logo {
+      display: grid;
+      width: 56px;
+      height: 56px;
+      flex: 0 0 56px;
+      place-items: center;
+      overflow: hidden;
+      border: 1px solid rgba(17, 24, 39, 0.08);
+      border-radius: 8px;
+      background: var(--hub-soft);
+      color: var(--hub-ink);
+      font-weight: 800;
+    }
+
+    .hub-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hub-mark.dtnt {
+      background: #eef4ff;
+      color: var(--hub-blue);
+    }
+
+    .hub-logo.propokit {
+      background: #fff8ec;
+    }
+
+    .hub-mark.denali {
+      background: #fff7e8;
+      color: var(--hub-gold);
+    }
+
+    .hub-kicker {
+      margin: 0;
+      color: var(--hub-muted);
+      font-size: 0.84rem;
+      font-weight: 800;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .hub-card h2 {
+      margin: 0;
+      color: var(--hub-ink);
+      font-family: Manrope, Inter, sans-serif;
+      font-size: 1.44rem;
+      line-height: 1.1;
+      letter-spacing: 0;
+    }
+
+    .hub-card p:not(.hub-kicker) {
+      margin: 0;
+      color: var(--hub-muted);
+      font-size: 0.96rem;
+      line-height: 1.55;
+    }
+
+    .hub-card-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: auto;
+      color: var(--hub-ink);
+      font-weight: 800;
+    }
+
+    .hub-card-action::after {
+      content: "→";
+      color: var(--hub-blue);
+      font-size: 1.1rem;
+    }
+
+    .hub-footer {
+      margin-top: 24px;
+      color: var(--hub-muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    @media (max-width: 860px) {
+      .hub-page {
+        width: min(680px, calc(100% - 28px));
+        padding-top: 42px;
+      }
+
+      .hub-links {
+        grid-template-columns: 1fr;
+      }
+
+      .hub-card {
+        min-height: 0;
+        padding: 20px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .hub-page {
+        width: min(100% - 24px, 430px);
+        padding-top: 34px;
+      }
+
+      .hub-shell-header {
+        width: min(100% - 24px, 430px);
+        padding-top: 18px;
+      }
+
+      .hub-intro {
+        margin-bottom: 22px;
+        text-align: left;
+      }
+
+      .hub-intro h1 {
+        font-size: 2.35rem;
+        line-height: 1;
+      }
+
+      .hub-intro p:last-child {
+        margin-top: 14px;
+        font-size: 1rem;
+      }
+
+      .hub-card-top {
+        min-height: 54px;
+      }
+
+      .hub-mark,
+      .hub-logo {
+        width: 50px;
+        height: 50px;
+        flex-basis: 50px;
+      }
+
+      .hub-card h2 {
+        font-size: 1.24rem;
+      }
+    }
+  </style>
 </head>
-<body class="light-theme">
+<body>
   <a class="skip-link" href="#main-content">Skip to content</a>
   <header class="hub-shell-header" aria-label="Denali Tech Hub">
     <a class="hub-brand" href="/" aria-label="Denali Tech home">
-      <img src="/Video/logo.webp" alt="">
+      <img src="/Video/logo.webp" alt="" />
       <span>Denali Tech</span>
     </a>
   </header>
@@ -32,10 +330,16 @@
     </section>
 
     <section class="hub-links" aria-label="Denali Tech hub links">
-      <a class="hub-card" href="https://dt-nt.com/" target="_blank" rel="noopener" data-outbound-brand="dtnt">
+      <a
+        class="hub-card"
+        href="https://dt-nt.com/"
+        target="_blank"
+        rel="noopener"
+        data-outbound-brand="dtnt"
+      >
         <div class="hub-card-top">
           <span class="hub-logo" aria-hidden="true">
-            <img src="/Video/dtnt/dtnt-app-mark.png" alt="" loading="lazy">
+            <img src="/Video/dtnt/dtnt-app-mark.png" alt="" loading="lazy" />
           </span>
           <p class="hub-kicker">For Installers</p>
         </div>
@@ -44,10 +348,16 @@
         <span class="hub-card-action">Go to DTNT</span>
       </a>
 
-      <a class="hub-card" href="https://propokit.com/" target="_blank" rel="noopener" data-outbound-brand="propokit">
+      <a
+        class="hub-card"
+        href="https://propokit.com/"
+        target="_blank"
+        rel="noopener"
+        data-outbound-brand="propokit"
+      >
         <div class="hub-card-top">
           <span class="hub-logo propokit" aria-hidden="true">
-            <img src="/Video/propokit/propokit-logo-home.svg" alt="" loading="lazy">
+            <img src="/Video/propokit/propokit-logo-home.svg" alt="" loading="lazy" />
           </span>
           <p class="hub-kicker">For Contractors</p>
         </div>
@@ -59,7 +369,7 @@
       <a class="hub-card" href="/">
         <div class="hub-card-top">
           <span class="hub-logo" aria-hidden="true">
-            <img src="/Video/logo.webp" alt="" loading="lazy">
+            <img src="/Video/logo.webp" alt="" loading="lazy" />
           </span>
           <p class="hub-kicker">For Homeowners</p>
         </div>
@@ -71,6 +381,5 @@
 
     <p class="hub-footer">Denali Tech Inc.</p>
   </main>
-
-
-</body></html>
+</body>
+</html>

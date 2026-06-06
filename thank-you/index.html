@@ -1,24 +1,145 @@
-<!DOCTYPE html><html lang="en" data-theme="light"><head>
-    <script src="/assets/js/denali-deferred-gtm.js?v=20260606a" defer=""></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="/assets/js/theme.js?v=20260602"></script>
+    <!-- Google Tag Manager - Optimized for Performance (Deferred Loading) -->
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    var gtmLoaded = false;
+    
+    function loadGTM() {
+        if (gtmLoaded) return;
+        gtmLoaded = true;
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MWPTRPDR');
+    }
+    
+    // Load GTM after page is fully loaded and idle, or on user interaction
+    function initGTM() {
+        // Wait for page to be fully loaded
+        if (document.readyState === 'complete') {
+            // Use requestIdleCallback with longer timeout to reduce unused JS
+            if ('requestIdleCallback' in window) {
+                requestIdleCallback(loadGTM, { timeout: 3000 });
+            } else {
+                setTimeout(loadGTM, 2000);
+            }
+        } else {
+            window.addEventListener('load', function() {
+                if ('requestIdleCallback' in window) {
+                    requestIdleCallback(loadGTM, { timeout: 3000 });
+                } else {
+                    setTimeout(loadGTM, 2000);
+                }
+            });
+        }
+        
+        // Load on first user interaction as fallback (scroll, click, touchstart)
+        var interactionEvents = ['scroll', 'click', 'touchstart', 'keydown'];
+        var loadOnInteraction = function() {
+            loadGTM();
+            interactionEvents.forEach(function(event) {
+                document.removeEventListener(event, loadOnInteraction, { passive: true });
+            });
+        };
+        interactionEvents.forEach(function(event) {
+            document.addEventListener(event, loadOnInteraction, { passive: true, once: true });
+        });
+    }
+    
+    initGTM();
+    </script>
+    <!-- End Google Tag Manager -->
     <meta name="facebook-pixel-id" content="1475625250840344">
-    <script src="/assets/js/denali-meta-pixel.js?v=20260606a" defer=""></script>
-    <script src="/assets/js/thank-you-lead-track.js?v=20260606a" defer=""></script>
+    <script>
+    (function() {
+        var pixelId = "1475625250840344";
+
+        if (!window.fbq) {
+            !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version="2.0";
+            n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;
+            s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document, "script",
+            "https://connect.facebook.net/en_US/fbevents.js");
+        }
+
+        try {
+            window.fbq("init", pixelId);
+            window.fbq("track", "PageView");
+        } catch (error) {}
+
+        window.denaliMetaPixel = window.denaliMetaPixel || {};
+        window.denaliMetaPixel.pixelId = pixelId;
+        window.denaliMetaPixel.trackLeadOnce = function(details) {
+            var now = Date.now();
+
+            try {
+                var key = "denali_meta_last_lead_at";
+                var last = parseInt(sessionStorage.getItem(key) || "0", 10);
+                if (last && (now - last) < 1800000) return false;
+                sessionStorage.setItem(key, String(now));
+            } catch (error) {}
+
+            if (typeof window.fbq === "function") {
+                window.fbq("track", "Lead", details || {});
+                return true;
+            }
+
+            return false;
+        };
+    })();
+    </script>
+    <script>
+    window.addEventListener('load', function() {
+        if (window.denaliMetaPixel && typeof window.denaliMetaPixel.trackLeadOnce === 'function') {
+            window.denaliMetaPixel.trackLeadOnce({
+                lead_type: 'thank_you_page',
+                page: 'thank_you'
+            });
+        } else if (typeof window.fbq === 'function') {
+            window.fbq('track', 'Lead', {
+                lead_type: 'thank_you_page',
+                page: 'thank_you'
+            });
+        }
+
+        if (window.dataLayer && typeof window.dataLayer.push === 'function') {
+            window.dataLayer.push({
+                event: 'generate_lead',
+                lead_type: 'thank_you_page',
+                page: 'thank_you'
+            });
+        }
+
+        window.uetq = window.uetq || [];
+        window.uetq.push('event', 'generate_lead', {
+            event_category: 'lead',
+            event_label: 'thank_you_page',
+            lead_type: 'thank_you_page',
+            page: 'thank_you'
+        });
+    });
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thank You | Denali Tech</title>
     <meta name="description" content="Thanks for contacting Denali Tech. We received your request and will reply within 24 hours.">
-    <meta name="robots" content="noindex,follow">
+    <meta name="robots" content="noindex, follow">
     <link rel="canonical" href="https://denalitechs.com/thank-you/">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://denalitechs.com/thank-you/">
     <meta property="og:title" content="Thank You | Denali Tech">
     <meta property="og:description" content="Thanks for contacting Denali Tech. We received your request and will reply within 24 hours.">
-    <meta property="og:image" content="https://denalitechs.com/Video/logo-social.webp">
+    <meta property="og:image" content="https://denalitechs.com/Video/logo-social.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://denalitechs.com/thank-you/">
     <meta name="twitter:title" content="Thank You | Denali Tech">
     <meta name="twitter:description" content="Thanks for contacting Denali Tech. We received your request and will reply within 24 hours.">
-    <meta name="twitter:image" content="https://denalitechs.com/Video/logo-social.webp">
+    <meta name="twitter:image" content="https://denalitechs.com/Video/logo-social.jpg">
     <meta name="keywords" content="denali tech contact, smart home consultation, home automation quote, chicago smart home installer">
     <base href="/">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -26,25 +147,236 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png">
-    <link rel="stylesheet" href="/assets/css/thank-you.css?v=20260606a">
-  <script src="/assets/js/microsoft-uet.js" defer=""></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root { 
+            --bg: #0a0d18; 
+            --text: #f8fafc; 
+            --accent: #f97316; 
+            --accent-hover: #fdba74;
+            --text-secondary: #cbd5e1;
+        }
+        body { 
+            margin: 0; 
+            font-family: 'Inter', system-ui, sans-serif; 
+            background: var(--bg); 
+            color: var(--text); 
+            min-height: 100vh;
+        }
+        .wrap { 
+            min-height: 100vh; 
+            display: grid; 
+            place-items: center; 
+            padding: clamp(16px, 4vw, 40px) clamp(12px, 3vw, 24px); 
+            box-sizing: border-box;
+        }
+        .card { 
+            max-width: 720px; 
+            width: 100%;
+            text-align: center; 
+            background: rgba(255,255,255,0.05); 
+            border: 1px solid rgba(255,255,255,0.12); 
+            border-radius: 16px; 
+            padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1.25rem, 3vw, 1.75rem); 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        .brand { 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: clamp(8px, 2vw, 10px); 
+            margin-bottom: clamp(12px, 3vw, 16px); 
+            font-family: 'Poppins', system-ui, sans-serif; 
+            font-weight: 700;
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            flex-wrap: wrap;
+        }
+        .brand img { 
+            width: clamp(32px, 4vw, 40px); 
+            height: clamp(32px, 4vw, 40px); 
+            object-fit: cover; 
+            object-position: 40% center; 
+            border-radius: 8px; 
+            flex-shrink: 0;
+        }
+        h1 { 
+            font-family: 'Poppins', system-ui, sans-serif; 
+            font-size: clamp(1.4rem, 4.5vw, 2.4rem); 
+            margin: 0 0 clamp(10px, 2vw, 12px); 
+            line-height: 1.3;
+            color: var(--text);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        p { 
+            opacity: .9; 
+            line-height: 1.6; 
+            font-size: clamp(0.9rem, 1.8vw, 1rem);
+            color: var(--text-secondary);
+            margin-bottom: clamp(0.75rem, 2vw, 1rem);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+        p a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        p a:hover {
+            color: var(--accent-hover);
+        }
+        .actions { 
+            margin-top: clamp(20px, 4vw, 24px); 
+            display: flex; 
+            gap: clamp(10px, 2vw, 12px); 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+        .btn { 
+            padding: clamp(12px, 2.5vw, 14px) clamp(18px, 3.5vw, 24px); 
+            border-radius: 10px; 
+            text-decoration: none; 
+            font-weight: 600; 
+            border: 2px solid var(--accent);
+            font-size: clamp(0.875rem, 1.8vw, 1rem);
+            transition: all 0.3s ease;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            white-space: nowrap;
+            max-width: 100%;
+        }
+        .primary { 
+            background: linear-gradient(135deg, var(--accent), #fb923c); 
+            color: #fff; 
+            border: none;
+            box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3);
+        }
+        .primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(249, 115, 22, 0.4);
+        }
+        .secondary { 
+            color: var(--accent); 
+            background: transparent; 
+        }
+        .secondary:hover {
+            background: rgba(249, 115, 22, 0.1);
+            border-color: var(--accent-hover);
+        }
+        
+        @media (max-width: 768px) {
+            .wrap {
+                padding: 16px 12px;
+            }
+            .card {
+                padding: 1.5rem 1.25rem;
+                border-radius: 12px;
+            }
+            .brand {
+                gap: 8px;
+                margin-bottom: 14px;
+            }
+            h1 {
+                font-size: clamp(1.3rem, 5vw, 1.8rem);
+                margin-bottom: 12px;
+            }
+            p {
+                font-size: 0.9rem;
+                margin-bottom: 1rem;
+            }
+            .actions {
+                flex-direction: column;
+                width: 100%;
+                max-width: 100%;
+                gap: 10px;
+                margin-top: 20px;
+                padding: 0;
+            }
+            .btn {
+                width: 100%;
+                max-width: 100%;
+                padding: 14px 16px;
+                font-size: 0.95rem;
+                box-sizing: border-box;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .wrap {
+                padding: 12px 10px;
+            }
+            .card {
+                padding: 1.25rem 1rem;
+                border-radius: 12px;
+            }
+            .brand {
+                font-size: 0.95rem;
+                gap: 6px;
+                margin-bottom: 12px;
+            }
+            .brand img {
+                width: 30px;
+                height: 30px;
+            }
+            h1 {
+                font-size: 1.25rem;
+                line-height: 1.4;
+                margin-bottom: 10px;
+            }
+            p {
+                font-size: 0.875rem;
+                line-height: 1.5;
+                margin-bottom: 0.875rem;
+            }
+            .actions {
+                margin-top: 18px;
+                gap: 8px;
+                padding: 0;
+            }
+            .btn {
+                width: 100%;
+                max-width: 100%;
+                padding: 12px 14px;
+                font-size: 0.9rem;
+                min-height: 44px;
+                box-sizing: border-box;
+            }
+        }
+    </style>
+    <script>
+      // Optional: redirect back to contact after a delay
+      // setTimeout(() => window.location.href = 'contact.html', 8000);
+    </script>
+  <script src="/assets/js/microsoft-uet.js" defer></script>
+      <link rel="stylesheet" href="/assets/css/site-chrome.css?v=20260605a">
+    <script src="/assets/js/site-chrome.js?v=20260605a" defer></script>
 </head>
-  <body class="light-theme">
+  <body>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MWPTRPDR"
-    height="0" width="0" class="tag-manager-noscript-frame"></iframe></noscript>
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <div class="wrap">
       <div class="card" role="status" aria-live="polite">
-        <div class="brand"><img src="/Video/homepage/logo-112.webp" alt="Denali Tech Logo" width="50" height="36" decoding="async"> <span>Denali Tech</span></div>
+        <div class="brand"><img src="/Video/logo.JPG" alt="Denali Tech Logo"> <span>Denali Tech</span></div>
         <h1>Thank you — we received your request!</h1>
-        <p>We'll reach out within 24 hours to schedule your project review. If this is urgent, message us on <a href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20would%20rather%20use%20WhatsApp.%20Can%20you%20help%20me%20with%3A" class="thank-you-link" target="_blank" rel="noopener noreferrer">WhatsApp</a>.</p>
+        <p>We'll reach out within 24 hours to schedule your project review. If this is urgent, message us on <a href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20would%20rather%20use%20WhatsApp.%20Can%20you%20help%20me%20with%3A" style="color: var(--accent); text-decoration: none; font-weight: 600; white-space: nowrap;" target="_blank" rel="noopener noreferrer">WhatsApp</a>.</p>
         <div class="actions">
           <a class="btn primary" href="/">Back to Home</a>
           <a class="btn secondary" href="/services/">Explore Services</a>
         </div>
       </div>
     </div>
-  
-
-</body></html>
+  </body>
+</html>
