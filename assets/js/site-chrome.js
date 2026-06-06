@@ -30,7 +30,7 @@
       title: "Company",
       links: [
         { label: "About Us", href: "/about/" },
-        { label: "Our Projects", href: "/projects/" },
+        { label: "Projects", href: "/projects/" },
         { label: "Blog", href: "/blogs/" },
         { label: "FAQ", href: "/faq.html" },
         { label: "Contact", href: "/contact/" },
@@ -38,7 +38,7 @@
       ]
     },
     {
-      title: "Platforms",
+      title: "Platforms We Install",
       links: [
         { label: "Our Brands", href: "/brands/" },
         { label: "Control4 Installer", href: "/control4-installer-chicago/" },
