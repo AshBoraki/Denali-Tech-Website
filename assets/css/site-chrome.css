@@ -1,4 +1,46 @@
 /* Shared Denali Tech header and footer. Keep this file scoped to dt-* classes. */
+@view-transition {
+  navigation: auto;
+}
+
+@keyframes dt-page-fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0.92;
+    transform: translateY(6px);
+  }
+}
+
+@keyframes dt-page-fade-in {
+  from {
+    opacity: 0.94;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 180ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+::view-transition-old(root) {
+  animation-name: dt-page-fade-out;
+}
+
+::view-transition-new(root) {
+  animation-name: dt-page-fade-in;
+}
+
 :root {
   --dt-chrome-bg: #ffffff;
   --dt-chrome-surface: #f8fafc;
@@ -19,6 +61,13 @@
 
 body.dt-unified-chrome {
   color-scheme: light;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
 }
 
 body.dt-site-menu-lock {

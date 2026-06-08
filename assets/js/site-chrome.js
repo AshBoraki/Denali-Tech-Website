@@ -373,11 +373,23 @@
     });
   }
 
+  function hasStaticPageChrome() {
+    var header = document.querySelector("header.header");
+    var footer = document.querySelector("footer.prestige-footer, footer.footer");
+    return !!(header && footer);
+  }
+
   function init() {
     if (document.body.dataset.denaliChromeReady === "true") return;
     document.body.dataset.denaliChromeReady = "true";
     document.body.classList.add("dt-unified-chrome", "light-theme");
     document.documentElement.setAttribute("data-theme", "light");
+
+    if (hasStaticPageChrome()) {
+      document.body.dataset.denaliChromeMode = "static";
+      upgradePhoneLinks();
+      return;
+    }
 
     hideExistingChrome();
     var header = buildHeader();
