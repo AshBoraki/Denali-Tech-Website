@@ -28,6 +28,12 @@ body {
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
+body:not([data-denali-chrome-mode="static"]):not([data-denali-chrome-ready="true"]) > header.header,
+body:not([data-denali-chrome-mode="static"]):not([data-denali-chrome-ready="true"]) > footer.footer {
+  opacity: 0;
+  pointer-events: none;
+}
+
 a {
   color: inherit;
 }
