@@ -582,8 +582,8 @@
     }
     </script>
 <script src="assets/js/microsoft-uet.js" defer></script>
-    <link rel="stylesheet" href="/assets/css/site-chrome.css?v=20260607b">
-    <script src="/assets/js/site-chrome.js?v=20260607b" defer></script>
+    <link rel="stylesheet" href="/assets/css/site-chrome.css?v=20260607c">
+    <script src="/assets/js/site-chrome.js?v=20260607c" defer></script>
 </head>
 <body class="dt-unified-chrome light-theme">
     <!-- Google Tag Manager (noscript) -->
@@ -751,16 +751,18 @@
 		        </div>
 	        <style>
                 .hero {
-                    --hero-media-top: var(--mobile-header-height);
+                    --hero-media-top: 0px;
+                    padding-top: 0 !important;
                 }
 
-	            /* Position video to start below header - Works on all screen sizes */
+	            /* Keep the hero video locked to the hero itself. The shared chrome spacer
+	               handles the page-top offset. */
 	            .hero-background {
 	                position: absolute;
 	                top: var(--hero-media-top) !important;
 	                left: 0;
 	                width: 100%;
-	                height: calc(100vh - var(--hero-media-top)) !important;
+	                height: 100% !important;
 	                overflow: hidden;
 	                z-index: 0;
 	                pointer-events: none;
@@ -788,28 +790,6 @@
 		                user-select: none !important;
 		            }
 
-	            /* Desktop screens (769px and above) */
-	            @media (min-width: 769px) {
-                    .hero {
-                        --hero-media-top: var(--header-height);
-                    }
-
-	                .hero-background {
-	                    position: absolute !important;
-	                    top: var(--hero-media-top) !important;
-	                    height: calc(100vh - var(--hero-media-top)) !important;
-	                }
-
-	                .hero-background video {
-                    position: absolute !important;
-                    top: 0 !important;
-                    height: 100% !important;
-                    width: 100% !important;
-                    object-fit: cover !important;
-                    object-position: center center !important;
-                }
-            }
-
             /* Large desktop screens (1024px and above) */
             @media (min-width: 1024px) {
                 .hero-background video {
@@ -825,7 +805,7 @@
 	                .hero-background {
 	                    position: absolute !important;
 	                    top: var(--hero-media-top) !important;
-	                    height: calc(100vh - var(--hero-media-top)) !important;
+	                    height: 100% !important;
 	                }
 
                 .hero-background video {
@@ -841,7 +821,7 @@
 	                .hero-background {
 	                    position: absolute !important;
 	                    top: var(--hero-media-top) !important;
-	                    height: calc(100vh - var(--hero-media-top)) !important;
+	                    height: 100% !important;
 	                }
 
                 .hero-background video {
@@ -860,7 +840,7 @@
 	                .hero-background {
 	                    position: absolute !important;
 	                    top: var(--hero-media-top) !important;
-	                    height: calc(100vh - var(--hero-media-top)) !important;
+	                    height: 100% !important;
 	                }
 
                 .hero-background video {
@@ -878,7 +858,7 @@
 	                top: var(--hero-media-top);
 	                left: 0;
 	                width: 100%;
-	                height: calc(100% - var(--hero-media-top));
+	                height: 100%;
 	                z-index: 2;
 	                pointer-events: none;
 	                background:
