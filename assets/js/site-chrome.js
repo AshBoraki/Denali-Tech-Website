@@ -375,7 +375,7 @@
 
   function hasStaticPageChrome() {
     var header = document.querySelector("header.header");
-    var footer = document.querySelector("footer.prestige-footer, footer.footer");
+    var footer = document.querySelector("footer.prestige-footer");
     return !!(header && footer);
   }
 
