@@ -59,6 +59,13 @@
   display: none !important;
 }
 
+body:not([data-denali-chrome-ready="true"]) > header.header,
+body:not([data-denali-chrome-ready="true"]) > footer.prestige-footer,
+body:not([data-denali-chrome-ready="true"]) > footer.footer {
+  opacity: 0;
+  pointer-events: none;
+}
+
 body.dt-unified-chrome {
   color-scheme: light;
 }
