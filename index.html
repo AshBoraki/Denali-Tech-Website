@@ -743,85 +743,64 @@
     <!-- Hero Section -->
 	    <section class="hero" id="home" itemscope itemtype="https://schema.org/WebPage">
 		        <div class="hero-background">
-		            <picture class="hero-background-picture" aria-hidden="true">
-		                <source srcset="Video/homepage/denali-tech-hero-field-team.webp" type="image/webp">
-		                <img src="Video/homepage/denali-tech-hero-field-team.webp" alt="" class="hero-background-image" width="2752" height="1536" fetchpriority="high">
-		            </picture>
-                    <video class="hero-background-video" autoplay muted loop playsinline preload="metadata" poster="Video/homepage/denali-tech-hero-field-team.webp" aria-hidden="true">
-                        <source src="Video/homepage/hero-loop.mp4" type="video/mp4">
+                    <video id="hero-background-video" class="hero-background-video" autoplay muted loop playsinline preload="metadata" poster="Video/homepage/denali-tech-hero-field-team.webp" aria-hidden="true">
+                        <source src="Video/homepage/denali-tech-hero-smart-home.mp4" type="video/mp4">
                     </video>
 		            <div></div>
 		            <div id="particles-js"></div>
 		        </div>
-        <style>
-            /* Position video to start below header - Works on all screen sizes */
-            /* Base styles for all screens - Video starts below header */
-            .hero-background {
-                position: absolute;
-                top: var(--mobile-header-height) !important;
-                left: 0;
-                width: 100%;
-                height: calc(100vh - var(--mobile-header-height)) !important;
-                overflow: hidden;
-                z-index: 0;
-                pointer-events: none;
-            }
+	        <style>
+                .hero {
+                    --hero-media-top: var(--mobile-header-height);
+                }
 
-	            .hero-background video {
+	            /* Position video to start below header - Works on all screen sizes */
+	            .hero-background {
 	                position: absolute;
-	                top: 0;
+	                top: var(--hero-media-top) !important;
 	                left: 0;
 	                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                object-position: center center;
-                min-width: 100%;
-                min-height: 100%;
-                z-index: 0;
-                pointer-events: none !important;
-                touch-action: none !important;
-                -webkit-touch-callout: none !important;
-	                -webkit-user-select: none !important;
-	                user-select: none !important;
+	                height: calc(100vh - var(--hero-media-top)) !important;
+	                overflow: hidden;
+	                z-index: 0;
+	                pointer-events: none;
+                    background: #05070d;
 	            }
 
-	            .hero-background-picture,
-	            .hero-background-image {
-	                position: absolute;
-	                inset: 0;
-	                width: 100%;
-	                height: 100%;
-	                display: block;
-	            }
+		            .hero-background video {
+		                position: absolute;
+		                top: 0;
+		                left: 0;
+		                width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: center center;
+                        min-width: 100%;
+                        min-height: 100%;
+                        z-index: 1;
+                        opacity: 1 !important;
+                        filter: brightness(0.96) contrast(1.04) saturate(1.02);
+                        background: #05070d;
+                        pointer-events: none !important;
+                        touch-action: none !important;
+                        -webkit-touch-callout: none !important;
+		                -webkit-user-select: none !important;
+		                user-select: none !important;
+		            }
 
-                .hero-background-picture {
-                    z-index: 0;
-                }
+	            /* Desktop screens (769px and above) */
+	            @media (min-width: 769px) {
+                    .hero {
+                        --hero-media-top: var(--header-height);
+                    }
 
-                .hero-background-video {
-                    z-index: 1;
-                }
+	                .hero-background {
+	                    position: absolute !important;
+	                    top: var(--hero-media-top) !important;
+	                    height: calc(100vh - var(--hero-media-top)) !important;
+	                }
 
-	            .hero-background-image {
-	                object-fit: cover;
-	                object-position: center center;
-	                opacity: 0.92;
-	                filter: brightness(0.92) contrast(1.06) saturate(1.04);
-	                pointer-events: none !important;
-	                touch-action: none !important;
-	                -webkit-user-select: none !important;
-	                user-select: none !important;
-	            }
-
-            /* Desktop screens (769px and above) */
-            @media (min-width: 769px) {
-                .hero-background {
-                    position: absolute !important;
-                    top: var(--header-height) !important;
-                    height: calc(100vh - var(--header-height)) !important;
-                }
-
-                .hero-background video {
+	                .hero-background video {
                     position: absolute !important;
                     top: 0 !important;
                     height: 100% !important;
@@ -841,13 +820,13 @@
                 }
             }
 
-            /* Tablet screens (481px to 768px) */
-            @media (min-width: 481px) and (max-width: 768px) {
-                .hero-background {
-                    position: absolute !important;
-                    top: var(--mobile-header-height) !important;
-                    height: calc(100vh - var(--mobile-header-height)) !important;
-                }
+	            /* Tablet screens (481px to 768px) */
+	            @media (min-width: 481px) and (max-width: 768px) {
+	                .hero-background {
+	                    position: absolute !important;
+	                    top: var(--hero-media-top) !important;
+	                    height: calc(100vh - var(--hero-media-top)) !important;
+	                }
 
                 .hero-background video {
                     position: absolute !important;
@@ -857,13 +836,13 @@
                 }
             }
 
-            /* Mobile screens (480px and below) */
-            @media (max-width: 480px) {
-                .hero-background {
-                    position: absolute !important;
-                    top: var(--mobile-header-height) !important;
-                    height: calc(100vh - var(--mobile-header-height)) !important;
-                }
+	            /* Mobile screens (480px and below) */
+	            @media (max-width: 480px) {
+	                .hero-background {
+	                    position: absolute !important;
+	                    top: var(--hero-media-top) !important;
+	                    height: calc(100vh - var(--hero-media-top)) !important;
+	                }
 
                 .hero-background video {
                     position: absolute !important;
@@ -876,13 +855,13 @@
                 }
             }
 
-            /* Landscape orientation on mobile/tablet */
-            @media (max-width: 768px) and (orientation: landscape) {
-                .hero-background {
-                    position: absolute !important;
-                    top: var(--mobile-header-height) !important;
-                    height: calc(100vh - var(--mobile-header-height)) !important;
-                }
+	            /* Landscape orientation on mobile/tablet */
+	            @media (max-width: 768px) and (orientation: landscape) {
+	                .hero-background {
+	                    position: absolute !important;
+	                    top: var(--hero-media-top) !important;
+	                    height: calc(100vh - var(--hero-media-top)) !important;
+	                }
 
                 .hero-background video {
                     position: absolute !important;
@@ -893,29 +872,25 @@
                 }
             }
 
-            .hero::before {
-                content: '';
-                position: absolute;
-                top: var(--header-height);
-                left: 0;
-                width: 100%;
-                height: calc(100% - var(--header-height));
-                z-index: 2;
-                pointer-events: none;
-                background:
+	            .hero::before {
+	                content: '';
+	                position: absolute;
+	                top: var(--hero-media-top);
+	                left: 0;
+	                width: 100%;
+	                height: calc(100% - var(--hero-media-top));
+	                z-index: 2;
+	                pointer-events: none;
+	                background:
                     radial-gradient(ellipse at 24% 52%, rgba(10, 13, 24, 0.42) 0%, rgba(10, 13, 24, 0.22) 38%, rgba(10, 13, 24, 0.05) 66%, rgba(10, 13, 24, 0.1) 100%),
                     linear-gradient(90deg, rgba(10, 13, 24, 0.48) 0%, rgba(10, 13, 24, 0.2) 38%, rgba(10, 13, 24, 0.02) 100%),
                     linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(10, 13, 24, 0.14) 100%);
             }
 
-	            .hero-background video {
-		                opacity: 0.86 !important;
-		                filter: brightness(1.14) saturate(1.06);
+		            .hero-background video {
+		                opacity: 1 !important;
+		                filter: brightness(0.96) contrast(1.04) saturate(1.02);
 		            }
-
-	            .hero-background-image {
-	                opacity: 0.95 !important;
-	            }
 
             .hero-subcopy {
                 max-width: 560px;
