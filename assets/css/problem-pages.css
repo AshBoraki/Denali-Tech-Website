@@ -252,7 +252,6 @@ h3 {
 .control4-logo-tile img {
   width: min(78%, 280px);
   max-height: 64px;
-  filter: brightness(0) saturate(100%) invert(11%) sepia(22%) saturate(1247%) hue-rotate(178deg) brightness(94%) contrast(96%);
 }
 
 .brand-note {
