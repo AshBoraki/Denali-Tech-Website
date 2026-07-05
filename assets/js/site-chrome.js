@@ -23,6 +23,7 @@
         { label: "WiFi & Networking", href: "/residential-wifi-network/" },
         { label: "Security Cameras", href: "/security-cameras/" },
         { label: "Lighting & Shades", href: "/smart-lighting-shades/" },
+        { label: "Sonos Installer", href: "/sonos-installer-chicago/" },
         { label: "Whole-Home Audio", href: "/services/#audio" }
       ]
     },
@@ -43,6 +44,7 @@
         { label: "Our Brands", href: "/brands/" },
         { label: "Control4 Installer", href: "/control4-installer-chicago/" },
         { label: "URC Programming", href: "/urc-programming-chicago/" },
+        { label: "Sonos Installer", href: "/sonos-installer-chicago/" },
         { label: "Smart Home Control", href: "/smart-home-control/" }
       ]
     }
@@ -306,13 +308,15 @@
       { label: "Smart Home Control", href: "/smart-home-control/" },
       { label: "Home Theater", href: "/home-theater-room/" },
       { label: "WiFi & Networking", href: "/residential-wifi-network/" },
-      { label: "Lighting & Shades", href: "/smart-lighting-shades/" }
+      { label: "Lighting & Shades", href: "/smart-lighting-shades/" },
+      { label: "Sonos Installer", href: "/sonos-installer-chicago/" }
     ]));
     linkBar.appendChild(buildFooterLinkGroup("Proof", [
       { label: "Projects", href: "/projects/" },
       { label: "About Us", href: "/about/" },
       { label: "Control4 Installer", href: "/control4-installer-chicago/" },
-      { label: "URC Programming", href: "/urc-programming-chicago/" }
+      { label: "URC Programming", href: "/urc-programming-chicago/" },
+      { label: "Sonos Installer", href: "/sonos-installer-chicago/" }
     ]));
     linkBar.appendChild(buildFooterLinkGroup("Start", [
       { label: "Contact", href: "/contact/" },
