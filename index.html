@@ -742,10 +742,15 @@
     <main role="main" id="main-content">
     <!-- Hero Section -->
 	    <section class="hero" id="home" itemscope itemtype="https://schema.org/WebPage">
-		        <div class="hero-background">
-                    <video id="hero-background-video" class="hero-background-video" autoplay muted loop playsinline preload="metadata" poster="Video/homepage/denali-tech-hero-field-team.webp" aria-hidden="true">
-                        <source src="Video/homepage/denali-tech-hero-smart-home.mp4" type="video/mp4">
-                    </video>
+			        <div class="hero-background">
+                    <picture class="hero-background-picture" aria-hidden="true">
+                        <source media="(max-width: 768px)" srcset="Video/homepage/denali-tech-hero-field-team.webp" type="image/webp">
+                        <source srcset="Video/homepage/hero-poster-desktop.webp" type="image/webp">
+                        <img class="hero-background-image" src="Video/homepage/denali-tech-hero-field-team.webp" alt="" loading="eager" decoding="async" width="2752" height="1536" fetchpriority="high">
+                    </picture>
+	                    <video id="hero-background-video" class="hero-background-video" autoplay muted loop playsinline preload="metadata" poster="Video/homepage/denali-tech-hero-field-team.webp" aria-hidden="true">
+	                        <source src="Video/homepage/denali-tech-hero-smart-home.mp4" type="video/mp4">
+	                    </video>
 		            <div></div>
 		            <div id="particles-js"></div>
 		        </div>
@@ -769,7 +774,7 @@
                     background: #05070d;
 	            }
 
-		            .hero-background video {
+			            .hero-background video {
 		                position: absolute;
 		                top: 0;
 		                left: 0;
@@ -788,7 +793,26 @@
                         -webkit-touch-callout: none !important;
 		                -webkit-user-select: none !important;
 		                user-select: none !important;
-		            }
+			            }
+
+                    .hero-background-picture {
+                        display: none;
+                    }
+
+                    .hero-background-picture,
+                    .hero-background-image {
+                        position: absolute;
+                        inset: 0;
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    .hero-background-image {
+                        display: block;
+                        object-fit: cover;
+                        object-position: center center;
+                        z-index: 1;
+                    }
 
             /* Large desktop screens (1024px and above) */
             @media (min-width: 1024px) {
@@ -808,13 +832,21 @@
 	                    height: 100% !important;
 	                }
 
-                .hero-background video {
-                    position: absolute !important;
-                    top: 0 !important;
-                    height: 100% !important;
-                    width: 100% !important;
-                }
-            }
+	                .hero-background video {
+	                    position: absolute !important;
+	                    top: 0 !important;
+	                    height: 100% !important;
+	                    width: 100% !important;
+	                }
+
+                    .hero-background-picture {
+                        display: block !important;
+                    }
+
+                    .hero-background video {
+                        display: none !important;
+                    }
+	            }
 
 	            /* Mobile screens (480px and below) */
 	            @media (max-width: 480px) {
@@ -824,16 +856,24 @@
 	                    height: 100% !important;
 	                }
 
-                .hero-background video {
-                    position: absolute !important;
-                    top: 0 !important;
-                    height: 100% !important;
-                    width: 100% !important;
-                    min-height: 100% !important;
-                    object-fit: cover !important;
-                    object-position: center center !important;
-                }
-            }
+	                .hero-background video {
+	                    position: absolute !important;
+	                    top: 0 !important;
+	                    height: 100% !important;
+	                    width: 100% !important;
+	                    min-height: 100% !important;
+	                    object-fit: cover !important;
+	                    object-position: center center !important;
+	                }
+
+                    .hero-background-picture {
+                        display: block !important;
+                    }
+
+                    .hero-background video {
+                        display: none !important;
+                    }
+	            }
 
 	            /* Landscape orientation on mobile/tablet */
 	            @media (max-width: 768px) and (orientation: landscape) {
@@ -2926,6 +2966,43 @@
 
             body.dt-unified-chrome .hero-buttons {
                 grid-template-columns: 1fr !important;
+            }
+        }
+    </style>
+
+    <style id="homepage-final-mobile-media-fix">
+        @media (min-width: 769px) {
+            body.dt-unified-chrome .hero-background-picture {
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body.dt-unified-chrome .hero-background-picture {
+                display: block !important;
+                position: absolute !important;
+                inset: 0 !important;
+                width: 100% !important;
+                height: 100% !important;
+                max-width: none !important;
+                z-index: 1 !important;
+            }
+
+            body.dt-unified-chrome .hero-background-image {
+                display: block !important;
+                position: absolute !important;
+                inset: 0 !important;
+                width: 100% !important;
+                height: 100% !important;
+                max-width: none !important;
+                object-fit: cover !important;
+                object-position: 58% center !important;
+                filter: brightness(0.94) contrast(1.04) saturate(1.05) !important;
+            }
+
+            body.dt-unified-chrome #hero-background-video,
+            body.dt-unified-chrome .hero-background-video {
+                display: none !important;
             }
         }
     </style>
