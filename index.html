@@ -1586,19 +1586,25 @@
                 }
 
                 .homepage-control4-images {
-                    grid-template-columns: 1fr 1fr !important;
-                    gap: 0.55rem !important;
+                    grid-template-columns: 1fr !important;
+                    gap: 0.7rem !important;
                 }
 
+                .homepage-control4-images picture,
                 .homepage-control4-images picture:first-child {
-                    grid-column: 1 / -1 !important;
+                    aspect-ratio: 4 / 3 !important;
+                    grid-column: auto !important;
                     grid-row: auto !important;
+                    width: 100% !important;
                 }
 
                 .homepage-control4-images img {
+                    display: block !important;
+                    width: 100% !important;
+                    height: 100% !important;
                     min-height: 0 !important;
-                    height: 150px !important;
                     object-fit: cover !important;
+                    object-position: center !important;
                 }
             }
         </style>
@@ -1790,8 +1796,9 @@
                 <article class="service-card" role="article" aria-label="Whole Home Audio service">
                     <div class="service-icon" aria-hidden="true" style="font-size: 3.5rem; margin-bottom: 1.25rem; filter: drop-shadow(0 4px 8px rgba(249,115,22,0.3));">🎵</div>
                     <h3>Music Everywhere</h3>
-                    <p>Music in one room or every room, with speakers, amps, and controls selected for the space.</p>
-                    <a href="/services/" class="service-link" aria-label="Learn more about Whole Home Audio">Learn More →</a>
+                    <p>Music in one room or every room, with Sonos, speakers, amps, and controls selected for the space.</p>
+                    <a href="/sonos-installer-chicago/" class="service-link" aria-label="Learn more about Sonos installation">Sonos Installer →</a>
+                    <a href="/services/#audio" class="service-link" aria-label="Learn more about Whole Home Audio" style="font-weight: 600; margin-left: 1rem;">Whole-Home Audio →</a>
                 </article>
             </div>
             <div style="text-align: center; margin-top: 3rem;">
@@ -1947,7 +1954,7 @@
                         <img src="Video/Brands/Denali%20tech%20Lutron.png" alt="Lutron" loading="lazy" width="150" height="50" style="max-width: 100%; height: auto; max-height: 44px; object-fit: contain; filter: grayscale(0.2) brightness(0.98); transition: all var(--transition);">
                     </picture>
                 </a>
-                <a class="brand-showcase-item" href="/brands/" aria-label="View Sonos brand page" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.25rem 1rem; transition: all var(--transition); display: flex; align-items: center; justify-content: center; min-height: 88px;">
+                <a class="brand-showcase-item" href="/sonos-installer-chicago/" aria-label="View Sonos installer page" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.25rem 1rem; transition: all var(--transition); display: flex; align-items: center; justify-content: center; min-height: 88px;">
                     <picture>
                         <source srcset="Video/Brands/Denali%20tech%20Sonos.webp" type="image/webp">
                         <img src="Video/Brands/Denali%20tech%20Sonos.png" alt="Sonos" loading="lazy" width="150" height="50" style="max-width: 100%; height: auto; max-height: 44px; object-fit: contain; filter: grayscale(0.2) brightness(0.98); transition: all var(--transition);">
@@ -2947,6 +2954,7 @@
                         <li><a href="/security-cameras/">Security Cameras</a></li>
                         <li><a href="/smart-lighting-shades/">Smart Lighting</a></li>
                         <li><a href="/smart-lighting-shades/">Smart Shades</a></li>
+                        <li><a href="/sonos-installer-chicago/">Sonos Installer</a></li>
                         <li><a href="/services/#audio">Whole-Home Audio</a></li>
                     </ul>
                 </div>
@@ -2969,6 +2977,7 @@
                         <li><a href="/brands/">Our Brands</a></li>
                         <li><a href="https://www.control4.com/" target="_blank" rel="noopener noreferrer">Control4</a></li>
                         <li><a href="https://www.urc-automation.com/" target="_blank" rel="noopener noreferrer">URC Automation</a></li>
+                        <li><a href="/sonos-installer-chicago/">Sonos Installer</a></li>
                         <li><a href="https://www.lutron.com/" target="_blank" rel="noopener noreferrer">Lutron</a></li>
                         <li><a href="https://www.snapone.com/" target="_blank" rel="noopener noreferrer">Snap One</a></li>
                     </ul>
