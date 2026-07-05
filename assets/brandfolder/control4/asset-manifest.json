@@ -1,0 +1,22 @@
+{
+  "source": "ADI Brandfolder - Control4 Marketing and Sales Materials",
+  "capturedBy": "Denali Tech authorized dealer account",
+  "capturedDate": "2026-07-05",
+  "assets": [
+    {
+      "sourceName": "C4-VBTX9.jpg",
+      "localFile": "control4-countertop-remote.webp",
+      "use": "Control4 remote lifestyle visual"
+    },
+    {
+      "sourceName": "C4-VBTX59.jpg",
+      "localFile": "control4-kitchen-lighting-scene.webp",
+      "use": "Control4 lighting scene lifestyle visual"
+    },
+    {
+      "sourceName": "C4-VBTX58.jpg",
+      "localFile": "control4-vibrant-living-room.webp",
+      "use": "Control4 room scene hero and social preview"
+    }
+  ]
+}
