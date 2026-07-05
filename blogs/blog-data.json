@@ -159,7 +159,7 @@
       "publishedDate": "2026-06-03",
       "updatedDate": "2026-06-03",
       "readingTime": 7,
-      "heroImage": "/Video/Blogs%20imge/What%20is%20Control4%20Complete%20Guide%20for%20Homeowners%202025.webp",
+      "heroImage": "/assets/brandfolder/control4/control4-touchscreen-keypad-lighting.webp",
       "featured": true
     },
     {
@@ -640,7 +640,7 @@
       "publishedDate": "2026-03-22",
       "updatedDate": "2026-03-22",
       "readingTime": 10,
-      "heroImage": "/Video/Blogs imge/What is Control4 Complete Guide for Homeowners 2025.webp",
+      "heroImage": "/assets/brandfolder/control4/control4-touchscreen-lifestyle-lighting.webp",
       "featured": true
     },
     {
@@ -802,7 +802,7 @@
       "publishedDate": "2025-01-06",
       "updatedDate": "2025-01-06",
       "readingTime": 9,
-      "heroImage": "/Video/Blogs imge/What is Control4 Complete Guide for Homeowners 2025.webp",
+      "heroImage": "/assets/brandfolder/control4/control4-touchscreen-lifestyle-lighting.webp",
       "featured": true
     },
     {
@@ -928,24 +928,24 @@
       "featured": true
     },
     {
-      "id": "control4-helo-remote-review",
-      "title": "Control4 Helo Remote Review: Non-Touch Version",
-      "slug": "control4-helo-remote-review",
-      "url": "/blogs/control4-helo-remote-review/",
-      "excerpt": "Complete review of the Control4 Helo remote control (non-touch version). Learn about battery life, features, pros, cons, and whether the Helo is right for your smart home.",
+      "id": "control4-halo-remote-review",
+      "title": "Control4 Halo Remote Review: Non-Touch Version",
+      "slug": "control4-halo-remote-review",
+      "url": "/blogs/control4-halo-remote-review/",
+      "excerpt": "Complete review of the Control4 Halo remote control (non-touch version). Learn about battery life, features, pros, cons, and whether the Halo is right for your smart home.",
       "category": "Product Review",
       "tags": [
         "Control4",
         "Remote Control",
         "Review",
-        "Helo",
+        "Halo",
         "Product Review"
       ],
       "author": "Denali Tech Team",
       "publishedDate": "2024-01-30",
       "updatedDate": "2024-01-30",
       "readingTime": 8,
-      "heroImage": "/Video/Helo-C4.webp",
+      "heroImage": "/Video/Halo-C4.webp",
       "featured": true
     },
     {
@@ -970,24 +970,24 @@
       "featured": true
     },
     {
-      "id": "control4-helo-touch-review",
-      "title": "Control4 Helo Touch Remote Review: Complete Analysis",
-      "slug": "control4-helo-touch-review",
-      "url": "/blogs/control4-helo-touch-review/",
-      "excerpt": "Complete review of the Control4 Helo Touch remote control. Learn about battery life, features, pros, cons, and whether the Helo Touch is right for your smart home.",
+      "id": "control4-halo-touch-review",
+      "title": "Control4 Halo Touch Remote Review: Complete Analysis",
+      "slug": "control4-halo-touch-review",
+      "url": "/blogs/control4-halo-touch-review/",
+      "excerpt": "Complete review of the Control4 Halo Touch remote control. Learn about battery life, features, pros, cons, and whether the Halo Touch is right for your smart home.",
       "category": "Product Review",
       "tags": [
         "Control4",
         "Remote Control",
         "Review",
-        "Helo Touch",
+        "Halo Touch",
         "Product Review"
       ],
       "author": "Denali Tech Team",
       "publishedDate": "2024-01-30",
       "updatedDate": "2024-01-30",
       "readingTime": 8,
-      "heroImage": "/Video/Helo Touch-C4.webp",
+      "heroImage": "/Video/Halo Touch-C4.webp",
       "featured": true
     },
     {
