@@ -3007,6 +3007,178 @@
         }
     </style>
 
+    <style id="homepage-mobile-visual-polish">
+        @media (max-width: 768px) {
+            body.dt-unified-chrome .homepage-control4-section {
+                padding: 34px 18px 40px !important;
+                background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%) !important;
+            }
+
+            body.dt-unified-chrome .homepage-control4-images {
+                display: grid !important;
+                grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+                gap: 0.68rem !important;
+                margin-top: 1.05rem !important;
+                padding: 0 0.15rem 0.45rem !important;
+                overflow: visible !important;
+                align-items: stretch !important;
+            }
+
+            body.dt-unified-chrome .homepage-control4-images picture {
+                position: relative !important;
+                display: block !important;
+                overflow: hidden !important;
+                border-radius: 12px !important;
+                border: 1px solid rgba(15, 23, 42, 0.1) !important;
+                background: #e2e8f0 !important;
+                box-shadow: 0 14px 32px rgba(15, 23, 42, 0.13) !important;
+            }
+
+            body.dt-unified-chrome .homepage-control4-images picture::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                z-index: 1;
+                background: linear-gradient(180deg, rgba(15, 23, 42, 0) 54%, rgba(15, 23, 42, 0.55) 100%);
+                pointer-events: none;
+            }
+
+            body.dt-unified-chrome .homepage-control4-images picture::after {
+                position: absolute;
+                left: 0.68rem;
+                bottom: 0.62rem;
+                z-index: 2;
+                color: #ffffff;
+                font-size: 0.72rem;
+                font-weight: 800;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                text-shadow: 0 1px 8px rgba(15, 23, 42, 0.55);
+            }
+
+            body.dt-unified-chrome .homepage-control4-images picture:first-child {
+                grid-column: 1 / -1 !important;
+                aspect-ratio: 5 / 3 !important;
+                grid-row: auto !important;
+            }
+
+            body.dt-unified-chrome .homepage-control4-images picture:first-child::after {
+                content: "Living space";
+            }
+
+            body.dt-unified-chrome .homepage-control4-images picture:nth-child(2),
+            body.dt-unified-chrome .homepage-control4-images picture:nth-child(3) {
+                aspect-ratio: 1 / 1 !important;
+                min-height: 150px !important;
+            }
+
+            body.dt-unified-chrome .homepage-control4-images picture:nth-child(2) {
+                transform: translateY(-6px);
+            }
+
+            body.dt-unified-chrome .homepage-control4-images picture:nth-child(2)::after {
+                content: "Remote";
+            }
+
+            body.dt-unified-chrome .homepage-control4-images picture:nth-child(3) {
+                transform: translateY(10px);
+            }
+
+            body.dt-unified-chrome .homepage-control4-images picture:nth-child(3)::after {
+                content: "Lighting";
+            }
+
+            body.dt-unified-chrome .homepage-control4-images img {
+                width: 100% !important;
+                height: 100% !important;
+                min-height: 0 !important;
+                object-fit: cover !important;
+                object-position: center !important;
+            }
+
+            body.dt-unified-chrome .featured-projects-section {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+                background: #f8fafc !important;
+            }
+
+            body.dt-unified-chrome .featured-projects-section .section-header {
+                padding: 0 18px !important;
+            }
+
+            body.dt-unified-chrome .featured-projects-section .projects-showcase-grid {
+                display: flex !important;
+                grid-template-columns: none !important;
+                gap: 0.85rem !important;
+                width: 100% !important;
+                max-width: none !important;
+                margin: 1rem 0 0 !important;
+                padding: 0 18px 0.65rem !important;
+                overflow-x: auto !important;
+                overflow-y: visible !important;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            body.dt-unified-chrome .featured-projects-section .project-showcase-card,
+            body.dt-unified-chrome .featured-projects-section .project-showcase-card:nth-child(n+2) {
+                display: block !important;
+                flex: 0 0 82% !important;
+                max-width: 315px !important;
+                min-width: 278px !important;
+                margin: 0 !important;
+                scroll-snap-align: start;
+                border-radius: 12px !important;
+                border: 1px solid rgba(15, 23, 42, 0.1) !important;
+                background: #ffffff !important;
+                box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12) !important;
+            }
+
+            body.dt-unified-chrome .featured-projects-section .project-image-wrapper {
+                aspect-ratio: 4 / 3 !important;
+                border-bottom: 1px solid rgba(15, 23, 42, 0.08) !important;
+            }
+
+            body.dt-unified-chrome .featured-projects-section .project-info {
+                padding: 0.82rem 0.9rem 0.95rem !important;
+            }
+
+            body.dt-unified-chrome .featured-projects-section .project-info span {
+                display: inline-flex !important;
+                align-items: center !important;
+                width: auto !important;
+                margin-bottom: 0.55rem !important;
+                padding: 0.26rem 0.54rem !important;
+                border-radius: 999px !important;
+                font-size: 0.72rem !important;
+                letter-spacing: 0.02em !important;
+            }
+
+            body.dt-unified-chrome .featured-projects-section .project-info h3 {
+                margin: 0 0 0.35rem !important;
+                font-size: 1.02rem !important;
+                line-height: 1.18 !important;
+            }
+
+            body.dt-unified-chrome .featured-projects-section .project-info p {
+                display: -webkit-box !important;
+                margin: 0 !important;
+                overflow: hidden !important;
+                color: #475569 !important;
+                font-size: 0.84rem !important;
+                line-height: 1.35 !important;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+            }
+
+            body.dt-unified-chrome .featured-projects-section .btn-primary {
+                width: calc(100% - 36px) !important;
+                margin-left: 18px !important;
+                margin-right: 18px !important;
+            }
+        }
+    </style>
+
     <!-- Footer -->
     <footer class="prestige-footer" id="main-footer">
         <div class="footer-background">
