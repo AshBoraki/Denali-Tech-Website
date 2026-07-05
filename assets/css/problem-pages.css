@@ -423,7 +423,7 @@ h3 {
 .asset-strip img {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  height: clamp(190px, 18vw, 260px) !important;
   object-fit: cover;
 }
 
