@@ -104,6 +104,12 @@ a {
   align-items: center;
 }
 
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .eyebrow {
   margin-bottom: 18px;
   color: #c2410c;
@@ -368,6 +374,35 @@ h3 {
   font-size: 0.9rem;
 }
 
+@media (orientation: portrait) and (min-width: 761px) {
+  .hero {
+    padding-top: clamp(36px, 5vh, 72px);
+  }
+
+  .hero-grid {
+    gap: clamp(20px, 3vw, 42px);
+    align-items: end;
+  }
+
+  .hero-copy {
+    min-height: clamp(420px, calc(100vh - 260px), 760px);
+    justify-content: flex-end;
+    padding-bottom: clamp(14px, 3vh, 42px);
+  }
+
+  .hero-copy .lead {
+    max-width: min(32ch, 100%);
+  }
+
+  .hero-copy .actions {
+    margin-top: 24px;
+  }
+
+  .hero-copy .trust-strip {
+    margin-top: 20px;
+  }
+}
+
 .cta {
   width: min(920px, calc(100% - 32px));
   text-align: center;
@@ -472,9 +507,19 @@ h3 {
     padding-top: 58px;
   }
 
+  .hero-copy {
+    min-height: clamp(260px, 44svh, 420px);
+    justify-content: flex-end;
+    padding-bottom: 10px;
+  }
+
   h1 {
     max-width: 10ch;
     font-size: clamp(2.65rem, 14vw, 4.1rem);
+  }
+
+  .hero-copy .lead {
+    max-width: 30ch;
   }
 
   .cards {
@@ -487,6 +532,15 @@ h3 {
 
   .actions .btn {
     width: 100%;
+  }
+
+  .hero-copy .actions {
+    margin-top: 22px;
+  }
+
+  .hero-copy .trust-strip {
+    margin-top: 18px;
+    gap: 8px;
   }
 
   .brand-logo-tile {
