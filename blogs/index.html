@@ -1123,6 +1123,7 @@
                     <div class="starter-link-list" aria-label="Supporting service pages">
                         <a href="/smart-home-control/">Smart Home Control</a>
                         <a href="/control4-installer-chicago/">Control4 Installer</a>
+                        <a href="/sonos-installer-chicago/">Sonos Installer</a>
                         <a href="/urc-programming-chicago/">URC Programming</a>
                         <a href="/residential-wifi-network/">WiFi & Networking</a>
                         <a href="/home-theater-room/">Home Theater</a>
@@ -1251,9 +1252,9 @@
             grid.classList.remove('hidden');
             noResults.classList.add('hidden');
 
-            grid.innerHTML = filteredPosts.map(post => {
-                // Only use webp if the image is already webp, otherwise use original format
-                const isWebp = post.heroImage.toLowerCase().endsWith('.webp');
+            grid.innerHTML = filteredPosts.map((post, index) => {
+                const loadingStrategy = index < 6 ? 'eager' : 'lazy';
+                const fetchPriority = index < 3 ? 'high' : 'auto';
                 // URL encode the image path to handle spaces and special characters in filenames
                 // Split path and encode each segment to properly handle ? and & characters
                 const postUrl = post.url.startsWith('/') ? post.url : `/${post.url}`;
@@ -1271,7 +1272,7 @@
                 <article class="blog-card">
                     <a href="${postUrl}" class="blog-card-image-link" style="text-decoration: none; color: inherit; display: block;">
                         <div class="blog-image-wrapper">
-                            <img src="/${encodedImagePath}" alt="${escapeHtml(post.title)}" loading="lazy" width="400" height="225" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #667eea 0%, #764ba2 100%)';">
+                            <img src="/${encodedImagePath}" alt="${escapeHtml(post.title)}" loading="${loadingStrategy}" fetchpriority="${fetchPriority}" decoding="async" width="400" height="225" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #667eea 0%, #764ba2 100%)';">
                         </div>
                     </a>
                     <div class="blog-card-content">
