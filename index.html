@@ -2446,6 +2446,46 @@
             padding: 1.3rem !important;
         }
 
+        @media (orientation: portrait) and (min-width: 769px) {
+            .dt-unified-chrome .hero {
+                min-height: min(860px, calc(100svh - 74px)) !important;
+                padding: 0 0 clamp(28px, 4.5svh, 60px) !important;
+                align-items: flex-end !important;
+                justify-content: flex-start !important;
+            }
+
+            .dt-unified-chrome .hero::before {
+                background:
+                    radial-gradient(ellipse at 18% 74%, rgba(15, 23, 42, 0.82) 0%, rgba(15, 23, 42, 0.58) 34%, rgba(15, 23, 42, 0.16) 68%, rgba(15, 23, 42, 0.08) 100%),
+                    linear-gradient(90deg, rgba(15, 23, 42, 0.78) 0%, rgba(15, 23, 42, 0.28) 44%, rgba(15, 23, 42, 0.08) 100%) !important;
+            }
+
+            .dt-unified-chrome .hero-content {
+                max-width: clamp(360px, 42vw, 520px) !important;
+                margin-left: clamp(1.5rem, 4vw, 3rem) !important;
+                padding: 0 1.5rem !important;
+                gap: 0.72rem !important;
+            }
+
+            .dt-unified-chrome .hero-content h1 {
+                max-width: 10.8ch !important;
+                font-size: clamp(3rem, 6.5vw, 4.6rem) !important;
+            }
+
+            .dt-unified-chrome .hero-subcopy {
+                max-width: 28rem !important;
+            }
+
+            .dt-unified-chrome .hero-trust {
+                max-width: 28rem !important;
+                font-size: 0.9rem !important;
+            }
+
+            .dt-unified-chrome .hero-buttons {
+                margin-top: 0.7rem !important;
+            }
+        }
+
         @media (max-width: 900px) {
             .dt-unified-chrome .quick-help-grid,
             .dt-unified-chrome .process-steps-container,
