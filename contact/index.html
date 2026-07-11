@@ -2344,24 +2344,22 @@
                             <div class="form-group">
                                 <label for="booking-service">What do you need? *</label>
                                 <select id="booking-service" name="service_type" required aria-required="true" aria-describedby="service-error">
-                                    <option value="">Choose a service...</option>
-                                    <option value="Smart Home Automation">Smart Home Automation</option>
-                                    <option value="Home Theater">Home Theater</option>
+                                    <option value="">Choose one...</option>
+                                    <option value="Control4 / Smart Home">Control4 / Smart Home</option>
+                                    <option value="URC Remote / Programming">URC Remote / Programming</option>
+                                    <option value="Sonos / Whole-Home Audio">Sonos / Whole-Home Audio</option>
+                                    <option value="Lutron Lighting / Shades">Lutron Lighting / Shades</option>
                                     <option value="WiFi & Networking">WiFi & Networking</option>
+                                    <option value="Home Theater / TV / AV">Home Theater / TV / AV</option>
                                     <option value="Cameras & Security">Cameras & Security</option>
-                                    <option value="Smart Lighting">Smart Lighting</option>
-                                    <option value="Music in Multiple Rooms">Music in Multiple Rooms</option>
-                                    <option value="Smart Shades">Smart Shades</option>
-                                    <option value="Existing System Help">Existing System Help</option>
-                                    <option value="Multiple Services">Multiple Services</option>
-                                    <option value="Not Sure / Need a Plan">Not Sure / Need a Plan</option>
+                                    <option value="Existing System Help / Not Sure">Existing System Help / Not Sure</option>
                                 </select>
                                 <span class="field-error" id="service-error" aria-live="polite" aria-hidden="true"></span>
                             </div>
                         </div>
                         <div class="form-group full-width">
                             <label for="booking-details">Project details *</label>
-                            <textarea id="booking-details" name="project_details" placeholder="Example: Control4 update, new lighting and shades, WiFi upgrade, theater plan, camera system, or takeover of an existing setup." required rows="4" aria-required="true" aria-describedby="details-error details-hint"></textarea>
+                            <textarea id="booking-details" name="project_details" placeholder="Example: Control4 update, URC remote, Sonos audio, Lutron lighting or shades, WiFi, theater, or camera system." required rows="4" aria-required="true" aria-describedby="details-error details-hint"></textarea>
                             <span class="field-error" id="details-error" aria-live="polite" aria-hidden="true"></span>
                             <small class="field-hint" id="details-hint" style="color: var(--text-secondary); font-size: 0.875rem;">A few words are fine. Photos help if you use WhatsApp or email.</small>
                         </div>
