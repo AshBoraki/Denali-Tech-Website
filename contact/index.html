@@ -935,13 +935,6 @@
             position: relative;
         }
 
-        .form-group input:valid:not(:placeholder-shown),
-        .form-group select:valid:not([value=""]),
-        .form-group textarea:valid:not(:placeholder-shown) {
-            border-color: rgba(34, 197, 94, 0.6);
-            background: rgba(34, 197, 94, 0.05);
-        }
-
         /* Field completion indicator */
         .form-group {
             position: relative;
@@ -2304,7 +2297,7 @@
                     <input type="hidden" name="access_key" value="9007b329-be2c-40a8-af09-d652f0f5b566">
                     <input type="hidden" name="subject" value="New Denali Tech Project Details">
                     <input type="hidden" name="from_name" value="Denali Tech Website">
-                    <input type="hidden" name="to_email" value="services@denalitechs.com">
+                    <input type="hidden" name="to_email" value="service@denalitechs.com">
                     <input type="hidden" name="redirect" value="https://denalitechs.com/thank-you/">
                     <!-- Honeypot fields to catch bots -->
                     <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -3188,36 +3181,44 @@
                 }
 
                 const performValidation = () => {
-                    if (field.hasAttribute('required')) {
-                        if (field.type === 'email' && field.value) {
-                            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                            if (!emailRegex.test(field.value)) {
-                                isValid = false;
-                                errorMessage = 'Please enter a valid email address';
-                            }
-                        } else if (field.type === 'tel' && field.value) {
-                            const phoneRegex = /^[\d\s\(\)\-]+$/;
-                            const digitsOnly = field.value.replace(/\D/g, '');
-                            if (digitsOnly.length < 10) {
-                                isValid = false;
-                                errorMessage = 'Please enter a valid phone number (10 digits minimum)';
-                            }
-                        } else if (field.type === 'date' && field.value) {
-                            // Only validate date if it's provided (optional field)
-                            const selectedDate = new Date(field.value);
-                            const tomorrow = new Date();
-                            tomorrow.setDate(tomorrow.getDate() + 1);
-                            if (selectedDate < tomorrow) {
-                                isValid = false;
-                                errorMessage = 'Please select a date starting from tomorrow';
-                            }
-                        } else if (field.tagName === 'SELECT' && field.value === '' && field.hasAttribute('required')) {
-                            isValid = false;
-                            errorMessage = 'This field is required';
-                        } else if (field.value.trim() === '') {
-                            isValid = false;
-                            errorMessage = 'This field is required';
+                    const value = field.value.trim();
+                    const isRequired = field.hasAttribute('required');
+
+                    if (!isRequired && value === '') {
+                        if (errorElement) {
+                            errorElement.classList.remove('show');
+                            errorElement.textContent = '';
+                            errorElement.setAttribute('aria-hidden', 'true');
                         }
+                        field.classList.remove('valid', 'error');
+                        field.setAttribute('aria-invalid', 'false');
+                        return true;
+                    }
+
+                    if (field.type === 'email' && value) {
+                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        if (!emailRegex.test(value)) {
+                            isValid = false;
+                            errorMessage = 'Please enter a valid email address';
+                        }
+                    } else if (field.type === 'tel' && value) {
+                        const digitsOnly = value.replace(/\D/g, '');
+                        if (digitsOnly.length < 10) {
+                            isValid = false;
+                            errorMessage = 'Please enter a valid phone number (10 digits minimum)';
+                        }
+                    } else if (field.type === 'date' && value) {
+                        const selectedDate = new Date(`${value}T00:00:00`);
+                        const minimumDate = new Date();
+                        minimumDate.setHours(0, 0, 0, 0);
+                        minimumDate.setDate(minimumDate.getDate() + 1);
+                        if (selectedDate < minimumDate) {
+                            isValid = false;
+                            errorMessage = 'Please select a date starting from tomorrow';
+                        }
+                    } else if (isRequired && value === '') {
+                        isValid = false;
+                        errorMessage = 'This field is required';
                     }
 
                     if (errorElement) {
