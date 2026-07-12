@@ -1,6 +1,21 @@
 {
   "posts": [
     {
+      "id": "control4-t5-vs-t4-touchscreen-size-guide",
+      "title": "Control4 T5 vs T4 Touchscreens: 8, 10 and 11 Inch Guide",
+      "slug": "control4-t5-vs-t4-touchscreen-size-guide",
+      "url": "/blogs/control4-t5-vs-t4-touchscreen-size-guide/",
+      "excerpt": "Compare Control4 T5 8-inch and 11-inch in-wall touchscreens with T4 8-inch and 10-inch in-wall and tabletop models, including real room photos, trims, wall boxes, PoE, and installation accessories.",
+      "category": "Control4 Planning Guide",
+      "tags": ["Control4", "T5 Touchscreen", "T4 Touchscreen", "Smart Home Control"],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-07-12",
+      "updatedDate": "2026-07-12",
+      "readingTime": 9,
+      "featured": true,
+      "heroImage": "/Video/Blogs%20imge/Control4%20Touchscreens/control4-t5-kitchen-wall-touchscreen.jpg"
+    },
+    {
       "id": "araknis-access-point-model-comparison",
       "title": "Araknis Access Point Comparison: 320, 520, 820, 530 and 830",
       "slug": "araknis-access-point-model-comparison",
@@ -13,7 +28,7 @@
       "updatedDate": "2026-07-12",
       "readingTime": 9,
       "featured": true,
-      "heroImage": "/Video/Blogs%20imge/Araknis%20AP%20Comparison/araknis-model-lineup-unified.png"
+      "heroImage": "/Video/Blogs%20imge/Araknis%20AP%20Comparison/araknis-model-lineup-blue.png"
     },
     {
       "id": "av-rack-size-guide",
