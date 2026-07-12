@@ -1,6 +1,41 @@
 {
   "posts": [
     {
+      "id": "araknis-access-point-model-comparison",
+      "title": "Araknis Access Point Comparison: 320, 520, 820, 530 and 830",
+      "slug": "araknis-access-point-model-comparison",
+      "url": "/blogs/araknis-access-point-model-comparison/",
+      "excerpt": "Compare current Araknis Wi-Fi 6 and Wi-Fi 7 access points side by side, including indoor, premium, high-density, and outdoor choices with clear client benefits.",
+      "category": "Network Planning Guide",
+      "tags": ["Araknis", "Wi-Fi 7", "Access Points", "Network Design"],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-07-11",
+      "updatedDate": "2026-07-12",
+      "readingTime": 9,
+      "featured": true,
+      "heroImage": "/Video/Blogs%20imge/Araknis%20AP%20Comparison/araknis-model-lineup-unified.png"
+    },
+    {
+      "id": "av-rack-size-guide",
+      "title": "Strong SR-FS Rack Size Guide: 15U to 42U Compared",
+      "slug": "av-rack-size-guide",
+      "url": "/blogs/av-rack-size-guide/",
+      "excerpt": "Compare high-resolution Strong SR-FS 15U, 21U, 27U, 35U, and 42U rack images, then learn how equipment, cooling, service access, and growth determine the right size.",
+      "category": "AV Planning Guide",
+      "tags": [
+        "AV Rack",
+        "Strong",
+        "Rack Size",
+        "Smart Home Planning"
+      ],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-07-11",
+      "updatedDate": "2026-07-11",
+      "readingTime": 8,
+      "featured": true,
+      "heroImage": "/Video/Blogs%20imge/Rack%20Size%20Guide/strong-fs-27u-hq.jpg"
+    },
+    {
       "id": 1,
       "title": "WattBox and OvrC Remote Power Reset: Why Smart Homes Need Serviceable Power",
       "slug": "wattbox-ovrc-remote-power-reset-guide",
@@ -204,22 +239,22 @@
     },
     {
       "id": "araknis-access-point-placement-guide",
-      "title": "Araknis Access Point Placement: How Reliable Smart Home WiFi Gets Designed",
+      "title": "Eero to Araknis WiFi Upgrade: A Real Smart Home Network Rescue",
       "slug": "araknis-access-point-placement-guide",
       "url": "/blogs/araknis-access-point-placement-guide/",
-      "excerpt": "A practical guide to access point placement, wiring, coverage, and why serious smart homes need planned WiFi instead of random boosters.",
-      "category": "Smart Home Guide",
+      "excerpt": "Watch a real Eero network get rebuilt with an Araknis router, PoE switching, wired access points, WattBox managed power, labeling, and a serviceable rack.",
+      "category": "Real Project Case Study",
       "tags": [
         "Araknis",
-        "WiFi",
-        "Access Points",
-        "Networking"
+        "Eero Replacement",
+        "WattBox",
+        "Whole-Home WiFi"
       ],
       "author": "Denali Tech Team",
       "publishedDate": "2026-06-03",
-      "updatedDate": "2026-07-10",
-      "readingTime": 7,
-      "heroImage": "/Video/services-real/whole-home-wifi-access-point.webp",
+      "updatedDate": "2026-07-11",
+      "readingTime": 8,
+      "heroImage": "/Video/Blogs%20imge/Arakins%20Wifi%20setup/arakhnis-network-overview-header.webp",
       "featured": true
     },
     {
