@@ -1,185 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <script src="/assets/js/microsoft-clarity.js" defer></script>
-    <script src="/assets/js/theme.js?v=20260602"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    var gtmLoaded = false;
-    function loadGTM() {
-        if (gtmLoaded) return;
-        gtmLoaded = true;
-        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-MWPTRPDR');
-    }
-    window.addEventListener('load', function() {
-        if ('requestIdleCallback' in window) {
-            requestIdleCallback(loadGTM, { timeout: 3000 });
-        } else {
-            setTimeout(loadGTM, 2000);
-        }
-    });
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Triad Home Theater Speaker Planning: What to Decide Before the Room Is Built | Denali Tech</title>
-    <meta name="description" content="A plain-English guide to theater speaker planning, room layout, screen placement, subwoofers, in-wall speakers, and why design choices should happen early.">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://denalitechs.com/blogs/triad-home-theater-speaker-planning-guide/">
-    <meta property="og:title" content="Triad Home Theater Speaker Planning: What to Decide Before the Room Is Built">
-    <meta property="og:description" content="A plain-English guide to theater speaker planning, room layout, screen placement, subwoofers, in-wall speakers, and why design choices should happen early.">
-    <meta property="og:image" content="https://denalitechs.com/Video/services-real/home-theater-media-room.webp">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Triad Home Theater Speaker Planning: What to Decide Before the Room Is Built">
-    <meta name="twitter:description" content="A plain-English guide to theater speaker planning, room layout, screen placement, subwoofers, in-wall speakers, and why design choices should happen early.">
-    <meta name="twitter:image" content="https://denalitechs.com/Video/services-real/home-theater-media-room.webp">
-    <link rel="canonical" href="https://denalitechs.com/blogs/triad-home-theater-speaker-planning-guide/">
-    <meta name="author" content="Denali Tech Team">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <meta name="article:published_time" content="2026-06-03">
-    <meta name="article:modified_time" content="2026-06-03">
-    <meta name="article:section" content="Smart Home Guide">
-    <base href="/">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
-    <style>
-        :root { --bg:#0a0d18; --panel:#101726; --text:#f8fafc; --muted:#cbd5e1; --accent:#f97316; --accent-soft:rgba(249,115,22,.14); --border:rgba(255,255,255,.12); --font-main:'Inter',system-ui,sans-serif; --font-heading:'Poppins',system-ui,sans-serif; }
-        * { box-sizing:border-box; }
-        body { margin:0; font-family:var(--font-main); background:var(--bg); color:var(--text); line-height:1.75; }
-        .blog-container { max-width:900px; margin:0 auto; padding:120px 24px 72px; }
-        .blog-header { text-align:center; margin-bottom:40px; }
-        .blog-breadcrumb, .blog-meta { color:var(--muted); font-size:.95rem; }
-        .blog-breadcrumb a, .blog-share a, .cta-box a, .blog-content a { color:var(--accent); text-decoration:none; }
-        .blog-title { font-family:var(--font-heading); font-size:clamp(2.1rem,5vw,3.2rem); line-height:1.15; margin:16px 0; }
-        .blog-meta { display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin-bottom:18px; }
-        .blog-tags { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin:18px 0 0; }
-        .blog-tag { padding:8px 12px; border-radius:999px; background:var(--accent-soft); border:1px solid rgba(249,115,22,.3); color:var(--accent); font-weight:600; font-size:.85rem; }
-        .blog-hero-image { width:100%; height:auto; max-height:520px; object-fit:cover; border-radius:20px; margin:28px 0 12px; display:block; }
-        .blog-image-caption { text-align:center; color:var(--muted); font-size:.92rem; margin-top:0; }
-        .blog-content { color:var(--muted); font-size:1.08rem; }
-        .blog-content h2, .blog-content h3 { color:var(--text); font-family:var(--font-heading); line-height:1.25; }
-        .blog-content h2 { margin-top:40px; font-size:clamp(1.6rem,4vw,2.2rem); }
-        .blog-content h3 { margin-top:28px; font-size:1.25rem; }
-        .blog-content strong { color:var(--text); }
-        .highlight-box, .cta-box { background:var(--panel); border:1px solid var(--border); border-radius:20px; padding:22px; margin:28px 0; }
-        .cta-box { text-align:center; }
-        .btn-primary { display:inline-block; margin-top:10px; background:var(--accent); color:#fff !important; padding:14px 22px; border-radius:999px; font-weight:700; }
-        .blog-share { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-top:32px; }
-        .share-btn { display:inline-flex; gap:8px; align-items:center; background:var(--panel); border:1px solid var(--border); color:var(--text); border-radius:999px; padding:10px 14px; }
-        .related-posts { margin-top:44px; }
-        .related-posts-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; }
-        .related-post-card { background:var(--panel); border:1px solid var(--border); border-radius:18px; padding:18px; color:var(--text); text-decoration:none; }
-        .related-post-category { color:var(--accent); font-size:.82rem; font-weight:700; text-transform:uppercase; letter-spacing:.05em; }
-        .related-post-title { margin:10px 0 0; font-size:1.05rem; }
-        ul, ol { padding-left:22px; }
-        @media (max-width: 640px) { .blog-container { padding:96px 18px 56px; } .blog-meta { gap:10px; } }
-    </style>
-    <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"BlogPosting","headline":"Triad Home Theater Speaker Planning: What to Decide Before the Room Is Built","description":"A plain-English guide to theater speaker planning, room layout, screen placement, subwoofers, in-wall speakers, and why design choices should happen early.","image":"https://denalitechs.com/Video/services-real/home-theater-media-room.webp","author":{"@type":"Organization","name":"Denali Tech Team","url":"https://denalitechs.com/about/"},"publisher":{"@type":"Organization","name":"Denali Tech","url":"https://denalitechs.com/","logo":{"@type":"ImageObject","url":"https://denalitechs.com/favicon-512x512.png"}},"datePublished":"2026-06-03","dateModified":"2026-06-03","mainEntityOfPage":"https://denalitechs.com/blogs/triad-home-theater-speaker-planning-guide/","articleSection":"Smart Home Guide","keywords":"Triad, Home Theater, Speakers, Media Room"}
-    </script>
-    <script src="/assets/js/microsoft-uet.js" defer></script>
-    <link rel="stylesheet" href="/assets/css/site-chrome.css?v=20260607c">
-    <script src="/assets/js/site-chrome.js?v=20260607c" defer></script>
+<script src="/assets/js/microsoft-clarity.js" defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="/favicon-32x32.png">
+<title>Triad Speaker Comparison: Bronze, Silver, Gold &amp; Platinum | Denali Tech</title>
+<meta name="description" content="Compare Triad Bronze, Silver, Gold and Platinum theater speakers, form factors, subwoofers and amplification to choose the right system for the room.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://denalitechs.com/blogs/triad-home-theater-speaker-planning-guide/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Triad Speaker Comparison: Bronze, Silver, Gold and Platinum">
+<meta property="og:description" content="A visual, client-friendly guide to choosing the right Triad speaker tier and theater layout.">
+<meta property="og:image" content="https://denalitechs.com/Video/Blogs%20imge/Triad%20Home%20Theater%20Comparison/triad-tier-comparison-hero.webp">
+<meta property="og:url" content="https://denalitechs.com/blogs/triad-home-theater-speaker-planning-guide/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/assets/css/site-chrome.css">
+<style>
+:root{color-scheme:dark;--bg:#080d16;--panel:#101827;--panel2:#172236;--text:#f8fafc;--muted:#bdc9d8;--line:rgba(255,255,255,.13);--orange:#f97316;--blue:#38bdf8;--green:#4ade80}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.65}a{color:#fdba74}.wrap{width:min(1160px,calc(100% - 36px));margin:auto}.crumb{padding-top:30px;color:var(--muted);font-size:.92rem}.hero{display:grid;grid-template-columns:.87fr 1.13fr;gap:42px;align-items:center;padding:42px 0 56px}.eyebrow,.tag{display:inline-flex;padding:6px 11px;border:1px solid #38bdf866;border-radius:99px;background:#38bdf81a;color:#bae6fd;font-size:.77rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase}h1{font-size:clamp(2.45rem,5vw,4.85rem);line-height:.98;letter-spacing:-.045em;margin:18px 0 20px}h2{font-size:clamp(1.8rem,3vw,3rem);line-height:1.08;margin:0 0 14px}h3{font-size:1.24rem;line-height:1.25;margin:0}.lede,.intro{color:#dbe5f0;font-size:1.05rem}.meta{display:flex;flex-wrap:wrap;gap:8px 18px;color:var(--muted);font-size:.9rem;margin-top:24px}.hero-card{margin:0;padding:10px;background:var(--panel);border:1px solid var(--line);border-radius:20px}.hero-card img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px}.hero-card figcaption{padding:9px 5px 0;text-align:center;color:var(--muted);font-size:.78rem}.quick{margin-bottom:58px;padding:24px 26px;border:1px solid #f9731659;border-radius:18px;background:#f9731617}.quick strong{color:#fed7aa}.section{padding:54px 0;border-top:1px solid var(--line)}.intro{max-width:930px;margin:0 0 28px}.inputs,.planning,.related{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.input,.plan,.related a{padding:20px;border:1px solid var(--line);border-radius:16px;background:var(--panel)}.input strong,.plan strong{display:block;color:#fdba74}.input p,.plan p{margin:7px 0 0;color:var(--muted);font-size:.91rem}.tier{display:grid;grid-template-columns:.94fr 1.06fr;gap:28px;align-items:center;margin-top:22px;padding:24px;border:1px solid var(--line);border-radius:20px;background:var(--panel)}.tier.reverse{grid-template-columns:1.06fr .94fr}.tier figure{margin:0;overflow:hidden;border-radius:14px}.tier img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}.tier figcaption{padding:9px 12px;color:var(--muted);font-size:.76rem}.tier p{color:#dbe5f0}.benefits{list-style:none;padding:0;margin:0}.benefits li{position:relative;padding-left:18px;margin:7px 0;color:#d9e2ec;font-size:.9rem}.benefits li:before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:900}.best{margin:15px 0 10px;padding:10px 12px;border-left:3px solid var(--orange);border-radius:0 8px 8px 0;background:#f9731614;font-size:.89rem}.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:16px}table{width:100%;min-width:1060px;border-collapse:collapse;background:var(--panel)}th,td{padding:14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{background:var(--panel2);color:#fed7aa;font-size:.76rem;text-transform:uppercase}.source{color:var(--muted);font-size:.82rem}.form-grid,.room-grid,.sub-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.card{overflow:hidden;border:1px solid var(--line);border-radius:17px;background:var(--panel)}.card img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}.card div{padding:20px}.card p{margin:7px 0 0;color:var(--muted)}.room-grid{align-items:center}.room-grid figure{margin:0;overflow:hidden;border-radius:18px}.room-grid img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}.room-copy{padding:10px}.note,.script{padding:25px;border:1px solid #38bdf84d;border-radius:18px;background:#38bdf812}.script blockquote{margin:18px 0 0;padding-left:18px;border-left:4px solid var(--blue);font-size:1.17rem;color:#e0f2fe}.cta{margin:58px 0;padding:40px;border-radius:22px;background:linear-gradient(125deg,#f97316,#c2410c)}.btns{display:flex;gap:12px;flex-wrap:wrap}.btn{padding:12px 18px;border-radius:10px;background:#fff;color:#111827;text-decoration:none;font-weight:900}.btn.alt{background:transparent;color:#fff;border:1px solid #ffffffa6}.related{margin-bottom:60px}.related a{text-decoration:none;font-weight:800}@media(max-width:960px){.hero,.tier,.tier.reverse,.room-grid{grid-template-columns:1fr}.inputs{grid-template-columns:repeat(2,1fr)}.tier.reverse figure{order:2}}@media(max-width:680px){.wrap{width:min(100% - 22px,1160px)}.inputs,.planning,.related,.form-grid,.sub-grid{grid-template-columns:1fr}.tier{padding:14px}.cta{padding:27px 22px}h1{font-size:clamp(2.3rem,13vw,3.5rem)}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Triad Speaker Comparison: Bronze, Silver, Gold and Platinum","description":"A client-friendly visual guide to Triad theater speaker tiers, form factors, subwoofers, amplification and room planning.","image":"https://denalitechs.com/Video/Blogs%20imge/Triad%20Home%20Theater%20Comparison/triad-tier-comparison-hero.webp","author":{"@type":"Organization","name":"Denali Tech Team","url":"https://denalitechs.com/about/"},"publisher":{"@type":"Organization","name":"Denali Tech","url":"https://denalitechs.com/","logo":{"@type":"ImageObject","url":"https://denalitechs.com/favicon-512x512.png"}},"datePublished":"2026-07-13","dateModified":"2026-07-13","mainEntityOfPage":"https://denalitechs.com/blogs/triad-home-theater-speaker-planning-guide/","articleSection":"Home Theater Planning Guide","keywords":"Triad speakers, Triad Bronze, Triad Silver, Triad Gold, Triad Platinum, home theater speakers, Dolby Atmos, theater subwoofer"}</script>
 </head>
 <body>
-    <main role="main">
-        <article class="blog-container">
-            <div class="blog-header">
-                <div class="blog-breadcrumb"><a href="/">Home</a> / <a href="/blogs/">Blog</a> / Triad Home Theater Speaker Planning: What to Decide Before the Room Is Built</div>
-                <h1 class="blog-title">Triad Home Theater Speaker Planning: What to Decide Before the Room Is Built</h1>
-                <div class="blog-meta">
-                    <span>Published: <time datetime="2026-06-03">June 3, 2026</time></span>
-                    <span>By: <a href="/about/">Denali Tech Team</a></span>
-                    <span>8 min read</span>
-                    <span>Category: Smart Home Guide</span>
-                </div>
-                <div class="blog-tags">
-                    <span class="blog-tag">Triad</span>
-                    <span class="blog-tag">Home Theater</span>
-                    <span class="blog-tag">Speakers</span>
-                    <span class="blog-tag">Media Room</span>
-                </div>
-            </div>
+<div id="site-header"></div>
+<div class="wrap"><div class="crumb"><a href="/">Home</a> / <a href="/blogs/">Guides</a> / Triad Speaker Comparison</div></div>
+<section class="wrap hero"><div><span class="eyebrow">Client home-theater planning guide</span><h1>Which Triad speaker tier fits the room?</h1><p class="lede">Compare Bronze, Silver, Gold and Platinum side by side—then match the speakers, subwoofers, amplification and installation style to the room instead of buying by tier name alone.</p><div class="meta"><span>Published July 13, 2026</span><span>By <a href="/about/">Denali Tech Team</a></span><span>15 min read</span></div></div><figure class="hero-card"><img src="/Video/Blogs%20imge/Triad%20Home%20Theater%20Comparison/triad-tier-comparison-hero.webp" alt="Triad Bronze, Silver, Gold and Platinum home theater speaker families shown side by side" fetchpriority="high"><figcaption>Official high-resolution Triad family photography arranged in one consistent comparison.</figcaption></figure></section>
 
-            <img src="/Video/services-real/home-theater-media-room.webp" alt="Dedicated home theater with large projection screen, in-wall speakers, projector, and seating" class="blog-hero-image" loading="eager" width="1600" height="900">
+<main class="wrap">
+<section class="quick"><strong>Fast answer:</strong> Bronze is a smart fit for compact media rooms and smaller theaters. Silver is the broad residential sweet spot. Gold adds the output and headroom a larger dedicated theater may need. Platinum is for large, reference-level rooms with serious amplification, bass management and acoustic design. The right answer still depends on distance, seating, target volume and room construction.</section>
 
-            <div class="blog-content">
-                <p>Great theater sound is not only about buying better speakers. It starts with placement, room layout, seating, screen size, wiring, acoustics, and how the system will be controlled.</p>
+<section class="section"><h2>Start with the room, not the badge</h2><p class="intro">A premium theater is one balanced system. A higher tier cannot correct poor placement, an undersized amplifier, uneven bass or a reflective room. These six inputs should be known before the speaker package is quoted.</p><div class="inputs"><article class="input"><strong>Room volume</strong><p>Length, width, ceiling height and whether the room opens into another space.</p></article><article class="input"><strong>Listening distance</strong><p>The farthest important seat often sets the output requirement.</p></article><article class="input"><strong>Seat count</strong><p>One row is easier to cover evenly than a wide, multirow theater.</p></article><article class="input"><strong>Playback goal</strong><p>Comfortable movie nights and cinema-reference peaks require different headroom.</p></article><article class="input"><strong>Screen and layout</strong><p>An acoustically transparent screen can place all three front speakers correctly.</p></article><article class="input"><strong>Construction</strong><p>Wall depth, isolation, treatment, wiring routes and service access shape the design.</p></article></div></section>
 
-                <p>Triad-style speaker planning is valuable because it treats the room as a system.</p>
+<section class="section"><h2>Four Triad tiers, side by side</h2><p class="intro">Each family supports a different scale of room and performance target. The visual size difference is only part of the story; sensitivity, output, bass extension, amplifier demand and available form factors also matter.</p>
+<article class="tier"><figure><img src="/Video/Blogs%20imge/Triad%20Home%20Theater%20Comparison/triad-bronze-family.webp" alt="Triad Bronze speaker family on a dark blue studio background" loading="lazy"><figcaption>Triad Bronze family</figcaption></figure><div><span class="tag">COMPACT + CAPABLE</span><h2>Bronze</h2><p>A compact performance tier for smaller theaters, media rooms and installations where wall depth or visual impact must stay modest.</p><ul class="benefits"><li>Smaller enclosures are easier to integrate into tighter walls and cabinetry</li><li>Strong solution when listening distances and output expectations are moderate</li><li>Matched LCR, surround and subwoofer options support a coherent system</li></ul><div class="best"><strong>Best client fit:</strong> a smaller enclosed room, a multipurpose media space or a client who values clean integration over cinema-reference output.</div></div></article>
+<article class="tier reverse"><div><span class="tag">RESIDENTIAL SWEET SPOT</span><h2>Silver</h2><p>Silver sits at the center of the line and fits a wide range of residential theaters—from a high-powered receiver system to a dedicated room with separate amplification.</p><ul class="benefits"><li>More sensitivity and output headroom than the representative Bronze LCR</li><li>Broad fit for medium rooms and serious everyday movie listening</li><li>Available in forms that support hidden, on-wall or in-room designs</li></ul><div class="best"><strong>Best client fit:</strong> the homeowner who wants a substantial theater experience without designing the room around the physical and electrical demands of the largest speakers.</div></div><figure><img src="/Video/Blogs%20imge/Triad%20Home%20Theater%20Comparison/triad-silver-family.webp" alt="Triad Silver speaker family on a dark blue studio background" loading="lazy"><figcaption>Triad Silver family</figcaption></figure></article>
+<article class="tier"><figure><img src="/Video/Blogs%20imge/Triad%20Home%20Theater%20Comparison/triad-gold-family.webp" alt="Triad Gold speaker family on a dark blue studio background" loading="lazy"><figcaption>Triad Gold family</figcaption></figure><div><span class="tag">HIGH OUTPUT</span><h2>Gold</h2><p>A larger three-way design intended for bigger media rooms and dedicated theaters where clean dynamics across a wider seating area matter.</p><ul class="benefits"><li>Higher representative sensitivity, maximum output and bass extension</li><li>Three-way architecture supports clarity when playback demands rise</li><li>A natural match for robust separate amplification and a treated room</li></ul><div class="best"><strong>Best client fit:</strong> a larger dedicated theater, longer listening distance or a client who wants stronger cinema impact without stepping into the physical scale of Platinum.</div></div></article>
+<article class="tier reverse"><div><span class="tag">REFERENCE SCALE</span><h2>Platinum</h2><p>The top tier is built for large theaters and reference-level goals. Its size and weight make construction, placement, amplification and service planning part of the speaker decision.</p><ul class="benefits"><li>Highest representative sensitivity and maximum output in this comparison</li><li>Large three-way LCR with dual 10-inch woofers</li><li>Designed for the dynamic headroom expected in a serious private cinema</li></ul><div class="best"><strong>Best client fit:</strong> a purpose-built large theater with an acoustically transparent screen, engineered amplification, substantial subwoofers and professional acoustic treatment.</div></div><figure><img src="/Video/Blogs%20imge/Triad%20Home%20Theater%20Comparison/triad-platinum-family.webp" alt="Triad Platinum speaker family on a dark blue studio background" loading="lazy"><figcaption>Triad Platinum family</figcaption></figure></article></section>
 
-                <div class="highlight-box">
-                    <p><strong>Quick answer:</strong> A plain-English guide to theater speaker planning, room layout, screen placement, subwoofers, in-wall speakers, and why design choices should happen early.</p>
-                </div>
+<section class="section"><h2>Representative LCR specifications</h2><div class="table-wrap"><table><thead><tr><th>Tier</th><th>Representative design</th><th>Recommended power</th><th>Sensitivity</th><th>Maximum output</th><th>Frequency response</th><th>Planning takeaway</th></tr></thead><tbody><tr><td><strong>Bronze</strong></td><td>Dual 5.25-inch, 2-way</td><td>50–200W</td><td>89dB</td><td>112dB</td><td>80Hz–20kHz</td><td>Compact room and moderate distance</td></tr><tr><td><strong>Silver</strong></td><td>Dual 6.5-inch, 2-way</td><td>50–200W</td><td>91dB</td><td>114dB</td><td>75Hz–20kHz</td><td>Broad residential sweet spot</td></tr><tr><td><strong>Gold</strong></td><td>Dual 8.5-inch, 3-way</td><td>100–450W</td><td>92dB</td><td>119dB</td><td>50Hz–20kHz</td><td>Larger room and higher output</td></tr><tr><td><strong>Platinum</strong></td><td>Dual 10-inch + dual 5.25-inch, 3-way</td><td>100–400W</td><td>94.5dB</td><td>121dB</td><td>60Hz–20kHz</td><td>Large reference-level theater</td></tr></tbody></table></div><p class="source">These are current representative LCR specifications checked against official Triad/Snap One resources on July 13, 2026. Exact specifications, dimensions, impedance, output and power requirements vary by in-room, in-wall, on-wall and custom-width model. Final selections belong on the project equipment schedule.</p></section>
 
-                <h2>Speaker placement follows the room</h2>
-                <p>Before choosing equipment, decide where people sit, where the screen goes, and how much of the system should be visible.</p>
-                <p>In-wall, on-wall, and in-room speakers can all work, but each choice affects sound, serviceability, and room design.</p>
-                <h2>Subwoofers and surrounds need real planning</h2>
-                <p>Low bass is where many rooms struggle. One subwoofer in a convenient corner may not give the best result. Surround speakers also need to match the seating plan, not just the easiest wire path.</p>
-                <ul>
-                    <li>Seat location</li>
-                    <li>Screen and projector position</li>
-                    <li>Front speaker location</li>
-                    <li>Surround and height speaker plan</li>
-                    <li>Subwoofer placement</li>
-                    <li>Rack and amplifier location</li>
-                </ul>
-                <h2>Do the invisible work before the finish work</h2>
-                <p>The best time to plan wire, back boxes, speaker cutouts, conduit, and rack location is before drywall or final trim.</p>
-                <p>Denali Tech helps homeowners avoid the expensive version of theater work: changing the room after it is already finished.</p>
+<section class="section"><h2>Choose the form factor after the acoustic position</h2><p class="intro">First mark where a speaker should be for sound. Then choose the enclosure that can place it there cleanly. Hiding every speaker is not a win if the front stage ends up in the ceiling.</p><div class="form-grid"><article class="card"><img src="/Video/Blogs%20imge/Triad%20Home%20Theater%20Comparison/triad-inwall-blue.webp" alt="Triad in-wall speaker isolated on a blue studio background" loading="lazy"><div><h3>In-wall or behind the screen</h3><p>Excellent for a clean front wall and an acoustically transparent screen. All three LCRs can sit at the proper height behind the image, but wall depth, back-box clearance and framing must be coordinated early.</p></div></article><article class="card"><img src="/Video/Blogs%20imge/Triad%20Home%20Theater%20Comparison/triad-inceiling-blue.webp" alt="Triad in-ceiling speaker isolated on a blue studio background" loading="lazy"><div><h3>In-ceiling and height channels</h3><p>A strong fit for Dolby Atmos overhead positions or rooms with architectural constraints. When ear-level placement is possible, ceiling speakers should not automatically replace the front LCR or surround layer.</p></div></article><article class="input"><strong>In-room</strong><p>Often easiest to aim, service and position for maximum performance. It needs physical floor, stage or cabinet space and a deliberate finish plan.</p></article><article class="input"><strong>On-wall and custom</strong><p>Useful for finished walls, shallow construction and retrofit work. Triad also supports custom width, paint and grille options on selected models.</p></article></div></section>
 
-                <div class="cta-box">
-                    <h3>Want this planned the right way?</h3>
-                    <p>If you are building a theater or media room, Denali Tech can help plan speaker locations, wiring, rack space, and control before the room gets locked in.</p>
-                    <a href="/contact/" class="btn-primary">Send Project Details</a>
-                    <p style="margin-top:14px;">Or message us on <a href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20would%20rather%20use%20WhatsApp.%20Can%20you%20help%20me%20with%3A" target="_blank" rel="noopener noreferrer">WhatsApp</a></p>
-                </div>
+<section class="section"><div class="room-grid"><figure><img src="/Video/Blogs%20imge/Triad%20Home%20Theater%20Comparison/triad-home-theater-room.webp" alt="Finished private home theater with a large projection screen and concealed Triad speakers" loading="lazy"></figure><div class="room-copy"><span class="tag">THE WHOLE ROOM</span><h2>Placement creates the soundstage</h2><p>Place the left, center and right speakers around ear height and keep their front plane consistent. An acoustically transparent screen makes it possible to anchor dialogue to the image instead of placing the center channel too low.</p><ul class="benefits"><li>Surrounds belong beside and behind the seating—not wherever an empty stud bay appears</li><li>Atmos heights should create clear vertical separation from the ear-level layer</li><li>Multiple rows may need different speaker angles, channel counts and calibration priorities</li><li>A baffle wall can control placement and reduce front-wall acoustic problems when designed correctly</li></ul></div></div></section>
 
-                <h2>Final thought</h2>
-                <p>The best smart home projects feel calm because the hard decisions were handled early. When the network, wiring, controls, power, and room plan are thought through together, the technology becomes easier to use and easier to support.</p>
+<section class="section"><h2>Subwoofers are a room decision</h2><p class="intro">A large main speaker does not eliminate the need for a well-designed bass system. Subwoofer quantity and location affect how evenly every seat hears bass—often more than simply choosing a larger driver.</p><div class="sub-grid"><article class="card"><img src="/Video/Blogs%20imge/Triad%20Home%20Theater%20Comparison/triad-subwoofer-family-blue.webp" alt="Triad in-room, in-wall and compact subwoofer models shown together on blue" loading="lazy"><div><h3>Choose the installation style</h3><p>Triad offers in-room, in-wall, on-wall and in-ceiling approaches. Selected passive subwoofer kits pair with rack-mounted DSP amplification, keeping controls and heat serviceable in the equipment rack.</p></div></article><article class="card"><img src="/Video/Blogs%20imge/Triad%20Home%20Theater%20Comparison/triad-cinema-sub-room.webp" alt="Large Triad cinema subwoofer in a dedicated theater room" loading="lazy"><div><h3>Choose the output and coverage</h3><p>A purpose-built cinema may need multiple high-output subwoofers. The goal is not just more bass; it is adequate headroom and smoother seat-to-seat response after placement, delay, level and equalization are calibrated.</p></div></article></div><div class="note" style="margin-top:16px"><strong>Planning rule:</strong> Do not promise that one expensive subwoofer will sound even in every chair. Model or measure the room, reserve wiring and power for sensible locations, and commission the final system from the main seats.</div></section>
 
-                <div class="blog-share">
-                    <span>Share:</span>
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://denalitechs.com/blogs/triad-home-theater-speaker-planning-guide/" target="_blank" rel="noopener noreferrer" class="share-btn">Facebook</a>
-                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://denalitechs.com/blogs/triad-home-theater-speaker-planning-guide/" target="_blank" rel="noopener noreferrer" class="share-btn">LinkedIn</a>
-                    <button onclick="copyToClipboard()" class="share-btn" style="cursor:pointer;border:none;font-family:inherit;">Copy Link</button>
-                </div>
+<section class="section"><h2>Amplification must match the real load</h2><p class="intro">The speaker tier is only one input. Amplifier sizing should account for impedance, sensitivity, listening distance, crossover, target peaks, channel count and ventilation. Gold and Platinum systems commonly justify high-current separate amplification, but the final channel plan—not the family name—determines the rack.</p><div class="planning"><article class="plan"><strong>Keep headroom</strong><p>An amplifier should reproduce short movie peaks cleanly without living at its limit.</p></article><article class="plan"><strong>Size every channel</strong><p>LCR, surround and height channels may not need identical power, but each needs an intentional assignment.</p></article><article class="plan"><strong>Plan the rack</strong><p>Allow rack units, electrical circuits, heat management, DSP, network control and service access.</p></article></div></section>
 
-                <div class="related-posts">
-                    <h3>Related Articles</h3>
-                    <div class="related-posts-grid">
-                        <a href="/blogs/home-theater-installation-guide/" class="related-post-card">
-                            <span class="related-post-category">Related</span>
-                            <h4 class="related-post-title">Home Theater Installation Guide</h4>
-                        </a>
-                        <a href="/blogs/motorized-projector-screen-installation-guide/" class="related-post-card">
-                            <span class="related-post-category">Related</span>
-                            <h4 class="related-post-title">Motorized Projector Screen Guide</h4>
-                        </a>
-                        <a href="/blogs/av-rack-wire-management-guide/" class="related-post-card">
-                            <span class="related-post-category">Related</span>
-                            <h4 class="related-post-title">AV Rack Wire Management</h4>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </article>
-    </main>
-    <script>
-        function copyToClipboard() {
-            navigator.clipboard.writeText(window.location.href).then(function() {
-                alert('Link copied to clipboard!');
-            });
-        }
-    </script>
+<section class="section"><h2>Prewire before the walls close</h2><div class="planning"><article class="plan"><strong>Document every speaker</strong><p>Mark centerline, height, orientation, back-box depth and framing conflict.</p></article><article class="plan"><strong>Protect the screen wall</strong><p>Coordinate screen opening, LCR locations, subwoofer cavities, baffle wall and fabric panels.</p></article><article class="plan"><strong>Reserve sub options</strong><p>Run cable and power to viable front, rear and side locations when the room design allows.</p></article><article class="plan"><strong>Separate sound</strong><p>Isolation clips, channels, doors and HVAC details must be designed before drywall.</p></article><article class="plan"><strong>Treat reflections</strong><p>Reserve depth for absorption, diffusion and bass management instead of decorating afterward.</p></article><article class="plan"><strong>Photograph everything</strong><p>Capture measured wire and blocking locations before insulation and drywall hide the work.</p></article></div></section>
+
+<section class="section"><div class="script"><h2>A simple client explanation</h2><blockquote>“Bronze is compact, Silver fits the widest range of homes, Gold is for a larger high-output theater, and Platinum is for reference-scale rooms. We choose the tier only after we know the room, seating distance and volume goal. Then we match the subwoofers, amplifiers, placement and acoustic treatment so the whole system performs as one.”</blockquote></div></section>
+
+<section class="cta"><h2>Want the speaker package mapped to your floor plan?</h2><p>Send the room dimensions, screen wall, seating layout, ceiling height and performance goal. Denali Tech can map the Triad tier, channel positions, subwoofer strategy, amplification, wiring and rack requirements before construction locks in the room.</p><div class="btns"><a class="btn" href="/contact/">Request a Theater Plan</a><a class="btn alt" href="/home-theater-room/">Explore Home Theater</a></div></section>
+
+<section class="section"><h2>Related theater guides</h2><div class="related"><a href="/blogs/episode-amplifier-model-comparison/">Compare Episode amplifiers</a><a href="/blogs/av-rack-size-guide/">Choose the equipment rack</a><a href="/blogs/binary-video-distribution-hdmi-matrix-guide/">Plan video distribution</a></div></section>
+</main>
+<div id="site-footer"></div>
+<script src="/assets/js/site-chrome.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,10 @@
+.field-media{margin:34px 0 40px;padding:22px;border:1px solid rgba(15,23,42,.13);border-radius:18px;background:#f8fafc;box-shadow:0 14px 40px rgba(15,23,42,.07)}
+.field-media h2{margin:0 0 8px!important;font-size:clamp(1.35rem,2.5vw,2rem)!important;color:#0f172a!important}
+.field-media-intro{margin:0 0 18px!important;color:#475569!important}
+.field-media-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.field-media-card{margin:0!important;overflow:hidden;border:1px solid #dbe3ec;border-radius:14px;background:#fff}
+.field-media-card img{display:block;width:100%;height:210px;object-fit:cover;background:#0f2138}
+.field-media-card.contain img{object-fit:contain;padding:12px;background:linear-gradient(145deg,#173451,#091624)}
+.field-media-card figcaption{padding:11px 13px;color:#334155;font-size:.83rem;line-height:1.45;text-align:left}
+.field-note{margin:18px 0 0!important;padding:14px 16px;border-left:4px solid #f97316;border-radius:0 10px 10px 0;background:#fff7ed;color:#7c2d12!important}
+@media(max-width:760px){.field-media{padding:15px}.field-media-grid{grid-template-columns:1fr}.field-media-card img{height:230px}}
