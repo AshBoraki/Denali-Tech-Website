@@ -1,186 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <script src="/assets/js/microsoft-clarity.js" defer></script>
-    <script src="/assets/js/theme.js?v=20260602"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    var gtmLoaded = false;
-    function loadGTM() {
-        if (gtmLoaded) return;
-        gtmLoaded = true;
-        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-MWPTRPDR');
-    }
-    window.addEventListener('load', function() {
-        if ('requestIdleCallback' in window) {
-            requestIdleCallback(loadGTM, { timeout: 3000 });
-        } else {
-            setTimeout(loadGTM, 2000);
-        }
-    });
-    </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Episode Speakers and Whole-Home Audio: What to Plan Before Cutting Holes | Denali Tech</title>
-    <meta name="description" content="A homeowner guide to distributed audio zones, speaker placement, volume control, outdoor audio, and whole-home music planning.">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://denalitechs.com/blogs/episode-whole-home-audio-planning-guide/">
-    <meta property="og:title" content="Episode Speakers and Whole-Home Audio: What to Plan Before Cutting Holes">
-    <meta property="og:description" content="A homeowner guide to distributed audio zones, speaker placement, volume control, outdoor audio, and whole-home music planning.">
-    <meta property="og:image" content="https://denalitechs.com/Video/Blogs%20imge/Whole%20Home%20Audio%20Systems-Sonos%20vs%20Traditional%20Multi-Room-Audio.webp">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Episode Speakers and Whole-Home Audio: What to Plan Before Cutting Holes">
-    <meta name="twitter:description" content="A homeowner guide to distributed audio zones, speaker placement, volume control, outdoor audio, and whole-home music planning.">
-    <meta name="twitter:image" content="https://denalitechs.com/Video/Blogs%20imge/Whole%20Home%20Audio%20Systems-Sonos%20vs%20Traditional%20Multi-Room-Audio.webp">
-    <link rel="canonical" href="https://denalitechs.com/blogs/episode-whole-home-audio-planning-guide/">
-    <meta name="author" content="Denali Tech Team">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <meta name="article:published_time" content="2026-06-03">
-    <meta name="article:modified_time" content="2026-06-03">
-    <meta name="article:section" content="Smart Home Guide">
-    <base href="/">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
-    <style>
-        :root { --bg:#0a0d18; --panel:#101726; --text:#f8fafc; --muted:#cbd5e1; --accent:#f97316; --accent-soft:rgba(249,115,22,.14); --border:rgba(255,255,255,.12); --font-main:'Inter',system-ui,sans-serif; --font-heading:'Poppins',system-ui,sans-serif; }
-        * { box-sizing:border-box; }
-        body { margin:0; font-family:var(--font-main); background:var(--bg); color:var(--text); line-height:1.75; }
-        .blog-container { max-width:900px; margin:0 auto; padding:120px 24px 72px; }
-        .blog-header { text-align:center; margin-bottom:40px; }
-        .blog-breadcrumb, .blog-meta { color:var(--muted); font-size:.95rem; }
-        .blog-breadcrumb a, .blog-share a, .cta-box a, .blog-content a { color:var(--accent); text-decoration:none; }
-        .blog-title { font-family:var(--font-heading); font-size:clamp(2.1rem,5vw,3.2rem); line-height:1.15; margin:16px 0; }
-        .blog-meta { display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin-bottom:18px; }
-        .blog-tags { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin:18px 0 0; }
-        .blog-tag { padding:8px 12px; border-radius:999px; background:var(--accent-soft); border:1px solid rgba(249,115,22,.3); color:var(--accent); font-weight:600; font-size:.85rem; }
-        .blog-hero-image { width:100%; height:auto; max-height:520px; object-fit:cover; border-radius:20px; margin:28px 0 12px; display:block; }
-        .blog-image-caption { text-align:center; color:var(--muted); font-size:.92rem; margin-top:0; }
-        .blog-content { color:var(--muted); font-size:1.08rem; }
-        .blog-content h2, .blog-content h3 { color:var(--text); font-family:var(--font-heading); line-height:1.25; }
-        .blog-content h2 { margin-top:40px; font-size:clamp(1.6rem,4vw,2.2rem); }
-        .blog-content h3 { margin-top:28px; font-size:1.25rem; }
-        .blog-content strong { color:var(--text); }
-        .highlight-box, .cta-box { background:var(--panel); border:1px solid var(--border); border-radius:20px; padding:22px; margin:28px 0; }
-        .cta-box { text-align:center; }
-        .btn-primary { display:inline-block; margin-top:10px; background:var(--accent); color:#fff !important; padding:14px 22px; border-radius:999px; font-weight:700; }
-        .blog-share { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-top:32px; }
-        .share-btn { display:inline-flex; gap:8px; align-items:center; background:var(--panel); border:1px solid var(--border); color:var(--text); border-radius:999px; padding:10px 14px; }
-        .related-posts { margin-top:44px; }
-        .related-posts-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; }
-        .related-post-card { background:var(--panel); border:1px solid var(--border); border-radius:18px; padding:18px; color:var(--text); text-decoration:none; }
-        .related-post-category { color:var(--accent); font-size:.82rem; font-weight:700; text-transform:uppercase; letter-spacing:.05em; }
-        .related-post-title { margin:10px 0 0; font-size:1.05rem; }
-        ul, ol { padding-left:22px; }
-        @media (max-width: 640px) { .blog-container { padding:96px 18px 56px; } .blog-meta { gap:10px; } }
-    </style>
-    <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"BlogPosting","headline":"Episode Speakers and Whole-Home Audio: What to Plan Before Cutting Holes","description":"A homeowner guide to distributed audio zones, speaker placement, volume control, outdoor audio, and whole-home music planning.","image":"https://denalitechs.com/Video/Blogs%20imge/Whole%20Home%20Audio%20Systems-Sonos%20vs%20Traditional%20Multi-Room-Audio.webp","author":{"@type":"Organization","name":"Denali Tech Team","url":"https://denalitechs.com/about/"},"publisher":{"@type":"Organization","name":"Denali Tech","url":"https://denalitechs.com/","logo":{"@type":"ImageObject","url":"https://denalitechs.com/favicon-512x512.png"}},"datePublished":"2026-06-03","dateModified":"2026-06-03","mainEntityOfPage":"https://denalitechs.com/blogs/episode-whole-home-audio-planning-guide/","articleSection":"Smart Home Guide","keywords":"Episode, Whole Home Audio, Speakers, Distributed Audio"}
-    </script>
-    <script src="/assets/js/microsoft-uet.js" defer></script>
-    <link rel="stylesheet" href="/assets/css/site-chrome.css?v=20260607c">
-    <script src="/assets/js/site-chrome.js?v=20260607c" defer></script>
+<script src="/assets/js/microsoft-clarity.js" defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="/favicon-32x32.png">
+<title>Episode Speaker Comparison: CORE, Signature &amp; Impression | Denali Tech</title>
+<meta name="description" content="Compare Episode CORE, Signature 3, 5 and 7 Series, Impression and Surroundscape speakers for whole-home and outdoor audio planning.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://denalitechs.com/blogs/episode-whole-home-audio-planning-guide/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Episode Speaker Comparison: CORE, Signature and Impression">
+<meta property="og:description" content="A visual, client-friendly guide to choosing Episode speakers for each room and outdoor zone.">
+<meta property="og:image" content="https://denalitechs.com/Video/Blogs%20imge/Episode%20Speaker%20Comparison/episode-signature-comparison-hero.webp">
+<meta property="og:url" content="https://denalitechs.com/blogs/episode-whole-home-audio-planning-guide/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/assets/css/site-chrome.css">
+<style>
+:root{color-scheme:dark;--bg:#080d16;--panel:#101827;--panel2:#172236;--text:#f8fafc;--muted:#bdc9d8;--line:rgba(255,255,255,.13);--orange:#f97316;--blue:#38bdf8;--green:#4ade80}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.65}a{color:#fdba74}.wrap{width:min(1160px,calc(100% - 36px));margin:auto}.crumb{padding-top:30px;color:var(--muted);font-size:.92rem}.hero{display:grid;grid-template-columns:.87fr 1.13fr;gap:42px;align-items:center;padding:42px 0 56px}.eyebrow,.tag{display:inline-flex;padding:6px 11px;border:1px solid #38bdf866;border-radius:99px;background:#38bdf81a;color:#bae6fd;font-size:.77rem;font-weight:900;letter-spacing:.07em;text-transform:uppercase}h1{font-size:clamp(2.45rem,5vw,4.85rem);line-height:.98;letter-spacing:-.045em;margin:18px 0 20px}h2{font-size:clamp(1.8rem,3vw,3rem);line-height:1.08;margin:0 0 14px}h3{font-size:1.24rem;line-height:1.25;margin:0}.lede,.intro{color:#dbe5f0;font-size:1.05rem}.meta{display:flex;flex-wrap:wrap;gap:8px 18px;color:var(--muted);font-size:.9rem;margin-top:24px}.hero-card{margin:0;padding:10px;background:var(--panel);border:1px solid var(--line);border-radius:20px}.hero-card img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px}.hero-card figcaption{padding:9px 5px 0;text-align:center;color:var(--muted);font-size:.78rem}.quick{margin-bottom:58px;padding:24px 26px;border:1px solid #f9731659;border-radius:18px;background:#f9731617}.quick strong{color:#fed7aa}.section{padding:54px 0;border-top:1px solid var(--line)}.intro{max-width:930px;margin:0 0 28px}.choices,.planning,.related{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.choice,.plan,.related a{padding:20px;border:1px solid var(--line);border-radius:16px;background:var(--panel)}.choice strong,.plan strong{display:block;color:#fdba74}.choice p,.plan p{margin:7px 0 0;color:var(--muted);font-size:.91rem}.series-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.series{display:flex;flex-direction:column;overflow:hidden;border:1px solid var(--line);border-radius:18px;background:var(--panel)}.product-frame{display:grid;place-items:center;min-height:330px;padding:26px;background:radial-gradient(circle at 50% 35%,#243f66,#0c1729 65%,#07101c)}.product-frame img{display:block;width:100%;max-height:285px;object-fit:contain}.series-copy{display:flex;flex:1;flex-direction:column;padding:20px}.series-copy p{color:var(--muted);font-size:.91rem}.series-copy .tag{align-self:flex-start;margin-bottom:11px}.benefits{list-style:none;padding:0;margin:0}.benefits li{position:relative;padding-left:18px;margin:7px 0;color:#d9e2ec;font-size:.9rem}.benefits li:before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:900}.best{margin:15px 0 0;padding:10px 12px;border-left:3px solid var(--orange);border-radius:0 8px 8px 0;background:#f9731614;font-size:.87rem}.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:16px}table{width:100%;min-width:970px;border-collapse:collapse;background:var(--panel)}th,td{padding:14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{background:var(--panel2);color:#fed7aa;font-size:.76rem;text-transform:uppercase}.source{color:var(--muted);font-size:.82rem}.featured{display:grid;grid-template-columns:.95fr 1.05fr;gap:26px;align-items:center;padding:24px;border:1px solid var(--line);border-radius:20px;background:var(--panel)}.featured.reverse{grid-template-columns:1.05fr .95fr}.featured figure{margin:0;overflow:hidden;border-radius:14px}.featured img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}.featured figcaption{padding:9px 12px;color:var(--muted);font-size:.76rem}.featured p{color:#dbe5f0}.pair-grid,.outdoor-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.card{overflow:hidden;border:1px solid var(--line);border-radius:17px;background:var(--panel)}.card img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}.card div{padding:20px}.card p{margin:7px 0 0;color:var(--muted)}.note,.script{padding:25px;border:1px solid #38bdf84d;border-radius:18px;background:#38bdf812}.script blockquote{margin:18px 0 0;padding-left:18px;border-left:4px solid var(--blue);font-size:1.17rem;color:#e0f2fe}.cta{margin:58px 0;padding:40px;border-radius:22px;background:linear-gradient(125deg,#f97316,#c2410c)}.btns{display:flex;gap:12px;flex-wrap:wrap}.btn{padding:12px 18px;border-radius:10px;background:#fff;color:#111827;text-decoration:none;font-weight:900}.btn.alt{background:transparent;color:#fff;border:1px solid #ffffffa6}.related{margin-bottom:60px}.related a{text-decoration:none;font-weight:800}@media(max-width:960px){.hero,.featured,.featured.reverse{grid-template-columns:1fr}.series-grid,.choices{grid-template-columns:repeat(2,1fr)}.featured.reverse figure{order:2}}@media(max-width:680px){.wrap{width:min(100% - 22px,1160px)}.series-grid,.choices,.planning,.related,.pair-grid,.outdoor-grid{grid-template-columns:1fr}.product-frame{min-height:280px}.cta{padding:27px 22px}h1{font-size:clamp(2.3rem,13vw,3.5rem)}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Episode Speaker Comparison: CORE, Signature and Impression","description":"A client-friendly visual guide to Episode whole-home and outdoor speakers, placement, amplification and prewire planning.","image":"https://denalitechs.com/Video/Blogs%20imge/Episode%20Speaker%20Comparison/episode-signature-comparison-hero.webp","author":{"@type":"Organization","name":"Denali Tech Team","url":"https://denalitechs.com/about/"},"publisher":{"@type":"Organization","name":"Denali Tech","url":"https://denalitechs.com/","logo":{"@type":"ImageObject","url":"https://denalitechs.com/favicon-512x512.png"}},"datePublished":"2026-07-13","dateModified":"2026-07-13","mainEntityOfPage":"https://denalitechs.com/blogs/episode-whole-home-audio-planning-guide/","articleSection":"Whole-Home Audio Planning Guide","keywords":"Episode speakers, Episode CORE, Signature by Episode, Episode Impression, Surroundscape, whole-home audio, architectural speakers"}</script>
 </head>
 <body>
-    <main role="main">
-        <article class="blog-container">
-            <div class="blog-header">
-                <div class="blog-breadcrumb"><a href="/">Home</a> / <a href="/blogs/">Blog</a> / Episode Speakers and Whole-Home Audio: What to Plan Before Cutting Holes</div>
-                <h1 class="blog-title">Episode Speakers and Whole-Home Audio: What to Plan Before Cutting Holes</h1>
-                <div class="blog-meta">
-                    <span>Published: <time datetime="2026-06-03">June 3, 2026</time></span>
-                    <span>By: <a href="/about/">Denali Tech Team</a></span>
-                    <span>7 min read</span>
-                    <span>Category: Smart Home Guide</span>
-                </div>
-                <div class="blog-tags">
-                    <span class="blog-tag">Episode</span>
-                    <span class="blog-tag">Whole Home Audio</span>
-                    <span class="blog-tag">Speakers</span>
-                    <span class="blog-tag">Distributed Audio</span>
-                </div>
-            </div>
+<div id="site-header"></div>
+<div class="wrap"><div class="crumb"><a href="/">Home</a> / <a href="/blogs/">Guides</a> / Episode Speaker Comparison</div></div>
+<section class="wrap hero"><div><span class="eyebrow">Client whole-home audio planning guide</span><h1>Which Episode speaker fits each room?</h1><p class="lede">Compare CORE, Signature 3, 5 and 7 Series, Impression and Surroundscape—then match the speaker, placement, amplifier and zone design to how the room will actually be used.</p><div class="meta"><span>Published July 13, 2026</span><span>By <a href="/about/">Denali Tech Team</a></span><span>14 min read</span></div></div><figure class="hero-card"><img src="/Video/Blogs%20imge/Episode%20Speaker%20Comparison/episode-signature-comparison-hero.webp" alt="Three Signature by Episode in-ceiling speaker tiers arranged on a dark blue studio background" fetchpriority="high"><figcaption>Official Signature product references presented in one consistent studio comparison.</figcaption></figure></section>
 
-            <img src="/Video/Blogs%20imge/Whole%20Home%20Audio%20Systems-Sonos%20vs%20Traditional%20Multi-Room-Audio.webp" alt="Whole-home audio and speaker planning for multiple rooms" class="blog-hero-image" loading="eager" width="1200" height="630">
+<main class="wrap">
+<section class="quick"><strong>Fast answer:</strong> CORE is the value-focused architectural line. Signature 3 is the strong everyday choice, Signature 5 adds more refined materials and adjustability, and Signature 7 is the premium distributed-audio option. Impression is for a much smaller ceiling opening. Surroundscape is the purpose-built outdoor system. Use different tiers in different rooms when the priorities change.</section>
 
-            <div class="blog-content">
-                <p>Whole-home audio should feel effortless. Music in the kitchen, patio, living room, and primary suite should be easy to start, easy to adjust, and easy to turn off.</p>
+<section class="section"><h2>Start with the zone, not the speaker count</h2><p class="intro">A zone is an area that should play the same source at the same volume. Good zoning makes the system simple to use and prevents one large open floor plan from being treated like several unrelated rooms.</p><div class="choices"><article class="choice"><strong>Background listening</strong><p>Kitchen, hallway and casual dining areas need even coverage at comfortable volume.</p></article><article class="choice"><strong>Focused listening</strong><p>Office, primary suite or living room may justify higher output, better imaging and a subwoofer.</p></article><article class="choice"><strong>Large open space</strong><p>Ceiling height, room width and noise determine speaker quantity and amplifier headroom.</p></article><article class="choice"><strong>Small visual footprint</strong><p>Interior design may favor a 4-inch aperture and a hidden bandpass subwoofer.</p></article><article class="choice"><strong>Outdoor coverage</strong><p>Patios and yards need more speakers playing more evenly—not one loud box aimed across the property.</p></article><article class="choice"><strong>TV or theater audio</strong><p>Dialogue and screen anchoring call for intentional left, center and right placement, not generic ceiling sound.</p></article></div></section>
 
-                <p>The planning matters before anyone cuts a ceiling or wall.</p>
+<section class="section"><h2>Signature 3, 5 and 7 Series</h2><p class="intro">The three Signature tiers share the same low-distortion, wide-dispersion and flat-response design goals, plus Push Lock installation. The driver materials and intended performance step up as the series number rises.</p><div class="series-grid">
+<article class="series"><div class="product-frame"><img src="/Video/Blogs%20imge/Episode%20Speaker%20Comparison/episode-signature-3.png" alt="Signature 3 Series six-inch in-ceiling speaker and grille" loading="lazy"></div><div class="series-copy"><span class="tag">ALL-PURPOSE</span><h3>Signature 3 Series</h3><p>Polypropylene woofer and adjustable silk-dome tweeter for balanced everyday performance.</p><ul class="benefits"><li>4-, 6- and 8-inch standard in-ceiling sizes</li><li>Strong fit for kitchens, bedrooms and casual audio zones</li><li>Signature installation and accessory ecosystem</li></ul><div class="best"><strong>Client fit:</strong> the practical Signature choice when many rooms need good sound and easy visual integration.</div></div></article>
+<article class="series"><div class="product-frame"><img src="/Video/Blogs%20imge/Episode%20Speaker%20Comparison/episode-signature-5.png" alt="Signature 5 Series six-inch in-ceiling speaker and grille" loading="lazy"></div><div class="series-copy"><span class="tag">STEP-UP DETAIL</span><h3>Signature 5 Series</h3><p>Polypropylene woofer and adjustable silk-dome tweeter with vacuum-deposited titanium.</p><ul class="benefits"><li>4-, 6- and 8-inch standard in-ceiling sizes</li><li>On-speaker adjustment helps tune challenging rooms</li><li>Broad selection of standard, DVC, point and surround models</li></ul><div class="best"><strong>Client fit:</strong> living rooms, primary suites and important music zones where clarity at higher volume matters.</div></div></article>
+<article class="series"><div class="product-frame"><img src="/Video/Blogs%20imge/Episode%20Speaker%20Comparison/episode-signature-7.png" alt="Signature 7 Series six-inch in-ceiling speaker and grille" loading="lazy"></div><div class="series-copy"><span class="tag">PREMIUM PERFORMANCE</span><h3>Signature 7 Series</h3><p>Honeycomb fiberglass Nomex woofer and pure titanium tweeter for the highest Signature distributed-audio performance.</p><ul class="benefits"><li>6- and 8-inch standard in-ceiling sizes</li><li>Higher-grade driver materials and tighter bass behavior</li><li>Point, surround, in-wall and LCR options for specialty rooms</li></ul><div class="best"><strong>Client fit:</strong> premium listening spaces or mixed music/theater rooms where performance takes priority.</div></div></article>
+</div></section>
 
-                <div class="highlight-box">
-                    <p><strong>Quick answer:</strong> A homeowner guide to distributed audio zones, speaker placement, volume control, outdoor audio, and whole-home music planning.</p>
-                </div>
+<section class="section"><h2>How the main Episode choices compare</h2><div class="table-wrap"><table><thead><tr><th>Family</th><th>Primary role</th><th>Key materials</th><th>Common forms</th><th>Best planning use</th></tr></thead><tbody><tr><td><strong>CORE 1 / 3 / 5</strong></td><td>Value-focused architectural audio</td><td>Material quality steps from polypropylene/Mylar through Teteron tweeters</td><td>In-ceiling, in-wall, DVC, surround and all-weather options</td><td>Large speaker counts and secondary rooms</td></tr><tr><td><strong>Signature 3</strong></td><td>Everyday performance</td><td>Polypropylene woofer, silk-dome tweeter</td><td>4 / 6 / 8-inch plus specialty models</td><td>Main whole-home audio baseline</td></tr><tr><td><strong>Signature 5</strong></td><td>Refined step-up</td><td>Titanium-deposited polypropylene and adjustable tweeter</td><td>4 / 6 / 8-inch, DVC, point, surround, in-wall, LCR</td><td>Important music and media rooms</td></tr><tr><td><strong>Signature 7</strong></td><td>Premium distributed audio</td><td>Honeycomb fiberglass Nomex and pure titanium</td><td>6 / 8-inch, point, surround, in-wall, LCR</td><td>High-performance residential rooms</td></tr><tr><td><strong>Impression</strong></td><td>Small-aperture design</td><td>3.5-inch carbon/aramid-fiber cone behind a 4-inch opening</td><td>In-ceiling satellite plus bandpass subwoofer</td><td>Design-sensitive ceilings</td></tr><tr><td><strong>Surroundscape</strong></td><td>Outdoor landscape audio</td><td>Weather-focused satellite and burial/hardscape subwoofer system</td><td>4 / 6 / 8-inch satellites; 8 / 10 / 12-inch subs</td><td>Patios, pools and larger yards</td></tr></tbody></table></div><p class="source">Family details checked against current official Episode/Snap One resources on July 13, 2026. Exact power handling, response, cutout, depth, weather rating and accessories depend on the selected SKU.</p></section>
 
-                <h2>Start with zones, not speakers</h2>
-                <p>A zone is an area that should play together. The kitchen and family room may be one zone, while the patio, office, and bedroom are separate.</p>
-                <p>Good zone planning keeps the system easy to use and avoids wasted speakers in places nobody cares about.</p>
-                <h2>Speaker placement affects daily use</h2>
-                <p>Placement controls how even the room sounds and how loud the system needs to play. Bad placement can make audio harsh in one seat and weak in another.</p>
-                <p>Outdoor areas need extra planning because sound disappears quickly in open air.</p>
-                <ul>
-                    <li>Room size</li>
-                    <li>Ceiling height</li>
-                    <li>Listening areas</li>
-                    <li>Furniture layout</li>
-                    <li>Outdoor noise</li>
-                    <li>Amplifier and rack location</li>
-                </ul>
-                <h2>Control should be simple</h2>
-                <p>A whole-home audio system should not require a tech person to run it. Favorite sources, common rooms, and volume should be obvious.</p>
-                <p>When audio is tied into the smart home, scenes like dinner, party, patio, or goodnight become much easier.</p>
+<section class="section"><div class="featured"><figure><img src="/Video/Blogs%20imge/Episode%20Speaker%20Comparison/episode-core-family-blue.webp" alt="Episode CORE architectural speaker family on a dark blue studio background" loading="lazy"><figcaption>CORE includes in-ceiling, in-wall and specialty architectural forms.</figcaption></figure><div><span class="tag">VALUE + COVERAGE</span><h2>CORE works when the room does not need Signature</h2><p>CORE is not simply one entry-level speaker. It is a three-tier family with broad architectural coverage. Use it when budget across many zones matters more than the finish-room advantages of Signature.</p><ul class="benefits"><li>CORE 1: polypropylene woofer and Mylar-dome tweeter</li><li>CORE 3: polypropylene woofer and fabric-dome tweeter</li><li>CORE 5: injection-molded polypropylene and Teteron-dome tweeter</li><li>Compatible cutout and bracket planning can preserve future upgrade options on selected sizes</li></ul></div></div></section>
 
-                <div class="cta-box">
-                    <h3>Want this planned the right way?</h3>
-                    <p>Denali Tech can help plan speaker zones, wiring, control, and equipment so the audio system feels natural instead of patched together.</p>
-                    <a href="/contact/" class="btn-primary">Send Project Details</a>
-                    <p style="margin-top:14px;">Or message us on <a href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20would%20rather%20use%20WhatsApp.%20Can%20you%20help%20me%20with%3A" target="_blank" rel="noopener noreferrer">WhatsApp</a></p>
-                </div>
+<section class="section"><div class="featured reverse"><div><span class="tag">SMALL APERTURE</span><h2>Impression keeps the ceiling quieter visually</h2><p>The Impression satellite uses a 4-inch ceiling opening and is designed to pair with the matching bandpass subwoofer for full-range distributed audio. That is a different design strategy from expecting one small speaker to create deep bass by itself.</p><ul class="benefits"><li>Useful where standard 6- or 8-inch grilles feel visually heavy</li><li>Satellite and subwoofer need to be designed as one system</li><li>Optional enclosure improves consistency and reduces sound propagation to adjacent rooms</li><li>New-construction bracket and access requirements must be confirmed early</li></ul></div><figure><img src="/Video/Blogs%20imge/Episode%20Speaker%20Comparison/episode-impression-blue.webp" alt="Episode Impression four-inch in-ceiling speaker on a blue studio background" loading="lazy"><figcaption>The small grille hides a compact satellite; the system’s bass comes from the planned subwoofer.</figcaption></figure></div></section>
 
-                <h2>Final thought</h2>
-                <p>The best smart home projects feel calm because the hard decisions were handled early. When the network, wiring, controls, power, and room plan are thought through together, the technology becomes easier to use and easier to support.</p>
+<section class="section"><div class="pair-grid"><article class="card"><img src="/Video/Blogs%20imge/Episode%20Speaker%20Comparison/episode-inwall-install.webp" alt="Installer connecting a Signature by Episode in-wall speaker to a prepared wall opening" loading="lazy"><div><h3>The hidden installation matters</h3><p>Speaker wire, enclosure, insulation, stud clearance and mounting depth should be documented before drywall. A grille can look perfect while the cavity behind it performs unpredictably.</p></div></article><article class="choice"><strong>Push Lock and two-step work</strong><p>Signature’s Push Lock system supports a fast one-step install or a two-step process using a cradle and optional backbox. The two-step route protects the speaker during construction and can make the finished installation cleaner and more predictable.</p><div class="best"><strong>Before ordering:</strong> confirm cutout, depth, enclosure, bracket, grille shape, paint plan and access for every exact model.</div></article></div></section>
 
-                <div class="blog-share">
-                    <span>Share:</span>
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://denalitechs.com/blogs/episode-whole-home-audio-planning-guide/" target="_blank" rel="noopener noreferrer" class="share-btn">Facebook</a>
-                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://denalitechs.com/blogs/episode-whole-home-audio-planning-guide/" target="_blank" rel="noopener noreferrer" class="share-btn">LinkedIn</a>
-                    <button onclick="copyToClipboard()" class="share-btn" style="cursor:pointer;border:none;font-family:inherit;">Copy Link</button>
-                </div>
+<section class="section"><h2>Choose size and type for the job</h2><div class="planning"><article class="plan"><strong>4-inch</strong><p>Smaller visual footprint and tighter spacing. It may need more units or a subwoofer to cover a large room gracefully.</p></article><article class="plan"><strong>6-inch</strong><p>The common residential balance of output, coverage, ceiling impact and enclosure depth.</p></article><article class="plan"><strong>8-inch</strong><p>More cone area and potential output for larger or noisier rooms, with a larger visible grille.</p></article><article class="plan"><strong>Dual voice coil</strong><p>Lets one speaker reproduce both channels in a small area such as a bath or hallway. It is not the default for a wide stereo room.</p></article><article class="plan"><strong>Point speaker</strong><p>Angled drivers direct sound toward a listening area when the ceiling location cannot sit directly above it.</p></article><article class="plan"><strong>In-wall / LCR</strong><p>Better visual and acoustic alignment for a TV or focused front soundstage than relying only on ceiling speakers.</p></article></div></section>
 
-                <div class="related-posts">
-                    <h3>Related Articles</h3>
-                    <div class="related-posts-grid">
-                        <a href="/blogs/whole-home-audio-sonos-vs-traditional/" class="related-post-card">
-                            <span class="related-post-category">Related</span>
-                            <h4 class="related-post-title">Whole Home Audio Guide</h4>
-                        </a>
-                        <a href="/blogs/best-smart-home-brands-chicago-guide/" class="related-post-card">
-                            <span class="related-post-category">Related</span>
-                            <h4 class="related-post-title">Best Smart Home Brands</h4>
-                        </a>
-                        <a href="/blogs/outdoor-tv-audio-chicago-guide/" class="related-post-card">
-                            <span class="related-post-category">Related</span>
-                            <h4 class="related-post-title">Outdoor TV and Audio Guide</h4>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </article>
-    </main>
-    <script>
-        function copyToClipboard() {
-            navigator.clipboard.writeText(window.location.href).then(function() {
-                alert('Link copied to clipboard!');
-            });
-        }
-    </script>
+<section class="section"><h2>Outdoor audio needs its own architecture</h2><p class="intro">Sound dissipates quickly outdoors. Surroundscape uses multiple weather-resistant satellites around the listening area plus a hidden subwoofer, so coverage can stay even without making one speaker uncomfortably loud.</p><div class="outdoor-grid"><article class="card"><img src="/Video/Blogs%20imge/Episode%20Speaker%20Comparison/episode-surroundscape-system-blue.webp" alt="Episode Surroundscape satellites, burial subwoofer and DSP amplifier on a dark blue studio background" loading="lazy"><div><h3>Satellites + subwoofer + DSP power</h3><p>Current 4- and 6-inch satellites use two-way designs; the 8-inch adds a three-way design. Selectable 70V taps and an 8-ohm bypass let the system scale from smaller patios to longer runs and larger landscapes.</p></div></article><article class="card"><img src="/Video/Blogs%20imge/Episode%20Speaker%20Comparison/episode-surroundscape-install.webp" alt="Episode Surroundscape satellite speaker being wired at the landscape edge" loading="lazy"><div><h3>Plan drainage, wiring and service</h3><p>Keep connectors above standing water, map every burial path, aim speakers inward, protect the cable and leave the subwoofer port and equipment accessible for future service.</p></div></article></div><div class="note" style="margin-top:16px"><strong>Neighbor-friendly rule:</strong> more evenly spaced speakers at sensible volume usually create a better experience—and less sound beyond the property—than a few speakers turned up high.</div></section>
+
+<section class="section"><h2>Amplifier and control planning</h2><p class="intro">Speaker quality cannot compensate for the wrong load, too little power or confusing control. Count zones, simultaneous sources and actual speaker wiring before the amplifier is selected.</p><div class="planning"><article class="plan"><strong>Load calculation</strong><p>Confirm impedance, parallel wiring and 70V tap totals. Never estimate amplifier load from speaker quantity alone.</p></article><article class="plan"><strong>Headroom</strong><p>Size power for the room, distance and expected volume while reserving clean headroom for musical peaks.</p></article><article class="plan"><strong>Independent zones</strong><p>Separate rooms that need different source or volume control. Group areas that truly operate together.</p></article><article class="plan"><strong>Source experience</strong><p>Decide how AirPlay, Spotify, Sonos, Control4 and TV audio will enter and move through the system.</p></article><article class="plan"><strong>Rack space</strong><p>Reserve amplifier units, ventilation, network, surge protection, labeling and future service access.</p></article><article class="plan"><strong>Subwoofer path</strong><p>Plan signal, amplification, power and placement instead of adding bass after the ceilings are finished.</p></article></div></section>
+
+<section class="section"><h2>Prewire checklist before holes are cut</h2><div class="planning"><article class="plan"><strong>Draw every zone</strong><p>Name the room, source behavior, volume behavior and number of listening positions.</p></article><article class="plan"><strong>Coordinate lighting</strong><p>Avoid downlights, joists, HVAC, sprinklers, shades, sensors and access panels.</p></article><article class="plan"><strong>Measure cavities</strong><p>Confirm cutout, depth, insulation, enclosure and bracket for the exact SKU.</p></article><article class="plan"><strong>Protect stereo</strong><p>Keep left/right placement symmetrical when the room is used for focused music.</p></article><article class="plan"><strong>Label both ends</strong><p>Room, channel, wire route and rack termination should remain clear years later.</p></article><article class="plan"><strong>Photograph the walls</strong><p>Record measured wire, blocking and enclosure locations before drywall hides them.</p></article></div></section>
+
+<section class="section"><div class="script"><h2>A simple client explanation</h2><blockquote>“CORE is the value line, Signature 3 is the everyday step-up, Signature 5 is for rooms where more detail matters, and Signature 7 is the premium choice. Impression is for a smaller ceiling opening, while Surroundscape is built for the yard. We can mix them room by room and keep one simple control experience.”</blockquote></div></section>
+
+<section class="cta"><h2>Want the speaker zones mapped before construction?</h2><p>Send the floor plan, ceiling heights, listening areas, outdoor zones, rack location and source preferences. Denali Tech can map speaker type, tier, quantity, wire routes, amplification, control and subwoofer strategy before the holes are cut.</p><div class="btns"><a class="btn" href="/contact/">Request an Audio Plan</a><a class="btn alt" href="/blogs/whole-home-audio-sonos-vs-traditional/">Explore Whole-Home Audio</a></div></section>
+
+<section class="section"><h2>Related audio guides</h2><div class="related"><a href="/blogs/episode-amplifier-model-comparison/">Compare Episode amplifiers</a><a href="/blogs/triad-home-theater-speaker-planning-guide/">Plan a Triad theater</a><a href="/blogs/av-rack-size-guide/">Choose the equipment rack</a></div></section>
+</main>
+<div id="site-footer"></div>
+<script src="/assets/js/site-chrome.js" defer></script>
 </body>
 </html>

@@ -450,27 +450,27 @@
         .blog-listing-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 120px 2rem 4rem;
+            padding: 94px 2rem 4rem;
         }
 
         .blog-header {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 1.5rem;
         }
 
         .blog-header h1 {
             font-family: var(--font-heading);
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-size: clamp(2.25rem, 4vw, 3rem);
             font-weight: 700;
             margin-bottom: 1rem;
             color: var(--text-primary);
         }
 
         .blog-header p {
-            font-size: 1.2rem;
+            font-size: 1.05rem;
             color: var(--text-secondary);
             max-width: 700px;
-            margin: 0 auto 2rem;
+            margin: 0 auto;
         }
 
         .decision-hub {
@@ -598,10 +598,10 @@
             display: flex;
             flex-wrap: wrap;
             gap: 1rem;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
-            margin-bottom: 3rem;
-            padding: 1.5rem;
+            margin-bottom: 2rem;
+            padding: 1rem;
             background: rgba(255, 255, 255, 0.03);
             border-radius: 12px;
             border: 1px solid var(--border-color);
@@ -615,8 +615,26 @@
         .search-box {
             flex: 1;
             min-width: 250px;
-            max-width: 400px;
+            max-width: none;
             position: relative;
+        }
+
+        .category-select {
+            width: min(280px, 100%);
+            min-height: 48px;
+            padding: 0.75rem 2.5rem 0.75rem 0.9rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--surface-card);
+            color: var(--text-primary);
+            font: inherit;
+            font-weight: 700;
+        }
+
+        .post-count-compact {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            white-space: nowrap;
         }
 
         .search-box input {
@@ -1082,63 +1100,17 @@
             <div class="blog-header">
                 <h1>Smart Home Advice You Can Actually Use</h1>
                 <p>Real project breakdowns, buying guidance, and practical help before you spend money on WiFi, theater, audio, lighting, shades, cameras, wiring, or control.</p>
-                <p id="postCount" style="font-size: 0.95rem; color: var(--text-secondary); margin-top: 0.5rem;"></p>
-                <a href="rss.xml" class="rss-link" aria-label="Subscribe to RSS feed">
-                    <span>📡</span>
-                    <span>RSS Feed</span>
-                </a>
             </div>
-
-            <section class="decision-hub" aria-labelledby="start-here-heading">
-                <div class="decision-hub-intro">
-                    <h2 id="start-here-heading">Start with the situation, not the brand.</h2>
-                    <p>The best smart-home plan starts by naming the real problem: weak coverage, too many remotes, a remodel that needs wiring, an outdoor space, or an existing system that needs support.</p>
-                </div>
-                <div class="decision-grid">
-                    <a class="decision-card" href="/blogs/smart-home-takeover-service-guide/">
-                        <strong>Existing system not working</strong>
-                        <span>Read takeover and troubleshooting guides before replacing everything.</span>
-                    </a>
-                    <a class="decision-card" href="/blogs/smart-home-prewire-builders-guide/">
-                        <strong>Building or remodeling</strong>
-                        <span>Plan wiring, rack space, network, shades, speakers, cameras, and TVs before walls close.</span>
-                    </a>
-                    <a class="decision-card" href="/blogs/wifi-dead-zones-fix-guide/">
-                        <strong>WiFi, cameras, or smart devices drop</strong>
-                        <span>Start with network design and equipment placement instead of buying more random gear.</span>
-                    </a>
-                    <a class="decision-card" href="/blogs/snap-one-brand-stack-smart-home-guide/">
-                        <strong>Trying to understand the equipment stack</strong>
-                        <span>See how Control4, Araknis, WattBox, Luma, Binary, Strong, and other systems fit together.</span>
-                    </a>
-                </div>
-                <div class="starter-links">
-                    <div>
-                        <h3>Most useful supporting pages</h3>
-                        <p>These are service pages, not blog posts. Use them when you already know what kind of help you need.</p>
-                    </div>
-                    <div class="starter-link-list" aria-label="Supporting service pages">
-                        <a href="/smart-home-control/">Smart Home Control</a>
-                        <a href="/control4-installer-chicago/">Control4 Installer</a>
-                        <a href="/sonos-installer-chicago/">Sonos Installer</a>
-                        <a href="/urc-programming-chicago/">URC Programming</a>
-                        <a href="/residential-wifi-network/">WiFi & Networking</a>
-                        <a href="/home-theater-room/">Home Theater</a>
-                        <a href="/security-cameras/">Security Cameras</a>
-                        <a href="/smart-lighting-shades/">Lighting & Shades</a>
-                        <a href="/brands/">Brands We Support</a>
-                    </div>
-                </div>
-            </section>
 
             <div class="blog-controls">
                 <div class="search-box">
                     <input type="text" id="searchInput" placeholder="Search articles..." aria-label="Search articles">
                 </div>
-                <div class="category-filters" id="categoryFilters">
-                    <button class="filter-btn active" data-category="all">All Articles</button>
-                    <!-- Categories will be populated by JavaScript -->
-                </div>
+                <select class="category-select" id="categorySelect" aria-label="Filter articles by category">
+                    <option value="all">All article topics</option>
+                </select>
+                <span id="postCount" class="post-count-compact" aria-live="polite"></span>
+                <a href="rss.xml" class="rss-link" aria-label="Subscribe to RSS feed"><span aria-hidden="true">📡</span><span>RSS</span></a>
             </div>
 
             <div class="blog-grid" id="blogGrid">
@@ -1209,19 +1181,18 @@
         }
 
         function renderCategories() {
-            const filtersContainer = document.getElementById('categoryFilters');
-            if (!filtersContainer) {
+            const categorySelect = document.getElementById('categorySelect');
+            if (!categorySelect) {
                 return;
             }
 
             const categories = [...new Set(blogData.posts.map(post => post.category))];
 
             categories.forEach(category => {
-                const btn = document.createElement('button');
-                btn.className = 'filter-btn';
-                btn.textContent = displayCategoryLabel(category);
-                btn.setAttribute('data-category', category.toLowerCase().replace(/\s+/g, '-'));
-                filtersContainer.appendChild(btn);
+                const option = document.createElement('option');
+                option.textContent = displayCategoryLabel(category);
+                option.value = category.toLowerCase().replace(/\s+/g, '-');
+                categorySelect.appendChild(option);
             });
         }
 
@@ -1307,24 +1278,17 @@
         }
 
         function setupEventListeners() {
-            // Category filter buttons
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-
-                    const category = this.getAttribute('data-category');
-                    filterPosts(category);
-                });
-            });
-
-            // Search input
             const searchInput = document.getElementById('searchInput');
+            const categorySelect = document.getElementById('categorySelect');
+            const applyFilters = () => filterPosts(categorySelect.value, searchInput.value);
+
+            categorySelect.addEventListener('change', applyFilters);
+
             let searchTimeout;
             searchInput.addEventListener('input', function() {
                 clearTimeout(searchTimeout);
                 searchTimeout = setTimeout(() => {
-                    filterPosts(null, this.value);
+                    applyFilters();
                 }, 300);
             });
         }

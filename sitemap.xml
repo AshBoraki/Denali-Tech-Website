@@ -350,7 +350,7 @@
   </url>
   <url>
     <loc>https://denalitechs.com/blogs/control4-halo-remote-review/</loc>
-    <lastmod>2026-07-05</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -416,13 +416,13 @@
   </url>
   <url>
     <loc>https://denalitechs.com/blogs/triad-home-theater-speaker-planning-guide/</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://denalitechs.com/blogs/episode-whole-home-audio-planning-guide/</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -458,7 +458,7 @@
   </url>
   <url>
     <loc>https://denalitechs.com/blogs/binary-video-distribution-hdmi-matrix-guide/</loc>
-    <lastmod>2026-06-04</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -470,7 +470,7 @@
   </url>
   <url>
     <loc>https://denalitechs.com/blogs/sunbrite-outdoor-tv-weather-guide/</loc>
-    <lastmod>2026-06-04</lastmod>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -499,8 +499,164 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://denalitechs.com/blogs/araknis-router-model-comparison/</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://denalitechs.com/blogs/control4-t5-vs-t4-touchscreen-size-guide/</loc>
     <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://denalitechs.com/blogs/araknis-network-switch-comparison/</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://denalitechs.com/blogs/wattbox-model-comparison-ups-guide/</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://denalitechs.com/blogs/control4-ea-vs-core-controller-guide/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://denalitechs.com/blogs/episode-amplifier-model-comparison/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://denalitechs.com/blogs/control4-lighting-system-comparison/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://denalitechs.com/blogs/luma-camera-model-comparison/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://denalitechs.com/blogs/control4-chime-video-doorbell-planning-guide/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://denalitechs.com/blogs/triad-audio-matrix-comparison/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://denalitechs.com/blogs/luma-nvr-model-comparison-storage-guide/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://denalitechs.com/blogs/strong-tv-mount-comparison-guide/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://denalitechs.com/blogs/vibrant-linear-lighting-comparison-guide/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://denalitechs.com/blogs/triad-architectural-subwoofer-comparison/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://denalitechs.com/blogs/triad-powered-subwoofer-comparison/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://denalitechs.com/blogs/control4-climate-control-system-guide/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://denalitechs.com/blogs/motorized-shades-blinds-drapery-control4-guide/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://denalitechs.com/blogs/control4-intercom-anywhere-planning-guide/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://denalitechs.com/blogs/control4-smart-lock-access-control-guide/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://denalitechs.com/blogs/control4-security-system-planning-guide/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://denalitechs.com/blogs/control4-water-leak-detection-shutoff-guide/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://denalitechs.com/blogs/control4-pool-spa-automation-guide/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://denalitechs.com/blogs/control4-garage-door-gate-automation-guide/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://denalitechs.com/blogs/control4-irrigation-landscape-automation-guide/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://denalitechs.com/blogs/control4-heated-driveway-snow-melt-guide/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://denalitechs.com/blogs/control4-generator-backup-power-planning-guide/</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://denalitechs.com/blogs/control4-indoor-air-quality-humidity-ventilation-guide/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

@@ -6,6 +6,15 @@
   RewriteRule ^net-tools/(.*)$ /Net-tools/$1 [R=301,L]
 </IfModule>
 
+# Block third-party hotlinking of public media while still allowing direct
+# visits and same-site embeds.
+<IfModule mod_rewrite.c>
+  RewriteCond %{REQUEST_URI} \.(?:avif|gif|jpe?g|png|webp|svg|mp4|webm)$ [NC]
+  RewriteCond %{HTTP_REFERER} !^$ [NC]
+  RewriteCond %{HTTP_REFERER} !^https?://([^.]+\.)?denalitechs\.com/ [NC]
+  RewriteRule . - [F,L]
+</IfModule>
+
 # Enable Compression (gzip)
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json application/xml application/rss+xml
