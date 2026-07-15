@@ -1,6 +1,36 @@
 {
   "posts": [
     {
+      "id": "av-technician-backpack-guide",
+      "title": "AV Technician Backpack Guide: Tools Behind Clean Low-Voltage Work",
+      "slug": "av-technician-backpack-guide",
+      "url": "/blogs/av-technician-backpack-guide/",
+      "excerpt": "See the field tools behind cleaner AV, networking, TV, and low-voltage installation work—and why each tool earns a place in the bag.",
+      "category": "Smart Home Guide",
+      "tags": ["AV Tools", "Low Voltage", "Structured Wiring", "Networking", "TV Installation", "Chicago"],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-04-09",
+      "updatedDate": "2026-04-09",
+      "readingTime": 4,
+      "featured": false,
+      "heroImage": "/Video/Blogs%20imge/YouTube/av-technician-backpack-guide.png"
+    },
+    {
+      "id": "questions-to-ask-installer",
+      "title": "10 Questions to Ask Your Smart Home Installer Before Hiring",
+      "slug": "questions-to-ask-installer",
+      "url": "/blogs/questions-to-ask-installer/",
+      "excerpt": "Use these practical questions to compare smart-home installers, understand support expectations, and protect your project before signing a proposal.",
+      "category": "Tips",
+      "tags": ["Smart Home Installer", "Questions", "Hiring", "Planning", "Chicago"],
+      "author": "Denali Tech Team",
+      "publishedDate": "2024-01-20",
+      "updatedDate": "2024-01-20",
+      "readingTime": 9,
+      "featured": false,
+      "heroImage": "/Video/interviewing-av-tech.webp"
+    },
+    {
       "id": "control4-indoor-air-quality-humidity-ventilation-guide",
       "title": "Control4 Indoor Air Quality, Humidity and Ventilation Planning Guide",
       "slug": "control4-indoor-air-quality-humidity-ventilation-guide",
