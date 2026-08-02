@@ -1,6 +1,27 @@
 {
   "posts": [
     {
+      "id": "wattbox-900-series-sec-power-guide",
+      "title": "WattBox 900 Series: SEC Power Protection and OvrC Guide",
+      "slug": "wattbox-900-series-sec-power-guide",
+      "url": "/blogs/wattbox-900-series-sec-power-guide/",
+      "excerpt": "See how WattBox 900 protects and services a smart-home rack with SEC surge protection, 12 metered outlets, OvrC support and optional UPS integration.",
+      "category": "Power Planning Guide",
+      "tags": [
+        "WattBox",
+        "WattBox 900",
+        "OvrC",
+        "Power Management",
+        "AV Rack"
+      ],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-08-02",
+      "updatedDate": "2026-08-02",
+      "readingTime": 9,
+      "featured": true,
+      "heroImage": "/Video/Blogs%20imge/WattBox%20900%20Series%20Guide/wattbox-900-sec-hero.png"
+    },
+    {
       "id": "control4-essential-lighting-controls-guide",
       "title": "Control4 Essential Dimmers and Switches: Simple Smart Lighting",
       "slug": "control4-essential-lighting-controls-guide",

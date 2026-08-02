@@ -4,6 +4,13 @@
         <title>Denali Tech Blog</title>
         <link>https://denalitechs.com/blogs/</link>
         <description>Smart home, AV, network, lighting, camera, and support guides from Denali Tech.</description>
+        <item>
+            <title>WattBox 900 Series: SEC Power Protection and OvrC Guide</title>
+            <link>https://denalitechs.com/blogs/wattbox-900-series-sec-power-guide/</link>
+            <guid>https://denalitechs.com/blogs/wattbox-900-series-sec-power-guide/</guid>
+            <description>See how WattBox 900 protects and services a smart-home rack with SEC surge protection, 12 metered outlets, OvrC support and optional UPS integration.</description>
+            <pubDate>Sun, 02 Aug 2026 15:00:00 GMT</pubDate>
+        </item>
         
         <item>
             <title>Control4 Essential Dimmers and Switches: Simple Smart Lighting</title>
