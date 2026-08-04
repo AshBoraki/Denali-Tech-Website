@@ -457,10 +457,10 @@
       "tags": ["Control4", "Halo Touch", "Halo Remote", "Neeo", "SR-260"],
       "author": "Denali Tech Team",
       "publishedDate": "2026-07-13",
-      "updatedDate": "2026-07-13",
+      "updatedDate": "2026-08-03",
       "readingTime": 13,
       "featured": true,
-      "heroImage": "/Video/Blogs%20imge/Control4%20Remote%20Comparison/control4-remote-comparison-hero.webp"
+      "heroImage": "/Video/Blogs%20imge/Control4%20Remote%20Comparison/control4-remote-comparison-hero-v3.webp"
     },
     {
       "id": "episode-whole-home-audio-planning-guide",
@@ -1429,10 +1429,10 @@
     },
     {
       "id": "control4-vs-urc-comparison",
-      "title": "Control4 vs URC: Which Smart Home System is Right for You?",
+      "title": "Control4 vs URC: Complete Control or Total Control?",
       "slug": "control4-vs-urc-comparison",
       "url": "/blogs/control4-vs-urc-comparison/",
-      "excerpt": "Compare Control4 and URC by daily interface, room scope, integration depth, programming, expansion, and the local service relationship—not brand hype.",
+      "excerpt": "Compare Control4 with URC Complete Control and Total Control by room scope, interfaces, integrations, programming, service, and expansion needs.",
       "category": "Buying Guide",
       "tags": [
         "Control4",
@@ -1442,9 +1442,9 @@
       ],
       "author": "Denali Tech Team",
       "publishedDate": "2025-01-03",
-      "updatedDate": "2026-07-13",
-      "readingTime": 10,
-      "heroImage": "/Video/Blogs%20imge/Control4%20vs%20URC%20Comparison/control4-urc-remote-comparison-hero.png",
+      "updatedDate": "2026-08-03",
+      "readingTime": 8,
+      "heroImage": "/Video/Blogs%20imge/Control4%20vs%20URC%20Comparison/control4-urc-remote-comparison-hero-v3.png",
       "featured": true
     },
     {
@@ -1485,7 +1485,7 @@
       "publishedDate": "2024-01-30",
       "updatedDate": "2026-08-03",
       "readingTime": 8,
-      "heroImage": "/Video/URC-MX990.webp",
+      "heroImage": "/Video/Blogs%20imge/Control4%20vs%20URC%20Comparison/urc-mx-990-blue.webp",
       "featured": true
     },
     {
@@ -1504,9 +1504,9 @@
       ],
       "author": "Denali Tech Team",
       "publishedDate": "2024-01-30",
-      "updatedDate": "2024-01-30",
+      "updatedDate": "2026-08-03",
       "readingTime": 8,
-      "heroImage": "/Video/SR260-C4.webp",
+      "heroImage": "/Video/Blogs%20imge/Control4%20Remote%20Comparison/control4-sr260-blue.webp",
       "featured": true
     },
     {
@@ -1525,17 +1525,17 @@
       ],
       "author": "Denali Tech Team",
       "publishedDate": "2024-01-30",
-      "updatedDate": "2024-01-30",
+      "updatedDate": "2026-08-03",
       "readingTime": 8,
-      "heroImage": "/Video/Neo-C4.webp",
+      "heroImage": "/Video/Blogs%20imge/Control4%20Remote%20Comparison/control4-neeo-blue.webp",
       "featured": true
     },
     {
       "id": "control4-halo-touch-review",
-      "title": "Control4 Halo Touch Remote Review: Complete Analysis",
+      "title": "Control4 Halo Touch Review: Screen, Buttons, WiFi and Room Fit",
       "slug": "control4-halo-touch-review",
       "url": "/blogs/control4-halo-touch-review/",
-      "excerpt": "Complete review of the Control4 Halo Touch remote control. Learn about battery life, features, pros, cons, and whether the Halo Touch is right for your smart home.",
+      "excerpt": "See the Halo Touch screen, physical buttons, WiFi requirements, charging dock, official specifications, room fit, limitations, and alternatives.",
       "category": "Product Review",
       "tags": [
         "Control4",
@@ -1546,9 +1546,9 @@
       ],
       "author": "Denali Tech Team",
       "publishedDate": "2024-01-30",
-      "updatedDate": "2024-01-30",
-      "readingTime": 8,
-      "heroImage": "/Video/Halo Touch-C4.webp",
+      "updatedDate": "2026-08-03",
+      "readingTime": 7,
+      "heroImage": "/Video/Blogs%20imge/Control4%20Remote%20Comparison/control4-halo-touch-blue.webp",
       "featured": true
     },
     {
@@ -1573,10 +1573,10 @@
     },
     {
       "id": "urc-remote-programming-guide",
-      "title": "URC Remote Programming Guide: Get Your Universal Remote Working Reliably",
+      "title": "URC Remote Programming: Complete Control vs Total Control",
       "slug": "urc-remote-programming-guide",
       "url": "/blogs/urc-remote-programming-guide/",
-      "excerpt": "Learn how to program your URC remote control to control everything in your smart home - TV, audio, lights, shades, and more.",
+      "excerpt": "Learn the difference between URC Complete Control and Total Control, what can be reprogrammed, and what a careful service visit should verify.",
       "category": "URC Systems",
       "tags": [
         "URC",
@@ -1586,9 +1586,9 @@
       ],
       "author": "Denali Tech Team",
       "publishedDate": "2024-01-15",
-      "updatedDate": "2024-01-15",
-      "readingTime": 8,
-      "heroImage": "/blogs/urc-remote-programming-guide/images/urc-mx-990-image-in-living-room-in-hand.webp",
+      "updatedDate": "2026-08-03",
+      "readingTime": 7,
+      "heroImage": "/Video/Blogs%20imge/Control4%20vs%20URC%20Comparison/urc-complete-total-hero-v2.webp",
       "featured": true
     }
   ],
