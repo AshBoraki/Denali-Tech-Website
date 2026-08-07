@@ -63,7 +63,7 @@
         .case-meta { display:flex; flex-wrap:wrap; gap:10px 22px; margin-top:32px; padding-top:24px; border-top:1px solid rgba(255,255,255,.14); color:#aeb7c4; font-size:.86rem; }
         .case-meta a { color:#f58a4b; text-decoration:none; }
         .case-hero-media { min-height:440px; margin:0; position:relative; }
-        .case-hero-media img { width:100%; height:100%; display:block; object-fit:cover; }
+        .case-hero-media img { width:100%; height:100%; display:block; object-fit:cover; object-position:64% center; }
         .case-hero-media::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(11,16,26,.42),transparent 45%); pointer-events:none; }
         .project-facts { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); margin:28px 0 86px; background:var(--white); border:1px solid var(--line); border-radius:18px; box-shadow:0 12px 38px rgba(24,29,36,.06); }
         .project-fact { padding:25px 28px; }
@@ -119,11 +119,12 @@
         .component p { margin:0; color:var(--muted); font-size:.92rem; }
         .gallery { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:28px; margin:0 auto 92px; }
         .gallery-card { margin:0; }
-        .gallery-card img { aspect-ratio:4/3; }
+        .gallery-card img { aspect-ratio:4/3; height:auto; }
+        .gallery-card img.product-image { object-fit:contain; background:#102d50; }
         .gallery-card h3 { margin:16px 0 7px; font-family:var(--font-heading); font-size:1.15rem; }
         .gallery-card p { margin:0; color:var(--muted); }
         .wide-figure { max-width:980px; margin:0 auto 92px; }
-        .wide-figure img { max-height:560px; object-position:center; }
+        .wide-figure img { height:auto; max-height:none; object-position:center; }
         .result-panel { max-width:980px; margin:0 auto 92px; padding:clamp(32px,5vw,58px); background:var(--white); border:1px solid var(--line); border-radius:22px; }
         .result-panel h2 { max-width:720px; }
         .result-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; margin-top:32px; }
@@ -192,12 +193,12 @@
       "image": [
         "https://denalitechs.com/Video/Blogs%20imge/Arakins%20Wifi%20setup/arakhnis-network-overview-header.webp",
         "https://denalitechs.com/Video/Blogs%20imge/Arakins%20Wifi%20setup/arakhnis-network-setup-4u-wall-mount-rack-router-switch-wattbox.jpg",
-        "https://denalitechs.com/Video/Blogs%20imge/Arakins%20Wifi%20setup/arakhnis-wifi6-520-indoor-access-point.jpg"
+        "https://denalitechs.com/Video/Blogs%20imge/Arakins%20Wifi%20setup/araknis-520-indoor-access-point-official.webp"
       ],
       "author": {"@type":"Organization","name":"Denali Tech Team","url":"https://denalitechs.com/about/"},
       "publisher": {"@type":"Organization","name":"Denali Tech","url":"https://denalitechs.com/","logo":{"@type":"ImageObject","url":"https://denalitechs.com/favicon-512x512.png"}},
       "datePublished": "2026-06-03",
-      "dateModified": "2026-07-11",
+      "dateModified": "2026-08-07",
       "mainEntityOfPage": "https://denalitechs.com/blogs/araknis-access-point-placement-guide/",
       "articleSection": "Real Project Case Study",
       "keywords": "Araknis WiFi, Eero replacement, WattBox power management, smart home network, access point placement, Chicago"
@@ -233,13 +234,13 @@
                     <h1 class="case-title">From Eero Mesh to a Managed Araknis Network</h1>
                     <p class="case-deck">A real smart-home network rescue: loose consumer mesh gear replaced with wired access points, managed power, clear labeling, and a rack built for long-term support.</p>
                     <div class="case-meta">
-                        <span><time datetime="2026-07-11">Updated July 11, 2026</time></span>
+                        <span><time datetime="2026-08-07">Updated August 7, 2026</time></span>
                         <span>8 minute case study</span>
                         <span>By <a href="../../about/">Denali Tech Team</a></span>
                     </div>
                 </div>
                 <figure class="case-hero-media">
-                    <img src="../../Video/Blogs%20imge/Arakins%20Wifi%20setup/arakhnis-network-overview-header.webp" alt="Completed Araknis network with router, PoE switch, WattBox power management, and wireless access point" loading="eager" fetchpriority="high" width="1025" height="400">
+                    <img src="../../Video/homepage/denali-tech-hero-field-team.webp" alt="Denali Tech field team diagnosing and planning a professional network service visit" loading="eager" fetchpriority="high" width="2752" height="1536">
                 </figure>
             </header>
 
@@ -341,7 +342,7 @@
 
             <section class="gallery" aria-label="Araknis access point installation">
                 <article class="gallery-card">
-                    <img src="../../Video/Blogs%20imge/Arakins%20Wifi%20setup/arakhnis-wifi6-520-indoor-access-point.jpg" alt="Araknis WiFi 6 indoor wireless access point" loading="lazy" decoding="async" width="1897" height="1265">
+                    <img class="product-image" src="../../Video/Blogs%20imge/Arakins%20Wifi%20setup/araknis-520-indoor-access-point-official.webp" alt="Araknis 520 Series indoor Wi-Fi 6 access point" loading="lazy" decoding="async" width="1600" height="900">
                     <h3>Managed WiFi 6 hardware</h3>
                     <p>PoE power and a wired path back to the rack create a predictable foundation.</p>
                 </article>

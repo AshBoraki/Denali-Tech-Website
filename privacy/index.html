@@ -631,6 +631,28 @@
             margin-bottom: 0.5rem;
         }
 
+        .content-section a {
+            color: var(--text-primary);
+            font-weight: 600;
+            text-decoration-line: underline;
+            text-decoration-thickness: 0.1em;
+            text-underline-offset: 0.2em;
+            text-decoration-skip-ink: auto;
+            transition: color var(--transition), text-decoration-color var(--transition);
+        }
+
+        .content-section a:hover {
+            color: var(--accent-hover);
+            text-decoration-color: currentColor;
+        }
+
+        .content-section a:focus-visible {
+            color: var(--text-primary);
+            outline: 3px solid var(--accent-primary);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
         .last-updated {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--border-color);
