@@ -2928,6 +2928,34 @@
             return labels[category] || category;
         }
 
+        function sortPostsByDate(posts) {
+            return [...posts].sort((a, b) => {
+                const dateDifference = new Date(b.publishedDate) - new Date(a.publishedDate);
+                return dateDifference || a.title.localeCompare(b.title);
+            });
+        }
+
+        function diversifyPosts(posts) {
+            const remaining = sortPostsByDate(posts);
+            const diversified = [];
+            let previousCategory = '';
+
+            while (remaining.length > 0) {
+                // Keep the newest available article first, but avoid placing two
+                // articles from the same guide family back-to-back when another
+                // useful topic is available. This keeps lighting, networking,
+                // theater, security, power, and planning visually balanced.
+                let nextIndex = remaining.findIndex(post => post.category !== previousCategory);
+                if (nextIndex === -1) nextIndex = 0;
+
+                const [nextPost] = remaining.splice(nextIndex, 1);
+                diversified.push(nextPost);
+                previousCategory = nextPost.category;
+            }
+
+            return diversified;
+        }
+
         async function loadBlogData() {
             try {
                 const response = await fetch('/blogs/blog-data.json');
@@ -2957,13 +2985,9 @@
         }
 
         function initializeBlog() {
-            // Sort posts by date (newest first)
-            blogData.posts.sort((a, b) => {
-                const dateA = new Date(a.publishedDate);
-                const dateB = new Date(b.publishedDate);
-                return dateB - dateA; // Newest first
-            });
-            filteredPosts = blogData.posts;
+            // Preserve recency while preventing one topic from crowding a row.
+            blogData.posts = diversifyPosts(blogData.posts);
+            filteredPosts = [...blogData.posts];
             renderCategories();
             renderPosts();
             setupEventListeners();
@@ -3109,12 +3133,11 @@
                 );
             }
 
-            // Sort filtered posts by date (newest first)
-            filteredPosts = posts.sort((a, b) => {
-                const dateA = new Date(a.publishedDate);
-                const dateB = new Date(b.publishedDate);
-                return dateB - dateA; // Newest first
-            });
+            // Category pages are naturally one topic, so keep them strictly
+            // chronological. The all-article and search views stay diversified.
+            filteredPosts = category && category !== 'all'
+                ? sortPostsByDate(posts)
+                : diversifyPosts(posts);
             renderPosts();
         }
 
