@@ -717,6 +717,155 @@
             z-index: 2;
         }
 
+        /* SOFTWARE PRODUCTS */
+        .product-section {
+            background:
+                radial-gradient(circle at 15% 20%, rgba(59, 130, 246, 0.12), transparent 34%),
+                radial-gradient(circle at 85% 80%, rgba(249, 115, 22, 0.11), transparent 32%),
+                var(--bg-color);
+        }
+
+        .product-eyebrow {
+            display: inline-block;
+            margin-bottom: 0.9rem;
+            color: var(--accent-primary) !important;
+            font-size: 0.8rem !important;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.5rem;
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+            padding: clamp(1.5rem, 3vw, 2.25rem);
+            background: rgba(255, 255, 255, 0.055);
+            border: 1px solid var(--border-color);
+            border-radius: 22px;
+            box-shadow: var(--shadow-subtle);
+        }
+
+        :root[data-theme='light'] .product-card,
+        body.light-theme .product-card {
+            background: rgba(255, 255, 255, 0.86);
+        }
+
+        .product-card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.4rem;
+        }
+
+        .product-logo {
+            display: grid;
+            place-items: center;
+            flex: 0 0 72px;
+            width: 72px;
+            height: 72px;
+            padding: 10px;
+            background: #ffffff;
+            border: 1px solid rgba(15, 23, 42, 0.1);
+            border-radius: 18px;
+        }
+
+        .product-logo img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .product-logo.propokit-logo {
+            flex-basis: 112px;
+            width: 112px;
+        }
+
+        .product-kicker {
+            display: block;
+            margin-bottom: 0.35rem;
+            color: var(--accent-primary);
+            font-size: 0.76rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .product-card h3 {
+            margin: 0;
+            color: var(--text-primary);
+            font-family: var(--font-heading);
+            font-size: clamp(1.55rem, 3vw, 2rem);
+        }
+
+        .product-card > p {
+            margin: 0 0 1.25rem;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.75;
+        }
+
+        .product-points {
+            display: grid;
+            gap: 0.65rem;
+            margin: 0 0 1.6rem;
+            padding: 0;
+            list-style: none;
+            color: var(--text-primary);
+        }
+
+        .product-points li {
+            position: relative;
+            padding-left: 1.4rem;
+            line-height: 1.55;
+        }
+
+        .product-points li::before {
+            content: '\2713';
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+            font-weight: 800;
+        }
+
+        .product-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            margin-top: auto;
+            padding: 0.8rem 1.15rem;
+            color: #ffffff;
+            background: linear-gradient(135deg, var(--accent-primary), #ea580c);
+            border-radius: 12px;
+            font-weight: 800;
+            text-decoration: none;
+            transition: transform var(--transition), box-shadow var(--transition);
+        }
+
+        .product-link:hover {
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .product-disclosure {
+            max-width: 780px;
+            margin: 1.75rem auto 0;
+            color: var(--text-secondary);
+            text-align: center;
+            line-height: 1.7;
+        }
+
 
         /* STATS SECTION */
         .stats-grid {
@@ -1291,6 +1440,10 @@
                 grid-template-columns: 1fr;
             }
 
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
 
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -1617,18 +1770,43 @@
         </div>
     </section>
 
-    <section class="content-section" style="background: linear-gradient(180deg, rgba(15,23,42,0.03), rgba(249,115,22,0.04));">
+    <section class="content-section product-section" aria-labelledby="software-products-heading">
         <div class="container">
             <div class="section-header">
-                <h2>Other Denali Tech Projects</h2>
-                <p>Separate from our homeowner work, Denali Tech also builds a few tools for installers and contractors.</p>
+                <p class="product-eyebrow">Built from real field experience</p>
+                <h2 id="software-products-heading">The Software Side of Denali Tech</h2>
+                <p>Working in homes and running projects showed us where better tools could save time and reduce mistakes. That experience led us to build two focused software products.</p>
             </div>
-            <div style="max-width: 760px; margin: 2rem auto 0; text-align: center;">
-                <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-primary); margin: 0;">Those tools are part of the broader Denali Tech company, but this site stays focused on home automation and custom AV work for homeowners. If you want to see the homeowner side of that work, start with our projects.</p>
+            <div class="product-grid">
+                <article class="product-card">
+                    <div class="product-card-header">
+                        <span class="product-logo" aria-hidden="true"><img src="/Video/dtnt/dtnt-app-mark.png" alt="" width="512" height="512" loading="lazy"></span>
+                        <div><span class="product-kicker">For installers</span><h3>DTNT</h3></div>
+                    </div>
+                    <p>Windows network-diagnostics software created for faster, clearer service calls in homes and small businesses.</p>
+                    <ul class="product-points">
+                        <li>Wi-Fi analysis and channel visibility</li>
+                        <li>IP scanning and network discovery</li>
+                        <li>Field-ready diagnostic tools in one place</li>
+                    </ul>
+                    <a class="product-link" href="https://dt-nt.com/" target="_blank" rel="noopener" aria-label="Visit the DTNT software website">Visit DTNT</a>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-card-header">
+                        <span class="product-logo propokit-logo" aria-hidden="true"><img src="/Video/propokit/propokit-logo-home.svg" alt="" width="240" height="72" loading="lazy"></span>
+                        <div><span class="product-kicker">For contractors</span><h3>PropoKit</h3></div>
+                    </div>
+                    <p>Proposal workflow software for contractors and service companies that want to create clearer quotes and follow up with customers more consistently.</p>
+                    <ul class="product-points">
+                        <li>Organized products, services, and pricing</li>
+                        <li>Professional proposals built more quickly</li>
+                        <li>A cleaner path from customer request to approval</li>
+                    </ul>
+                    <a class="product-link" href="https://propokit.com/" target="_blank" rel="noopener" aria-label="Visit the PropoKit software website">Visit PropoKit</a>
+                </article>
             </div>
-            <div style="text-align: center; margin-top: 1.5rem;">
-                <a href="/projects/" class="btn-secondary">See Homeowner Projects</a>
-            </div>
+            <p class="product-disclosure">DTNT and PropoKit are separate software products created by Denali Tech. Homeowners looking for installation and service can continue with our <a href="/projects/">project work</a> or <a href="/contact/">contact Denali Tech</a>.</p>
         </div>
     </section>
 
