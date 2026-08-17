@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0, user-scalable=yes">
     <script src="/assets/js/microsoft-clarity.js" defer></script>
     <script src="/assets/js/theme.js?v=20260602"></script>
     <!-- Google Tag Manager - Optimized for Performance (Deferred Loading) -->
@@ -95,8 +97,6 @@
     })();
     </script>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0, user-scalable=yes">
     <meta name="theme-color" content="#f97316">    <title>Chicago Smart Home &amp; Whole-Home WiFi Installer | Denali Tech</title>
     <meta name="description" content="Denali Tech designs and installs WiFi, home automation, AV, cameras, lighting, shades, and audio for Chicago-area homes with clear project plans and clean installs.">
     <!-- Open Graph Meta Tags -->
@@ -143,9 +143,6 @@
 
     <!-- DNS Prefetch for External Resources -->
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-    <link rel="dns-prefetch" href="https://api.web3forms.com">
-    <link rel="dns-prefetch" href="https://web3forms.com">
-    <link rel="dns-prefetch" href="https://js.hcaptcha.com">
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 
     <!-- Preconnect to CDN for faster resource loading -->
@@ -153,6 +150,8 @@
 
     <!-- Preload Critical Resources -->
     <link rel="preload" href="/Video/homepage/logo-112.webp" as="image" type="image/webp" fetchpriority="high">
+    <link rel="preload" href="/Video/homepage/hero-poster-mobile.webp" as="image" type="image/webp" media="(max-width: 768px)" fetchpriority="high">
+    <link rel="preload" href="/Video/homepage/hero-poster-desktop.webp" as="image" type="image/webp" media="(min-width: 769px)" fetchpriority="high">
 
     <base href="">
 
@@ -742,13 +741,29 @@
 	    <section class="hero" id="home" itemscope itemtype="https://schema.org/WebPage">
 			        <div class="hero-background">
                     <picture class="hero-background-picture" aria-hidden="true">
-                        <source media="(max-width: 768px)" srcset="Video/homepage/denali-tech-hero-field-team.webp" type="image/webp">
-                        <source srcset="Video/homepage/hero-poster-desktop.webp" type="image/webp">
-                        <img class="hero-background-image" src="Video/homepage/denali-tech-hero-field-team.webp" alt="" loading="eager" decoding="async" width="2752" height="1536" fetchpriority="high">
+                        <source media="(min-width: 769px)" srcset="Video/homepage/hero-poster-desktop.webp" type="image/webp">
+                        <img class="hero-background-image" src="Video/homepage/hero-poster-mobile.webp" alt="" loading="eager" decoding="async" width="640" height="368" fetchpriority="high">
                     </picture>
-	                    <video id="hero-background-video" class="hero-background-video" autoplay muted loop playsinline preload="metadata" poster="Video/homepage/denali-tech-hero-field-team.webp" aria-hidden="true">
-	                        <source src="Video/homepage/denali-tech-hero-smart-home.mp4" type="video/mp4">
+	                    <video id="hero-background-video" class="hero-background-video" muted loop playsinline preload="none" poster="Video/homepage/hero-poster-desktop.webp" aria-hidden="true">
+	                        <source data-src="Video/homepage/denali-tech-hero-smart-home.mp4" type="video/mp4">
 	                    </video>
+	                    <script>
+	                    (function () {
+	                        if (!window.matchMedia('(min-width: 769px)').matches) return;
+	                        var video = document.getElementById('hero-background-video');
+	                        var source = video && video.querySelector('source[data-src]');
+	                        if (!video || !source) return;
+	                        var startVideo = function () {
+	                            if (source.src) return;
+	                            source.src = source.getAttribute('data-src');
+	                            video.load();
+	                            var playback = video.play();
+	                            if (playback && typeof playback.catch === 'function') playback.catch(function () {});
+	                        };
+	                        if ('requestIdleCallback' in window) requestIdleCallback(startVideo, { timeout: 1800 });
+	                        else window.setTimeout(startVideo, 900);
+	                    })();
+	                    </script>
 		            <div></div>
 		            <div id="particles-js"></div>
 		        </div>
@@ -1408,7 +1423,7 @@
             <p class="hero-trust">Authorized Control4 / URC dealer. 5.0 Google rating. Support after install.</p>
             <div class="hero-buttons">
                 <a href="/contact/#booking" class="btn-primary">Get a Project Plan</a>
-                <a href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20want%20help%20with%20a%20home%20technology%20project.%20I%20can%20send%20photos.%20My%20home%20is%20in%3A" target="_blank" rel="noopener noreferrer" class="btn-secondary" aria-label="Send project photos to Denali Tech on WhatsApp">Send Photos</a>
+                <a href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20want%20help%20with%20a%20home%20technology%20project.%20I%20can%20send%20photos.%20My%20home%20is%20in%3A" target="_blank" rel="noopener noreferrer" class="btn-secondary" aria-label="Send Photos on WhatsApp">Send Photos</a>
             </div>
         </div>
     </section>
@@ -4193,7 +4208,5 @@
         }
     </style>
 
-    <!-- Web3Forms hCaptcha Script (Zero-Config) -->
-    <script src="https://web3forms.com/client/script.js" async defer></script>
 </body>
 </html>
