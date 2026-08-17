@@ -75,7 +75,7 @@
     var source = document.createElement("source");
     var img = document.createElement("img");
 
-    source.srcset = "/Video/logo.webp?v=" + version;
+    source.srcset = "/Video/homepage/logo-112.webp?v=" + version;
     source.type = "image/webp";
     img.src = "/Video/logo.JPG?v=" + version;
     img.alt = "Denali Tech";
