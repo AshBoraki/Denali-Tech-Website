@@ -1,285 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="/assets/js/microsoft-clarity.js" defer></script>
-    <script src="/assets/js/theme.js?v=20260602"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>McIntosh MC452 Cabinet Install Guide | Denali Tech</title>
-    <meta name="description" content="A McIntosh MC452 cabinet install works only when heat, cable routing, and component spacing are planned correctly. See the practical details.">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://denalitechs.com/blogs/mcintosh-mc452-salamander-cabinet-guide/">
-    <meta property="og:title" content="McIntosh MC452 Cabinet Install Guide">
-    <meta property="og:description" content="A McIntosh MC452 cabinet install works only when heat, cable routing, and component spacing are planned correctly. See the practical details.">
-    <meta property="og:image" content="https://denalitechs.com/Video/Blogs imge/YouTube/mcintosh-mc452-salamander-cabinet-guide.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://denalitechs.com/blogs/mcintosh-mc452-salamander-cabinet-guide/">
-    <meta name="twitter:title" content="McIntosh MC452 Cabinet Install Guide">
-    <meta name="twitter:description" content="A McIntosh MC452 cabinet install works only when heat, cable routing, and component spacing are planned correctly. See the practical details.">
-    <meta name="twitter:image" content="https://denalitechs.com/Video/Blogs imge/YouTube/mcintosh-mc452-salamander-cabinet-guide.png">
-    <meta name="author" content="Denali Tech">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <meta name="article:published_time" content="2026-04-09">
-    <meta name="article:modified_time" content="2026-08-07">
-    <meta name="article:author" content="Denali Tech">
-    <meta name="article:section" content="Smart Home Guide">
-    <link rel="canonical" href="https://denalitechs.com/blogs/mcintosh-mc452-salamander-cabinet-guide/">
-    <base href="/">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
-    <style>
-        :root {
-            --bg-color: #0a0d18;
-            --text-primary: #f8fafc;
-            --text-secondary: #cbd5e1;
-            --accent-primary: #f97316;
-            --accent-hover: #fdba74;
-            --border-color: rgba(255, 255, 255, 0.12);
-            --shadow-glow: 0 4px 15px rgba(249, 115, 22, 0.4);
-            --font-main: 'Inter', system-ui, sans-serif;
-            --font-heading: 'Poppins', system-ui, sans-serif;
-            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        * { box-sizing: border-box; }
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: var(--font-main);
-            color: var(--text-primary);
-            background-color: var(--bg-color);
-            line-height: 1.7;
-        }
-        .blog-container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 120px 2rem 4rem;
-        }
-        .blog-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        .blog-breadcrumb {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-        }
-        .blog-breadcrumb a {
-            color: var(--accent-primary);
-            text-decoration: none;
-        }
-        .blog-title {
-            font-family: var(--font-heading);
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-        .blog-meta {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-        }
-        .blog-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            justify-content: center;
-            margin: 1.5rem 0;
-        }
-        .blog-tag {
-            display: inline-block;
-            padding: 0.4rem 0.8rem;
-            background: rgba(249, 115, 22, 0.15);
-            border: 1px solid rgba(249, 115, 22, 0.3);
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--accent-primary);
-        }
-        .blog-hero-image {
-            width: 100%;
-            max-width: 100%;
-            height: auto;
-            border-radius: 16px;
-            margin: 2rem 0;
-            box-shadow: var(--shadow-glow);
-        }
-        .blog-content {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-secondary);
-        }
-        .blog-content h2 {
-            font-family: var(--font-heading);
-            font-size: clamp(1.75rem, 4vw, 2.25rem);
-            color: var(--text-primary);
-            margin-top: 3rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.3;
-        }
-        .blog-content p {
-            margin-bottom: 1.5rem;
-        }
-        .blog-content ul {
-            margin-bottom: 1.5rem;
-            padding-left: 2rem;
-        }
-        .blog-content li {
-            margin-bottom: 0.75rem;
-        }
-        .blog-content strong {
-            color: var(--text-primary);
-        }
-        .cta-box {
-            background: rgba(249, 115, 22, 0.1);
-            border: 2px solid var(--accent-primary);
-            border-radius: 16px;
-            padding: 2.5rem;
-            margin: 3rem 0;
-            text-align: center;
-        }
-        .cta-box h3 {
-            font-family: var(--font-heading);
-            font-size: 1.75rem;
-            color: var(--accent-primary);
-            margin-top: 0;
-            margin-bottom: 1rem;
-        }
-        .btn-primary {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--accent-primary), #fb923c);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.1rem;
-            transition: all var(--transition);
-            box-shadow: var(--shadow-glow);
-        }
-        .highlight-box {
-            background: rgba(249, 115, 22, 0.1);
-            border-left: 4px solid var(--accent-primary);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin: 2rem 0;
-        }
-        .video-embed {
-            position: relative;
-            width: 100%;
-            padding-top: 56.25%;
-            margin: 2rem 0;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-        }
-        .video-embed iframe {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-        a { color: var(--accent-hover); }
-        @media (max-width: 768px) {
-            .blog-container { padding: 100px 1rem 2rem; }
-            .blog-meta { flex-direction: column; gap: 0.5rem; }
-            .cta-box { padding: 1.5rem; }
-        }
-    </style>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "McIntosh MC452 in a Salamander Cabinet: What a Proper Hi-Fi Cabinet Install Needs", "description": "A large amplifier install inside furniture only works when heat, cable management, and component spacing are handled correctly. This MC452 setup is a clear example.", "image": ["https://denalitechs.com/Video/Blogs imge/YouTube/mcintosh-mc452-salamander-cabinet-guide.png"], "datePublished": "2026-04-09", "dateModified": "2026-08-15", "author": {"@type": "Organization", "name": "Denali Tech", "url": "https://denalitechs.com/"}, "publisher": {"@type": "Organization", "name": "Denali Tech","url":"https://denalitechs.com/","logo": {"@type": "ImageObject", "url": "https://denalitechs.com/Video/logo%20no%20back%20greand%20.png", "width": 512, "height": 512}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://denalitechs.com/blogs/mcintosh-mc452-salamander-cabinet-guide/"}, "articleSection": "Smart Home Guide", "keywords": "McIntosh MC452, Salamander cabinet, hi-fi cabinet install, high-end audio furniture, Chicago AV installer", "inLanguage": "en-US"}</script>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://denalitechs.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://denalitechs.com/blogs/"}, {"@type": "ListItem", "position": 3, "name": "McIntosh MC452 in a Salamander Cabinet: What a Proper Hi-Fi Cabinet Install Needs", "item": "https://denalitechs.com/blogs/mcintosh-mc452-salamander-cabinet-guide/"}]}</script>
-<script src="/assets/js/microsoft-uet.js" defer></script>
-    <link rel="stylesheet" href="/assets/css/site-chrome.css?v=20260607c">
-    <script src="/assets/js/site-chrome.js?v=20260607c" defer></script>
+  <script src="/assets/js/microsoft-clarity.js" defer></script>
+  <script src="/assets/js/theme.js?v=20260602"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>McIntosh MC452 Cabinet Guide: Weight, Airflow & Fit | Denali Tech</title>
+  <meta name="description" content="See how a 110-pound McIntosh MC452 changes the furniture plan. A client-friendly guide to cabinet support, depth, ventilation, cabling, and service access.">
+  <meta name="author" content="Denali Tech">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="article:published_time" content="2026-04-09">
+  <meta name="article:modified_time" content="2026-08-18">
+  <meta name="article:author" content="Denali Tech">
+  <meta name="article:section" content="AV Planning Guide">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://denalitechs.com/blogs/mcintosh-mc452-salamander-cabinet-guide/">
+  <meta property="og:title" content="McIntosh MC452 Cabinet Guide: Weight, Airflow & Fit">
+  <meta property="og:description" content="A 110-pound amplifier needs more than attractive furniture. See the support, depth, cooling, cable, and service decisions that matter.">
+  <meta property="og:image" content="https://denalitechs.com/Video/Blogs%20imge/YouTube/mcintosh-mc452-salamander-cabinet-guide.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="McIntosh MC452 Cabinet Guide: Weight, Airflow & Fit">
+  <meta name="twitter:description" content="What it takes to integrate a 110-pound McIntosh amplifier into AV furniture correctly.">
+  <meta name="twitter:image" content="https://denalitechs.com/Video/Blogs%20imge/YouTube/mcintosh-mc452-salamander-cabinet-guide.png">
+  <link rel="canonical" href="https://denalitechs.com/blogs/mcintosh-mc452-salamander-cabinet-guide/">
+  <base href="/">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="/assets/css/site-chrome.css?v=20260607c">
+  <script src="/assets/js/site-chrome.js?v=20260818a" defer></script>
+  <script src="/assets/js/microsoft-uet.js" defer></script>
+  <style>
+    :root{--ink:#090a08;--surface:#11120f;--text:#f7f2e8;--muted:#beb8ab;--line:rgba(245,241,233,.14);--gold:#e8b76d;--orange:#f46f22;--green:#64cba1;--max:1180px;--serif:'Playfair Display',Georgia,serif;--sans:'Inter',system-ui,sans-serif}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ink);color:var(--text);font-family:var(--sans);line-height:1.7}a{color:#f0c98e;text-decoration-thickness:1px;text-underline-offset:4px}a:hover{color:#fff}a:focus-visible,.button:focus-visible{outline:3px solid #fff;outline-offset:4px;border-radius:4px}img{display:block;max-width:100%}
+    .shell{max-width:var(--max);margin:0 auto;padding:112px 24px 88px}.crumbs{font-size:.86rem;color:#918c82;margin-bottom:34px}.crumbs a{text-decoration:none;color:var(--gold)}
+    .hero{display:grid;grid-template-columns:minmax(0,1.03fr) minmax(360px,.97fr);gap:54px;align-items:center;padding:28px 0 70px;border-bottom:1px solid var(--line)}.eyebrow{display:flex;align-items:center;gap:12px;color:var(--gold);font-size:.75rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}.eyebrow::before{content:"";width:30px;height:2px;background:var(--orange)}
+    h1,h2{font-family:var(--serif);letter-spacing:-.035em;text-wrap:balance}h1{font-size:clamp(3rem,6vw,5.5rem);line-height:.97;margin:20px 0 24px;max-width:760px}.dek{font-size:clamp(1.05rem,1.7vw,1.25rem);line-height:1.65;color:#d4cec2;max-width:660px;margin:0 0 24px}.meta{display:flex;flex-wrap:wrap;gap:10px 20px;color:#918c82;font-size:.86rem}.meta a{color:#d8d1c4}
+    .hero-visual{position:relative;border:1px solid var(--line);border-radius:22px;padding:12px;background:linear-gradient(145deg,#1d1b14,#0c0d0a);box-shadow:0 28px 90px rgba(0,0,0,.45)}.hero-visual img{width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;border-radius:13px}.hero-note{position:absolute;right:-18px;bottom:-26px;width:min(310px,82%);padding:18px 20px;border:1px solid rgba(232,183,109,.35);border-radius:14px;background:rgba(18,18,14,.96);box-shadow:0 16px 40px rgba(0,0,0,.38)}.hero-note strong{display:block;color:var(--gold);font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}.hero-note span{font-size:.92rem;color:#d7d0c3;line-height:1.5}
+    .fact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:46px 0 86px}.fact{min-height:160px;padding:24px;border:1px solid var(--line);border-radius:16px;background:var(--surface)}.fact b{display:block;font-family:var(--serif);font-size:2.1rem;line-height:1;color:var(--gold);margin-bottom:12px}.fact span{color:var(--muted);font-size:.91rem;line-height:1.5}
+    .section{padding:74px 0;border-top:1px solid var(--line)}.section-head{display:grid;grid-template-columns:minmax(260px,.75fr) minmax(360px,1.25fr);gap:52px;align-items:start;margin-bottom:38px}.section h2{font-size:clamp(2.25rem,4.6vw,4rem);line-height:1.05;margin:0}.section-lead{color:#cbc4b8;font-size:1.08rem;margin:6px 0 0;max-width:700px}
+    .decision-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.decision{padding:26px;border:1px solid var(--line);border-radius:17px;background:var(--surface)}.decision .number{color:var(--orange);font-size:.75rem;font-weight:700;letter-spacing:.16em}.decision h3{font-size:1.12rem;line-height:1.35;margin:14px 0 8px}.decision p{color:var(--muted);font-size:.94rem;margin:0}
+    .warning{display:grid;grid-template-columns:170px 1fr;gap:28px;padding:30px;border:1px solid rgba(244,111,34,.48);border-radius:18px;background:linear-gradient(135deg,rgba(244,111,34,.14),rgba(232,183,109,.05));margin-top:22px}.warning .math{font-family:var(--serif);font-size:2.5rem;line-height:1;color:#fff}.warning .math small{display:block;color:var(--orange);font-family:var(--sans);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;margin-top:10px}.warning p{margin:0;color:#ddd5c7}
+    .video-wrap{padding:74px 0;border-top:1px solid var(--line)}.video-intro{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:26px}.video-intro h2{font-size:clamp(2.25rem,4.6vw,4rem);line-height:1.05;margin:0;max-width:620px}.video-intro p{max-width:490px;color:var(--muted);margin:0}.video{position:relative;aspect-ratio:16/9;overflow:hidden;border:1px solid var(--line);border-radius:20px;background:#000}.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}.caption{font-size:.78rem;color:#7f7a71;margin:10px 4px 0}
+    .fit-layout{display:grid;grid-template-columns:minmax(280px,.82fr) minmax(420px,1.18fr);gap:22px}.spec-card,.clearance-card{padding:30px;border:1px solid var(--line);border-radius:18px;background:var(--surface)}.spec-card h3,.clearance-card h3{margin:0 0 22px;font-size:1.24rem}.spec-list{list-style:none;padding:0;margin:0}.spec-list li{display:flex;justify-content:space-between;gap:20px;padding:13px 0;border-top:1px solid var(--line);color:var(--muted)}.spec-list strong{color:var(--text);text-align:right}.clearance-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.clearance{padding:18px;border-radius:12px;background:#0d0e0b}.clearance b{display:block;color:var(--gold);font-family:var(--serif);font-size:1.8rem;line-height:1}.clearance span{display:block;color:var(--muted);font-size:.85rem;margin-top:8px}.note{margin:20px 0 0;padding:18px;border-left:3px solid var(--green);background:rgba(100,203,161,.07);color:#d4cec2;font-size:.92rem}
+    .steps{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;counter-reset:step}.step{counter-increment:step;position:relative;padding:28px 28px 28px 76px;border:1px solid var(--line);border-radius:16px;background:var(--surface)}.step::before{content:counter(step,decimal-leading-zero);position:absolute;left:24px;top:28px;color:var(--orange);font-size:.78rem;font-weight:700;letter-spacing:.1em}.step h3{font-size:1.06rem;margin:0 0 7px}.step p{margin:0;color:var(--muted);font-size:.92rem}
+    .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.project{overflow:hidden;border:1px solid var(--line);border-radius:17px;background:var(--surface);color:inherit;text-decoration:none;transition:transform .2s ease,border-color .2s ease}.project:hover{transform:translateY(-3px);border-color:rgba(232,183,109,.5);color:inherit}.project img{width:100%;height:205px;object-fit:cover;background:#181914}.project-copy{padding:20px}.project-copy small{color:var(--orange);font-weight:700;text-transform:uppercase;letter-spacing:.08em}.project-copy h3{font-size:1.05rem;line-height:1.35;margin:8px 0}.project-copy p{font-size:.88rem;color:var(--muted);margin:0}
+    .sources{padding:28px;border:1px solid var(--line);border-radius:17px;background:var(--surface);color:var(--muted);font-size:.88rem}.sources h3{color:var(--text);margin:0 0 10px;font-size:1.1rem}.sources p{margin:0}.cta{display:grid;grid-template-columns:1.35fr .65fr;gap:30px;align-items:center;margin-top:74px;padding:42px;border-radius:20px;background:linear-gradient(120deg,#f46f22,#d9530e);color:#fff}.cta h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3.5rem);line-height:1.05;margin:0 0 12px}.cta p{margin:0;color:#fff4e9;max-width:680px}.cta-actions{display:flex;flex-direction:column;gap:10px}.button{display:inline-flex;min-height:48px;align-items:center;justify-content:center;padding:13px 18px;border:1px solid rgba(255,255,255,.72);border-radius:9px;color:#111;text-decoration:none;background:#fff;font-weight:700;text-align:center}.button.secondary{color:#fff;background:transparent}
+    @media(max-width:900px){.hero,.section-head,.fit-layout{grid-template-columns:1fr}.hero{gap:34px}.fact-grid{grid-template-columns:repeat(2,1fr)}.decision-grid,.projects{grid-template-columns:1fr 1fr}.video-intro{align-items:start;flex-direction:column}.cta{grid-template-columns:1fr}}
+    @media(max-width:620px){.shell{padding:94px 17px 60px}.hero{padding-top:10px}.crumbs{margin-bottom:22px}h1{font-size:clamp(2.75rem,14vw,4rem)}.hero-note{position:static;width:100%;margin-top:12px}.fact-grid,.decision-grid,.steps,.projects{grid-template-columns:1fr}.fact{min-height:0}.section,.video-wrap{padding:58px 0}.section-head{gap:18px}.warning{grid-template-columns:1fr}.fit-layout{grid-template-columns:1fr}.spec-card,.clearance-card{padding:22px}.clearance-grid{grid-template-columns:1fr 1fr}.project img{height:auto;aspect-ratio:16/9;object-fit:cover}.cta{padding:30px 22px}.button{width:100%}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.project{transition:none}}
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"McIntosh MC452 Cabinet Guide: Weight, Airflow and Fit","description":"A client-friendly guide to integrating a 110-pound McIntosh MC452 into AV furniture with the right support, depth, ventilation, cabling, and service access.","image":["https://denalitechs.com/Video/Blogs%20imge/YouTube/mcintosh-mc452-salamander-cabinet-guide.png"],"datePublished":"2026-04-09","dateModified":"2026-08-18","author":{"@type":"Organization","name":"Denali Tech","url":"https://denalitechs.com/"},"publisher":{"@type":"Organization","name":"Denali Tech","url":"https://denalitechs.com/","logo":{"@type":"ImageObject","url":"https://denalitechs.com/Video/logo%20no%20back%20greand%20.png"}},"mainEntityOfPage":{"@type":"WebPage","@id":"https://denalitechs.com/blogs/mcintosh-mc452-salamander-cabinet-guide/"},"articleSection":"AV Planning Guide","keywords":["McIntosh MC452","Salamander cabinet","AV furniture","amplifier ventilation","high-end audio installation"],"inLanguage":"en-US"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://denalitechs.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://denalitechs.com/blogs/"},{"@type":"ListItem","position":3,"name":"McIntosh MC452 Cabinet Guide","item":"https://denalitechs.com/blogs/mcintosh-mc452-salamander-cabinet-guide/"}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"McIntosh MC452 in a Salamander Cabinet","description":"Denali Tech project footage showing a McIntosh MC452 amplifier integrated into AV furniture.","thumbnailUrl":["https://denalitechs.com/Video/Blogs%20imge/YouTube/mcintosh-mc452-salamander-cabinet-guide.png"],"uploadDate":"2026-04-09","embedUrl":"https://www.youtube.com/embed/Fml_utQhp4o","contentUrl":"https://www.youtube.com/watch?v=Fml_utQhp4o"}</script>
 </head>
 <body>
-    <main role="main">
-    <article class="blog-container">
-        <div class="blog-header">
-            <div class="blog-breadcrumb">
-                <a href="/">Home</a> / <a href="/blogs/">Blog</a> / McIntosh MC452 in a Salamander Cabinet: What a Proper Hi-Fi Cabinet Install Needs
-            </div>
-            <h1 class="blog-title">McIntosh MC452 in a Salamander Cabinet: What a Proper Hi-Fi Cabinet Install Needs</h1>
-            <div class="blog-meta">
-                <span>📅 Published: <time datetime="2026-04-09">April 9, 2026</time></span>
-                <span>👤 By: <a href="/about/">Denali Tech Team</a></span>
-                <span>⏱️ 4 min read</span>
-                <span>🏷️ Category: Smart Home Guide</span>
-            </div>
-            <div class="blog-tags">
-                <span class="blog-tag">McIntosh</span>
-<span class="blog-tag">Salamander</span>
-<span class="blog-tag">Hi-Fi</span>
-<span class="blog-tag">AV Furniture</span>
-            </div>
-        </div>
-
-        <img src="/Video/Blogs imge/YouTube/mcintosh-mc452-salamander-cabinet-guide.png" alt="McIntosh MC452 installed in a Salamander cabinet" class="blog-hero-image" loading="eager">
-
-        <div class="blog-content">
-            <p>Putting a powerful amplifier inside furniture only works when the cabinet is treated like part of the system design.</p>
-<p>This McIntosh MC452 setup inside a Salamander cabinet shows what it takes to keep a higher-end hi-fi system both clean and supportable.</p>
-
-            <div class="highlight-box">
-                <p><strong>Quick takeaway:</strong> A large amplifier install inside furniture only works when heat, cable management, and component spacing are handled correctly. This MC452 setup is a clear example. This post is tied directly to the real project shown in the video, so homeowners can see what the install actually looked like.</p>
-            </div>
-
-            <h2>What This Project Involved</h2>
-            <p>This installation centers on a McIntosh MC452 amplifier housed in a Salamander cabinet.</p>
-<p>That requires attention to ventilation, spacing, cable exits, component weight, and how the homeowner will actually access and use the system.</p>
-<p>A cabinet install at this level should look refined without trapping the system in a box that is hard to service.</p>
-
-            <h2>Why It Matters for Homeowners</h2>
-<p>A furniture installation can obstruct ventilation, bend cables, or make service difficult when component clearances and access are not planned.</p>
-<p>A documented layout with manufacturer-required ventilation and suitable support can keep the room visually cleaner and make the equipment easier to reach. It does not guarantee component reliability.</p>
-
-            <div class="video-embed">
-                <iframe
-                    src="https://www.youtube.com/embed/Fml_utQhp4o"
-                    title="McIntosh MC452 in a Salamander Cabinet | Hi-Fi Showcase: What This Denali Tech Project Shows"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-            </div>
-
-            <h2>Key Takeaways</h2>
-            <ul>
-<li>Cabinet installs need the same planning discipline as open rack builds.</li>
-<li>Ventilation and access are critical for large amplifiers and higher-end audio systems.</li>
-                            <li>Clean hi-fi presentation should preserve the ventilation, cable access, and service clearance required by the equipment.</li>
-</ul>
-
-            <h2>Official References</h2>
-<div class="highlight-box"><p><strong>Manufacturer documentation:</strong> <a href="https://www.mcintoshlabs.com/legacy-products/amplifiers/MC452" target="_blank" rel="noopener">McIntosh MC452 legacy product page</a>, the <a href="https://www.mcintoshlabs.com/-/media/Files/mcintoshlabs/DocumentMaster/us/mc452om03.pdf" target="_blank" rel="noopener">MC452 owner’s manual</a>, and <a href="https://www.salamanderdesigns.com/products/residential-products/av-cabinets/oslo/" target="_blank" rel="noopener">Salamander Oslo cabinets</a>.</p><p>The official documents support the amplifier and cabinet facts. The fit, ventilation, and wiring observations come from Denali Tech’s project work. Reviewed August 15, 2026. MC452 is a legacy amplifier manufactured from 2010–2018; verify condition, electrical service, shelf capacity, depth, cable clearance, airflow, and the exact cabinet model before installation.</p></div>
-            <h2>When to Call Denali Tech</h2>
-            <p>If you want higher-end audio furniture integration without the usual airflow and wiring mistakes, Denali Tech can design and install the system properly.</p>
-
-            <h2>Related Links</h2>
-            <ul>
-                <li><a href="/home-theater-room/">Home Theater Service</a></li>
-<li><a href="/projects/">Project Proof</a></li>
-<li><a href="/blogs/salamander-oslo-mc255-av-cabinet-guide/">Salamander Oslo Cabinet Guide</a></li>
-            </ul>
-
-            <div class="cta-box">
-                <h3>Need Help With a Similar Project?</h3>
-                <p>Denali Tech designs and installs whole-home Wi-Fi, smart home control, AV racks, home theaters, and low-voltage systems across the Chicago area.</p>
-                <a href="/contact/" class="btn-primary">Schedule a Consultation</a>
-                <p style="margin-top: 1rem; font-size: 0.95rem;">Or message us on <a href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20would%20rather%20use%20WhatsApp.%20Can%20you%20help%20me%20with%3A" target="_blank" rel="noopener noreferrer">WhatsApp</a></p>
-            </div>
-        </div>
+  <main id="main-content">
+    <article class="shell">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/blogs/">Guides</a> / McIntosh MC452 cabinet planning</nav>
+      <header class="hero">
+        <div><div class="eyebrow">Real high-end audio project</div><h1>A 110-pound amplifier changes the furniture plan.</h1><p class="dek">The McIntosh MC452 can look beautiful behind a cabinet door. The result only works when the cabinet supports the weight, preserves the required airflow, leaves room for cables, and can still be serviced.</p><div class="meta"><span>Updated August 18, 2026</span><span>8-minute read</span><span>By <a href="/about/">Denali Tech</a></span></div></div>
+        <div class="hero-visual"><img src="/Video/Blogs imge/YouTube/mcintosh-mc452-salamander-cabinet-guide.png" width="1280" height="720" alt="McIntosh MC452 and Salamander cabinet project by Denali Tech" fetchpriority="high"><div class="hero-note"><strong>Furniture + infrastructure</strong><span>The support, air, power, and access plan must be decided together.</span></div></div>
+      </header>
+      <div class="fact-grid" aria-label="McIntosh MC452 planning facts"><div class="fact"><b>110 lb</b><span>Net amplifier weight before cables or supporting hardware.</span></div><div class="fact"><b>22 in</b><span>Published depth including the front panel, handles, and cables.</span></div><div class="fact"><b>450 × 2</b><span>Rated watts into 2, 4, or 8 ohms with both channels operating.</span></div><div class="fact"><b>6 in</b><span>Minimum open space McIntosh specifies above a custom installation.</span></div></div>
+      <section class="section" aria-labelledby="decision-heading"><div class="section-head"><h2 id="decision-heading">Start with the amplifier, not the cabinet finish.</h2><p class="section-lead">The wood, glass, and color matter in the room. But the first three decisions are structural: what carries the amplifier, whether the full installed depth fits, and how hot air leaves the enclosure.</p></div><div class="decision-grid"><article class="decision"><span class="number">01 / SUPPORT</span><h3>Verify the exact load path</h3><p>A heavy component needs an approved shelf, rail, stand, or cabinet structure—not a visual guess about strength.</p></article><article class="decision"><span class="number">02 / DEPTH</span><h3>Measure beyond the chassis</h3><p>Depth includes the front handles and rear cables. Tight bends can damage connectors and make the amplifier difficult to remove.</p></article><article class="decision"><span class="number">03 / AIR</span><h3>Keep the ventilation path open</h3><p>Louvers help, but the amplifier’s own clearance requirements still control the layout. Active cooling may be appropriate in an enclosed system.</p></article></div><div class="warning"><div class="math">110 lb <small>MC452 net weight</small></div><p><strong>Why the shelf cannot be assumed:</strong> Salamander’s current public accessory information lists 75 lb for standard shelf pegs and up to 100 lb for a Synergy heavy-duty shelf bracket. Both figures are below the MC452’s published 110-lb net weight. That does not rule out AV furniture; it means the exact cabinet, support hardware, and installation method must be confirmed with current manufacturer documentation before the amplifier is placed.</p></div></section>
+      <section class="video-wrap" aria-labelledby="video-heading"><div class="video-intro"><h2 id="video-heading">See the real cabinet project.</h2><p>This Denali Tech video shows the equipment and furniture together. Use it to understand the scale of the amplifier and why the hidden details matter.</p></div><div class="video"><iframe src="https://www.youtube-nocookie.com/embed/Fml_utQhp4o?rel=0" title="McIntosh MC452 in a Salamander cabinet project by Denali Tech" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><p class="caption">Denali Tech project footage. The exact cabinet configuration and support method should be verified for every installation.</p></section>
+      <section class="section" aria-labelledby="fit-heading"><div class="section-head"><h2 id="fit-heading">The published numbers define the minimum plan.</h2><p class="section-lead">A cabinet bay that is merely wider than the amplifier is not enough. The complete envelope includes the component, the manufacturer’s air space, the cables, and a practical path for removal.</p></div><div class="fit-layout"><div class="spec-card"><h3>MC452 published specifications</h3><ul class="spec-list"><li><span>Width</span><strong>17½ in</strong></li><li><span>Height with feet</span><strong>9 7/16 in</strong></li><li><span>Depth with handles and cables</span><strong>22 in</strong></li><li><span>Net weight</span><strong>110 lb</strong></li><li><span>120V power requirement</span><strong>10 A</strong></li></ul></div><div class="clearance-card"><h3>McIntosh custom-cabinet clearances</h3><div class="clearance-grid"><div class="clearance"><b>6 in</b><span>above the amplifier</span></div><div class="clearance"><b>2 in</b><span>below the amplifier</span></div><div class="clearance"><b>3 in</b><span>behind the rear panel</span></div><div class="clearance"><b>2 in</b><span>on each side</span></div></div><p class="note">The owner’s manual also calls for a ventilation opening in the support shelf, warns against locating the unit directly above another heat-producing component, and notes that a quiet fan can help when the system shares one cabinet.</p></div></div></section>
+      <section class="section" aria-labelledby="service-heading"><div class="section-head"><h2 id="service-heading">A clean installation should remain easy to own.</h2><p class="section-lead">The system is not finished when the doors close. A useful cabinet layout allows normal operation, cleaning, troubleshooting, and future upgrades without turning the room into a construction site again.</p></div><div class="steps"><article class="step"><h3>Plan a safe removal path</h3><p>A 110-lb amplifier should not require an awkward lift around doors, trim, or fixed wiring. Confirm how it enters and leaves the cabinet.</p></article><article class="step"><h3>Protect cable bend radius</h3><p>Leave working depth behind power, balanced audio, control, and speaker connections instead of forcing the doors shut against them.</p></article><article class="step"><h3>Separate heat where possible</h3><p>Avoid stacking heat-producing components into one stagnant pocket. Preserve the designed intake and exhaust path.</p></article><article class="step"><h3>Label what disappears</h3><p>Document outlets, signal paths, speaker connections, and control wiring so future service begins with a map rather than a guess.</p></article></div></section>
+      <section class="section" aria-labelledby="projects-heading"><div class="section-head"><h2 id="projects-heading">Compare nearby project decisions.</h2><p class="section-lead">These are separate Denali Tech projects. They show how the right equipment home changes with amplifier size, room design, speaker system, and service requirements.</p></div><div class="projects"><a class="project" href="/blogs/salamander-oslo-mc255-av-cabinet-guide/"><img src="/Video/Blogs imge/YouTube/salamander-oslo-mc255-av-cabinet-guide.png" width="1280" height="720" loading="lazy" alt="Salamander Oslo cabinet and McIntosh MC255 project"><div class="project-copy"><small>Related cabinet guide</small><h3>Salamander Oslo 617 + McIntosh MC255</h3><p>A five-channel amplifier furniture plan with its own weight, depth, cooling, and access requirements.</p></div></a><a class="project" href="/blogs/mcintosh-bowers-wilkins-listening-room-guide/"><img src="/Video/Blogs imge/YouTube/mcintosh-bowers-wilkins-listening-room-guide.png" width="1280" height="720" loading="lazy" alt="McIntosh and Bowers and Wilkins listening room project"><div class="project-copy"><small>Related listening room</small><h3>McIntosh + Bowers & Wilkins</h3><p>How the room, speakers, amplification, and equipment access are planned as one system.</p></div></a><a class="project" href="/blogs/strong-av-rack-mounting-guide/"><img src="/Video/Blogs imge/Rack Size Guide/strong-floor-rack-hero.png" width="1025" height="425" loading="lazy" alt="Technician servicing a Strong AV equipment rack"><div class="project-copy"><small>Alternative equipment home</small><h3>When a dedicated AV rack is better</h3><p>Compare furniture integration with a rack designed around access, expansion, cooling, and service.</p></div></a></div></section>
+      <section class="sources" aria-labelledby="sources-heading"><h3 id="sources-heading">Official specifications reviewed</h3><p>Checked August 18, 2026 against the <a href="https://www.mcintoshlabs.com/legacy-products/amplifiers/MC452" target="_blank" rel="noopener">McIntosh MC452 legacy product page</a>, the <a href="https://www.mcintoshlabs.com/-/media/Files/mcintoshlabs/DocumentMaster/us/mc452om03.pdf" target="_blank" rel="noopener">MC452 owner’s manual</a>, <a href="https://www.salamanderdesigns.com/products/residential-products/av-cabinets/oslo/" target="_blank" rel="noopener">Salamander’s current Oslo information</a>, and <a href="https://www.salamanderdesigns.com/residential/residential-accessories/" target="_blank" rel="noopener">current cabinet accessories</a>. MC452 is a legacy product manufactured from 2010–2018. Cabinet models, accessories, and capacities change; verify the exact equipment and current documentation before ordering or modifying furniture.</p></section>
+      <section class="cta" aria-labelledby="cta-heading"><div><h2 id="cta-heading">Planning serious audio inside furniture?</h2><p>Send us the amplifier model, cabinet model, room photo, and the rest of the equipment list. We can help determine whether the plan is supportable, ventilated, and serviceable before anything is ordered.</p></div><div class="cta-actions"><a class="button" href="/contact/">Send project details</a><a class="button secondary" href="/projects/">See real projects</a></div></section>
     </article>
-    </main>
+  </main>
 </body>
 </html>

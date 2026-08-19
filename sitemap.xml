@@ -92,7 +92,7 @@
   </url>
   <url>
     <loc>https://denalitechs.com/about/</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -188,7 +188,7 @@
   </url>
   <url>
     <loc>https://denalitechs.com/blogs/best-smart-home-brands-chicago-guide/</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -260,19 +260,19 @@
   </url>
   <url>
     <loc>https://denalitechs.com/blogs/mcintosh-bowers-wilkins-listening-room-guide/</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://denalitechs.com/blogs/mcintosh-mc452-salamander-cabinet-guide/</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://denalitechs.com/blogs/middle-atlantic-av-rack-build-guide/</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -284,7 +284,7 @@
   </url>
   <url>
     <loc>https://denalitechs.com/blogs/motorized-projector-screen-installation-guide/</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -296,7 +296,7 @@
   </url>
   <url>
     <loc>https://denalitechs.com/blogs/plex-media-server-build-guide/</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -308,19 +308,19 @@
   </url>
   <url>
     <loc>https://denalitechs.com/blogs/salamander-oslo-mc255-av-cabinet-guide/</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://denalitechs.com/blogs/sanus-15u-mini-rack-guide/</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://denalitechs.com/blogs/sanus-cfr2127-rack-guide/</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -398,7 +398,7 @@
   </url>
   <url>
     <loc>https://denalitechs.com/blogs/control4-scenes-routines-guide/</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -476,7 +476,7 @@
   </url>
   <url>
     <loc>https://denalitechs.com/blogs/strong-av-rack-mounting-guide/</loc>
-    <lastmod>2026-06-04</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -711,6 +711,30 @@
   <url>
     <loc>https://denalitechs.com/blogs/wattbox-900-series-sec-power-guide/</loc>
     <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://denalitechs.com/blogs/lutron-homeworks-radiora3-control4-lighting-comparison/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://denalitechs.com/blogs/lutron-homeworks-guide/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://denalitechs.com/blogs/lutron-premium-keypad-comparison/</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://denalitechs.com/blogs/control4-connect-subscription-guide/</loc>
+    <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
