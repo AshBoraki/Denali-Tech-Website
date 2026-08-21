@@ -140,6 +140,32 @@
       height: 100%;
     }
 
+    .control4-service-page .service-fit-note {
+      display: grid;
+      grid-template-columns: minmax(180px, 0.34fr) minmax(0, 1fr);
+      gap: 18px;
+      align-items: start;
+      margin-top: 22px;
+      padding: 21px 23px;
+      border: 1px solid rgba(180, 83, 42, 0.2);
+      border-left: 4px solid var(--c4-clay);
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(255, 247, 237, 0.9), rgba(255, 255, 255, 0.94));
+    }
+
+    .control4-service-page .service-fit-note strong {
+      color: var(--c4-ink);
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      line-height: 1.4;
+    }
+
+    .control4-service-page .service-fit-note p {
+      margin: 0;
+      color: var(--c4-muted);
+      line-height: 1.65;
+    }
+
     .control4-service-page .card {
       padding: 26px;
     }
@@ -429,6 +455,11 @@
       .control4-service-page .intent-grid,
       .control4-service-page .asset-strip {
         grid-template-columns: 1fr;
+      }
+
+      .control4-service-page .service-fit-note {
+        grid-template-columns: 1fr;
+        gap: 8px;
       }
 
       .control4-service-page .service-standard .cards {
@@ -746,6 +777,10 @@
         <article class="card"><h3>Leave the system understandable</h3><p>Clear labels, app setup, and a homeowner walkthrough make the finished system easier to use and easier to service.</p></article>
         <article class="card"><h3>Support the home after handoff</h3><p>When something changes, we help determine whether it is programming, network, wiring, hardware, or a device outside Control4.</p></article>
       </div>
+      <aside class="service-fit-note" aria-label="Who Denali Tech works best with">
+        <strong>A good fit for Denali Tech</strong>
+        <p>Denali Tech is not the lowest-price option. If the cheapest quote is the deciding factor, another provider may be a better fit. We work with homeowners who value thoughtful planning, clean workmanship, dependable support, and focused attention from the first conversation through the final walkthrough.</p>
+      </aside>
     </section>
 
     <section class="section intent-section">
