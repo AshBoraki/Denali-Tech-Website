@@ -6,13 +6,13 @@
   "legalName": "Denali Tech Inc",
   "url": "https://denalitechs.com/",
   "telephone": "+1-312-439-7500",
-  "email": "Hello@denalitechs.com",
+  "email": "service@denalitechs.com",
   "contactPoint": [
     {
       "@type": "ContactPoint",
       "contactType": "customer service",
       "telephone": "+1-312-439-7500",
-      "email": "Hello@denalitechs.com",
+      "email": "service@denalitechs.com",
       "url": "https://wa.me/13124397500",
       "availableLanguage": ["English"],
       "areaServed": "US-IL"
@@ -56,5 +56,5 @@
       "closes": "17:00"
     }
   ],
-  "dateModified": "2026-05-19"
+  "dateModified": "2026-08-21"
 }
