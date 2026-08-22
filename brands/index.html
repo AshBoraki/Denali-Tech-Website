@@ -675,50 +675,64 @@
 
         /* TRUST BADGES */
         .trust-section {
-            padding: 60px 5%;
+            position: relative;
+            z-index: 3;
+            padding: 0 5% 72px;
             background: var(--bg-color);
         }
 
         .trust-badges {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            max-width: 1000px;
-            margin: 0 auto;
-            margin-bottom: 4rem;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0;
+            max-width: 1100px;
+            margin: -42px auto 0;
+            overflow: hidden;
+            border: 1px solid rgba(148, 163, 184, 0.28);
+            border-radius: 20px;
+            background: #0f172a;
+            box-shadow: 0 24px 60px rgba(15, 23, 42, 0.2);
         }
 
         .trust-badge {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 2rem;
-            text-align: center;
-            transition: all var(--transition);
+            min-width: 0;
+            padding: 2rem 1.9rem 2.15rem;
+            border-right: 1px solid rgba(148, 163, 184, 0.24);
+            background: transparent;
+            text-align: left;
+            transition: background-color var(--transition);
+        }
+
+        .trust-badge:last-child {
+            border-right: 0;
         }
 
         .trust-badge:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-glow);
+            background: rgba(255, 255, 255, 0.055);
         }
 
-        .trust-badge-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+        .trust-badge-label {
+            display: block;
+            margin-bottom: 0.75rem;
+            color: #fb923c;
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
         }
 
         .trust-badge h3 {
             font-family: var(--font-heading);
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
+            margin: 0 0 0.7rem;
+            color: #f8fafc;
+            line-height: 1.25;
         }
 
         .trust-badge p {
-            color: var(--text-secondary);
-            font-size: 1rem;
+            color: #cbd5e1;
+            font-size: 0.94rem;
             line-height: 1.6;
             margin: 0;
         }
@@ -1291,7 +1305,17 @@
 
             .trust-badges {
                 grid-template-columns: 1fr;
-                gap: 1.5rem;
+                margin-top: -24px;
+            }
+
+            .trust-badge {
+                padding: 1.6rem 1.45rem;
+                border-right: 0;
+                border-bottom: 1px solid rgba(148, 163, 184, 0.24);
+            }
+
+            .trust-badge:last-child {
+                border-bottom: 0;
             }
 
             .brands-grid {
@@ -1464,19 +1488,19 @@
         <div class="container">
             <div class="trust-badges">
                 <div class="trust-badge">
-                    <div class="trust-badge-icon">✅</div>
-                    <h3>Supported Product Channels</h3>
-                    <p>Each proposal identifies the manufacturer channel, exact models, warranty path, programming ownership, and support terms for the equipment being supplied.</p>
+                    <span class="trust-badge-label">Documented sourcing</span>
+                    <h3>Know exactly what is being installed</h3>
+                    <p>Your proposal identifies the manufacturer, exact models, programming scope, and support path for the equipment being supplied.</p>
                 </div>
                 <div class="trust-badge">
-                    <div class="trust-badge-icon">🛡️</div>
-                    <h3>Full Warranty</h3>
-                    <p>All products come with complete manufacturer warranty and support. No gray market products, no scams.</p>
+                    <span class="trust-badge-label">Clear warranty path</span>
+                    <h3>Coverage explained before installation</h3>
+                    <p>We explain the applicable manufacturer warranty and who handles service, so there is a clear path if a product needs attention.</p>
                 </div>
                 <div class="trust-badge">
-                    <div class="trust-badge-icon">🇺🇸</div>
-                    <h3>USA Support</h3>
-                    <p>Get the right USA support and warranty coverage. We only sell products we've tested and built a strong track record.</p>
+                    <span class="trust-badge-label">Service after install</span>
+                    <h3>Chosen for long-term support</h3>
+                    <p>We favor product lines with dependable technical resources, replacement paths, and tools that help us support the system over time.</p>
                 </div>
             </div>
         </div>
