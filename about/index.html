@@ -679,12 +679,17 @@
             box-shadow: var(--shadow-glow);
         }
 
+        .mission-image picture {
+            display: block;
+        }
+
         .mission-image img {
+            display: block;
             width: 100%;
-            height: 400px;
-            loading: lazy;
+            height: auto;
+            aspect-ratio: 1 / 1;
             object-fit: cover;
-            object-position: 72% center;
+            object-position: center;
             transition: transform var(--transition);
         }
 
@@ -1714,8 +1719,8 @@
                 </div>
 	                <div class="mission-image">
 	                    <picture>
-	                        <source srcset="../Video/homepage/denali-tech-hero-laptop.webp" type="image/webp">
-	                        <img src="../Video/homepage/denali-tech-hero-laptop.webp" alt="Denali Tech installer standing beside the service van with a laptop" width="2048" height="2048" loading="lazy">
+	                        <source srcset="../Video/homepage/denali-tech-hero-laptop-new-wrap.webp" type="image/webp">
+	                        <img src="../Video/homepage/denali-tech-hero-laptop-new-wrap.webp" alt="Illustrative Denali Tech service scene beside the newly wrapped van" width="1254" height="1254" loading="lazy" decoding="async">
 	                    </picture>
 	                </div>
             </div>
