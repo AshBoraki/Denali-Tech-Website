@@ -401,6 +401,36 @@ body {
     transform: translateX(4px);
 }
 
+.svc-related-links {
+    max-width: 680px;
+    margin: 0.95rem 0 0;
+    color: var(--svc-muted);
+    font-size: 0.93rem;
+    line-height: 1.65;
+}
+
+.svc-related-links a,
+.svc-related-links a:visited {
+    color: #fdba74;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: rgba(253, 186, 116, 0.72);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.22em;
+}
+
+.svc-related-links a:hover,
+.svc-related-links a:focus-visible {
+    color: #fff7ed;
+    text-decoration-color: var(--svc-orange);
+}
+
+.svc-page a:focus-visible {
+    outline: 3px solid #fb923c;
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
 .svc-story-media {
     position: sticky;
     top: 98px;
