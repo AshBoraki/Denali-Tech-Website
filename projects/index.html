@@ -632,6 +632,266 @@
             box-shadow: var(--shadow-glow);
         }
 
+        /* CURATED PROJECT VIDEO COLLECTION */
+        .project-videos-section {
+            padding: 88px 0;
+            background: #070b13;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .project-videos-section .container {
+            max-width: 1200px;
+        }
+
+        .project-videos-heading {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .project-videos-heading-copy {
+            max-width: 760px;
+        }
+
+        .project-videos-kicker,
+        .video-card-kicker {
+            display: block;
+            color: #fb923c;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .project-videos-heading h2 {
+            margin: 0.55rem 0 0.75rem;
+            color: #f8fafc;
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4vw, 3.15rem);
+            line-height: 1.08;
+        }
+
+        .project-videos-heading p {
+            margin: 0;
+            max-width: 680px;
+            color: #b8c3d4;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .video-channel-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 46px;
+            padding: 0.75rem 1.05rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 9px;
+            color: #f8fafc;
+            font-weight: 700;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: border-color var(--transition), color var(--transition), background var(--transition);
+        }
+
+        .video-channel-link:hover {
+            border-color: #fb923c;
+            color: #fb923c;
+            background: rgba(251, 146, 60, 0.08);
+        }
+
+        .project-video-feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.25rem;
+        }
+
+        .project-video-card {
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 18px;
+            background: #0d1421;
+            box-shadow: 0 18px 48px rgba(0, 0, 0, 0.24);
+        }
+
+        .video-poster,
+        .video-player {
+            position: relative;
+            display: block;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            border: 0;
+            background: #020617;
+        }
+
+        .video-poster {
+            text-decoration: none;
+        }
+
+        .video-poster img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.45s var(--animation-ease), filter 0.3s ease;
+        }
+
+        .video-poster::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(2, 6, 23, 0.6), transparent 58%);
+            pointer-events: none;
+        }
+
+        .video-poster:hover img {
+            transform: scale(1.025);
+            filter: brightness(1.06);
+        }
+
+        .video-play-button {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            z-index: 2;
+            display: grid;
+            width: 64px;
+            height: 64px;
+            place-items: center;
+            border: 1px solid rgba(255, 255, 255, 0.68);
+            border-radius: 50%;
+            background: rgba(249, 115, 22, 0.94);
+            color: #fff;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+            transition: transform var(--transition), background var(--transition);
+        }
+
+        .video-play-button svg {
+            width: 24px;
+            height: 24px;
+            margin-left: 3px;
+        }
+
+        .video-poster:hover .video-play-button {
+            background: #fb923c;
+            transform: translate(-50%, -50%) scale(1.07);
+        }
+
+        .video-duration {
+            position: absolute;
+            right: 12px;
+            bottom: 12px;
+            z-index: 2;
+            padding: 0.34rem 0.52rem;
+            border-radius: 6px;
+            background: rgba(2, 6, 23, 0.86);
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .video-card-copy {
+            padding: 1.45rem;
+        }
+
+        .video-card-copy h3 {
+            margin: 0.45rem 0 0.55rem;
+            color: #f8fafc;
+            font-family: var(--font-heading);
+            font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+            line-height: 1.25;
+        }
+
+        .video-card-copy p {
+            margin: 0;
+            color: #b8c3d4;
+            line-height: 1.65;
+        }
+
+        .video-card-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #fdba74;
+            font-weight: 700;
+            text-underline-offset: 4px;
+        }
+
+        .project-video-collection {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .project-video-collection .project-video-card {
+            border-radius: 14px;
+            box-shadow: none;
+        }
+
+        .project-video-collection .video-play-button {
+            width: 50px;
+            height: 50px;
+        }
+
+        .project-video-collection .video-card-copy {
+            padding: 1.05rem;
+        }
+
+        .project-video-collection .video-card-copy h3 {
+            margin: 0.35rem 0 0;
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+
+        .project-video-collection .video-card-kicker {
+            font-size: 0.69rem;
+        }
+
+        @media (max-width: 1024px) {
+            .project-video-collection {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .project-videos-section {
+                padding: 64px 0;
+            }
+
+            .project-videos-heading {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 1.25rem;
+            }
+
+            .project-video-feature-grid,
+            .project-video-collection {
+                grid-template-columns: 1fr;
+            }
+
+            .video-channel-link {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .project-videos-section .container {
+                padding: 0 1rem;
+            }
+
+            .project-videos-heading h2 {
+                font-size: 2rem;
+            }
+
+            .video-card-copy {
+                padding: 1.2rem;
+            }
+        }
+
         /* PROJECTS SECTION */
         .projects-section {
             padding: 80px 0;
@@ -1496,6 +1756,88 @@
         </div>
     </section>
 
+    <!-- CURATED PROJECT VIDEOS -->
+    <section class="project-videos-section" id="project-videos" aria-labelledby="project-videos-heading">
+        <div class="container">
+            <header class="project-videos-heading">
+                <div class="project-videos-heading-copy">
+                    <span class="project-videos-kicker">Real work, on site</span>
+                    <h2 id="project-videos-heading">Watch the difference a clean installation makes.</h2>
+                    <p>These project videos show the work behind the finished room—from organized wiring and equipment racks to outdoor WiFi and theater control.</p>
+                </div>
+                <a class="video-channel-link" href="https://www.youtube.com/@denalitechav/videos" target="_blank" rel="noopener noreferrer">View the full video library</a>
+            </header>
+
+            <div class="project-video-feature-grid">
+                <article class="project-video-card">
+                    <a class="video-poster" href="https://www.youtube.com/shorts/c1XsFCtvaUI" target="_blank" rel="noopener noreferrer" data-video-id="c1XsFCtvaUI" data-video-title="Structured wiring before and after">
+                        <img src="/Video/Project%20videos/rack-before-after.webp" alt="Organized Wirepath structured wiring enclosure completed by Denali Tech" loading="lazy" width="1280" height="720">
+                        <span class="video-play-button" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
+                        <span class="video-duration">24 sec</span>
+                    </a>
+                    <div class="video-card-copy">
+                        <span class="video-card-kicker">Before &amp; after</span>
+                        <h3>From exposed wiring to one organized system</h3>
+                        <p>A structured panel gives the home's network, control, and low-voltage wiring a clean foundation that is easier to understand and service.</p>
+                        <a class="video-card-link" href="/blogs/wirepath-structured-wiring-prewire-guide/">See how we plan structured wiring</a>
+                    </div>
+                </article>
+
+                <article class="project-video-card">
+                    <a class="video-poster" href="https://www.youtube.com/shorts/oZtPCCqB3I4" target="_blank" rel="noopener noreferrer" data-video-id="oZtPCCqB3I4" data-video-title="Araknis outdoor WiFi access point installation">
+                        <img src="/Video/Project%20videos/araknis-outdoor-wifi.webp" alt="Araknis outdoor WiFi access point mounted by Denali Tech" loading="lazy" width="1280" height="720">
+                        <span class="video-play-button" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
+                        <span class="video-duration">Short</span>
+                    </a>
+                    <div class="video-card-copy">
+                        <span class="video-card-kicker">Outdoor WiFi</span>
+                        <h3>Coverage designed beyond the back door</h3>
+                        <p>An outdoor-rated Araknis access point is positioned and aimed to extend dependable WiFi to the deck, yard, cameras, and outdoor entertainment areas.</p>
+                        <a class="video-card-link" href="/blogs/araknis-access-point-placement-guide/">See our access point placement guide</a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="project-video-collection" aria-label="More Denali Tech project videos">
+                <article class="project-video-card">
+                    <a class="video-poster" href="https://www.youtube.com/watch?v=trIB-ld2lQA" target="_blank" rel="noopener noreferrer" data-video-id="trIB-ld2lQA" data-video-title="Control4 theater and equipment tour">
+                        <img src="/Video/Project%20videos/control4-theater-tour.webp" alt="High-performance theater equipment controlled with Control4" loading="lazy" width="1280" height="720">
+                        <span class="video-play-button" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
+                        <span class="video-duration">4:17</span>
+                    </a>
+                    <div class="video-card-copy"><span class="video-card-kicker">Control4 &amp; theater</span><h3>One remote for a serious theater</h3></div>
+                </article>
+
+                <article class="project-video-card">
+                    <a class="video-poster" href="https://www.youtube.com/watch?v=VUuqk9xgQ98" target="_blank" rel="noopener noreferrer" data-video-id="VUuqk9xgQ98" data-video-title="SANUS 15U mini AV rack build">
+                        <img src="/Video/Project%20videos/sanus-15u-mini-rack.webp" alt="Compact SANUS 15U home theater rack built by Denali Tech" loading="lazy" width="1280" height="720">
+                        <span class="video-play-button" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
+                        <span class="video-duration">3:22</span>
+                    </a>
+                    <div class="video-card-copy"><span class="video-card-kicker">Compact rack</span><h3>A clean 15U rack for a smaller system</h3></div>
+                </article>
+
+                <article class="project-video-card">
+                    <a class="video-poster" href="https://www.youtube.com/watch?v=RMhACTGt4U8" target="_blank" rel="noopener noreferrer" data-video-id="RMhACTGt4U8" data-video-title="18U Middle Atlantic AV rack build">
+                        <img src="/Video/Project%20videos/middle-atlantic-rack-build.webp" alt="18U Middle Atlantic AV rack wired by Denali Tech" loading="lazy" width="1280" height="720">
+                        <span class="video-play-button" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
+                        <span class="video-duration">10:07</span>
+                    </a>
+                    <div class="video-card-copy"><span class="video-card-kicker">Rack build</span><h3>Building the serviceable center of the system</h3></div>
+                </article>
+
+                <article class="project-video-card">
+                    <a class="video-poster" href="https://www.youtube.com/watch?v=oUFmSTj9N6I" target="_blank" rel="noopener noreferrer" data-video-id="oUFmSTj9N6I" data-video-title="SANUS CFR2127 AV rack build">
+                        <img src="/Video/Project%20videos/sanus-cfr2127-rack.webp" alt="SANUS CFR2127 AV rack installed by Denali Tech" loading="lazy" width="1280" height="720">
+                        <span class="video-play-button" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
+                        <span class="video-duration">3:38</span>
+                    </a>
+                    <div class="video-card-copy"><span class="video-card-kicker">Equipment rack</span><h3>A finished rack that keeps the system accessible</h3></div>
+                </article>
+            </div>
+        </div>
+    </section>
+
     <!-- FILTER SECTION -->
     <section class="filter-section">
         <div class="container">
@@ -1996,6 +2338,26 @@
                 initParticles();
                 animate();
             } // End of canvas check
+
+            // Load YouTube only after a visitor chooses a project video.
+            document.querySelectorAll('.video-poster[data-video-id]').forEach((poster) => {
+                poster.addEventListener('click', (event) => {
+                    event.preventDefault();
+
+                    const videoId = poster.dataset.videoId;
+                    const videoTitle = poster.dataset.videoTitle || 'Denali Tech project video';
+                    if (!videoId) return;
+
+                    const player = document.createElement('iframe');
+                    player.className = 'video-player';
+                    player.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(videoId)}?autoplay=1&rel=0`;
+                    player.title = videoTitle;
+                    player.loading = 'lazy';
+                    player.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+                    player.allowFullscreen = true;
+                    poster.replaceWith(player);
+                });
+            });
 
             // Project Filtering
             const filterBtns = document.querySelectorAll('.filter-btn');
