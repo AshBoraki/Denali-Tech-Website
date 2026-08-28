@@ -70,6 +70,17 @@ body.dt-unified-chrome {
   color-scheme: light;
 }
 
+/*
+ * Blog images carry intrinsic width/height attributes to reserve space before
+ * download. Some legacy article layouts set a responsive width and a CSS
+ * aspect-ratio without explicitly resetting the HTML height hint. Keep the
+ * intrinsic dimensions for CLS, but let each article's authored aspect-ratio
+ * or fixed-height component control the rendered box.
+ */
+:where(img[width][height]) {
+  height: auto;
+}
+
 @media (prefers-reduced-motion: reduce) {
   ::view-transition-old(root),
   ::view-transition-new(root) {
