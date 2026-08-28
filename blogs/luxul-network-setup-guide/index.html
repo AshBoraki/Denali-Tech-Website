@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="/assets/js/microsoft-clarity.js" defer></script>
-    <script src="/assets/js/theme.js?v=20260602"></script>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/assets/js/microsoft-clarity.js" defer></script>
+    <script src="/assets/js/theme.js?v=20260602" defer></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Luxul Router and PoE Switch Setup Guide | Denali Tech</title>
     <meta name="description" content="See how clean Luxul router and PoE switch installation improves documentation and serviceability, and which performance limits still require testing.">
     <meta property="og:type" content="article">
@@ -20,7 +20,7 @@
     <meta name="author" content="Denali Tech">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="article:published_time" content="2026-04-09">
-    <meta name="article:modified_time" content="2026-08-07">
+    <meta name="article:modified_time" content="2026-08-28">
     <meta name="article:author" content="Denali Tech">
     <meta name="article:section" content="Smart Home Guide">
     <link rel="canonical" href="https://denalitechs.com/blogs/luxul-network-setup-guide/">
@@ -72,7 +72,7 @@
         }
         .blog-breadcrumb a {
             color: var(--accent-primary);
-            text-decoration: none;
+            text-decoration: underline; text-underline-offset: .2em;
         }
         .blog-title {
             font-family: var(--font-heading);
@@ -198,7 +198,7 @@
             .cta-box { padding: 1.5rem; }
         }
     </style>
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Luxul Epic 5 Router and PoE Switch Setup for a Reliable Smart Home Network", "description": "See how clean Luxul router and PoE switch installation improves documentation and serviceability, and which performance limits still require testing.", "image": ["https://denalitechs.com/Video/Blogs imge/YouTube/luxul-network-setup-guide.png"], "datePublished": "2026-04-09", "dateModified": "2026-08-15", "author": {"@type": "Organization", "name": "Denali Tech", "url": "https://denalitechs.com/"}, "publisher": {"@type": "Organization", "name": "Denali Tech","url":"https://denalitechs.com/","logo": {"@type": "ImageObject", "url": "https://denalitechs.com/Video/logo%20no%20back%20greand%20.png", "width": 512, "height": 512}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://denalitechs.com/blogs/luxul-network-setup-guide/"}, "articleSection": "Smart Home Guide", "keywords": "Luxul network setup, PoE switch installation, smart home network, whole-home Wi-Fi, Chicago network installer", "inLanguage": "en-US"}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Luxul Epic 5 Router and PoE Switch Setup for a Reliable Smart Home Network", "description": "See how clean Luxul router and PoE switch installation improves documentation and serviceability, and which performance limits still require testing.", "image": ["https://denalitechs.com/Video/Blogs imge/YouTube/luxul-network-setup-guide.png"], "datePublished": "2026-04-09", "dateModified": "2026-08-28", "author": {"@type": "Organization", "name": "Denali Tech", "url": "https://denalitechs.com/"}, "publisher": {"@type": "Organization", "name": "Denali Tech","url":"https://denalitechs.com/","logo": {"@type": "ImageObject", "url": "https://denalitechs.com/Video/logo%20no%20back%20greand%20.png", "width": 512, "height": 512}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://denalitechs.com/blogs/luxul-network-setup-guide/"}, "articleSection": "Smart Home Guide", "keywords": "Luxul network setup, PoE switch installation, smart home network, whole-home Wi-Fi, Chicago network installer", "inLanguage": "en-US"}</script>
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://denalitechs.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://denalitechs.com/blogs/"}, {"@type": "ListItem", "position": 3, "name": "Luxul Epic 5 Router and PoE Switch Setup for a Reliable Smart Home Network", "item": "https://denalitechs.com/blogs/luxul-network-setup-guide/"}]}</script>
 <script src="/assets/js/microsoft-uet.js" defer></script>
     <link rel="stylesheet" href="/assets/css/site-chrome.css?v=20260607c">
@@ -214,8 +214,9 @@
             <h1 class="blog-title">Luxul Epic 5 Router and PoE Switch Setup for a Reliable Smart Home Network</h1>
             <div class="blog-meta">
                 <span>📅 Published: <time datetime="2026-04-09">April 9, 2026</time></span>
+                <span>Updated: <time datetime="2026-08-28">August 28, 2026</time></span>
                 <span>👤 By: <a href="/about/">Denali Tech Team</a></span>
-                <span>⏱️ 4 min read</span>
+                <span>⏱️ 6 min read</span>
                 <span>🏷️ Category: Smart Home Guide</span>
             </div>
             <div class="blog-tags">
@@ -226,7 +227,7 @@
             </div>
         </div>
 
-        <img src="/Video/Blogs imge/YouTube/luxul-network-setup-guide.png" alt="Luxul Epic 5 router and PoE switch network setup by Denali Tech" class="blog-hero-image" loading="eager">
+        <img src="/Video/Blogs imge/YouTube/luxul-network-setup-guide.png" alt="Luxul Epic 5 router and PoE switch network setup by Denali Tech" class="blog-hero-image" loading="eager" width="1280" height="720">
 
         <div class="blog-content">
             <p>A clean router and PoE switch installation improves labeling, airflow, cable access, and serviceability. Reliability still depends on the equipment condition, configuration, cabling, power, RF environment, clients, and internet service.</p>
@@ -250,8 +251,20 @@
                     src="https://www.youtube.com/embed/-ohyaNAV4ZQ"
                     title="Luxul Epic 5 Router + PoE Switch Network Setup | Denali Tech: What This Home Network Install Solves"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
+                    allowfullscreen loading="lazy"></iframe>
             </div>
+
+            <h2>What should be verified before handoff</h2>
+            <ul>
+                <li><strong>Internet baseline:</strong> Record the service-plan speed and test the wired connection at the router so an ISP problem is not confused with a Wi-Fi problem.</li>
+                <li><strong>PoE budget:</strong> Confirm the switch can supply the required power for the exact access points, cameras, phones, and other powered devices—both per port and in total.</li>
+                <li><strong>Network map:</strong> Document the router, switch, access points, important wired devices, management addresses, VLANs if used, and which port serves each critical endpoint.</li>
+                <li><strong>Wi-Fi validation:</strong> Test the actual rooms and outdoor areas where reliable service is expected. A clean rack cannot compensate for poor access-point placement or radio interference.</li>
+                <li><strong>Updates and backup:</strong> Check firmware support by exact model, save the configuration securely, and document how the system is restored if hardware must be replaced.</li>
+                <li><strong>Owner access:</strong> Leave the homeowner with the credentials, network names, support path, and a clear explanation of what should—and should not—be restarted.</li>
+            </ul>
+
+            <div class="highlight-box"><p><strong>Important for an older Luxul system:</strong> A working Epic 5 installation is not automatically current or secure. Reuse decisions should be based on the exact model, available firmware, required throughput, current security settings, controller limits, and the needs of the connected equipment.</p></div>
 
             <h2>Key Takeaways</h2>
             <ul>
@@ -261,7 +274,7 @@
 </ul>
 
             <h2>Official References</h2>
-<div class="highlight-box"><p><strong>Official Luxul guidance:</strong> <a href="https://www.legrandav.com/products/luxul" target="_blank" rel="noopener">current Luxul networking products</a>, <a href="https://www.legrandav.com/resources/firmware-updates/luxul-firmware" target="_blank" rel="noopener">Luxul firmware releases</a>, and the <a href="https://www.legrandav.com/tools_and_training/tools/luxul/easy-setup-app" target="_blank" rel="noopener">Luxul Easy Setup app</a>.</p><p>Legrand AV resources support the current product and firmware facts. The topology and troubleshooting observations come from Denali Tech’s project work. Reviewed August 15, 2026. Legacy Luxul models may remain serviceable, but firmware support, security settings, controller limits, and replacement options must be checked by exact model before recommending reuse.</p></div>
+<div class="highlight-box"><p><strong>Official Luxul guidance:</strong> <a href="https://www.legrandav.com/products/luxul" target="_blank" rel="noopener">current Luxul networking products</a>, <a href="https://www.legrandav.com/resources/firmware-updates/luxul-firmware" target="_blank" rel="noopener">Luxul firmware releases</a>, and the <a href="https://www.legrandav.com/tools_and_training/tools/luxul/easy-setup-app" target="_blank" rel="noopener">Luxul Easy Setup app</a>.</p><p>Legrand AV resources support the current product and firmware facts. The topology and troubleshooting observations come from Denali Tech’s project work. Reviewed August 28, 2026. Legacy Luxul models may remain serviceable, but firmware support, security settings, controller limits, and replacement options must be checked by exact model before recommending reuse.</p></div>
             <h2>When to Call Denali Tech</h2>
             <p>If your Wi-Fi, cameras, AV, or control system all depend on a messy or underbuilt network, it is time to redesign the backbone.</p>
 <p>Denali Tech handles structured networking, Wi-Fi upgrades, rack layout, and clean low-voltage installation for Chicago-area homes.</p>

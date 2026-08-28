@@ -326,6 +326,10 @@
     var privacy = makeElement("a", "", "Privacy & Terms");
     privacy.href = "/privacy/";
     legal.appendChild(privacy);
+    legal.appendChild(document.createTextNode(" · "));
+    var editorial = makeElement("a", "", "Editorial Standards");
+    editorial.href = "/editorial-policy/";
+    legal.appendChild(editorial);
     bottom.appendChild(legal);
 
     inner.appendChild(close);

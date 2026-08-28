@@ -176,13 +176,13 @@
   </url>
   <url>
     <loc>https://denalitechs.com/blogs/av-rack-wire-management-guide/</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.68</priority>
   </url>
   <url>
     <loc>https://denalitechs.com/blogs/av-technician-backpack-guide/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -242,7 +242,7 @@
   </url>
   <url>
     <loc>https://denalitechs.com/blogs/lutron-pico-motorized-shades-guide/</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -254,7 +254,7 @@
   </url>
   <url>
     <loc>https://denalitechs.com/blogs/luxul-network-setup-guide/</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.68</priority>
   </url>
@@ -737,5 +737,11 @@
     <lastmod>2026-08-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://denalitechs.com/editorial-policy/</loc>
+    <lastmod>2026-08-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>
