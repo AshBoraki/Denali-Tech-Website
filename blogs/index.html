@@ -104,11 +104,10 @@
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png">
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
+    <!-- Local fonts prevent late typography shifts on the long article grid. -->
+    <link rel="preload" href="/assets/fonts/inter-latin-400-600.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/poppins-latin-600.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/poppins-latin-700.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- RSS Feed -->
     <link rel="alternate" type="application/rss+xml" title="Denali Tech Blog RSS Feed" href="rss.xml">
@@ -151,12 +150,39 @@
     </script>
 
     <style>
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400 600;
+            font-display: optional;
+            src: url('/assets/fonts/inter-latin-400-600.woff2') format('woff2');
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 600;
+            font-display: optional;
+            src: url('/assets/fonts/poppins-latin-600.woff2') format('woff2');
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 700;
+            font-display: optional;
+            src: url('/assets/fonts/poppins-latin-700.woff2') format('woff2');
+        }
+
         :root {
             --bg-color: #0a0d18;
             --text-primary: #f8fafc;
             --text-secondary: #cbd5e1;
             --accent-primary: #f97316;
             --accent-hover: #fdba74;
+            --accent-readable: #fdba74;
+            --accent-readable-hover: #fed7aa;
+            --accent-badge-bg: #c2410c;
             --accent-interactive: #fb923c;
             --border-color: rgba(255, 255, 255, 0.12);
             --shadow-glow: 0 4px 15px rgba(249, 115, 22, 0.4);
@@ -175,6 +201,8 @@
             --bg-color: #f9fafb;
             --text-primary: #0f172a;
             --text-secondary: #475569;
+            --accent-readable: #c2410c;
+            --accent-readable-hover: #9a3412;
             --border-color: rgba(0, 0, 0, 0.12);
         }
 
@@ -664,13 +692,15 @@
             background: rgba(0, 0, 0, 0.08);
         }
 
-        .search-box::before {
-            content: "🔍";
+        .search-box > svg {
             position: absolute;
-            left: 0.75rem;
+            left: 0.9rem;
             top: 50%;
             transform: translateY(-50%);
-            font-size: 1.1rem;
+            width: 18px;
+            height: 18px;
+            color: var(--text-secondary);
+            pointer-events: none;
         }
 
         .category-filters {
@@ -855,7 +885,7 @@
 
         .blog-card-category {
             display: inline-block;
-            background: var(--accent-primary);
+            background: var(--accent-badge-bg);
             color: white;
             padding: 0.3rem 0.7rem;
             border-radius: 6px;
@@ -879,7 +909,7 @@
         }
 
         .blog-card-title a:hover {
-            color: var(--accent-primary);
+            color: var(--accent-readable);
         }
 
         .blog-card-excerpt {
@@ -905,7 +935,7 @@
         }
 
         .blog-card-link {
-            color: var(--accent-primary);
+            color: var(--accent-readable);
             font-weight: 600;
             font-size: 0.9rem;
             text-decoration: none;
@@ -913,7 +943,7 @@
         }
 
         .blog-card-link:hover {
-            color: var(--accent-hover);
+            color: var(--accent-readable-hover);
         }
 
         .no-results {
@@ -946,6 +976,12 @@
             background: var(--accent-primary);
             border-color: var(--accent-primary);
             color: white;
+        }
+
+        .rss-link svg {
+            width: 18px;
+            height: 18px;
+            flex: 0 0 auto;
         }
 
         @media (max-width: 768px) {
@@ -1184,13 +1220,24 @@
 
             <div class="blog-controls">
                 <div class="search-box">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <circle cx="11" cy="11" r="7"></circle>
+                        <path d="m20 20-3.5-3.5"></path>
+                    </svg>
                     <input type="text" id="searchInput" placeholder="Search articles..." aria-label="Search articles">
                 </div>
                 <select class="category-select" id="categorySelect" aria-label="Filter articles by category">
                     <option value="all">All article topics</option>
                 </select>
                 <span id="postCount" class="post-count-compact" aria-live="polite"></span>
-                <a href="rss.xml" class="rss-link" aria-label="Subscribe to RSS feed"><span aria-hidden="true">📡</span><span>RSS</span></a>
+                <a href="rss.xml" class="rss-link" aria-label="Subscribe to RSS feed">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <circle cx="5" cy="19" r="1"></circle>
+                        <path d="M4 11a9 9 0 0 1 9 9"></path>
+                        <path d="M4 4a16 16 0 0 1 16 16"></path>
+                    </svg>
+                    <span>RSS</span>
+                </a>
             </div>
 
             <div class="blog-grid" id="blogGrid">
@@ -1217,7 +1264,7 @@
                 <article class="blog-card">
                     <a href="/blogs/lutron-pico-control-guide/" class="blog-card-image-link" style="text-decoration: none; color: inherit; display: block;">
                         <div class="blog-image-wrapper">
-                            <img src="/Video/Blogs%20imge/Lighting%20Guide%20Thumbnails/lutron-pico-bedside.webp" alt="Lutron Pico remote on a tabletop pedestal beside a bed" loading="eager" fetchpriority="high" decoding="async" width="1200" height="675" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="/Video/Blogs%20imge/Lighting%20Guide%20Thumbnails/lutron-pico-bedside.webp" alt="Lutron Pico remote on a tabletop pedestal beside a bed" loading="eager" fetchpriority="auto" decoding="async" width="1200" height="675" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                     </a>
                     <div class="blog-card-content">
@@ -1236,7 +1283,7 @@
                 <article class="blog-card">
                     <a href="/blogs/lutron-sunnata-keypad-guide/" class="blog-card-image-link" style="text-decoration: none; color: inherit; display: block;">
                         <div class="blog-image-wrapper">
-                            <img src="/Video/Blogs%20imge/Lighting%20Guide%20Thumbnails/lutron-sunnata-installed.webp" alt="Lutron Sunnata keypad installed in a modern room" loading="eager" fetchpriority="high" decoding="async" width="1200" height="675" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="/Video/Blogs%20imge/Lighting%20Guide%20Thumbnails/lutron-sunnata-installed.webp" alt="Lutron Sunnata keypad installed in a modern room" loading="lazy" fetchpriority="auto" decoding="async" width="1200" height="675" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                     </a>
                     <div class="blog-card-content">
@@ -1255,7 +1302,7 @@
                 <article class="blog-card">
                     <a href="/blogs/control4-contemporary-keypad-guide/" class="blog-card-image-link" style="text-decoration: none; color: inherit; display: block;">
                         <div class="blog-image-wrapper">
-                            <img src="/Video/Blogs%20imge/Lighting%20Guide%20Thumbnails/control4-contemporary-installed.webp" alt="Engraved Control4 keypad installed beside a bedroom hallway" loading="eager" fetchpriority="high" decoding="async" width="1200" height="675" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="/Video/Blogs%20imge/Lighting%20Guide%20Thumbnails/control4-contemporary-installed.webp" alt="Engraved Control4 keypad installed beside a bedroom hallway" loading="lazy" fetchpriority="auto" decoding="async" width="1200" height="675" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                     </a>
                     <div class="blog-card-content">
@@ -1274,7 +1321,7 @@
                 <article class="blog-card">
                     <a href="/blogs/lux-by-control4-keypad-guide/" class="blog-card-image-link" style="text-decoration: none; color: inherit; display: block;">
                         <div class="blog-image-wrapper">
-                            <img src="/Video/Blogs%20imge/Lighting%20Guide%20Thumbnails/lux-keypad-in-use.webp" alt="Bronze Lux by Control4 keypad being used on the wall" loading="eager" fetchpriority="high" decoding="async" width="1200" height="675" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="/Video/Blogs%20imge/Lighting%20Guide%20Thumbnails/lux-keypad-in-use.webp" alt="Bronze Lux by Control4 keypad being used on the wall" loading="lazy" fetchpriority="auto" decoding="async" width="1200" height="675" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                     </a>
                     <div class="blog-card-content">
@@ -1293,7 +1340,7 @@
                 <article class="blog-card">
                     <a href="/blogs/smart-lighting-keypad-style-comparison/" class="blog-card-image-link" style="text-decoration: none; color: inherit; display: block;">
                         <div class="blog-image-wrapper">
-                            <img src="/Video/Blogs%20imge/Lighting%20Guide%20Thumbnails/smart-lighting-keypad-comparison.webp" alt="Engraved smart lighting keypad installed in a finished living room" loading="eager" fetchpriority="high" decoding="async" width="1200" height="675" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="/Video/Blogs%20imge/Lighting%20Guide%20Thumbnails/smart-lighting-keypad-comparison-thumb.webp" alt="Engraved smart lighting keypad installed in a finished living room" loading="lazy" fetchpriority="auto" decoding="async" width="800" height="450" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                     </a>
                     <div class="blog-card-content">
@@ -1312,7 +1359,7 @@
                 <article class="blog-card">
                     <a href="/blogs/control4-indoor-air-quality-humidity-ventilation-guide/" class="blog-card-image-link" style="text-decoration: none; color: inherit; display: block;">
                         <div class="blog-image-wrapper">
-                            <img src="/Video/Blogs%20imge/Control4%20Indoor%20Air%20Quality%20Guide/control4-indoor-air-quality-hero.png" alt="Control4 Indoor Air Quality, Humidity and Ventilation Planning Guide" loading="eager" fetchpriority="high" decoding="async" width="400" height="225" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="/Video/Blogs%20imge/Control4%20Indoor%20Air%20Quality%20Guide/control4-indoor-air-quality-thumb.webp" alt="Control4 Indoor Air Quality, Humidity and Ventilation Planning Guide" loading="lazy" fetchpriority="auto" decoding="async" width="800" height="450" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                     </a>
                     <div class="blog-card-content">
@@ -1331,7 +1378,7 @@
                 <article class="blog-card">
                     <a href="/blogs/control4-ea-vs-core-controller-guide/" class="blog-card-image-link" style="text-decoration: none; color: inherit; display: block;">
                         <div class="blog-image-wrapper">
-                            <img src="/Video/Blogs%20imge/Control4%20EA%20and%20CORE%20Comparison/control4-core5-blue.png" alt="Control4 EA vs CORE Controllers: Model and Upgrade Guide" loading="eager" fetchpriority="high" decoding="async" width="400" height="225" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="/Video/Blogs%20imge/Control4%20EA%20and%20CORE%20Comparison/control4-core5-thumb.webp" alt="Control4 EA vs CORE Controllers: Model and Upgrade Guide" loading="lazy" fetchpriority="auto" decoding="async" width="800" height="450" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                     </a>
                     <div class="blog-card-content">
@@ -1350,7 +1397,7 @@
                 <article class="blog-card">
                     <a href="/blogs/episode-amplifier-model-comparison/" class="blog-card-image-link" style="text-decoration: none; color: inherit; display: block;">
                         <div class="blog-image-wrapper">
-                            <img src="/Video/Blogs%20imge/Episode%20Amplifier%20Comparison/episode-response-12d-100-blue.png" alt="Episode Amplifier Comparison: Dynamic, Response, Hybrid and 70V" loading="eager" fetchpriority="high" decoding="async" width="400" height="225" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="/Video/Blogs%20imge/Episode%20Amplifier%20Comparison/episode-response-12d-100-thumb.webp" alt="Episode Amplifier Comparison: Dynamic, Response, Hybrid and 70V" loading="lazy" fetchpriority="auto" decoding="async" width="800" height="450" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                     </a>
                     <div class="blog-card-content">
@@ -1369,7 +1416,7 @@
                 <article class="blog-card">
                     <a href="/blogs/control4-lighting-system-comparison/" class="blog-card-image-link" style="text-decoration: none; color: inherit; display: block;">
                         <div class="blog-image-wrapper">
-                            <img src="/Video/Blogs%20imge/Control4%20Lighting%20Comparison/control4-lux-three-gang-lifestyle.webp" alt="Control4 Lighting Comparison: Essential, Contemporary, Lux and Centralized" loading="eager" fetchpriority="auto" decoding="async" width="400" height="225" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="/Video/Blogs%20imge/Control4%20Lighting%20Comparison/control4-lux-three-gang-lifestyle.webp" alt="Control4 Lighting Comparison: Essential, Contemporary, Lux and Centralized" loading="lazy" fetchpriority="auto" decoding="async" width="400" height="225" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                     </a>
                     <div class="blog-card-content">
@@ -1388,7 +1435,7 @@
                 <article class="blog-card">
                     <a href="/blogs/luma-camera-model-comparison/" class="blog-card-image-link" style="text-decoration: none; color: inherit; display: block;">
                         <div class="blog-image-wrapper">
-                            <img src="/Video/Blogs%20imge/Luma%20Camera%20Comparison/luma-x20-family-blue.webp" alt="Luma Camera Comparison: 220, 520, 820, PTZ and Floodlight" loading="eager" fetchpriority="auto" decoding="async" width="400" height="225" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="/Video/Blogs%20imge/Luma%20Camera%20Comparison/luma-x20-family-blue.webp" alt="Luma Camera Comparison: 220, 520, 820, PTZ and Floodlight" loading="lazy" fetchpriority="auto" decoding="async" width="400" height="225" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                     </a>
                     <div class="blog-card-content">
@@ -1407,7 +1454,7 @@
                 <article class="blog-card">
                     <a href="/blogs/binary-video-distribution-hdmi-matrix-guide/" class="blog-card-image-link" style="text-decoration: none; color: inherit; display: block;">
                         <div class="blog-image-wrapper">
-                            <img src="/Video/Blogs%20imge/Binary%20Video%20Distribution%20Comparison/binary-960-family-blue.webp" alt="Binary Video Distribution: Matrix vs 900 and 960 MoIP" loading="eager" fetchpriority="auto" decoding="async" width="400" height="225" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="/Video/Blogs%20imge/Binary%20Video%20Distribution%20Comparison/binary-960-family-blue.webp" alt="Binary Video Distribution: Matrix vs 900 and 960 MoIP" loading="lazy" fetchpriority="auto" decoding="async" width="400" height="225" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                     </a>
                     <div class="blog-card-content">
@@ -3047,8 +3094,8 @@
             noResults.classList.add('hidden');
 
             grid.innerHTML = filteredPosts.map((post, index) => {
-                const loadingStrategy = index < 6 ? 'eager' : 'lazy';
-                const fetchPriority = index < 3 ? 'high' : 'auto';
+                const loadingStrategy = index < 2 ? 'eager' : 'lazy';
+                const fetchPriority = index === 0 ? 'high' : 'auto';
                 // URL encode the image path to handle spaces and special characters in filenames
                 // Split path and encode each segment to properly handle ? and & characters
                 const postUrl = post.url.startsWith('/') ? post.url : `/${post.url}`;
@@ -3077,14 +3124,14 @@
                     <div class="blog-card-content">
                         <div class="blog-card-meta">
                             <span class="blog-card-category">${displayCategoryLabel(post.category)}</span>
-                            <span>📅 ${formatDate(post.publishedDate)}</span>
+                            <span>${formatDate(post.publishedDate)}</span>
                         </div>
                         <h2 class="blog-card-title">
                             <a href="${postUrl}">${escapeHtml(post.title)}</a>
                         </h2>
                         <p class="blog-card-excerpt">${escapeHtml(post.excerpt)}</p>
                         <div class="blog-card-footer">
-                            <span class="blog-card-reading-time">⏱️ ${post.readingTime} min read</span>
+                            <span class="blog-card-reading-time">${post.readingTime} min read</span>
                             <a href="${postUrl}" class="blog-card-link">Open Article →</a>
                         </div>
                     </div>

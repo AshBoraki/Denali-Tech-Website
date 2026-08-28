@@ -2296,7 +2296,7 @@
                             </svg>
                             <span>Send Photos on WhatsApp</span>
                         </a>
-                        <a href="tel:+13124397500" aria-label="Call Denali Tech at 312-439-7500" style="display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.65rem 1.1rem; background: rgba(15, 23, 42, 0.06); border: 1px solid rgba(15, 23, 42, 0.2); border-radius: 4px; color: var(--text-primary); text-decoration: none; font-weight: 600; transition: all var(--transition);">
+                        <a href="tel:+13124397500" style="display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.65rem 1.1rem; background: rgba(15, 23, 42, 0.06); border: 1px solid rgba(15, 23, 42, 0.2); border-radius: 4px; color: var(--text-primary); text-decoration: none; font-weight: 600; transition: all var(--transition);">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.8a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.28-1.28a2 2 0 0 1 2.11-.45c.9.33 1.84.56 2.8.69A2 2 0 0 1 22 16.92Z"></path>
                             </svg>
@@ -2345,8 +2345,8 @@
                                 <span class="field-error" id="phone-error" aria-live="polite" aria-hidden="true"></span>
                             </div>
                             <div class="form-group">
-                                <label for="booking-email">Email (optional)</label>
-                                <input type="email" id="booking-email" name="email" autocomplete="email" aria-required="false" aria-describedby="email-error" placeholder="you@example.com" inputmode="email">
+                                <label for="booking-email">Email *</label>
+                                <input type="email" id="booking-email" name="email" autocomplete="email" required aria-required="true" aria-describedby="email-error" placeholder="you@example.com" inputmode="email">
                                 <span class="field-error" id="email-error" aria-live="polite" aria-hidden="true"></span>
                             </div>
                             <div class="form-group">
@@ -2698,122 +2698,6 @@
     </button>
 
     <script>
-        // AJAX submit to avoid leaving site
-        document.addEventListener('DOMContentLoaded', function () {
-            const form = document.getElementById('consultation-form');
-            if (!form) return;
-
-            // Rate limiting: prevent rapid submissions
-            let lastSubmissionTime = 0;
-            const minTimeBetweenSubmissions = 5000; // 5 seconds
-
-            form.addEventListener('submit', async function (e) {
-                e.preventDefault();
-
-                // Check honeypot fields - if filled, it's a bot
-                const honeypot1 = form.querySelector('input[name="website"]');
-                const honeypot2 = form.querySelector('input[name="_gotcha"]');
-                if ((honeypot1 && honeypot1.value) || (honeypot2 && honeypot2.value)) {
-                    // Bot detected - silently reject
-                    return;
-                }
-
-                // Check hCaptcha - wait a moment for it to load if needed
-                let hCaptcha = form.querySelector('textarea[name="h-captcha-response"]');
-                if (!hCaptcha) {
-                    // hCaptcha widget might not be loaded yet, wait a bit
-                    await new Promise(resolve => setTimeout(resolve, 500));
-                    hCaptcha = form.querySelector('textarea[name="h-captcha-response"]');
-                }
-
-                if (!hCaptcha || !hCaptcha.value) {
-                    e.preventDefault();
-                    const messageDiv = document.getElementById('consultation-form-message') || form.querySelector('.form-message');
-                    if (messageDiv) {
-                        const errorDiv = document.createElement('div');
-                        errorDiv.className = 'form-error-message';
-                        errorDiv.textContent = 'Please complete the captcha verification before submitting.';
-                        messageDiv.textContent = '';
-                        messageDiv.appendChild(errorDiv);
-                    } else {
-                        alert('Please complete the captcha verification before submitting.');
-                    }
-                    return;
-                }
-
-                // Rate limiting check
-                const now = Date.now();
-                if (now - lastSubmissionTime < minTimeBetweenSubmissions) {
-                    const submitBtn = form.querySelector('button[type="submit"]');
-                    if (submitBtn) {
-                        submitBtn.disabled = false;
-                        const originalText = submitBtn.textContent;
-                        submitBtn.textContent = 'Please wait...';
-                        setTimeout(() => {
-                            submitBtn.textContent = originalText;
-                        }, 2000);
-                    }
-                    return;
-                }
-                lastSubmissionTime = now;
-
-                const submitBtn = form.querySelector('button[type="submit"]');
-                const originalBtnText = submitBtn ? submitBtn.innerHTML : '';
-                if (submitBtn) {
-                    submitBtn.disabled = true;
-                    submitBtn.innerHTML = '<span class="loading-spinner"></span> Sending...';
-                    submitBtn.style.opacity = '0.7';
-                    submitBtn.style.cursor = 'not-allowed';
-                }
-                const formData = new FormData(form);
-
-                // Add CSRF token (timestamp-based nonce)
-                const csrfToken = Date.now().toString(36) + Math.random().toString(36).substr(2);
-                formData.append('_csrf', csrfToken);
-
-                    try {
-                        const res = await fetch('https://api.web3forms.com/submit', {
-                            method: 'POST',
-                            headers: {
-                                'Accept': 'application/json',
-                                'X-Requested-With': 'XMLHttpRequest'
-                            },
-                            body: formData
-                        });
-
-                        const responseData = await res.json().catch(() => null);
-
-                        if (res.ok && responseData && responseData.success) {
-                            window.location.href = '/thank-you/';
-                        } else {
-                            const err = document.getElementById('form-error');
-                            if (err) {
-                                const errorMsg = responseData?.message || 'There was an error submitting your request.';
-                                err.style.display = 'block';
-                                err.textContent = `${errorMsg} Please try again or message us on WhatsApp.`;
-                            }
-                            if (submitBtn) {
-                                submitBtn.disabled = false;
-                                submitBtn.innerHTML = originalBtnText;
-                                submitBtn.style.opacity = '1';
-                                submitBtn.style.cursor = 'pointer';
-                            }
-                        }
-                    } catch (err) {
-                        const errBox = document.getElementById('form-error');
-                        if (errBox) {
-                            errBox.style.display = 'block';
-                            errBox.textContent = 'Network error. Please check your connection and try again, or message us on WhatsApp.';
-                        }
-                        if (submitBtn) {
-                            submitBtn.disabled = false;
-                            submitBtn.innerHTML = originalBtnText;
-                            submitBtn.style.opacity = '1';
-                            submitBtn.style.cursor = 'pointer';
-                        }
-                    }
-            });
-        });
         // Show success banner if redirected back from FormSubmit
         document.addEventListener('DOMContentLoaded', function () {
             if (window.location.hash === '#thankyou') {
@@ -3273,7 +3157,7 @@
                         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                         if (!emailRegex.test(value)) {
                             isValid = false;
-                            errorMessage = 'Please enter a valid email address';
+                            errorMessage = 'Enter a valid email address';
                         }
                     } else if (field.type === 'tel' && value) {
                         const digitsOnly = value.replace(/\D/g, '');
@@ -3283,7 +3167,7 @@
                         }
                     } else if (isRequired && value === '') {
                         isValid = false;
-                        errorMessage = 'This field is required';
+                        errorMessage = field.type === 'email' ? 'Email is required' : 'This field is required';
                     }
 
                     if (errorElement) {
@@ -3610,7 +3494,42 @@
         });
     </script>
 
-    <!-- Web3Forms hCaptcha Script (Zero-Config) -->
-    <script src="https://web3forms.com/client/script.js" async defer></script>
+    <!-- Load Web3Forms hCaptcha shortly before the form is used. -->
+    <script>
+        (function () {
+            const captcha = document.querySelector('.h-captcha');
+            const form = document.getElementById('booking-form');
+            if (!captcha) return;
+
+            let loading = false;
+            const loadCaptcha = function () {
+                if (loading || document.querySelector('script[data-web3forms-captcha]')) return;
+                loading = true;
+                const script = document.createElement('script');
+                script.src = 'https://web3forms.com/client/script.js';
+                script.async = true;
+                script.defer = true;
+                script.dataset.web3formsCaptcha = 'true';
+                document.head.appendChild(script);
+            };
+
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver(function (entries) {
+                    if (entries.some(entry => entry.isIntersecting)) {
+                        observer.disconnect();
+                        loadCaptcha();
+                    }
+                }, { rootMargin: '500px 0px' });
+                observer.observe(captcha);
+            } else {
+                loadCaptcha();
+            }
+
+            if (form) {
+                form.addEventListener('focusin', loadCaptcha, { once: true });
+                form.addEventListener('pointerenter', loadCaptcha, { once: true });
+            }
+        })();
+    </script>
 </body>
 </html>
