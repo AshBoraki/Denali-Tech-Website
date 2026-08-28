@@ -2300,24 +2300,30 @@
             font-size: 0 !important;
         }
 
-        /* The global footer stays useful here, but it should not compete with the form. */
+        /* On the contact page, keep the footer useful without repeating another sales pitch. */
         .dt-site-footer {
-            padding-top: 52px;
+            padding-top: 34px;
         }
 
         .dt-site-footer-close {
-            gap: clamp(28px, 4vw, 52px);
-            padding-bottom: 34px;
+            display: block;
+            padding-bottom: 20px;
         }
 
         .dt-site-footer-close-copy {
-            gap: 14px;
+            display: block;
         }
 
-        .dt-site-footer-close h2 {
-            max-width: 13ch;
-            font-size: clamp(2.35rem, 4vw, 3.6rem);
-            line-height: 1;
+        .dt-site-footer-kicker,
+        .dt-site-footer-close h2,
+        .dt-site-footer-lead,
+        .dt-site-footer-actions,
+        .dt-site-footer-proof {
+            display: none;
+        }
+
+        .dt-site-footer-linkbar {
+            padding: 26px 0;
         }
 
         @media (min-width: 681px) and (max-width: 768px) {
@@ -2401,22 +2407,8 @@
                 padding: 32px 16px !important;
             }
 
-            .dt-site-footer {
-                padding-top: 34px;
-            }
-
-            .dt-site-footer-close {
-                gap: 20px;
-                padding-bottom: 24px;
-            }
-
-            .dt-site-footer-close-copy {
-                gap: 11px;
-            }
-
-            .dt-site-footer-close h2 {
-                max-width: 13ch;
-                font-size: clamp(2rem, 10vw, 2.45rem);
+            .dt-site-footer-linkbar {
+                padding: 22px 0;
             }
         }
 
