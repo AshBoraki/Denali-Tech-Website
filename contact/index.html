@@ -1108,28 +1108,6 @@
             font-size: 0.98rem;
         }
 
-        /* Quick Contact Buttons */
-        .booking-form-container a[href^="tel:"],
-        .booking-form-container a[href^="mailto:"],
-        .booking-form-container a[href*="wa.me"] {
-            transition: all var(--transition);
-        }
-
-        .booking-form-container a[href^="tel:"]:hover,
-        .booking-form-container a[href^="mailto:"]:hover,
-        .booking-form-container a[href*="wa.me"]:hover {
-            background: rgba(249, 115, 22, 0.2) !important;
-            border-color: var(--accent-primary) !important;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
-        }
-
-        .booking-form-container a[href^="tel:"]:active,
-        .booking-form-container a[href^="mailto:"]:active,
-        .booking-form-container a[href*="wa.me"]:active {
-            transform: translateY(0);
-        }
-
         .booking-form {
             display: grid;
             gap: 0;
@@ -1145,78 +1123,30 @@
             grid-template-columns: repeat(3, minmax(0, 1fr));
         }
 
-        .contact-action-row {
+        .contact-proof-line {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.75rem;
-            justify-content: center;
-            margin-bottom: 0.9rem;
-        }
-
-        .contact-action-row a {
-            display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 0.45rem;
-            padding: 0.7rem 1.1rem;
-            border-radius: 4px;
-            text-decoration: none;
+            gap: 0.35rem 0.7rem;
+            margin: 0 0 1.15rem;
+            color: #475569;
+            font-size: 0.84rem;
             font-weight: 700;
-            transition: all var(--transition);
+            line-height: 1.35;
         }
 
-        .contact-action-row a:first-child {
-            background: rgba(37, 211, 102, 0.12);
-            border: 1px solid rgba(37, 211, 102, 0.35);
-            color: #15803d;
+        .contact-proof-line a {
+            color: inherit;
+            text-decoration: underline;
+            text-decoration-color: rgba(249, 115, 22, 0.55);
+            text-underline-offset: 3px;
         }
 
-        .contact-action-row a:last-child {
-            background: rgba(249, 115, 22, 0.1);
-            border: 1px solid rgba(249, 115, 22, 0.3);
-            color: var(--accent-primary);
-        }
-
-        .contact-proof-strip {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 0.55rem;
-            margin: 0.9rem 0 1rem;
-        }
-
-        .contact-proof-strip a,
-        .contact-proof-strip span {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 44px;
-            padding: 0.58rem 0.7rem;
-            border: 1px solid rgba(249, 115, 22, 0.24);
-            border-left: 3px solid rgba(17, 24, 39, 0.78);
-            border-radius: 3px;
-            background: #fff;
-            color: #0f172a;
-            text-decoration: none;
-            font-size: 0.9rem;
+        .field-hint a {
+            color: #0f766e;
             font-weight: 700;
-            text-align: center;
-            line-height: 1.2;
-        }
-
-        .form-next-note {
-            display: grid;
-            gap: 0.3rem;
-            padding: 0.9rem 1rem;
-            background: rgba(249, 115, 22, 0.08);
-            border-left: 3px solid var(--accent-primary);
-            border-radius: 4px;
-            color: var(--text-secondary);
-            font-size: 0.92rem;
-            line-height: 1.5;
-        }
-
-        .form-next-note strong {
-            color: var(--text-primary);
+            text-underline-offset: 2px;
         }
 
         .form-group.full-width {
@@ -1921,20 +1851,9 @@
                 margin-bottom: 1rem;
             }
 
-            .contact-action-row {
-                flex-direction: column;
-            }
-
-            .contact-action-row a {
-                width: 100%;
-                justify-content: center;
-                padding: 0.875rem 1.25rem;
-                font-size: 0.95rem;
-            }
-
-            .contact-proof-strip {
-                grid-template-columns: 1fr;
-                gap: 0.45rem;
+            .contact-proof-line {
+                margin-bottom: 0.85rem;
+                font-size: 0.78rem;
             }
 
             .booking-form {
@@ -2277,8 +2196,8 @@
     <section class="hero">
         <div class="hero-background"></div>
         <div class="hero-content">
-            <h1>See If We Are A Fit For Your Project.</h1>
-            <p>Tell us about the home, the system, and what you want changed. We handle Control4, WiFi, AV, cameras, lighting, shades, theater, and existing systems.</p>
+            <h1>Tell Us About Your Project.</h1>
+            <p>Share what you want to change and where the home is. We will reply with the right next step.</p>
         </div>
     </section>
 
@@ -2286,35 +2205,9 @@
     <section class="booking-section" id="booking">
         <div class="container">
             <div class="booking-form-container">
-                <div style="text-align: center; margin-bottom: 1.1rem;">
-                    <h2 style="font-family: var(--font-heading); font-size: clamp(1.5rem, 3vw, 1.95rem); font-weight: 700; color: var(--text-primary); margin-bottom: 0.6rem; line-height: 1.2;">Tell Us About The Project</h2>
-                    <p style="font-size: 1rem; color: var(--text-secondary); max-width: 660px; margin: 0 auto 1rem; line-height: 1.55;">Tell us what you need and where the home is. A few sentences are enough; photos can go through WhatsApp.</p>
-                    <div class="contact-action-row">
-                        <a href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20need%20help%20with%20WiFi%20or%20smart%20home%20work.%20I%20can%20send%20photos.%20My%20home%20is%20in%3A" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.65rem 1.1rem; background: rgba(37, 211, 102, 0.1); border: 1px solid rgba(37, 211, 102, 0.3); border-radius: 4px; color: #25d366; text-decoration: none; font-weight: 600; transition: all var(--transition);">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-                            </svg>
-                            <span>Send Photos on WhatsApp</span>
-                        </a>
-                        <a href="tel:+13124397500" style="display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.65rem 1.1rem; background: rgba(15, 23, 42, 0.06); border: 1px solid rgba(15, 23, 42, 0.2); border-radius: 4px; color: var(--text-primary); text-decoration: none; font-weight: 600; transition: all var(--transition);">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.69 2.8a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.28-1.28a2 2 0 0 1 2.11-.45c.9.33 1.84.56 2.8.69A2 2 0 0 1 22 16.92Z"></path>
-                            </svg>
-                            <span>Call (312) 439-7500</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Trust Signals - Compact Design -->
-                <div class="contact-proof-strip" aria-label="Denali Tech trust points">
+                <div class="contact-proof-line" aria-label="Denali Tech trust points">
                     <a href="https://share.google/5v7QlOZP27cn87Vqo" target="_blank" rel="noopener noreferrer">5.0 Google rating</a>
                     <span>Authorized Control4 / URC</span>
-                    <span>Clear plan before install</span>
-                </div>
-
-                <div class="form-next-note" role="note" aria-label="Who Denali Tech works best with" style="margin-bottom: 0.95rem;">
-                    <strong>A good fit for Denali Tech</strong>
-                    <span>For homeowners who value thoughtful planning, dependable products, clean installation, and support after the project is complete.</span>
                 </div>
 
                 <form class="booking-form" id="booking-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
@@ -2381,14 +2274,9 @@
                             <label for="booking-details">Project details *</label>
                             <textarea id="booking-details" name="project_details" placeholder="Tell us what is not working or what you want to add." required rows="4" aria-required="true" aria-describedby="details-error details-hint"></textarea>
                             <span class="field-error" id="details-error" aria-live="polite" aria-hidden="true"></span>
-                            <small class="field-hint" id="details-hint" style="color: var(--text-secondary); font-size: 0.875rem;">A few words are fine. You can send photos on WhatsApp.</small>
+                            <small class="field-hint" id="details-hint" style="color: var(--text-secondary); font-size: 0.875rem;">A few words are enough. Need to share photos? <a href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20need%20help%20with%20a%20project.%20My%20home%20is%20in%3A" target="_blank" rel="noopener noreferrer">Send them on WhatsApp</a>.</small>
                         </div>
                     </fieldset>
-
-                    <div class="form-next-note" role="note">
-                        <strong>What happens next</strong>
-                        <span>We review the request and reply with the right next step. If timing matters, include it in the project details.</span>
-                    </div>
 
                     <!-- Captcha -->
                     <div class="form-group" style="margin-top: 1rem;">
@@ -2405,7 +2293,7 @@
 
                     <!-- Privacy Notice -->
                     <p style="text-align: center; margin-top: 1rem; font-size: 0.875rem; color: var(--text-secondary); line-height: 1.5;">
-                        We keep your information private and only use it to respond to your request.
+                        We review your request and reply with the right next step. Your information stays private.
                     </p>
                 </form>
             </div>
@@ -2417,8 +2305,8 @@
         <div class="container">
             <div class="service-area-grid" style="display: grid; grid-template-columns: 1fr; gap: 1.5rem; max-width: 900px; margin: 0 auto; align-items: center;">
                 <div class="service-area-content">
-                    <h2 style="font-family: var(--font-heading); font-size: clamp(1.55rem, 3vw, 2.1rem); margin-bottom: 0.8rem; color: var(--text-primary);">Mount Prospect Based. Serving Chicago-Area Homes.</h2>
-                    <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.7; margin-bottom: 1.25rem;">Denali Tech works with homeowners across Chicago and nearby suburbs on smart home, WiFi, AV, lighting, shades, cameras, and theater projects.</p>
+                    <h2 style="font-family: var(--font-heading); font-size: clamp(1.45rem, 3vw, 1.9rem); margin-bottom: 0.55rem; color: var(--text-primary);">Mount Prospect Based. Serving Chicago and Nearby Suburbs.</h2>
+                    <p style="color: var(--text-secondary); font-size: 0.96rem; line-height: 1.6; margin-bottom: 1rem;">Choose a nearby service page or include your city or ZIP in the form.</p>
                     <div class="service-area-list is-collapsed" id="serviceAreaList">
                         <div class="service-area-item" style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-secondary); font-size: 1rem;"><span style="font-size: 1.2rem;">📍</span><a href="/services/chicago-smart-home-automation/" style="color: inherit; text-decoration: none;">Chicago</a></div>
                         <div class="service-area-item" style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-secondary); font-size: 1rem;"><span style="font-size: 1.2rem;">📍</span><a href="/services/mt-prospect-home-automation/" style="color: inherit; text-decoration: none;">Mt Prospect</a></div>
@@ -2447,7 +2335,6 @@
                             <svg class="service-area-toggle-icon" aria-hidden="true" viewBox="0 0 20 20"><path d="m5 7.5 5 5 5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         </button>
                     </div>
-                    <p class="service-area-note">Not sure if you are in range? Send your city or ZIP and we will tell you quickly.</p>
                 </div>
                 <div class="service-area-map" style="display: none; background: rgba(255,255,255,0.05); border-radius: 16px; overflow: hidden; border: 1px solid var(--border-color); height: 400px;">
                     <div id="serviceAreaMapPlaceholder" style="width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem; background: linear-gradient(135deg, rgba(249,115,22,0.12), rgba(13,148,136,0.08));">
@@ -2466,7 +2353,7 @@
                 gap: 0.75rem 1.1rem;
             }
 
-            .service-area-list.is-collapsed .service-area-item:nth-child(n + 13) {
+            .service-area-list.is-collapsed .service-area-item:nth-child(n + 5) {
                 display: none !important;
             }
 
@@ -2526,12 +2413,6 @@
                 transform: rotate(180deg);
             }
 
-            .service-area-note {
-                margin: 0.9rem 0 0;
-                color: var(--text-secondary);
-                font-size: 0.9rem;
-                text-align: center;
-            }
             @media (max-width: 768px) {
                 .service-area-grid {
                     grid-template-columns: 1fr !important;
@@ -2544,7 +2425,7 @@
                     grid-template-columns: repeat(2, minmax(0, 1fr));
                     gap: 0.45rem 0.8rem;
                 }
-                .service-area-list.is-collapsed .service-area-item:nth-child(n + 9) {
+                .service-area-list.is-collapsed .service-area-item:nth-child(n + 5) {
                     display: none !important;
                 }
                 .service-area-item {
@@ -2563,9 +2444,7 @@
 
             if (!list || !button || !label) return;
 
-            const collapsedLabel = () => window.matchMedia('(max-width: 768px)').matches
-                ? 'Show 12 More Areas'
-                : 'Show 8 More Areas';
+            const collapsedLabel = () => 'View all service areas';
 
             label.textContent = collapsedLabel();
 
