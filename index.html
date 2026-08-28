@@ -743,7 +743,7 @@
                         <source media="(min-width: 769px)" srcset="Video/homepage/hero-poster-desktop-new-wrap.webp" type="image/webp">
                         <img class="hero-background-image" src="Video/homepage/hero-poster-mobile-new-wrap.webp" alt="" loading="eager" decoding="async" width="768" height="428" fetchpriority="high">
                     </picture>
-	                    <video id="hero-background-video" class="hero-background-video" muted loop playsinline preload="none" poster="Video/homepage/hero-poster-desktop-new-wrap.webp" aria-hidden="true">
+	                    <video id="hero-background-video" class="hero-background-video" muted loop playsinline preload="none" aria-hidden="true">
 	                        <source data-src="Video/homepage/denali-tech-hero-smart-home.mp4" type="video/mp4">
 	                    </video>
 	                    <script>
@@ -799,7 +799,7 @@
                         z-index: 1;
                         opacity: 1 !important;
                         filter: brightness(0.96) contrast(1.04) saturate(1.02);
-                        background: #05070d;
+                        background: transparent;
                         pointer-events: none !important;
                         touch-action: none !important;
                         -webkit-touch-callout: none !important;
@@ -808,7 +808,7 @@
 			            }
 
                     .hero-background-picture {
-                        display: none;
+                        display: block;
                     }
 
                     .hero-background-picture,
@@ -1629,16 +1629,16 @@
                 </div>
                 <div class="homepage-control4-images" aria-label="Control4 smart home scenes" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.85rem;">
                     <picture style="display: block; overflow: hidden; border-radius: 10px; border: 1px solid rgba(15,23,42,0.1); background: #f8fafc; grid-column: 1 / -1; aspect-ratio: 16 / 9;">
-                        <source srcset="/assets/brandfolder/control4/control4-vibrant-living-room.webp" type="image/webp">
-                        <img src="/assets/brandfolder/control4/control4-vibrant-living-room.webp" alt="Control4 lighting and room scene in a finished living space" loading="lazy" decoding="async" width="1800" height="1180" style="display: block; width: 100%; height: 100%; min-height: 0; object-fit: cover;">
+                        <source srcset="/assets/brandfolder/control4/control4-vibrant-living-room-480.webp 480w, /assets/brandfolder/control4/control4-vibrant-living-room-768.webp 768w, /assets/brandfolder/control4/control4-vibrant-living-room.webp 1800w" sizes="(max-width: 768px) calc(100vw - 2.25rem), 48vw" type="image/webp">
+                        <img src="/assets/brandfolder/control4/control4-vibrant-living-room-768.webp" alt="Control4 lighting and room scene in a finished living space" loading="lazy" decoding="async" width="768" height="503" style="display: block; width: 100%; height: 100%; min-height: 0; object-fit: cover;">
                     </picture>
                     <picture style="display: block; overflow: hidden; border-radius: 10px; border: 1px solid rgba(15,23,42,0.1); background: #f8fafc; aspect-ratio: 3 / 2;">
-                        <source srcset="/assets/brandfolder/control4/control4-countertop-remote.webp" type="image/webp">
-                        <img src="/assets/brandfolder/control4/control4-countertop-remote.webp" alt="Control4 remote staged on a kitchen counter" loading="lazy" decoding="async" width="1800" height="1200" style="display: block; width: 100%; height: 100%; object-fit: cover;">
+                        <source srcset="/assets/brandfolder/control4/control4-countertop-remote-480.webp 480w, /assets/brandfolder/control4/control4-countertop-remote.webp 1207w" sizes="(max-width: 768px) calc((100vw - 3.1rem) / 2), 24vw" type="image/webp">
+                        <img src="/assets/brandfolder/control4/control4-countertop-remote-480.webp" alt="Control4 remote staged on a kitchen counter" loading="lazy" decoding="async" width="480" height="320" style="display: block; width: 100%; height: 100%; object-fit: cover;">
                     </picture>
                     <picture style="display: block; overflow: hidden; border-radius: 10px; border: 1px solid rgba(15,23,42,0.1); background: #f8fafc; aspect-ratio: 3 / 2;">
-                        <source srcset="/assets/brandfolder/control4/control4-kitchen-lighting-scene.webp" type="image/webp">
-                        <img src="/assets/brandfolder/control4/control4-kitchen-lighting-scene.webp" alt="Control4 lighting scene in a kitchen with a homeowner" loading="lazy" decoding="async" width="1800" height="1200" style="display: block; width: 100%; height: 100%; object-fit: cover;">
+                        <source srcset="/assets/brandfolder/control4/control4-kitchen-lighting-scene-480.webp 480w, /assets/brandfolder/control4/control4-kitchen-lighting-scene.webp 1207w" sizes="(max-width: 768px) calc((100vw - 3.1rem) / 2), 24vw" type="image/webp">
+                        <img src="/assets/brandfolder/control4/control4-kitchen-lighting-scene-480.webp" alt="Control4 lighting scene in a kitchen with a homeowner" loading="lazy" decoding="async" width="480" height="320" style="display: block; width: 100%; height: 100%; object-fit: cover;">
                     </picture>
                 </div>
             </div>
@@ -1735,10 +1735,10 @@
                     <div class="project-image-wrapper" style="position: relative; width: 100%; padding-top: 75%; overflow: hidden; background: #000;">
                         <picture>
                             <source
-                                srcset="https://denalitechs.com/Video/Project%20showcases%20/outdoor-tv-and-surround-system.webp"
+                                srcset="Video/homepage/outdoor-tv-surround-480.webp 480w, Video/homepage/outdoor-tv-surround-768.webp 768w"
                                 sizes="(max-width: 768px) calc(100vw - 2rem), (max-width: 1200px) 33vw, 361px"
                                 type="image/webp">
-                            <img src="https://denalitechs.com/Video/Project%20showcases%20/outdoor-tv-and-surround-system.webp" alt="Outdoor TV and surround sound system for backyard entertainment" loading="lazy" decoding="async" width="800" height="600" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                            <img src="Video/homepage/outdoor-tv-surround-768.webp" alt="Outdoor TV and surround sound system for backyard entertainment" loading="lazy" decoding="async" width="768" height="512" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                         </picture>
                         <div class="project-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7)); opacity: 0; transition: opacity 0.3s ease;"></div>
                     </div>
@@ -1769,10 +1769,10 @@
                     <div class="project-image-wrapper" style="position: relative; width: 100%; padding-top: 75%; overflow: hidden; background: #000;">
                         <picture>
                             <source
-                                srcset="https://denalitechs.com/Video/Project%20showcases%20/control4-neo-remote.webp"
+                                srcset="Video/homepage/control4-neo-remote-480.webp 480w, Video/homepage/control4-neo-remote-768.webp 768w"
                                 sizes="(max-width: 768px) calc(100vw - 2rem), (max-width: 1200px) 33vw, 361px"
                                 type="image/webp">
-                            <img src="https://denalitechs.com/Video/Project%20showcases%20/control4-neo-remote.webp" alt="Control4 remote used for one-touch home control" loading="lazy" decoding="async" width="800" height="600" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                            <img src="Video/homepage/control4-neo-remote-768.webp" alt="Control4 remote used for one-touch home control" loading="lazy" decoding="async" width="768" height="512" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
                         </picture>
                         <div class="project-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7)); opacity: 0; transition: opacity 0.3s ease;"></div>
                     </div>
@@ -3116,7 +3116,7 @@
     <style id="homepage-final-mobile-media-fix">
         @media (min-width: 769px) {
             body.dt-unified-chrome .hero-background-picture {
-                display: none !important;
+                display: block !important;
             }
         }
 

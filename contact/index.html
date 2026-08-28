@@ -3481,6 +3481,12 @@
                 if (phoneInput) {
                     phoneInput.addEventListener('input', function(e) {
                         let value = e.target.value.replace(/\D/g, '');
+                        // Accept pasted North American numbers with a leading +1/1
+                        // without shifting the area code or saving the wrong callback number.
+                        if (value.length > 10 && value.startsWith('1')) {
+                            value = value.slice(1);
+                        }
+                        value = value.slice(0, 10);
                         if (value.length > 0) {
                             if (value.length <= 3) {
                                 value = value;
