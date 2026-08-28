@@ -2130,8 +2130,65 @@
     <link rel="stylesheet" href="/assets/css/site-chrome.css?v=20260607c">
     <script src="/assets/js/site-chrome.js?v=20260818a" defer></script>
     <style id="contact-form-final-cleanup">
+        /* Contact-page visual rhythm: one calm surface, not a stack of hard boxes. */
+        .hero {
+            padding: 74px 0 30px;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            margin-bottom: 0.65rem;
+        }
+
+        .booking-section {
+            padding: 18px 5% 58px;
+        }
+
+        .booking-form-container {
+            max-width: 840px;
+            border: 1px solid rgba(15, 23, 42, 0.1);
+            border-radius: 18px;
+            padding: clamp(1.4rem, 3vw, 2rem);
+            box-shadow: 0 18px 48px rgba(15, 23, 42, 0.08);
+        }
+
+        .booking-form-container::before {
+            display: none;
+        }
+
+        .contact-proof-line {
+            justify-content: flex-start;
+            gap: 0.45rem 1rem;
+            margin-bottom: 1.4rem;
+            padding: 0.72rem 0.85rem;
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            border-radius: 10px;
+            background: #f8fafc;
+            font-size: 0.82rem;
+        }
+
+        .contact-proof-line span {
+            position: relative;
+            padding-left: 0.95rem;
+        }
+
+        .contact-proof-line span::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: #f97316;
+            transform: translateY(-50%);
+        }
+
         .booking-form .form-step + .form-step {
-            margin-top: 0.9rem !important;
+            margin-top: 1rem !important;
         }
 
         .booking-form .form-step legend,
@@ -2143,6 +2200,251 @@
 
         .booking-form fieldset[data-step="3"] {
             padding-top: 0.9rem !important;
+        }
+
+        .booking-form .form-step {
+            gap: 0.85rem;
+            padding: 0.8rem 0 1rem;
+            border-bottom-color: rgba(15, 23, 42, 0.09);
+        }
+
+        .booking-form .form-step legend {
+            margin-bottom: 0.5rem !important;
+            color: #334155;
+            font-size: 0.98rem;
+            font-weight: 800;
+            letter-spacing: 0;
+            text-transform: none;
+        }
+
+        .booking-form .form-row {
+            gap: 0.9rem;
+        }
+
+        .booking-form .form-group {
+            margin-bottom: 0.75rem;
+        }
+
+        .booking-form .form-group label {
+            margin-bottom: 0.42rem;
+            color: #263548;
+            font-size: 0.92rem;
+        }
+
+        .booking-form .form-group input,
+        .booking-form .form-group select,
+        .booking-form .form-group textarea {
+            border-color: rgba(15, 23, 42, 0.14);
+            border-radius: 9px;
+            background: #ffffff;
+        }
+
+        .booking-form .form-group input:hover,
+        .booking-form .form-group select:hover,
+        .booking-form .form-group textarea:hover {
+            border-color: rgba(15, 23, 42, 0.28);
+        }
+
+        .captcha-group {
+            display: grid;
+            grid-template-columns: minmax(150px, 1fr) auto;
+            gap: 1rem;
+            align-items: center;
+            margin: 1rem 0 0 !important;
+            padding: 0.9rem 1rem;
+            border: 1px solid rgba(15, 23, 42, 0.08);
+            border-radius: 12px;
+            background: #f8fafc;
+        }
+
+        .captcha-group .captcha-label {
+            margin: 0;
+            color: #263548;
+            font-size: 0.92rem;
+            font-weight: 750;
+            text-align: left;
+        }
+
+        .captcha-group .h-captcha {
+            min-height: 76px;
+        }
+
+        .booking-form-submit {
+            margin-top: 1rem;
+            border-color: #ea580c;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #f97316, #ea580c);
+            box-shadow: 0 10px 24px rgba(234, 88, 12, 0.18);
+        }
+
+        .booking-form-submit:hover {
+            background: linear-gradient(135deg, #ea580c, #c2410c);
+            box-shadow: 0 12px 26px rgba(194, 65, 12, 0.22);
+        }
+
+        .service-area-section {
+            padding: 40px 5% !important;
+        }
+
+        .service-area-grid {
+            max-width: 840px !important;
+        }
+
+        .service-area-item > span {
+            width: 7px;
+            height: 7px;
+            flex: 0 0 7px;
+            border-radius: 50%;
+            background: #f97316;
+            box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+            font-size: 0 !important;
+        }
+
+        /* The global footer stays useful here, but it should not compete with the form. */
+        .dt-site-footer {
+            padding-top: 52px;
+        }
+
+        .dt-site-footer-close {
+            gap: clamp(28px, 4vw, 52px);
+            padding-bottom: 34px;
+        }
+
+        .dt-site-footer-close-copy {
+            gap: 14px;
+        }
+
+        .dt-site-footer-close h2 {
+            max-width: 13ch;
+            font-size: clamp(2.35rem, 4vw, 3.6rem);
+            line-height: 1;
+        }
+
+        @media (min-width: 681px) and (max-width: 768px) {
+            .booking-form .form-row {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 680px) {
+            .hero {
+                padding: 64px 0 20px;
+            }
+
+            .hero-content {
+                padding: 0 1.15rem;
+            }
+
+            .hero h1 {
+                font-size: clamp(1.9rem, 9.2vw, 2.3rem);
+                line-height: 1.08;
+            }
+
+            .booking-section {
+                padding: 12px 12px 34px;
+            }
+
+            .booking-section > .container {
+                padding: 0;
+            }
+
+            .booking-form-container {
+                margin: 0;
+                padding: 1.15rem 1rem;
+                border-radius: 14px;
+                box-shadow: 0 12px 34px rgba(15, 23, 42, 0.08);
+            }
+
+            .contact-proof-line {
+                justify-content: center;
+                margin-bottom: 1.1rem;
+                padding: 0.65rem 0.7rem;
+                font-size: 0.76rem;
+            }
+
+            .booking-form .form-step + .form-step {
+                margin-top: 0.65rem !important;
+            }
+
+            .booking-form .form-step {
+                gap: 0.65rem;
+                padding: 0.7rem 0 0.85rem;
+            }
+
+            .booking-form .form-row {
+                gap: 0.75rem;
+            }
+
+            .booking-form .form-group {
+                margin-bottom: 0.65rem;
+            }
+
+            .booking-form .form-group input,
+            .booking-form .form-group select,
+            .booking-form .form-group textarea {
+                padding: 0.85rem 0.9rem;
+                min-height: 48px;
+            }
+
+            .captcha-group {
+                grid-template-columns: 1fr;
+                justify-items: center;
+                gap: 0.65rem;
+                padding: 0.85rem 0.5rem;
+            }
+
+            .captcha-group .captcha-label {
+                text-align: center;
+            }
+
+            .service-area-section {
+                padding: 32px 16px !important;
+            }
+
+            .dt-site-footer {
+                padding-top: 34px;
+            }
+
+            .dt-site-footer-close {
+                gap: 20px;
+                padding-bottom: 24px;
+            }
+
+            .dt-site-footer-close-copy {
+                gap: 11px;
+            }
+
+            .dt-site-footer-close h2 {
+                max-width: 13ch;
+                font-size: clamp(2rem, 10vw, 2.45rem);
+            }
+        }
+
+        @media (max-width: 360px) {
+            .contact-proof-line {
+                flex-direction: column;
+                gap: 0.35rem;
+            }
+
+            .contact-proof-line span {
+                padding-left: 0;
+            }
+
+            .contact-proof-line span::before {
+                display: none;
+            }
+
+            .captcha-group .h-captcha {
+                width: 248px;
+                height: 63px;
+                min-height: 63px;
+                overflow: hidden;
+            }
+
+            .captcha-group .h-captcha iframe {
+                transform: scale(0.818);
+                transform-origin: top left;
+            }
         }
     </style>
 </head>
@@ -2279,8 +2581,8 @@
                     </fieldset>
 
                     <!-- Captcha -->
-                    <div class="form-group" style="margin-top: 1rem;">
-                        <p style="margin: 0 0 0.5rem; color: var(--text-primary); font-weight: 700;">Confirm you are human</p>
+                    <div class="form-group captcha-group">
+                        <p class="captcha-label">Confirm you are human</p>
                         <div class="h-captcha" data-captcha="true"></div>
                         <span class="field-error" id="captcha-error" aria-live="polite" aria-hidden="true"></span>
                     </div>
