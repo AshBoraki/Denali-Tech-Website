@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  var version = "20260818a";
+  var version = "20260829a";
   var projectPlanHref = "/contact/?source=site-navigation#booking";
   var whatsappMessageHref = "https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20would%20rather%20use%20WhatsApp.%20Can%20you%20help%20me%20with%3A";
 
@@ -72,19 +72,15 @@
 
   function addLogoImage(parent) {
     var picture = document.createElement("picture");
-    var source = document.createElement("source");
     var img = document.createElement("img");
 
-    source.srcset = "/Video/homepage/logo-112.webp?v=" + version;
-    source.type = "image/webp";
-    img.src = "/Video/logo.JPG?v=" + version;
+    img.src = "/Video/Denali-Tech-Google-Logo-Final-Polished.png?v=" + version;
     img.alt = "Denali Tech";
-    img.width = 52;
-    img.height = 38;
+    img.width = 48;
+    img.height = 48;
     img.decoding = "async";
     img.loading = "eager";
 
-    picture.appendChild(source);
     picture.appendChild(img);
     parent.appendChild(picture);
   }
