@@ -757,7 +757,53 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 2rem;
-            margin-bottom: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-load-more {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.7rem;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+
+        .blog-load-more[hidden] {
+            display: none;
+        }
+
+        .load-more-button {
+            min-width: min(100%, 260px);
+            min-height: 48px;
+            padding: 0.8rem 1.35rem;
+            border: 1px solid var(--accent-primary);
+            border-radius: 10px;
+            background: var(--accent-primary);
+            color: #fff;
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+            touch-action: manipulation;
+            box-shadow: 0 10px 28px rgba(249, 115, 22, 0.18);
+            transition: transform var(--transition), background var(--transition), box-shadow var(--transition);
+        }
+
+        .load-more-button:hover {
+            transform: translateY(-2px);
+            background: var(--accent-hover);
+            box-shadow: 0 14px 32px rgba(249, 115, 22, 0.24);
+        }
+
+        .load-more-button:focus-visible {
+            outline: 3px solid var(--accent-primary);
+            outline-offset: 3px;
+        }
+
+        .load-more-status {
+            margin: 0;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
         }
 
         .blog-discovery-footer {
@@ -849,6 +895,10 @@
             display: none;
         }
 
+        .blog-card.is-pagination-hidden {
+            display: none;
+        }
+
         .hidden {
             display: none !important;
         }
@@ -858,7 +908,12 @@
             width: 100%;
             padding-top: 56.25%;
             overflow: hidden;
-            background: #000;
+            background: linear-gradient(135deg, #071525 0%, #102a46 100%);
+        }
+
+        :root[data-theme='light'] .blog-image-wrapper,
+        body.light-theme .blog-image-wrapper {
+            background: linear-gradient(135deg, #e9eef4 0%, #d9e3ed 100%);
         }
 
         .blog-image-wrapper img {
@@ -868,18 +923,20 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center;
             transition: transform 0.5s ease;
         }
 
-        .blog-card:hover .blog-image-wrapper img {
+        .blog-card:hover .blog-image-wrapper img:not(.product-fit) {
             transform: scale(1.1);
         }
 
         /* Tall product photography needs the full product in frame. */
         .blog-image-wrapper img.product-fit {
-            object-fit: contain;
+            object-fit: contain !important;
+            object-position: center !important;
             padding: 0.45rem 1rem;
-            background: #061628;
+            background: #061628 !important;
         }
 
         .blog-card:hover .blog-image-wrapper img.product-fit {
@@ -963,6 +1020,20 @@
 
         .blog-card-link:hover {
             color: var(--accent-readable-hover);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .blog-card,
+            .blog-image-wrapper img,
+            .load-more-button {
+                transition: none;
+            }
+
+            .blog-card:hover,
+            .load-more-button:hover,
+            .blog-card:hover .blog-image-wrapper img:not(.product-fit) {
+                transform: none;
+            }
         }
 
         .no-results {
@@ -2949,6 +3020,13 @@
                 </article>
             </div>
 
+            <div class="blog-load-more" id="blogLoadMore" hidden>
+                <button type="button" class="load-more-button" id="loadMoreButton" aria-controls="blogGrid">
+                    Show more articles
+                </button>
+                <p class="load-more-status" id="loadMoreStatus"></p>
+            </div>
+
             <div class="no-results hidden" id="noResults">
                 <h3>No articles found</h3>
                 <p>Try adjusting your search or filter criteria.</p>
@@ -2995,6 +3073,9 @@
         // Load blog data
         let blogData = null;
         let filteredPosts = [];
+        const INITIAL_VISIBLE_POSTS = 15;
+        const LOAD_MORE_STEP = 15;
+        let visiblePostCount = INITIAL_VISIBLE_POSTS;
 
         function displayCategoryLabel(category) {
             const labels = {
@@ -3093,19 +3174,21 @@
             const grid = document.getElementById('blogGrid');
             const noResults = document.getElementById('noResults');
             const postCount = document.getElementById('postCount');
+            const loadMore = document.getElementById('blogLoadMore');
+            const loadMoreButton = document.getElementById('loadMoreButton');
+            const loadMoreStatus = document.getElementById('loadMoreStatus');
+            const visiblePosts = filteredPosts.slice(0, visiblePostCount);
+            const remainingPosts = Math.max(filteredPosts.length - visiblePosts.length, 0);
 
             // Update post count display
             if (postCount) {
-                if (filteredPosts.length === blogData.posts.length) {
-                    postCount.textContent = `Showing all ${filteredPosts.length} articles`;
-                } else {
-                    postCount.textContent = `Showing ${filteredPosts.length} of ${blogData.posts.length} articles`;
-                }
+                postCount.textContent = `Showing ${visiblePosts.length} of ${filteredPosts.length} articles`;
             }
 
             if (filteredPosts.length === 0) {
                 grid.classList.add('hidden');
                 noResults.classList.remove('hidden');
+                loadMore.hidden = true;
                 if (postCount) postCount.textContent = '';
                 return;
             }
@@ -3113,9 +3196,20 @@
             grid.classList.remove('hidden');
             noResults.classList.add('hidden');
 
+            loadMore.hidden = remainingPosts === 0;
+            if (remainingPosts > 0) {
+                const nextBatchSize = Math.min(LOAD_MORE_STEP, remainingPosts);
+                loadMoreButton.textContent = `Show ${nextBatchSize} more article${nextBatchSize === 1 ? '' : 's'}`;
+                loadMoreStatus.textContent = `${remainingPosts} more article${remainingPosts === 1 ? '' : 's'} available`;
+            }
+
+            // Keep every matching article link in the document for resilient
+            // discovery while progressively revealing cards to visitors.
             grid.innerHTML = filteredPosts.map((post, index) => {
-                const loadingStrategy = index < 2 ? 'eager' : 'lazy';
+                const loadingStrategy = index < 3 ? 'eager' : 'lazy';
                 const fetchPriority = index === 0 ? 'high' : 'auto';
+                const paginationClass = index >= visiblePostCount ? ' is-pagination-hidden' : '';
+                const paginationState = index >= visiblePostCount ? ' aria-hidden="true"' : '';
                 // URL encode the image path to handle spaces and special characters in filenames
                 // Split path and encode each segment to properly handle ? and & characters
                 const postUrl = post.url.startsWith('/') ? post.url : `/${post.url}`;
@@ -3128,17 +3222,17 @@
                         return encodeURIComponent(part);
                     }
                 }).join('/');
-                const isTallRemoteProduct = /(?:control4-(?:sr260|neeo|halo(?:-touch)?)-blue|urc-(?:mx-990|trc-1480)-blue)\.(?:png|webp)$/i.test(heroImagePath);
-                const imageClass = isTallRemoteProduct ? ' class="product-fit"' : '';
-                const imageStyle = isTallRemoteProduct
+                const needsProductFit = /(?:control4-(?:sr260|neeo|halo(?:-touch)?)-blue|urc-(?:mx-990|trc-1480)-blue|(?:^|[-_])(?:blue|lineup)(?:[-_.]|$)|remote-comparison-hero|speaker-comparison-hero|tier-comparison-hero|model-comparison-hero)\.(?:png|webp|jpe?g)$/i.test(heroImagePath);
+                const imageClass = needsProductFit ? ' class="product-fit"' : '';
+                const imageStyle = needsProductFit
                     ? 'width: 100%; height: 100%; object-fit: contain; padding: 0.45rem 1rem; background: #061628;'
                     : 'width: 100%; height: 100%; object-fit: cover;';
 
                 return `
-                <article class="blog-card">
+                <article class="blog-card${paginationClass}"${paginationState}>
                     <a href="${postUrl}" class="blog-card-image-link" style="text-decoration: none; color: inherit; display: block;">
                         <div class="blog-image-wrapper">
-                            <img src="/${encodedImagePath}" alt="${escapeHtml(post.title)}"${imageClass} loading="${loadingStrategy}" fetchpriority="${fetchPriority}" decoding="async" width="400" height="225" style="${imageStyle}" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #667eea 0%, #764ba2 100%)';">
+                            <img src="/${encodedImagePath}" alt="${escapeHtml(post.title)}"${imageClass} loading="${loadingStrategy}" fetchpriority="${fetchPriority}" decoding="async" width="400" height="225" style="${imageStyle}" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #071525 0%, #102a46 100%)';">
                         </div>
                     </a>
                     <div class="blog-card-content">
@@ -3178,6 +3272,7 @@
         function setupEventListeners() {
             const searchInput = document.getElementById('searchInput');
             const categorySelect = document.getElementById('categorySelect');
+            const loadMoreButton = document.getElementById('loadMoreButton');
             const applyFilters = () => filterPosts(categorySelect.value, searchInput.value);
 
             categorySelect.addEventListener('change', applyFilters);
@@ -3189,10 +3284,16 @@
                     applyFilters();
                 }, 300);
             });
+
+            loadMoreButton.addEventListener('click', function() {
+                visiblePostCount += LOAD_MORE_STEP;
+                renderPosts();
+            });
         }
 
         function filterPosts(category = null, searchQuery = '') {
             let posts = blogData.posts;
+            visiblePostCount = INITIAL_VISIBLE_POSTS;
 
             // Filter by category
             if (category && category !== 'all') {
