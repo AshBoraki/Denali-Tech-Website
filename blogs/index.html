@@ -760,6 +760,107 @@
             margin-bottom: 1.5rem;
         }
 
+        .popular-guides {
+            margin: 0 0 2rem;
+            padding: clamp(1.1rem, 2.8vw, 1.6rem);
+            border: 1px solid var(--border-color);
+            border-top: 3px solid var(--accent-primary);
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        :root[data-theme='light'] .popular-guides,
+        body.light-theme .popular-guides {
+            background: #f8fafc;
+        }
+
+        .popular-guides-header {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .popular-guides h2 {
+            margin: 0 0 0.25rem;
+            color: var(--text-primary);
+            font-family: var(--font-heading);
+            font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+        }
+
+        .popular-guides p {
+            margin: 0;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .popular-guides-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.8rem;
+        }
+
+        .popular-guide {
+            display: grid;
+            grid-template-columns: 92px minmax(0, 1fr);
+            min-height: 96px;
+            overflow: hidden;
+            color: var(--text-primary);
+            background: var(--surface-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            text-decoration: none;
+            transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+        }
+
+        .popular-guide:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(15, 23, 42, 0.12);
+        }
+
+        .popular-guide:focus-visible {
+            outline: 3px solid var(--accent-primary);
+            outline-offset: 3px;
+        }
+
+        .popular-guide img {
+            width: 100%;
+            height: 100%;
+            min-height: 96px;
+            object-fit: cover;
+            background: #071525;
+        }
+
+        .popular-guide img.popular-guide-product {
+            object-fit: contain;
+            padding: 0.35rem;
+            background: linear-gradient(135deg, #071525 0%, #102a46 100%);
+        }
+
+        .popular-guide-copy {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0.75rem;
+        }
+
+        .popular-guide-copy span {
+            margin-bottom: 0.25rem;
+            color: var(--accent-readable);
+            font-size: 0.72rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .popular-guide-copy strong {
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            line-height: 1.35;
+        }
+
         .blog-load-more {
             display: flex;
             flex-direction: column;
@@ -1180,6 +1281,19 @@
                 grid-template-columns: 1fr;
             }
 
+            .popular-guides-header {
+                display: block;
+            }
+
+            .popular-guides-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .popular-guide {
+                grid-template-columns: 108px minmax(0, 1fr);
+                min-height: 104px;
+            }
+
         .nav-links {
             display: none;
         }
@@ -1330,6 +1444,29 @@
                     <span>RSS</span>
                 </a>
             </div>
+
+            <section class="popular-guides" aria-labelledby="popular-guides-title">
+                <div class="popular-guides-header">
+                    <div>
+                        <h2 id="popular-guides-title">Popular guides readers choose</h2>
+                        <p>Start with the comparisons homeowners are reading most right now.</p>
+                    </div>
+                </div>
+                <div class="popular-guides-grid">
+                    <a class="popular-guide" href="/blogs/control4-t5-vs-t4-touchscreen-size-guide/">
+                        <img src="/Video/Blogs%20imge/Control4%20Touchscreens/control4-t5-kitchen-wall-touchscreen.jpg" alt="Control4 wall touchscreen installed in a kitchen" width="360" height="240" loading="eager" decoding="async">
+                        <span class="popular-guide-copy"><span>Touchscreens</span><strong>Control4 T5 vs T4: sizes and room fit</strong></span>
+                    </a>
+                    <a class="popular-guide" href="/blogs/control4-halo-remote-review/">
+                        <img class="popular-guide-product" src="/Video/Blogs%20imge/Control4%20Remote%20Comparison/control4-remote-comparison-hero-v3.webp" alt="Four Control4 remote models shown side by side" width="360" height="240" loading="eager" decoding="async">
+                        <span class="popular-guide-copy"><span>Remotes</span><strong>Halo Touch, Halo, Neeo and SR-260 compared</strong></span>
+                    </a>
+                    <a class="popular-guide" href="/blogs/araknis-access-point-model-comparison/">
+                        <img class="popular-guide-product" src="/Video/Blogs%20imge/Araknis%20AP%20Comparison/araknis-model-lineup-blue.png" alt="Araknis indoor and outdoor access points shown together" width="360" height="240" loading="lazy" decoding="async">
+                        <span class="popular-guide-copy"><span>WiFi</span><strong>Araknis access points: which model fits</strong></span>
+                    </a>
+                </div>
+            </section>
 
             <div class="blog-grid" id="blogGrid">
                 <!-- Crawlable server-rendered cards. JavaScript enhances these with search and filtering. -->
