@@ -1,3 +1,7 @@
 .playwright-cli/
 output/
 tools/__pycache__/
+
+# Private DTNT fulfillment records must never be published with this static site.
+Net-tools/orders/
+Net-tools/licenses/
