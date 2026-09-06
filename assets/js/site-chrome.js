@@ -5,6 +5,16 @@
   var projectPlanHref = "/contact/?source=site-navigation#booking";
   var whatsappMessageHref = "https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20would%20rather%20use%20WhatsApp.%20Can%20you%20help%20me%20with%3A";
 
+  // Keep non-sensitive enquiry context across pages. This local helper is
+  // optional: loading it must never delay navigation or the contact form.
+  function loadLeadContext() {
+    if (window.denaliLeads || document.querySelector('script[src*="/assets/js/inquiry-support.js"]')) return;
+    var script = document.createElement("script");
+    script.src = "/assets/js/inquiry-support.js?v=20260905";
+    script.async = true;
+    document.head.appendChild(script);
+  }
+
   var navItems = [
     { label: "Home", href: "/" },
     { label: "Services", href: "/services/" },
@@ -337,6 +347,7 @@
 
   function init() {
     if (document.body.dataset.denaliChromeReady === "true") return;
+    loadLeadContext();
     document.body.dataset.denaliChromeReady = "true";
     document.body.classList.add("dt-unified-chrome", "light-theme");
     document.documentElement.setAttribute("data-theme", "light");
@@ -348,6 +359,16 @@
     spacer.setAttribute("data-denali-chrome", "site-header-spacer");
     document.body.insertBefore(header, document.body.firstChild);
     document.body.insertBefore(spacer, header.nextSibling);
+    // Keep the skip link first in keyboard order after injecting navigation.
+    var skipLink = document.querySelector("a.skip-link");
+    var mainContent = document.querySelector("main");
+    if (skipLink && mainContent) {
+      if (!mainContent.id) mainContent.id = "dt-main-content";
+      if (!mainContent.hasAttribute("tabindex")) mainContent.setAttribute("tabindex", "-1");
+      // Some legacy pages use <base href="/">; a bare fragment would target home.
+      skipLink.href = window.location.pathname + window.location.search + "#" + mainContent.id;
+      document.body.insertBefore(skipLink, header);
+    }
     document.body.appendChild(buildFooter());
   }
 

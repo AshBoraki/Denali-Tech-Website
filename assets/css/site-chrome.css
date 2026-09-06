@@ -709,6 +709,18 @@ body.dt-site-menu-lock {
   }
 }
 
+/* Article bylines inherit their readable metadata color on both light and dark pages. */
+:is(.blog-meta, .case-meta, .meta) a[href] {
+  color: inherit !important;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+:is(.blog-meta, .case-meta, .meta) a[href]:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
 @media (max-width: 360px) {
   .dt-site-brand span {
     max-width: 9.8rem;

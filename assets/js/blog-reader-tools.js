@@ -103,7 +103,7 @@
     var actionTitle = document.createElement("strong");
     actionTitle.textContent = "Planning this for your home?";
     var actionCopy = document.createElement("span");
-    actionCopy.textContent = "Send a room photo or model number. We can help you identify the practical next step.";
+    actionCopy.textContent = "Describe the room and include the model number if you have it. We can help you identify the practical next step.";
     var actionLink = document.createElement("a");
     actionLink.href = "/contact/?source=blog-guide&guide=" + encodeURIComponent(path.split("/").filter(Boolean).pop()) + "#booking";
     actionLink.textContent = "Ask about this guide";

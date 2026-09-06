@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="/assets/js/microsoft-clarity.js" defer></script>
+  <script src="/assets/js/inquiry-support.js?v=20260905" defer></script>
   <meta name="facebook-pixel-id" content="1475625250840344">
   <script>
     (function() {
@@ -655,8 +657,8 @@
           </div>
           <div class="cta-row" aria-label="Primary actions">
             <a class="btn btn-primary denali-contact-track" data-contact-method="whatsapp_landing_hero" href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20want%20help%20with%20my%20whole-home%20WiFi%20or%20smart%20home%20network." target="_blank" rel="noopener noreferrer">Message on WhatsApp</a>
-            <a class="btn btn-outline denali-contact-track" data-contact-method="email_landing_hero" href="mailto:service@denalitechs.com?subject=Whole-home%20WiFi%20or%20smart%20home%20network%20help&body=Hi%20Denali%20Tech%2C%0A%0AI%20want%20help%20with%3A%0AMy%20home%20or%20business%20is%20in%3A%0ABest%20way%20to%20reach%20me%3A">Email Project Details</a>
-            <a class="btn btn-outline denali-contact-track" data-contact-method="form_landing_hero" href="#consultation-form">Send Photos</a>
+            <a class="btn btn-outline denali-contact-track" data-contact-method="email_landing_hero" href="mailto:services@denalitechs.com?subject=Whole-home%20WiFi%20or%20smart%20home%20network%20help&body=Hi%20Denali%20Tech%2C%0A%0AI%20want%20help%20with%3A%0AMy%20home%20or%20business%20is%20in%3A%0ABest%20way%20to%20reach%20me%3A">Email Project Details</a>
+            <a class="btn btn-outline denali-contact-track" data-contact-method="form_landing_hero" href="#consultation-form">Describe Your Project</a>
           </div>
           <div class="hero-value" aria-label="What you get with Denali Tech">
             <h3>What You Get</h3>
@@ -700,7 +702,7 @@
             <input type="hidden" name="access_key" value="9007b329-be2c-40a8-af09-d652f0f5b566">
             <input type="hidden" name="subject" value="Denali Tech - Whole-Home WiFi Consultation Request">
             <input type="hidden" name="from_name" value="Denali Tech Wi-Fi Landing Page">
-            <input type="hidden" name="to_email" value="service@denalitechs.com">
+            <input type="hidden" name="to_email" value="services@denalitechs.com">
             <input type="hidden" name="redirect" value="https://denalitechs.com/thank-you/">
             <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
             <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -816,8 +818,28 @@
       var MIN_FILL_MS = 2500;
       var MIN_INTERACTIONS = 1;
       var COOLDOWN_MS = 45000;
+      var lastSuccessfulSubmitAt = 0;
       var interactions = 0;
+      var submitting = false;
+      var leadDetails = { form_id: 'network-consultation-form', lead_type: 'network_consultation' };
       var spamLinkPattern = /(https?:\/\/|www\.)/i;
+
+      async function sendValidatedInquiry(form) {
+        if (window.denaliLeads) return window.denaliLeads.submit(form, leadDetails);
+        // Delivery must work even when optional inquiry/measurement support is blocked.
+        var controller = typeof AbortController === 'function' ? new AbortController() : null;
+        var timer = controller ? setTimeout(function () { controller.abort(); }, 20000) : null;
+        try {
+          var response = await fetch(form.action, {
+            method: 'POST', headers: { Accept: 'application/json' },
+            body: new FormData(form), signal: controller ? controller.signal : undefined
+          });
+          var data = await response.json().catch(function () { return {}; });
+          return { success: response.ok && data && data.success === true };
+        } finally {
+          if (timer !== null) clearTimeout(timer);
+        }
+      }
 
       var fields = {
         name: document.getElementById('name'),
@@ -836,6 +858,9 @@
       form.addEventListener('change', function () { interactions += 1; });
       form.addEventListener('keydown', function () { interactions += 1; });
       form.addEventListener('pointerdown', function () { interactions += 1; });
+      form.addEventListener('focusin', function () {
+        if (window.denaliLeads) window.denaliLeads.track('form_start', leadDetails);
+      }, { once: true });
 
       function setError(id, message) {
         var el = document.getElementById(id);
@@ -870,90 +895,27 @@
       }
 
       function canSubmitAgain() {
+        var lastSubmit = lastSuccessfulSubmitAt;
         try {
-          var lastSubmit = Number(localStorage.getItem('denali_wifi_last_submit') || 0);
-          return !lastSubmit || (Date.now() - lastSubmit) > COOLDOWN_MS;
-        } catch (error) {
-          return true;
-        }
+          var stored = Number(localStorage.getItem('denali_wifi_last_submit') || 0);
+          if (Number.isFinite(stored) && stored > 0 && stored <= Date.now()) lastSubmit = Math.max(lastSubmit, stored);
+        } catch (error) { /* Keep the in-memory cooldown when storage is unavailable. */ }
+        return !lastSubmit || (Date.now() - lastSubmit) >= COOLDOWN_MS;
       }
 
       function rememberSubmitTime() {
+        lastSuccessfulSubmitAt = Date.now();
         try {
-          localStorage.setItem('denali_wifi_last_submit', String(Date.now()));
+          localStorage.setItem('denali_wifi_last_submit', String(lastSuccessfulSubmitAt));
         } catch (error) {
           /* no-op */
         }
       }
 
-      function setHiddenField(id, value) {
-        var input = document.getElementById(id);
-        if (input) input.value = value || '';
-      }
-
-      function captureAttribution() {
-        var params = new URLSearchParams(window.location.search);
-        setHiddenField('utm-source', params.get('utm_source'));
-        setHiddenField('utm-medium', params.get('utm_medium'));
-        setHiddenField('utm-campaign', params.get('utm_campaign'));
-        setHiddenField('utm-content', params.get('utm_content'));
-        setHiddenField('utm-term', params.get('utm_term'));
-        setHiddenField('fbclid', params.get('fbclid'));
-        setHiddenField('msclkid', params.get('msclkid'));
-        setHiddenField('gclid', params.get('gclid'));
-        setHiddenField('landing-page', window.location.href);
-        setHiddenField('referrer', document.referrer || '');
-      }
-
-      captureAttribution();
-
-      function trackDenaliIntent(method, source) {
-        var payload = {
-          contact_method: method || 'unknown',
-          source: source || 'network_consultation_landing',
-          lead_type: 'network_consultation'
-        };
-        var isDirectLead = /^whatsapp|^email/.test(payload.contact_method);
-
-        if (window.dataLayer && typeof window.dataLayer.push === 'function') {
-          window.dataLayer.push({
-            event: 'denali_contact_intent',
-            contact_method: payload.contact_method,
-            lead_type: payload.lead_type,
-            source: payload.source
-          });
-
-          if (isDirectLead) {
-            window.dataLayer.push({
-              event: 'denali_generate_lead',
-              contact_method: payload.contact_method,
-              lead_type: payload.lead_type,
-              source: payload.source
-            });
-          }
-        }
-
-        window.uetq = window.uetq || [];
-        window.uetq.push('event', 'lead_intent', {
-          event_category: 'lead',
-          event_label: payload.contact_method,
-          contact_method: payload.contact_method,
-          lead_type: payload.lead_type
-        });
-
-        if (isDirectLead) {
-          window.uetq.push('event', 'generate_lead', {
-            event_category: 'lead',
-            event_label: payload.contact_method,
-            contact_method: payload.contact_method,
-            lead_type: payload.lead_type
-          });
-        }
-      }
-
-      document.querySelectorAll('.denali-contact-track').forEach(function (link) {
+      // Shared tracking distinguishes channel clicks from accepted inquiries.
+      document.querySelectorAll('a[href="#consultation-form"]').forEach(function (link) {
         link.addEventListener('click', function () {
-          trackDenaliIntent(link.getAttribute('data-contact-method'), 'landing_click');
+          if (window.denaliLeads) window.denaliLeads.track('contact_intent', { contact_method: 'form' });
         });
       });
 
@@ -1021,62 +983,48 @@
 
       form.addEventListener('submit', async function (event) {
         event.preventDefault();
-        if (!validate()) return;
+        if (submitting) return;
+        if (!validate()) {
+          if (window.denaliLeads) window.denaliLeads.track('form_validation_error', Object.assign({}, leadDetails, { reason: 'validation' }));
+          return;
+        }
 
         if (!getCaptchaToken()) {
           await new Promise(function (resolve) { setTimeout(resolve, 500); });
         }
         if (!getCaptchaToken()) {
+          if (window.denaliLeads) window.denaliLeads.track('form_validation_error', Object.assign({}, leadDetails, { reason: 'captcha' }));
           setMessage('Please complete the captcha verification before submitting.', true);
           return;
         }
 
         if (!canSubmitAgain()) {
+          if (window.denaliLeads) window.denaliLeads.track('form_validation_error', Object.assign({}, leadDetails, { reason: 'rate_limit' }));
           setMessage('Please wait about a minute before sending another request.', true);
           return;
         }
 
+        if (submitting) return;
+        submitting = true;
         submitBtn.disabled = true;
         setMessage('Submitting your request...', false);
 
-        fetch(form.action, {
-          method: 'POST',
-          body: new FormData(form)
-        })
-          .then(function (response) { return response.json(); })
-          .then(function (data) {
-            if (data && data.success) {
-              if (window.denaliMetaPixel && typeof window.denaliMetaPixel.trackLeadOnce === 'function') {
-                window.denaliMetaPixel.trackLeadOnce({
-                  lead_type: 'network_consultation',
-                  form_id: 'network-consultation-form'
-                });
-              } else if (typeof fbq === 'function') {
-                fbq('track', 'Lead', {
-                  lead_type: 'network_consultation',
-                  form_id: 'network-consultation-form'
-                });
-              }
-              trackDenaliIntent('form_submit', 'landing_form_success');
-              window.uetq = window.uetq || [];
-              window.uetq.push('event', 'generate_lead', {
-                event_category: 'lead',
-                event_label: 'network_consultation_form',
-                lead_type: 'network_consultation',
-                form_id: 'network-consultation-form'
-              });
-              rememberSubmitTime();
-              setMessage('Thanks. Redirecting...', false);
-              window.location.href = form.querySelector('[name="redirect"]').value;
-            } else {
-              setMessage((data && data.message) || 'Something went wrong. Please try again.', true);
-              submitBtn.disabled = false;
-            }
-          })
-          .catch(function () {
-            setMessage('Network error. Please try again.', true);
+        try {
+          var data = await sendValidatedInquiry(form);
+          if (data.success) {
+            rememberSubmitTime();
+            setMessage('Thanks. Redirecting...', false);
+            window.location.href = form.querySelector('[name="redirect"]').value;
+          } else {
+            setMessage(data.message || 'Something went wrong. Please try again.', true);
             submitBtn.disabled = false;
-          });
+          }
+        } catch (error) {
+          setMessage(error.name === 'AbortError' ? 'The request timed out. Please try again or message us on WhatsApp.' : 'We could not send your request. Please check your connection, or message us on WhatsApp.', true);
+          submitBtn.disabled = false;
+        } finally {
+          submitting = false;
+        }
       });
     })();
   </script>

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <script src="/assets/js/microsoft-clarity.js" defer></script>
+    <script src="/assets/js/inquiry-support.js?v=20260905" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <script src="/assets/js/theme.js?v=20260602" defer></script>
@@ -2113,7 +2114,7 @@
       "@id": "https://denalitechs.com/#business",
       "url": "https://denalitechs.com/contact/",
       "telephone": "+1-312-439-7500",
-      "email": "service@denalitechs.com",
+      "email": "services@denalitechs.com",
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
@@ -2155,8 +2156,8 @@
     <link rel="stylesheet" href="/assets/css/mobile-menu.css">
 
 <script src="../assets/js/microsoft-uet.js" defer></script>
-    <link rel="stylesheet" href="/assets/css/site-chrome.css?v=20260829a">
-    <script src="/assets/js/site-chrome.js?v=20260829a" defer></script>
+    <link rel="stylesheet" href="/assets/css/site-chrome.css?v=20260905a">
+    <script src="/assets/js/site-chrome.js?v=20260905a" defer></script>
     <style id="contact-form-final-cleanup">
         /* Contact-page visual rhythm: one calm surface, not a stack of hard boxes. */
         .hero {
@@ -2266,6 +2267,23 @@
 
         .booking-form .field-hint a {
             color: #0f766e;
+        }
+
+        #booking-form-message:not(:empty) {
+            margin-bottom: 1.25rem;
+        }
+
+        .booking-form .field-error,
+        .booking-form .form-error-message {
+            color: #b91c1c !important;
+        }
+
+        .booking-form .form-success-message {
+            color: #166534;
+        }
+
+        .booking-form .form-info-message {
+            color: #9a3412;
         }
 
         .booking-form .form-group input,
@@ -2545,7 +2563,7 @@
                 <input type="hidden" name="access_key" value="ca7cbd62-eab8-45ad-9a9a-b1ee4d106668">
                     <input type="hidden" name="subject" value="New Denali Tech Project Details">
                     <input type="hidden" name="from_name" value="Denali Tech Website">
-                    <input type="hidden" name="to_email" value="service@denalitechs.com">
+                    <input type="hidden" name="to_email" value="services@denalitechs.com">
                     <input type="hidden" name="redirect" value="https://denalitechs.com/thank-you/">
                     <!-- Honeypot fields to catch bots -->
                     <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -2847,7 +2865,7 @@
                     <h4>Contact</h4>
                     <ul>
                         <li><a href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20would%20rather%20use%20WhatsApp.%20Can%20you%20help%20me%20with%3A" class="contact-item" data-copy="(312) 439-7500" target="_blank" rel="noopener noreferrer">WhatsApp / Call</a></li>
-                        <li><a href="mailto:service@denalitechs.com" class="contact-item">service@denalitechs.com</a></li>
+                        <li><a href="mailto:services@denalitechs.com" class="contact-item">services@denalitechs.com</a></li>
                         <li><span style="color: var(--text-secondary); line-height: 1.6; display: block;">Serving Chicago & Surrounding Areas</span></li>
                     </ul>
                 </div>
@@ -3089,6 +3107,30 @@
             const messageDiv = document.getElementById('booking-form-message');
             const formProgress = document.getElementById('form-progress');
             const formProgressBar = document.getElementById('form-progress-bar');
+            const leadDetails = { form_id: 'booking-form', lead_type: 'contact_form' };
+            let submissionInProgress = false;
+            if (bookingForm) {
+                bookingForm.addEventListener('focusin', function () {
+                    window.denaliLeads?.track('form_start', leadDetails);
+                }, { once: true });
+            }
+
+            async function sendValidatedInquiry(form) {
+                if (window.denaliLeads) return window.denaliLeads.submit(form, leadDetails);
+                // Sending stays available if optional inquiry/measurement support is blocked.
+                const controller = typeof AbortController === 'function' ? new AbortController() : null;
+                const timer = controller ? setTimeout(() => controller.abort(), 20000) : null;
+                try {
+                    const response = await fetch(form.action, {
+                        method: 'POST', headers: { Accept: 'application/json' },
+                        body: new FormData(form), signal: controller ? controller.signal : undefined
+                    });
+                    const data = await response.json().catch(() => ({}));
+                    return { success: response.ok && data && data.success === true };
+                } finally {
+                    if (timer !== null) clearTimeout(timer);
+                }
+            }
 
             // Enhanced Form Progress with Percentage
             function updateFormProgress() {
@@ -3199,42 +3241,6 @@
                 errors: [],
                 timeOnForm: 0,
 
-                emitLeadEvent() {
-                    const serviceField = bookingForm ? bookingForm.querySelector('[name="service_type"]') : null;
-                    const serviceType = serviceField ? serviceField.value || 'unknown' : 'unknown';
-                    const eventData = {
-                        event: 'generate_lead',
-                        lead_type: 'contact_form',
-                        form_id: 'booking-form',
-                        service_type: serviceType
-                    };
-
-                    window.dataLayer = window.dataLayer || [];
-                    window.dataLayer.push(eventData);
-
-                    if (typeof window.gtag === 'function') {
-                        window.gtag('event', 'generate_lead', {
-                            lead_type: 'contact_form',
-                            form_id: 'booking-form',
-                            service_type: serviceType
-                        });
-                    }
-
-                    if (window.denaliMetaPixel && typeof window.denaliMetaPixel.trackLeadOnce === 'function') {
-                        window.denaliMetaPixel.trackLeadOnce({
-                            lead_type: 'contact_form',
-                            form_id: 'booking-form',
-                            service_type: serviceType
-                        });
-                    } else if (typeof window.fbq === 'function') {
-                        window.fbq('track', 'Lead', {
-                            lead_type: 'contact_form',
-                            form_id: 'booking-form',
-                            service_type: serviceType
-                        });
-                    }
-                },
-
                 trackFieldInteraction(fieldName) {
                     if (!this.fieldInteractions[fieldName]) {
                         this.fieldInteractions[fieldName] = {
@@ -3264,11 +3270,8 @@
                         timestamp: Date.now()
                     };
 
-                    // You can send this to your analytics service here
-                    // Example: sendToAnalytics(analyticsData);
-                    if (success) {
-                        this.emitLeadEvent();
-                    }
+                    // Field values and free-text error details stay in the browser.
+                    // Accepted leads and failure signals are emitted by denaliLeads.submit.
                 }
             };
 
@@ -3503,48 +3506,20 @@
 
             }
 
-            // Enhanced security: Rate limiting and spam detection
-            let lastSubmissionTime = 0;
-            let submissionAttempts = 0;
-            const minTimeBetweenSubmissions = 5000; // 5 seconds
-            const maxSubmissionsPerHour = 3;
-            const submissionHistory = JSON.parse(localStorage.getItem('form_submission_history') || '[]');
+            // Browser-side courtesy limit; provider-side anti-spam remains authoritative.
+            const rateLimiter = window.denaliLeads?.createRateLimiter({
+                key: 'form_submission_history', windowMs: 60 * 60 * 1000,
+                minIntervalMs: 5000, max: 3
+            });
 
             function checkRateLimit() {
-                const now = Date.now();
-                const oneHourAgo = now - (60 * 60 * 1000);
-
-                // Clean old submissions
-                const recentSubmissions = submissionHistory.filter(time => time > oneHourAgo);
-                localStorage.setItem('form_submission_history', JSON.stringify(recentSubmissions));
-
-                // Check if too many submissions
-                if (recentSubmissions.length >= maxSubmissionsPerHour) {
-                    return {
-                        allowed: false,
-                        message: `Too many submission attempts. Please wait ${Math.ceil((recentSubmissions[0] + (60 * 60 * 1000) - now) / 60000)} minutes before trying again.`
-                    };
-                }
-
-                // Check minimum time between submissions
-                if (now - lastSubmissionTime < minTimeBetweenSubmissions) {
-                    return {
-                        allowed: false,
-                        message: 'Please wait a moment before submitting again.'
-                    };
-                }
-
-                return { allowed: true };
+                const result = rateLimiter ? rateLimiter.check() : { allowed: true };
+                if (!result.allowed) result.message = `Please wait ${Math.max(1, Math.ceil(result.waitMs / 60000))} minute(s) before sending another request, or message us on WhatsApp.`;
+                return result;
             }
 
             function recordSubmission() {
-                const now = Date.now();
-                lastSubmissionTime = now;
-                submissionAttempts++;
-
-                const history = JSON.parse(localStorage.getItem('form_submission_history') || '[]');
-                history.push(now);
-                localStorage.setItem('form_submission_history', JSON.stringify(history));
+                if (rateLimiter) rateLimiter.record();
             }
 
             if (bookingForm) {
@@ -3552,6 +3527,7 @@
 
                 bookingForm.addEventListener('submit', async function(e) {
                     e.preventDefault();
+                    if (submissionInProgress) return;
 
                     // Check honeypot fields - if filled, it's a bot
                     const honeypot1 = bookingForm.querySelector('input[name="website"]');
@@ -3567,6 +3543,7 @@
                     const requiredFields = bookingForm.querySelectorAll('input[required], select[required], textarea[required]');
                     const invalidFields = Array.from(requiredFields).filter(field => !validateField(field, true));
                     if (invalidFields.length) {
+                        window.denaliLeads?.track('form_validation_error', { ...leadDetails, reason: 'validation' });
                         if (messageDiv) {
                             const errorDiv = document.createElement('div');
                             errorDiv.className = 'form-error-message';
@@ -3589,6 +3566,7 @@
                     }
 
                     if (!hCaptcha || !hCaptcha.value) {
+                        window.denaliLeads?.track('form_validation_error', { ...leadDetails, reason: 'captcha' });
                         const captchaError = document.getElementById('captcha-error');
                         if (captchaError) {
                             captchaError.textContent = 'Please complete the captcha verification before submitting.';
@@ -3608,9 +3586,13 @@
                         return;
                     }
 
+                    // Another submit may have started while CAPTCHA initialization yielded.
+                    if (submissionInProgress) return;
+
                     // Enhanced rate limiting check
                     const rateLimitCheck = checkRateLimit();
                     if (!rateLimitCheck.allowed) {
+                        window.denaliLeads?.track('form_validation_error', { ...leadDetails, reason: 'rate_limit' });
                         if (messageDiv) {
                             const errorDiv = document.createElement('div');
                             errorDiv.className = 'form-error-message';
@@ -3631,6 +3613,7 @@
                     }
 
                     recordSubmission();
+                    submissionInProgress = true;
 
                     const submitBtn = bookingForm.querySelector('button[type="submit"]');
                     const btnText = submitBtn?.querySelector('.btn-text');
@@ -3657,18 +3640,10 @@
                         messageDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     }
 
-                    const formData = new FormData(bookingForm);
-
                     try {
-                        const res = await fetch('https://api.web3forms.com/submit', {
-                            method: 'POST',
-                            headers: { 'Accept': 'application/json' },
-                            body: formData
-                        });
+                        const responseData = await sendValidatedInquiry(bookingForm);
 
-                        const responseData = await res.json().catch(() => ({}));
-
-                        if (res.ok && responseData && responseData.success) {
+                        if (responseData.success) {
                             // Track successful submission
                             formAnalytics.trackSubmission(true);
                             // Redirect to thank you page
@@ -3679,11 +3654,12 @@
                             const errorMsg = responseData?.message || 'There was an error submitting your request.';
                             const errorDiv = document.createElement('div');
                             errorDiv.className = 'form-error-message';
-                            errorDiv.textContent = `${errorMsg} Please try again or message us on WhatsApp.`;
+                            errorDiv.textContent = errorMsg;
                             messageDiv.textContent = '';
                             messageDiv.appendChild(errorDiv);
                             if (submitBtn) {
                                 submitBtn.disabled = false;
+                                submitBtn.classList.remove('submitting');
                                 const btnText = submitBtn.querySelector('.btn-text');
                                 const btnLoader = submitBtn.querySelector('.btn-loader');
                                 if (btnText) btnText.textContent = 'Send Project Details';
@@ -3691,7 +3667,7 @@
                             }
                         }
                     } catch (err) {
-                        const errorMsg = (err.message && err.message.includes('fetch')) ? 'Network error. Please check your connection and try again.' : 'There was an error submitting your request.';
+                        const errorMsg = err.name === 'AbortError' ? 'The request timed out. Please try again.' : 'We could not send your request. Please check your connection and try again.';
                         const errorDiv = document.createElement('div');
                         errorDiv.className = 'form-error-message';
                         errorDiv.textContent = `${errorMsg} Or message us on WhatsApp.`;
@@ -3699,11 +3675,14 @@
                         messageDiv.appendChild(errorDiv);
                         if (submitBtn) {
                             submitBtn.disabled = false;
+                            submitBtn.classList.remove('submitting');
                             const btnText = submitBtn.querySelector('.btn-text');
                             const btnLoader = submitBtn.querySelector('.btn-loader');
                             if (btnText) btnText.textContent = 'Send Project Details';
                             if (btnLoader) btnLoader.style.display = 'none';
                         }
+                    } finally {
+                        submissionInProgress = false;
                     }
                 });
             }
