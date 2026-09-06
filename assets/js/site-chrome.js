@@ -15,6 +15,17 @@
     document.head.appendChild(script);
   }
 
+  function loadPublicAnalytics() {
+    try {
+      if (!/^(?:www\.)?denalitechs\.com$/i.test(window.location.hostname)) return;
+      if (window.denaliPublicAnalyticsScheduled || document.querySelector('script[src*="/assets/js/public-analytics.js"]')) return;
+      var script = document.createElement("script");
+      script.src = "/assets/js/public-analytics.js?v=20260906";
+      script.async = true;
+      document.head.appendChild(script);
+    } catch (error) { /* Optional analytics must not interrupt navigation construction. */ }
+  }
+
   var navItems = [
     { label: "Home", href: "/" },
     { label: "Services", href: "/services/" },
@@ -348,6 +359,7 @@
   function init() {
     if (document.body.dataset.denaliChromeReady === "true") return;
     loadLeadContext();
+    loadPublicAnalytics();
     document.body.dataset.denaliChromeReady = "true";
     document.body.classList.add("dt-unified-chrome", "light-theme");
     document.documentElement.setAttribute("data-theme", "light");
