@@ -37,6 +37,14 @@ test('blog skip link targets the current-page focusable main landmark', () => {
   assert.doesNotMatch(hub, /href="\/#main-content"/);
 });
 
+test('blog source never exposes JavaScript URL placeholders as crawlable attributes', () => {
+  const hub = fs.readFileSync(new URL('../../blogs/index.html', import.meta.url), 'utf8');
+  const placeholders = [...hub.matchAll(/\b(?:src|href|srcset|poster|action)\s*=\s*["'][^"']*\$\{[^"']*["']/g)];
+  assert.deepEqual(placeholders.map(match => match[0]), []);
+  assert.match(hub, /setAttribute\('src', '\/' \+ encodedImagePath\)/);
+  assert.match(hub, /setAttribute\('href', postUrl\)/);
+});
+
 test('operator-facing FAQ is absent from both visible page and structured data', () => {
   const html = fs.readFileSync(new URL('../../blogs/snap-one-brand-stack-smart-home-guide/index.html', import.meta.url), 'utf8');
   assert.doesNotMatch(html, /Can this help AI search recommend Denali Tech/);
