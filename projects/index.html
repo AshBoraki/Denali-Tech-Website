@@ -717,12 +717,17 @@
             box-shadow: 0 18px 48px rgba(0, 0, 0, 0.24);
         }
 
+        #glenn-control4-theater {
+            scroll-margin-top: calc(var(--header-height, 90px) + 2rem);
+        }
+
         .video-poster,
         .video-player {
             position: relative;
             display: block;
             width: 100%;
             aspect-ratio: 16 / 9;
+            min-height: 200px;
             overflow: hidden;
             border: 0;
             background: #020617;
@@ -730,6 +735,12 @@
 
         .video-poster {
             text-decoration: none;
+        }
+
+        .video-poster:focus-visible,
+        .video-player:focus-visible {
+            outline: 3px solid #fdba74;
+            outline-offset: -3px;
         }
 
         .video-poster img {
@@ -750,6 +761,11 @@
         .video-poster:hover img {
             transform: scale(1.025);
             filter: brightness(1.06);
+        }
+
+        #glenn-control4-theater .video-poster img {
+            object-fit: contain;
+            transform: none;
         }
 
         .video-play-button {
@@ -794,6 +810,14 @@
             font-weight: 700;
         }
 
+        .video-story-label {
+            left: 12px;
+            right: auto;
+            max-width: calc(100% - 24px);
+            padding: 0.5rem 0.7rem;
+            font-size: 0.875rem;
+        }
+
         .video-card-copy {
             padding: 1.45rem;
         }
@@ -810,6 +834,25 @@
             margin: 0;
             color: #b8c3d4;
             line-height: 1.65;
+        }
+
+        .video-customer-quote {
+            margin: 1.2rem 0 0;
+            padding-left: 1rem;
+            border-left: 3px solid #fb923c;
+        }
+
+        .video-customer-quote p {
+            color: #f8fafc;
+            font-size: 1.15rem;
+            font-weight: 600;
+        }
+
+        .video-customer-quote footer {
+            margin-top: 0.5rem;
+            color: #b8c3d4;
+            font-size: 0.9rem;
+            line-height: 1.6;
         }
 
         .video-card-link {
@@ -1762,13 +1805,31 @@
             <header class="project-videos-heading">
                 <div class="project-videos-heading-copy">
                     <span class="project-videos-kicker">Real work, on site</span>
-                    <h2 id="project-videos-heading">Watch the difference a clean installation makes.</h2>
-                    <p>These project videos show the work behind the finished room—from organized wiring and equipment racks to outdoor WiFi and theater control.</p>
+                    <h2 id="project-videos-heading">See our work. Hear from a homeowner.</h2>
+                    <p>Real homes, practical improvements—from simpler theater controls to organized wiring and outdoor WiFi.</p>
                 </div>
                 <a class="video-channel-link" href="https://www.youtube.com/@denalitechav/videos" target="_blank" rel="noopener noreferrer">View the full video library</a>
             </header>
 
             <div class="project-video-feature-grid">
+                <article class="project-video-card" id="glenn-control4-theater" aria-labelledby="glenn-control4-theater-title">
+                    <a class="video-poster" href="https://www.youtube.com/watch?v=trIB-ld2lQA" target="_blank" rel="noopener noreferrer" data-video-id="trIB-ld2lQA" data-video-title="Glenn's Control4 theater story and equipment tour" aria-label="Watch Glenn’s story (4:16)">
+                        <img src="/Video/Project%20videos/glenn-control4-theater.webp" alt="Glenn beside his projection screen and theater speakers" loading="lazy" decoding="async" width="1280" height="720">
+                        <span class="video-play-button" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
+                        <span class="video-duration video-story-label">Watch Glenn’s story (4:16)</span>
+                    </a>
+                    <div class="video-card-copy">
+                        <span class="video-card-kicker">A homeowner’s story</span>
+                        <h3 id="glenn-control4-theater-title">An exceptional theater. Finally, simple to use.</h3>
+                        <p>Glenn already owned an impressive theater. Denali Tech integrated his existing equipment with Control4 to make daily operation easier for him and his guests.</p>
+                        <blockquote class="video-customer-quote">
+                            <p>“It’s been a real lifesaver for me.”</p>
+                            <footer>Glenn, homeowner</footer>
+                        </blockquote>
+                        <a class="video-card-link" href="https://www.youtube.com/watch?v=trIB-ld2lQA&amp;t=58s" target="_blank" rel="noopener noreferrer">Hear Glenn at 0:58 on YouTube</a>
+                    </div>
+                </article>
+
                 <article class="project-video-card">
                     <a class="video-poster" href="https://www.youtube.com/shorts/c1XsFCtvaUI" target="_blank" rel="noopener noreferrer" data-video-id="c1XsFCtvaUI" data-video-title="Structured wiring before and after">
                         <img src="/Video/Project%20videos/rack-before-after.webp" alt="Organized Wirepath structured wiring enclosure completed by Denali Tech" loading="lazy" width="1280" height="720">
@@ -1782,7 +1843,9 @@
                         <a class="video-card-link" href="/blogs/wirepath-structured-wiring-prewire-guide/">See how we plan structured wiring</a>
                     </div>
                 </article>
+            </div>
 
+            <div class="project-video-collection" aria-label="More Denali Tech project videos">
                 <article class="project-video-card">
                     <a class="video-poster" href="https://www.youtube.com/shorts/oZtPCCqB3I4" target="_blank" rel="noopener noreferrer" data-video-id="oZtPCCqB3I4" data-video-title="Araknis outdoor WiFi access point installation">
                         <img src="/Video/Project%20videos/araknis-outdoor-wifi.webp" alt="Araknis outdoor WiFi access point mounted by Denali Tech" loading="lazy" width="1280" height="720">
@@ -1795,17 +1858,6 @@
                         <p>An outdoor-rated Araknis access point is positioned and aimed to extend dependable WiFi to the deck, yard, cameras, and outdoor entertainment areas.</p>
                         <a class="video-card-link" href="/blogs/araknis-access-point-placement-guide/">See our access point placement guide</a>
                     </div>
-                </article>
-            </div>
-
-            <div class="project-video-collection" aria-label="More Denali Tech project videos">
-                <article class="project-video-card">
-                    <a class="video-poster" href="https://www.youtube.com/watch?v=trIB-ld2lQA" target="_blank" rel="noopener noreferrer" data-video-id="trIB-ld2lQA" data-video-title="Control4 theater and equipment tour">
-                        <img src="/Video/Project%20videos/control4-theater-tour.webp" alt="High-performance theater equipment controlled with Control4" loading="lazy" width="1280" height="720">
-                        <span class="video-play-button" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
-                        <span class="video-duration">4:17</span>
-                    </a>
-                    <div class="video-card-copy"><span class="video-card-kicker">Control4 &amp; theater</span><h3>One remote for a serious theater</h3></div>
                 </article>
 
                 <article class="project-video-card">
@@ -2342,20 +2394,24 @@
             // Load YouTube only after a visitor chooses a project video.
             document.querySelectorAll('.video-poster[data-video-id]').forEach((poster) => {
                 poster.addEventListener('click', (event) => {
-                    event.preventDefault();
+                    if (event.defaultPrevented || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
 
                     const videoId = poster.dataset.videoId;
                     const videoTitle = poster.dataset.videoTitle || 'Denali Tech project video';
-                    if (!videoId) return;
+                    if (!/^[A-Za-z0-9_-]{11}$/.test(videoId || '')) return;
+                    event.preventDefault();
+                    const restoreFocus = document.activeElement === poster;
 
                     const player = document.createElement('iframe');
                     player.className = 'video-player';
-                    player.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(videoId)}?autoplay=1&rel=0`;
+                    player.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(videoId) + '?autoplay=1&rel=0';
                     player.title = videoTitle;
                     player.loading = 'lazy';
                     player.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
                     player.allowFullscreen = true;
+                    player.tabIndex = 0;
                     poster.replaceWith(player);
+                    if (restoreFocus) player.focus({ preventScroll: true });
                 });
             });
 
