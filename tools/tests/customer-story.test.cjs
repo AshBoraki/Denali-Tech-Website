@@ -10,7 +10,6 @@ const crypto = require('node:crypto');
 const root = path.resolve(__dirname, '../..');
 const read = file => fs.readFileSync(path.join(root, file), 'utf8');
 const videoId = 'trIB-ld2lQA';
-const watchUrl = 'https://www.youtube.com/watch?v=' + videoId;
 const posterPath = '/Video/Project%20videos/glenn-control4-theater.webp';
 const c4 = read('control4-installer-chicago/index.html');
 const projects = read('projects/index.html');
@@ -90,17 +89,13 @@ function webpDimensions(file) {
   assert.fail('No supported WebP image chunk');
 }
 
-const c4Story = block(c4, 'section', 'glenn-story');
 const projectStory = block(projects, 'article', 'glenn-control4-theater');
-const c4ScriptMatch = c4.match(/<script id="control4-story-player-script">([\s\S]*?)<\/script>/);
-assert.ok(c4ScriptMatch, 'Missing scoped Control4 player script');
-const c4Script = c4ScriptMatch[1];
 const projectLoaderStart = projects.indexOf("document.querySelectorAll('.video-poster[data-video-id]')");
 const projectLoaderEnd = projects.indexOf('// Project Filtering', projectLoaderStart);
 assert.ok(projectLoaderStart >= 0 && projectLoaderEnd > projectLoaderStart, 'Missing Projects player loader');
 const projectScript = projects.slice(projectLoaderStart, projectLoaderEnd);
 
-function setup(kind, options = {}) {
+function setup(options = {}) {
   const created = [];
   const replaced = [];
   const focused = [];
@@ -119,10 +114,6 @@ function setup(kind, options = {}) {
   }));
   const document = {
     activeElement: options.focused === false ? null : posters[0],
-    querySelector(selector) {
-      assert.equal(selector, '#glenn-story .control4-story-poster');
-      return posters[0] || null;
-    },
     querySelectorAll(selector) {
       assert.equal(selector, '.video-poster[data-video-id]');
       return posters;
@@ -139,7 +130,7 @@ function setup(kind, options = {}) {
       return player;
     }
   };
-  vm.runInNewContext(kind === 'Control4' ? c4Script : projectScript, { document });
+  vm.runInNewContext(projectScript, { document });
   return {
     created, replaced, focused, posters,
     click(overrides = {}, index = 0) {
@@ -154,30 +145,26 @@ function setup(kind, options = {}) {
   };
 }
 
-test('both customer stories retain the exact quote and existing-equipment integration context', () => {
-  for (const story of [c4Story, projectStory]) {
-    const copy = text(story);
-    assert.ok(copy.includes('It’s been a real lifesaver for me.'));
-    assert.match(copy, /Glenn already owned [^.]*theater/i);
-    assert.match(copy, /Denali Tech integrated [^.]*existing [^.]*Control4/i);
-    assert.match(copy, /him and his guests/i);
-    assert.match(copy, /Glenn[^.]*Homeowner/i);
-    assert.doesNotMatch(copy, /(?:Chicago|North Shore|Northbrook) homeowner|built Glenn.s theater/i);
-    assert.match(copy, /4:16/);
-  }
+test('Projects retains the exact quote and existing-equipment integration context', () => {
+  const copy = text(projectStory);
+  assert.ok(copy.includes('It’s been a real lifesaver for me.'));
+  assert.match(copy, /Glenn already owned [^.]*theater/i);
+  assert.match(copy, /Denali Tech integrated [^.]*existing [^.]*Control4/i);
+  assert.match(copy, /him and his guests/i);
+  assert.match(copy, /Glenn[^.]*Homeowner/i);
+  assert.doesNotMatch(copy, /(?:Chicago|North Shore|Northbrook) homeowner|built Glenn.s theater/i);
+  assert.match(copy, /4:16/);
 });
 
 test('the real local poster exists and is 1280 by 720 WebP', () => {
   const file = path.join(root, decodeURIComponent(posterPath.slice(1)));
   assert.ok(fs.statSync(file).size > 0);
   assert.deepEqual(webpDimensions(file), [1280, 720]);
-  for (const story of [c4Story, projectStory]) {
-    const image = tags(story, 'img').find(tag => tag.src === posterPath);
-    assert.ok(image, 'Story must use the local Glenn poster');
-    assert.equal(image.width, '1280');
-    assert.equal(image.height, '720');
-    assert.ok(image.alt);
-  }
+  const image = tags(projectStory, 'img').find(tag => tag.src === posterPath);
+  assert.ok(image, 'Story must use the local Glenn poster');
+  assert.equal(image.width, '1280');
+  assert.equal(image.height, '720');
+  assert.ok(image.alt);
 });
 
 test('Projects retains six unique playable videos including Glenn exactly once', () => {
@@ -186,6 +173,9 @@ test('Projects retains six unique playable videos including Glenn exactly once',
   assert.equal(posters.length, 6);
   assert.deepEqual(posters.map(tag => tag['data-video-id']).sort(), expected.sort());
   assert.equal(new Set(posters.map(tag => tag['data-video-id'])).size, 6);
+  assert.equal((projects.match(/\bid="glenn-control4-theater"/g) || []).length, 1);
+  assert.equal(posters.filter(tag => tag['data-video-id'] === videoId).length, 1);
+  assert.equal(tags(projectStory, 'article')[0]['aria-labelledby'], 'glenn-control4-theater-title');
   for (const poster of posters) {
     const fallback = new URL(poster.href);
     const linkedId = fallback.searchParams.get('v') || fallback.pathname.split('/').pop();
@@ -195,60 +185,43 @@ test('Projects retains six unique playable videos including Glenn exactly once',
   }
 });
 
-test('both story posters are labelled real links, with a separate persistent YouTube fallback', () => {
-  for (const story of [c4Story, projectStory]) {
-    const links = tags(story, 'a').filter(tag => {
-      const url = new URL(tag.href, 'https://denalitechs.com');
-      return url.hostname === 'www.youtube.com' && url.searchParams.get('v') === videoId;
-    });
-    assert.ok(links.length >= 2, 'Keep a separate fallback after poster replacement');
-    const poster = links.find(tag => tag['data-video-id'] === videoId);
-    assert.ok(poster && poster['aria-label']);
-    assert.equal(poster.target, '_blank');
-    assert.match(poster.rel, /\bnoopener\b/);
+test('Projects poster is a labelled real link with a persistent YouTube fallback', () => {
+  const links = tags(projectStory, 'a').filter(tag => {
+    const url = new URL(tag.href, 'https://denalitechs.com');
+    return url.hostname === 'www.youtube.com' && url.searchParams.get('v') === videoId;
+  });
+  assert.ok(links.length >= 2, 'Keep a separate fallback after poster replacement');
+  const poster = links.find(tag => tag['data-video-id'] === videoId);
+  assert.ok(poster && poster['aria-label']);
+  for (const link of links) {
+    assert.equal(link.target, '_blank');
+    assert.match(link.rel, /\bnoopener\b/);
   }
 });
 
-test('home-theater teaser links to the unique Projects story without adding a player', () => {
-  const links = tags(theater, 'a').filter(tag => tag.href === '/projects/#glenn-control4-theater');
-  assert.equal(links.length, 1);
-  assert.equal((projects.match(/\bid="glenn-control4-theater"/g) || []).length, 1);
-  assert.match(text(theater), /Glenn.s existing theater became simpler to use with Control4/);
-  assert.match(text(theater), /Watch Glenn.s theater story\s*\(4:16\)/);
-  assert.equal(tags(theater, 'video').length, 0);
-  assert.equal(tags(theater, 'a').filter(tag => tag['data-video-id']).length, 0);
-});
-
-test('Control4 provides both Projects deep link and section landmark', () => {
-  assert.ok(tags(c4Story, 'a').some(tag => tag.href === '/projects/#glenn-control4-theater'));
-  const section = tags(c4Story, 'section')[0];
-  assert.equal(section['aria-labelledby'], 'glenn-story-title');
-  assert.equal((c4.match(/\bid="glenn-story"/g) || []).length, 1);
-});
-
 test('poster/player sizing and contain-fit are guarded without screenshot dependencies', () => {
-  assert.match(c4, /\.control4-story-player\s*\{[^}]*min-height:\s*200px;[^}]*aspect-ratio:\s*16\s*\/\s*9;/);
-  assert.match(c4, /\.control4-story-poster img\s*\{[^}]*object-fit:\s*contain;/);
   const projectPlayerCss = projects.match(/\.video-player\s*\{([^}]*)\}/)?.[1] || '';
   assert.match(projectPlayerCss, /min-height:\s*200px;/);
   assert.match(projectPlayerCss, /aspect-ratio:\s*16\s*\/\s*9;/);
   assert.match(projects, /#glenn-control4-theater \.video-poster img\s*\{[^}]*object-fit:\s*contain;/);
 });
 
-for (const [name, html] of [['Control4', c4], ['Projects', projects], ['Home theater', theater]]) {
-  test(name + ' contains no initial YouTube iframe or raw dynamic URL attribute', () => {
-    assert.equal(tags(html, 'iframe').filter(tag => /youtube(?:-nocookie)?\.com/.test(tag.src || '')).length, 0);
-    assert.equal((html.match(/\b(?:src|href)\s*=\s*(?:"[^"]*\$\{[^"]*"|'[^']*\$\{[^']*'|\$\{[^}]*\})/g) || []).length, 0);
+for (const [name, html] of [['Control4', c4], ['Home theater', theater]]) {
+  test(name + ' contains no Glenn story, teaser, reference or scoped player code', () => {
+    assert.ok(!/Glenn|trIB-ld2lQA|glenn-control4-theater|glenn-story|control4-story/i.test(html),
+      'Glenn story and its scoped CSS/JS must appear only on Projects');
+    assert.ok(!html.includes(posterPath));
   });
 }
 
-for (const kind of ['Control4', 'Projects']) {
-  test(kind + ' creates no player before activation', () => {
-    assert.equal(setup(kind).created.length, 0);
-  });
+test('Projects contains no initial YouTube iframe or raw dynamic URL attribute', () => {
+  assert.equal(tags(projects, 'iframe').filter(tag => /youtube(?:-nocookie)?\.com/.test(tag.src || '')).length, 0);
+  assert.equal((projects.match(/\b(?:src|href)\s*=\s*(?:"[^"]*\$\{[^"]*"|'[^']*\$\{[^']*'|\$\{[^}]*\})/g) || []).length, 0);
+  assert.equal(setup().created.length, 0);
+});
 
-  test(kind + ' activates the exact no-cookie video and transfers keyboard focus', () => {
-    const env = setup(kind);
+  test('Projects activates one exact no-cookie video and transfers keyboard focus', () => {
+    const env = setup();
     assert.equal(env.click(), true);
     assert.equal(env.created.length, 1);
     assert.equal(env.replaced.length, 1);
@@ -265,43 +238,35 @@ for (const kind of ['Control4', 'Projects']) {
   });
 
   for (const modifier of ['ctrlKey', 'metaKey', 'shiftKey', 'altKey']) {
-    test(kind + ' preserves ' + modifier + ' fallback navigation', () => {
-      const env = setup(kind);
+    test('Projects preserves ' + modifier + ' fallback navigation', () => {
+      const env = setup();
       assert.equal(env.click({ [modifier]: true }), false);
       assert.equal(env.created.length, 0);
     });
   }
 
-  test(kind + ' ignores non-primary and previously prevented clicks', () => {
-    const env = setup(kind);
+  test('Projects ignores non-primary and previously prevented clicks', () => {
+    const env = setup();
     assert.equal(env.click({ button: 1 }), false);
     assert.equal(env.click({ button: 2 }), false);
     assert.equal(env.click({ defaultPrevented: true }), false);
     assert.equal(env.created.length, 0);
   });
 
-  test(kind + ' rejects absent or malformed video IDs without swallowing the fallback link', () => {
+  test('Projects rejects absent or malformed video IDs without swallowing the fallback link', () => {
     for (const id of ['', undefined, 'invalid', '../bad/path', '<script>x</script>']) {
-      const env = setup(kind, { ids: [id] });
+      const env = setup({ ids: [id] });
       assert.equal(env.click(), false);
       assert.equal(env.created.length, 0);
     }
   });
 
-  test(kind + ' safely handles pages with no matching posters', () => {
-    assert.equal(setup(kind, { ids: [] }).created.length, 0);
+  test('Projects safely handles pages with no matching posters', () => {
+    assert.equal(setup({ ids: [] }).created.length, 0);
   });
-}
-
-test('Control4 prevents a second activation from constructing a duplicate iframe', () => {
-  const env = setup('Control4');
-  env.click();
-  env.click();
-  assert.equal(env.created.length, 1);
-});
 
 test('Projects does not move focus when the poster did not own keyboard focus', () => {
-  const env = setup('Projects', { focused: false });
+  const env = setup({ focused: false });
   env.click();
   assert.equal(env.focused.length, 0);
 });
