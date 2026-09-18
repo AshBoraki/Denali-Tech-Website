@@ -108,5 +108,33 @@
     "observedWidth": 243,
     "observedHeight": 162,
     "usageNote": "Observed and downloaded from ADI Brandfolder rendered asset inventory on 2026-06-03. Use only for Denali Tech marketing/sales content related to these products; do not imply ADI/Snap One endorsement."
+  },
+  {
+    "localPath": "assets/brandfolder/adi/wattbox-rack-install-1100.jpg",
+    "brand": "Wattbox",
+    "brandfolderName": "WB-800CH1U-IPVM-8-rack-install",
+    "brandfolderAssetId": "96fx5sjqxpn9wxw88p7v6q",
+    "sourceUrl": "https://brandfolder.com/adi/customers/#!asset/96fx5sjqxpn9wxw88p7v6q",
+    "observedWidth": 1100,
+    "observedHeight": 733,
+    "reviewedDate": "2026-09-18",
+    "collection": "Customers / Product Lifestyle Photos",
+    "permissionBasis": "ADI Marketing Content Agreement displayed in Customers collection; product-related marketing with basic resizing permitted. User reported accepting; agreement prompt no longer present.",
+    "processing": "Unmodified 1100px preview provided by Brandfolder; no AI editing or upscaling.",
+    "usageNote": "Manufacturer product-application example, not evidence of a Denali Tech installation."
+  },
+  {
+    "localPath": "assets/brandfolder/adi/strong-rack-cables-1100.jpg",
+    "brand": "Strong",
+    "brandfolderName": "Rack cables-1",
+    "brandfolderAssetId": "bv38rh865bb97frs4rqhcsh",
+    "sourceUrl": "https://brandfolder.com/adi/customers/#!asset/bv38rh865bb97frs4rqhcsh",
+    "observedWidth": 1100,
+    "observedHeight": 733,
+    "reviewedDate": "2026-09-18",
+    "collection": "Customers / Product Lifestyle Photos",
+    "permissionBasis": "ADI Marketing Content Agreement displayed in Customers collection; product-related marketing with basic resizing permitted. User reported accepting; agreement prompt no longer present.",
+    "processing": "Unmodified 1100px preview provided by Brandfolder; no AI editing or upscaling.",
+    "usageNote": "Manufacturer product-application example, not evidence of a Denali Tech installation."
   }
 ]
