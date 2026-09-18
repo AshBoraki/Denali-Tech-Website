@@ -1,6 +1,47 @@
 {
   "posts": [
     {
+      "id": "control4-safe-troubleshooting-checklist",
+      "title": "Control4 Not Working? Safe Checks Before You Call",
+      "slug": "control4-safe-troubleshooting-checklist",
+      "url": "/blogs/control4-safe-troubleshooting-checklist/",
+      "excerpt": "A calm, homeowner-safe Control4 troubleshooting checklist: what to check, what not to reset, and the details that help service start faster.",
+      "category": "Troubleshooting",
+      "tags": [
+        "Control4",
+        "Troubleshooting",
+        "Smart Home Service",
+        "Chicago"
+      ],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-09-17",
+      "updatedDate": "2026-09-17",
+      "readingTime": 3,
+      "featured": false,
+      "heroImage": "/assets/brandfolder/control4/control4-countertop-remote.webp"
+    },
+    {
+      "id": "control4-after-new-router-internet-provider",
+      "title": "Changing Internet Providers with Control4: A Safe Checklist",
+      "slug": "control4-after-new-router-internet-provider",
+      "url": "/blogs/control4-after-new-router-internet-provider/",
+      "excerpt": "Changing internet providers or routers? Use this homeowner checklist to protect your Control4 system and know when to schedule professional help.",
+      "category": "Network Planning Guide",
+      "tags": [
+        "Control4",
+        "Internet Provider",
+        "Router",
+        "Network Support",
+        "Chicago"
+      ],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-09-17",
+      "updatedDate": "2026-09-17",
+      "readingTime": 3,
+      "featured": false,
+      "heroImage": "/assets/brandfolder/control4/control4-vibrant-living-room.webp"
+    },
+    {
       "id": "control4-connect-subscription-guide",
       "title": "Control4 Connect: What the Subscription Does",
       "slug": "control4-connect-subscription-guide",
