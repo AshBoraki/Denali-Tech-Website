@@ -331,6 +331,7 @@
     ]));
     linkBar.appendChild(buildFooterLinkGroup("Start", [
       { label: "Contact", href: "/contact/" },
+      { label: "Planning tools", href: "/planning/" },
       { label: "Blog", href: "/blogs/" },
       { label: "FAQ", href: "/faq.html" },
       { label: "Smart Home Control", href: "/smart-home-control/" }

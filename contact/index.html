@@ -3,6 +3,8 @@
 <head>
     <script src="/assets/js/microsoft-clarity.js" defer></script>
     <script src="/assets/js/inquiry-support.js?v=20260905" defer></script>
+    <script src="/assets/js/planning-session.js?v=20260917" defer></script>
+    <script src="/assets/js/planning-contact.js?v=20260917" defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <script src="/assets/js/theme.js?v=20260602" defer></script>
@@ -3540,7 +3542,7 @@
                         return;
                     }
 
-                    const requiredFields = bookingForm.querySelectorAll('input[required], select[required], textarea[required]');
+                    const requiredFields = bookingForm.querySelectorAll('input[required], select[required], textarea[required], input[data-planner-optional-phone]');
                     const invalidFields = Array.from(requiredFields).filter(field => !validateField(field, true));
                     if (invalidFields.length) {
                         window.denaliLeads?.track('form_validation_error', { ...leadDetails, reason: 'validation' });
