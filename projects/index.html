@@ -871,8 +871,15 @@
         }
 
         .project-video-collection .project-video-card {
+            display: flex;
+            flex-direction: column;
             border-radius: 14px;
             box-shadow: none;
+        }
+
+        .project-video-collection .video-poster,
+        .project-video-collection .video-player {
+            flex-shrink: 0;
         }
 
         .project-video-collection .video-play-button {
@@ -881,12 +888,31 @@
         }
 
         .project-video-collection .video-card-copy {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
             padding: 1.05rem;
         }
 
         .project-video-collection .video-card-copy h3 {
-            margin: 0.35rem 0 0;
+            min-height: 2.8em;
+            margin: 0.35rem 0 0.65rem;
             font-size: 1rem;
+            line-height: 1.4;
+        }
+
+        .project-video-collection .video-card-copy p {
+            margin-bottom: 0.65rem;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .project-video-collection .video-card-link {
+            display: inline-flex;
+            align-items: center;
+            align-self: flex-start;
+            min-height: 44px;
+            margin-top: auto;
             line-height: 1.4;
         }
 
@@ -914,6 +940,10 @@
             .project-video-feature-grid,
             .project-video-collection {
                 grid-template-columns: 1fr;
+            }
+
+            .project-video-collection .video-card-copy h3 {
+                min-height: 0;
             }
 
             .video-channel-link {
@@ -1855,8 +1885,8 @@
                     <div class="video-card-copy">
                         <span class="video-card-kicker">Outdoor WiFi</span>
                         <h3>Coverage designed beyond the back door</h3>
-                        <p>An outdoor-rated Araknis access point is positioned and aimed to extend dependable WiFi to the deck, yard, cameras, and outdoor entertainment areas.</p>
-                        <a class="video-card-link" href="/blogs/araknis-access-point-placement-guide/">See our access point placement guide</a>
+                        <p>An outdoor Araknis access point brings WiFi beyond the house, where indoor coverage may not reach.</p>
+                        <a class="video-card-link" href="/blogs/araknis-access-point-model-comparison/">Compare access points</a>
                     </div>
                 </article>
 
@@ -1866,7 +1896,12 @@
                         <span class="video-play-button" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
                         <span class="video-duration">3:22</span>
                     </a>
-                    <div class="video-card-copy"><span class="video-card-kicker">Compact rack</span><h3>A clean 15U rack for a smaller system</h3></div>
+                    <div class="video-card-copy">
+                        <span class="video-card-kicker">Compact rack</span>
+                        <h3>A clean 15U rack for a smaller system</h3>
+                        <p>A compact SANUS rack brings theater equipment together, with space planned for cabling, airflow, and future service.</p>
+                        <a class="video-card-link" href="/blogs/sanus-15u-mini-rack-guide/">15U rack guide</a>
+                    </div>
                 </article>
 
                 <article class="project-video-card">
@@ -1875,7 +1910,12 @@
                         <span class="video-play-button" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
                         <span class="video-duration">10:07</span>
                     </a>
-                    <div class="video-card-copy"><span class="video-card-kicker">Rack build</span><h3>Building the serviceable center of the system</h3></div>
+                    <div class="video-card-copy">
+                        <span class="video-card-kicker">Rack build</span>
+                        <h3>Building the serviceable center of the system</h3>
+                        <p>Follow an 18U Middle Atlantic build, from the empty frame to organized equipment and accessible cable connections.</p>
+                        <a class="video-card-link" href="/blogs/middle-atlantic-av-rack-build-guide/">18U rack build guide</a>
+                    </div>
                 </article>
 
                 <article class="project-video-card">
@@ -1884,7 +1924,12 @@
                         <span class="video-play-button" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
                         <span class="video-duration">3:38</span>
                     </a>
-                    <div class="video-card-copy"><span class="video-card-kicker">Equipment rack</span><h3>A finished rack that keeps the system accessible</h3></div>
+                    <div class="video-card-copy">
+                        <span class="video-card-kicker">Equipment rack</span>
+                        <h3>A finished rack that keeps the system accessible</h3>
+                        <p>See a finished SANUS CFR2127 installation, with equipment, wiring, and service access brought together in one cabinet.</p>
+                        <a class="video-card-link" href="/blogs/sanus-cfr2127-rack-guide/">27U rack guide</a>
+                    </div>
                 </article>
             </div>
         </div>
