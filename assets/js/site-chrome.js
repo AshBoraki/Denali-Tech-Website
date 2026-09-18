@@ -32,6 +32,7 @@
     { label: "Projects", href: "/projects/" },
     { label: "About Us", href: "/about/" },
     { label: "Blog", href: "/blogs/" },
+    { label: "Planning Tools", href: "/planning/" },
     { label: "Contact", href: "/contact/" }
   ];
 

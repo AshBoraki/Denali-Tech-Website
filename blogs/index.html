@@ -515,6 +515,36 @@
         :root[data-theme='light'] .editorial-note a,
         body.light-theme .editorial-note a { color: #9a3412; }
 
+        .planning-entry {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 0 0.45rem;
+            margin: 0 auto 1.5rem;
+            padding: 0.55rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.5;
+            text-align: center;
+        }
+        .planning-entry a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.45rem;
+            min-height: 44px;
+            color: var(--accent-hover);
+            font-weight: 700;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        .planning-entry a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+        :root[data-theme='light'] .planning-entry a,
+        body.light-theme .planning-entry a { color: #9a3412; }
+
         @media (max-width: 600px) {
             .editorial-note { display: block; text-align: center; }
             .editorial-note span { margin-right: 0.25rem; }
@@ -1366,8 +1396,8 @@
     <link rel="stylesheet" href="/assets/css/mobile-menu.css">
 
 <script src="../assets/js/microsoft-uet.js" defer></script>
-    <link rel="stylesheet" href="/assets/css/site-chrome.css?v=20260905a">
-    <script src="/assets/js/site-chrome.js?v=20260906a" defer></script>
+    <link rel="stylesheet" href="/assets/css/site-chrome.css?v=20260917-planning-nav">
+    <script src="/assets/js/site-chrome.js?v=20260917-planning-nav" defer></script>
 </head>
 <body>
     <!-- Skip Navigation Link -->
@@ -1422,6 +1452,7 @@
                 <p>Real project breakdowns, buying guidance, and practical help before you spend money on WiFi, theater, audio, lighting, shades, cameras, wiring, or control.</p>
             </div>
             <p class="editorial-note"><span aria-hidden="true">✓</span> Field experience, official sources, and clear update standards. <a href="/editorial-policy/">How our guides are checked</a></p>
+            <p class="planning-entry">Planning a project? <a href="/planning/">Explore our free planning tools <span aria-hidden="true">&rarr;</span></a></p>
 
             <div class="blog-controls">
                 <div class="search-box">
