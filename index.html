@@ -992,6 +992,31 @@
                 white-space: nowrap;
             }
 
+            .hero-contact-options {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.25rem 1.25rem;
+                margin-top: 0.5rem;
+            }
+            .hero-contact-options a {
+                display: inline-flex;
+                align-items: center;
+                min-height: 44px;
+                color: #f8fafc !important;
+                font-size: 0.9rem;
+                font-weight: 600;
+                text-decoration: underline;
+                text-underline-offset: 4px;
+                text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+            }
+            .hero-contact-options a:focus-visible {
+                outline: 2px solid currentColor;
+                outline-offset: 4px;
+            }
+            @media (max-width: 768px) {
+                .hero-contact-options { justify-content: center; }
+            }
+
             .hero-buttons .btn-primary {
                 border: 1px solid rgba(255, 255, 255, 0.18);
             }
@@ -1420,9 +1445,22 @@
             <p class="hero-subcopy">A clear plan for WiFi, control, AV, cameras, lighting, and shades in Chicago-area homes.</p>
             <p class="hero-trust">Authorized Control4 / URC dealer. 5.0 Google rating. Support after install.</p>
             <div class="hero-buttons">
-                <a href="/contact/#booking" class="btn-primary">Get a Project Plan</a>
-                <a href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20want%20help%20with%20a%20home%20technology%20project.%20I%20can%20send%20photos.%20My%20home%20is%20in%3A" target="_blank" rel="noopener noreferrer" class="btn-secondary" aria-label="Send Photos on WhatsApp">Photos on WhatsApp</a>
+                <a href="/contact/" class="btn-primary">Start a home tech plan</a>
+                <a href="/blogs/" class="btn-secondary">Read the guides</a>
             </div>
+            <div class="hero-contact-options" aria-label="Other ways to contact Denali Tech">
+                <a href="tel:+13124397500">Call (312) 439-7500</a>
+                <a href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20want%20help%20with%20a%20home%20technology%20project.%20I%20can%20send%20photos.%20My%20home%20is%20in%3A" target="_blank" rel="noopener noreferrer"  aria-label="Send Photos on WhatsApp">Photos on WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="homepage-guides-section" aria-labelledby="homepage-guides-heading" style="padding: 36px 5%; background: #f8fafc; border-top: 1px solid rgba(15,23,42,0.08); border-bottom: 1px solid rgba(15,23,42,0.08);">
+        <div class="container">
+            <p style="margin: 0 0 0.5rem; color: #92400e; font-size: 0.8rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;">For Control4 homeowners</p>
+            <h2 id="homepage-guides-heading" style="margin: 0 0 0.65rem; font-family: var(--font-heading); font-size: clamp(1.35rem, 3vw, 1.8rem); line-height: 1.25; color: #0f172a;">Control4 Connect: What the Subscription Does</h2>
+            <p style="margin: 0; max-width: 780px; color: #475569; line-height: 1.65;">See which features use a subscription, what stays local, and how Connect differs from an ongoing support plan.</p>
+            <a href="/blogs/control4-connect-subscription-guide/" style="display: inline-flex; align-items: center; min-height: 44px; margin-top: 0.5rem; color: #92400e; font-weight: 700; text-decoration: underline; text-underline-offset: 4px;">Read the Connect guide &rarr;</a>
         </div>
     </section>
 
@@ -1444,11 +1482,11 @@
                 </div>
             </div>
 
-            <div class="offer-plan" style="display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 3rem; align-items: start;">
+            <div id="process" class="offer-plan" style="scroll-margin-top: 100px; display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 3rem; align-items: start;">
                 <div>
                     <p style="margin: 0 0 0.65rem; color: var(--accent-primary); font-size: 0.82rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;">Home Tech Plan</p>
                     <h2 id="offer-plan-heading" style="font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.05; margin: 0 0 1rem; color: var(--text-primary);">Start with a real plan.</h2>
-                    <p style="margin: 0; color: var(--text-secondary); font-size: 1.08rem; line-height: 1.7;">Photos first. We map what stays, what changes, and how the system should work.</p>
+                    <p style="margin: 0; color: var(--text-secondary); font-size: 1.08rem; line-height: 1.7;">Photos first. We map what stays, what changes, and how the system should work. Then we install, test, and walk you through it.</p>
                 </div>
                 <div class="offer-list" style="display: grid; gap: 1rem;">
                     <div style="display: grid; grid-template-columns: auto 1fr; gap: 0.85rem; align-items: start; padding-bottom: 1rem; border-bottom: 1px solid var(--border-color);">
@@ -1465,9 +1503,7 @@
                     </div>
                 </div>
             </div>
-            <div style="margin-top: 2rem;">
-                <a href="/contact/" class="btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 700;">Start My Plan &rarr;</a>
-            </div>
+            <p id="practical-standard" style="margin: 2rem 0 0; color: var(--text-secondary); line-height: 1.6; scroll-margin-top: 100px;">Keep what works. Agree on the scope before installation. Leave with a tested system and support when you need it.</p>
         </div>
         <style>
             @media (max-width: 768px) {
@@ -1555,59 +1591,6 @@
                 .quick-help-grid {
                     grid-template-columns: 1fr !important;
                     gap: 0.8rem !important;
-                }
-            }
-        </style>
-    </section>
-
-    <section class="homepage-guides-section" aria-labelledby="homepage-guides-heading" style="padding: 72px 5%; background: #f8fafc; border-top: 1px solid rgba(15,23,42,0.08); border-bottom: 1px solid rgba(15,23,42,0.08);">
-        <div class="container">
-            <div style="display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 1rem; margin-bottom: 2rem;">
-                <div>
-                    <p style="margin: 0 0 0.55rem; color: var(--accent-primary); font-size: 0.82rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;">Homeowner guides</p>
-                    <h2 id="homepage-guides-heading" style="margin: 0; font-family: var(--font-heading); font-size: clamp(1.9rem, 4vw, 2.8rem); line-height: 1.08; color: #0f172a;">Read the right guide before the quote.</h2>
-                </div>
-                <a href="/blogs/" class="btn-secondary" style="display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 700;">Browse all guides</a>
-            </div>
-            <p style="margin: 0 0 1.7rem; max-width: 860px; color: #475569; font-size: 1.02rem; line-height: 1.7;">Use these guides to compare the systems, understand the planning decisions, and arrive at the project conversation with clearer questions.</p>
-            <div class="homepage-guides-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
-                <a href="/blogs/what-is-control4-guide/" style="display: block; padding: 1.35rem; border: 1px solid rgba(15,23,42,0.12); border-radius: 12px; background: #ffffff; text-decoration: none; color: #0f172a;">
-                    <strong style="display: block; margin-bottom: 0.45rem; font-size: 1.04rem;">What is Control4?</strong>
-                    <span style="display: block; color: #475569; line-height: 1.55;">Understand what Control4 can do before choosing hardware or programming.</span>
-                </a>
-                <a href="/blogs/control4-scenes-routines-guide/" style="display: block; padding: 1.35rem; border: 1px solid rgba(15,23,42,0.12); border-radius: 12px; background: #ffffff; text-decoration: none; color: #0f172a;">
-                    <strong style="display: block; margin-bottom: 0.45rem; font-size: 1.04rem;">Control4 scenes and routines</strong>
-                    <span style="display: block; color: #475569; line-height: 1.55;">Explore scenes that make lighting, entertainment, and daily routines easier.</span>
-                </a>
-                <a href="/blogs/urc-remote-programming-guide/" style="display: block; padding: 1.35rem; border: 1px solid rgba(15,23,42,0.12); border-radius: 12px; background: #ffffff; text-decoration: none; color: #0f172a;">
-                    <strong style="display: block; margin-bottom: 0.45rem; font-size: 1.04rem;">URC remote programming guide</strong>
-                    <span style="display: block; color: #475569; line-height: 1.55;">Explore better handheld control without rebuilding your entire system.</span>
-                </a>
-                <a href="/blogs/whole-home-audio-sonos-vs-traditional/" style="display: block; padding: 1.35rem; border: 1px solid rgba(15,23,42,0.12); border-radius: 12px; background: #ffffff; text-decoration: none; color: #0f172a;">
-                    <strong style="display: block; margin-bottom: 0.45rem; font-size: 1.04rem;">Sonos vs traditional audio</strong>
-                    <span style="display: block; color: #475569; line-height: 1.55;">Compare standalone Sonos with a wired whole-home audio system.</span>
-                </a>
-                <a href="/blogs/wifi-dead-zones-fix-guide/" style="display: block; padding: 1.35rem; border: 1px solid rgba(15,23,42,0.12); border-radius: 12px; background: #ffffff; text-decoration: none; color: #0f172a;">
-                    <strong style="display: block; margin-bottom: 0.45rem; font-size: 1.04rem;">Fix WiFi dead zones</strong>
-                    <span style="display: block; color: #475569; line-height: 1.55;">Find the coverage and network issues behind buffering, dropouts, and missing rooms.</span>
-                </a>
-            </div>
-        </div>
-        <style>
-            .homepage-guides-section a:hover,
-            .homepage-guides-section a:focus-visible {
-                border-color: rgba(249,115,22,0.55) !important;
-                box-shadow: 0 18px 30px rgba(15,23,42,0.08);
-                transform: translateY(-2px);
-            }
-
-            @media (max-width: 768px) {
-                .homepage-guides-section {
-                    padding: 52px 18px !important;
-                }
-
-                .homepage-guides-grid {
-                    grid-template-columns: 1fr !important;
                 }
             }
         </style>
@@ -1908,132 +1891,6 @@
     </section>
 
     <!-- Our Process Section -->
-    <section id="process" class="process-section" style="padding: 104px 5%; background: var(--bg-color); position: relative; overflow: hidden;">
-        <div class="container">
-            <div class="section-header">
-                <h2>Simple Process</h2>
-                <p style="max-width: 720px; margin: 0 auto; color: var(--text-secondary);">Photos, plan, install, walkthrough. Timing depends on scope, equipment availability, and access; your proposal confirms the schedule and included adjustments.</p>
-            </div>
-            <div class="process-steps-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.5rem; margin-top: 3rem; position: relative;">
-                <!-- Connecting Line (Desktop) -->
-                <div class="process-connector" style="position: absolute; top: 60px; left: 12.5%; right: 12.5%; height: 2px; background: linear-gradient(90deg, var(--accent-primary), rgba(249,115,22,0.3)); z-index: 0; display: none;"></div>
-
-                <div class="process-step-card" style="position: relative; z-index: 1; background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 16px; padding: 2.5rem 2rem; text-align: center; transition: all var(--transition);">
-                    <div class="step-number-circle" style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: linear-gradient(135deg, var(--accent-primary), #fb923c); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 2rem; font-weight: 700; color: white; box-shadow: var(--shadow-glow); position: relative;">
-                        <span>1</span>
-                    </div>
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">📞</div>
-                    <h3 style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 600; color: var(--text-primary); margin-bottom: 1rem;">Photos or Walkthrough</h3>
-                    <p style="color: var(--text-secondary); line-height: 1.65; margin: 0;">Photos or a walkthrough.</p>
-                    <div style="margin-top: 1.5rem;">
-                        <span style="display: inline-block; background: rgba(249,115,22,0.2); color: var(--accent-primary); padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600;">30-60 min</span>
-                    </div>
-                </div>
-
-                <div class="process-step-card" style="position: relative; z-index: 1; background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 16px; padding: 2.5rem 2rem; text-align: center; transition: all var(--transition);">
-                    <div class="step-number-circle" style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: linear-gradient(135deg, var(--accent-primary), #fb923c); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 2rem; font-weight: 700; color: white; box-shadow: var(--shadow-glow); position: relative;">
-                        <span>2</span>
-                    </div>
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">📋</div>
-                    <h3 style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 600; color: var(--text-primary); margin-bottom: 1rem;">Plan & Quote</h3>
-                    <p style="color: var(--text-secondary); line-height: 1.65; margin: 0;">Scope and quote.</p>
-                    <div style="margin-top: 1.5rem;">
-                        <span style="display: inline-block; background: rgba(249,115,22,0.2); color: var(--accent-primary); padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600;">Typically 1-3 days</span>
-                    </div>
-                </div>
-
-                <div class="process-step-card" style="position: relative; z-index: 1; background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 16px; padding: 2.5rem 2rem; text-align: center; transition: all var(--transition);">
-                    <div class="step-number-circle" style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: linear-gradient(135deg, var(--accent-primary), #fb923c); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 2rem; font-weight: 700; color: white; box-shadow: var(--shadow-glow); position: relative;">
-                        <span>3</span>
-                    </div>
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">🔧</div>
-                    <h3 style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 600; color: var(--text-primary); margin-bottom: 1rem;">Professional Installation</h3>
-                    <p style="color: var(--text-secondary); line-height: 1.65; margin: 0;">Install, program, test.</p>
-                    <div style="margin-top: 1.5rem;">
-                        <span style="display: inline-block; background: rgba(249,115,22,0.2); color: var(--accent-primary); padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600;">Typically 1-5 days</span>
-                    </div>
-                </div>
-
-                <div class="process-step-card" style="position: relative; z-index: 1; background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 16px; padding: 2.5rem 2rem; text-align: center; transition: all var(--transition);">
-                    <div class="step-number-circle" style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: linear-gradient(135deg, var(--accent-primary), #fb923c); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-size: 2rem; font-weight: 700; color: white; box-shadow: var(--shadow-glow); position: relative;">
-                        <span>4</span>
-                    </div>
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">🤝</div>
-                    <h3 style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 600; color: var(--text-primary); margin-bottom: 1rem;">Walkthrough & Adjustments</h3>
-                    <p style="color: var(--text-secondary); line-height: 1.65; margin: 0;">Walkthrough and tuneups.</p>
-                    <div style="margin-top: 1.5rem;">
-                        <span style="display: inline-block; background: rgba(249,115,22,0.2); color: var(--accent-primary); padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600;">30-day tuneup</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Why Choose Us - Merged into Our Process -->
-            <div id="practical-standard" aria-labelledby="practical-standard-heading" style="margin-top: 4rem; padding-top: 3rem; border-top: 1px solid var(--border-color); scroll-margin-top: 110px;">
-                <div class="section-header" style="margin-bottom: 3rem;">
-                    <h2 id="practical-standard-heading" style="font-size: 2rem;">The Practical Standard</h2>
-                    <p style="max-width: 760px; margin: 0 auto; color: var(--text-secondary);">A dependable system starts with a clear plan for the home, proven products, careful installation, and support after the final walkthrough.</p>
-                </div>
-                <div class="why-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
-                    <article class="why-card" role="article" aria-label="Designed around your home" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; text-align: center; transition: all var(--transition);">
-                        <div class="why-icon" aria-hidden="true" style="display:flex; justify-content:center; color:var(--accent-primary); margin-bottom:1rem; filter:drop-shadow(0 4px 8px rgba(249,115,22,0.2));"><svg viewBox="0 0 24 24" width="42" height="42" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5h6"/><path d="M9 3h6a2 2 0 0 1 2 2v1h2a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h2V5a2 2 0 0 1 2-2Z"/><path d="m8 13 2 2 5-5"/></svg></div>
-                        <h3 style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.75rem;">The Right Plan First</h3>
-                        <p style="color: var(--text-secondary); line-height: 1.6; margin: 0;">We study the home, keep what still works, and recommend only what improves reliability and daily use.</p>
-                    </article>
-                    <article class="why-card" role="article" aria-label="Clean professional installation" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; text-align: center; transition: all var(--transition);">
-                        <div class="why-icon" aria-hidden="true" style="display:flex; justify-content:center; color:var(--accent-primary); margin-bottom:1rem; filter:drop-shadow(0 4px 8px rgba(249,115,22,0.2));"><svg viewBox="0 0 24 24" width="42" height="42" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4.5 6.5v5c0 4.7 3.2 8 7.5 9.5 4.3-1.5 7.5-4.8 7.5-9.5v-5L12 3Z"/><path d="m8.5 12 2.2 2.2 4.8-5"/></svg></div>
-                        <h3 style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.75rem;">Clear Finish Line</h3>
-                        <p style="color: var(--text-secondary); line-height: 1.6; margin: 0;">The job is not done until the system is tested and you know how to use it.</p>
-                    </article>
-                    <article class="why-card" role="article" aria-label="Support after the install" style="background: rgba(255,255,255,0.03); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; text-align: center; transition: all var(--transition);">
-                        <div class="why-icon" aria-hidden="true" style="display:flex; justify-content:center; color:var(--accent-primary); margin-bottom:1rem; filter:drop-shadow(0 4px 8px rgba(249,115,22,0.2));"><svg viewBox="0 0 24 24" width="42" height="42" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13v-1a8 8 0 0 1 16 0v1"/><path d="M4 13h3v6H5a2 2 0 0 1-2-2v-2a2 2 0 0 1 1-2Z"/><path d="M20 13h-3v6h2a2 2 0 0 0 2-2v-2a2 2 0 0 0-1-2Z"/><path d="M17 19c-.8 1.2-2.2 2-4 2h-1"/></svg></div>
-                        <h3 style="font-family: var(--font-heading); font-size: 1.3rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.75rem;">Support That Continues</h3>
-                        <p style="color: var(--text-secondary); line-height: 1.6; margin: 0;">We remain available for questions, programming changes, troubleshooting, and service after installation.</p>
-                    </article>
-                </div>
-            </div>
-
-            <div style="text-align: center; margin-top: 4rem;">
-                <a href="/contact/" class="btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2rem; font-size: 1.1rem;">Request a Project Quote &rarr;</a>
-            </div>
-        </div>
-        <style>
-            @media (min-width: 769px) {
-                .process-connector {
-                    display: block !important;
-                }
-            }
-            @media (hover: hover) and (pointer: fine) {
-                .process-step-card:hover {
-                    transform: translateY(-8px);
-                    border-color: var(--accent-primary);
-                    box-shadow: var(--shadow-glow);
-                    background: rgba(255,255,255,0.08);
-                }
-                .process-step-card:hover .step-number-circle {
-                    transform: scale(1.1);
-                }
-            }
-            @media (max-width: 768px) {
-                .process-section {
-                    padding: 60px 1rem !important;
-                }
-                .process-steps-container {
-                    grid-template-columns: 1fr;
-                    gap: 2rem;
-                }
-                .process-step-card {
-                    padding: 2rem 1.5rem !important;
-                }
-            }
-            @media (min-width: 769px) and (max-width: 1024px) {
-                .process-steps-container {
-                    grid-template-columns: repeat(2, 1fr);
-                }
-            }
-        </style>
-    </section>
-
-
     <!-- Brands + Pricing Section -->
     <section class="brands-showcase-section" style="padding: 96px 5%; background: var(--bg-color); position: relative; overflow: hidden;">
         <div class="container">
@@ -2085,7 +1942,6 @@
                         <p style="margin: 0 0 0.35rem; color: var(--accent-primary); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;">Starting Ranges</p>
                         <h3 style="margin: 0; font-family: var(--font-heading); font-size: 1.8rem; color: var(--text-primary);">Typical project budgets</h3>
                     </div>
-                    <a href="/contact/" class="btn-secondary" style="display: inline-flex; align-items: center; gap: 0.5rem;">Send Project Details &rarr;</a>
                 </div>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
                     <div class="pricing-card" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 16px; padding: 1.5rem;">
@@ -2261,7 +2117,7 @@
         .dt-unified-chrome main#main-content > .offer-plan-section { order: 20; }
         .dt-unified-chrome main#main-content > .homepage-control4-section { order: 30; }
         .dt-unified-chrome main#main-content > .quick-help-section { order: 40; }
-        .dt-unified-chrome main#main-content > .homepage-guides-section { order: 50; }
+        .dt-unified-chrome main#main-content > .homepage-guides-section { order: 15; }
         .dt-unified-chrome main#main-content > .featured-projects-section { order: 60; }
         .dt-unified-chrome main#main-content > .process-section { order: 70; }
         .dt-unified-chrome main#main-content > .services { order: 75; }
