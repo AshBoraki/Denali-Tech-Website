@@ -165,7 +165,7 @@ body {
 
 .svc-button-primary {
     background: linear-gradient(135deg, var(--svc-orange), var(--svc-orange-strong));
-    color: #fff;
+    color: #080c15;
     box-shadow: 0 14px 34px rgba(249, 115, 22, 0.22);
 }
 
@@ -207,6 +207,9 @@ body {
 }
 
 .svc-jump a {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
     padding: 0.55rem 0.8rem;
     border: 1px solid var(--svc-line);
     border-radius: 999px;
@@ -303,9 +306,8 @@ body {
 }
 
 .svc-story-copy {
-    opacity: 0.74;
-    transform: translateY(18px);
-    transition: opacity 500ms ease, transform 500ms ease;
+    opacity: 1;
+    transform: none;
 }
 
 .svc-story.is-active .svc-story-copy {
@@ -385,10 +387,12 @@ body {
     align-items: center;
     gap: 0.55rem;
     margin-top: 1.6rem;
-    color: var(--svc-orange);
+    color: var(--svc-text);
     font-weight: 800;
     line-height: 1.4;
-    text-decoration: none;
+    text-decoration: underline;
+    text-underline-offset: 0.22em;
+    text-decoration-thickness: 1px;
 }
 
 .svc-text-link::after {
@@ -457,7 +461,7 @@ body {
     max-height: 68vh;
     aspect-ratio: 16 / 9;
     display: block;
-    object-fit: cover;
+    object-fit: contain;
     background: #030712;
     filter: saturate(0.92) contrast(1.02);
     transition: filter 400ms ease, transform 700ms ease;
@@ -468,12 +472,9 @@ body {
 }
 
 .svc-story-media figcaption {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 3.6rem 1.2rem 1rem;
-    background: linear-gradient(transparent, rgba(3, 7, 18, 0.88));
+    position: relative;
+    padding: 0.85rem 1.2rem;
+    background: #101827;
     color: rgba(255, 255, 255, 0.82);
     font-size: 0.82rem;
     line-height: 1.45;
