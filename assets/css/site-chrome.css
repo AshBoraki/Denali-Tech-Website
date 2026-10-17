@@ -200,7 +200,7 @@ body.dt-site-menu-lock {
   justify-content: center;
   min-height: 44px;
   padding: 0 16px;
-  color: #ffffff !important;
+  color: #111827 !important;
   background: linear-gradient(135deg, var(--dt-chrome-accent), var(--dt-chrome-accent-strong));
   border: 1px solid rgba(234, 88, 12, 0.32);
   border-radius: 8px;
@@ -214,7 +214,7 @@ body.dt-site-menu-lock {
 
 .dt-site-cta:hover,
 .dt-site-cta:focus-visible {
-  color: #ffffff !important;
+  color: #111827 !important;
   box-shadow: 0 14px 28px rgba(249, 115, 22, 0.30);
   outline: 3px solid rgba(249, 115, 22, 0.22);
   outline-offset: 2px;
@@ -548,7 +548,7 @@ body.dt-site-menu-lock {
   .dt-site-nav-links .dt-site-mobile-cta {
     display: flex;
     margin-top: 6px;
-    color: #ffffff !important;
+    color: #111827 !important;
     background: linear-gradient(135deg, var(--dt-chrome-accent), var(--dt-chrome-accent-strong));
   }
 }

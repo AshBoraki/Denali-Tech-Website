@@ -45,3 +45,16 @@ test('620 power specification links to the exact model datasheet', () => {
   assert.match(html, /620-Series%20L3-Managed-Multi-Gigabit%20PoE_Switch-Data%20Sheets_092223\.pdf/);
   assert.match(html, /specifies 240W for the 8-port model and 720W for the 24-port model/);
 });
+
+test('shared orange CTA labels meet normal-text contrast at both gradient ends', () => {
+  const css = read('assets/css/site-chrome.css');
+  for (const selector of [/\.dt-site-cta\s*\{([^}]+)\}/, /\.dt-site-cta:focus-visible\s*\{([^}]+)\}/, /\.dt-site-nav-links \.dt-site-mobile-cta\s*\{([^}]*color:[^}]+)\}/]) {
+    assert.match(css.match(selector)?.[1] || '', /color:\s*#111827\s*!important/);
+  }
+  const luminance = hex => {
+    const [r, g, b] = hex.match(/../g).map(value => parseInt(value, 16) / 255).map(v => v <= 0.04045 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4);
+    return r * 0.2126 + g * 0.7152 + b * 0.0722;
+  };
+  const text = luminance('111827');
+  for (const background of ['f97316', 'ea580c']) assert.ok((luminance(background) + 0.05) / (text + 0.05) >= 4.5);
+});
