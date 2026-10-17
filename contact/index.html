@@ -3182,34 +3182,8 @@
 
             }
 
-            // Enhanced keyboard navigation for form steps
-            if (bookingForm) {
-                const formSteps = bookingForm.querySelectorAll('.form-step');
-                formSteps.forEach((step, index) => {
-                    const fields = step.querySelectorAll('input, select, textarea, button');
-                    const firstField = fields[0];
-                    const lastField = fields[fields.length - 1];
-
-                    // Handle Tab key navigation
-                    lastField?.addEventListener('keydown', function(e) {
-                        if (e.key === 'Tab' && !e.shiftKey && index < formSteps.length - 1) {
-                            e.preventDefault();
-                            const nextStep = formSteps[index + 1];
-                            const nextFirstField = nextStep.querySelector('input, select, textarea, button');
-                            nextFirstField?.focus();
-                        }
-                    });
-
-                    firstField?.addEventListener('keydown', function(e) {
-                        if (e.key === 'Tab' && e.shiftKey && index > 0) {
-                            e.preventDefault();
-                            const prevStep = formSteps[index - 1];
-                            const prevFields = prevStep.querySelectorAll('input, select, textarea, button');
-                            prevFields[prevFields.length - 1]?.focus();
-                        }
-                    });
-                });
-            }
+            // Native Tab order includes fields placed between the fieldsets,
+            // such as the homeowner's preferred contact method.
 
             // Enhanced ARIA live regions for better screen reader support
             const ariaLiveRegion = document.createElement('div');

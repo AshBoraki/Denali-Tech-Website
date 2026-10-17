@@ -1,0 +1,47 @@
+const test = require('node:test');
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const root = path.resolve(__dirname, '../..');
+const read = file => fs.readFileSync(path.join(root, file), 'utf8');
+
+test('contact preference stays in natural keyboard order between location and service', () => {
+  const html = read('contact/index.html');
+  const location = html.indexOf('id="booking-location"');
+  const preference = html.indexOf('id="booking-contact-preference"');
+  const service = html.indexOf('id="booking-service"');
+  assert.ok(location > 0 && location < preference && preference < service);
+  assert.doesNotMatch(html, /formSteps\.forEach/);
+  assert.doesNotMatch(html, /lastField\?\.addEventListener\('keydown'/);
+});
+
+test('network product visuals preserve the whole product rather than cover-cropping', () => {
+  const html = read('residential-wifi-network/index.html');
+  const imageStyle = html.match(/\.asset-strip img\s*\{([^}]+)\}/)?.[1];
+  assert.match(imageStyle, /object-fit:\s*contain/);
+  assert.match(imageStyle, /height:\s*auto/);
+  assert.match(html, /arakhnis-network-overview-header\.png[^>]+width="1025" height="400"/);
+  assert.match(html, /snapav-wattbox-800-ipvm-power-management\.jpg[^>]+width="1000" height="311"/);
+});
+
+test('projects content has one main landmark and keeps the modal outside it', () => {
+  const html = read('projects/index.html');
+  assert.equal((html.match(/<main\b/g) || []).length, 1);
+  assert.equal((html.match(/<\/main>/g) || []).length, 1);
+  assert.ok(html.indexOf('<main id="main-content">') < html.indexOf('<h1>Real Project Work</h1>'));
+  assert.ok(html.indexOf('</main>') < html.indexOf('id="projectModal"'));
+});
+
+test('rack illustrations use existing high-resolution assets with accurate labels', () => {
+  const binary = read('blogs/binary-video-distribution-hdmi-matrix-guide/index.html');
+  const strong = read('blogs/strong-av-rack-mounting-guide/index.html');
+  assert.match(binary, /strong-rack-cables-1100\.jpg[^>]+width="1100" height="733"/);
+  assert.match(binary, /Cable-management example\./);
+  assert.match(strong, /strong-fs-27u-hq-navy\.webp[^>]+alt="Strong FS 27U enclosed equipment rack"/);
+});
+
+test('620 power specification links to the exact model datasheet', () => {
+  const html = read('blogs/araknis-network-switch-comparison/index.html');
+  assert.match(html, /620-Series%20L3-Managed-Multi-Gigabit%20PoE_Switch-Data%20Sheets_092223\.pdf/);
+  assert.match(html, /specifies 240W for the 8-port model and 720W for the 24-port model/);
+});
