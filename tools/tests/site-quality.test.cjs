@@ -2,8 +2,73 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
+const vm = require('node:vm');
 const root = path.resolve(__dirname, '../..');
 const read = file => fs.readFileSync(path.join(root, file), 'utf8');
+
+function buildNavigationForTest(legacyListener = false) {
+  class Element {
+    constructor(tag) {
+      this.tagName = tag;
+      this.children = [];
+      this.attributes = {};
+      this.listeners = {};
+      const classes = new Set();
+      this.classList = {
+        add: name => classes.add(name),
+        remove: name => classes.delete(name),
+        contains: name => classes.has(name),
+        toggle: (name, enabled) => enabled ? classes.add(name) : classes.delete(name)
+      };
+    }
+    appendChild(child) { this.children.push(child); }
+    setAttribute(name, value) { this.attributes[name] = value; }
+    getAttribute(name) { return this.attributes[name]; }
+    addEventListener(name, callback) { this.listeners[name] = callback; }
+  }
+  let breakpointListener;
+  const query = { matches: true };
+  query[legacyListener ? 'addListener' : 'addEventListener'] = (...args) => { breakpointListener = args.at(-1); };
+  const document = {
+    body: new Element('body'),
+    createElement: tag => new Element(tag),
+    addEventListener() {}
+  };
+  const source = read('assets/js/site-chrome.js');
+  const functions = source.slice(source.indexOf('  function makeElement'), source.indexOf('  function appendFooterColumn'));
+  const header = vm.runInNewContext(functions + '; buildHeader();', {
+    document,
+    window: { location: { pathname: '/', origin: 'https://denalitechs.com' }, matchMedia: () => query },
+    URL,
+    navItems: [],
+    projectPlanHref: '/contact/?source=site-navigation#booking',
+    version: 'test'
+  });
+  const button = header.children[0].children.at(-1);
+  return { document, header, button, query, resize: () => breakpointListener() };
+}
+
+for (const legacyListener of [false, true]) {
+  test(`navigation unlocks scrolling when an open mobile menu becomes desktop (${legacyListener ? 'legacy' : 'modern'} listener)`, () => {
+    const nav = buildNavigationForTest(legacyListener);
+    nav.button.listeners.click();
+    assert.equal(nav.document.body.classList.contains('dt-site-menu-lock'), true);
+    assert.equal(nav.header.classList.contains('dt-menu-open'), true);
+    assert.equal(nav.button.getAttribute('aria-expanded'), 'true');
+    nav.query.matches = false;
+    nav.resize();
+    assert.equal(nav.document.body.classList.contains('dt-site-menu-lock'), false);
+    assert.equal(nav.header.classList.contains('dt-menu-open'), false);
+    assert.equal(nav.button.getAttribute('aria-expanded'), 'false');
+    assert.equal(nav.button.getAttribute('aria-label'), 'Open navigation menu');
+    nav.query.matches = true;
+    nav.resize();
+    assert.equal(nav.document.body.classList.contains('dt-site-menu-lock'), false);
+    assert.equal(nav.button.getAttribute('aria-expanded'), 'false');
+    nav.button.listeners.click();
+    assert.equal(nav.button.getAttribute('aria-expanded'), 'true');
+  });
+}
 
 test('contact preference stays in natural keyboard order between location and service', () => {
   const html = read('contact/index.html');

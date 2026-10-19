@@ -178,21 +178,32 @@
       document.body.classList.toggle("dt-site-menu-lock", !open);
     });
 
-    links.addEventListener("click", function (event) {
-      if (!event.target.closest("a")) return;
+    function closeMenu() {
       button.setAttribute("aria-expanded", "false");
       button.setAttribute("aria-label", "Open navigation menu");
       header.classList.remove("dt-menu-open");
       document.body.classList.remove("dt-site-menu-lock");
+    }
+
+    links.addEventListener("click", function (event) {
+      if (!event.target.closest("a")) return;
+      closeMenu();
     });
 
     document.addEventListener("keydown", function (event) {
       if (event.key !== "Escape") return;
-      button.setAttribute("aria-expanded", "false");
-      button.setAttribute("aria-label", "Open navigation menu");
-      header.classList.remove("dt-menu-open");
-      document.body.classList.remove("dt-site-menu-lock");
+      closeMenu();
     });
+
+    // A wider viewport hides the toggle; do not leave its mobile scroll lock behind.
+    if (window.matchMedia) {
+      var mobileMenuQuery = window.matchMedia("(max-width: 1120px)");
+      var resetDesktopMenu = function () {
+        if (!mobileMenuQuery.matches) closeMenu();
+      };
+      if (mobileMenuQuery.addEventListener) mobileMenuQuery.addEventListener("change", resetDesktopMenu);
+      else if (mobileMenuQuery.addListener) mobileMenuQuery.addListener(resetDesktopMenu);
+    }
 
     nav.appendChild(brand);
     nav.appendChild(links);

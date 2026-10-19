@@ -28,6 +28,7 @@ function environment(options = {}) {
     referrer: options.referrer || '', readyState: 'complete',
     addEventListener(name, fn) { (events.document[name] ||= []).push(fn); },
     removeEventListener() {},
+    getElementById() { return null; },
     createElement() { return {}; },
     getElementsByTagName() { return [{ parentNode: { insertBefore() {} } }]; }
   };
@@ -275,6 +276,27 @@ function contactSubmitHandler() {
   return html.slice(start, end).trim() + '\n}';
 }
 
+function domNode(tag = 'div') {
+  const classes = new Set(), listeners = {};
+  let text = '';
+  const node = {
+    tagName: tag.toUpperCase(), children: [], dataset: {}, style: {}, hidden: false, attributes: {},
+    classList: { add: value => classes.add(value), remove: value => classes.delete(value), contains: value => classes.has(value) },
+    setAttribute(name, value) { this.attributes[name] = String(value); },
+    getAttribute(name) { return this.attributes[name] ?? null; },
+    appendChild(child) { this.children.push(child); child.parentNode = this; return child; },
+    remove() { if (this.parentNode) this.parentNode.children = this.parentNode.children.filter(child => child !== this); },
+    addEventListener(name, callback) { (listeners[name] ||= []).push(callback); },
+    dispatch(name) { if (typeof this['on' + name] === 'function') this['on' + name](); for (const callback of listeners[name] || []) callback(); },
+    scrollIntoView() {}, focus() {}
+  };
+  Object.defineProperty(node, 'textContent', {
+    get() { return text + this.children.map(child => child.textContent).join(''); },
+    set(value) { text = String(value); this.children = []; }
+  });
+  return node;
+}
+
 for (const helperPresent of [true, false]) {
   test(`contact handler serializes two queued CAPTCHA waits (${helperPresent ? 'helper present' : 'helper missing'})`, async () => {
     let releaseResponse, captchaReady = false, recorded = 0;
@@ -333,17 +355,246 @@ for (const helperPresent of [true, false]) {
     // Let both complete their CAPTCHA wait; keep the first network request pending.
     for (let step = 0; step < 4; step += 1) await Promise.resolve();
     assert.equal(env.requests.length, 1);
-    assert.equal(recorded, 1);
+    assert.equal(recorded, 0, 'an in-flight attempt must not consume the accepted-submission quota');
     assert.equal(button.disabled, true);
     assert.deepEqual(messages, ['Processing your request...']);
     releaseResponse({ ok: true, json: async () => ({ success: true }) });
     await Promise.all([first, second]);
+    assert.equal(recorded, 1, 'the accepted inquiry is recorded once');
     assert.deepEqual(results, [true]);
     assert.equal(env.context.submissionInProgress, false);
     assert.equal(env.window.location.href, '/thank-you/');
     assert.equal(env.leadEvents().length, helperPresent ? 1 : 0);
   });
 }
+
+for (const failure of ['provider', 'network']) {
+  test(`three ${failure} failures preserve the inquiry and do not lock out a valid retry`, async () => {
+    let attempts = 0, recorded = 0, captchaResets = 0;
+    const env = environment({ fetch: async () => {
+      attempts += 1;
+      if (attempts <= 3) {
+        if (failure === 'network') throw new TypeError('Failed to fetch');
+        return { ok: false, json: async () => ({ success: false }) };
+      }
+      return { ok: true, json: async () => ({ success: true }) };
+    } });
+    env.window.location = { href: env.window.location.href, origin: env.window.location.origin, hostname: env.window.location.hostname, search: env.window.location.search };
+    const messages = [], results = [], token = { value: 'offline-captcha-token' };
+    const captchaError = domNode();
+    env.window.hcaptcha = { reset() { captchaResets += 1; } };
+    const buttonText = { textContent: 'Send Project Details' }, buttonLoader = { style: {} };
+    const classes = new Set();
+    const button = {
+      disabled: false, style: {},
+      classList: { add: value => classes.add(value), remove: value => classes.delete(value) },
+      querySelector: selector => selector === '.btn-text' ? buttonText : buttonLoader
+    };
+    const form = Object.assign(env.form({ email: 'customer@example.test', project_details: 'Keep this inquiry while retrying.' }), {
+      querySelectorAll: () => [],
+      querySelector(selector) {
+        if (selector === 'textarea[name="h-captcha-response"]') return token;
+        if (selector === 'button[type="submit"]') return button;
+        return null;
+      }
+    });
+    const messageDiv = { textContent: '', style: {}, appendChild: node => messages.push(node.textContent), scrollIntoView() {} };
+    env.document.createElement = tag => domNode(tag);
+    env.document.createTextNode = text => ({ textContent: text });
+    env.document.getElementById = id => id === 'captcha-error' ? captchaError : null;
+    const limiter = env.api.createRateLimiter({ key: 'failed-attempt-regression', max: 3, minIntervalMs: 5000, windowMs: 3600000 });
+    Object.assign(env.context, {
+      bookingForm: form, messageDiv, leadDetails: details, submissionInProgress: false,
+      validateField: () => true, checkRateLimit: () => limiter.check(),
+      recordSubmission() { recorded += 1; limiter.record(); },
+      formAnalytics: { trackSubmission: result => results.push(result) }
+    });
+    vm.runInContext(namedFunction('contact/index.html', 'sendValidatedInquiry'), env.context);
+    vm.runInContext(namedFunction('contact/index.html', 'resetInquiryVerification'), env.context);
+    vm.runInContext(namedFunction('contact/index.html', 'showSubmissionError'), env.context);
+    const handler = vm.runInContext('(' + contactSubmitHandler() + ')', env.context);
+    for (let attempt = 0; attempt < 3; attempt += 1) {
+      token.value = 'fresh-offline-captcha-token-' + attempt;
+      await handler({ preventDefault() {} });
+      assert.equal(button.disabled, false);
+      assert.equal(env.context.submissionInProgress, false);
+      assert.equal(form.fields.project_details, 'Keep this inquiry while retrying.');
+      assert.equal(token.value, '', 'a rejected or uncertain send clears the consumed CAPTCHA token');
+      assert.equal(captchaError.getAttribute('aria-hidden'), 'false');
+      env.advance(6000);
+    }
+    assert.equal(env.requests.length, 3);
+    assert.equal(recorded, 0, 'unsent inquiries do not use the hourly quota');
+    assert.equal(limiter.check().allowed, true);
+    assert.equal(env.leadEvents().length, 0);
+    assert.equal(captchaResets, 3);
+    token.value = 'fresh-offline-captcha-token-final';
+    await handler({ preventDefault() {} });
+    assert.equal(env.requests.length, 4);
+    assert.equal(recorded, 1);
+    assert.equal(env.leadEvents().length, 1);
+    assert.equal(env.window.location.href, '/thank-you/');
+    assert.equal(form.fields.project_details, 'Keep this inquiry while retrying.');
+    assert.equal(results.at(-1), true);
+    assert.equal(captchaError.getAttribute('aria-hidden'), 'true', 'fresh verification clears stale CAPTCHA errors');
+    assert.equal(captchaError.textContent, '');
+    assert.ok(messages.some(message => message.includes('Message us on WhatsApp') && message.includes('call (312) 439-7500')));
+  });
+}
+
+function captchaLoaderEnvironment(options = {}) {
+  const head = domNode('head'), captcha = domNode(), form = domNode('form');
+  const recovery = domNode(), retry = domNode('button'), status = domNode();
+  recovery.hidden = true;
+  form.fields = { email: 'customer@example.test', project_details: 'Keep my project details.' };
+  let hasFrame = !!options.existingFrame, serial = 0;
+  const timers = new Map(), observers = [], intersections = [];
+  captcha.querySelector = selector => selector === 'iframe' && hasFrame ? { tagName: 'IFRAME' } : null;
+  class MutationObserver {
+    constructor(callback) { this.callback = callback; this.active = false; observers.push(this); }
+    observe() { this.active = true; }
+    disconnect() { this.active = false; }
+  }
+  class IntersectionObserver {
+    constructor(callback) { this.callback = callback; this.active = false; intersections.push(this); }
+    observe() { this.active = true; }
+    disconnect() { this.active = false; }
+  }
+  const elements = { 'booking-form': form, 'captcha-recovery': recovery, 'captcha-retry': retry, 'captcha-load-status': status };
+  const document = {
+    head,
+    querySelector(selector) {
+      if (selector === '.h-captcha') return captcha;
+      if (selector === 'script[data-web3forms-captcha]') return head.children.find(node => node.dataset.web3formsCaptcha) || null;
+      return null;
+    },
+    getElementById: id => elements[id] || null,
+    createElement: tag => domNode(tag)
+  };
+  const window = { MutationObserver };
+  if (options.observeViewport) window.IntersectionObserver = IntersectionObserver;
+  const context = vm.createContext({
+    window, document, MutationObserver, IntersectionObserver,
+    setTimeout(callback, delay) { const id = ++serial; timers.set(id, { callback, delay }); return id; },
+    clearTimeout(id) { timers.delete(id); }
+  });
+  const loader = inlineScripts('contact/index.html').find(script => script.includes("script.src = 'https://web3forms.com/client/script.js'"));
+  assert.ok(loader, 'the contact page retains the deferred CAPTCHA loader');
+  vm.runInContext(loader, context);
+  return {
+    head, form, recovery, retry, status, timers, observers,
+    frameArrives() { hasFrame = true; for (const observer of observers.filter(item => item.active)) observer.callback(); },
+    entersViewport() { for (const observer of intersections.filter(item => item.active)) observer.callback([{ isIntersecting: true }]); },
+    runTimeouts() { for (const [id, timer] of [...timers]) { timers.delete(id); timer.callback(); } }
+  };
+}
+
+test('a failed CAPTCHA script can be retried without clearing fields or loading duplicate widgets', () => {
+  const env = captchaLoaderEnvironment();
+  assert.equal(env.head.children.length, 1);
+  const first = env.head.children[0];
+  assert.equal(first.src, 'https://web3forms.com/client/script.js');
+  env.form.dispatch('focusin');
+  env.form.dispatch('pointerenter');
+  assert.equal(env.head.children.length, 1, 'repeated interaction shares the pending wrapper');
+  first.dispatch('error');
+  assert.equal(env.head.children.length, 0);
+  assert.equal(env.timers.size, 0);
+  assert.equal(env.recovery.hidden, false);
+  assert.equal(env.retry.hidden, false);
+  assert.match(env.status.textContent, /could not load/i);
+  assert.equal(env.observers.filter(observer => observer.active).length, 0);
+  env.retry.dispatch('click');
+  assert.equal(env.head.children.length, 1);
+  assert.notEqual(env.head.children[0], first);
+  assert.equal(env.recovery.hidden, true);
+  assert.equal(env.form.fields.project_details, 'Keep my project details.');
+  env.retry.dispatch('click');
+  assert.equal(env.head.children.length, 1);
+  env.frameArrives();
+  assert.equal(env.recovery.hidden, true);
+  assert.equal(env.timers.size, 0);
+  assert.equal(env.observers.filter(observer => observer.active).length, 0);
+});
+
+test('automatic focus, pointer and viewport preloads do not dismiss failed CAPTCHA recovery', () => {
+  const env = captchaLoaderEnvironment({ observeViewport: true });
+  assert.equal(env.head.children.length, 0);
+  env.form.dispatch('focusin');
+  assert.equal(env.head.children.length, 1);
+  env.head.children[0].dispatch('error');
+  assert.equal(env.recovery.hidden, false);
+  assert.equal(env.retry.hidden, false);
+  env.form.dispatch('pointerenter');
+  env.form.dispatch('focusin');
+  env.entersViewport();
+  assert.equal(env.head.children.length, 0, 'only an explicit retry starts a new attempt after failure');
+  assert.equal(env.recovery.hidden, false, 'the recovery panel stays under the pointer');
+  assert.equal(env.retry.hidden, false);
+  env.retry.dispatch('click');
+  assert.equal(env.head.children.length, 1);
+  assert.equal(env.recovery.hidden, true);
+  assert.equal(env.form.fields.project_details, 'Keep my project details.');
+});
+
+test('slow CAPTCHA loading shows contact alternatives without reinjecting a pending wrapper', () => {
+  const env = captchaLoaderEnvironment();
+  assert.equal([...env.timers.values()][0].delay, 15000);
+  env.runTimeouts();
+  assert.equal(env.recovery.hidden, false);
+  assert.equal(env.retry.hidden, true, 'an uncertain pending script is not injected twice');
+  assert.match(env.status.textContent, /taking longer/i);
+  env.form.dispatch('focusin');
+  env.form.dispatch('pointerenter');
+  env.retry.dispatch('click');
+  assert.equal(env.head.children.length, 1);
+  env.frameArrives();
+  assert.equal(env.recovery.hidden, true, 'a late successful widget clears its recovery note');
+  assert.equal(env.form.fields.project_details, 'Keep my project details.');
+});
+
+test('a ready CAPTCHA widget is not replaced on repeated form interaction', () => {
+  const env = captchaLoaderEnvironment({ existingFrame: true });
+  env.form.dispatch('focusin');
+  env.form.dispatch('pointerenter');
+  env.retry.dispatch('click');
+  assert.equal(env.head.children.length, 0);
+  assert.equal(env.timers.size, 0);
+});
+
+test('CAPTCHA recovery offers accessible status and real alternate contact links', () => {
+  const html = fs.readFileSync(path.join(root, 'contact/index.html'), 'utf8');
+  const recovery = html.match(/<div class="captcha-recovery"[\s\S]*?<\/div>/)?.[0] || '';
+  assert.match(recovery, /id="captcha-recovery" hidden/);
+  assert.match(recovery, /id="captcha-load-status" role="status"/);
+  assert.match(recovery, /type="button"[^>]+id="captcha-retry"/);
+  assert.match(recovery, /href="https:\/\/wa\.me\/13124397500"/);
+  assert.match(recovery, /href="tel:\+13124397500"/);
+});
+
+test('contact submit labels meet normal-text contrast on normal and hover gradients', () => {
+  const html = fs.readFileSync(path.join(root, 'contact/index.html'), 'utf8');
+  const finalStyle = html.match(/<style id="contact-form-final-cleanup">([\s\S]*?)<\/style>/)?.[1] || '';
+  const normal = finalStyle.match(/\.booking-form-submit\s*\{([^}]+)\}/)?.[1] || '';
+  const hover = finalStyle.match(/\.booking-form-submit:hover\s*\{([^}]+)\}/)?.[1] || '';
+  const colorPattern = /(?:^|[;\n])\s*color:\s*#([a-f\d]{6})/i;
+  const normalColor = normal.match(colorPattern)?.[1];
+  assert.equal(normalColor?.toLowerCase(), '111827');
+  function luminance(hex) {
+    const [r, g, b] = hex.match(/../g).map(value => parseInt(value, 16) / 255).map(value => value <= 0.04045 ? value / 12.92 : ((value + 0.055) / 1.055) ** 2.4);
+    return r * 0.2126 + g * 0.7152 + b * 0.0722;
+  }
+  for (const [state, rule] of [['normal', normal], ['hover', hover]]) {
+    const color = rule.match(colorPattern)?.[1] || normalColor;
+    const gradient = rule.match(/background:\s*linear-gradient\(([^;]+)\)/)?.[1] || '';
+    const backgrounds = [...gradient.matchAll(/#([a-f\d]{6})/gi)].map(match => match[1]);
+    assert.equal(backgrounds.length, 2, state + ' keeps the established orange gradient');
+    for (const background of backgrounds) {
+      const values = [luminance(color), luminance(background)].sort((a, b) => a - b);
+      assert.ok((values[1] + 0.05) / (values[0] + 0.05) >= 4.5, state + ' #' + background + ' text contrast');
+    }
+  }
+});
 
 test('network landing cooldown works with denied, malformed, or future storage', () => {
   for (const localStorage of [storage({}, true), storage({ denali_wifi_last_submit: 'corrupt' }), storage({ denali_wifi_last_submit: '999999999999999' })]) {

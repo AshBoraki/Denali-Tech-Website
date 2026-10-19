@@ -2326,8 +2326,46 @@
             min-height: 76px;
         }
 
+        .captcha-recovery {
+            grid-column: 1 / -1;
+            width: 100%;
+            color: #334155;
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+
+        .captcha-recovery p { margin: 0 0 0.5rem; text-align: left; }
+
+        .captcha-group:has(.captcha-recovery:not([hidden])) .h-captcha:empty {
+            display: none;
+        }
+
+        .captcha-recovery a,
+        .form-error-message a {
+            color: inherit;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .captcha-retry {
+            min-height: 44px;
+            padding: 0.5rem 0.75rem;
+            border: 1px solid #64748b;
+            border-radius: 6px;
+            background: #fff;
+            color: #263548;
+            font: inherit;
+            cursor: pointer;
+        }
+
+        .captcha-retry:focus-visible {
+            outline: 3px solid #0d9488;
+            outline-offset: 3px;
+        }
+
         .booking-form-submit {
             margin-top: 1rem;
+            color: #111827;
             border-color: #ea580c;
             border-radius: 10px;
             background: linear-gradient(135deg, #f97316, #ea580c);
@@ -2335,7 +2373,7 @@
         }
 
         .booking-form-submit:hover {
-            background: linear-gradient(135deg, #ea580c, #c2410c);
+            background: linear-gradient(135deg, #ea580c, #f97316);
             box-shadow: 0 12px 26px rgba(194, 65, 12, 0.22);
         }
 
@@ -2644,6 +2682,11 @@
                         <p class="captcha-label">Confirm you are human</p>
                         <div class="h-captcha" data-captcha="true"></div>
                         <span class="field-error" id="captcha-error" aria-live="polite" aria-hidden="true"></span>
+                        <div class="captcha-recovery" id="captcha-recovery" hidden>
+                            <p id="captcha-load-status" role="status">Human verification could not load. Your details are still here.</p>
+                            <button type="button" class="captcha-retry" id="captcha-retry">Try verification again</button>
+                            <p>You can also <a href="https://wa.me/13124397500" target="_blank" rel="noopener noreferrer">message us on WhatsApp</a> or <a href="tel:+13124397500">call (312) 439-7500</a>.</p>
+                        </div>
                     </div>
 
                     <!-- Submit Button -->
@@ -3494,7 +3537,7 @@
 
             // Browser-side courtesy limit; provider-side anti-spam remains authoritative.
             const rateLimiter = window.denaliLeads?.createRateLimiter({
-                key: 'form_submission_history', windowMs: 60 * 60 * 1000,
+                key: 'form_accepted_submission_history_v2', windowMs: 60 * 60 * 1000,
                 minIntervalMs: 5000, max: 3
             });
 
@@ -3506,6 +3549,42 @@
 
             function recordSubmission() {
                 if (rateLimiter) rateLimiter.record();
+            }
+
+            function resetInquiryVerification() {
+                // A token can be consumed even when the request is rejected or times out.
+                // Keep the customer's fields, but require a fresh human verification.
+                try {
+                    if (window.hcaptcha && typeof window.hcaptcha.reset === 'function') window.hcaptcha.reset();
+                } catch (_) { /* A blocked widget must not prevent the recovery message. */ }
+                const token = bookingForm.querySelector('textarea[name="h-captcha-response"]');
+                if (token) token.value = '';
+                const error = document.getElementById('captcha-error');
+                if (error) {
+                    error.textContent = 'Please confirm you are human again before retrying.';
+                    error.setAttribute('aria-hidden', 'false');
+                    error.classList.add('show');
+                }
+            }
+
+            function showSubmissionError(message) {
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'form-error-message';
+                errorDiv.appendChild(document.createTextNode(message + ' '));
+                const whatsapp = document.createElement('a');
+                whatsapp.href = 'https://wa.me/13124397500';
+                whatsapp.target = '_blank';
+                whatsapp.rel = 'noopener noreferrer';
+                whatsapp.textContent = 'Message us on WhatsApp';
+                errorDiv.appendChild(whatsapp);
+                errorDiv.appendChild(document.createTextNode(' or '));
+                const phone = document.createElement('a');
+                phone.href = 'tel:+13124397500';
+                phone.textContent = 'call (312) 439-7500';
+                errorDiv.appendChild(phone);
+                errorDiv.appendChild(document.createTextNode('.'));
+                messageDiv.textContent = '';
+                messageDiv.appendChild(errorDiv);
             }
 
             if (bookingForm) {
@@ -3572,6 +3651,13 @@
                         return;
                     }
 
+                    const captchaError = document.getElementById('captcha-error');
+                    if (captchaError) {
+                        captchaError.textContent = '';
+                        captchaError.setAttribute('aria-hidden', 'true');
+                        captchaError.classList.remove('show');
+                    }
+
                     // Another submit may have started while CAPTCHA initialization yielded.
                     if (submissionInProgress) return;
 
@@ -3598,7 +3684,6 @@
                         return;
                     }
 
-                    recordSubmission();
                     submissionInProgress = true;
 
                     const submitBtn = bookingForm.querySelector('button[type="submit"]');
@@ -3630,6 +3715,8 @@
                         const responseData = await sendValidatedInquiry(bookingForm);
 
                         if (responseData.success) {
+                            // Failed sends must not use up the customer's retry allowance.
+                            recordSubmission();
                             // Track successful submission
                             formAnalytics.trackSubmission(true);
                             // Redirect to thank you page
@@ -3637,12 +3724,8 @@
                         } else {
                             // Track failed submission
                             formAnalytics.trackSubmission(false);
-                            const errorMsg = responseData?.message || 'There was an error submitting your request.';
-                            const errorDiv = document.createElement('div');
-                            errorDiv.className = 'form-error-message';
-                            errorDiv.textContent = errorMsg;
-                            messageDiv.textContent = '';
-                            messageDiv.appendChild(errorDiv);
+                            resetInquiryVerification();
+                            showSubmissionError('Your request was not sent. Please confirm you are human again and try sending it.');
                             if (submitBtn) {
                                 submitBtn.disabled = false;
                                 submitBtn.classList.remove('submitting');
@@ -3653,12 +3736,11 @@
                             }
                         }
                     } catch (err) {
-                        const errorMsg = err.name === 'AbortError' ? 'The request timed out. Please try again.' : 'We could not send your request. Please check your connection and try again.';
-                        const errorDiv = document.createElement('div');
-                        errorDiv.className = 'form-error-message';
-                        errorDiv.textContent = `${errorMsg} Or message us on WhatsApp.`;
-                        messageDiv.textContent = '';
-                        messageDiv.appendChild(errorDiv);
+                        resetInquiryVerification();
+                        const errorMsg = err.name === 'AbortError'
+                            ? 'We could not confirm delivery. Your details are still here. Before sending again, you can check with us directly.'
+                            : 'We could not confirm delivery. Check your connection and confirm you are human again before retrying.';
+                        showSubmissionError(errorMsg);
                         if (submitBtn) {
                             submitBtn.disabled = false;
                             submitBtn.classList.remove('submitting');
@@ -3683,32 +3765,70 @@
             if (!captcha) return;
 
             let loading = false;
+            let attempted = false;
+            const recovery = document.getElementById('captcha-recovery');
+            const retry = document.getElementById('captcha-retry');
+            const status = document.getElementById('captcha-load-status');
+            const showRecovery = function (failed) {
+                if (captcha.querySelector('iframe')) return;
+                if (status) status.textContent = failed
+                    ? 'Human verification could not load. Your details are still here.'
+                    : 'Human verification is taking longer than expected. Your details are still here.';
+                if (retry) retry.hidden = !failed;
+                if (recovery) recovery.hidden = false;
+            };
             const loadCaptcha = function () {
-                if (loading || document.querySelector('script[data-web3forms-captcha]')) return;
+                if (loading || captcha.querySelector('iframe') || document.querySelector('script[data-web3forms-captcha]')) return;
+                attempted = true;
                 loading = true;
+                if (recovery) recovery.hidden = true;
                 const script = document.createElement('script');
                 script.src = 'https://web3forms.com/client/script.js';
                 script.async = true;
                 script.defer = true;
                 script.dataset.web3formsCaptcha = 'true';
+                const timer = setTimeout(function () { showRecovery(false); }, 15000);
+                script.onerror = function () {
+                    clearTimeout(timer);
+                    loading = false;
+                    script.remove();
+                    showRecovery(true);
+                };
+                // Do not inject another copy if the wrapper loaded but its widget is slow.
+                // A late iframe still hides the recovery note without losing any fields.
+                if ('MutationObserver' in window) {
+                    const observer = new MutationObserver(function () {
+                        if (!captcha.querySelector('iframe')) return;
+                        clearTimeout(timer);
+                        if (recovery) recovery.hidden = true;
+                        observer.disconnect();
+                    });
+                    observer.observe(captcha, { childList: true, subtree: true });
+                    script.addEventListener('error', function () { observer.disconnect(); }, { once: true });
+                }
                 document.head.appendChild(script);
+            };
+
+            if (retry) retry.addEventListener('click', loadCaptcha);
+            const prepareCaptcha = function () {
+                if (!attempted) loadCaptcha();
             };
 
             if ('IntersectionObserver' in window) {
                 const observer = new IntersectionObserver(function (entries) {
                     if (entries.some(entry => entry.isIntersecting)) {
                         observer.disconnect();
-                        loadCaptcha();
+                        prepareCaptcha();
                     }
                 }, { rootMargin: '0px' });
                 observer.observe(captcha);
             } else {
-                loadCaptcha();
+                prepareCaptcha();
             }
 
             if (form) {
-                form.addEventListener('focusin', loadCaptcha, { once: true });
-                form.addEventListener('pointerenter', loadCaptcha, { once: true });
+                form.addEventListener('focusin', prepareCaptcha, { once: true });
+                form.addEventListener('pointerenter', prepareCaptcha, { once: true });
             }
         })();
     </script>
