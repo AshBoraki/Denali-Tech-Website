@@ -1,0 +1,50 @@
+{
+  "reviewed": "2026-10-19",
+  "notes": "Public Control4 manufacturer marketing illustrations and user-guide screenshot, attributed in the article. This provenance record is not an independent license grant; manufacturer ownership and applicable marketing-use terms remain in effect. No AI imagery, product modification, recoloring or cropping. Marketing illustrations are not Denali installations, and the user-guide screenshot is not live telemetry or a promise of identical screens on every software/driver version.",
+  "assets": [
+    {
+      "file": "/blogs/control4-garage-door-gate-automation-guide/images/manufacturer/control4-arrival.webp",
+      "sha256": "af3d61bfe86020d556c92a1b1694ca1de35c09655143282132ebf8b7dcbb5969",
+      "dimensions": [
+        1442,
+        860
+      ],
+      "sourcePage": "https://www.control4.com/solutions/outdoor-solutions",
+      "sourceFile": "https://cdn.prod.website-files.com/629926620ba03720384bebb3/68065826ad686dd450d25f46_087_25_Control4.com_OutdoorSolutions_WelcomeHome.webp",
+      "processing": "Original downloaded bytes; full framing retained"
+    },
+    {
+      "file": "/blogs/control4-garage-door-gate-automation-guide/images/manufacturer/control4-intercom.webp",
+      "sha256": "282d29185ff6aa6943a9050775e6e71faa19b153cfae46fbef0542304a1fc30c",
+      "dimensions": [
+        772,
+        528
+      ],
+      "sourcePage": "https://www.control4.com/solutions/outdoor-solutions",
+      "sourceFile": "https://cdn.prod.website-files.com/629926620ba03720384bebb3/67f82d20fecf47ade32a6c95_087_25_Control4.com_SafetyandSecurity_Doorstation.webp",
+      "processing": "Original downloaded bytes; full framing retained"
+    },
+    {
+      "file": "/blogs/control4-garage-door-gate-automation-guide/images/manufacturer/control4-locks-sensors-original.png",
+      "sha256": "44d005b9453baa5905ceefbc6e3a9f52d19704a6e5bc420973b6a011160feef6",
+      "dimensions": [
+        1082,
+        609
+      ],
+      "sourcePage": "https://docs.control4.com/help/c4/user/userguide/content/topics/security/locks.htm",
+      "sourceFile": "https://docs.control4.com/help/c4/user/userguide/content/resources/images/eug-security-locks-list.png",
+      "processing": "Original downloaded bytes; full framing retained"
+    },
+    {
+      "file": "/blogs/control4-garage-door-gate-automation-guide/images/manufacturer/control4-locks-sensors.webp",
+      "sha256": "a52b4049a50a7f58959539b4ed3535c4a1718966b35677b01ff95fad413475fd",
+      "dimensions": [
+        1082,
+        609
+      ],
+      "sourcePage": "https://docs.control4.com/help/c4/user/userguide/content/topics/security/locks.htm",
+      "sourceFile": "https://docs.control4.com/help/c4/user/userguide/content/resources/images/eug-security-locks-list.png",
+      "processing": "Lossless WebP conversion at original dimensions; full screenshot retained"
+    }
+  ]
+}
