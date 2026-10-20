@@ -1,0 +1,51 @@
+{
+  "checked": "2026-10-19",
+  "notes": "Public Sonos manufacturer images, not Denali Tech projects. Full product canvases are retained; blue backgrounds are CSS only. Larger product files are lossless WebP conversions of PNG originals with identical decoded RGBA pixels. Display renditions are whole-frame Lanczos downsizes and quality-92 WebP encodes. No AI redraw, product crop or upscaling. Source tracing is not an independent license grant or a legal guarantee. Previous Episode files are left untouched but are not used in this revised article.",
+  "assets": [
+    {
+      "file": "sonos-era100-official.webp",
+      "role": "original",
+      "dimensions": [2000,2000],
+      "sha256": "ebbabc37716a046a74220d9997156f103bf05cd517989eee59edbf5bd7780a06",
+      "sourcePage": "https://www.sonos.com/en-us/shop/era-100",
+      "sourceFile": "https://media.sonos.com/images/znqtjj88/production/c730c924a2d9fe4d3a3b9b9cb7432b7afd0ab392-2000x2000.png"
+    },
+    {
+      "file": "sonos-era100-display.webp",
+      "role": "display",
+      "originalFile": "sonos-era100-official.webp",
+      "dimensions": [1200,1200],
+      "sha256": "83d9691173283f2702e823673f33105e9e67f61dcb88c20540c57806d183af6f"
+    },
+    {
+      "file": "sonos-amp-multi-official.webp",
+      "role": "original",
+      "dimensions": [2048,2048],
+      "sha256": "84fa3146e83e3de9d0bf753bf8a693ff9d0291f7caf28847d82e2656c182626f",
+      "sourcePage": "https://www.sonos.com/en-us/shop/amp-multi",
+      "sourceFile": "https://media.sonos.com/images/znqtjj88/production/bd7cdd505832336fa3e1813773b2cc5068a806cf-2048x2048.png"
+    },
+    {
+      "file": "sonos-amp-multi-display.webp",
+      "role": "display",
+      "originalFile": "sonos-amp-multi-official.webp",
+      "dimensions": [1200,1200],
+      "sha256": "2429786facc66d417432df2791ce6b822677544a0c41c3289b377449c4f67027"
+    },
+    {
+      "file": "sonos-architectural-living-room.jpg",
+      "role": "original",
+      "dimensions": [2400,1600],
+      "sha256": "ea7da18b7a06f13737cc02270e98d516a8ab1983218e7f3204abf7509c402abf",
+      "sourcePage": "https://www.sonos.com/en-us/shop/amp-multi",
+      "sourceFile": "https://media.sonos.com/images/znqtjj88/production/2f37f770470ac68e15c4081527c724686aef499f-2400x1600.jpg"
+    },
+    {
+      "file": "sonos-architectural-living-room-display.webp",
+      "role": "display",
+      "originalFile": "sonos-architectural-living-room.jpg",
+      "dimensions": [1440,960],
+      "sha256": "3b4c9a5374b641e753300bf9b154a23aff00cd59373261861d69c80f66498e8e"
+    }
+  ]
+}
