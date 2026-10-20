@@ -1,0 +1,169 @@
+{
+  "reviewedOn": "2026-10-19",
+  "notes": "Source provenance, not an independent license grant. Original URC product-gallery PNG bytes are retained. Display WebPs use quality 94 with unchanged dimensions and lossless alpha; RGB compression is not pixel-identical. Transparency is supplied by URC. No hardware synthesis, background removal, retouching or upscaling. Layout uses CSS/SVG to frame transparent canvas only; complete linked originals remain available. Manufacturer photos are not Denali installations; screen artwork is illustrative, not a compatibility promise.",
+  "assets": [
+    {
+      "file": "mx990-review-cover.webp",
+      "role": "editorial cover",
+      "model": "MX-990",
+      "sourcePage": "https://www.urc-automation.com/product/mx-990/",
+      "sourceFile": "https://www.urc-automation.com/wp-content/uploads/2017/11/img_urc_mx-990_xl_3.png",
+      "originalFile": "mx990-angle-original.png",
+      "sha256": "60c79d25007f0c182ed51f1f0584e18637f59635805e24b8a53e49259079422a",
+      "dimensions": [1200, 675],
+      "transformation": "Code-native SVG layout rendered in Chrome, with original URC photo placed whole over a blue gradient beside Denali editorial labels. No photo retouch, hardware generation or upscaling. Editorial artwork, not an unmodified manufacturer original."
+    },
+    {
+      "file": "mx990-front-original.png",
+      "role": "original",
+      "model": "MX-990",
+      "sourcePage": "https://www.urc-automation.com/product/mx-990/",
+      "sourceFile": "https://www.urc-automation.com/wp-content/uploads/2017/11/img_urc_mx-990_xl_1.png",
+      "sha256": "e29b8ba1e03c9bc90391ead93ae93c479152b0118688684ba8610bf46b90ccc9",
+      "dimensions": [
+        1500,
+        1500
+      ],
+      "deviceBounds": [
+        569,
+        53,
+        929,
+        1446
+      ],
+      "originalFile": "mx990-front-original.png"
+    },
+    {
+      "file": "mx990-front.webp",
+      "role": "display",
+      "model": "MX-990",
+      "sourcePage": "https://www.urc-automation.com/product/mx-990/",
+      "sourceFile": "https://www.urc-automation.com/wp-content/uploads/2017/11/img_urc_mx-990_xl_1.png",
+      "sha256": "996aae5cfcc3d89731f2296fa7ef2b9639c7ebbdec1ea1482c4bc4dd1a034042",
+      "dimensions": [
+        1500,
+        1500
+      ],
+      "deviceBounds": [
+        569,
+        53,
+        929,
+        1446
+      ],
+      "originalFile": "mx990-front-original.png"
+    },
+    {
+      "file": "mx990-cradle-original.png",
+      "role": "original",
+      "model": "MX-990",
+      "sourcePage": "https://www.urc-automation.com/product/mx-990/",
+      "sourceFile": "https://www.urc-automation.com/wp-content/uploads/2017/11/img_urc_mx-990_xl_2.png",
+      "sha256": "42d583128393be088346df18a36a81ae4a11b2e3dedef720f063f594df725ebb",
+      "dimensions": [
+        1500,
+        1500
+      ],
+      "deviceBounds": [
+        325,
+        31,
+        1174,
+        1471
+      ],
+      "originalFile": "mx990-cradle-original.png"
+    },
+    {
+      "file": "mx990-cradle.webp",
+      "role": "display",
+      "model": "MX-990",
+      "sourcePage": "https://www.urc-automation.com/product/mx-990/",
+      "sourceFile": "https://www.urc-automation.com/wp-content/uploads/2017/11/img_urc_mx-990_xl_2.png",
+      "sha256": "97f85b538b3c356edc7625f0619ad74852f4991bb7b2f6b374b53301350ff3c6",
+      "dimensions": [
+        1500,
+        1500
+      ],
+      "deviceBounds": [
+        325,
+        31,
+        1174,
+        1471
+      ],
+      "originalFile": "mx990-cradle-original.png"
+    },
+    {
+      "file": "mx990-angle-original.png",
+      "role": "original",
+      "model": "MX-990",
+      "sourcePage": "https://www.urc-automation.com/product/mx-990/",
+      "sourceFile": "https://www.urc-automation.com/wp-content/uploads/2017/11/img_urc_mx-990_xl_3.png",
+      "sha256": "8d3bdefafdacb48486cde45a8157c3164ffbec7303a4c4c11f0b6dd543254045",
+      "dimensions": [
+        1500,
+        1500
+      ],
+      "deviceBounds": [
+        436,
+        42,
+        1064,
+        1458
+      ],
+      "originalFile": "mx990-angle-original.png"
+    },
+    {
+      "file": "mx990-angle.webp",
+      "role": "display",
+      "model": "MX-990",
+      "sourcePage": "https://www.urc-automation.com/product/mx-990/",
+      "sourceFile": "https://www.urc-automation.com/wp-content/uploads/2017/11/img_urc_mx-990_xl_3.png",
+      "sha256": "83708c3e8d248c252bd9469a3414080e4727ad18b2558adf8a49342e56623fe7",
+      "dimensions": [
+        1500,
+        1500
+      ],
+      "deviceBounds": [
+        436,
+        42,
+        1064,
+        1458
+      ],
+      "originalFile": "mx990-angle-original.png"
+    },
+    {
+      "file": "mrf350-kit-original.png",
+      "role": "original",
+      "model": "MRF-350 with RFX-250",
+      "sourcePage": "https://www.urc-automation.com/product/mrf-350/",
+      "sourceFile": "https://www.urc-automation.com/wp-content/uploads/2017/11/img_urc_mrf-350_xl_3.png",
+      "sha256": "d54132efd0a1a69c703e64ae10a01b0865daa9c353a70e4e3e119ab01921586f",
+      "dimensions": [
+        1500,
+        1500
+      ],
+      "deviceBounds": [
+        171,
+        90,
+        1329,
+        1409
+      ],
+      "originalFile": "mrf350-kit-original.png"
+    },
+    {
+      "file": "mrf350-kit.webp",
+      "role": "display",
+      "model": "MRF-350 with RFX-250",
+      "sourcePage": "https://www.urc-automation.com/product/mrf-350/",
+      "sourceFile": "https://www.urc-automation.com/wp-content/uploads/2017/11/img_urc_mrf-350_xl_3.png",
+      "sha256": "3b705a52a251a1350b56d3cc4bb751c3a47c9262988edb9faa9a5dac15d0e980",
+      "dimensions": [
+        1500,
+        1500
+      ],
+      "deviceBounds": [
+        171,
+        90,
+        1329,
+        1409
+      ],
+      "originalFile": "mrf350-kit-original.png"
+    }
+  ]
+}
