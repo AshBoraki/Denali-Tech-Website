@@ -1,0 +1,85 @@
+{
+  "reviewedOn": "2026-10-19",
+  "notes": "Provenance record, not an independent license grant. Manufacturer examples, not Denali installations or exact color samples. Hidden electronics are not identified from an installed front photo. Original full frames retained.",
+  "assets": [
+    {
+      "file": "/blogs/control4-contemporary-keypad-guide/images/manufacturer/contemporary-room-original.jpg",
+      "role": "original",
+      "sourcePage": "https://cn.control4.com/blog/616/introducing-a-lofty-new-look-for-smart-lighting/",
+      "sourceFile": "https://cn.control4.com/files/large/b03b192e6c3aa08",
+      "dimensions": [
+        1852,
+        1012
+      ],
+      "sha256": "2c20a0d984baebe391bc2a4ca5f275820365e76cfa45f7a57c6a7a8773ccd227",
+      "transformation": "Native manufacturer file retained without retouching, generated detail or background removal."
+    },
+    {
+      "file": "/blogs/control4-contemporary-keypad-guide/images/manufacturer/contemporary-room.webp",
+      "role": "display",
+      "sourcePage": "https://cn.control4.com/blog/616/introducing-a-lofty-new-look-for-smart-lighting/",
+      "sourceFile": "https://cn.control4.com/files/large/b03b192e6c3aa08",
+      "dimensions": [
+        1400,
+        765
+      ],
+      "sha256": "fcd83910e71758b635db2a5922b7eef9dd78e90d2f548bd35df7f8f3f7e78b1d",
+      "transformation": "Full-canvas WebP quality94, downsampled only if above1400px. No crop, upscale, background removal or retouching.",
+      "originalFile": "/blogs/control4-contemporary-keypad-guide/images/manufacturer/contemporary-room-original.jpg"
+    },
+    {
+      "file": "/blogs/control4-contemporary-keypad-guide/images/manufacturer/contemporary-finishes-original.jpg",
+      "role": "original",
+      "sourcePage": "https://www.snapav.com/shop/en/snapav/keypads--remotes/c4-kc120277-c-bl",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/description/images/lighting/C4-KC120277-C-A4.jpg",
+      "dimensions": [
+        500,
+        300
+      ],
+      "sha256": "0a6ae992bb3aa4c877a6168f33479fc9d1da3a2dec4bb136c879b50395fbc518",
+      "transformation": "Native manufacturer file retained without retouching, generated detail or background removal."
+    },
+    {
+      "file": "/blogs/control4-contemporary-keypad-guide/images/manufacturer/contemporary-finishes.webp",
+      "role": "display",
+      "sourcePage": "https://www.snapav.com/shop/en/snapav/keypads--remotes/c4-kc120277-c-bl",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/description/images/lighting/C4-KC120277-C-A4.jpg",
+      "dimensions": [
+        500,
+        300
+      ],
+      "sha256": "03685f894dda10982b8fa7c7d0ee764840007534a84df19504477bef96db9451",
+      "transformation": "Full-canvas WebP quality94, downsampled only if above1400px. No crop, upscale, background removal or retouching.",
+      "originalFile": "/blogs/control4-contemporary-keypad-guide/images/manufacturer/contemporary-finishes-original.jpg"
+    },
+    {
+      "file": "/blogs/control4-contemporary-keypad-guide/images/manufacturer/contemporary-keypad-dimmer-original.png",
+      "role": "original",
+      "sourcePage": "https://docs.control4.com/docs/product/wireless-keypad-dimmer-contemporary/data-sheet/english/revision/A/wireless-keypad-dimmer-contemporary-data-sheet-rev-a.pdf",
+      "sourceFile": "https://docs.control4.com/docs/product/wireless-keypad-dimmer-contemporary/data-sheet/english/revision/A/wireless-keypad-dimmer-contemporary-data-sheet-rev-a.pdf",
+      "dimensions": [
+        397,
+        696
+      ],
+      "sha256": "9701ede4d2255f6a774f11b4b0320058ca0431bd13bddbd2b83636114fec813b",
+      "transformation": "Native-resolution image extracted from the public data sheet; PDF CMYK converted to browser RGB with the original soft mask. Complete device retained, including mounting yoke. No crop, background removal or retouching.",
+      "pdfPage": 1,
+      "pdfImageXref": 72
+    },
+    {
+      "file": "/blogs/control4-contemporary-keypad-guide/images/manufacturer/contemporary-keypad-dimmer.webp",
+      "role": "display",
+      "sourcePage": "https://docs.control4.com/docs/product/wireless-keypad-dimmer-contemporary/data-sheet/english/revision/A/wireless-keypad-dimmer-contemporary-data-sheet-rev-a.pdf",
+      "sourceFile": "https://docs.control4.com/docs/product/wireless-keypad-dimmer-contemporary/data-sheet/english/revision/A/wireless-keypad-dimmer-contemporary-data-sheet-rev-a.pdf",
+      "dimensions": [
+        397,
+        696
+      ],
+      "sha256": "6b2ef771711d199b7a74e07a99c0e83e89ab733c637a09c4e2932f52d6c046c9",
+      "transformation": "Full-canvas WebP quality94, downsampled only if above1400px. No crop, upscale, background removal or retouching.",
+      "pdfPage": 1,
+      "pdfImageXref": 72,
+      "originalFile": "/blogs/control4-contemporary-keypad-guide/images/manufacturer/contemporary-keypad-dimmer-original.png"
+    }
+  ]
+}
