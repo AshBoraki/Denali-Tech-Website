@@ -1,0 +1,186 @@
+{
+  "reviewedOn": "2026-10-19",
+  "notes": "Provenance record, not a license grant. Manufacturer images remain the respective owners' property. Uses publicly accessible exact-model data sheets and manufacturer/catalog assets for the user's authorized-dealer website. No private portal documents, credentials or access tokens. Images are hardware and interface illustrations, not Denali Tech installations or software compatibility approvals.",
+  "layout": "Four hardware stages retain the full visible product. The square SR-260 file has large transparent side margins: CSS centers the original-height image and clips only empty side canvas, not the device. No image file is cropped. Photos open at original dimensions from native links. Product sizes/angles are not to scale.",
+  "assets": [
+    {
+      "file": "control4-halo-touch-datasheet.webp",
+      "dimensions": [
+        1317,
+        2282
+      ],
+      "alphaBounds": [
+        215,
+        180,
+        1317,
+        2188
+      ],
+      "sourceFile": "https://docs.control4.com/docs/product/halo-remote-touch/data-sheet/english/latest",
+      "pdfPage": 1,
+      "pdfImageXref": 370,
+      "transformation": "PDF embedded image and original soft mask extracted; lossless WebP encoding. Full product and dock retained, no AI retouching or upscale.",
+      "sha256": "02f8d0b539197fa65974f9751339ddaaac095a983a7eb62650742860c3059b0f",
+      "role": "original"
+    },
+    {
+      "file": "control4-halo-datasheet.webp",
+      "dimensions": [
+        1314,
+        2247
+      ],
+      "alphaBounds": [
+        140,
+        120,
+        1314,
+        2218
+      ],
+      "sourceFile": "https://docs.control4.com/docs/product/halo-remote/data-sheet/english/latest/",
+      "pdfPage": 1,
+      "pdfImageXref": 363,
+      "transformation": "PDF embedded image and original soft mask extracted; lossless WebP encoding. Full product and dock retained, no AI retouching or upscale.",
+      "sha256": "607e972687dc83da3f965c67e06e1de720a950117b035460265ecf907dca8a6e",
+      "role": "original"
+    },
+    {
+      "file": "control4-neeo-datasheet.webp",
+      "dimensions": [
+        963,
+        1376
+      ],
+      "alphaBounds": [
+        48,
+        61,
+        840,
+        1313
+      ],
+      "sourceFile": "https://docs.control4.com/docs/product/neeo-remote/data-sheet/english/latest/",
+      "pdfPage": 1,
+      "pdfImageXref": 89,
+      "transformation": "PDF embedded image converted from its CMYK colorspace to RGB and restored with its original soft mask, then losslessly encoded to WebP. No product-detail editing or upscale.",
+      "sha256": "de35da2d9339d0a634ad783cf201469e5ea848bcd7a0e6990af0dfc8359884f5",
+      "role": "original"
+    },
+    {
+      "file": "control4-sr260-catalog.webp",
+      "dimensions": [
+        1700,
+        1700
+      ],
+      "alphaBounds": [
+        629,
+        1,
+        1070,
+        1699
+      ],
+      "sourceFile": "https://www.snapav.com//dx/api/dam/v1/collections/793b045d-5e28-4164-9bc1-132c1a548ed0/items/db90e9eb-b2a1-42aa-adb6-276f512cad68/renditions/9ad3b8cf-3fc3-4a8a-b336-a5b3514a46ff?binary=true",
+      "transformation": "Original public catalog PNG losslessly encoded to WebP with native alpha. No product-detail editing, crop or upscale.",
+      "sha256": "575c13433260ea875a964e287c712ee10a3a0943d79afce55e02a9bcd5c7fcbb",
+      "role": "original"
+    },
+    {
+      "file": "control4-halo-touch-manufacturer-interface.webp",
+      "dimensions": [
+        560,
+        485
+      ],
+      "alphaBounds": null,
+      "sourceFile": "https://cdn.prod.website-files.com/629926620ba03720384bebb3/681a1f47b48da5afb6e3a473_087_25_Control4.com_Remotes_HaloTouch.webp",
+      "transformation": "Original manufacturer file copied byte for byte.",
+      "sha256": "d262ec2146fbeabb4707cfee93fb7aa7e4cde46e4d274e7444af407affe7ea3f",
+      "role": "display"
+    },
+    {
+      "file": "control4-halo-manufacturer-interface.webp",
+      "dimensions": [
+        560,
+        485
+      ],
+      "alphaBounds": null,
+      "sourceFile": "https://cdn.prod.website-files.com/629926620ba03720384bebb3/681a1f47b48da5afb6e3a479_087_25_Control4.com_Remotes_Halo.webp",
+      "transformation": "Original manufacturer file copied byte for byte.",
+      "sha256": "7118558bd7f34594aaadb7217353caf45a10850dda605726f14cfe9dfd15ed0e",
+      "role": "display"
+    },
+    {
+      "file": "control4-halo-touch-datasheet-display.webp",
+      "role": "display",
+      "dimensions": [
+        739,
+        1280
+      ],
+      "alphaBounds": [
+        121,
+        99,
+        739,
+        1227
+      ],
+      "sourceFile": "https://docs.control4.com/docs/product/halo-remote-touch/data-sheet/english/latest",
+      "originalFile": "control4-halo-touch-datasheet.webp",
+      "transformation": "Web display rendition: downsampled full canvas to 1280px height using Lanczos and WebP quality 92. No crop, AI edits or upscale. The original-resolution lossless file remains available through the product-photo link.",
+      "sha256": "58efd39196afae642d9ae12f28cad8d38e9e7788f100115c703b793cb6afdc9d"
+    },
+    {
+      "file": "control4-halo-datasheet-display.webp",
+      "role": "display",
+      "dimensions": [
+        749,
+        1280
+      ],
+      "alphaBounds": [
+        80,
+        68,
+        749,
+        1263
+      ],
+      "sourceFile": "https://docs.control4.com/docs/product/halo-remote/data-sheet/english/latest/",
+      "originalFile": "control4-halo-datasheet.webp",
+      "transformation": "Web display rendition: downsampled full canvas to 1280px height using Lanczos and WebP quality 92. No crop, AI edits or upscale. The original-resolution lossless file remains available through the product-photo link.",
+      "sha256": "b76ac0a260fa5fb7d7c1bbdb77495f6c380267ef250c20d080990029890660d4"
+    },
+    {
+      "file": "control4-neeo-datasheet-display.webp",
+      "role": "display",
+      "dimensions": [
+        896,
+        1280
+      ],
+      "alphaBounds": [
+        42,
+        54,
+        783,
+        1224
+      ],
+      "sourceFile": "https://docs.control4.com/docs/product/neeo-remote/data-sheet/english/latest/",
+      "originalFile": "control4-neeo-datasheet.webp",
+      "transformation": "Web display rendition: downsampled full canvas to 1280px height using Lanczos and WebP quality 92. No crop, AI edits or upscale. The original-resolution lossless file remains available through the product-photo link.",
+      "sha256": "33d5e998eb7c2f3493d025cc3f83f7b6af8df254e5fcfc3892ed17fffbf49c5e"
+    },
+    {
+      "file": "control4-sr260-catalog-display.webp",
+      "role": "display",
+      "dimensions": [
+        1280,
+        1280
+      ],
+      "alphaBounds": [
+        471,
+        0,
+        808,
+        1280
+      ],
+      "sourceFile": "https://www.snapav.com//dx/api/dam/v1/collections/793b045d-5e28-4164-9bc1-132c1a548ed0/items/db90e9eb-b2a1-42aa-adb6-276f512cad68/renditions/9ad3b8cf-3fc3-4a8a-b336-a5b3514a46ff?binary=true",
+      "originalFile": "control4-sr260-catalog.webp",
+      "transformation": "Web display rendition: downsampled full canvas to 1280px height using Lanczos and WebP quality 92. No crop, AI edits or upscale. The original-resolution lossless file remains available through the product-photo link.",
+      "sha256": "0420719277bab8725f47ef2905bc4756eee5c6de824c828cd79c84214d774f23"
+    }
+  ],
+  "retainedEditorialGraphic": {
+    "file": "control4-remote-comparison-hero-v3.webp",
+    "dimensions": [
+      1800,
+      1013
+    ],
+    "sha256": "10b1975934c744c28f4fe667ea4fd6f91b84ad4b540b4aa48ec9dc56fc919b2a",
+    "notes": "Existing editorial comparison artwork, not an unmodified manufacturer original. Retained with a visible not-to-scale/artwork caption and unchanged social image URL. Product forms and button layouts visually compared with the newly sourced hardware views. Its prior processing history is not verified; do not use it as evidence of exact scale, current software or feature availability."
+  }
+}
