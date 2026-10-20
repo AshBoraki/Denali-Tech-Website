@@ -1,0 +1,25 @@
+{
+  "checked": "2026-10-19",
+  "sourcePage": "https://www.control4.com/services",
+  "notes": "Existing local images match the public Control4 originals byte for byte. No crop, AI alteration, upscaling or background replacement was performed. The article uses CSS blue stages; the phone source has transparent side margins. Provenance is not an independent license grant or confirmation of every downstream usage right. These are manufacturer examples, not Denali Tech project photos.",
+  "assets": [
+    {
+      "file": "control4-app-home.webp",
+      "dimensions": [772, 528],
+      "sha256": "18e0cb14b817aece8733362771f7cf0f9e0a9c6f0dfac837a1195cb1b98c58cb",
+      "sourceFile": "https://cdn.prod.website-files.com/629926620ba03720384bebb3/67fffad5c107419152a0e93e_1bc7516fd90187cfacb8d637d5a96713_087_25_Control4.com_SmartHomeExperience_Homescreen.webp"
+    },
+    {
+      "file": "control4-connect-personalization.webp",
+      "dimensions": [772, 528],
+      "sha256": "9c0dc2d5038e6eadca76a325b1924668f082c7ad8f86810da41d985e9a5a4f2c",
+      "sourceFile": "https://cdn.prod.website-files.com/629926620ba03720384bebb3/67f3ee455369411d73698233_087_25_Control4.com_Services_Connect_3.webp"
+    },
+    {
+      "file": "control4-connect-phone.webp",
+      "dimensions": [580, 380],
+      "sha256": "1fb6c3efd4662e305e2b3570cdf13f8f794deec6dda175a0e3da5af026ae7dfd",
+      "sourceFile": "https://cdn.prod.website-files.com/629926620ba03720384bebb3/681cef95c2bc43da9ad997f5_d14c46c74f7a797fd68a7e4a26cbdb23_087_25_Control4.com_Services_Connect_MobilePhone.webp"
+    }
+  ]
+}
