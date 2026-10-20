@@ -1,0 +1,35 @@
+{
+  "reviewedOn": "2026-10-19",
+  "notes": "Source and transformation record, not a license grant. Manufacturer images remain the property of their respective owners. These illustrations are not represented as Denali Tech project photography.",
+  "assets": [
+    {
+      "file": "control4-t4-tabletop-angle-official.png",
+      "sourcePage": "https://www.snapav.com/shop/en/snapav/c4-touchscreens/c4-t4t10-bl",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/images/C4/zoom/C4-T4T10-BL-1C.png",
+      "model": "C4-T4T10-BL",
+      "view": "Angled front",
+      "transformation": "Original manufacturer PNG, unchanged. Whole image displayed with CSS contain and multiply against a pale product stage."
+    },
+    {
+      "file": "control4-t4-tabletop-dock-official.png",
+      "sourcePage": "https://www.snapav.com/shop/en/snapav/c4-touchscreens/c4-t4t10-bl",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/images/C4/zoom/C4-T4T10-BL-8C.png",
+      "model": "C4-T4T10-BL",
+      "view": "Rear with charging base",
+      "transformation": "Original manufacturer PNG, unchanged. Whole image displayed with CSS contain and multiply against a pale product stage."
+    },
+    {
+      "files": [
+        "control4-t5-kitchen-wall-touchscreen-600.webp",
+        "control4-t5-kitchen-wall-touchscreen-1200.webp",
+        "control4-t5-media-room-touchscreen-600.webp",
+        "control4-t5-media-room-touchscreen-1200.webp",
+        "control4-t5-office-lighting-touchscreen-600.webp",
+        "control4-t5-office-lighting-touchscreen-1200.webp"
+      ],
+      "source": "Existing kitchen, media-room and office-lighting JPEGs in this directory; original upstream source records are not available here.",
+      "transformation": "Proportional resize and WebP compression only. No crop, generative editing or background removal.",
+      "labeling": "The media-room and office-lighting photographs are labeled as wall-mounted Control4 controls, not as a verified T5 model."
+    }
+  ]
+}
