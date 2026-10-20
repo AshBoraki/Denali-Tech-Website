@@ -1,0 +1,176 @@
+{
+  "reviewed": "2026-10-19",
+  "notes": "Manufacturer product imagery retrieved from the public Snap One by ADI catalog. This provenance record is not an independent license grant. Manufacturer ownership and applicable marketing-use terms still apply. No AI-generated hardware, recoloring, background replacement or product cropping was used. Original backgrounds preserve product colors. Cover is an editorial HTML layout of the three cited Signature photos, not an installation or physical-scale comparison.",
+  "assets": [
+    {
+      "file": "/blogs/episode-whole-home-audio-planning-guide/images/manufacturer/core3-original.jpg",
+      "sha256": "1d83a3e5178c8e448f3b6fade247a7784cdb1eb9c0d31bae699689697f974d91",
+      "dimensions": [
+        1000,
+        850
+      ],
+      "sourcePage": "https://www.snapav.com/shop/en/snapav/architectural-speakers/es-core-36-ic",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/images/Speakers/zoom/1-ES-CORE-36-IC-FRONT-pair-Z.jpg",
+      "processing": "Original downloaded bytes"
+    },
+    {
+      "file": "/blogs/episode-whole-home-audio-planning-guide/images/manufacturer/core3.webp",
+      "sha256": "83f8750256ee502b10f06e31bc511251421ca6127744ade59c68f253fd4a9a3d",
+      "dimensions": [
+        1000,
+        850
+      ],
+      "sourcePage": "https://www.snapav.com/shop/en/snapav/architectural-speakers/es-core-36-ic",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/images/Speakers/zoom/1-ES-CORE-36-IC-FRONT-pair-Z.jpg",
+      "processing": "WebP format conversion; original dimensions and complete framing retained"
+    },
+    {
+      "file": "/blogs/episode-whole-home-audio-planning-guide/images/manufacturer/episode-signature-cover.png",
+      "sha256": "13d95c7dce976a252b00e96e8dc076ec0da2f722b5eab171c7dad7681a2350d5",
+      "dimensions": [
+        1200,
+        675
+      ],
+      "sourcePage": [
+        "https://www.snapav.com/shop/en/snapav/sig-36-ic",
+        "https://www.snapav.com/shop/en/snapav/sig-56-ic",
+        "https://www.snapav.com/shop/en/snapav/sig-76-ic"
+      ],
+      "sourceFile": [
+        "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/images/Speakers/zoom/SIG-36-IC-1Z.jpg",
+        "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/images/Speakers/zoom/SIG-56-IC-1Z.jpg",
+        "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/images/Speakers/zoom/SIG-76-IC-1Z.jpg"
+      ],
+      "processing": "Native HTML/CSS layout with full uncropped source photos and model labels; PNG screenshot or WebP conversion"
+    },
+    {
+      "file": "/blogs/episode-whole-home-audio-planning-guide/images/manufacturer/episode-signature-cover.webp",
+      "sha256": "b8436f54ab00ba0fa61e9dd64221aeaa1a4407e69bb71748ff6cf90f2ddd75b5",
+      "dimensions": [
+        1200,
+        675
+      ],
+      "sourcePage": [
+        "https://www.snapav.com/shop/en/snapav/sig-36-ic",
+        "https://www.snapav.com/shop/en/snapav/sig-56-ic",
+        "https://www.snapav.com/shop/en/snapav/sig-76-ic"
+      ],
+      "sourceFile": [
+        "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/images/Speakers/zoom/SIG-36-IC-1Z.jpg",
+        "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/images/Speakers/zoom/SIG-56-IC-1Z.jpg",
+        "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/images/Speakers/zoom/SIG-76-IC-1Z.jpg"
+      ],
+      "processing": "Native HTML/CSS layout with full uncropped source photos and model labels; PNG screenshot or WebP conversion"
+    },
+    {
+      "file": "/blogs/episode-whole-home-audio-planning-guide/images/manufacturer/impression-original.png",
+      "sha256": "b4b3c6d8472f1ab24d4fb67c9ae31ddc29283682fc619a14147f79ab6307a507",
+      "dimensions": [
+        1000,
+        850
+      ],
+      "sourcePage": "https://www.snapav.com/shop/en/snapav/es-im4ic",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/images/Speakers/zoom/ES-IM4IC-Z1.png",
+      "processing": "Original downloaded bytes"
+    },
+    {
+      "file": "/blogs/episode-whole-home-audio-planning-guide/images/manufacturer/impression.webp",
+      "sha256": "17bccd9df0c2ae6ab8870496c42cd6b30cd2e7130d24cdd9240effa395dba639",
+      "dimensions": [
+        1000,
+        850
+      ],
+      "sourcePage": "https://www.snapav.com/shop/en/snapav/es-im4ic",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/images/Speakers/zoom/ES-IM4IC-Z1.png",
+      "processing": "WebP format conversion; original dimensions and complete framing retained"
+    },
+    {
+      "file": "/blogs/episode-whole-home-audio-planning-guide/images/manufacturer/sig-36-ic-original.jpg",
+      "sha256": "4a044bcd72d7bbf9cebaea50d03d586dbc662de177e12f8bfe01f18f3cb0dd74",
+      "dimensions": [
+        1000,
+        850
+      ],
+      "sourcePage": "https://www.snapav.com/shop/en/snapav/sig-36-ic",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/images/Speakers/zoom/SIG-36-IC-1Z.jpg",
+      "processing": "Original downloaded bytes"
+    },
+    {
+      "file": "/blogs/episode-whole-home-audio-planning-guide/images/manufacturer/sig-36-ic.webp",
+      "sha256": "12181a3887dbfae5e25a97d8fb4cc7a7904c3cba8d5c86baa697fbf8b9e825ae",
+      "dimensions": [
+        1000,
+        850
+      ],
+      "sourcePage": "https://www.snapav.com/shop/en/snapav/sig-36-ic",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/images/Speakers/zoom/SIG-36-IC-1Z.jpg",
+      "processing": "WebP format conversion; original dimensions and complete framing retained"
+    },
+    {
+      "file": "/blogs/episode-whole-home-audio-planning-guide/images/manufacturer/sig-56-ic-original.jpg",
+      "sha256": "02da2d810fda5ca6225f1f8dcc81e3bb3e11f913c942af3fea9c974071ffccf7",
+      "dimensions": [
+        1000,
+        850
+      ],
+      "sourcePage": "https://www.snapav.com/shop/en/snapav/sig-56-ic",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/images/Speakers/zoom/SIG-56-IC-1Z.jpg",
+      "processing": "Original downloaded bytes"
+    },
+    {
+      "file": "/blogs/episode-whole-home-audio-planning-guide/images/manufacturer/sig-56-ic.webp",
+      "sha256": "036c380bacd716368fa77fba296d37707a08c16cdd07e61ac3d8190d3193463d",
+      "dimensions": [
+        1000,
+        850
+      ],
+      "sourcePage": "https://www.snapav.com/shop/en/snapav/sig-56-ic",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/images/Speakers/zoom/SIG-56-IC-1Z.jpg",
+      "processing": "WebP format conversion; original dimensions and complete framing retained"
+    },
+    {
+      "file": "/blogs/episode-whole-home-audio-planning-guide/images/manufacturer/sig-76-ic-original.jpg",
+      "sha256": "efc14857cff842407938f91af6d7d162bbddb25aae1f929f5bc1617cdb16f397",
+      "dimensions": [
+        1000,
+        850
+      ],
+      "sourcePage": "https://www.snapav.com/shop/en/snapav/sig-76-ic",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/images/Speakers/zoom/SIG-76-IC-1Z.jpg",
+      "processing": "Original downloaded bytes"
+    },
+    {
+      "file": "/blogs/episode-whole-home-audio-planning-guide/images/manufacturer/sig-76-ic.webp",
+      "sha256": "7281e5de56afe4bba242affa299763dc9dc10104a7e223fdf7fd6d083d429405",
+      "dimensions": [
+        1000,
+        850
+      ],
+      "sourcePage": "https://www.snapav.com/shop/en/snapav/sig-76-ic",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/images/Speakers/zoom/SIG-76-IC-1Z.jpg",
+      "processing": "WebP format conversion; original dimensions and complete framing retained"
+    },
+    {
+      "file": "/blogs/episode-whole-home-audio-planning-guide/images/manufacturer/surroundscape-original.jpg",
+      "sha256": "cd1102dd1d6b48d98e5fc4207d9f3696d0fecdc553ed47236a2861a5b25546b1",
+      "dimensions": [
+        3601,
+        3601
+      ],
+      "sourcePage": "https://www.snapav.com/shop/en/snapav/outdoor/es-ss6",
+      "sourceFile": "https://www.snapav.com//dx/api/dam/v1/collections/8784ea3c-2013-4e35-bc58-a7e0fff4b6fd/items/62ee4667-5a88-4cea-9a72-57a103c05df5/renditions/7d21d201-ebd2-4438-8fa0-7af095de1d93?binary=true",
+      "processing": "Original downloaded bytes"
+    },
+    {
+      "file": "/blogs/episode-whole-home-audio-planning-guide/images/manufacturer/surroundscape.webp",
+      "sha256": "a2a6eeef6e5e7314a524de5198add119751dfa06ff4c356429291d1f20628c4c",
+      "dimensions": [
+        1200,
+        1200
+      ],
+      "sourcePage": "https://www.snapav.com/shop/en/snapav/outdoor/es-ss6",
+      "sourceFile": "https://www.snapav.com//dx/api/dam/v1/collections/8784ea3c-2013-4e35-bc58-a7e0fff4b6fd/items/62ee4667-5a88-4cea-9a72-57a103c05df5/renditions/7d21d201-ebd2-4438-8fa0-7af095de1d93?binary=true",
+      "processing": "WebP conversion, proportional downsample from 3601 to 1200 pixels; no crop"
+    }
+  ]
+}
