@@ -1604,6 +1604,57 @@
             }
         }
 
+        /* About-page editorial cleanup; shared navigation and footer are unchanged. */
+        .about-refined .hero { padding: 96px 0 44px; }
+        .about-refined .hero p { font-size: 1.15rem; line-height: 1.75; margin-bottom: 0; }
+        .about-refined .content-section { padding: 56px 5%; }
+        .about-refined .section-header { margin-bottom: 2.5rem; }
+        .about-refined .section-header h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); }
+        .about-refined .section-header p { font-size: 1.08rem; line-height: 1.7; }
+        .about-refined .mission-content { gap: 3rem; margin-bottom: 0; }
+        .about-refined .mission-text h3 { color: var(--text-primary); font-size: 1.2rem; margin: 1.5rem 0 .55rem; }
+        .about-refined .mission-text h3:first-child { margin-top: 0; }
+        .about-refined .mission-text p { font-size: 1rem; line-height: 1.75; margin-bottom: 0; }
+        .about-project-proof { min-width: 0; margin: 0; padding: 1.1rem; border: 1px solid var(--border-color); border-radius: 16px; }
+        .about-project-proof img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: contain; border-radius: 8px; }
+        .about-project-proof figcaption { margin: 1rem 0 .5rem; color: var(--text-secondary); font-size: .95rem; line-height: 1.7; }
+        .about-project-proof a,
+        .about-refined .product-link { color: var(--text-primary); text-decoration: underline; text-underline-offset: .2em; }
+        .about-project-proof a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; }
+        .about-refined .stats-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 0; }
+        .about-refined .stat-item { padding: 1.5rem .75rem; }
+        .about-refined .stat-item:hover { transform: none; }
+        .about-refined .stat-number { font-size: clamp(1.8rem, 4vw, 2.5rem); }
+        .about-refined .stat-label { font-size: .85rem; }
+        .about-refined .product-section { background: rgba(148, 163, 184, .045); }
+        .about-refined .product-card { padding: 1.5rem; border-radius: 14px; box-shadow: none; }
+        .about-refined .product-card-header { margin-bottom: 1rem; }
+        .about-refined .product-logo { flex-basis: 56px; width: 56px; height: 56px; border-radius: 12px; }
+        .about-refined .product-card h3 { font-size: 1.5rem; }
+        .about-refined .product-card > p { font-size: 1rem; line-height: 1.7; margin-bottom: .75rem; }
+        .about-refined .product-link { justify-content: flex-start; align-self: flex-start; min-height: 44px; padding: .5rem 0; background: none; border: 0; border-radius: 0; box-shadow: none; font-weight: 600; }
+        .about-refined .product-link:hover { transform: none; color: var(--accent-primary); }
+        .about-refined .product-disclosure { font-size: .9rem; margin-top: 1.25rem; }
+        .about-refined .cta-section { padding: 64px 5%; background: linear-gradient(135deg, #b45309, #c2410c); }
+        .about-refined .cta-section .btn-primary { color: #9a3412; }
+        :root[data-theme='light'] .about-refined .stat-number,
+        :root[data-theme='light'] .about-refined .product-kicker,
+        body.light-theme .about-refined .stat-number,
+        body.light-theme .about-refined .product-kicker { color: #9a3412; }
+        #client-fit-heading { scroll-margin-top: 110px; }
+        @media (max-width: 768px) {
+            .about-refined .hero { padding-top: 76px; }
+            .about-refined .mission-content { gap: 2rem; }
+            .about-refined .content-section { padding: 40px 5%; }
+        }
+        @media (max-width: 480px) {
+            .about-refined .hero-content { padding: 0 1.25rem; }
+            .about-refined .hero h1 { font-size: 2rem; }
+            .about-refined .stats-grid { gap: .5rem; }
+            .about-refined .stat-item { padding: 1rem .35rem; }
+            .about-refined .stat-label { font-size: .7rem; letter-spacing: .02em; }
+        }
+
         /* Accessibility */
         @media (prefers-reduced-motion: reduce) {
             html {
@@ -1698,13 +1749,13 @@
         </div>
     </header>
 
-    <main role="main" id="main-content">
+    <main role="main" id="main-content" class="about-refined">
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-background"></div>
         <div class="hero-content">
             <h1>Proven Home Automation, Built To Last</h1>
-            <p>Denali Tech helps Chicago-area homeowners build around proven products, clean installs, and long-term support instead of short-term gear that creates bigger problems later.</p>
+            <p>Thoughtful planning, dependable equipment, and clean installation for Chicago-area homes. Based in Mount Prospect, serving homeowners since 2023.</p>
         </div>
     </section>
 
@@ -1713,7 +1764,7 @@
         <div class="container">
             <div class="section-header">
                 <h2>Why Ash Built Denali Tech</h2>
-                <p>A home automation company built around proven products, real support, and homes that deserve the right equipment from the start.</p>
+                <p>Home technology should make daily life easier—and be practical to service when something changes.</p>
             </div>
 
             <div class="founder-story" style="display: grid; grid-template-columns: 300px 1fr; gap: 3rem; align-items: start; margin-top: 3rem;">
@@ -1731,15 +1782,15 @@
 
                 <div class="founder-content">
                     <p style="font-size: 1.1rem; line-height: 1.9; margin-bottom: 1.5rem; color: var(--text-primary);">
-                        Ash Boraki built Denali Tech from years of hands-on work in AV, automation, networking, troubleshooting, and computer programming. The standard from the start was simple: do not sell people gear that is unproven, lightly supported, or likely to become a problem a few years later.
+                        Ash Boraki founded Denali Tech in 2023 after years of hands-on work in AV, automation, networking, troubleshooting, and computer programming. He wanted homeowners to have a clear plan—not just a collection of devices.
                     </p>
 
                     <p style="font-size: 1.1rem; line-height: 1.9; margin-bottom: 1.5rem; color: var(--text-primary);">
-                        He started Denali Tech in 2023 to build the kind of company he wanted to see more of: one that sources carefully, chooses product lines with real support in the United States, and thinks about service years before the install even starts.
+                        That starts with listening: what works in your home, what is frustrating, and how you want each room to feel. Equipment that still serves you should not be replaced without a reason.
                     </p>
 
                     <p style="font-size: 1.1rem; line-height: 1.9; margin-bottom: 1.5rem; color: var(--text-primary);">
-                        That approach protects the customer. Products are selected for manufacturer support, compatibility, and a clear service path so the system can remain dependable and maintainable over time.
+                        As a Control4 and URC dealer, Denali Tech plans around compatibility, manufacturer support, and access for future service. The aim is a system you enjoy using, with someone local to turn to when you need help.
                     </p>
                 </div>
             </div>
@@ -1757,103 +1808,35 @@
     </section>
 
     <!-- Mission Section -->
-    <section class="content-section">
+    <section class="content-section about-approach" aria-labelledby="client-fit-heading">
         <div class="container">
             <div class="section-header">
-                <h2>Our Mission</h2>
-                <p>Build systems that hold up over time</p>
+                <h2 id="client-fit-heading">A Clear Plan for Your Home</h2>
+                <p>For homeowners who value thoughtful work, straightforward advice, and a system that is easy to live with.</p>
             </div>
             <div class="mission-content">
                 <div class="mission-text">
-                    <h3>Make the system last</h3>
-                    <p>Smart home technology should make the house easier to use, not turn into a chain of replacements, app problems, and unsupported parts. Denali Tech focuses on products that are properly supported, serviceable, and worth building around.</p>
-                    <p>Every project starts with the room, the problem, and how the family wants to use the system. From there, we map the equipment, wiring, programming, and long-term support around the home so the system still feels right years from now.</p>
+                    <h3>Keep what works</h3>
+                    <p>We assess your existing equipment before recommending changes. A focused repair or upgrade may be all you need.</p>
+                    <h3>Know what you are choosing</h3>
+                    <p>Your proposal explains the equipment, work, and tradeoffs. We plan wiring, programming, and access for maintenance around the home—not a generic package.</p>
+                    <h3>Understand the handoff and support</h3>
+                    <p>We agree on the installation, programming, and walkthrough your project needs. Included support, warranty coverage, and any additional service charges are explained in your proposal or service agreement.</p>
                 </div>
-	                <div class="mission-image">
-	                    <picture>
-	                        <source srcset="../Video/homepage/denali-tech-hero-laptop-new-wrap.webp" type="image/webp">
-	                        <img src="../Video/homepage/denali-tech-hero-laptop-new-wrap.webp" alt="Illustrative Denali Tech service scene beside the newly wrapped van" width="1254" height="1254" loading="lazy" decoding="async">
-	                    </picture>
-	                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Values Section -->
-    <section class="content-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Our Core Values</h2>
-                <p>These are the principles that guide everything we do:</p>
-            </div>
-            <div class="values-grid">
-                <div class="value-card">
-                    <div class="value-icon">01</div>
-                    <h3>Customer Protection First</h3>
-                    <p>We listen first, then recommend the practical route. If a smaller scope is enough, we say so. When a broader solution is justified, we explain the benefits, tradeoffs, and long-term service path clearly.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">02</div>
-                    <h3>Proven Product Standards</h3>
-                    <p>We do not build projects around unproven product lines. We choose products with real manufacturer backing, correct programming tools, and long-term support paths in the U.S.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">03</div>
-                    <h3>Quality & Support</h3>
-                    <p>Every project includes installation, programming, walkthrough, and support after the system is in the home. We think about future service before the first device goes on the wall.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Choose Us Section -->
-    <section class="content-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Why Homeowners Call Denali Tech</h2>
-                <p>Clear scope first, proven products second, support after the system is in the home.</p>
-            </div>
-            <div class="values-grid" style="margin-top: 3rem;">
-                <div class="value-card">
-                    <div class="value-icon">01</div>
-                    <h3>Local Work</h3>
-                    <p>Based in Mt Prospect, IL, Denali Tech works in Chicago-area homes and nearby suburbs. When you call, you are talking to the people responsible for the job.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">02</div>
-                    <h3>Real Product Backing</h3>
-                    <p>We install Control4 and URC with the correct dealer tools, product access, and manufacturer-backed warranty paths instead of trying to piece together unsupported shortcuts.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">03</div>
-                    <h3>Transparent Pricing</h3>
-                    <p>We explain the scope, equipment, labor, and support before the work starts so the quote is easier to understand.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">04</div>
-                    <h3>Support After Install</h3>
-                    <p>After the walkthrough, we stay available for changes, questions, troubleshooting, and programming adjustments.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">05</div>
-                    <h3>Long-Term Thinking</h3>
-                    <p>We start with what can stay, what should change, and what will still be supportable years from now. The goal is the right system, not random gear that creates more work later.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">06</div>
-                    <h3>Proven Track Record</h3>
-                    <p>Denali Tech has served 100+ homes and maintains a 5.0-star Google rating from local customers.</p>
-                </div>
+	                <figure class="about-project-proof">
+                        <img src="/Video/Project%20videos/rack-before-after.webp" alt="Organized structured wiring enclosure from Denali Tech's before-and-after project video" width="1280" height="720" loading="lazy" decoding="async">
+                        <figcaption>A tidier foundation for the home's network and low-voltage wiring. From our structured-wiring before-and-after video.</figcaption>
+                        <a href="/projects/#project-videos">See the project videos</a>
+	                </figure>
             </div>
         </div>
     </section>
 
     <!-- Stats Section -->
-    <section class="content-section">
+    <section class="content-section about-track-record">
         <div class="container">
             <div class="section-header">
                 <h2>Our Track Record</h2>
-                <p>The numbers that matter:</p>
             </div>
             <div class="stats-grid">
                 <div class="stat-item">
@@ -1868,10 +1851,6 @@
                     <span class="stat-number">2023</span>
                     <span class="stat-label">Serving Chicago Since</span>
                 </div>
-                <div class="stat-item">
-                    <span class="stat-number">Ongoing</span>
-                    <span class="stat-label">Support After Install</span>
-                </div>
             </div>
         </div>
     </section>
@@ -1879,9 +1858,8 @@
     <section class="content-section product-section" aria-labelledby="software-products-heading">
         <div class="container">
             <div class="section-header">
-                <p class="product-eyebrow">Built from real field experience</p>
                 <h2 id="software-products-heading">The Software Side of Denali Tech</h2>
-                <p>Working in homes and running projects showed us where better tools could save time and reduce mistakes. That experience led us to build two focused software products.</p>
+                <p>Our field experience also led to two separate tools for installers and contractors.</p>
             </div>
             <div class="product-grid">
                 <article class="product-card">
@@ -1889,12 +1867,7 @@
                         <span class="product-logo" aria-hidden="true"><img src="/Video/dtnt/dtnt-app-mark.png" alt="" width="512" height="512" loading="lazy"></span>
                         <div><span class="product-kicker">For installers</span><h3>DTNT</h3></div>
                     </div>
-                    <p>Windows network-diagnostics software created for faster, clearer service calls in homes and small businesses.</p>
-                    <ul class="product-points">
-                        <li>Wi-Fi analysis and channel visibility</li>
-                        <li>IP scanning and network discovery</li>
-                        <li>Field-ready diagnostic tools in one place</li>
-                    </ul>
+                    <p>Windows network-diagnostics software for Wi-Fi analysis, IP scanning, and service calls.</p>
                     <a class="product-link" href="https://dt-nt.com/" target="_blank" rel="noopener" aria-label="Visit the DTNT software website">Visit DTNT</a>
                 </article>
 
@@ -1903,38 +1876,11 @@
                         <span class="product-logo propokit-logo" aria-hidden="true"><img src="/Video/propokit/propokit-logo-home.svg" alt="" width="128" height="128" loading="lazy"></span>
                         <div><span class="product-kicker">For contractors</span><h3>PropoKit</h3></div>
                     </div>
-                    <p>Proposal workflow software for contractors and service companies that want to create clearer quotes and follow up with customers more consistently.</p>
-                    <ul class="product-points">
-                        <li>Organized products, services, and pricing</li>
-                        <li>Professional proposals built more quickly</li>
-                        <li>A cleaner path from customer request to approval</li>
-                    </ul>
+                    <p>Proposal software for organizing products, services, and pricing into clear customer quotes.</p>
                     <a class="product-link" href="https://propokit.com/" target="_blank" rel="noopener" aria-label="Visit the PropoKit software website">Visit PropoKit</a>
                 </article>
             </div>
-            <p class="product-disclosure">DTNT and PropoKit are separate software products created by Denali Tech. Homeowners looking for installation and service can continue with our <a href="/projects/">project work</a> or <a href="/contact/">contact Denali Tech</a>.</p>
-        </div>
-    </section>
-
-    <!-- Client Fit Section: placed immediately before the project CTA -->
-    <section class="content-section" aria-labelledby="client-fit-heading" style="background: linear-gradient(180deg, rgba(13,148,136,0.035), rgba(249,115,22,0.055));">
-        <div class="container">
-            <div class="section-header">
-                <h2 id="client-fit-heading">Who We Work Best With</h2>
-                <p>The right plan, dependable products, and support that continues after installation.</p>
-            </div>
-            <div class="values-grid">
-                <div class="value-card">
-                    <div class="value-icon">01</div>
-                    <h3>Value That Lasts Beyond Installation</h3>
-                    <p>Our proposals bring together thoughtful design, dependable equipment, careful installation, and support after the project is complete. The goal is a system that continues to serve the home and a relationship clients can rely on.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">02</div>
-                    <h3>Focused Attention for Every Project</h3>
-                    <p>We protect the time needed to plan, install, test, and support each system properly so every home receives the attention it deserves.</p>
-                </div>
-            </div>
+            <p class="product-disclosure">DTNT and PropoKit are separate software products created by Denali Tech.</p>
         </div>
     </section>
 
