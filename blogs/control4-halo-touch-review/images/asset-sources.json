@@ -1,0 +1,99 @@
+{
+  "reviewedOn": "2026-10-19",
+  "notes": "Provenance record, not an independent license grant. Original catalog PNGs retain their native transparency and manufacturer shadows. Display renditions preserve the full original canvas. Manufacturer examples and interface illustration, not Denali installations, actual-size comparisons or proof of all current services. No AI hardware or retouching.",
+  "assets": [
+    {
+      "file": "/blogs/control4-halo-touch-review/images/halo-touch-review-cover.webp",
+      "role": "editorial cover",
+      "sourcePage": "https://www.snapav.com/shop/en/snapav/c4-halo-ts-bl",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/images/C4/zoom/C4-HALO-TS-BL_7_Front_Docked_Z.png",
+      "dimensions": [1200, 675],
+      "sha256": "1439b66fe91710b3432f1c7bc8194f3c06e3b3d05d579b0359389b315e7f26f9",
+      "transformation": "Code-native HTML/CSS editorial cover rendered in Chrome. Full manufacturer product and dock remain visible at reduced size beside original Denali text. Only transparent outer canvas extends beyond cover. No product retouching, AI generation or upscale."
+    },
+    {
+      "file": "/blogs/control4-halo-touch-review/images/halo-touch-docked-original.png",
+      "role": "original",
+      "sourcePage": "https://www.snapav.com/shop/en/snapav/c4-halo-ts-bl",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/images/C4/zoom/C4-HALO-TS-BL_7_Front_Docked_Z.png",
+      "dimensions": [
+        1700,
+        1700
+      ],
+      "alphaBounds": [
+        475,
+        0,
+        1220,
+        1700
+      ],
+      "sha256": "173c70304c468caf9fe0e28b22b78adafb0916c2c00f0f210cc2be50520ce2dc",
+      "transformation": "Original catalog bytes retained."
+    },
+    {
+      "file": "/blogs/control4-halo-touch-review/images/halo-touch-docked.webp",
+      "role": "display",
+      "sourcePage": "https://www.snapav.com/shop/en/snapav/c4-halo-ts-bl",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/images/C4/zoom/C4-HALO-TS-BL_7_Front_Docked_Z.png",
+      "dimensions": [
+        1100,
+        1100
+      ],
+      "alphaBounds": [
+        307,
+        0,
+        789,
+        1100
+      ],
+      "sha256": "2b920a2adc4f6122d8896b59c208d9d00208adaef76cb09647536c3a5e88ace4",
+      "transformation": "Full canvas downsampled to 1100 x 1100 with Lanczos and WebP quality 94. No crop, background removal, AI changes or upscale."
+    },
+    {
+      "file": "/blogs/control4-halo-touch-review/images/halo-touch-angle-original.png",
+      "role": "original",
+      "sourcePage": "https://www.snapav.com/shop/en/snapav/c4-halo-ts-bl",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/images/C4/zoom/C4-HALO-TS-BL_2_DemiLeft_.png",
+      "dimensions": [
+        1700,
+        1700
+      ],
+      "alphaBounds": [
+        653,
+        0,
+        1047,
+        1700
+      ],
+      "sha256": "3af1476d153e25caad9a63ebe3ee3ecdfa6fe087be8cb475ea1592f3c2a55154",
+      "transformation": "Original catalog bytes retained."
+    },
+    {
+      "file": "/blogs/control4-halo-touch-review/images/halo-touch-angle.webp",
+      "role": "display",
+      "sourcePage": "https://www.snapav.com/shop/en/snapav/c4-halo-ts-bl",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/images/C4/zoom/C4-HALO-TS-BL_2_DemiLeft_.png",
+      "dimensions": [
+        1100,
+        1100
+      ],
+      "alphaBounds": [
+        420,
+        0,
+        680,
+        1100
+      ],
+      "sha256": "94a87a240ac69c5144e5b1e21c5a37134db85b65bf87fc9371c41345339b7684",
+      "transformation": "Full canvas downsampled to 1100 x 1100 with Lanczos and WebP quality 94. No crop, background removal, AI changes or upscale."
+    },
+    {
+      "file": "/Video/Blogs imge/Control4 Remote Comparison/control4-halo-touch-manufacturer-interface.webp",
+      "role": "existing manufacturer illustration",
+      "sourcePage": "https://www.control4.com/solutions/products/remotes",
+      "sourceFile": "https://cdn.prod.website-files.com/629926620ba03720384bebb3/681a1f47b48da5afb6e3a473_087_25_Control4.com_Remotes_HaloTouch.webp",
+      "dimensions": [
+        560,
+        485
+      ],
+      "sha256": "d262ec2146fbeabb4707cfee93fb7aa7e4cde46e4d274e7444af407affe7ea3f",
+      "transformation": "Existing manufacturer WebP, unchanged."
+    }
+  ]
+}
