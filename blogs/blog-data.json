@@ -1,6 +1,48 @@
 {
   "posts": [
     {
+      "id": "control4-smart-thermostat-guide",
+      "title": "New Control4 Smart Thermostat: First Look and Upgrade Guide",
+      "slug": "control4-smart-thermostat-guide",
+      "url": "/blogs/control4-smart-thermostat-guide/",
+      "excerpt": "See the new touchscreen thermostat in three official product views, explore documented features and learn what to check before replacing your existing controls.",
+      "category": "Control4 Planning Guide",
+      "tags": [
+        "Control4",
+        "Thermostat",
+        "Climate Control",
+        "HVAC",
+        "Smart Home"
+      ],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-10-20",
+      "updatedDate": "2026-10-20",
+      "readingTime": 6,
+      "featured": false,
+      "heroImage": "/blogs/control4-smart-thermostat-guide/images/control4-smart-thermostat-front.webp"
+    },
+    {
+      "id": "control4-chime-pro-video-doorbell-guide",
+      "title": "Control4 Chime Pro: Dual Cameras, PoE and Upgrade Planning",
+      "slug": "control4-chime-pro-video-doorbell-guide",
+      "url": "/blogs/control4-chime-pro-video-doorbell-guide/",
+      "excerpt": "See both Chime Pro finishes and understand the visitor and package cameras, PoE wiring, recording choices and compatibility before changing your front door.",
+      "category": "Control4 Planning Guide",
+      "tags": [
+        "Control4",
+        "Chime Pro",
+        "Video Doorbell",
+        "PoE",
+        "Front Door"
+      ],
+      "author": "Denali Tech Team",
+      "publishedDate": "2026-10-20",
+      "updatedDate": "2026-10-20",
+      "readingTime": 9,
+      "featured": false,
+      "heroImage": "/blogs/control4-chime-pro-video-doorbell-guide/images/chime-pro-entryway.webp"
+    },
+    {
       "id": "control4-safe-troubleshooting-checklist",
       "title": "Control4 Not Working? Safe Checks Before You Call",
       "slug": "control4-safe-troubleshooting-checklist",
@@ -605,7 +647,7 @@
       ],
       "author": "Denali Tech Team",
       "publishedDate": "2026-07-13",
-      "updatedDate": "2026-09-27",
+      "updatedDate": "2026-10-19",
       "readingTime": 7,
       "featured": true,
       "heroImage": "/Video/Blogs%20imge/Control4%20Climate%20Control%20Guide/control4-thermostat-hero.webp"
@@ -773,8 +815,8 @@
       ],
       "author": "Denali Tech Team",
       "publishedDate": "2026-07-13",
-      "updatedDate": "2026-09-28",
-      "readingTime": 7,
+      "updatedDate": "2026-10-19",
+      "readingTime": 8,
       "featured": true,
       "heroImage": "/Video/Blogs%20imge/Control4%20Chime%20Doorbell%20Guide/control4-chime-doorbell-hero.webp"
     },

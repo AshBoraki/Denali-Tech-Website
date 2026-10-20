@@ -1,0 +1,59 @@
+{
+  "accessed": "2026-10-19",
+  "sourceLibrary": "ADI Marketing Materials, authorized dealer session, Product Studio Photos",
+  "credit": "Manufacturer studio images: Control4 / ADI. Not Denali Tech installation photographs.",
+  "notes": "Provenance record, not an independent license grant. No Internal Use Only assets used. Original downloads retained locally; signed download links are not stored in this record.",
+  "assets": [
+    {
+      "file": "/blogs/control4-smart-thermostat-guide/images/control4-smart-thermostat-front.webp",
+      "source": "https://brandfolder.com/adi/#!asset/44kkxkkvhxms2z9h6sf9qh",
+      "sourceFilename": "C4-SMART-THERM-U_01_Front.png",
+      "sourceDimensions": [
+        2932,
+        1978
+      ],
+      "dimensions": [
+        1800,
+        1214
+      ],
+      "bytes": 72896,
+      "sha256": "06edee06549f8cec84fb74a1b87056aab2278dfb09cb6d9353291701ecd702f3",
+      "originalSha256": "88679a4a8edb808ede38f51f70263306e5a530dae78364534dcf6668e955dc0b",
+      "changes": "Proportional downsize and WebP encoding only. Full original framing and alpha transparency retained; no background replacement or generated pixels."
+    },
+    {
+      "file": "/blogs/control4-smart-thermostat-guide/images/control4-smart-thermostat-left.webp",
+      "source": "https://brandfolder.com/adi/#!asset/5hsg55mngkh52cv58bjn5cgq",
+      "sourceFilename": "C4-SMART-THERM-U_02_DemiLeft.png",
+      "sourceDimensions": [
+        2332,
+        2000
+      ],
+      "dimensions": [
+        1800,
+        1544
+      ],
+      "bytes": 114778,
+      "sha256": "af0b06005ebf784424704ee5b4b07c74a133bc8a46fd62b0b640656e1fc5d5b3",
+      "originalSha256": "6154f3782f8d27335acb0cba42eb85979b7579306c9d38ef74b109cf6feeee1d",
+      "changes": "Proportional downsize and WebP encoding only. Full original framing and alpha transparency retained; no background replacement or generated pixels."
+    },
+    {
+      "file": "/blogs/control4-smart-thermostat-guide/images/control4-smart-thermostat-right.webp",
+      "source": "https://brandfolder.com/adi/#!asset/3b9bfq4cx8skkqgx5v6k7pfc",
+      "sourceFilename": "C4-SMART-THERM-U_03_DemiRight.png",
+      "sourceDimensions": [
+        2350,
+        1925
+      ],
+      "dimensions": [
+        1800,
+        1474
+      ],
+      "bytes": 112604,
+      "sha256": "74a16dcd2473a9c7fbfa2d91ba7b6fa6fc073b3a5f19aadb9178fa487a4c6f63",
+      "originalSha256": "51454c999ce44dffae6fd2e25d7b4443744ba53443d3186ff911509cbf6dde28",
+      "changes": "Proportional downsize and WebP encoding only. Full original framing and alpha transparency retained; no background replacement or generated pixels."
+    }
+  ]
+}

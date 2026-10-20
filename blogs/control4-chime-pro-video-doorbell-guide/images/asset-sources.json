@@ -1,0 +1,110 @@
+{
+  "accessed": "2026-10-19",
+  "sourceLibrary": "ADI Marketing Materials, signed-in dealer session",
+  "credit": "Manufacturer marketing images: Control4 / ADI. Not Denali Tech project photographs.",
+  "notes": "Provenance record, not an independent license grant. Images selected from Product Studio Photos and Product Lifestyle Photos in the authorized marketing library; no Internal Use Only assets used. Original files retained locally, not mirrored at full original size.",
+  "assets": [
+    {
+      "file": "/blogs/control4-chime-pro-video-doorbell-guide/images/chime-pro-entryway.webp",
+      "source": "https://brandfolder.com/adi/#!asset/3vgq2z75s96xxtmp7qbcsnsq",
+      "sourceFilename": "entryway.png",
+      "sourceDimensions": [
+        3840,
+        2160
+      ],
+      "dimensions": [
+        1920,
+        1080
+      ],
+      "bytes": 77654,
+      "sha256": "74e78d78c064c004ac29accd608214df4e5139aca514a950cf7079d485bf1a19",
+      "originalSha256": "fa3aee457b33e17b25e04c98c9a9d440ef6f7e7aa913ea2d98c808290897d1a9",
+      "changes": "Proportional downsize and WebP encoding only; full original framing and transparency retained."
+    },
+    {
+      "file": "/blogs/control4-chime-pro-video-doorbell-guide/images/chime-pro-black.webp",
+      "source": "https://brandfolder.com/adi/#!asset/bx5wn9qqwkj7cn2s33rm8wp",
+      "sourceFilename": "black-front.png",
+      "sourceDimensions": [
+        3000,
+        3000
+      ],
+      "dimensions": [
+        1600,
+        1600
+      ],
+      "bytes": 214228,
+      "sha256": "42fb97ad915ab11dfb4175087527b609f0acd6ced385fe559d21f1013ba87bd9",
+      "originalSha256": "071bd4773727fe8abd0fba8cf36c7a8a40dc55361af0dc303d9645f55df84571",
+      "changes": "Proportional downsize and WebP encoding only; full original framing and transparency retained."
+    },
+    {
+      "file": "/blogs/control4-chime-pro-video-doorbell-guide/images/chime-pro-antique-bronze.webp",
+      "source": "https://brandfolder.com/adi/#!asset/h5mv5kkxx6rgqnxfczhzh9p",
+      "sourceFilename": "bronze-front.png",
+      "sourceDimensions": [
+        3000,
+        3000
+      ],
+      "dimensions": [
+        1600,
+        1600
+      ],
+      "bytes": 239244,
+      "sha256": "1330a77519f6870cbbfe1a625db3601c39e08c963d99ba423a0cc652a4f72ec9",
+      "originalSha256": "34255c0c8961b86a55920f79d704f3dd5e228fe58046b28d9fdc92c289ab2fdb",
+      "changes": "Proportional downsize and WebP encoding only; full original framing and transparency retained."
+    },
+    {
+      "file": "/blogs/control4-chime-pro-video-doorbell-guide/images/chime-pro-installed.webp",
+      "source": "https://brandfolder.com/adi/#!asset/vjv9vfmssh8mvf4mfz68qx7p",
+      "sourceFilename": "installed-rain.jpg",
+      "sourceDimensions": [
+        6343,
+        4229
+      ],
+      "dimensions": [
+        1800,
+        1200
+      ],
+      "bytes": 467128,
+      "sha256": "c09ad6d3cebce275d7409fad79e75dcf2d23493eb23ab6a2452aecc654be3a6f",
+      "originalSha256": "d35bb0cd6d3495939615f06a04d0c937c705bfb90f90f2b473f12eff4712215e",
+      "changes": "Proportional downsize and WebP encoding only; full original framing and transparency retained."
+    },
+    {
+      "file": "/blogs/control4-chime-pro-video-doorbell-guide/images/chime-pro-installation.webp",
+      "source": "https://brandfolder.com/adi/#!asset/x536g6wffwh2xpsvb7gcrjz",
+      "sourceFilename": "install-bracket.jpg",
+      "sourceDimensions": [
+        9239,
+        6159
+      ],
+      "dimensions": [
+        1600,
+        1067
+      ],
+      "bytes": 274056,
+      "sha256": "11736d37c654854d45ffce74453c5fe975ed09f21d309569cd0c163555ae0311",
+      "originalSha256": "1e8e830d371e5e49e57313e6f93020f1aaa2e9fe6f6bc27db58f54921903add3",
+      "changes": "Proportional downsize and WebP encoding only; full original framing and transparency retained."
+    },
+    {
+      "file": "/blogs/control4-chime-pro-video-doorbell-guide/images/chime-pro-entryway-night.webp",
+      "source": "https://brandfolder.com/adi/#!asset/659tgq73m6qjvmxqgs59cn",
+      "sourceFilename": "entryway-night.jpg",
+      "sourceDimensions": [
+        3840,
+        2160
+      ],
+      "dimensions": [
+        1800,
+        1013
+      ],
+      "bytes": 78776,
+      "sha256": "087b13487e116134da33153c133464c41fb85414bcceddb682c0680b97c6a566",
+      "originalSha256": "9bb135a11acc3527c5efd8c544f9980d32078b5019ba0db74628b3fea047db15",
+      "changes": "Proportional downsize and WebP encoding only; full original framing and transparency retained."
+    }
+  ]
+}
