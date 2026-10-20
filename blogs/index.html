@@ -3458,7 +3458,7 @@
 
         async function loadBlogData() {
             try {
-                const response = await fetch('/blogs/blog-data.json');
+                const response = await fetch('/blogs/blog-data.json', { cache: 'no-cache' });
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }

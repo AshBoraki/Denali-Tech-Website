@@ -63,5 +63,6 @@ test('Lux catalog and static hub share the same uncropped editorial cover and ac
  const p=JSON.parse(read('blogs/blog-data.json')).posts.find(p=>p.slug==='lux-by-control4-keypad-guide');
  assert.equal(p.heroImage,image);assert.equal(p.updatedDate,'2026-10-19');assert.equal(p.publishedDate,'2026-07-26');assert.equal(p.readingTime,6);
  assert.equal(schema.image,'https://denalitechs.com'+image);const hub=read('blogs/index.html');assert.ok(hub.includes(`src="${image}"`));
+ assert.match(hub,/fetch\('\/blogs\/blog-data\.json', \{ cache: 'no-cache' \}\)/);
  assert.match(hub,/\.blog-card-image-link\[href="\/blogs\/lux-by-control4-keypad-guide\/"\] img\s*\{[^}]*object-fit:\s*contain[^}]*transform:\s*none/);
 });
