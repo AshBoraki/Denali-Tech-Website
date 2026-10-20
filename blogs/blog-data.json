@@ -964,7 +964,7 @@
       "title": "Araknis Switch Comparison: 220, 320, 620 and 920",
       "slug": "araknis-network-switch-comparison",
       "url": "/blogs/araknis-network-switch-comparison/",
-      "excerpt": "Compare Araknis 220, 320, 620 and 920 network switches side by side, including port count, PoE budget, Gigabit, 2.5G and 10G options, and the best fit for a smart home rack.",
+      "excerpt": "Compare eight Araknis switch models with real port-panel views, shared PoE budgets, uplinks and clear limits on Gigabit, 2.5G and 10G performance.",
       "category": "Network Planning Guide",
       "tags": [
         "Araknis",
@@ -974,10 +974,10 @@
       ],
       "author": "Denali Tech Team",
       "publishedDate": "2026-07-12",
-      "updatedDate": "2026-09-27",
-      "readingTime": 6,
+      "updatedDate": "2026-10-19",
+      "readingTime": 7,
       "featured": true,
-      "heroImage": "/Video/Blogs%20imge/Araknis%20Switch%20Comparison/araknis-620-24-poe-blue.png"
+      "heroImage": "/Video/Blogs%20imge/Araknis%20Switch%20Comparison/araknis-switch-comparison-cover.webp"
     },
     {
       "id": "araknis-router-model-comparison",

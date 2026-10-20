@@ -1,0 +1,417 @@
+{
+  "reviewedOn": "2026-10-19",
+  "notes": "Provenance, not a license grant. Public Snap One by ADI manufacturer product views for the user's dealer website. Original bytes are retained. Complete frames are encoded losslessly as WebP, without crop, background removal, AI synthesis, retouching or upscaling. The page uses an SVG viewBox to frame empty canvas around each complete device, while the linked original retains the complete manufacturer frame. White backgrounds in JPEG originals are deliberately retained. This is not an assertion of independently verified redistribution rights.",
+  "assets": [
+    {
+      "file": "araknis-switch-comparison-cover.webp",
+      "role": "editorial cover",
+      "sku": "AN-620-SW-R-24-POE",
+      "originalFile": "araknis-620-24-rear-original.png",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/images/Networking/zoom/AN-620-SW-R-24-POE_02_Back_Z.png",
+      "sourcePage": "https://www.snapav.com/shop/en/snapav/switches/an-620-sw-r-24-poe",
+      "dimensions": [1200, 675],
+      "sha256": "edc450b30981cd4622c4da824c4997b1309105eac8afeab75bf0132606cbd209",
+      "transformation": "Code-native SVG layout rendered in Chrome: original manufacturer 620 rear-view photo displayed whole on a blue gradient with original Denali editorial labels. Original photograph preserved; no AI hardware generation, retouching or upscaling. Thumbnail is editorial artwork, not an unmodified manufacturer original."
+    },
+    {
+      "file": "araknis-220-8-rear-original.jpg",
+      "role": "original",
+      "sku": "AN-220-SW-R-8-POE",
+      "sourcePage": "https://www.snapav.com/shop/en/snapav/switches/an-220-sw-r-8-poe",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/images/Networking/zoom/AN-220-SW-R-8-POE_03_Back_Z.jpg",
+      "dimensions": [
+        1700,
+        1700
+      ],
+      "sha256": "329c1daadd04fe7ddb619bc522aec6135504e6530d7099fe569ef36dbd0ef9d5",
+      "originalFile": "araknis-220-8-rear-original.jpg",
+      "viewBox": [
+        0,
+        616,
+        1700,
+        430
+      ],
+      "deviceBounds": [
+        50,
+        676,
+        1652,
+        986
+      ]
+    },
+    {
+      "file": "araknis-220-8-rear.webp",
+      "role": "display",
+      "sku": "AN-220-SW-R-8-POE",
+      "sourcePage": "https://www.snapav.com/shop/en/snapav/switches/an-220-sw-r-8-poe",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/images/Networking/zoom/AN-220-SW-R-8-POE_03_Back_Z.jpg",
+      "dimensions": [
+        1700,
+        1700
+      ],
+      "sha256": "171596afdb1823a0fa069a1208a3ad70f510fea9180fb1a63689a35af6dc1907",
+      "originalFile": "araknis-220-8-rear-original.jpg",
+      "viewBox": [
+        0,
+        616,
+        1700,
+        430
+      ],
+      "deviceBounds": [
+        50,
+        676,
+        1652,
+        986
+      ]
+    },
+    {
+      "file": "araknis-220-24-rear-original.jpg",
+      "role": "original",
+      "sku": "AN-220-SW-R-24-POE",
+      "sourcePage": "https://www.snapav.com/shop/en/snapav/switches/an-220-sw-r-24-poe",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/images/Networking/zoom/AN-220-SW-R-24-POE_03_Back_Z.jpg",
+      "dimensions": [
+        1700,
+        1700
+      ],
+      "sha256": "e469ab9ed585d4b3f712a29dd34a74cb517591e03e3c94b6d0f3b609fb0d9d3e",
+      "originalFile": "araknis-220-24-rear-original.jpg",
+      "viewBox": [
+        0,
+        647,
+        1700,
+        399
+      ],
+      "deviceBounds": [
+        27,
+        707,
+        1667,
+        986
+      ]
+    },
+    {
+      "file": "araknis-220-24-rear.webp",
+      "role": "display",
+      "sku": "AN-220-SW-R-24-POE",
+      "sourcePage": "https://www.snapav.com/shop/en/snapav/switches/an-220-sw-r-24-poe",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/images/Networking/zoom/AN-220-SW-R-24-POE_03_Back_Z.jpg",
+      "dimensions": [
+        1700,
+        1700
+      ],
+      "sha256": "a4489202d3af135a7fe0f349f842df42045195e32dd5155af3dbfba13034e6d5",
+      "originalFile": "araknis-220-24-rear-original.jpg",
+      "viewBox": [
+        0,
+        647,
+        1700,
+        399
+      ],
+      "deviceBounds": [
+        27,
+        707,
+        1667,
+        986
+      ]
+    },
+    {
+      "file": "araknis-320-8-rear-original.jpg",
+      "role": "original",
+      "sku": "AN-320-SW-R-8-POE",
+      "sourcePage": "https://www.snapav.com/shop/en/snapav/switches/an-320-sw-r-8-poe",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/images/Networking/zoom/AN-320-SW-R-8-POE_03_Back_Z.jpg",
+      "dimensions": [
+        1700,
+        1700
+      ],
+      "sha256": "b179bba081e7d78d503d51c581e6e3ad88e9c96e38b4e5dba0d43b1fd920e248",
+      "originalFile": "araknis-320-8-rear-original.jpg",
+      "viewBox": [
+        0,
+        682,
+        1700,
+        367
+      ],
+      "deviceBounds": [
+        57,
+        742,
+        1630,
+        989
+      ]
+    },
+    {
+      "file": "araknis-320-8-rear.webp",
+      "role": "display",
+      "sku": "AN-320-SW-R-8-POE",
+      "sourcePage": "https://www.snapav.com/shop/en/snapav/switches/an-320-sw-r-8-poe",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/images/Networking/zoom/AN-320-SW-R-8-POE_03_Back_Z.jpg",
+      "dimensions": [
+        1700,
+        1700
+      ],
+      "sha256": "2a87da76248d307ba1b995f7bca1fa4967305404c208a827d7f08912e0406661",
+      "originalFile": "araknis-320-8-rear-original.jpg",
+      "viewBox": [
+        0,
+        682,
+        1700,
+        367
+      ],
+      "deviceBounds": [
+        57,
+        742,
+        1630,
+        989
+      ]
+    },
+    {
+      "file": "araknis-320-24-front-original.jpg",
+      "role": "original",
+      "sku": "AN-320-SW-F-24-POE",
+      "sourcePage": "https://www.snapav.com/shop/en/snapav/switches/an-320-sw-f-24-poe",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/images/Networking/zoom/AN-320-SW-F-24-POE_02_Front_Z.jpg",
+      "dimensions": [
+        1700,
+        1700
+      ],
+      "sha256": "d3290f38e5d210c345759d5716b405105b3dd4997e48badd65c3a7cd96c7cfb4",
+      "originalFile": "araknis-320-24-front-original.jpg",
+      "viewBox": [
+        0,
+        680,
+        1700,
+        381
+      ],
+      "deviceBounds": [
+        54,
+        740,
+        1637,
+        1001
+      ]
+    },
+    {
+      "file": "araknis-320-24-front.webp",
+      "role": "display",
+      "sku": "AN-320-SW-F-24-POE",
+      "sourcePage": "https://www.snapav.com/shop/en/snapav/switches/an-320-sw-f-24-poe",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/images/Networking/zoom/AN-320-SW-F-24-POE_02_Front_Z.jpg",
+      "dimensions": [
+        1700,
+        1700
+      ],
+      "sha256": "9d93c7fca5f2a2c47f33bf4b61d7bed3a7704350b902702a905f0672e6f9bf01",
+      "originalFile": "araknis-320-24-front-original.jpg",
+      "viewBox": [
+        0,
+        680,
+        1700,
+        381
+      ],
+      "deviceBounds": [
+        54,
+        740,
+        1637,
+        1001
+      ]
+    },
+    {
+      "file": "araknis-620-8-rear-original.png",
+      "role": "original",
+      "sku": "AN-620-SW-R-8-POE",
+      "sourcePage": "https://www.snapav.com/shop/en/snapav/switches/an-620-sw-r-8-poe",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/images/Networking/zoom/AN-620-SW-R-8-POE_02_Back_Z.png",
+      "dimensions": [
+        1700,
+        1700
+      ],
+      "sha256": "810c11b778b78631cd040a82627baf3fe33577add08c9425dd2053b4bec33c02",
+      "originalFile": "araknis-620-8-rear-original.png",
+      "viewBox": [
+        0,
+        692,
+        1700,
+        316
+      ],
+      "deviceBounds": [
+        8,
+        752,
+        1692,
+        948
+      ]
+    },
+    {
+      "file": "araknis-620-8-rear.webp",
+      "role": "display",
+      "sku": "AN-620-SW-R-8-POE",
+      "sourcePage": "https://www.snapav.com/shop/en/snapav/switches/an-620-sw-r-8-poe",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/images/Networking/zoom/AN-620-SW-R-8-POE_02_Back_Z.png",
+      "dimensions": [
+        1700,
+        1700
+      ],
+      "sha256": "c07b9a6e8c8121bad84da9400d245c1a8e7e20dfeb114df6125c58289ce6ec41",
+      "originalFile": "araknis-620-8-rear-original.png",
+      "viewBox": [
+        0,
+        692,
+        1700,
+        316
+      ],
+      "deviceBounds": [
+        8,
+        752,
+        1692,
+        948
+      ]
+    },
+    {
+      "file": "araknis-620-24-rear-original.png",
+      "role": "original",
+      "sku": "AN-620-SW-R-24-POE",
+      "sourcePage": "https://www.snapav.com/shop/en/snapav/switches/an-620-sw-r-24-poe",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/images/Networking/zoom/AN-620-SW-R-24-POE_02_Back_Z.png",
+      "dimensions": [
+        1700,
+        1700
+      ],
+      "sha256": "1238d033c1d43e7f36489fbfca8a28beb78602d412eb37c3753b2779ab8a2a3f",
+      "originalFile": "araknis-620-24-rear-original.png",
+      "viewBox": [
+        0,
+        694,
+        1700,
+        312
+      ],
+      "deviceBounds": [
+        54,
+        754,
+        1645,
+        946
+      ]
+    },
+    {
+      "file": "araknis-620-24-rear.webp",
+      "role": "display",
+      "sku": "AN-620-SW-R-24-POE",
+      "sourcePage": "https://www.snapav.com/shop/en/snapav/switches/an-620-sw-r-24-poe",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/images/Networking/zoom/AN-620-SW-R-24-POE_02_Back_Z.png",
+      "dimensions": [
+        1700,
+        1700
+      ],
+      "sha256": "c2145074af7dcc258ae2cc4ee484896bd273530f2a6d0e5da374c24b4c051796",
+      "originalFile": "araknis-620-24-rear-original.png",
+      "viewBox": [
+        0,
+        694,
+        1700,
+        312
+      ],
+      "deviceBounds": [
+        54,
+        754,
+        1645,
+        946
+      ]
+    },
+    {
+      "file": "araknis-920-12-front-original.png",
+      "role": "original",
+      "sku": "AN-920-SW-F-12-POE",
+      "sourcePage": "https://www.snapav.com/shop/en/snapav/switches/an-920-sw-f-12-poe",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/images/Networking/zoom/AN-920-SW-F-12-POE_04_Front.png",
+      "dimensions": [
+        1700,
+        1700
+      ],
+      "sha256": "985cf127d76d30afb99940fbe37a129dd5fd820eabb5452c32dbeaf4bb886149",
+      "originalFile": "araknis-920-12-front-original.png",
+      "viewBox": [
+        0,
+        690,
+        1700,
+        320
+      ],
+      "deviceBounds": [
+        52,
+        750,
+        1648,
+        950
+      ]
+    },
+    {
+      "file": "araknis-920-12-front.webp",
+      "role": "display",
+      "sku": "AN-920-SW-F-12-POE",
+      "sourcePage": "https://www.snapav.com/shop/en/snapav/switches/an-920-sw-f-12-poe",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/images/Networking/zoom/AN-920-SW-F-12-POE_04_Front.png",
+      "dimensions": [
+        1700,
+        1700
+      ],
+      "sha256": "3047876433ff1e5260f417b0c949f44d7c76914c434e389e65b9e9ded622b68d",
+      "originalFile": "araknis-920-12-front-original.png",
+      "viewBox": [
+        0,
+        690,
+        1700,
+        320
+      ],
+      "deviceBounds": [
+        52,
+        750,
+        1648,
+        950
+      ]
+    },
+    {
+      "file": "araknis-920-24-front-original.png",
+      "role": "original",
+      "sku": "AN-920-SW-F-24-POE",
+      "sourcePage": "https://www.snapav.com/shop/en/snapav/switches/an-920-sw-f-24-poe",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/images/Networking/zoom/AN-920-SW-F-24-POE_04_Front_Z.png",
+      "dimensions": [
+        1700,
+        1700
+      ],
+      "sha256": "5107cc6f44c53855ba271bb568c382a7f920c07ac65c47bc7057703ecd15499b",
+      "originalFile": "araknis-920-24-front-original.png",
+      "viewBox": [
+        0,
+        682,
+        1700,
+        336
+      ],
+      "deviceBounds": [
+        0,
+        742,
+        1700,
+        958
+      ]
+    },
+    {
+      "file": "araknis-920-24-front.webp",
+      "role": "display",
+      "sku": "AN-920-SW-F-24-POE",
+      "sourcePage": "https://www.snapav.com/shop/en/snapav/switches/an-920-sw-f-24-poe",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/images/Networking/zoom/AN-920-SW-F-24-POE_04_Front_Z.png",
+      "dimensions": [
+        1700,
+        1700
+      ],
+      "sha256": "02be8394b6f560d126991195aa841ec8d127240988fa6bb70424d9766c6bedf8",
+      "originalFile": "araknis-920-24-front-original.png",
+      "viewBox": [
+        0,
+        682,
+        1700,
+        336
+      ],
+      "deviceBounds": [
+        0,
+        742,
+        1700,
+        958
+      ]
+    }
+  ]
+}
