@@ -1,0 +1,88 @@
+{
+  "reviewedOn": "2026-10-19",
+  "notes": "Provenance, not a license grant. Public Araknis/Snap One by ADI product imagery for the user's dealer website. No credentials or restricted dealer documents included. Manufacturer copyright remains with the respective owner. Photos illustrate exact product models, not Denali Tech installations. The 320 catalog's linked data sheet downloaded during review describes switches, not this access point, so it was not used. The 820 family chart conflicts with the model data sheet on power; the article discloses this.",
+  "assets": [
+    {
+      "file": "araknis-320-manufacturer.webp",
+      "sourceFile": "https://www.snapav.com/dx/api/dam/v1/collections/896187ad-718a-4a89-96c1-54dfdcba9dda/items/109e45ec-457a-4d52-a8af-01a6eef80ddb/renditions/716ab25f-7bc3-41fe-83e8-98eecc47ba3c?binary=true",
+      "dimensions": [
+        500,
+        300
+      ],
+      "sha256": "03a60fb27c7f1603a03e29247bbeed42dd2ea0132effcd22e128ee5b07789223",
+      "transformation": "Original manufacturer graphic losslessly encoded to WebP. Full original frame, colors and product details retained; no crop, retouching or upscaling."
+    },
+    {
+      "file": "araknis-520-indoor-manufacturer.webp",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/documents/Networking/Cutsheets/AN-520-AP-I_Datasheet_Final.pdf",
+      "dimensions": [
+        792,
+        452
+      ],
+      "sha256": "c219ef10f904c6be7894e3bbb244c8547c0a706428e00bb0f5d1364544a60b9a",
+      "pdfPage": 1,
+      "pdfImageXref": 1288,
+      "transformation": "Embedded manufacturer image extracted with its original PDF soft mask, then losslessly encoded to WebP. No crop, retouching, AI synthesis or upscaling."
+    },
+    {
+      "file": "araknis-820-manufacturer.webp",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/documents/Networking/Cutsheets/AN-820-AP-I_Datasheet_Final.pdf",
+      "dimensions": [
+        466,
+        462
+      ],
+      "sha256": "22a6af772d9204ff52a684cfeae0b07d2034457134bbcc2c29a43d770f718cd4",
+      "pdfPage": 1,
+      "pdfImageXref": 1226,
+      "transformation": "Embedded manufacturer image extracted with its original PDF soft mask, then losslessly encoded to WebP. No crop, retouching, AI synthesis or upscaling."
+    },
+    {
+      "file": "araknis-530-manufacturer.webp",
+      "sourceFile": "https://www.snapav.com/dx/api/dam/v1/collections/df158d53-1e0a-4ab3-a05f-cef2b25ad916/items/371423ca-9756-48a3-b380-be787a1d840c/renditions/1fa7ac8e-ecd6-46ce-9a0b-87d1694b899d?binary=true",
+      "dimensions": [
+        674,
+        560
+      ],
+      "sha256": "b253b72501e5f64171f8b81c3dd67d4b338ae6324a5db31a415f85eca4627f29",
+      "pdfPage": 1,
+      "pdfImageXref": 2088,
+      "transformation": "Embedded manufacturer image extracted with its original PDF soft mask, then losslessly encoded to WebP. No crop, retouching, AI synthesis or upscaling."
+    },
+    {
+      "file": "araknis-830-manufacturer.webp",
+      "sourceFile": "https://www.snapav.com/dx/api/dam/v1/collections/df158d53-1e0a-4ab3-a05f-cef2b25ad916/items/b7c08d6a-3600-44f5-9555-8d49a2b07dee/renditions/5e0d4324-42fa-42b5-87b1-5b06485148c2?binary=true",
+      "dimensions": [
+        973,
+        682
+      ],
+      "sha256": "d3a4a4b136dba667cd94987893c669bd4fb106548ba8245caaf1f81965e0e645",
+      "pdfPage": 1,
+      "pdfImageXref": 2082,
+      "transformation": "Embedded manufacturer image extracted with its original PDF soft mask, then losslessly encoded to WebP. No crop, retouching, AI synthesis or upscaling."
+    },
+    {
+      "file": "araknis-520-outdoor-manufacturer.webp",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/documents/Networking/Cutsheets/AN-520-AP-O-DataSheet.pdf",
+      "dimensions": [
+        554,
+        771
+      ],
+      "sha256": "b0d8ec4c415e4383be68537e4ec80a83752e2655793c4fb19b5be4de3757c3d8",
+      "pdfPage": 1,
+      "pdfImageXref": 1349,
+      "transformation": "Embedded manufacturer image extracted with its original PDF soft mask, then losslessly encoded to WebP. No crop, retouching, AI synthesis or upscaling."
+    },
+    {
+      "file": "araknis-wifi7-manufacturer-banner.webp",
+      "sourceFile": "https://www.snapav.com/dx/api/dam/v1/collections/df158d53-1e0a-4ab3-a05f-cef2b25ad916/items/b7c08d6a-3600-44f5-9555-8d49a2b07dee/renditions/5e0d4324-42fa-42b5-87b1-5b06485148c2?binary=true",
+      "dimensions": [
+        1920,
+        629
+      ],
+      "sha256": "40f66fb483fd26906f76dd339f533198a265e28554bf4a429ee71a3764ff9aed",
+      "pdfPage": 1,
+      "pdfImageXref": 2078,
+      "transformation": "Embedded manufacturer image extracted with its original PDF soft mask, then losslessly encoded to WebP. No crop, retouching, AI synthesis or upscaling."
+    }
+  ]
+}
