@@ -404,8 +404,8 @@
       ],
       "name": "Denali Tech",
       "legalName": "Denali Tech Inc",
-      "image": "https://denalitechs.com/Video/logo%20no%20back%20greand%20.png",
-      "logo": "https://denalitechs.com/Video/logo%20no%20back%20greand%20.png",
+      "image": "https://denalitechs.com/Video/Denali-Tech-Google-Logo-Final-Polished.png",
+      "logo": "https://denalitechs.com/Video/Denali-Tech-Google-Logo-Final-Polished.png",
       "@id": "https://denalitechs.com/",
       "url": "https://denalitechs.com/",
       "telephone": "+1-312-439-7500",
@@ -562,7 +562,7 @@
       "@type": "Organization",
       "name": "Denali Tech",
       "url": "https://denalitechs.com/",
-      "logo": "https://denalitechs.com/Video/logo%20no%20back%20greand%20.png",
+      "logo": "https://denalitechs.com/Video/Denali-Tech-Google-Logo-Final-Polished.png",
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+1-312-439-7500",
@@ -732,9 +732,9 @@
     </header>
 
     <!-- Skip Navigation Link -->
-    <a href="/#main-content" class="skip-link">Skip to main content</a>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <main role="main" id="main-content">
+    <main role="main" id="main-content" tabindex="-1">
     <!-- Hero Section -->
 	    <section class="hero" id="home" itemscope itemtype="https://schema.org/WebPage">
 			        <div class="hero-background">
@@ -747,19 +747,72 @@
 	                    </video>
 	                    <script>
 	                    (function () {
-	                        if (!window.matchMedia('(min-width: 769px)').matches) return;
-	                        var video = document.getElementById('hero-background-video');
-	                        var source = video && video.querySelector('source[data-src]');
-	                        if (!video || !source) return;
-	                        var startVideo = function () {
-	                            if (source.src) return;
-	                            source.src = source.getAttribute('data-src');
-	                            video.load();
-	                            var playback = video.play();
-	                            if (playback && typeof playback.catch === 'function') playback.catch(function () {});
-	                        };
-	                        if ('requestIdleCallback' in window) requestIdleCallback(startVideo, { timeout: 1800 });
-	                        else window.setTimeout(startVideo, 900);
+	                        function initHeroVideo() {
+	                            var video = document.getElementById('hero-background-video');
+	                            var source = video && video.querySelector('source[data-src]');
+	                            var toggle = document.getElementById('hero-video-toggle');
+	                            if (!video || !source || !toggle) return;
+	                            var desktop = window.matchMedia('(min-width: 769px)');
+	                            var motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+	                            var connection = navigator.connection;
+	                            var heroVisible = true;
+	                            var userPaused = false;
+	                            var failed = false;
+	                            function allowed() {
+	                                return desktop.matches && !motion.matches && !(connection && connection.saveData) && !failed;
+	                            }
+	                            function updateToggle() {
+	                                toggle.hidden = !allowed() || !video.classList.contains('is-ready');
+	                                toggle.textContent = video.paused ? 'Play background video' : 'Pause background video';
+	                            }
+	                            function syncPlayback() {
+	                                if (!allowed() || document.hidden || !heroVisible || userPaused) {
+	                                    video.pause();
+	                                    updateToggle();
+	                                    return;
+	                                }
+	                                if (!source.getAttribute('src')) {
+	                                    source.src = source.getAttribute('data-src');
+	                                    video.load();
+	                                }
+	                                var playback = video.play();
+	                                if (playback && typeof playback.catch === 'function') playback.catch(updateToggle);
+	                            }
+	                            video.addEventListener('playing', function () {
+	                                video.classList.add('is-ready');
+	                                updateToggle();
+	                            });
+	                            video.addEventListener('pause', updateToggle);
+	                            function showPoster() {
+	                                // A deferred <source> has no URL during initial parsing.
+	                                // Its empty-source event is not a failed media request.
+	                                if (!source.getAttribute('src')) return;
+	                                failed = true;
+	                                video.classList.remove('is-ready');
+	                                video.pause();
+	                                updateToggle();
+	                            }
+	                            video.addEventListener('error', showPoster);
+	                            source.addEventListener('error', showPoster);
+	                            toggle.addEventListener('click', function () {
+	                                userPaused = !video.paused;
+	                                syncPlayback();
+	                            });
+	                            [desktop, motion, connection].forEach(function (setting) {
+	                                if (setting && setting.addEventListener) setting.addEventListener('change', syncPlayback);
+	                            });
+	                            document.addEventListener('visibilitychange', syncPlayback);
+	                            if ('IntersectionObserver' in window) {
+	                                new IntersectionObserver(function (entries) {
+	                                    heroVisible = entries[0].isIntersecting;
+	                                    syncPlayback();
+	                                }).observe(video.closest('.hero'));
+	                            }
+	                            if ('requestIdleCallback' in window) requestIdleCallback(syncPlayback, { timeout: 1800 });
+	                            else window.setTimeout(syncPlayback, 900);
+	                        }
+	                        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initHeroVideo, { once: true });
+	                        else initHeroVideo();
 	                    })();
 	                    </script>
 		            <div></div>
@@ -1452,6 +1505,7 @@
                 <a href="tel:+13124397500">Call (312) 439-7500</a>
                 <a href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20want%20help%20with%20a%20home%20technology%20project.%20I%20can%20send%20photos.%20My%20home%20is%20in%3A" target="_blank" rel="noopener noreferrer"  aria-label="Send Photos on WhatsApp">Photos on WhatsApp</a>
             </div>
+            <button id="hero-video-toggle" type="button" aria-controls="hero-background-video" hidden>Pause background video</button>
         </div>
     </section>
 
@@ -1592,19 +1646,20 @@
                         <a href="/control4-installer-chicago/" class="btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 700;">Control4 Installer Help &rarr;</a>
                     </div>
                 </div>
-                <div class="homepage-control4-images" aria-label="Control4 smart home scenes" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.85rem;">
+                <div class="homepage-control4-images" aria-label="Control4 manufacturer lifestyle images" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.85rem;">
                     <picture style="display: block; overflow: hidden; border-radius: 10px; border: 1px solid rgba(15,23,42,0.1); background: #f8fafc; grid-column: 1 / -1; aspect-ratio: 16 / 9;">
                         <source srcset="/assets/brandfolder/control4/control4-vibrant-living-room-480.webp 480w, /assets/brandfolder/control4/control4-vibrant-living-room-768.webp 768w, /assets/brandfolder/control4/control4-vibrant-living-room.webp 1800w" sizes="(max-width: 768px) calc(100vw - 2.25rem), 48vw" type="image/webp">
                         <img src="/assets/brandfolder/control4/control4-vibrant-living-room-768.webp" alt="Control4 lighting and room scene in a finished living space" loading="lazy" decoding="async" width="768" height="503" style="display: block; width: 100%; height: 100%; min-height: 0; object-fit: cover;">
                     </picture>
                     <picture style="display: block; overflow: hidden; border-radius: 10px; border: 1px solid rgba(15,23,42,0.1); background: #f8fafc; aspect-ratio: 3 / 2;">
-                        <source srcset="/assets/brandfolder/control4/control4-countertop-remote-480.webp 480w, /assets/brandfolder/control4/control4-countertop-remote.webp 1207w" sizes="(max-width: 768px) calc((100vw - 3.1rem) / 2), 24vw" type="image/webp">
+                        <source srcset="/assets/brandfolder/control4/control4-countertop-remote-480.webp 480w, /assets/brandfolder/control4/control4-countertop-remote.webp 1800w" sizes="(max-width: 768px) calc((100vw - 3.1rem) / 2), 24vw" type="image/webp">
                         <img src="/assets/brandfolder/control4/control4-countertop-remote-480.webp" alt="Control4 remote staged on a kitchen counter" loading="lazy" decoding="async" width="480" height="320" style="display: block; width: 100%; height: 100%; object-fit: cover;">
                     </picture>
                     <picture style="display: block; overflow: hidden; border-radius: 10px; border: 1px solid rgba(15,23,42,0.1); background: #f8fafc; aspect-ratio: 3 / 2;">
-                        <source srcset="/assets/brandfolder/control4/control4-kitchen-lighting-scene-480.webp 480w, /assets/brandfolder/control4/control4-kitchen-lighting-scene.webp 1207w" sizes="(max-width: 768px) calc((100vw - 3.1rem) / 2), 24vw" type="image/webp">
+                        <source srcset="/assets/brandfolder/control4/control4-kitchen-lighting-scene-480.webp 480w, /assets/brandfolder/control4/control4-kitchen-lighting-scene.webp 1800w" sizes="(max-width: 768px) calc((100vw - 3.1rem) / 2), 24vw" type="image/webp">
                         <img src="/assets/brandfolder/control4/control4-kitchen-lighting-scene-480.webp" alt="Control4 lighting scene in a kitchen with a homeowner" loading="lazy" decoding="async" width="480" height="320" style="display: block; width: 100%; height: 100%; object-fit: cover;">
                     </picture>
+                    <p class="homepage-image-credit">Control4 manufacturer images. See our installations below.</p>
                 </div>
             </div>
         </div>
@@ -1680,8 +1735,8 @@
     <section class="featured-projects-section" style="padding: 88px 5%; background: var(--bg-color); position: relative; overflow: hidden;">
         <div class="container">
             <div class="section-header" style="opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease;">
-                <h2>Installation &amp; Control Examples</h2>
-                <p>A look at outdoor AV, lighting, and everyday control.</p>
+                <h2>From our installations</h2>
+                <p>Wiring, outdoor WiFi, and rack work from our project videos.</p>
             </div>
             <script>
                 // Animate section header on load
@@ -1696,57 +1751,45 @@
                 });
             </script>
             <div class="projects-showcase-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-top: 3rem;">
-                <div class="project-showcase-card" role="article" aria-label="Outdoor TV and surround system project" tabindex="0" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; transition: all var(--transition); cursor: pointer;" onclick="window.location.href='/projects/'" onkeydown="if(event.key==='Enter') window.location.href='/projects/'">
+                <a class="project-showcase-card" href="/projects/#project-videos" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; transition: all var(--transition);">
                     <div class="project-image-wrapper" style="position: relative; width: 100%; padding-top: 75%; overflow: hidden; background: #000;">
                         <picture>
-                            <source
-                                srcset="Video/homepage/outdoor-tv-surround-480.webp 480w, Video/homepage/outdoor-tv-surround-768.webp 768w"
-                                sizes="(max-width: 768px) calc(100vw - 2rem), (max-width: 1200px) 33vw, 361px"
-                                type="image/webp">
-                            <img src="Video/homepage/outdoor-tv-surround-768.webp" alt="Outdoor TV and surround sound system for backyard entertainment" loading="lazy" decoding="async" width="768" height="512" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                            <img src="/Video/Project%20videos/rack-before-after.webp" alt="Structured wiring enclosure organized by Denali Tech" loading="lazy" decoding="async" width="1280" height="720" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain;">
                         </picture>
                         <div class="project-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7)); opacity: 0; transition: opacity 0.3s ease;"></div>
                     </div>
                     <div class="project-info util-p-1-5">
-                        <span style="display: inline-block; background: var(--accent-primary); color: white; padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.75rem;">Outdoor AV</span>
-                        <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">Outdoor TV &amp; Surround System</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">Outdoor TV, weather-ready sound, and a cleaner backyard setup for games, movies, and summer nights.</p>
+                        <span style="display: inline-block; background: var(--accent-primary); color: white; padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.75rem;">Structured wiring</span>
+                        <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">From exposed wires to an organized panel</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">See the wiring before and after, with connections arranged for future service.</p>
                     </div>
-                </div>
-                <div class="project-showcase-card" role="article" aria-label="Sound & Light Harmony project" tabindex="0" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; transition: all var(--transition); cursor: pointer;" onclick="window.location.href='/projects/'" onkeydown="if(event.key==='Enter') window.location.href='/projects/'">
+                </a>
+                <a class="project-showcase-card" href="/projects/#project-videos" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; transition: all var(--transition);">
                     <div class="project-image-wrapper" style="position: relative; width: 100%; padding-top: 75%; overflow: hidden; background: #000;">
                         <picture>
-                            <source
-                                srcset="Video/homepage/sound--light-harmony-480.webp 480w, Video/homepage/sound--light-harmony-768.webp 768w"
-                                sizes="(max-width: 768px) calc(100vw - 2rem), (max-width: 1200px) 33vw, 361px"
-                                type="image/webp">
-                            <img src="Video/homepage/sound--light-harmony-768.webp" alt="Sound & Light Harmony Installation" loading="lazy" decoding="async" width="800" height="600" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                            <img src="/Video/Project%20videos/araknis-outdoor-wifi.webp" alt="Araknis outdoor access point installed by Denali Tech" loading="lazy" decoding="async" width="1280" height="720" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain;">
                         </picture>
                         <div class="project-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7)); opacity: 0; transition: opacity 0.3s ease;"></div>
                     </div>
                     <div class="project-info util-p-1-5">
-                        <span style="display: inline-block; background: var(--accent-primary); color: white; padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.75rem;">Smart Automation</span>
-                        <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">Sound & Light Harmony</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">Audio and lighting scenes people can actually use every day.</p>
+                        <span style="display: inline-block; background: var(--accent-primary); color: white; padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.75rem;">Outdoor WiFi</span>
+                        <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">WiFi beyond the back door</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">A closer look at an outdoor access point and its installation.</p>
                     </div>
-                </div>
-                <div class="project-showcase-card" role="article" aria-label="Control4 remote control project" tabindex="0" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; transition: all var(--transition); cursor: pointer;" onclick="window.location.href='/projects/'" onkeydown="if(event.key==='Enter') window.location.href='/projects/'">
+                </a>
+                <a class="project-showcase-card" href="/projects/#project-videos" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; transition: all var(--transition);">
                     <div class="project-image-wrapper" style="position: relative; width: 100%; padding-top: 75%; overflow: hidden; background: #000;">
                         <picture>
-                            <source
-                                srcset="Video/homepage/control4-neo-remote-480.webp 480w, Video/homepage/control4-neo-remote-768.webp 768w"
-                                sizes="(max-width: 768px) calc(100vw - 2rem), (max-width: 1200px) 33vw, 361px"
-                                type="image/webp">
-                            <img src="Video/homepage/control4-neo-remote-768.webp" alt="Control4 remote used for one-touch home control" loading="lazy" decoding="async" width="768" height="512" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;">
+                            <img src="/Video/Project%20videos/sanus-15u-mini-rack.webp" alt="SANUS 15U home theater rack built by Denali Tech" loading="lazy" decoding="async" width="1280" height="720" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain;">
                         </picture>
                         <div class="project-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7)); opacity: 0; transition: opacity 0.3s ease;"></div>
                     </div>
                     <div class="project-info util-p-1-5">
-                        <span style="display: inline-block; background: var(--accent-primary); color: white; padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.75rem;">Smart Control</span>
-                        <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">Control4 Remote Control</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">One remote for TV, audio, lighting, shades, climate, and cleaner everyday control.</p>
+                        <span style="display: inline-block; background: var(--accent-primary); color: white; padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.75rem;">Compact rack</span>
+                        <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">A smaller rack, planned for service</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">See a compact theater rack with cabling and equipment brought together.</p>
                     </div>
-                </div>
+                </a>
             </div>
             <div style="text-align: center; margin-top: 3rem;">
                 <a href="/projects/" class="btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 700;">View Projects &rarr;</a>
@@ -2089,7 +2132,7 @@
         .dt-unified-chrome main#main-content > .offer-plan-section { order: 20; }
         .dt-unified-chrome main#main-content > .quick-help-section { order: 30; }
         .dt-unified-chrome main#main-content > .homepage-control4-section { order: 40; }
-        .dt-unified-chrome main#main-content > .homepage-guides-section { order: 45; }
+        .dt-unified-chrome main#main-content > .homepage-guides-section { order: 15; }
         .dt-unified-chrome main#main-content > .featured-projects-section { order: 60; }
         .dt-unified-chrome main#main-content > .process-section { order: 70; }
         .dt-unified-chrome main#main-content > .services { order: 75; }
@@ -3213,7 +3256,106 @@
             letter-spacing: 0.12em;
         }
 
+        /* Keep media complete and controls usable without altering shared pages. */
+        body.dt-unified-chrome .hero-eyebrow { color: #fdba74 !important; }
+        body.dt-unified-chrome #hero-background-video { visibility: hidden; }
+        body.dt-unified-chrome #hero-background-video.is-ready { visibility: visible; }
+        #hero-video-toggle {
+            align-self: flex-start;
+            min-height: 44px;
+            padding: 0.5rem 0.75rem;
+            border: 1px solid #94a3b8;
+            border-radius: 6px;
+            background: #0f172a;
+            color: #fff;
+            font: inherit;
+            font-size: 0.85rem;
+            cursor: pointer;
+        }
+        #hero-video-toggle[hidden] { display: none !important; }
+        #hero-video-toggle:focus-visible,
+        body.dt-unified-chrome .project-showcase-card:focus-visible {
+            outline: 3px solid #b45309;
+            outline-offset: 4px;
+        }
+        #hero-video-toggle:focus-visible { outline-color: #fff; }
+        body.dt-unified-chrome .homepage-control4-images { align-items: start !important; }
+        body.dt-unified-chrome .homepage-control4-images picture:nth-child(n) {
+            aspect-ratio: auto !important;
+            min-height: 0 !important;
+            transform: none !important;
+        }
+        body.dt-unified-chrome .homepage-control4-images picture::before,
+        body.dt-unified-chrome .homepage-control4-images picture::after { display: none !important; }
+        body.dt-unified-chrome .homepage-control4-images img {
+            height: auto !important;
+            object-fit: contain !important;
+        }
+        body.dt-unified-chrome .homepage-image-credit {
+            grid-column: 1 / -1;
+            margin: 0;
+            color: #475569;
+            font-size: 0.8rem;
+            line-height: 1.5;
+        }
+        body.dt-unified-chrome .project-showcase-card {
+            display: block;
+            color: #0f172a;
+            text-decoration: none;
+        }
+        body.dt-unified-chrome .featured-projects-section .project-image-wrapper {
+            aspect-ratio: 16 / 9 !important;
+            padding-top: 0 !important;
+        }
+        body.dt-unified-chrome .project-image-wrapper img {
+            height: 100% !important;
+            object-fit: contain !important;
+            transform: none !important;
+        }
+        body.dt-unified-chrome .project-overlay { display: none !important; }
+        @media (prefers-reduced-motion: reduce) {
+            #hero-video-toggle { display: none !important; }
+        }
+
         @media (max-width: 768px) {
+            html,
+            body.dt-unified-chrome,
+            body.dt-unified-chrome :is(main, section, div, article, footer) {
+                touch-action: pan-y pinch-zoom !important;
+            }
+            body.dt-unified-chrome .featured-projects-section { padding: 32px 14px !important; }
+            body.dt-unified-chrome .featured-projects-section .section-header { padding: 0 !important; }
+            body.dt-unified-chrome .featured-projects-section .projects-showcase-grid {
+                display: grid !important;
+                grid-template-columns: minmax(0, 1fr) !important;
+                gap: 1.25rem !important;
+                padding: 0 !important;
+                overflow: visible !important;
+                scroll-snap-type: none;
+            }
+            body.dt-unified-chrome .featured-projects-section .project-showcase-card {
+                min-width: 0 !important;
+                max-width: none !important;
+            }
+            body.dt-unified-chrome .featured-projects-section .project-showcase-card:nth-child(n+2) {
+                min-width: 0 !important;
+                max-width: none !important;
+            }
+            body.dt-unified-chrome .featured-projects-section .project-info p {
+                display: block !important;
+                font-size: 1rem !important;
+                line-height: 1.5 !important;
+                -webkit-line-clamp: unset;
+            }
+            body.dt-unified-chrome .hero-buttons a { white-space: normal; }
+            body.dt-unified-chrome .hero-content h1 { overflow-wrap: anywhere; }
+            body.dt-unified-chrome .hero-subcopy,
+            body.dt-unified-chrome .offer-plan > div > p:not(:first-child),
+            body.dt-unified-chrome .offer-list span,
+            body.dt-unified-chrome .homepage-control4-copy > p:not(:first-child) {
+                font-size: 1rem !important;
+                line-height: 1.5 !important;
+            }
             body.dt-unified-chrome .homepage-guides-grid > a:nth-child(3),
             body.dt-unified-chrome .homepage-guides-grid > a:nth-child(4) {
                 display: none !important;
@@ -3956,42 +4098,8 @@
             }
             window.addEventListener('scroll', optimizeScroll, { passive: true });
 
-            // Add smooth scroll behavior for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    const href = this.getAttribute('href');
-                    if (href !== '#' && href.length > 1) {
-                        const target = document.querySelector(href);
-                        if (target) {
-                            e.preventDefault();
-                            const headerOffset = 80;
-                            const elementPosition = target.getBoundingClientRect().top;
-                            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                            window.scrollTo({
-                                top: offsetPosition,
-                                behavior: 'smooth'
-                            });
-                        }
-                    }
-                });
-            });
-
-            // Add loading state for buttons
-            document.querySelectorAll('a.btn-primary, a.btn-secondary').forEach(button => {
-                button.addEventListener('click', function(e) {
-                    if (this.href && !this.href.includes('#')) {
-                        const originalText = this.innerHTML;
-                        this.innerHTML = '<span style="display: inline-block; animation: spin 1s linear infinite;">⏳</span> Loading...';
-                        this.style.pointerEvents = 'none';
-
-                        setTimeout(() => {
-                            this.innerHTML = originalText;
-                            this.style.pointerEvents = '';
-                        }, 2000);
-                    }
-                });
-            });
+            // Keep navigation native. Shared site chrome handles skip-link focus;
+            // CSS supplies scrolling without parsing an href as a CSS selector.
 
             // Performance: Debounce scroll events
             function debounce(func, wait) {
