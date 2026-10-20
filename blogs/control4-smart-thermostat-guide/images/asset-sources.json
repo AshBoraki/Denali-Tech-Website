@@ -1,8 +1,13 @@
 {
-  "accessed": "2026-10-19",
+  "accessed": "2026-10-20",
   "sourceLibrary": "ADI Marketing Materials, authorized dealer session, Product Studio Photos",
   "credit": "Manufacturer studio images: Control4 / ADI. Not Denali Tech installation photographs.",
   "notes": "Provenance record, not an independent license grant. No Internal Use Only assets used. Original downloads retained locally; signed download links are not stored in this record.",
+  "activeArticleImages": [
+    "control4-smart-thermostat-front.webp",
+    "control4-smart-thermostat-back.webp"
+  ],
+  "retainedAssets": "Left and right angle files remain available at their existing URLs but are no longer displayed in the article.",
   "assets": [
     {
       "file": "/blogs/control4-smart-thermostat-guide/images/control4-smart-thermostat-front.webp",
@@ -53,6 +58,23 @@
       "bytes": 112604,
       "sha256": "74a16dcd2473a9c7fbfa2d91ba7b6fa6fc073b3a5f19aadb9178fa487a4c6f63",
       "originalSha256": "51454c999ce44dffae6fd2e25d7b4443744ba53443d3186ff911509cbf6dde28",
+      "changes": "Proportional downsize and WebP encoding only. Full original framing and alpha transparency retained; no background replacement or generated pixels."
+    },
+    {
+      "file": "/blogs/control4-smart-thermostat-guide/images/control4-smart-thermostat-back.webp",
+      "source": "https://brandfolder.com/adi/#!asset/6ms3gcfwthr6cb9g4k2n2jqn",
+      "sourceFilename": "C4-SMART-THERM-U_04_Back.png",
+      "sourceDimensions": [
+        2781,
+        1880
+      ],
+      "dimensions": [
+        1800,
+        1217
+      ],
+      "bytes": 97868,
+      "sha256": "64b11c46f4f5e2849f730bdc4e48bc341ab4214735fd5a0dca0b48c0a7e8c70d",
+      "originalSha256": "8c12567ebd1c7b66d2886e5a7e2571a2be85033a9b8207574a6e0ea2c3bff3f2",
       "changes": "Proportional downsize and WebP encoding only. Full original framing and alpha transparency retained; no background replacement or generated pixels."
     }
   ]

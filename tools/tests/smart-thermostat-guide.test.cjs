@@ -16,8 +16,10 @@ test('thermostat features are attributed and unsupported installation claims are
  assert.equal([...html.matchAll(/class="btn"/g)].length,1);
  assert.ok(html.includes(`/contact/?source=blog-guide&amp;guide=${slug}#booking`));
 });
-test('thermostat has three traceable full-frame transparent product images',()=>{
- const manifest=JSON.parse(read(`blogs/${slug}/images/asset-sources.json`));assert.equal(manifest.assets.length,3);
+test('thermostat has two purposeful front/rear photos with traceable full-frame originals',()=>{
+ const manifest=JSON.parse(read(`blogs/${slug}/images/asset-sources.json`));assert.equal(manifest.assets.length,4);
+ assert.deepEqual(manifest.activeArticleImages,['control4-smart-thermostat-front.webp','control4-smart-thermostat-back.webp']);
+ assert.match(manifest.retainedAssets,/no longer displayed/);
  assert.match(manifest.notes,/not an independent license grant/);assert.doesNotMatch(JSON.stringify(manifest),/Expires=|Signature=|KeyName=/);
  for(const a of manifest.assets){
   const bytes=fs.readFileSync(path.join(root,a.file));assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'),a.sha256);
@@ -25,9 +27,17 @@ test('thermostat has three traceable full-frame transparent product images',()=>
   assert.ok(Math.abs(a.dimensions[0]/a.dimensions[1]-a.sourceDimensions[0]/a.sourceDimensions[1])<.002);
   assert.match(a.changes,/alpha transparency retained/);
  }
- assert.equal([...html.matchAll(/<img /g)].length,3);
+ assert.equal([...html.matchAll(/<img /g)].length,2);
  for(const[,src,w,h]of html.matchAll(/<img src="([^"]+)" width="(\d+)" height="(\d+)"/g))assert.deepEqual(manifest.assets.find(a=>a.file.endsWith(src.slice(7))).dimensions,[+w,+h]);
  assert.match(html,/object-fit:contain/);assert.doesNotMatch(html,/object-fit:\s*cover|transform:\s*scale/);
+});
+test('rear photo replaces repetitive angles without implying wiring or mounting compatibility',()=>{
+ assert.match(html,/What sits behind the screen/);
+ assert.ok(html.includes('control4-smart-thermostat-back.webp'));
+ assert.doesNotMatch(html,/control4-smart-thermostat-(left|right)\.webp|Left-angle view|Right-angle view|three (clear|official) product views/);
+ assert.match(html,/not a wiring diagram or a photograph of the separate wall base/);
+ assert.match(html,/rear product photo cannot establish that it will fit the old mounting/);
+ assert.match(html,/6ms3gcfwthr6cb9g4k2n2jqn/);
 });
 test('thermostat navigation and discovery metadata remain synchronized',()=>{
  const p=catalog.find(p=>p.slug===slug);assert.ok(p);assert.equal(p.heroImage,`/blogs/${slug}/images/control4-smart-thermostat-front.webp`);
