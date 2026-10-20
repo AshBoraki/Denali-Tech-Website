@@ -1,0 +1,63 @@
+{
+  "checkedOn": "2026-10-19",
+  "notes": "Source provenance, not an independent license grant. Native manufacturer image and public documentation screenshots remain manufacturer-owned. Illustrations are not Denali Tech project photographs or live system feedback; original names are manufacturer examples.",
+  "assets": [
+    {
+      "file": "/blogs/control4-scenes-routines-guide/images/manufacturer/control4-goodnight-example.webp",
+      "dimensions": [
+        1442,
+        860
+      ],
+      "sourcePage": "https://www.control4.com/the-smart-home-experience",
+      "sourceFile": "https://cdn.prod.website-files.com/629926620ba03720384bebb3/67fffad609b951111e66bf32_a60fae922ebd49a1c9ee60b4bc77fd58_087_25_Control4.com_SmartHomeExperience_Goodnight.webp",
+      "sha256": "d619b7db3026cf23b940fb6fc77dacf6efb2b7c457dc3c883a54eddf786b4714",
+      "processing": "Unchanged native manufacturer composition with original keypad inset. No crop, no upscale."
+    },
+    {
+      "file": "/blogs/control4-scenes-routines-guide/images/manufacturer/control4-routine-gallery-original.png",
+      "dimensions": [
+        660,
+        412
+      ],
+      "sourcePage": "https://help.snapone.com/c4-osreleasenotes/Content/OS%204.0/3%20Routines.htm",
+      "sourceFile": "https://help.snapone.com/c4-osreleasenotes/Content/Resources/Images/OS%204.0/Routine%20Gallery.png",
+      "sha256": "f512ae97cbb136b388926200bf75ed5911c3dbd6221e56c6b0fcaef7598b058d",
+      "processing": "Unchanged native documentation PNG."
+    },
+    {
+      "file": "/blogs/control4-scenes-routines-guide/images/manufacturer/control4-routine-gallery.webp",
+      "dimensions": [
+        660,
+        412
+      ],
+      "sourceFiles": [
+        "/blogs/control4-scenes-routines-guide/images/manufacturer/control4-routine-gallery-original.png"
+      ],
+      "sha256": "2fdc9f6789d89545fd5f3bdde4e6c6b5d2658a48e9fe60a5ba0ba66797cc775c",
+      "processing": "Lossless full-frame WebP conversion; no resizing, crop or pixel editing."
+    },
+    {
+      "file": "/blogs/control4-scenes-routines-guide/images/manufacturer/control4-routine-timeline-original.png",
+      "dimensions": [
+        660,
+        412
+      ],
+      "sourcePage": "https://help.snapone.com/c4-osreleasenotes/Content/OS%204.0/3%20Routines.htm",
+      "sourceFile": "https://help.snapone.com/c4-osreleasenotes/Content/Resources/Images/OS%204.0/Routine%20Timeline.png",
+      "sha256": "f3862095eb92e048dea0c09eb13d9065b4fdf558985526ec8050185e5507487d",
+      "processing": "Unchanged native documentation PNG."
+    },
+    {
+      "file": "/blogs/control4-scenes-routines-guide/images/manufacturer/control4-routine-timeline.webp",
+      "dimensions": [
+        660,
+        412
+      ],
+      "sourceFiles": [
+        "/blogs/control4-scenes-routines-guide/images/manufacturer/control4-routine-timeline-original.png"
+      ],
+      "sha256": "4395ac17d4f3d05d209b6a0e3d6e5b622abdb3e7d4405c5a5cdfa0e90dac3d4e",
+      "processing": "Lossless full-frame WebP conversion; no resizing, crop or pixel editing."
+    }
+  ]
+}
