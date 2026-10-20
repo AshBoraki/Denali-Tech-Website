@@ -1,0 +1,192 @@
+{
+  "reviewedOn": "2026-10-19",
+  "notes": "Provenance record, not an independent license grant. Six manufacturer model images extracted from public data sheets with original alpha. Not Denali installations or an identification from appearance alone. Complete native-resolution PNG extractions retained; not copies of the whole PDFs. Editorial cover uses only three documented product images with labels and no physical-scale claim.",
+  "assets": [
+    {
+      "file": "/blogs/luma-camera-model-comparison/images/manufacturer/luma-220-turret-white-original.png",
+      "role": "native PDF image",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/documents/Surveillance/Cutsheets/LUMA_cutsheets_final_LUM-220-IP-TF.pdf",
+      "pdfPage": 1,
+      "pdfImageXref": 372,
+      "dimensions": [
+        899,
+        899
+      ],
+      "sha256": "0ce778e481d0083e31cfa50fd97444f86d03389e86e2a5bbcc1eb3c54f2dbc54",
+      "transformation": "Native PDF image reconstructed with its original soft mask; browser RGB conversion where needed. Display WebP quality94, downsampled only above1200px. Full frame retained, no crop, upscale, AI, retouch or background removal."
+    },
+    {
+      "file": "/blogs/luma-camera-model-comparison/images/manufacturer/luma-220-turret-white.webp",
+      "role": "display",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/documents/Surveillance/Cutsheets/LUMA_cutsheets_final_LUM-220-IP-TF.pdf",
+      "pdfPage": 1,
+      "pdfImageXref": 372,
+      "dimensions": [
+        899,
+        899
+      ],
+      "sha256": "39ae352f6870cf79c81a655466d1ba936a8d773324bd929de2220b65f9420c6d",
+      "transformation": "Native PDF image reconstructed with its original soft mask; browser RGB conversion where needed. Display WebP quality94, downsampled only above1200px. Full frame retained, no crop, upscale, AI, retouch or background removal."
+    },
+    {
+      "file": "/blogs/luma-camera-model-comparison/images/manufacturer/luma-520-color-bullet-white-original.png",
+      "role": "native PDF image",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/documents/Surveillance/Cutsheets/LUM-520-IP-BFCB_W_080723.pdf",
+      "pdfPage": 1,
+      "pdfImageXref": 543,
+      "dimensions": [
+        1333,
+        916
+      ],
+      "sha256": "f321c2dbd8fd3ec16bdf064f8e7d86b9fa0eb7710aea4a4dfa6bba2a5c6422c2",
+      "transformation": "Native PDF image reconstructed with its original soft mask; browser RGB conversion where needed. Display WebP quality94, downsampled only above1200px. Full frame retained, no crop, upscale, AI, retouch or background removal."
+    },
+    {
+      "file": "/blogs/luma-camera-model-comparison/images/manufacturer/luma-520-color-bullet-white.webp",
+      "role": "display",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/documents/Surveillance/Cutsheets/LUM-520-IP-BFCB_W_080723.pdf",
+      "pdfPage": 1,
+      "pdfImageXref": 543,
+      "dimensions": [
+        1200,
+        825
+      ],
+      "sha256": "67754f4b9cdc51951af8deb39f327fbb23c3ef0813fee50d6517152e1da60798",
+      "transformation": "Native PDF image reconstructed with its original soft mask; browser RGB conversion where needed. Display WebP quality94, downsampled only above1200px. Full frame retained, no crop, upscale, AI, retouch or background removal."
+    },
+    {
+      "file": "/blogs/luma-camera-model-comparison/images/manufacturer/luma-820-hybrid-turret-black-original.png",
+      "role": "native PDF image",
+      "sourceFile": "https://www.snapav.com//dx/api/dam/v1/collections/f0901118-46e1-4845-97cb-c73b5f2edc64/items/4c13f8b5-a03e-42cb-bc23-a6c278907c7d/renditions/49265384-40d7-495a-a1c9-48d3a1bf7e57?binary=true",
+      "pdfPage": 1,
+      "pdfImageXref": 673,
+      "dimensions": [
+        516,
+        436
+      ],
+      "sha256": "5196f9dc7dea1e80767a96c370e87760543f4fb280201b12442e8f8dcc80795c",
+      "transformation": "Native PDF image reconstructed with its original soft mask; browser RGB conversion where needed. Display WebP quality94, downsampled only above1200px. Full frame retained, no crop, upscale, AI, retouch or background removal."
+    },
+    {
+      "file": "/blogs/luma-camera-model-comparison/images/manufacturer/luma-820-hybrid-turret-black.webp",
+      "role": "display",
+      "sourceFile": "https://www.snapav.com//dx/api/dam/v1/collections/f0901118-46e1-4845-97cb-c73b5f2edc64/items/4c13f8b5-a03e-42cb-bc23-a6c278907c7d/renditions/49265384-40d7-495a-a1c9-48d3a1bf7e57?binary=true",
+      "pdfPage": 1,
+      "pdfImageXref": 673,
+      "dimensions": [
+        516,
+        436
+      ],
+      "sha256": "7b280e6a6e99c014d3a1a1e3d895ded4a79b9808ef6004ee03635865a41fd9cf",
+      "transformation": "Native PDF image reconstructed with its original soft mask; browser RGB conversion where needed. Display WebP quality94, downsampled only above1200px. Full frame retained, no crop, upscale, AI, retouch or background removal."
+    },
+    {
+      "file": "/blogs/luma-camera-model-comparison/images/manufacturer/luma-420-ptz-25x-white-original.png",
+      "role": "native PDF image",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/documents/Surveillance/Cutsheets/LUMA%20LUM-420-IP-PTZ-25W%20cutsheet.pdf",
+      "pdfPage": 1,
+      "pdfImageXref": 648,
+      "dimensions": [
+        1126,
+        905
+      ],
+      "sha256": "916fb866d748cacf70f94306494998ab92b3a8bcb189b67e5eb9f9cb36bb4e8f",
+      "transformation": "Native PDF image reconstructed with its original soft mask; browser RGB conversion where needed. Display WebP quality94, downsampled only above1200px. Full frame retained, no crop, upscale, AI, retouch or background removal."
+    },
+    {
+      "file": "/blogs/luma-camera-model-comparison/images/manufacturer/luma-420-ptz-25x-white.webp",
+      "role": "display",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/documents/Surveillance/Cutsheets/LUMA%20LUM-420-IP-PTZ-25W%20cutsheet.pdf",
+      "pdfPage": 1,
+      "pdfImageXref": 648,
+      "dimensions": [
+        1126,
+        905
+      ],
+      "sha256": "83c3f6f0748bd1e719466fcab0bf42051d90745f3ef39769183e629b0b446671",
+      "transformation": "Native PDF image reconstructed with its original soft mask; browser RGB conversion where needed. Display WebP quality94, downsampled only above1200px. Full frame retained, no crop, upscale, AI, retouch or background removal."
+    },
+    {
+      "file": "/blogs/luma-camera-model-comparison/images/manufacturer/luma-720-poe-floodlight-white-original.png",
+      "role": "native PDF image",
+      "sourceFile": "https://www.snapav.com/dx/api/dam/v1/collections/c2e452b4-e3c3-4bb9-bfa2-99fd49a92175/items/2dcd36f4-e8be-467c-a730-8a041ba0cdf1/renditions/20baed08-52c8-48b2-b2e5-0543a84be55a?binary=true",
+      "pdfPage": 1,
+      "pdfImageXref": 757,
+      "dimensions": [
+        564,
+        480
+      ],
+      "sha256": "632154731108145a0075d0a631d2a001318e3deae3b190408e529ab21368ddd6",
+      "transformation": "Native PDF image reconstructed with its original soft mask; browser RGB conversion where needed. Display WebP quality94, downsampled only above1200px. Full frame retained, no crop, upscale, AI, retouch or background removal."
+    },
+    {
+      "file": "/blogs/luma-camera-model-comparison/images/manufacturer/luma-720-poe-floodlight-white.webp",
+      "role": "display",
+      "sourceFile": "https://www.snapav.com/dx/api/dam/v1/collections/c2e452b4-e3c3-4bb9-bfa2-99fd49a92175/items/2dcd36f4-e8be-467c-a730-8a041ba0cdf1/renditions/20baed08-52c8-48b2-b2e5-0543a84be55a?binary=true",
+      "pdfPage": 1,
+      "pdfImageXref": 757,
+      "dimensions": [
+        564,
+        480
+      ],
+      "sha256": "10945ba6ec0e0b0021ff98023e2ff48500af6cd1d5057b234f461a36bb4f8a07",
+      "transformation": "Native PDF image reconstructed with its original soft mask; browser RGB conversion where needed. Display WebP quality94, downsampled only above1200px. Full frame retained, no crop, upscale, AI, retouch or background removal."
+    },
+    {
+      "file": "/blogs/luma-camera-model-comparison/images/manufacturer/luma-bridge-4ch-original.png",
+      "role": "native PDF image",
+      "sourceFile": "https://www.snapav.com//dx/api/dam/v1/collections/abcc88f4-f671-4c59-81cd-c5361122da02/items/91c32c2a-7cf7-42b3-b96d-e5134cdcc574/renditions/1c997fe0-0465-4f7b-86fa-4368ba707f64?binary=true",
+      "pdfPage": 1,
+      "pdfImageXref": 24,
+      "dimensions": [
+        1179,
+        289
+      ],
+      "sha256": "560fbe68276d2ae642a9669426e8faf63d86bd68467606cda8602d45052cb6bc",
+      "transformation": "Native PDF image reconstructed with its original soft mask; browser RGB conversion where needed. Display WebP quality94, downsampled only above1200px. Full frame retained, no crop, upscale, AI, retouch or background removal."
+    },
+    {
+      "file": "/blogs/luma-camera-model-comparison/images/manufacturer/luma-bridge-4ch.webp",
+      "role": "display",
+      "sourceFile": "https://www.snapav.com//dx/api/dam/v1/collections/abcc88f4-f671-4c59-81cd-c5361122da02/items/91c32c2a-7cf7-42b3-b96d-e5134cdcc574/renditions/1c997fe0-0465-4f7b-86fa-4368ba707f64?binary=true",
+      "pdfPage": 1,
+      "pdfImageXref": 24,
+      "dimensions": [
+        1179,
+        289
+      ],
+      "sha256": "80e1ab655a3377dbb7f1e085d98d39113e677d5db7c95c06dd4386e263432d43",
+      "transformation": "Native PDF image reconstructed with its original soft mask; browser RGB conversion where needed. Display WebP quality94, downsampled only above1200px. Full frame retained, no crop, upscale, AI, retouch or background removal."
+    },
+    {
+      "file": "/blogs/luma-camera-model-comparison/images/manufacturer/luma-camera-guide-cover.png",
+      "role": "editorial comparison cover",
+      "sourceFiles": [
+        "/blogs/luma-camera-model-comparison/images/manufacturer/luma-220-turret-white.webp",
+        "/blogs/luma-camera-model-comparison/images/manufacturer/luma-520-color-bullet-white.webp",
+        "/blogs/luma-camera-model-comparison/images/manufacturer/luma-820-hybrid-turret-black.webp"
+      ],
+      "dimensions": [
+        1200,
+        675
+      ],
+      "sha256": "06e58081cc059a82e5404117314cb21c005f74f8f6bf183f7092bb3dd1f9b04a",
+      "transformation": "HTML/CSS navy framing and model labels around three complete manufacturer images. Native1200x675 browser render; WebP quality95. Not to physical scale. No generated product detail, crop or upscale."
+    },
+    {
+      "file": "/blogs/luma-camera-model-comparison/images/manufacturer/luma-camera-guide-cover.webp",
+      "role": "editorial comparison cover",
+      "sourceFiles": [
+        "/blogs/luma-camera-model-comparison/images/manufacturer/luma-220-turret-white.webp",
+        "/blogs/luma-camera-model-comparison/images/manufacturer/luma-520-color-bullet-white.webp",
+        "/blogs/luma-camera-model-comparison/images/manufacturer/luma-820-hybrid-turret-black.webp"
+      ],
+      "dimensions": [
+        1200,
+        675
+      ],
+      "sha256": "98bb9a15b8c7416786b9c6099e35400bfd69ffc0c79ea5e6c83f84154251b480",
+      "transformation": "HTML/CSS navy framing and model labels around three complete manufacturer images. Native1200x675 browser render; WebP quality95. Not to physical scale. No generated product detail, crop or upscale."
+    }
+  ]
+}
