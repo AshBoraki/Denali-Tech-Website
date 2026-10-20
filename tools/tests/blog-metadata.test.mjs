@@ -57,7 +57,7 @@ test('six expanded guides retain topic-specific conclusions and current update d
   for (const slug of ['control4-apple-homekit-guide', 'luma-security-camera-planning-guide', 'outdoor-tv-audio-chicago-guide', 'smart-home-designers-architects-guide', 'smart-home-prewire-builders-guide', 'smart-home-takeover-service-guide']) {
     const html = fs.readFileSync(new URL(`../../blogs/${slug}/index.html`, import.meta.url), 'utf8');
     assert.doesNotMatch(html, /The best smart home projects feel calm because the hard decisions were handled early/);
-    assert.equal(articleDates(html).modified, '2026-09-05');
+    assert.equal(articleDates(html).modified, slug === 'control4-apple-homekit-guide' ? '2026-10-19' : '2026-09-05');
     assert.ok(readingMinutes(html).words >= 650, slug);
   }
 });

@@ -1,0 +1,61 @@
+{
+  "reviewedOn": "2026-10-19",
+  "notes": "Source provenance, not an independent license grant. Original public Control4 phone-photo PNG is retained; display WebP is quality 94 at the same dimensions and unchanged alpha, not pixel-identical RGB. No AI hardware, retouching, cropping or upscaling. Existing room/control-screen photos retain their existing source records. Manufacturer examples, not Denali installations; Control4 screens are not screenshots of Apple Home.",
+  "assets": [
+    {
+      "file": "/blogs/control4-apple-homekit-guide/images/control4-apple-home-cover.webp",
+      "role": "editorial cover",
+      "sourcePage": "https://www.control4.com/get-control4-appx",
+      "sourceFile": "https://cdn.prod.website-files.com/629926620ba03720384bebb3/688a30165499a61d37a35147_X4-Download-image.png",
+      "dimensions": [1200, 675],
+      "sha256": "169dc45d42a56dd03a9e3deba5153c8025c489267483682b88e6aee624ed6190",
+      "transformation": "Code-native SVG editorial layout, rendered in Chrome. Complete original Control4 app photo is scaled down beside original Denali labels over a blue gradient. Not Apple Home UI; no image retouch, cropping, AI generation or upscaling."
+    },
+    {
+      "file": "/blogs/control4-apple-homekit-guide/images/control4-x4-phone-original.png",
+      "role": "original",
+      "sourcePage": "https://www.control4.com/get-control4-appx",
+      "sourceFile": "https://cdn.prod.website-files.com/629926620ba03720384bebb3/688a30165499a61d37a35147_X4-Download-image.png",
+      "dimensions": [
+        772,
+        528
+      ],
+      "sha256": "3eacdb85e03b146d85775b12b67a711ca586a1ed92b15ff8c479303c250a14ab"
+    },
+    {
+      "file": "/blogs/control4-apple-homekit-guide/images/control4-x4-phone.webp",
+      "role": "display",
+      "sourcePage": "https://www.control4.com/get-control4-appx",
+      "sourceFile": "https://cdn.prod.website-files.com/629926620ba03720384bebb3/688a30165499a61d37a35147_X4-Download-image.png",
+      "dimensions": [
+        772,
+        528
+      ],
+      "sha256": "faa2d11e6b870d2ce34b077bd9ab0a95fd819e67553b8ee879d3020d31e35b18"
+    },
+    {
+      "file": "/Video/Blogs imge/Control4 Connect Guide/control4-app-home.webp",
+      "role": "existing manufacturer photo",
+      "sourcePage": "https://www.control4.com/services",
+      "sourceFile": "https://cdn.prod.website-files.com/629926620ba03720384bebb3/67fffad5c107419152a0e93e_1bc7516fd90187cfacb8d637d5a96713_087_25_Control4.com_SmartHomeExperience_Homescreen.webp",
+      "sourceRecord": "/Video/Blogs imge/Control4 Connect Guide/asset-sources.json",
+      "dimensions": [
+        772,
+        528
+      ],
+      "sha256": "18e0cb14b817aece8733362771f7cf0f9e0a9c6f0dfac837a1195cb1b98c58cb"
+    },
+    {
+      "file": "/assets/brandfolder/control4/control4-countertop-remote.webp",
+      "role": "existing manufacturer photo",
+      "sourcePage": "ADI Brandfolder - Control4 Marketing and Sales Materials",
+      "sourceFile": "C4-VBTX9.jpg",
+      "sourceRecord": "/assets/brandfolder/control4/asset-manifest.json",
+      "dimensions": [
+        1800,
+        1200
+      ],
+      "sha256": "591b84cf61a746d4177cc09dcd1b491c0dc8ad378b57ba29acbb6ba0b90db75b"
+    }
+  ]
+}

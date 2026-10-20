@@ -1186,7 +1186,7 @@
       "title": "Control4 and Apple HomeKit: What Homeowners Should Understand",
       "slug": "control4-apple-homekit-guide",
       "url": "/blogs/control4-apple-homekit-guide/",
-      "excerpt": "Learn how to think about Control4, Apple HomeKit, phones, tablets, and voice control without turning your smart home into a pile of competing apps.",
+      "excerpt": "Understand Control4 X4's official Apple Home integration, its documented limits, Connect and home-hub roles, and what to check before connecting your home.",
       "category": "Smart Home Guide",
       "tags": [
         "Control4",
@@ -1196,9 +1196,9 @@
       ],
       "author": "Denali Tech Team",
       "publishedDate": "2026-06-03",
-      "updatedDate": "2026-09-05",
-      "readingTime": 4,
-      "heroImage": "/assets/brandfolder/control4/control4-kitchen-lighting-scene.webp",
+      "updatedDate": "2026-10-19",
+      "readingTime": 6,
+      "heroImage": "/blogs/control4-apple-homekit-guide/images/control4-apple-home-cover.webp",
       "featured": true
     },
     {

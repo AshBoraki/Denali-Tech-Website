@@ -1,10 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <script src="/assets/js/microsoft-clarity.js" defer></script>
-    <meta charset="UTF-8">
-<script src="/assets/js/theme.js?v=20260602" defer></script>
-    <script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<script src="/assets/js/microsoft-clarity.js" defer></script>
+<script>
     window.dataLayer = window.dataLayer || [];
     var gtmLoaded = false;
     function loadGTM() {
@@ -24,169 +23,63 @@
         }
     });
     </script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Control4 and Apple HomeKit Guide | Denali Tech</title>
-    <meta name="description" content="Learn how to think about Control4, Apple HomeKit, phones, tablets, and voice control without turning your smart home into a pile of competing apps.">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://denalitechs.com/blogs/control4-apple-homekit-guide/">
-    <meta property="og:title" content="Control4 and Apple HomeKit: What Homeowners Should Understand">
-    <meta property="og:description" content="Learn how to think about Control4, Apple HomeKit, phones, tablets, and voice control without turning your smart home into a pile of competing apps.">
-    <meta property="og:image" content="https://denalitechs.com/Video/Brands/Denali%20techControl4.webp">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Control4 and Apple HomeKit: What Homeowners Should Understand">
-    <meta name="twitter:description" content="Learn how to think about Control4, Apple HomeKit, phones, tablets, and voice control without turning your smart home into a pile of competing apps.">
-    <meta name="twitter:image" content="https://denalitechs.com/Video/Brands/Denali%20techControl4.webp">
-    <link rel="canonical" href="https://denalitechs.com/blogs/control4-apple-homekit-guide/">
-    <meta name="author" content="Denali Tech Team">
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-    <meta name="article:published_time" content="2026-06-03">
-    <meta name="article:modified_time" content="2026-09-05">
-    <meta name="article:section" content="Smart Home Guide">
-    <base href="/">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
-    <style>
-        :root { --bg:#0a0d18; --panel:#101726; --text:#f8fafc; --muted:#cbd5e1; --accent:#f97316; --accent-soft:rgba(249,115,22,.14); --border:rgba(255,255,255,.12); --font-main:'Inter',system-ui,sans-serif; --font-heading:'Poppins',system-ui,sans-serif; }
-        * { box-sizing:border-box; }
-        body { margin:0; font-family:var(--font-main); background:var(--bg); color:var(--text); line-height:1.75; }
-        .blog-container { max-width:900px; margin:0 auto; padding:120px 24px 72px; }
-        .blog-header { text-align:center; margin-bottom:40px; }
-        .blog-breadcrumb, .blog-meta { color:var(--muted); font-size:.95rem; }
-        .blog-breadcrumb a, .blog-share a, .cta-box a, .blog-content a { color:var(--accent); text-decoration:none; }
-        .blog-title { font-family:var(--font-heading); font-size:clamp(2.1rem,5vw,3.2rem); line-height:1.15; margin:16px 0; }
-        .blog-meta { display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin-bottom:18px; }
-        .blog-tags { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin:18px 0 0; }
-        .blog-tag { padding:8px 12px; border-radius:999px; background:var(--accent-soft); border:1px solid rgba(249,115,22,.3); color:var(--accent); font-weight:600; font-size:.85rem; }
-        .blog-hero-image { width:100%; height:auto; max-height:520px; object-fit:cover; border-radius:20px; margin:28px 0 12px; display:block; }
-        .blog-hero-image.control4-logo-panel { height:clamp(132px,24vw,230px); padding:clamp(28px,6vw,58px); object-fit:contain; background:#e6eef6; }
-        .blog-image-caption { text-align:center; color:var(--muted); font-size:.92rem; margin-top:0; }
-        .blog-content { color:var(--muted); font-size:1.08rem; }
-        .blog-content h2, .blog-content h3 { color:var(--text); font-family:var(--font-heading); line-height:1.25; }
-        .blog-content h2 { margin-top:40px; font-size:clamp(1.6rem,4vw,2.2rem); }
-        .blog-content h3 { margin-top:28px; font-size:1.25rem; }
-        .blog-content strong { color:var(--text); }
-        .highlight-box, .cta-box { background:var(--panel); border:1px solid var(--border); border-radius:20px; padding:22px; margin:28px 0; }
-        .cta-box { text-align:center; }
-        .btn-primary { display:inline-block; margin-top:10px; background:var(--accent); color:#fff !important; padding:14px 22px; border-radius:999px; font-weight:700; }
-        .blog-share { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-top:32px; }
-        .share-btn { display:inline-flex; gap:8px; align-items:center; background:var(--panel); border:1px solid var(--border); color:var(--text); border-radius:999px; padding:10px 14px; }
-        .related-posts { margin-top:44px; }
-        .related-posts-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; }
-        .related-post-card { background:var(--panel); border:1px solid var(--border); border-radius:18px; padding:18px; color:var(--text); text-decoration:none; }
-        .related-post-category { color:var(--accent); font-size:.82rem; font-weight:700; text-transform:uppercase; letter-spacing:.05em; }
-        .related-post-title { margin:10px 0 0; font-size:1.05rem; }
-        ul, ol { padding-left:22px; }
-        @media (max-width: 640px) { .blog-container { padding:96px 18px 56px; } .blog-meta { gap:10px; } }
-    </style>
-    <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"BlogPosting","headline":"Control4 and Apple HomeKit: What Homeowners Should Understand","description":"Learn how to think about Control4, Apple HomeKit, phones, tablets, and voice control without turning your smart home into a pile of competing apps.","image":"https://denalitechs.com/Video/Brands/Denali%20techControl4.webp","author":{"@type":"Organization","name":"Denali Tech Team","url":"https://denalitechs.com/about/"},"publisher":{"@type":"Organization","name":"Denali Tech","url":"https://denalitechs.com/","logo":{"@type":"ImageObject","url":"https://denalitechs.com/favicon-512x512.png"}},"datePublished":"2026-06-03","dateModified":"2026-09-05","mainEntityOfPage":"https://denalitechs.com/blogs/control4-apple-homekit-guide/","articleSection":"Smart Home Guide","keywords":"Control4, Apple HomeKit, Smart Home Apps, Voice Control"}
-    </script>
-    <script src="/assets/js/microsoft-uet.js" defer></script>
-    <link rel="stylesheet" href="/assets/css/site-chrome.css?v=20260917-planning-nav">
-    <link rel="stylesheet" href="/assets/css/blog-media-upgrade.css?v=20260713">
-    <script src="/assets/js/site-chrome.js?v=20260918-planning-footer" defer></script>
-    <script src="/assets/js/blog-reader-tools.js?v=20260905a" defer></script>
+<script src="/assets/js/microsoft-uet.js" defer></script>
+<title>Control4 and Apple HomeKit Guide | Denali Tech</title>
+<meta name="description" content="Understand Control4 X4's official Apple Home integration: supported functions, Siri, Connect, Apple home hubs and what to check before connecting an existing system.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="canonical" href="https://denalitechs.com/blogs/control4-apple-homekit-guide/"><link rel="icon" href="/favicon-32x32.png">
+<meta property="og:type" content="article"><meta property="og:url" content="https://denalitechs.com/blogs/control4-apple-homekit-guide/">
+<meta property="og:title" content="Control4 and Apple HomeKit: What Homeowners Should Understand"><meta property="og:description" content="What connects, what needs checking, and how to add Apple Home convenience without complicating a working Control4 home.">
+<meta property="og:image" content="https://denalitechs.com/blogs/control4-apple-homekit-guide/images/control4-apple-home-cover.webp">
+<meta property="article:published_time" content="2026-06-03"><meta property="article:modified_time" content="2026-10-19">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://denalitechs.com/blogs/control4-apple-homekit-guide/images/control4-apple-home-cover.webp">
+<link rel="preload" href="/assets/fonts/inter-latin-400-600.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="/assets/css/site-chrome.css?v=20260917-planning-nav">
+<style>
+@font-face{font-family:Inter;src:url('/assets/fonts/inter-latin-400-600.woff2') format('woff2');font-weight:400 600;font-style:normal;font-display:swap}
+:root{color-scheme:dark;--bg:#080d16;--panel:#111a29;--text:#f8fafc;--muted:#bdc9d8;--line:rgba(255,255,255,.14);--link:#fdba74}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:110px}body{margin:0;background:var(--bg);color:var(--text);font:400 16px/1.7 Inter,system-ui,-apple-system,"Segoe UI",sans-serif}a{color:var(--link);text-underline-offset:.2em}a:hover{text-decoration-thickness:2px}a:focus-visible,summary:focus-visible{outline:3px solid #38bdf8;outline-offset:4px}.wrap{width:min(1080px,calc(100% - 40px));margin-inline:auto;overflow-wrap:anywhere}h1,h2,h3,strong{font-weight:600}
+.skip-link{position:fixed;top:10px;left:12px;z-index:10000;transform:translateY(-160%);padding:12px 16px;border-radius:8px;background:#fff;color:#111827}.skip-link:focus{transform:none}.crumb{padding-top:24px;font-size:.85rem;color:var(--muted)}.crumb a{display:inline-block;padding-block:8px}.eyebrow{font-size:.76rem;text-transform:uppercase;letter-spacing:.07em;color:#bae6fd;font-weight:600}
+.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:center;gap:clamp(24px,4vw,48px);padding:28px 0 34px}.hero>*{min-width:0}h1{font-size:clamp(2.1rem,3.8vw,3.2rem);line-height:1.12;letter-spacing:-.035em;margin:12px 0 18px}.lede{font-size:1.08rem;color:#dbe5f0;margin:0}.meta{display:flex;gap:5px 14px;flex-wrap:wrap;color:var(--muted);font-size:.8rem;margin-top:20px}figure{margin:0}.photo{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;min-width:0}.photo a{display:block;background:#14324f}.photo img{display:block;width:100%;height:auto;object-fit:contain;transform:none}.photo figcaption{padding:14px 17px;color:var(--muted);font-size:.85rem;line-height:1.6}.photo figcaption strong{color:#e2e8f0}
+.quick{padding:20px 24px;border-left:3px solid #fb923c;border-radius:0 12px 12px 0;background:#f9731612}.quick p{margin:0}.quick strong{color:#fed7aa}.jump{margin:24px 0 32px;border-block:1px solid var(--line)}summary{cursor:pointer;font-weight:600;min-height:48px;padding:13px 4px}summary::marker{color:#7dd3fc}.jump nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px;padding-bottom:14px}.jump a{display:flex;align-items:center;min-height:44px;padding:7px 4px;font-size:.95rem}
+.section{padding:34px 0;border-top:1px solid var(--line)}h2{font-size:clamp(1.65rem,2.8vw,2.1rem);line-height:1.25;letter-spacing:-.02em;margin:0 0 16px}h3{font-size:1.16rem;line-height:1.4;margin:0 0 10px}p{margin:0 0 18px}.measure{max-width:76ch}.muted{color:var(--muted)}.media-grid,.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:22px}.pair>div{min-width:0;padding:22px;background:var(--panel);border:1px solid var(--line);border-radius:12px}.pair h3{color:#ffedd5}.pair p{color:#d5deea;margin-bottom:0}
+.note{padding:18px 20px;border-left:3px solid #38bdf8;background:#38bdf810;color:#dff4ff;margin:22px 0 0}.note p{margin:0}.spec-details{margin-top:20px;border:1px solid var(--line);border-radius:12px;background:var(--panel);padding:0 18px}.spec-details summary{padding-block:16px}table{width:100%;border-collapse:collapse;table-layout:fixed}caption{padding:10px 8px 16px;text-align:left;color:var(--muted);font-size:.88rem}th,td{padding:14px 12px;text-align:left;vertical-align:top;border-top:1px solid var(--line);font-size:.96rem}thead th{color:#fed7aa}thead th:first-child{width:32%}tbody th{color:#dff4ff;font-weight:600}.spec-details .small{font-size:.88rem;color:var(--muted);margin-top:18px}
+ul.checklist,ol.checklist{padding-left:23px;margin:18px 0}.checklist li{padding-left:3px;margin:12px 0;color:#d5deea}.faq details{border-bottom:1px solid var(--line)}.faq summary{padding-block:16px}.faq details p{max-width:76ch;padding:0 4px 8px;color:#d5deea}
+.cta{padding:clamp(24px,4vw,36px);margin:26px 0 34px;border:1px solid #f9731670;border-radius:14px;background:#f9731612}.cta p{max-width:72ch;color:#d5deea}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 20px;background:linear-gradient(125deg,#f97316,#fb923c);border-radius:8px;text-decoration:none;color:#111827;font-weight:600}.sources h2{font-size:1.45rem}.sources p{font-size:.88rem;color:var(--muted);max-width:80ch}.sources ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3px 28px;list-style:none;padding:0;margin:0}.sources a{display:inline-flex;align-items:center;min-height:44px;padding:8px 0;color:#bae6fd}.related{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.related a{display:flex;align-items:center;min-height:58px;padding:16px;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+.dt-site-footer .dt-site-footer-close>*{min-width:0}.dt-site-footer .dt-site-footer-close-copy{min-width:0;grid-template-columns:minmax(0,1fr)}.dt-site-footer .dt-site-footer-actions>a{min-width:0;white-space:normal;overflow-wrap:anywhere;text-align:center}
+@media(max-width:850px){.hero{grid-template-columns:minmax(0,1fr);gap:24px}.hero .photo{width:100%;max-width:600px;justify-self:center}.related{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:600px){.wrap{width:calc(100% - 32px)}.crumb{padding-top:16px;font-size:.8rem}.hero{padding:22px 0 26px}h1{font-size:clamp(2rem,8.5vw,2.6rem)}.lede{font-size:1rem}.quick{padding:18px}.jump nav,.media-grid,.pair,.sources ul{grid-template-columns:minmax(0,1fr)}.section{padding-block:29px}.pair>div{padding:20px}.btn{width:100%;text-align:center}.spec-details{padding-inline:10px}th,td{padding:12px 8px}thead th:first-child{width:36%}.faq summary{line-height:1.6}.photo figcaption{padding:14px 16px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Control4 and Apple HomeKit: What Homeowners Should Understand","description":"Understand the official X4 integration, supported functions, subscription and hub roles, and the checks an existing home needs.","image":"https://denalitechs.com/blogs/control4-apple-homekit-guide/images/control4-apple-home-cover.webp","datePublished":"2026-06-03","dateModified":"2026-10-19","author":{"@type":"Organization","name":"Denali Tech Team","url":"https://denalitechs.com/about/"},"publisher":{"@type":"Organization","name":"Denali Tech","url":"https://denalitechs.com/","logo":{"@type":"ImageObject","url":"https://denalitechs.com/Video/Denali-Tech-Google-Logo-Final-Polished.png"}},"mainEntityOfPage":"https://denalitechs.com/blogs/control4-apple-homekit-guide/","articleSection":"Smart Home Guide","inLanguage":"en-US"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://denalitechs.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://denalitechs.com/blogs/"},{"@type":"ListItem","position":3,"name":"Control4 and Apple HomeKit","item":"https://denalitechs.com/blogs/control4-apple-homekit-guide/"}]}</script>
 </head>
-<body>
-    <main role="main">
-        <article class="blog-container">
-            <div class="blog-header">
-                <div class="blog-breadcrumb"><a href="/">Home</a> / <a href="/blogs/">Blog</a> / Control4 and Apple HomeKit: What Homeowners Should Understand</div>
-                <h1 class="blog-title">Control4 and Apple HomeKit: What Homeowners Should Understand</h1>
-                <div class="blog-meta">
-                    <span>Published: <time datetime="2026-06-03">June 3, 2026</time></span> <span>Updated: <time datetime="2026-09-05">September 5, 2026</time></span>
-                    <span>By: <a href="/about/">Denali Tech Team</a></span>
-                    <span>4 min read</span>
-                    <span>Category: Smart Home Guide</span>
-                </div>
-                <div class="blog-tags">
-                    <span class="blog-tag">Control4</span>
-                    <span class="blog-tag">Apple HomeKit</span>
-                    <span class="blog-tag">Smart Home Apps</span>
-                    <span class="blog-tag">Voice Control</span>
-                </div>
-            </div>
-
-            <img src="/assets/brandfolder/control4/control4-logo-full-color.svg" alt="Control4" class="blog-hero-image control4-logo-panel" loading="eager" width="1248" height="274">
-
-            <div class="blog-content">
-                <p>Homeowners often ask whether they should use Control4, Apple HomeKit, voice assistants, or separate apps for every device.</p>
-
-                <p>The better question is: which system should be the main control layer, and which tools should support it?</p>
-
-                <div class="highlight-box">
-                    <p><strong>Quick answer:</strong> Yes. Control4 X4 includes an Apple Home integration for supported Control4 devices and scenes. It is not a promise that every device in either platform works in the other. Confirm your system version, subscription, supported device types, and the commands you want before changing the project.</p>
-                </div>
-
-                <section class="field-media" aria-labelledby="control-layer-heading"><h2 id="control-layer-heading">Give each interface a deliberate job</h2><p class="field-media-intro">The homeowner should not have to remember which app owns the same room at different times.</p><div class="field-media-grid"><figure class="field-media-card"><img src="/assets/brandfolder/control4/control4-countertop-remote.webp" alt="Control4 handheld remote in a finished kitchen" loading="lazy" width="1800" height="1200"><figcaption>Handheld control is fastest for watch and listen actions where the family is already seated.</figcaption></figure><figure class="field-media-card"><img src="/assets/brandfolder/control4/control4-scenes-tablet-lighting.webp" alt="Tablet displaying a Control4 lighting scene" loading="lazy" width="1600" height="1066"><figcaption>Phone and tablet access should expose a curated set of useful rooms and scenes.</figcaption></figure><figure class="field-media-card"><img src="/assets/brandfolder/control4/control4-touchscreen-keypad-lighting.webp" alt="Control4 touchscreen and wall keypad in one lighting system" loading="lazy" width="1800" height="1200"><figcaption>Dedicated touchscreens and keypads keep essential control available without a personal device.</figcaption></figure></div><p class="field-note"><strong>Integration rule:</strong> verify the current supported driver or bridge and the exact devices, commands and feedback before promising HomeKit behavior. Do not design two competing sources of truth.</p></section>
-
-                <h2>One primary control layer keeps the home calmer</h2>
-                <p>The biggest mistake is letting every device become its own island. That creates too many apps, too many passwords, and too many ways for the experience to feel inconsistent.</p>
-                <p>A professional control system like Control4 is strongest when it becomes the organized layer for the whole home. Phone, tablet, touchscreens, remotes, and keypads should all feel like they belong to the same plan.</p>
-                <h2>What does the built-in integration actually support?</h2>
-                <p>Control4&rsquo;s X4 release notes document setup in the iOS Control4 app under Smart Assistant, with room mapping and selection of which devices are shared with Apple Home. The documented categories include lights, lighting scenes represented as switches, native Control4 thermostats, shades, fans, contact sensors, smoke detectors, and Composer-created voice scenes. That category list is not a compatibility guarantee for every third-party driver. <a href="https://docs.control4.com/docs/product/control4-software/dealer-release-notes/english/revision/AU/control4-software-release-notes-rev-au.pdf">Control4 X4 release notes, HomeKit section</a>.</p>
-                <p>This describes sharing supported Control4 functions with Apple Home; it does not establish that any HomeKit accessory can be imported into Control4. A television, camera, lock, or thermostat already present in one app still needs its own compatibility check. Keep complex room actions in Control4 unless their Apple Home behavior has been demonstrated.</p>
-                <h2>Do I need a subscription or an Apple home hub?</h2>
-                <p>Control4 currently lists Apple integration among its Connect features; have your integrator confirm the entitlement for your actual installation. Apple separately requires a home hub, such as a supported HomePod or Apple TV, for away-from-home accessory control and automations. The Control4 subscription and the Apple home hub serve different roles. <a href="https://www.control4.com/services">Control4 services</a> · <a href="https://support.apple.com/en-us/102557">Apple home-hub requirements</a>.</p>
-                <p>Before pairing, decide who owns the Apple Home and who should be invited. Use distinct room and device names, then start with a small set of everyday actions such as a kitchen light and a shade. Verify both the command and the reported state from the interfaces the household uses.</p>
-                <ul>
-                    <li>Use phone access for simple common actions.</li>
-                    <li>Keep complex room scenes in the main control system.</li>
-                    <li>Avoid duplicate names that confuse the family.</li>
-                    <li>Test voice commands before calling the job finished.</li>
-                </ul>
-                <h2>What to ask before connecting systems</h2>
-                <p>Before connecting platforms, ask what the homeowner actually wants to do. Turning lights on by voice is different from running a full movie scene with AV, shades, lighting, and climate.</p>
-                <p>A good installer will also explain support boundaries. If a third-party platform changes, the main system should still be serviceable.</p>
-
-                <div class="cta-box">
-                    <h3>Want this planned the right way?</h3>
-                    <p>Denali Tech can help you decide what belongs in Control4, what belongs on the phone, and what should stay simple so the home is easy to live with.</p>
-                    <a href="/contact/" class="btn-primary">Send Project Details</a>
-                    <p style="margin-top:14px;">Or message us on <a href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20would%20rather%20use%20WhatsApp.%20Can%20you%20help%20me%20with%3A" target="_blank" rel="noopener noreferrer">WhatsApp</a></p>
-                </div>
-
-                <h2>Official references</h2><p><a href="https://www.control4.com/get-control4-appx">Control4 X4 app and Apple Home integration</a> · <a href="https://docs.control4.com/docs/product/control4-software/dealer-release-notes/english/revision/AU/control4-software-release-notes-rev-au.pdf">Control4 X4 release notes, revision AU</a> · <a href="https://support.apple.com/en-ie/104998">Apple Home accessory setup</a>. Reviewed September 5, 2026. The release-note list describes that documented release; available devices, commands, feedback, permissions, hubs, and automations still depend on the installed version and project. Do not upgrade an existing system without a compatibility review and backup.</p><h2>Final thought</h2>
-                <p>Make a short list of the Siri commands you actually want, then ask for a demonstration using your devices. A successful Apple Home integration adds convenient entry points while the existing remotes, keypads, and Control4 scenes remain understandable and usable.</p>
-
-                <div class="blog-share">
-                    <span>Share:</span>
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://denalitechs.com/blogs/control4-apple-homekit-guide/" target="_blank" rel="noopener noreferrer" class="share-btn">Facebook</a>
-                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://denalitechs.com/blogs/control4-apple-homekit-guide/" target="_blank" rel="noopener noreferrer" class="share-btn">LinkedIn</a>
-                    <button onclick="copyToClipboard()" class="share-btn" style="cursor:pointer;border:none;font-family:inherit;">Copy Link</button>
-                </div>
-
-                <div class="related-posts">
-                    <h3>Related Articles</h3>
-                    <div class="related-posts-grid">
-                        <a href="/blogs/control4-x4-homeowner-guide/" class="related-post-card">
-                            <span class="related-post-category">Related</span>
-                            <h4 class="related-post-title">Control4 X4 Guide</h4>
-                        </a>
-                        <a href="/blogs/what-is-control4-guide/" class="related-post-card">
-                            <span class="related-post-category">Related</span>
-                            <h4 class="related-post-title">What Is Control4?</h4>
-                        </a>
-                        <a href="/blogs/smart-home-buyers-guide/" class="related-post-card">
-                            <span class="related-post-category">Related</span>
-                            <h4 class="related-post-title">Smart Home Buyer&#x27;s Guide</h4>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </article>
-    </main>
-    <script>
-        function copyToClipboard() {
-            navigator.clipboard.writeText(window.location.href).then(function() {
-                alert('Link copied to clipboard!');
-            });
-        }
-    </script>
-</body>
-</html>
+<body><a class="skip-link" href="#main-content">Skip to main content</a><div id="site-header"></div>
+<main id="main-content" class="wrap" tabindex="-1"><article>
+<nav class="crumb" aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/blogs/">Guides</a> / <span aria-current="page">Control4 and Apple HomeKit</span></nav>
+<header class="hero"><div><span class="eyebrow">Control4 X4 · Apple Home · Siri</span><h1>Control4 and Apple HomeKit: What Homeowners Should Understand</h1><p class="lede">Use Apple Home and Siri as convenient ways into a working Control4 home—not as a promise that every device and feature will move between the two systems.</p><div class="meta"><span>Published <time datetime="2026-06-03">June 3, 2026</time></span> <span>Updated: <time datetime="2026-10-19">October 19, 2026</time></span><span>By <a href="/about/">Denali Tech Team</a></span><span>6 min read</span></div></div><figure class="photo"><a href="/blogs/control4-apple-homekit-guide/images/control4-x4-phone-original.png" aria-label="Open full-size Control4 X4 app manufacturer photo"><img src="/blogs/control4-apple-homekit-guide/images/control4-x4-phone.webp" width="772" height="528" alt="Person holding a phone displaying the Control4 X4 app" loading="eager" fetchpriority="high" decoding="async"></a><figcaption><strong>Control4 X4 app shown—not Apple Home.</strong> Manufacturer example; actual rooms, devices and features depend on the installed system.</figcaption></figure></header>
+<section class="quick" aria-label="Quick answer"><p><strong>Does Control4 work with Apple HomeKit?</strong> Yes. X4 offers an official integration for supported Control4 functions. Check your controller, software, account entitlement and exact devices first. It does not mean every Apple Home accessory can be imported into Control4.</p></section>
+<details class="jump"><summary>In this guide</summary><nav aria-label="Article sections"><a href="#control-layer-heading">Choose useful controls</a><a href="#one-primary-control-layer-keeps-the-home-calmer">Keep room actions consistent</a><a href="#what-does-the-built-in-integration-actually-support">Supported functions and limits</a><a href="#do-i-need-a-subscription-or-an-apple-home-hub">Connect and Apple home hubs</a><a href="#what-to-ask-before-connecting-systems">Before you connect</a><a href="#final-thought">The practical takeaway</a></nav></details>
+<section class="section" aria-labelledby="control-layer-heading"><h2 id="control-layer-heading">Give each interface a useful job</h2><p class="measure">Start with a few things you would actually use: a light from your phone, a shade by voice, or a familiar evening scene. Keep remotes, keypads and Control4 screens available for the room actions you already know.</p><div class="media-grid"><figure class="photo"><a href="/assets/brandfolder/control4/control4-countertop-remote.webp" aria-label="Open complete Control4 remote lifestyle photo"><img src="/assets/brandfolder/control4/control4-countertop-remote-480.webp" srcset="/assets/brandfolder/control4/control4-countertop-remote-480.webp 480w, /assets/brandfolder/control4/control4-countertop-remote.webp 1800w" sizes="(max-width:600px) calc(100vw - 32px), (max-width:1120px) calc((100vw - 60px)/2), 530px" width="1800" height="1200" alt="Control4 remote on a kitchen counter, with the whole remote visible" loading="lazy" decoding="async"></a><figcaption><strong>Keep familiar physical controls.</strong> A remote or keypad need not be replaced just to add phone or voice access. Manufacturer lifestyle photo, not a Denali installation.</figcaption></figure><figure class="photo"><a href="/Video/Blogs%20imge/Control4%20Connect%20Guide/control4-app-home.webp" aria-label="Open complete Control4 home-screen manufacturer photo"><img src="/Video/Blogs%20imge/Control4%20Connect%20Guide/control4-app-home.webp" width="772" height="528" alt="Control4 home screen on a tabletop touchscreen, shown in full" loading="lazy" decoding="async"></a><figcaption><strong>Keep Control4's own interface.</strong> This manufacturer photo shows a Control4 screen, not the Apple Home app. Apple Home is an additional control option for supported functions.</figcaption></figure></div></section>
+<section class="section" aria-labelledby="one-primary-control-layer-keeps-the-home-calmer"><h2 id="one-primary-control-layer-keeps-the-home-calmer">One primary control layer keeps the home calmer</h2><p class="measure">A movie scene can involve the receiver, source, lights and shades. Keep that room sequence in one clearly understood place, then decide whether a voice trigger should call it. Avoid creating competing schedules or nearly identical scene names in both apps.</p><p class="measure muted">Make the result easy to recognize. A Siri request should mean the same thing to everyone in the home, while the remote and wall controls remain usable if a phone is unavailable.</p></section>
+<section class="section" aria-labelledby="what-does-the-built-in-integration-actually-support"><h2 id="what-does-the-built-in-integration-actually-support">What does the built-in integration actually support?</h2><p class="measure">Control4's public X4 (OS 4.0) documentation describes sharing selected Control4 devices with Apple Home, with room mapping and in-app setup on iOS. It is a release-specific reference—not a guarantee for every model, driver or later release.</p>
+<details class="spec-details"><summary>View the documented device categories</summary><table><caption>Categories documented for X4 (OS 4.0). Confirm the installed release and each device's actual behavior.</caption><thead><tr><th scope="col">Function</th><th scope="col">Documented scope</th></tr></thead><tbody>
+<tr><th scope="row">Lights</th><td>Includes color and tunable-white lighting.</td></tr>
+<tr><th scope="row">Lighting scenes</th><td>Appear as switches in Apple Home.</td></tr>
+<tr><th scope="row">Thermostats</th><td>Native Control4 thermostats in this reference—not every third-party thermostat.</td></tr>
+<tr><th scope="row">Shades</th><td>Open, close and percentage positioning.</td></tr>
+<tr><th scope="row">Fans</th><td>On/off and speed.</td></tr>
+<tr><th scope="row">Sensors</th><td>Contact sensors and smoke detectors are listed.</td></tr>
+<tr><th scope="row">Voice scenes</th><td>Composer-created scenes can be triggered through Siri.</td></tr>
+</tbody></table><p class="small"><a href="https://help.snapone.com/c4-osreleasenotes/Content/OS%25204.0/4%2520In-App%2520Voice%2520Management%2520with%2520HomeKit.htm">Read Control4's public HomeKit reference</a>. The list does not establish camera, lock or complete A/V interface support. Ask for the commands and feedback you need to be demonstrated on your exact system.</p></details>
+<div class="note"><p><strong>The direction matters.</strong> Sharing a supported Control4 light with Apple Home does not prove that an unrelated HomeKit or Matter accessory can be added to Control4. That accessory still needs its own supported integration path.</p></div></section>
+<section class="section" aria-labelledby="do-i-need-a-subscription-or-an-apple-home-hub"><h2 id="do-i-need-a-subscription-or-an-apple-home-hub">Do I need a subscription or an Apple home hub?</h2><div class="pair"><div><h3>Control4 Connect</h3><p>Control4 currently includes Apple integration among Connect's premium features. Local Control4 operation without Connect is a separate question. Confirm the entitlement for your account and system; see our <a href="/blogs/control4-connect-subscription-guide/">Connect guide</a>.</p></div><div><h3>Apple home hub</h3><p>Apple uses a supported HomePod or Apple TV as a home hub for away-from-home control, sharing and automations. This is not the Control4 controller, and it does not replace a Control4 subscription. Check Apple's current <a href="https://support.apple.com/en-us/102557">home-hub requirements</a> before choosing hardware.</p></div></div><p class="measure muted" style="margin-top:20px">Your Apple Home ownership, invitations and account setup also matter. Keep the home under the appropriate household account; do not share passwords to give someone access.</p></section>
+<section class="section" aria-labelledby="what-to-ask-before-connecting-systems"><h2 id="what-to-ask-before-connecting-systems">What to ask before connecting systems</h2><ol class="checklist"><li><strong>Confirm the starting point.</strong> Identify the Control4 controller, software version, drivers and account. Review compatibility and make a backup before any upgrade.</li><li><strong>Choose a small first set.</strong> Name the rooms and select only the devices you want exposed to Apple Home.</li><li><strong>Use the supported setup route.</strong> The documented iOS route is Control4 app → Settings → Smart Assistant Setup → Apple HomeKit. Menu labels may differ with the app version.</li><li><strong>Try the actions you requested.</strong> Check the real light or shade, its reported state, Siri naming and the original Control4 controls. Test away-from-home use separately if you need it.</li><li><strong>Agree on support.</strong> Know who handles Control4 programming, Apple account permissions and network faults. Keep the normal room controls and a recovery plan.</li></ol></section>
+<section class="section faq" aria-labelledby="questions-heading"><h2 id="questions-heading">Common questions</h2>
+<details><summary>Do I need Homebridge or another third-party bridge?</summary><p>Do not assume one is required: X4 has an official integration. If your existing system uses an additional bridge, identify its purpose, compatibility and maintenance responsibilities before changing or removing it. A legacy setup may need a different plan.</p></details>
+<details><summary>Can Siri run a full movie scene?</summary><p>A configured voice scene can trigger programmed Control4 actions. That is different from receiving a complete A/V control panel in Apple Home. Ask for your exact scene, source, volume and feedback expectations to be demonstrated rather than assuming they all transfer.</p></details>
+<details><summary>What if Apple Home stops responding?</summary><p>First check whether the same device still responds through Control4. Record which app, device and command failed. If Control4 still works, the Apple Home connection, hub, account or network may need checking. Do not factory-reset controllers or delete the home as a first step.</p></details></section>
+<section class="section" aria-labelledby="final-thought"><h2 id="final-thought">The practical takeaway</h2><p class="measure">Keep what works. Add a few useful Apple Home controls, test them with the people who will use them, and keep a clear plan for the underlying Control4 system. Convenience should remove steps—not create another set of controls to manage.</p></section>
+<section class="cta" aria-labelledby="help-heading"><h2 id="help-heading">Want Apple Home to fit your Control4 home?</h2><p>Send your controller model, software version if known, and the actions you want. We can help check the practical next step for your Chicago-area home.</p><a class="btn" href="/contact/?source=blog-guide&amp;guide=control4-apple-homekit-guide#booking">Send Project Details</a></section>
+<section class="section sources" aria-labelledby="sources-heading"><h2 id="sources-heading">Official references</h2><p>Reviewed October 19, 2026. The category list is scoped to the linked X4 (OS 4.0) reference. Account entitlements, hardware, app versions and drivers must be checked for the actual installation. This is not an upgrade procedure.</p><ul><li><a href="https://www.control4.com/get-control4-appx">Control4 X4 app and official Apple integration</a></li><li><a href="https://help.snapone.com/c4-osreleasenotes/Content/OS%25204.0/4%2520In-App%2520Voice%2520Management%2520with%2520HomeKit.htm">X4 (OS 4.0): HomeKit setup and supported categories</a></li><li><a href="https://www.control4.com/services">Control4 Connect features and service distinctions</a></li><li><a href="https://support.apple.com/en-us/102557">Apple home hubs and their roles</a></li><li><a href="https://support.apple.com/en-us/104998">Apple Home accessory setup</a></li></ul></section>
+<section class="section" aria-labelledby="related-heading"><h2 id="related-heading">Related Control4 guides</h2><div class="related"><a href="/blogs/control4-x4-homeowner-guide/">Control4 X4 homeowner guide</a><a href="/blogs/what-is-control4-guide/">What is Control4?</a><a href="/blogs/control4-connect-subscription-guide/">Control4 Connect subscriptions</a></div></section>
+</article></main><div id="site-footer"></div><script src="/assets/js/site-chrome.js?v=20260918-planning-footer" defer></script>
+</body></html>
