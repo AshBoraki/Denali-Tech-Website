@@ -87,6 +87,7 @@ test('Comparison is keyboard reachable and narrow-screen details use labeled sem
   assert.match(html, /<th scope="col">/);
   assert.match(html, /<th scope="row">/);
   assert.match(html, /class="cell-label" aria-hidden="true">Battery and charging/);
+  assert.match(html, /@view-transition\{navigation:none\}/);
   assert.doesNotMatch(html, /min-width:\s*1050px|blog-reader-tools\.js/);
 });
 
