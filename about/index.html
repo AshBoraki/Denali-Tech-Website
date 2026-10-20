@@ -649,6 +649,49 @@
             line-height: 1.55;
         }
 
+        .business-credentials {
+            margin-top: 2.5rem;
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            background: rgba(148, 163, 184, 0.05);
+            scroll-margin-top: 110px;
+        }
+
+        .business-credentials__heading {
+            margin: 0 0 1rem;
+            color: var(--text-primary);
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .business-credentials__items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            color: var(--text-primary);
+            font-size: 1rem;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        .business-credentials__proof {
+            margin: 1rem 0 0;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.65;
+        }
+
+        @media (max-width: 600px) {
+            .business-credentials { padding: 1.25rem; }
+            .business-credentials__items { flex-direction: column; gap: 0.5rem; }
+        }
+
         .mission-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -1700,6 +1743,15 @@
                     </p>
                 </div>
             </div>
+
+            <section class="business-credentials" id="business-credentials" aria-labelledby="business-credentials-heading">
+                <h2 class="business-credentials__heading" id="business-credentials-heading">Business credentials</h2>
+                <ul class="business-credentials__items">
+                    <li>Mount Prospect business license</li>
+                    <li>General liability insurance</li>
+                </ul>
+                <p class="business-credentials__proof">Proof of business licensing and insurance is available upon request.</p>
+            </section>
 
         </div>
     </section>
