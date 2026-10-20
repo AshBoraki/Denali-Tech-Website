@@ -1,0 +1,103 @@
+{
+  "reviewedOn": "2026-10-19",
+  "notes": "Provenance record, not an independent license grant. Public manufacturer brochure images, not Denali installations. Photographs do not identify the hidden electronics or establish exact finish color or compatibility. Native source images retained.",
+  "assets": [
+    {
+      "file": "/blogs/lux-by-control4-keypad-guide/images/manufacturer/lux-finish-lineup-original.png",
+      "role": "original",
+      "sourcePage": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/documents/Lighting/SalesResources/LuxSpecGuide_Uncompressed.pdf",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/documents/Lighting/SalesResources/LuxSpecGuide_Uncompressed.pdf",
+      "pdfPage": 4,
+      "pdfImageXref": 17,
+      "dimensions": [
+        2542,
+        1416
+      ],
+      "sha256": "cc4c19a8a955e0476a857cd9edeca0e29e55ec16670b6d745a811c76a67cfb1d",
+      "transformation": "Native embedded manufacturer image extracted with its PDF soft mask, where present. Original RGB and complete native canvas retained. No background removal, retouching or generated hardware."
+    },
+    {
+      "file": "/blogs/lux-by-control4-keypad-guide/images/manufacturer/lux-finish-lineup.webp",
+      "role": "display",
+      "sourcePage": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/documents/Lighting/SalesResources/LuxSpecGuide_Uncompressed.pdf",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/documents/Lighting/SalesResources/LuxSpecGuide_Uncompressed.pdf",
+      "pdfPage": 4,
+      "pdfImageXref": 17,
+      "dimensions": [
+        1500,
+        836
+      ],
+      "sha256": "608851005329e4559912929cd0f1613857b81671dc525237fe7322f0096ff2af",
+      "transformation": "Full-canvas downsample to at most1500px and WebP quality94. No crop, upscale or retouching; native transparency retained.",
+      "originalFile": "/blogs/lux-by-control4-keypad-guide/images/manufacturer/lux-finish-lineup-original.png"
+    },
+    {
+      "file": "/blogs/lux-by-control4-keypad-guide/images/manufacturer/lux-warm-wall-original.jpeg",
+      "role": "original",
+      "sourcePage": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/documents/Lighting/SalesResources/LuxSpecGuide_Uncompressed.pdf",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/documents/Lighting/SalesResources/LuxSpecGuide_Uncompressed.pdf",
+      "pdfPage": 5,
+      "pdfImageXref": 23,
+      "dimensions": [
+        2560,
+        3310
+      ],
+      "sha256": "4d5d2e35f0a1f49288425bf8aa4426b97858e943c4227826f70058974ed76f39",
+      "transformation": "Native embedded manufacturer image extracted with its PDF soft mask, where present. Original RGB and complete native canvas retained. No background removal, retouching or generated hardware."
+    },
+    {
+      "file": "/blogs/lux-by-control4-keypad-guide/images/manufacturer/lux-warm-wall.webp",
+      "role": "display",
+      "sourcePage": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/documents/Lighting/SalesResources/LuxSpecGuide_Uncompressed.pdf",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/documents/Lighting/SalesResources/LuxSpecGuide_Uncompressed.pdf",
+      "pdfPage": 5,
+      "pdfImageXref": 23,
+      "dimensions": [
+        1160,
+        1500
+      ],
+      "sha256": "ca62fb682ac8365f6e188cc5df7fc6d494a47a86c2194bceee3de8f1a86e208f",
+      "transformation": "Full-canvas downsample to at most1500px and WebP quality94. No crop, upscale or retouching; native transparency retained.",
+      "originalFile": "/blogs/lux-by-control4-keypad-guide/images/manufacturer/lux-warm-wall-original.jpeg"
+    },
+    {
+      "file": "/blogs/lux-by-control4-keypad-guide/images/manufacturer/lux-silver-wall-original.jpeg",
+      "role": "original",
+      "sourcePage": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/documents/Lighting/SalesResources/LuxSpecGuide_Uncompressed.pdf",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/documents/Lighting/SalesResources/LuxSpecGuide_Uncompressed.pdf",
+      "pdfPage": 6,
+      "pdfImageXref": 46,
+      "dimensions": [
+        2987,
+        3861
+      ],
+      "sha256": "96243b217aec49c08dcba13f5b65f0252e8719aec40d655292477a06a7872c6b",
+      "transformation": "Native embedded manufacturer image extracted with its PDF soft mask, where present. Original RGB and complete native canvas retained. No background removal, retouching or generated hardware."
+    },
+    {
+      "file": "/blogs/lux-by-control4-keypad-guide/images/manufacturer/lux-silver-wall.webp",
+      "role": "display",
+      "sourcePage": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/documents/Lighting/SalesResources/LuxSpecGuide_Uncompressed.pdf",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/documents/Lighting/SalesResources/LuxSpecGuide_Uncompressed.pdf",
+      "pdfPage": 6,
+      "pdfImageXref": 46,
+      "dimensions": [
+        1160,
+        1500
+      ],
+      "sha256": "34e6ea4c7f0e25d74b86d8cf52959f90afee7efa7aa5f22a829f455478b8aeca",
+      "transformation": "Full-canvas downsample to at most1500px and WebP quality94. No crop, upscale or retouching; native transparency retained.",
+      "originalFile": "/blogs/lux-by-control4-keypad-guide/images/manufacturer/lux-silver-wall-original.jpeg"
+    },
+    {
+      "file": "/blogs/lux-by-control4-keypad-guide/images/manufacturer/lux-keypad-guide-cover.webp",
+      "role": "editorial-cover",
+      "sourcePage": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/documents/Lighting/SalesResources/LuxSpecGuide_Uncompressed.pdf",
+      "sourceFile": "https://www.snapav.com/wcsstore/ExtendedSitesCatalogAssetStore/attachments/documents/Lighting/SalesResources/LuxSpecGuide_Uncompressed.pdf",
+      "sourceFiles": ["/blogs/lux-by-control4-keypad-guide/images/manufacturer/lux-warm-wall-original.jpeg", "/blogs/lux-by-control4-keypad-guide/images/manufacturer/lux-silver-wall-original.jpeg"],
+      "dimensions": [1200,675],
+      "sha256": "74f0f766a2b143a473ef06fc3483700f91b2ccc8d4e45e21ab830899a760cbde",
+      "transformation": "Editorial HTML/CSS cover with navy background and full-canvas manufacturer photos. No generated hardware or upscaling. The photo labels describe appearance, not exact finish-SKU or hidden model identification."
+    }
+  ]
+}
