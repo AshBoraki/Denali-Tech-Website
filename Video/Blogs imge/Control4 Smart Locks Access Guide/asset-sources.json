@@ -1,0 +1,35 @@
+{
+  "reviewedOn": "2026-10-19",
+  "sourcePage": "https://www.control4.com/solutions/products/ai-surveillance",
+  "notes": "Provenance record, not a license grant. Manufacturer images remain the property of their respective owners. Local files below match the linked public Control4 assets byte for byte. They illustrate product styles, not Denali Tech installations or proof of model compatibility.",
+  "assets": [
+    {
+      "file": "baldwin-smart-lock.webp",
+      "sourceFile": "https://cdn.prod.website-files.com/629926620ba03720384bebb3/681a1e60801dc2db689d20aa_087_25_Control4.com_SurveillanceandSecurity_Baldwin.webp",
+      "sha256": "2ac6311ca407ccc8fd2c86e725dfc9e88269e3c19c5dc96ce7d915c08da56e1e",
+      "dimensions": [560, 485],
+      "transformation": "Original unchanged. Article retains its full frame without upscaling. Blog-hub thumbnail uses a top focal point and disables hover zoom so the deadbolt keypad remains visible."
+    },
+    {
+      "file": "kwikset-smart-lock.webp",
+      "sourceFile": "https://cdn.prod.website-files.com/629926620ba03720384bebb3/681a1e60fce1aebbcbc1cba1_087_25_Control4.com_SurveillanceandSecurity_Kwikset.webp",
+      "sha256": "05a079162d3c41a422cff725adac0cf69a436582fb97f4ab4fbc477c7af165a7",
+      "dimensions": [560, 485],
+      "transformation": "None. Original full frame retained; no CSS cover-crop or upscaling."
+    },
+    {
+      "file": "yale-smart-lock.webp",
+      "sourceFile": "https://cdn.prod.website-files.com/629926620ba03720384bebb3/681a1e616fe80347332dbb69_087_25_Control4.com_SurveillanceandSecurity_Yale.webp",
+      "sha256": "ef99abcbfed8756d2848fd648b45a538a65c291e3a27fc3ccaf127c9d567b1ea",
+      "dimensions": [560, 485],
+      "transformation": "None. Original full frame retained; no CSS cover-crop or upscaling."
+    },
+    {
+      "file": "window-door-sensor.webp",
+      "sourceFile": "https://cdn.prod.website-files.com/629926620ba03720384bebb3/681a1e61bf24fcc1d5ff3249_087_25_Control4.com_SurveillanceandSecurity_Sensor2.webp",
+      "sha256": "ffac3d1c56db962d1d19e1c8b4ad62b0b908173e44725efcd862fd5e290a421d",
+      "dimensions": [560, 485],
+      "transformation": "Original unchanged image displayed with CSS multiply against a pale product stage. Replaces use of the older processed navy variant in this article."
+    }
+  ]
+}
