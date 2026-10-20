@@ -1,0 +1,168 @@
+{
+  "reviewedOn": "2026-10-19",
+  "notes": "Provenance record, not an independent license grant. All original manufacturer files are retained. Product details and native alpha unchanged; display RGB uses WebP compression. Article SVG viewBox frames only transparent canvas and retains full device bounds. Manufacturer images, not Denali installations or a to-scale comparison; screen artwork does not prove compatibility or included subscriptions.",
+  "assets": [
+    {
+      "file": "/blogs/urc-mx-990-review/images/manufacturer/mx990-front-original.png",
+      "role": "original",
+      "model": "MX-990",
+      "sourcePage": "https://www.urc-automation.com/product/mx-990/",
+      "sourceFile": "https://www.urc-automation.com/wp-content/uploads/2017/11/img_urc_mx-990_xl_1.png",
+      "sha256": "e29b8ba1e03c9bc90391ead93ae93c479152b0118688684ba8610bf46b90ccc9",
+      "dimensions": [
+        1500,
+        1500
+      ],
+      "deviceBounds": [
+        569,
+        53,
+        929,
+        1446
+      ],
+      "originalFile": "mx990-front-original.png",
+      "sourceRecord": "/blogs/urc-mx-990-review/images/manufacturer/asset-sources.json"
+    },
+    {
+      "file": "/blogs/urc-mx-990-review/images/manufacturer/mx990-front.webp",
+      "role": "display",
+      "model": "MX-990",
+      "sourcePage": "https://www.urc-automation.com/product/mx-990/",
+      "sourceFile": "https://www.urc-automation.com/wp-content/uploads/2017/11/img_urc_mx-990_xl_1.png",
+      "sha256": "996aae5cfcc3d89731f2296fa7ef2b9639c7ebbdec1ea1482c4bc4dd1a034042",
+      "dimensions": [
+        1500,
+        1500
+      ],
+      "deviceBounds": [
+        569,
+        53,
+        929,
+        1446
+      ],
+      "originalFile": "mx990-front-original.png",
+      "sourceRecord": "/blogs/urc-mx-990-review/images/manufacturer/asset-sources.json"
+    },
+    {
+      "file": "/blogs/urc-mx-990-review/images/manufacturer/mrf350-kit-original.png",
+      "role": "original",
+      "model": "MRF-350 with RFX-250",
+      "sourcePage": "https://www.urc-automation.com/product/mrf-350/",
+      "sourceFile": "https://www.urc-automation.com/wp-content/uploads/2017/11/img_urc_mrf-350_xl_3.png",
+      "sha256": "d54132efd0a1a69c703e64ae10a01b0865daa9c353a70e4e3e119ab01921586f",
+      "dimensions": [
+        1500,
+        1500
+      ],
+      "deviceBounds": [
+        171,
+        90,
+        1329,
+        1409
+      ],
+      "originalFile": "mrf350-kit-original.png",
+      "sourceRecord": "/blogs/urc-mx-990-review/images/manufacturer/asset-sources.json"
+    },
+    {
+      "file": "/blogs/urc-mx-990-review/images/manufacturer/mrf350-kit.webp",
+      "role": "display",
+      "model": "MRF-350 with RFX-250",
+      "sourcePage": "https://www.urc-automation.com/product/mrf-350/",
+      "sourceFile": "https://www.urc-automation.com/wp-content/uploads/2017/11/img_urc_mrf-350_xl_3.png",
+      "sha256": "3b705a52a251a1350b56d3cc4bb751c3a47c9262988edb9faa9a5dac15d0e980",
+      "dimensions": [
+        1500,
+        1500
+      ],
+      "deviceBounds": [
+        171,
+        90,
+        1329,
+        1409
+      ],
+      "originalFile": "mrf350-kit-original.png",
+      "sourceRecord": "/blogs/urc-mx-990-review/images/manufacturer/asset-sources.json"
+    },
+    {
+      "file": "/blogs/urc-remote-programming-guide/images/manufacturer/trc1480-original.png",
+      "role": "original",
+      "sourcePage": "https://www.urc-automation.com/product/trc-1480/",
+      "sourceFile": "https://www.urc-automation.com/wp-content/uploads/2019/09/img_urc_trc-1480_xl_1.png",
+      "dimensions": [
+        1500,
+        1500
+      ],
+      "deviceBounds": [
+        598,
+        43,
+        900,
+        1457
+      ],
+      "sha256": "97ccebbb7d31cd522583cbead9840ce98536268d64213e7ab00b42e08b2f83bc",
+      "transformation": "Original public manufacturer PNG, unchanged."
+    },
+    {
+      "file": "/blogs/urc-remote-programming-guide/images/manufacturer/trc1480.webp",
+      "role": "display",
+      "sourcePage": "https://www.urc-automation.com/product/trc-1480/",
+      "sourceFile": "https://www.urc-automation.com/wp-content/uploads/2019/09/img_urc_trc-1480_xl_1.png",
+      "dimensions": [
+        1500,
+        1500
+      ],
+      "deviceBounds": [
+        598,
+        43,
+        900,
+        1457
+      ],
+      "sha256": "20527de82890e399790713ed17cd18990ee9a099c8e9fc3c17116dec2b1da726",
+      "transformation": "Full native canvas encoded to WebP quality94 with exact alpha. No crop, background removal, retouching, AI or upscale."
+    },
+    {
+      "file": "/blogs/urc-remote-programming-guide/images/manufacturer/mrx15-original.png",
+      "role": "original",
+      "sourcePage": "https://www.urc-automation.com/product/mrx-15/",
+      "sourceFile": "https://www.urc-automation.com/wp-content/uploads/2018/08/img_urc_mrx-15_xl_1.png",
+      "dimensions": [
+        1500,
+        1500
+      ],
+      "deviceBounds": [
+        39,
+        671,
+        1462,
+        830
+      ],
+      "sha256": "92ac3abe3883a0ccd6e2a16264963407022b8615748256aee9fe444e906cc7e2",
+      "transformation": "Original public manufacturer PNG, unchanged."
+    },
+    {
+      "file": "/blogs/urc-remote-programming-guide/images/manufacturer/mrx15.webp",
+      "role": "display",
+      "sourcePage": "https://www.urc-automation.com/product/mrx-15/",
+      "sourceFile": "https://www.urc-automation.com/wp-content/uploads/2018/08/img_urc_mrx-15_xl_1.png",
+      "dimensions": [
+        1500,
+        1500
+      ],
+      "deviceBounds": [
+        39,
+        671,
+        1462,
+        830
+      ],
+      "sha256": "0def759c8ddd292b0d72a94a1a8de43dfcff30350510aed0fbceac232aad97d5",
+      "transformation": "Full native canvas encoded to WebP quality94 with exact alpha. No crop, background removal, retouching, AI or upscale."
+    },
+    {
+      "file": "/blogs/urc-remote-programming-guide/images/manufacturer/urc-programming-cover.webp",
+      "role": "editorial-cover",
+      "sourcePage": "https://www.urc-automation.com/product/mx-990/",
+      "sourceFile": "https://www.urc-automation.com/wp-content/uploads/2017/11/img_urc_mx-990_xl_1.png",
+      "sourceFiles": ["/blogs/urc-mx-990-review/images/manufacturer/mx990-front-original.png", "/blogs/urc-remote-programming-guide/images/manufacturer/trc1480-original.png"],
+      "dimensions": [1200, 675],
+      "sha256": "29014fe81c361aa3e635022e0d66f40b7af831b1db122503de0aed56bce4b6a1",
+      "transformation": "HTML/CSS blue background, editorial labels and fully framed manufacturer product photos. Manufacturer examples, not to scale. No generated hardware, retouching or upscaling. Source product records above include both original manufacturer URLs."
+    }
+  ]
+}
