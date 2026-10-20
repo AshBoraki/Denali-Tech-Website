@@ -1,0 +1,40 @@
+{
+  "checkedOn": "2026-10-19",
+  "notes": "Source provenance and unchanged originals are recorded for traceability, not an independent license grant. Manufacturer images remain manufacturer-owned. No claim that the lifestyle image is a Denali Tech project. Screen example is a documented interface, not a live connected system.",
+  "assets": [
+    {
+      "file": "/blogs/control4-pool-spa-automation-guide/images/manufacturer/control4-outdoor-original.webp",
+      "dimensions": [
+        772,
+        528
+      ],
+      "sourcePage": "https://www.control4.com/solutions/climate-and-comfort",
+      "sourceFile": "https://cdn.prod.website-files.com/629926620ba03720384bebb3/67f53a80e4d4690c79ea633d_087_25_Control4.com_ComfortConvenience_Outdoor.webp",
+      "sha256": "b1b3504f40ba006b3aa448b1783111d45558215e3fb47954d65313d946052a27",
+      "processing": "Unchanged native WebP; no crop, no upscale."
+    },
+    {
+      "file": "/blogs/control4-pool-spa-automation-guide/images/manufacturer/control4-pool-screen-original.png",
+      "dimensions": [
+        1082,
+        609
+      ],
+      "sourcePage": "https://docs.control4.com/help/c4/user/userguide/content/topics/comfort/poolspa.htm",
+      "sourceFile": "https://docs.control4.com/help/c4/user/userguide/content/resources/images/eug-comfort-pool-temp-control.png",
+      "sha256": "fa6b6a569488e510bad34ee2ff9c0f558d0e8838340f03d2fa64bd111da2fb97",
+      "processing": "Unchanged native PNG. Illustration has missing readings, explicitly explained in caption."
+    },
+    {
+      "file": "/blogs/control4-pool-spa-automation-guide/images/manufacturer/control4-pool-screen.webp",
+      "dimensions": [
+        1082,
+        609
+      ],
+      "sourceFiles": [
+        "/blogs/control4-pool-spa-automation-guide/images/manufacturer/control4-pool-screen-original.png"
+      ],
+      "sha256": "b4509e76b56868048719069ebbae055121c8b7fd5b2abc18d14d4d056cd1fb66",
+      "processing": "Full-frame WebP conversion, quality 93; no resizing, no compositing, no pixel content edits."
+    }
+  ]
+}
