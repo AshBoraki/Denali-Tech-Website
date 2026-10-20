@@ -709,6 +709,67 @@
             gap: 1.25rem;
         }
 
+        .project-transformation-pair {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+            min-width: 0;
+            margin-top: 1.25rem;
+        }
+
+        .project-transformation-pair .project-video-card {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            align-items: center;
+            min-width: 0;
+        }
+
+        .project-transformation-video {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 406 / 720;
+            max-height: 520px;
+            object-fit: contain;
+            background: #020617;
+        }
+
+        .project-transformation-video:focus-visible {
+            outline: 3px solid #fdba74;
+            outline-offset: -3px;
+        }
+
+        .project-transformation-pair .video-card-copy {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            padding: 1.1rem;
+        }
+
+        .project-transformation-pair .video-card-copy h3 {
+            font-size: 1.15rem;
+            line-height: 1.4;
+        }
+
+        .project-transformation-pair .video-card-copy p {
+            font-size: 1rem;
+            line-height: 1.65;
+        }
+
+        .project-transformation-pair .video-card-link {
+            display: inline-flex;
+            align-items: center;
+            min-height: 44px;
+            margin-top: auto;
+        }
+
+        @media (max-width: 768px) {
+            .project-transformation-pair { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 600px) {
+            .project-transformation-pair .project-video-card { grid-template-columns: 1fr; }
+        }
+
         .project-video-card {
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.12);
@@ -1874,6 +1935,33 @@
                         <a class="video-card-link" href="/blogs/wirepath-structured-wiring-prewire-guide/">See how we plan structured wiring</a>
                     </div>
                 </article>
+            </div>
+
+            <div class="project-transformation-pair" aria-label="Network and structured-wiring transformations">
+                    <article class="project-video-card" id="basement-network-transformation">
+                        <video class="project-transformation-video" controls playsinline preload="none" poster="/Video/Project%20videos/basement-network-cable-management.webp" width="406" height="720" aria-label="Basement home network cable-management transformation, 21 seconds" aria-describedby="basement-network-summary">
+                            <source src="/Video/Project%20videos/basement-network-cable-management.mp4" type="video/mp4">
+                            <p><a href="/Video/Project%20videos/basement-network-cable-management.mp4">Watch the basement network transformation</a>.</p>
+                        </video>
+                        <div class="video-card-copy">
+                            <span class="video-card-kicker">Network cleanup · 21 sec</span>
+                            <h3>A tidier basement network</h3>
+                            <p id="basement-network-summary">Loose cable runs become neatly routed wiring, with network equipment brought together in a wall-mounted enclosure.</p>
+                            <a class="video-card-link" href="/residential-wifi-network/">Home network planning</a>
+                        </div>
+                    </article>
+                    <article class="project-video-card" id="structured-wiring-transformation">
+                        <video class="project-transformation-video" controls playsinline preload="none" poster="/Video/Project%20videos/structured-wiring-cable-transformation.webp" width="406" height="720" aria-label="Structured wiring closet before and after, 23 seconds" aria-describedby="structured-wiring-summary">
+                            <source src="/Video/Project%20videos/structured-wiring-cable-transformation.mp4" type="video/mp4">
+                            <p><a href="/Video/Project%20videos/structured-wiring-cable-transformation.mp4">Watch the structured wiring transformation</a>.</p>
+                        </video>
+                        <div class="video-card-copy">
+                            <span class="video-card-kicker">Before &amp; after · 23 sec</span>
+                            <h3>From cable bundle to organized panel</h3>
+                            <p id="structured-wiring-summary">A loose bundle in the wiring closet becomes an organized panel, with cable routing and connections easier to follow.</p>
+                            <a class="video-card-link" href="/blogs/wirepath-structured-wiring-prewire-guide/">Structured wiring guide</a>
+                        </div>
+                    </article>
             </div>
 
             <div class="project-video-collection" aria-label="More Denali Tech project videos">

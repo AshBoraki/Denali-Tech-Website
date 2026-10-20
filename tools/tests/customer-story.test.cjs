@@ -167,12 +167,15 @@ test('the real local poster exists and is 1280 by 720 WebP', () => {
   assert.ok(image.alt);
 });
 
-test('Projects retains six unique playable videos including Glenn exactly once', () => {
+test('Projects retains all six original YouTube videos plus two local transformations, including Glenn exactly once', () => {
   const posters = tags(projects, 'a').filter(tag => tag['data-video-id']);
   const expected = [videoId, 'c1XsFCtvaUI', 'oZtPCCqB3I4', 'VUuqk9xgQ98', 'RMhACTGt4U8', 'oUFmSTj9N6I'];
   assert.equal(posters.length, 6);
   assert.deepEqual(posters.map(tag => tag['data-video-id']).sort(), expected.sort());
   assert.equal(new Set(posters.map(tag => tag['data-video-id'])).size, 6);
+  const localSources = tags(projects, 'source').filter(tag => tag.type === 'video/mp4');
+  assert.equal(localSources.length, 2);
+  assert.equal(new Set(localSources.map(tag => tag.src)).size, 2);
   assert.equal((projects.match(/\bid="glenn-control4-theater"/g) || []).length, 1);
   assert.equal(posters.filter(tag => tag['data-video-id'] === videoId).length, 1);
   assert.equal(tags(projectStory, 'article')[0]['aria-labelledby'], 'glenn-control4-theater-title');
