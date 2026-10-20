@@ -1,0 +1,28 @@
+{
+  "checkedOn": "2026-10-19",
+  "notes": "Native manufacturer image provenance, not an independent license grant. No AI image creation or image editing. Manufacturer examples are not Denali Tech project photographs. Existing library images were left unchanged elsewhere.",
+  "assets": [
+    {
+      "file": "/blogs/what-is-control4-guide/images/manufacturer/control4-touchscreen-home.webp",
+      "dimensions": [
+        1440,
+        765
+      ],
+      "sourcePage": "https://www.control4.com/the-smart-home-experience",
+      "sourceFile": "https://cdn.prod.website-files.com/629926620ba03720384bebb3/67fffad5c876a96dc549a216_087_25_Control4.com_SmartHomeExperience_Header_Mobile.webp",
+      "sha256": "7a5d43ca1ff36f1e6127daa63d342985ca3800679c3cf2932e233b1a86d04c86",
+      "processing": "Unchanged native WebP. No crop or upscale; complete source composition retained."
+    },
+    {
+      "file": "/blogs/what-is-control4-guide/images/manufacturer/control4-keypad-scenes.webp",
+      "dimensions": [
+        772,
+        528
+      ],
+      "sourcePage": "https://www.control4.com/solutions/smart-lighting",
+      "sourceFile": "https://cdn.prod.website-files.com/629926620ba03720384bebb3/67ec51730c5ae69218e053e9_087_25_Control4.com_SmartLighting_ElegantInterfaces.webp",
+      "sha256": "3df33067149c58aaf766c1e8916ee4998e9a8fac40acfeb95a4d69a228948f8e",
+      "processing": "Unchanged native WebP. Complete keypad and faceplate visible; no crop or upscale."
+    }
+  ]
+}
