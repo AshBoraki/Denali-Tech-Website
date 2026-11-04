@@ -296,9 +296,12 @@
         }
         
         .btn-primary {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
             background: linear-gradient(135deg, var(--accent-primary), #fb923c);
-            color: white;
+            color: #111827;
             padding: 1rem 2rem;
             border-radius: 12px;
             text-decoration: none;
@@ -306,6 +309,16 @@
             font-size: 1.1rem;
             transition: all var(--transition);
             box-shadow: var(--shadow-glow);
+        }
+        .btn-primary:visited,
+        .btn-primary:hover,
+        .btn-primary:focus-visible {
+            color: #111827;
+        }
+        .btn-primary:focus-visible {
+            outline: 3px solid #111827;
+            outline-offset: 3px;
+            box-shadow: 0 0 0 6px #fff !important;
         }
         
         .btn-primary:hover {
@@ -541,7 +554,7 @@
     <link rel="stylesheet" href="/assets/css/site-chrome.css?v=20260917-planning-nav">
     <link rel="stylesheet" href="/assets/css/blog-media-upgrade.css?v=20260713">
     <script src="/assets/js/site-chrome.js?v=20260918-planning-footer" defer></script>
-    <script src="/assets/js/blog-reader-tools.js?v=20260905a" defer></script>
+    <script src="/assets/js/blog-reader-tools.js?v=20261104a" defer></script>
 </head>
 <body>
     <main role="main">

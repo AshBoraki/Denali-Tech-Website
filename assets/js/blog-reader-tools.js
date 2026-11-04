@@ -89,7 +89,7 @@
     links.setAttribute("aria-label", "Article sections");
     headings.forEach(function (heading) {
       var link = document.createElement("a");
-      link.href = "#" + heading.id;
+      link.href = window.location.href.split("#")[0] + "#" + encodeURIComponent(heading.id);
       link.textContent = heading.textContent.trim();
       links.appendChild(link);
     });

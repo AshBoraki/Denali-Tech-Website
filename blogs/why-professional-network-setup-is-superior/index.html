@@ -100,7 +100,7 @@
     <meta name="googlebot" content="index, follow">
     <meta name="bingbot" content="index, follow">
     <meta name="article:published_time" content="2025-01-11T00:00:00+00:00">
-    <meta name="article:modified_time" content="2026-09-27">
+    <meta name="article:modified_time" content="2026-11-04">
     <meta name="article:author" content="Denali Tech">
     <meta name="article:section" content="Smart Home Guide">
     
@@ -350,9 +350,12 @@
         }
         
         .btn-primary {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
             background: linear-gradient(135deg, var(--accent-primary), #fb923c);
-            color: white;
+            color: #111827;
             padding: 1rem 2rem;
             border-radius: 12px;
             text-decoration: none;
@@ -360,6 +363,16 @@
             font-size: 1.1rem;
             transition: all var(--transition);
             box-shadow: var(--shadow-glow);
+        }
+        .btn-primary:visited,
+        .btn-primary:hover,
+        .btn-primary:focus-visible {
+            color: #111827;
+        }
+        .btn-primary:focus-visible {
+            outline: 3px solid #111827;
+            outline-offset: 3px;
+            box-shadow: 0 0 0 6px #fff !important;
         }
         
         .btn-primary:hover {
@@ -498,7 +511,7 @@
             "https://denalitechs.com/Video/Blogs%20imge/Arakins%20Wifi%20setup/arakhnis-network-overview-header.webp"
         ],
         "datePublished": "2025-01-11T00:00:00+00:00",
-        "dateModified": "2026-09-27",
+        "dateModified": "2026-11-04",
         "author": {
             "@type": "Organization",
             "name": "Denali Tech",
@@ -558,7 +571,7 @@
 <script src="/assets/js/microsoft-uet.js" defer></script>
     <link rel="stylesheet" href="/assets/css/site-chrome.css?v=20260917-planning-nav">
     <script src="/assets/js/site-chrome.js?v=20260918-planning-footer" defer></script>
-    <script src="/assets/js/blog-reader-tools.js?v=20260905a" defer></script>
+    <script src="/assets/js/blog-reader-tools.js?v=20261104a" defer></script>
 </head>
 <body>
     <main role="main">
@@ -600,12 +613,12 @@
             
             <p>Here is what the installation shown above contributes beyond appearance:</p>
             
-            <h3>Network-Only Installation: Just What You Need</h3>
+            <h3>A Network-Only Installation Example</h3>
             
-            <p>If you <strong>only need networking</strong> (not a full AV system), this is what you get - a clean, professional network-only installation. No AV rack needed, just the essential networking equipment mounted on the wall.</p>
+            <p>The installation shown here brings networking equipment together in a compact wall-mounted rack without adding a full AV system. It is one possible layout—not a fixed package for every home.</p>
             
             <img src="/Video/Blogs%20imge/Arakins%20Wifi%20setup/arakhnis-network-setup-4u-wall-mount-rack-router-switch-wattbox.jpg" alt="Network-Only Setup: 4U Wall Mount Rack with Router, Switch, and Wattbox" class="blog-image" loading="lazy" width="1200" height="800">
-            <p class="blog-image-caption">Network-only installation: 4U wall-mount rack with router, POE switch, and Wattbox power management. Useful if you only need networking - no AV equipment required.</p>
+            <p class="blog-image-caption">Example network-only installation: a 4U wall-mount rack with router, PoE switch, and WattBox power management. Rack size, equipment, and mounting depend on the agreed design.</p>
             
             <p>This is one clean way to organize a small network. The exact rack size and equipment should follow the scope:</p>
             
@@ -616,11 +629,10 @@
                 <li><strong>Wattbox Power Management:</strong> Smart power management and remote reboot capability</li>
                 <li><strong>Strategic Access Point Placement:</strong> Multiple WAPs placed for strong coverage</li>
                 <li><strong>Professional Cable Management:</strong> Clean, organized, and labeled for easy troubleshooting</li>
-                <li><strong>Network-Only Setup:</strong> If networking is all you need, this is the clean solution - no need for a full AV rack</li>
             </ul>
             
             <div class="highlight-box">
-                <p><strong>💡 Network-Only Option:</strong> Don't need a full AV system? This network-only installation is a clean fit. Just networking equipment in a clean 4U wall-mount rack. If you only need WiFi, network infrastructure, and smart home connectivity, this is exactly what you get - no unnecessary AV equipment.</p>
+                <p><strong>Match the scope to the home:</strong> A wall-mounted rack may fit a network-only project, while another home may need a cabinet, enclosure, or different mounting arrangement. Your written proposal should identify the exact equipment, quantities, installation work, and exclusions before you approve it.</p>
             </div>
             
             <h2>Component Breakdown: Why Each Part Matters</h2>
@@ -792,8 +804,8 @@
                         <li>Proper cable management and labeling</li>
                         <li>WiFi 6 access points</li>
                         <li>Professional configuration and optimization</li>
-                        <li>Remote monitoring and support</li>
-                        <li>Warranty and ongoing support</li>
+                        <li>Remote monitoring and support when included in the service agreement and technically available</li>
+                        <li>Written warranty coverage, support period, and later service rates</li>
                         <li>Capacity sized from actual device and application requirements</li>
                         <li>Coverage validated in agreed test locations</li>
                         <li>Professional appearance</li>
@@ -898,13 +910,13 @@
                 <li><strong>Performance Optimization:</strong> We can adjust settings remotely to optimize performance</li>
             </ul>
             
-            <h2>Common DIY Network Problems We Fix</h2>
+            <h2>Common Network Problems to Investigate</h2>
             
-            <p>We often get called to fix DIY network installations. Here are the most common problems:</p>
+            <p>These problems can affect DIY and professionally installed networks. Check the cause before replacing equipment.</p>
             
             <h3>Problem #1: Dead Zones Everywhere</h3>
             
-            <p><strong>DIY Approach:</strong> Put router in corner, hope for the best.</p>
+            <p><strong>Possible cause:</strong> Router or access-point placement, building materials, interference, and client limitations can leave areas without useful coverage.</p>
             
             <p><strong>Our solution:</strong> Survey the in-scope areas, plan access-point placement and channels, then validate the agreed coverage and performance targets.</p>
             
@@ -916,15 +928,15 @@
             
             <h3>Problem #3: Slow Speeds</h3>
             
-            <p><strong>DIY Approach:</strong> Default settings, no optimization, interference from neighbors.</p>
+            <p><strong>Possible cause:</strong> The bottleneck may be the internet connection, a wired link, radio conditions, the client device, or the application itself.</p>
             
-            <p><strong>Our Solution:</strong> Professional configuration, channel optimization, WiFi 6 technology, and interference mitigation.</p>
+            <p><strong>Our solution:</strong> Compare wired and wireless performance, identify the bottleneck, then adjust the design or configuration and test again. A newer WiFi generation alone does not guarantee faster service.</p>
             
             <h3>Problem #4: Security Concerns</h3>
             
-            <p><strong>DIY Approach:</strong> Default passwords, open guest network, no VLAN separation.</p>
+            <p><strong>Possible cause:</strong> Unchanged credentials, unsupported firmware, or overly broad device access can create avoidable exposure.</p>
             
-            <p><strong>Our Solution:</strong> Proper security configuration, separate VLANs, strong passwords, and ongoing security monitoring.</p>
+            <p><strong>Our solution:</strong> Review credentials, supported updates, and access rules. Use segmentation where it fits the devices and integration requirements, and define any monitoring in the agreed support scope.</p>
             
             <h3>Problem #5: Can't Handle Smart Home</h3>
             
@@ -1050,20 +1062,10 @@
             <p>Remote monitoring and support are provided only when included in the project or service agreement and when the required accounts, permissions, platform, and internet connection are available. Some faults require an on-site visit or another provider.</p>
             
             <div class="cta-box">
-                <h3>Ready to Upgrade to a Professional Network?</h3>
-                <p>Replace guesswork with a defined network scope: the rooms and outdoor areas to cover, applications to support, cabling available, and measurements used for acceptance.</p>
-                <p><strong>What's Included:</strong></p>
-                <ul style="text-align: left; display: inline-block; margin: 1rem 0;">
-                    <li>Professional site survey and design</li>
-                    <li>Araknis equipment sized for the home's network requirements</li>
-                    <li>Strategic access point placement</li>
-                    <li>Professional rack mounting and cable management</li>
-                    <li>Wattbox power management</li>
-                    <li>Access points selected for the mix of connected devices, bands, uplinks, and coverage plan</li>
-                    <li>Professional configuration and optimization</li>
-                    <li>Remote monitoring and ongoing support</li>
-                </ul>
-                <a href="/contact/" class="btn-primary">Get Your Free Network Consultation</a>
+                <h3>Need a Clearer Network Plan?</h3>
+                <p>Send the rooms that need coverage, the problem you notice, and a few equipment photos. We can help identify the next useful step before recommending new hardware.</p>
+                <p>Your proposal defines the exact equipment, installation, configuration, and testing. Remote monitoring and support apply only when included in the agreement and when the required accounts, permissions, platform, and internet connection are available.</p>
+                <a href="/contact/" class="btn-primary">Send Network Details</a>
                 <p style="margin-top: 1rem; font-size: 0.9rem;">Or message us on <a href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20would%20rather%20use%20WhatsApp.%20Can%20you%20help%20me%20with%3A" style="color: var(--accent-primary); font-weight: 600;" target="_blank" rel="noopener noreferrer">WhatsApp</a></p>
             </div>
             
@@ -1071,29 +1073,10 @@
             
             <p>A good professional installation should be different in ways you can verify: an agreed design, correct mounting and cabling, configuration records, measured results, and a clear support owner.</p>
             
-            <p>Your WiFi shouldn't be a source of frustration. With a professional network installation, you get:</p>
-            
-            <ul>
-                <li>Coverage targets for the named rooms and outdoor areas</li>
-                <li>Performance tests using representative connected devices</li>
-                <li>Documented limitations and any out-of-scope locations</li>
-                <li>Capacity planned from real applications and traffic</li>
-                <li>Professional appearance and organization</li>
-                <li>Peace of mind knowing it's done right</li>
-                <li>Ongoing support when you need it</li>
-            </ul>
+            <p>Before approving work, confirm the coverage targets, acceptance tests, documentation, exclusions, and service terms. Those written commitments are more useful than a broad promise of a reliable network.</p>
             
             <p>If Wi-Fi problems continue after basic checks, the next step is diagnosis. An upgrade is justified only after the bottleneck and requirements are understood.</p>
             
-            <div class="cta-box">
-                <h3>Transform Your Home Network Today</h3>
-                <p>Don't let poor WiFi hold you back. Get a professional network installation that provides the performance, reliability, and coverage your smart home deserves.</p>
-                <a href="/contact/" class="btn-primary">Schedule Free Network Consultation</a>
-                <p style="margin-top: 1rem; font-size: 0.9rem;">
-                    WhatsApp: <a href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20would%20rather%20use%20WhatsApp.%20Can%20you%20help%20me%20with%3A" style="color: var(--accent-primary); font-weight: 600;" target="_blank" rel="noopener noreferrer">Message us</a> | 
-                    Email: <a href="mailto:services@denalitechs.com" style="color: var(--accent-primary); font-weight: 600;">services@denalitechs.com</a>
-                </p>
-            </div>
             
             <!-- Social Sharing -->
             <div class="blog-share">

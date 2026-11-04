@@ -90,7 +90,9 @@
         .blog-content strong { color:var(--text); }
         .highlight-box, .cta-box { background:var(--panel); border:1px solid var(--border); border-radius:20px; padding:22px; margin:28px 0; }
         .cta-box { text-align:center; }
-        .btn-primary { display:inline-block; margin-top:10px; background:var(--accent); color:#fff !important; padding:14px 22px; border-radius:999px; font-weight:700; }
+        .btn-primary { display:inline-flex; align-items:center; justify-content:center; min-height:44px; margin-top:10px; background:var(--accent); color:#111827 !important; padding:14px 22px; border-radius:999px; font-weight:700; }
+        .btn-primary:visited, .btn-primary:hover, .btn-primary:focus-visible { color:#111827 !important; }
+        .btn-primary:focus-visible { outline:3px solid #111827; outline-offset:3px; box-shadow:0 0 0 6px #fff !important; }
         .blog-share { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-top:32px; }
         .share-btn { display:inline-flex; gap:8px; align-items:center; background:var(--panel); border:1px solid var(--border); color:var(--text); border-radius:999px; padding:10px 14px; }
         .related-posts { margin-top:44px; }
@@ -107,7 +109,7 @@
 <script src="/assets/js/microsoft-uet.js" defer></script>
     <link rel="stylesheet" href="/assets/css/site-chrome.css?v=20260917-planning-nav">
     <script src="/assets/js/site-chrome.js?v=20260918-planning-footer" defer></script>
-    <script src="/assets/js/blog-reader-tools.js?v=20260905a" defer></script>
+    <script src="/assets/js/blog-reader-tools.js?v=20261104a" defer></script>
 </head>
 <body>
     <main role="main">

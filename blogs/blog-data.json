@@ -375,8 +375,8 @@
         "Chicago"
       ],
       "author": "Denali Tech Team",
-      "publishedDate": "2024-01-20",
-      "updatedDate": "2026-08-15",
+      "publishedDate": "2024-01-25",
+      "updatedDate": "2026-11-04",
       "readingTime": 8,
       "featured": false,
       "heroImage": "/Video/interviewing-av-tech.webp"
@@ -1721,7 +1721,7 @@
       ],
       "author": "Denali Tech Team",
       "publishedDate": "2025-01-11",
-      "updatedDate": "2026-09-27",
+      "updatedDate": "2026-11-04",
       "readingTime": 18,
       "heroImage": "/Video/Blogs imge/Arakins Wifi setup/arakhnis-network-overview-header.webp",
       "featured": true
@@ -1801,8 +1801,8 @@
       ],
       "author": "Denali Tech Team",
       "publishedDate": "2025-01-07",
-      "updatedDate": "2026-08-15",
-      "readingTime": 8,
+      "updatedDate": "2026-11-04",
+      "readingTime": 9,
       "heroImage": "/Video/Blogs imge/Home Theater Installation Guide_ Everything You Need to Know.webp",
       "featured": true
     },
@@ -1828,21 +1828,21 @@
     },
     {
       "id": "how-to-choose-smart-home-installer",
-      "title": "How to Choose a Smart Home Installer: 10 Essential Questions to Ask",
+      "title": "How to Compare Smart Home Installation Quotes",
       "slug": "how-to-choose-smart-home-installer",
       "url": "/blogs/how-to-choose-smart-home-installer/",
-      "excerpt": "Don't hire the wrong company. Learn how to choose a smart home installer with our essential guide. Questions to ask, red flags to avoid, and what to look for when hiring.",
+      "excerpt": "Compare proposed equipment, hidden infrastructure work, programming, handoff, warranty and support so you can judge scope—not just the total price.",
       "category": "Tips",
       "tags": [
         "Installation",
         "Hiring",
         "Tips",
-        "Questions"
+        "Proposals"
       ],
       "author": "Denali Tech Team",
       "publishedDate": "2025-01-05",
-      "updatedDate": "2026-08-15",
-      "readingTime": 8,
+      "updatedDate": "2026-11-04",
+      "readingTime": 5,
       "heroImage": "/Video/Blogs%20imge/Choosing%20Installer/control4-smart-home-project-example.webp",
       "featured": true
     },
