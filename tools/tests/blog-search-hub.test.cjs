@@ -22,6 +22,17 @@ test('article search precedes browsing extras and provides named, operable contr
     assert.match(html, /id="resetBlogSearch">Clear search and filters/);
 });
 
+test('homeowner shortcuts link to practical guides without changing the article grid', () => {
+    const shortcuts = html.slice(html.indexOf('id="popularGuides"'), html.indexOf('id="blogGrid"'));
+    const links = [...shortcuts.matchAll(/class="popular-guide" href="([^"]+)"/g)].map(match => match[1]);
+    assert.deepEqual(links, [
+        '/blogs/wifi-dead-zones-fix-guide/',
+        '/blogs/control4-safe-troubleshooting-checklist/',
+        '/blogs/how-much-does-smart-home-automation-cost/'
+    ]);
+    for (const link of links) assert.ok(catalog.posts.some(post => post.url === link));
+});
+
 test('the crawlable grid still links to every existing article in the catalog', () => {
     const grid = html.slice(html.indexOf('id="blogGrid"'), html.indexOf('id="blogLoadMore"'));
     const links = new Set([...grid.matchAll(/href="(\/blogs\/[^"#?]+\/)"/g)].map(match => match[1]));

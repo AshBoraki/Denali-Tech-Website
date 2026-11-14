@@ -83,12 +83,14 @@ test('Article uses native optional detail, semantic tables and keyboard navigati
   }
 });
 
-test('Catalog and both hub thumbnails use the real manufacturer artwork', () => {
+test('Catalog and crawlable article card use the real manufacturer artwork', () => {
   const hub = fs.readFileSync(path.join(root, 'blogs/index.html'), 'utf8');
   const catalog = JSON.parse(fs.readFileSync(path.join(root, 'blogs/blog-data.json'), 'utf8'));
   const items = Array.isArray(catalog) ? catalog : Object.values(catalog).find(Array.isArray);
   assert.match(items.find(item => item.slug === slug).heroImage, /araknis-wifi7-manufacturer-banner\.webp$/);
-  assert.equal([...hub.matchAll(/src="[^"]*araknis-wifi7-manufacturer-banner\.webp"/g)].length, 2);
+  const card = hub.match(/<a href="\/blogs\/araknis-access-point-model-comparison\/" class="blog-card-image-link"[^>]*>([\s\S]*?)<\/a>/);
+  assert.ok(card);
+  assert.match(card[1], /src="[^"]*araknis-wifi7-manufacturer-banner\.webp"/);
   const rule = hub.match(/\.blog-card-image-link\[href="\/blogs\/araknis-access-point-model-comparison\/"\] img\s*\{([^}]+)\}/);
   assert.ok(rule);
   assert.match(rule[1], /object-fit:\s*contain !important/);

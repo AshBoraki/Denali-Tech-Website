@@ -66,7 +66,7 @@ test('every touchscreen image and responsive source resolves to an existing loca
   }
   assert.doesNotMatch(html, /object-fit:\s*cover/);
   assert.match(html, /not Denali Tech project photographs/);
-  assert.match(html, /Music · wall-mounted control/);
+  assert.match(html, /alt="Person using a wall-mounted Control4 touchscreen to choose music"/);
   assert.match(html, /Lighting · wall-mounted control/);
   assert.doesNotMatch(html, /T5 In-Wall [—•] (?:Media|Office|Lighting)/);
 });
@@ -82,4 +82,19 @@ test('tabletop product source record identifies the real model and both complete
     assert.ok(fs.existsSync(path.join(folder, product.file)));
     assert.ok(html.includes(product.file));
   }
+});
+
+test('Lifestyle cover leads the article and thumbnail; the original kitchen view stays in the gallery', () => {
+  const cover = '/Video/Blogs%20imge/Control4%20Touchscreens/control4-t5-media-room-touchscreen-1200.webp';
+  const catalog = JSON.parse(fs.readFileSync(path.join(root, 'blogs/blog-data.json'), 'utf8'));
+  const hub = fs.readFileSync(path.join(root, 'blogs/index.html'), 'utf8');
+  const hero = html.match(/<figure class="hero-media">([\s\S]*?)<\/figure>/)[1];
+  const card = hub.match(/<a href="\/blogs\/control4-t5-vs-t4-touchscreen-size-guide\/" class="blog-card-image-link"[^>]*>([\s\S]*?)<\/a>/)[1];
+  assert.ok(hero.includes(cover));
+  assert.ok(card.includes('src="' + cover + '"'));
+  assert.equal(catalog.posts.find(post => post.slug === slug).heroImage, cover);
+  assert.equal(schema.image, 'https://denalitechs.com' + cover);
+  assert.ok(html.includes('property="og:image" content="' + schema.image + '"'));
+  assert.match(html, /class="room-grid">[\s\S]+?src="[^"]*control4-t5-kitchen-wall-touchscreen\.jpg"/);
+  assert.equal([...html.matchAll(/<img[^>]+src="[^"]*control4-t5-media-room-touchscreen\.jpg"/g)].length, 1);
 });

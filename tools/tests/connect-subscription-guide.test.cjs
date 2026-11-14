@@ -50,10 +50,10 @@ test('Connect benefits are bounded by hardware, internet, account and separate s
   assert.match(html, /There is no need to replace working equipment/);
 });
 
-test('All three images are verified unchanged public manufacturer originals with correct dimensions', () => {
+test('All four images are verified unchanged public manufacturer originals with correct dimensions', () => {
   const dir = path.join(root, 'Video/Blogs imge/Control4 Connect Guide');
   const record = JSON.parse(fs.readFileSync(path.join(dir, 'asset-sources.json'), 'utf8'));
-  assert.equal(record.assets.length, 3);
+  assert.equal(record.assets.length, 4);
   assert.match(record.notes, /not an independent license grant/);
   for (const image of record.assets) {
     assert.equal(crypto.createHash('sha256').update(fs.readFileSync(path.join(dir, image.file))).digest('hex'), image.sha256);
@@ -77,12 +77,21 @@ test('Connect guide provides keyboard-friendly navigation, reduced motion and re
   assert.doesNotMatch(html, /blog-reader-tools\.js/);
 });
 
-test('References and scoped hub thumbnail treatment are present without replacing shared navigation', () => {
+test('References and the lifestyle cover stay aligned without replacing shared navigation', () => {
   for (const url of ['https://www.control4.com/services', 'https://news.snapav.com/post/connect-is-now-optional-for-new-x4-systems', 'https://help.snapone.com/optional-connect-x4-faq/X4-Connect%20FAQ%20Domestic.pdf', 'https://docs.control4.com/o/4sight-services/']) {
     assert.ok(html.includes('href="' + url + '"'));
   }
   const hub = fs.readFileSync(path.join(root, 'blogs/index.html'), 'utf8');
-  const scoped = hub.match(/\.blog-card-image-link\[href="\/blogs\/control4-connect-subscription-guide\/"\] img \{([^}]+)\}/)[1];
-  assert.match(scoped, /object-fit: contain !important/);
+  const catalog = JSON.parse(fs.readFileSync(path.join(root, 'blogs/blog-data.json'), 'utf8'));
+  const cover = '/Video/Blogs%20imge/Control4%20Connect%20Guide/control4-connect-updates.webp';
+  assert.equal(catalog.posts.find(post => post.slug === slug).heroImage, cover);
+  assert.equal(schema.image, 'https://denalitechs.com' + cover);
+  assert.ok(html.includes('property="og:image" content="' + schema.image + '"'));
+  const lead = html.match(/<figure class="photo hero-photo">([\s\S]*?)<\/figure>/)[1];
+  assert.ok(lead.includes('src="' + cover + '"'));
+  assert.match(html, /class="gallery">[\s\S]+?src="[^"]*control4-app-home\.webp"/);
+  const card = hub.match(/<a href="\/blogs\/control4-connect-subscription-guide\/" class="blog-card-image-link"[^>]*>([\s\S]*?)<\/a>/)[1];
+  assert.ok(card.includes('src="' + cover + '"'));
+  const scoped = hub.match(/\[href="\/blogs\/control4-connect-subscription-guide\/"\] img,[\s\S]*?\{([^}]+)\}/)[1];
   assert.match(scoped, /transform: none !important/);
 });

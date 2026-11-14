@@ -67,7 +67,7 @@
       "title": "Changing Internet Providers with Control4: A Safe Checklist",
       "slug": "control4-after-new-router-internet-provider",
       "url": "/blogs/control4-after-new-router-internet-provider/",
-      "excerpt": "Changing internet providers or routers? Use this homeowner checklist to protect your Control4 system and know when to schedule professional help.",
+      "excerpt": "Switching internet providers or getting a new router? See what to check before the appointment and how to test your Control4 system afterward.",
       "category": "Network Planning Guide",
       "tags": [
         "Control4",
@@ -79,9 +79,9 @@
       "author": "Denali Tech Team",
       "publishedDate": "2026-09-17",
       "updatedDate": "2026-09-27",
-      "readingTime": 4,
+      "readingTime": 3,
       "featured": false,
-      "heroImage": "/Video/Blogs%20imge/Araknis%20Router%20Comparison/hires-520-alt/AN-X20-Routers.png"
+      "heroImage": "/assets/brandfolder/control4/control4-kitchen-lighting-scene.webp"
     },
     {
       "id": "control4-connect-subscription-guide",
@@ -102,7 +102,7 @@
       "updatedDate": "2026-10-19",
       "readingTime": 6,
       "featured": true,
-      "heroImage": "/Video/Blogs%20imge/Control4%20Connect%20Guide/control4-app-home.webp"
+      "heroImage": "/Video/Blogs%20imge/Control4%20Connect%20Guide/control4-connect-updates.webp"
     },
     {
       "id": "lutron-premium-keypad-comparison",
@@ -1059,7 +1059,7 @@
       "updatedDate": "2026-10-19",
       "readingTime": 6,
       "featured": true,
-      "heroImage": "/Video/Blogs%20imge/Control4%20Touchscreens/control4-t5-kitchen-wall-touchscreen.jpg"
+      "heroImage": "/Video/Blogs%20imge/Control4%20Touchscreens/control4-t5-media-room-touchscreen-1200.webp"
     },
     {
       "id": "araknis-access-point-model-comparison",
