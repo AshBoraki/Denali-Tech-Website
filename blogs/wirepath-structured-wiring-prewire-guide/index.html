@@ -10,7 +10,7 @@
     <link rel="canonical" href="https://denalitechs.com/blogs/wirepath-structured-wiring-prewire-guide/">
     <meta property="og:title" content="Wirepath Structured Wiring: The Prewire Decisions That Protect a Smart Home">
     <meta property="og:description" content="A practical structured wiring guide for Ethernet, speaker wire, camera wire, TV locations, low-voltage panels, labels, conduit, and future service.">
-    <meta property="og:image" content="https://denalitechs.com/Video/Blogs%20imge/Wirepath%20Prewire%20Guide/structured-prewire-construction-hero.png">
+    <meta property="og:image" content="https://denalitechs.com/Video/Blogs%20imge/Wirepath%20Prewire%20Guide/brandfolder/wirepath-rj45-termination.webp">
     <meta property="og:url" content="https://denalitechs.com/blogs/wirepath-structured-wiring-prewire-guide/">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="/assets/css/site-chrome.css?v=20260917-planning-nav">
@@ -20,13 +20,13 @@
         body { margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, sans-serif; background:var(--bg); color:var(--text); line-height:1.65; }
         a { color:#fb923c; }
         .wrap { width:min(980px, calc(100% - 32px)); margin:0 auto; }
-        header { padding:32px 0 18px; }
+        .article-header { padding:32px 0 18px; }
         .crumb { color:var(--muted); font-size:.95rem; margin-bottom:20px; }
         h1 { font-size:clamp(2.2rem, 5vw, 4.6rem); line-height:1.05; margin:0 0 18px; letter-spacing:0; }
         .meta { color:var(--muted); display:flex; flex-wrap:wrap; gap:16px; align-items:center; margin-bottom:20px; }
         .tags { display:flex; flex-wrap:wrap; gap:10px; margin:20px 0 34px; }
         .tag { border:1px solid rgba(249,115,22,.35); color:#fdba74; background:rgba(249,115,22,.14); border-radius:999px; padding:7px 12px; font-weight:700; font-size:.9rem; }
-        .hero { width:100%; border-radius:18px; border:1px solid var(--line); display:block; background:#fff; }
+        .article-cover { width:100%; height:auto; border-radius:18px; border:1px solid var(--line); display:block; }
         .caption { color:var(--muted); font-size:.9rem; text-align:center; margin:9px 0 28px; }
         .quick, .cta, .faq, .asset-panel { background:linear-gradient(180deg, rgba(249,115,22,.14), rgba(249,115,22,.06)); border:1px solid rgba(249,115,22,.26); border-radius:14px; padding:20px; margin:28px 0; }
         main { padding-bottom:60px; }
@@ -43,24 +43,24 @@
         .btns { display:flex; flex-wrap:wrap; gap:12px; margin-top:18px; }
         .btn { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:12px 18px; border-radius:10px; background:var(--accent); color:#111827; font-weight:900; text-decoration:none; }
         .btn.secondary { background:transparent; color:#fdba74; border:1px solid rgba(249,115,22,.45); }
-        @media (max-width: 640px) { .wrap { width:min(100% - 22px, 980px); } header { padding-top:22px; } .asset-grid img { height:112px; } }
+        @media (max-width: 640px) { .wrap { width:min(100% - 22px, 980px); } .article-header { padding-top:22px; } .asset-grid img { height:112px; } }
 </style>
     <link rel="stylesheet" href="/assets/css/product-guide-upgrade.css?v=20260713">
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Wirepath Structured Wiring: The Prewire Decisions That Protect a Smart Home", "description": "A practical structured wiring guide for Ethernet, speaker wire, camera wire, TV locations, low-voltage panels, labels, conduit, and future service.", "image": "https://denalitechs.com/Video/Blogs%20imge/Wirepath%20Prewire%20Guide/structured-prewire-construction-hero.png", "author": {"@type": "Organization", "name": "Denali Tech Team","url":"https://denalitechs.com/about/"}, "publisher": {"@type": "Organization", "name": "Denali Tech","url":"https://denalitechs.com/","logo": {"@type": "ImageObject", "url": "https://denalitechs.com/favicon-512x512.png"}}, "datePublished": "2026-06-04", "dateModified": "2026-08-15", "mainEntityOfPage": "https://denalitechs.com/blogs/wirepath-structured-wiring-prewire-guide/", "articleSection": "Buying Guide", "keywords": "Wirepath, Structured Wiring, Prewire, Low Voltage"}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Wirepath Structured Wiring: The Prewire Decisions That Protect a Smart Home", "description": "A practical structured wiring guide for Ethernet, speaker wire, camera wire, TV locations, low-voltage panels, labels, conduit, and future service.", "image": "https://denalitechs.com/Video/Blogs%20imge/Wirepath%20Prewire%20Guide/brandfolder/wirepath-rj45-termination.webp", "author": {"@type": "Organization", "name": "Denali Tech Team","url":"https://denalitechs.com/about/"}, "publisher": {"@type": "Organization", "name": "Denali Tech","url":"https://denalitechs.com/","logo": {"@type": "ImageObject", "url": "https://denalitechs.com/favicon-512x512.png"}}, "datePublished": "2026-06-04", "dateModified": "2026-08-15", "mainEntityOfPage": "https://denalitechs.com/blogs/wirepath-structured-wiring-prewire-guide/", "articleSection": "Buying Guide", "keywords": "Wirepath, Structured Wiring, Prewire, Low Voltage"}</script>
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What should be wired even if I am not ready to buy equipment?", "acceptedAnswer": {"@type": "Answer", "text": "Network, display, camera, audio, and shade/control paths are often worth planning early because they are hard to add cleanly later."}}, {"@type": "Question", "name": "Is WiFi enough for a new build?", "acceptedAnswer": {"@type": "Answer", "text": "No. WiFi still needs wired access points and network infrastructure. A wired foundation makes wireless work better."}}, {"@type": "Question", "name": "Can Denali Tech work with a builder or remodeler?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The best time to coordinate is before rough-in, not after drywall."}}]}</script>
     <script src="/assets/js/blog-reader-tools.js?v=20261104a" defer></script>
 </head>
 <body>
     <div id="site-header"></div>
-    <header class="wrap">
+    <main class="wrap">
+    <section class="article-header" aria-labelledby="article-heading">
         <div class="crumb"><a href="/">Home</a> / <a href="/blogs/">Blog</a> / Wirepath Structured Wiring: The Prewire Decisions That Protect a Smart Home</div>
-        <h1>Wirepath Structured Wiring: The Prewire Decisions That Protect a Smart Home</h1>
+        <h1 id="article-heading">Wirepath Structured Wiring: The Prewire Decisions That Protect a Smart Home</h1>
         <div class="meta"><span>Published: June 4, 2026</span><span>By: <a href="/about/">Denali Tech Team</a></span><span>4 min read</span><span>Buying Guide</span></div>
         <div class="tags"><span class="tag">Wirepath</span><span class="tag">Structured Wiring</span><span class="tag">Prewire</span><span class="tag">Low Voltage</span></div>
-        <img class="hero" src="/Video/Blogs%20imge/Wirepath%20Prewire%20Guide/structured-prewire-construction-hero.png" alt="Organized low-voltage cable bundles and pathways during luxury-home construction" width="1672" height="941" fetchpriority="high">
-        <p class="caption">Low-voltage wiring and rack planning for a smart home prewire</p>
-    </header>
-    <main class="wrap">
+        <img class="article-cover" src="/Video/Blogs%20imge/Wirepath%20Prewire%20Guide/brandfolder/wirepath-rj45-termination.webp" alt="Technician terminating a blue Ethernet cable beside a wired equipment rack" width="1800" height="1200" fetchpriority="high">
+        <p class="caption">Wirepath installation example: terminating Ethernet cable at the rack.</p>
+    </section>
         <section class="quick"><p><strong>Quick answer:</strong> A useful prewire is a room-by-room plan tied to a central equipment location. It covers network, displays, audio, cameras, shades, control, door stations, and future pathways—then labels, tests, photographs, and documents every run before drywall hides it.</p></section>
         <p class="article-lead">Cable is inexpensive while framing is open. Access after drywall is not. The important decision is where each run begins, ends, and can be serviced later.</p>
         <h2>Design from rooms back to the rack</h2>

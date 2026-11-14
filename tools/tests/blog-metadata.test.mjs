@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import { createHash } from 'node:crypto';
 import { readingMinutes, articleDates, replaceReadLabel, setModifiedDate, planRefresh } from '../refresh-blog-metadata.mjs';
 
 test('reading estimate counts main prose and captions, excluding surrounding UI', () => {
@@ -43,6 +44,35 @@ test('blog source never exposes JavaScript URL placeholders as crawlable attribu
   assert.deepEqual(placeholders.map(match => match[0]), []);
   assert.match(hub, /setAttribute\('src', '\/' \+ encodedImagePath\)/);
   assert.match(hub, /setAttribute\('href', postUrl\)/);
+});
+
+test('catalog and crawlable blog cards each use unique cover files', () => {
+  const siteRoot = new URL('../../', import.meta.url);
+  const hub = fs.readFileSync(new URL('blogs/index.html', siteRoot), 'utf8');
+  const catalog = JSON.parse(fs.readFileSync(new URL('blogs/blog-data.json', siteRoot), 'utf8'));
+  const grid = hub.slice(hub.indexOf('id="blogGrid"'), hub.indexOf('id="loadMoreButton"'));
+  const fallback = [...grid.matchAll(/<img src="([^"]+)"/g)].map(match => match[1]);
+  const shortcuts = hub.slice(hub.indexOf('id="popularGuides"'), hub.indexOf('id="blogGrid"'));
+  const shortcutCovers = [...shortcuts.matchAll(/<img src="([^"]+)"/g)].map(match => match[1]);
+  assert.equal(fallback.length, catalog.posts.length);
+  for (const sources of [catalog.posts.map(post => post.heroImage), fallback]) {
+    const seen = new Map();
+    for (const src of [...sources, ...shortcutCovers]) {
+      assert.ok(src.startsWith('/'), src + ' should be a site asset');
+      const asset = new URL(src.slice(1).split('/').map(part => encodeURIComponent(decodeURIComponent(part))).join('/'), siteRoot);
+      const hash = createHash('sha256').update(fs.readFileSync(asset)).digest('hex');
+      assert.ok(!seen.has(hash), src + ' repeats the cover ' + seen.get(hash));
+      seen.set(hash, src);
+    }
+  }
+});
+
+test('legacy guide titles and cover photos are in article content, outside retired chrome', () => {
+  for (const slug of ['wirepath-structured-wiring-prewire-guide', 'wattbox-ovrc-remote-power-reset-guide', 'wattbox-surge-protector-vs-power-management-guide', 'snap-one-brand-stack-smart-home-guide']) {
+    const html = fs.readFileSync(new URL(`../../blogs/${slug}/index.html`, import.meta.url), 'utf8');
+    assert.match(html, /<main class="wrap">\s*<section class="article-header" aria-labelledby="article-heading">[^]*?<h1 id="article-heading">[^]*?<img[^>]*>[^]*?<\/section>/, slug);
+    assert.doesNotMatch(html, /<header class="wrap">/, slug);
+  }
 });
 
 test('operator-facing FAQ is absent from both visible page and structured data', () => {

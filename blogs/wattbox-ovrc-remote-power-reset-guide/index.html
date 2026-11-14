@@ -10,7 +10,7 @@
     <link rel="canonical" href="https://denalitechs.com/blogs/wattbox-ovrc-remote-power-reset-guide/">
     <meta property="og:title" content="WattBox and OvrC Remote Power Reset: Why Smart Homes Need Serviceable Power">
     <meta property="og:description" content="A homeowner guide to WattBox power management, OvrC remote resets, rack planning, UPS choices, and why reliable smart homes need controllable power.">
-    <meta property="og:image" content="https://denalitechs.com/Video/Blogs%20imge/WattBox%20Power%20and%20UPS%20Comparison/wattbox-800-1u-8-blue.png">
+    <meta property="og:image" content="https://denalitechs.com/assets/brandfolder/adi/wattbox-rack-install-1100.jpg">
     <meta property="og:url" content="https://denalitechs.com/blogs/wattbox-ovrc-remote-power-reset-guide/">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="/assets/css/site-chrome.css?v=20260917-planning-nav">
@@ -20,13 +20,13 @@
         body { margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, sans-serif; background:var(--bg); color:var(--text); line-height:1.65; }
         a { color:#fb923c; }
         .wrap { width:min(980px, calc(100% - 32px)); margin:0 auto; }
-        header { padding:32px 0 18px; }
+        .article-header { padding:32px 0 18px; }
         .crumb { color:var(--muted); font-size:.95rem; margin-bottom:20px; }
         h1 { font-size:clamp(2.2rem, 5vw, 4.6rem); line-height:1.05; margin:0 0 18px; letter-spacing:0; }
         .meta { color:var(--muted); display:flex; flex-wrap:wrap; gap:16px; align-items:center; margin-bottom:20px; }
         .tags { display:flex; flex-wrap:wrap; gap:10px; margin:20px 0 34px; }
         .tag { border:1px solid rgba(249,115,22,.35); color:#fdba74; background:rgba(249,115,22,.14); border-radius:999px; padding:7px 12px; font-weight:700; font-size:.9rem; }
-        .hero { width:100%; border-radius:18px; border:1px solid var(--line); display:block; background:#fff; }
+        .article-cover { width:100%; height:auto; border-radius:18px; border:1px solid var(--line); display:block; }
         .caption { color:var(--muted); font-size:.9rem; text-align:center; margin:9px 0 28px; }
         .quick, .cta, .faq, .asset-panel { background:linear-gradient(180deg, rgba(249,115,22,.14), rgba(249,115,22,.06)); border:1px solid rgba(249,115,22,.26); border-radius:14px; padding:20px; margin:28px 0; }
         main { padding-bottom:60px; }
@@ -43,24 +43,24 @@
         .btns { display:flex; flex-wrap:wrap; gap:12px; margin-top:18px; }
         .btn { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:12px 18px; border-radius:10px; background:var(--accent); color:#111827; font-weight:900; text-decoration:none; }
         .btn.secondary { background:transparent; color:#fdba74; border:1px solid rgba(249,115,22,.45); }
-        @media (max-width: 640px) { .wrap { width:min(100% - 22px, 980px); } header { padding-top:22px; } .asset-grid img { height:112px; } }
+        @media (max-width: 640px) { .wrap { width:min(100% - 22px, 980px); } .article-header { padding-top:22px; } .asset-grid img { height:112px; } }
 </style>
     <link rel="stylesheet" href="/assets/css/product-guide-upgrade.css?v=20260713">
-    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "WattBox and OvrC Remote Power Reset: Why Smart Homes Need Serviceable Power", "description": "A homeowner guide to WattBox power management, OvrC remote resets, rack planning, UPS choices, and why reliable smart homes need controllable power.", "image": "https://denalitechs.com/Video/Blogs%20imge/WattBox%20Power%20and%20UPS%20Comparison/wattbox-800-1u-8-blue.png", "author": {"@type": "Organization", "name": "Denali Tech Team","url":"https://denalitechs.com/about/"}, "publisher": {"@type": "Organization", "name": "Denali Tech","url":"https://denalitechs.com/","logo": {"@type": "ImageObject", "url": "https://denalitechs.com/favicon-512x512.png"}}, "datePublished": "2026-06-04", "dateModified": "2026-08-15", "mainEntityOfPage": "https://denalitechs.com/blogs/wattbox-ovrc-remote-power-reset-guide/", "articleSection": "Smart Home Guide", "keywords": "WattBox, OvrC, Power Management, Remote Support"}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "WattBox and OvrC Remote Power Reset: Why Smart Homes Need Serviceable Power", "description": "A homeowner guide to WattBox power management, OvrC remote resets, rack planning, UPS choices, and why reliable smart homes need controllable power.", "image": "https://denalitechs.com/assets/brandfolder/adi/wattbox-rack-install-1100.jpg", "author": {"@type": "Organization", "name": "Denali Tech Team","url":"https://denalitechs.com/about/"}, "publisher": {"@type": "Organization", "name": "Denali Tech","url":"https://denalitechs.com/","logo": {"@type": "ImageObject", "url": "https://denalitechs.com/favicon-512x512.png"}}, "datePublished": "2026-06-04", "dateModified": "2026-08-15", "mainEntityOfPage": "https://denalitechs.com/blogs/wattbox-ovrc-remote-power-reset-guide/", "articleSection": "Smart Home Guide", "keywords": "WattBox, OvrC, Power Management, Remote Support"}</script>
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does WattBox replace a service call?", "acceptedAnswer": {"@type": "Answer", "text": "No. It can reduce unnecessary visits when the issue is a controllable power reset, but wiring faults, failed equipment, and programming issues still need real diagnosis."}}, {"@type": "Question", "name": "Should every device be on a remotely controlled outlet?", "acceptedAnswer": {"@type": "Answer", "text": "No. Some equipment should stay always-on, and some equipment needs a controlled reset order. The outlet plan matters."}}, {"@type": "Question", "name": "Can Denali Tech add this to an existing rack?", "acceptedAnswer": {"@type": "Answer", "text": "Often yes, but the rack should be audited first so power, network, heat, and labeling are not made worse."}}]}</script>
     <script src="/assets/js/blog-reader-tools.js?v=20261104a" defer></script>
 </head>
 <body>
     <div id="site-header"></div>
-    <header class="wrap">
+    <main class="wrap">
+    <section class="article-header" aria-labelledby="article-heading">
         <div class="crumb"><a href="/">Home</a> / <a href="/blogs/">Blog</a> / WattBox and OvrC Remote Power Reset: Why Smart Homes Need Serviceable Power</div>
-        <h1>WattBox and OvrC Remote Power Reset: Why Smart Homes Need Serviceable Power</h1>
+        <h1 id="article-heading">WattBox and OvrC Remote Power Reset: Why Smart Homes Need Serviceable Power</h1>
         <div class="meta"><span>Published: June 4, 2026</span><span>By: <a href="/about/">Denali Tech Team</a></span><span>4 min read</span><span>Smart Home Guide</span></div>
         <div class="tags"><span class="tag">WattBox</span><span class="tag">OvrC</span><span class="tag">Power Management</span><span class="tag">Remote Support</span></div>
-        <img class="hero" src="/Video/Blogs%20imge/WattBox%20Power%20and%20UPS%20Comparison/wattbox-800-1u-8-blue.png" alt="Rack-mount WattBox managed power unit on a blue studio background" width="1200" height="900" fetchpriority="high">
-        <p class="caption">Managed rack power gives the service plan a safe, labeled place to start.</p>
-    </header>
-    <main class="wrap">
+        <img class="article-cover" src="/assets/brandfolder/adi/wattbox-rack-install-1100.jpg" alt="Technician fastening WattBox managed power equipment in an AV rack" width="1100" height="733" fetchpriority="high">
+        <p class="caption">WattBox manufacturer photo: installing managed power in an equipment rack.</p>
+    </section>
         <section class="quick"><p><strong>Quick answer:</strong> WattBox supplies the controllable outlets; OvrC gives the service technician a supported remote view. Together they can recover a frozen modem, router, streamer, or control device without asking the homeowner to unplug random equipment—but only when the rack was labeled and the restart order was planned correctly.</p></section>
         <p class="article-lead">The useful feature is not “reboot everything.” It is knowing exactly which outlet feeds which device, what must stay online, and what sequence is safe.</p>
         <h2>What happens during a real support call</h2>

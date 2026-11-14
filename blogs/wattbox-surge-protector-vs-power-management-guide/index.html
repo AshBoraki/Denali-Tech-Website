@@ -20,13 +20,14 @@
         body { margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, sans-serif; background:var(--bg); color:var(--text); line-height:1.65; }
         a { color:#fb923c; }
         .wrap { width:min(980px, calc(100% - 32px)); margin:0 auto; }
-        header { padding:32px 0 18px; }
+        .article-header { padding:32px 0 18px; }
         .crumb { color:var(--muted); font-size:.95rem; margin-bottom:20px; }
         h1 { font-size:clamp(2.2rem, 5vw, 4.6rem); line-height:1.05; margin:0 0 18px; letter-spacing:0; }
         .meta { color:var(--muted); display:flex; flex-wrap:wrap; gap:16px; align-items:center; margin-bottom:20px; }
         .tags { display:flex; flex-wrap:wrap; gap:10px; margin:20px 0 34px; }
         .tag { border:1px solid rgba(249,115,22,.35); color:#fdba74; background:rgba(249,115,22,.14); border-radius:999px; padding:7px 12px; font-weight:700; font-size:.9rem; }
-        .hero { width:100%; border-radius:18px; border:1px solid var(--line); display:block; background:#fff; }
+        .hero { width:100%; height:auto; border-radius:18px; border:1px solid var(--line); display:block; background:#fff; }
+        .article-header .hero { aspect-ratio:auto; object-fit:contain; }
         .caption { color:var(--muted); font-size:.9rem; text-align:center; margin:9px 0 28px; }
         .quick, .cta, .faq, .asset-panel { background:linear-gradient(180deg, rgba(249,115,22,.14), rgba(249,115,22,.06)); border:1px solid rgba(249,115,22,.26); border-radius:14px; padding:20px; margin:28px 0; }
         main { padding-bottom:60px; }
@@ -43,7 +44,7 @@
         .btns { display:flex; flex-wrap:wrap; gap:12px; margin-top:18px; }
         .btn { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:12px 18px; border-radius:10px; background:var(--accent); color:#111827; font-weight:900; text-decoration:none; }
         .btn.secondary { background:transparent; color:#fdba74; border:1px solid rgba(249,115,22,.45); }
-        @media (max-width: 640px) { .wrap { width:min(100% - 22px, 980px); } header { padding-top:22px; } .asset-grid img { height:112px; } }
+        @media (max-width: 640px) { .wrap { width:min(100% - 22px, 980px); } .article-header { padding-top:22px; } .asset-grid img { height:112px; } }
 </style>
     <link rel="stylesheet" href="/assets/css/product-guide-upgrade.css?v=20260713">
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "WattBox vs a Basic Surge Protector: What Homeowners Should Know", "description": "Understand the difference between basic surge protection and managed power for smart homes, theater racks, network gear, TVs, and support after installation.", "image": "https://denalitechs.com/Video/Blogs%20imge/WattBox%20Power%20and%20UPS%20Comparison/wattbox-800-vertical-12-blue.png", "author": {"@type": "Organization", "name": "Denali Tech Team","url":"https://denalitechs.com/about/"}, "publisher": {"@type": "Organization", "name": "Denali Tech","url":"https://denalitechs.com/","logo": {"@type": "ImageObject", "url": "https://denalitechs.com/favicon-512x512.png"}}, "datePublished": "2026-06-04", "dateModified": "2026-08-15", "mainEntityOfPage": "https://denalitechs.com/blogs/wattbox-surge-protector-vs-power-management-guide/", "articleSection": "Buying Guide", "keywords": "WattBox, Surge Protection, Smart Home Reliability, AV Rack"}</script>
@@ -52,15 +53,15 @@
 </head>
 <body>
     <div id="site-header"></div>
-    <header class="wrap">
+    <main class="wrap">
+    <section class="article-header" aria-labelledby="article-heading">
         <div class="crumb"><a href="/">Home</a> / <a href="/blogs/">Blog</a> / WattBox vs a Basic Surge Protector: What Homeowners Should Know</div>
-        <h1>WattBox vs a Basic Surge Protector: What Homeowners Should Know</h1>
+        <h1 id="article-heading">WattBox vs a Basic Surge Protector: What Homeowners Should Know</h1>
         <div class="meta"><span>Published: June 4, 2026</span><span>By: <a href="/about/">Denali Tech Team</a></span><span>4 min read</span><span>Buying Guide</span></div>
         <div class="tags"><span class="tag">WattBox</span><span class="tag">Surge Protection</span><span class="tag">Smart Home Reliability</span><span class="tag">AV Rack</span></div>
         <img class="hero" src="/Video/Blogs%20imge/WattBox%20Power%20and%20UPS%20Comparison/wattbox-800-vertical-12-blue.png" alt="Vertical WattBox managed power unit on a blue studio background" width="1200" height="900" fetchpriority="high">
         <p class="caption">Protection, recovery, and battery backup solve different problems.</p>
-    </header>
-    <main class="wrap">
+    </section>
         <section class="quick"><p><strong>Quick answer:</strong> A basic surge protector addresses a limited protection job. Managed power adds labeled outlets, controlled recovery, monitoring, and a service workflow. A UPS adds temporary battery runtime. A dependable rack may use all three ideas, but they are not interchangeable.</p></section>
         <p class="article-lead">The right comparison is not “cheap strip versus expensive strip.” It is protection versus control versus continuity.</p>
         <h2>Three power jobs that are often confused</h2>
