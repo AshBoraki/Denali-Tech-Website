@@ -695,11 +695,17 @@
             min-width: 0;
         }
 
-        .blog-search-field label {
+        .blog-search-field label,
+        .blog-topic-field label {
             display: block;
             margin-bottom: 0.35rem;
             font-size: 0.95rem;
             font-weight: 700;
+        }
+
+        .blog-search-hint,
+        .blog-topic-field label {
+            display: none;
         }
 
         .search-box {
@@ -707,7 +713,7 @@
         }
 
         .category-select {
-            width: min(280px, 100%);
+            width: 100%;
             min-height: 48px;
             padding: 0.75rem 2.5rem 0.75rem 0.9rem;
             border: 1px solid var(--border-color);
@@ -796,6 +802,59 @@
             height: 18px;
             color: var(--text-secondary);
             pointer-events: none;
+        }
+
+        /* Desktop search polish; the mobile controls and article cards stay as they are. */
+        @media (min-width: 769px) {
+            .blog-controls {
+                background: #101827;
+                border-inline-start: 3px solid var(--accent-primary);
+            }
+
+            :root[data-theme='light'] .blog-controls,
+            body.light-theme .blog-controls {
+                background: #fff;
+                box-shadow: 0 3px 14px rgba(15, 23, 42, 0.045);
+            }
+
+            .blog-search-caption {
+                display: flex;
+                align-items: baseline;
+                flex-wrap: wrap;
+                gap: 0.15rem 0.65rem;
+                margin-bottom: 0.35rem;
+            }
+
+            .blog-search-caption label { margin: 0; }
+
+            .blog-search-hint {
+                display: inline;
+                color: var(--text-secondary);
+                font-size: 0.875rem;
+            }
+
+            .blog-topic-field { flex: 0 1 17.5rem; min-width: 0; }
+            .blog-topic-field label { display: block; }
+
+            .blog-controls .search-box input,
+            .blog-controls .category-select {
+                min-height: 48px;
+                border-color: #728297;
+                background: #0a0d18;
+            }
+
+            :root[data-theme='light'] .blog-controls .search-box input,
+            :root[data-theme='light'] .blog-controls .category-select,
+            body.light-theme .blog-controls .search-box input,
+            body.light-theme .blog-controls .category-select {
+                border-color: #7c8999;
+                background: #f8fafc;
+            }
+
+            .blog-controls .search-box input::placeholder {
+                color: var(--text-secondary);
+                opacity: 1;
+            }
         }
 
         .category-filters {
@@ -1505,10 +1564,6 @@
                 padding: 0.75rem;
             }
 
-            .blog-controls .category-select {
-                width: 100%;
-            }
-
             .decision-grid,
             .starter-links {
                 grid-template-columns: 1fr;
@@ -1709,13 +1764,16 @@
 
             <form class="blog-controls" id="blogSearchForm" role="search" aria-label="Blog articles">
                 <div class="blog-search-field">
-                    <label for="searchInput">Search articles</label>
+                    <div class="blog-search-caption">
+                        <label for="searchInput">Search articles</label>
+                        <span class="blog-search-hint" id="blogSearchHint">Search by topic, product, or problem.</span>
+                    </div>
                     <div class="search-box">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                             <circle cx="11" cy="11" r="7"></circle>
                             <path d="m20 20-3.5-3.5"></path>
                         </svg>
-                        <input type="search" id="searchInput" placeholder="Try Halo Touch" autocomplete="off" enterkeyhint="search" maxlength="120" disabled>
+                        <input type="search" id="searchInput" placeholder="Try Wi-Fi or Control4" aria-describedby="blogSearchHint" autocomplete="off" enterkeyhint="search" maxlength="120" disabled>
                         <button type="button" class="blog-search-clear" id="clearBlogSearch" aria-label="Clear article search" hidden>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
                                 <path d="m6 6 12 12M18 6 6 18"></path>
@@ -1723,9 +1781,12 @@
                         </button>
                     </div>
                 </div>
-                <select class="category-select" id="categorySelect" aria-label="Filter articles by category" disabled>
-                    <option value="all">All article topics</option>
-                </select>
+                <div class="blog-topic-field">
+                    <label for="categorySelect">Filter by topic</label>
+                    <select class="category-select" id="categorySelect" aria-label="Filter by topic" disabled>
+                        <option value="all">All article topics</option>
+                    </select>
+                </div>
             </form>
             <p id="postCount" class="post-count-compact" role="status" aria-atomic="true"></p>
             <noscript><p class="post-count-compact">Search requires JavaScript. You can still browse the guides below.</p></noscript>
