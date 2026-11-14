@@ -478,7 +478,7 @@
         .blog-listing-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 94px 2rem 4rem;
+            padding: 3rem 2rem 4rem;
         }
 
         .blog-header {
@@ -491,6 +491,7 @@
             font-size: clamp(2.25rem, 4vw, 3rem);
             font-weight: 700;
             margin-bottom: 1rem;
+            line-height: 1.15;
             color: var(--text-primary);
         }
 
@@ -676,8 +677,8 @@
             flex-wrap: wrap;
             gap: 1rem;
             justify-content: flex-start;
-            align-items: center;
-            margin-bottom: 2rem;
+            align-items: flex-end;
+            margin-bottom: 0.6rem;
             padding: 1rem;
             background: rgba(255, 255, 255, 0.03);
             border-radius: 12px;
@@ -689,10 +690,19 @@
             background: rgba(0, 0, 0, 0.03);
         }
 
+        .blog-search-field {
+            flex: 1 1 15rem;
+            min-width: 0;
+        }
+
+        .blog-search-field label {
+            display: block;
+            margin-bottom: 0.35rem;
+            font-size: 0.95rem;
+            font-weight: 700;
+        }
+
         .search-box {
-            flex: 1;
-            min-width: 250px;
-            max-width: none;
             position: relative;
         }
 
@@ -702,34 +712,70 @@
             padding: 0.75rem 2.5rem 0.75rem 0.9rem;
             border: 1px solid var(--border-color);
             border-radius: 8px;
-            background: var(--surface-card);
+            background: var(--bg-color);
             color: var(--text-primary);
             font: inherit;
             font-weight: 700;
         }
 
         .post-count-compact {
+            min-height: 1.5rem;
+            margin: 0 0 0.8rem;
             color: var(--text-secondary);
             font-size: 0.9rem;
-            white-space: nowrap;
         }
 
         .search-box input {
+            appearance: none;
             width: 100%;
-            padding: 0.875rem 1rem 0.875rem 2.5rem;
+            min-height: 48px;
+            padding: 0.72rem 3.15rem 0.72rem 2.5rem;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--border-color);
             border-radius: 8px;
             color: var(--text-primary);
-            font-size: 1rem;
-            transition: all var(--transition);
+            font: inherit;
+            line-height: 1.4;
         }
 
         .search-box input:focus {
-            outline: none;
             border-color: var(--accent-primary);
             background: rgba(255, 255, 255, 0.08);
         }
+
+        .search-box input::-webkit-search-cancel-button { display: none; }
+
+        .search-box input:focus-visible,
+        .category-select:focus-visible {
+            outline: 2px solid var(--accent-readable);
+            outline-offset: 2px;
+        }
+
+        .blog-search-clear {
+            position: absolute;
+            top: 50%;
+            right: 2px;
+            transform: translateY(-50%);
+            display: grid;
+            place-items: center;
+            width: 44px;
+            height: 44px;
+            padding: 0;
+            border: 0;
+            border-radius: 6px;
+            color: var(--text-primary);
+            background: transparent;
+            cursor: pointer;
+        }
+
+        .blog-search-clear:hover { background: rgba(249, 115, 22, 0.12); }
+
+        .blog-search-clear[hidden],
+        .popular-guides[hidden] { display: none; }
+
+        .blog-search-clear svg { width: 18px; height: 18px; }
+
+        .blog-controls :disabled { opacity: 0.65; cursor: not-allowed; }
 
         :root[data-theme='light'] .search-box input,
         body.light-theme .search-box input {
@@ -785,7 +831,7 @@
 
         .blog-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
             gap: 2rem;
             margin-bottom: 1.5rem;
         }
@@ -911,7 +957,7 @@
             border: 1px solid var(--accent-primary);
             border-radius: 10px;
             background: var(--accent-primary);
-            color: #fff;
+            color: #111827;
             font: inherit;
             font-weight: 700;
             cursor: pointer;
@@ -1248,6 +1294,7 @@
             color: inherit;
             text-decoration: none;
             transition: color var(--transition);
+            scroll-margin-top: 5.5rem;
         }
 
         .blog-card-title a:hover {
@@ -1304,15 +1351,23 @@
 
         .no-results {
             text-align: center;
-            padding: 4rem 2rem;
+            padding: 1.5rem 1rem;
+            margin: 0 0 2rem;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            scroll-margin-top: 5.5rem;
             color: var(--text-secondary);
         }
 
-        .no-results h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+        .no-results h2 {
+            font-size: 1.25rem;
+            margin: 0 0 0.35rem;
             color: var(--text-primary);
         }
+
+        .no-results p { margin: 0 0 0.85rem; }
+
+        .blog-resource-links { margin: 2rem 0; text-align: center; }
 
         .rss-link {
             display: inline-flex;
@@ -1425,11 +1480,33 @@
             }
 
             .blog-listing-container {
-                padding: 100px 1rem 3rem;
+                padding: 1.5rem 1rem 3rem;
+            }
+
+            .blog-header {
+                margin-bottom: 0.9rem;
+                text-align: left;
+            }
+
+            .blog-header h1 {
+                margin: 0 0 0.5rem;
+                font-size: clamp(1.65rem, 7vw, 2.2rem);
+            }
+
+            .blog-header p {
+                font-size: 1rem;
+                line-height: 1.5;
             }
 
             .blog-controls {
-                flex-direction: column;
+                display: grid;
+                grid-template-columns: minmax(0, 1fr);
+                gap: 0.55rem;
+                padding: 0.75rem;
+            }
+
+            .blog-controls .category-select {
+                width: 100%;
             }
 
             .decision-grid,
@@ -1437,13 +1514,56 @@
                 grid-template-columns: 1fr;
             }
 
-            .search-box {
-                width: 100%;
-                max-width: 100%;
+            .blog-grid {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 1rem;
             }
 
-            .blog-grid {
-                grid-template-columns: 1fr;
+            .blog-grid.is-filtered .blog-card:not(.is-pagination-hidden) {
+                display: grid;
+                grid-template-columns: clamp(3.6rem, 18vw, 5rem) minmax(0, 1fr);
+                align-items: start;
+                gap: 0.75rem;
+                padding: 0.75rem;
+            }
+
+            .blog-grid.is-filtered .blog-image-wrapper {
+                aspect-ratio: 1;
+                padding: 0;
+                border-radius: 8px;
+            }
+
+            .blog-grid.is-filtered .blog-image-wrapper img {
+                object-fit: contain !important;
+                padding: 0 !important;
+                transform: none;
+            }
+
+            .blog-grid.is-filtered .blog-card-content { padding: 0; }
+            .blog-grid.is-filtered .blog-card-meta { margin-bottom: 0.3rem; }
+            .blog-grid.is-filtered .blog-card-meta > span:last-child,
+            .blog-grid.is-filtered .blog-card-footer { display: none; }
+
+            .blog-grid.is-filtered .blog-card-title {
+                font-size: 1rem;
+                margin: 0 0 0.25rem;
+                overflow-wrap: anywhere;
+            }
+
+            .blog-grid.is-filtered .blog-card-title a {
+                display: flex;
+                align-items: center;
+                min-height: 44px;
+            }
+
+            .blog-grid.is-filtered .blog-card-excerpt {
+                margin: 0;
+                font-size: 0.875rem;
+                line-height: 1.45;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                overflow: hidden;
             }
 
             .popular-guides-header {
@@ -1584,34 +1704,33 @@
         <div class="blog-listing-container">
             <div class="blog-header">
                 <h1>Smart Home Advice You Can Actually Use</h1>
-                <p>Real project breakdowns, buying guidance, and practical help before you spend money on WiFi, theater, audio, lighting, shades, cameras, wiring, or control.</p>
+                <p>Practical guides for Wi-Fi, home theater, lighting, and smart home control.</p>
             </div>
-            <p class="editorial-note"><span aria-hidden="true">✓</span> Field experience, official sources, and clear update standards. <a href="/editorial-policy/">How our guides are checked</a></p>
-            <p class="planning-entry">Planning a project? <a href="/planning/">Explore our free planning tools <span aria-hidden="true">&rarr;</span></a></p>
 
-            <div class="blog-controls">
-                <div class="search-box">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                        <circle cx="11" cy="11" r="7"></circle>
-                        <path d="m20 20-3.5-3.5"></path>
-                    </svg>
-                    <input type="text" id="searchInput" placeholder="Search articles..." aria-label="Search articles">
+            <form class="blog-controls" id="blogSearchForm" role="search" aria-label="Blog articles">
+                <div class="blog-search-field">
+                    <label for="searchInput">Search articles</label>
+                    <div class="search-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <circle cx="11" cy="11" r="7"></circle>
+                            <path d="m20 20-3.5-3.5"></path>
+                        </svg>
+                        <input type="search" id="searchInput" placeholder="Try Halo Touch" autocomplete="off" enterkeyhint="search" maxlength="120" disabled>
+                        <button type="button" class="blog-search-clear" id="clearBlogSearch" aria-label="Clear article search" hidden>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                                <path d="m6 6 12 12M18 6 6 18"></path>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
-                <select class="category-select" id="categorySelect" aria-label="Filter articles by category">
+                <select class="category-select" id="categorySelect" aria-label="Filter articles by category" disabled>
                     <option value="all">All article topics</option>
                 </select>
-                <span id="postCount" class="post-count-compact" aria-live="polite"></span>
-                <a href="rss.xml" class="rss-link" aria-label="Subscribe to RSS feed">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                        <circle cx="5" cy="19" r="1"></circle>
-                        <path d="M4 11a9 9 0 0 1 9 9"></path>
-                        <path d="M4 4a16 16 0 0 1 16 16"></path>
-                    </svg>
-                    <span>RSS</span>
-                </a>
-            </div>
+            </form>
+            <p id="postCount" class="post-count-compact" role="status" aria-atomic="true"></p>
+            <noscript><p class="post-count-compact">Search requires JavaScript. You can still browse the guides below.</p></noscript>
 
-            <section class="popular-guides" aria-labelledby="popular-guides-title">
+            <section class="popular-guides" id="popularGuides" aria-labelledby="popular-guides-title">
                 <div class="popular-guides-header">
                     <div>
                         <h2 id="popular-guides-title">Popular guides readers choose</h2>
@@ -3447,9 +3566,23 @@
                 <p class="load-more-status" id="loadMoreStatus"></p>
             </div>
 
-            <div class="no-results hidden" id="noResults">
-                <h3>No articles found</h3>
-                <p>Try adjusting your search or filter criteria.</p>
+            <div class="no-results hidden" id="noResults" tabindex="-1">
+                <h2>No matching articles</h2>
+                <p>Try fewer words, a model name, or a different topic.</p>
+                <button type="button" class="load-more-button" id="resetBlogSearch">Clear search and filters</button>
+            </div>
+
+            <div class="blog-resource-links">
+                <p class="editorial-note"><span aria-hidden="true">✓</span> Field experience, official sources, and clear update standards. <a href="/editorial-policy/">How our guides are checked</a></p>
+                <p class="planning-entry">Planning a project? <a href="/planning/">Explore our free planning tools <span aria-hidden="true">&rarr;</span></a></p>
+                <a href="rss.xml" class="rss-link" aria-label="Subscribe to RSS feed">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <circle cx="5" cy="19" r="1"></circle>
+                        <path d="M4 11a9 9 0 0 1 9 9"></path>
+                        <path d="M4 4a16 16 0 0 1 16 16"></path>
+                    </svg>
+                    <span>RSS</span>
+                </a>
             </div>
 
             <section class="blog-discovery-footer" aria-labelledby="planning-links-title">
@@ -3489,10 +3622,12 @@
         </div>
     </main>
 
+    <script src="/assets/js/blog-search.js?v=20261114"></script>
     <script>
         // Load blog data
         let blogData = null;
         let filteredPosts = [];
+        let hasActiveFilters = false;
         const INITIAL_VISIBLE_POSTS = 15;
         const LOAD_MORE_STEP = 15;
         let visiblePostCount = INITIAL_VISIBLE_POSTS;
@@ -3538,29 +3673,33 @@
         }
 
         async function loadBlogData() {
+            const postCount = document.getElementById('postCount');
+            postCount.textContent = 'Loading article search…';
             try {
+                if (typeof window.DenaliBlogSearch?.search !== 'function') {
+                    throw new Error('Search could not load');
+                }
                 const response = await fetch('/blogs/blog-data.json', { cache: 'no-cache' });
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 blogData = await response.json();
-                if (!blogData || !blogData.posts || blogData.posts.length === 0) {
+                if (!Array.isArray(blogData?.posts) || blogData.posts.length === 0) {
                     throw new Error('No articles found in data');
                 }
                 initializeBlog();
             } catch (error) {
                 const grid = document.getElementById('blogGrid');
                 const staticCards = grid.querySelectorAll('.blog-card');
-                const postCount = document.getElementById('postCount');
-
                 // The crawlable HTML cards are also the resilient fallback when
                 // the JSON enhancement cannot load. Never replace useful content
                 // with an error-only state.
                 if (staticCards.length > 0) {
-                    if (postCount) postCount.textContent = `Showing all ${staticCards.length} articles`;
+                    postCount.textContent = `Search is unavailable. Browse all ${staticCards.length} articles below.`;
                     return;
                 }
 
+                postCount.textContent = '';
                 grid.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; padding: 3rem; color: var(--text-secondary);">Unable to load articles. Please refresh the page.</p>';
             }
         }
@@ -3568,9 +3707,7 @@
         function initializeBlog() {
             // Preserve recency while preventing one topic from crowding a row.
             blogData.posts = diversifyPosts(blogData.posts);
-            filteredPosts = [...blogData.posts];
             renderCategories();
-            renderPosts();
             setupEventListeners();
         }
 
@@ -3601,15 +3738,17 @@
             const remainingPosts = Math.max(filteredPosts.length - visiblePosts.length, 0);
 
             // Update post count display
-            if (postCount) {
-                postCount.textContent = `Showing ${visiblePosts.length} of ${filteredPosts.length} articles`;
-            }
+            postCount.textContent = hasActiveFilters && remainingPosts === 0
+                ? `${filteredPosts.length} matching article${filteredPosts.length === 1 ? '' : 's'}`
+                : `Showing ${visiblePosts.length} of ${filteredPosts.length} ${hasActiveFilters ? 'matches' : 'articles'}`;
 
+            grid.classList.toggle('is-filtered', hasActiveFilters);
+            document.getElementById('popularGuides').hidden = hasActiveFilters;
             if (filteredPosts.length === 0) {
                 grid.classList.add('hidden');
+                grid.replaceChildren();
                 noResults.classList.remove('hidden');
                 loadMore.hidden = true;
-                if (postCount) postCount.textContent = '';
                 return;
             }
 
@@ -3654,12 +3793,12 @@
                 <article class="blog-card${paginationClass}"${paginationState}>
                     <a class="blog-card-image-link" style="text-decoration: none; color: inherit; display: block;">
                         <div class="blog-image-wrapper">
-                            <img alt="${escapeHtml(post.title)}"${imageClass} loading="${loadingStrategy}" fetchpriority="${fetchPriority}" decoding="async" width="400" height="225" style="${imageStyle}" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #071525 0%, #102a46 100%)';">
+                            <img alt=""${imageClass} loading="${loadingStrategy}" fetchpriority="${fetchPriority}" decoding="async" width="400" height="225" style="${imageStyle}" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #071525 0%, #102a46 100%)';">
                         </div>
                     </a>
                     <div class="blog-card-content">
                         <div class="blog-card-meta">
-                            <span class="blog-card-category">${displayCategoryLabel(post.category)}</span>
+                            <span class="blog-card-category">${escapeHtml(displayCategoryLabel(post.category))}</span>
                             <span>${formatDate(post.publishedDate)}</span>
                         </div>
                         <h2 class="blog-card-title">
@@ -3677,6 +3816,8 @@
                 // never exposes template placeholders as crawlable addresses.
                 const card = template.content.firstElementChild;
                 card.querySelector('img').setAttribute('src', '/' + encodedImagePath);
+                card.querySelector('img').alt = post.title;
+                card.querySelector('.blog-card-link').setAttribute('aria-label', 'Read ' + post.title);
                 card.querySelectorAll('a').forEach(link => link.setAttribute('href', postUrl));
                 cards.appendChild(card);
             });
@@ -3699,55 +3840,87 @@
         }
 
         function setupEventListeners() {
+            const form = document.getElementById('blogSearchForm');
             const searchInput = document.getElementById('searchInput');
             const categorySelect = document.getElementById('categorySelect');
+            const clearButton = document.getElementById('clearBlogSearch');
+            const resetButton = document.getElementById('resetBlogSearch');
             const loadMoreButton = document.getElementById('loadMoreButton');
-            const applyFilters = () => filterPosts(categorySelect.value, searchInput.value);
+            const grid = document.getElementById('blogGrid');
+            let searchTimeout;
+
+            const applyFilters = () => {
+                clearTimeout(searchTimeout);
+                clearButton.hidden = searchInput.value.length === 0;
+                filterPosts(categorySelect.value, searchInput.value);
+            };
+
+            const queueSearch = () => {
+                clearButton.hidden = searchInput.value.length === 0;
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(applyFilters, 160);
+            };
+
+            const clearSearch = () => {
+                searchInput.value = '';
+                applyFilters();
+                searchInput.focus();
+            };
 
             categorySelect.addEventListener('change', applyFilters);
-
-            let searchTimeout;
-            searchInput.addEventListener('input', function() {
-                clearTimeout(searchTimeout);
-                searchTimeout = setTimeout(() => {
-                    applyFilters();
-                }, 300);
+            searchInput.addEventListener('input', event => {
+                if (!event.isComposing) queueSearch();
+            });
+            searchInput.addEventListener('compositionend', queueSearch);
+            clearButton.addEventListener('click', clearSearch);
+            searchInput.addEventListener('keydown', event => {
+                if (event.key === 'Escape' && !event.isComposing && searchInput.value) {
+                    event.preventDefault();
+                    clearSearch();
+                }
+            });
+            resetButton.addEventListener('click', () => {
+                categorySelect.value = 'all';
+                clearSearch();
+            });
+            form.addEventListener('submit', event => {
+                event.preventDefault();
+                applyFilters();
+                if (!hasActiveFilters) return;
+                const firstMatch = grid.querySelector('.blog-card-title a');
+                (firstMatch || document.getElementById('noResults')).focus();
             });
 
             loadMoreButton.addEventListener('click', function() {
+                const previousCount = visiblePostCount;
                 visiblePostCount += LOAD_MORE_STEP;
                 renderPosts();
+                grid.children[previousCount]?.querySelector('.blog-card-title a')?.focus();
             });
+
+            applyFilters();
+            searchInput.disabled = false;
+            categorySelect.disabled = false;
         }
 
         function filterPosts(category = null, searchQuery = '') {
             let posts = blogData.posts;
             visiblePostCount = INITIAL_VISIBLE_POSTS;
+            const query = searchQuery.trim();
+            const hasCategory = category && category !== 'all';
+            hasActiveFilters = Boolean(query || hasCategory);
 
             // Filter by category
-            if (category && category !== 'all') {
+            if (hasCategory) {
                 posts = posts.filter(post =>
                     post.category.toLowerCase().replace(/\s+/g, '-') === category
                 );
             }
 
-            // Filter by search query
-            if (searchQuery.trim()) {
-                const query = searchQuery.toLowerCase();
-                posts = posts.filter(post =>
-                    post.title.toLowerCase().includes(query) ||
-                    post.excerpt.toLowerCase().includes(query) ||
-                    post.category.toLowerCase().includes(query) ||
-                    post.author.toLowerCase().includes(query) ||
-                    post.tags.some(tag => tag.toLowerCase().includes(query))
-                );
-            }
-
-            // Category pages are naturally one topic, so keep them strictly
-            // chronological. The all-article and search views stay diversified.
-            filteredPosts = category && category !== 'all'
-                ? sortPostsByDate(posts)
-                : diversifyPosts(posts);
+            // Only browsing uses date/category ordering. Search uses relevance.
+            filteredPosts = query
+                ? window.DenaliBlogSearch.search(posts, query)
+                : hasCategory ? sortPostsByDate(posts) : posts;
             renderPosts();
         }
 

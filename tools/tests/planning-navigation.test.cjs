@@ -40,8 +40,8 @@ test('blog entry remains a crawlable link outside dynamic article filtering', ()
   const entry = html.match(/<p class="planning-entry">[\s\S]*?<\/p>/)?.[0];
   assert.ok(entry);
   assert.match(entry, /<a href="\/planning\/">Explore our free planning tools/);
-  assert.ok(html.indexOf(entry) < html.indexOf('<div class="blog-controls">'));
-  assert.ok(html.indexOf(entry) < html.indexOf('id="blogGrid"'));
+  assert.ok(html.indexOf(entry) > html.indexOf('id="blogLoadMore"'));
+  assert.match(html, /<div class="blog-resource-links">[\s\S]*?<p class="planning-entry">/);
 });
 
 test('shared header assets use the refreshed version on every tracked HTML page', () => {
