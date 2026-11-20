@@ -1368,7 +1368,7 @@
       "title": "Luxul Epic 5 Router and PoE Switch Setup for a Reliable Smart Home Network",
       "slug": "luxul-network-setup-guide",
       "url": "/blogs/luxul-network-setup-guide/",
-      "excerpt": "See how a clean Luxul router and PoE switch install improves reliability for Wi-Fi, cameras, AV, and smart home control systems.",
+      "excerpt": "See how clean Luxul router and PoE switch installation improves documentation and serviceability, and which limits still require testing.",
       "category": "Smart Home Guide",
       "tags": [
         "Luxul",
@@ -1669,7 +1669,7 @@
       "title": "Whole Home Audio Systems: Sonos vs Traditional Multi-Room Audio 2026",
       "slug": "whole-home-audio-sonos-vs-traditional",
       "url": "/blogs/whole-home-audio-sonos-vs-traditional/",
-      "excerpt": "Complete comparison of Sonos vs Traditional Multi-Room Audio systems. Learn the differences, pros, cons, costs, and which whole home audio system is right for your Chicago home. Practical guide from professional installers.",
+      "excerpt": "Compare Sonos room products with a centrally amplified wired system, including zoning, television audio, network dependence, wiring, serviceability, and expansion planning.",
       "category": "Buying Guide",
       "tags": [
         "Sonos",
@@ -1690,7 +1690,7 @@
       "title": "Lutron Smart Lighting: Complete Guide for Chicago Homes 2026",
       "slug": "lutron-smart-lighting-guide",
       "url": "/blogs/lutron-smart-lighting-guide/",
-      "excerpt": "Complete guide to Lutron smart lighting systems for Chicago homes. Learn about Lutron dimmers, switches, product lines (Caseta, RA2, RA3, HomeWorks), integration with Control4/URC, costs, and professional installation.",
+      "excerpt": "Compare current Lutron Caséta, RadioRA 3, and HomeWorks QSX lighting approaches, plus load compatibility, keypads, shades, integration, wiring, and legacy-system planning.",
       "category": "Smart Home Guide",
       "tags": [
         "Lutron",
@@ -1731,7 +1731,7 @@
       "title": "Smart Home Automation in Arlington Heights: Complete Guide 2026",
       "slug": "smart-home-automation-arlington-heights-guide",
       "url": "/blogs/smart-home-automation-arlington-heights-guide/",
-      "excerpt": "Complete guide to smart home automation in Arlington Heights, IL. Learn about costs, popular features, installation process, and choosing the right system for your Arlington Heights home. Free consultation available.",
+      "excerpt": "A practical guide to planning a reliable smart home in Arlington Heights: network, wiring, control, lighting, shades, audio/video, cameras, cost factors, and long-term service.",
       "category": "Smart Home Guide",
       "tags": [
         "Arlington Heights",
@@ -1891,7 +1891,7 @@
       "title": "How Much Does Smart Home Automation Cost? Complete Pricing Guide 2026",
       "slug": "how-much-does-smart-home-automation-cost",
       "url": "/blogs/how-much-does-smart-home-automation-cost/",
-      "excerpt": "Smart home automation costs explained. Get transparent pricing for WiFi systems ($2,000+), smart home packages ($8,000-$25,000), and home theaters ($15,000+). Free consultation available in Chicago.",
+      "excerpt": "See what drives the cost of home automation in Chicago, from Wi-Fi and wiring to equipment, installation, programming, and ongoing support.",
       "category": "Smart Home Guide",
       "tags": [
         "Smart Home Cost",
@@ -1932,7 +1932,7 @@
       "title": "Control4 SR-260 Remote Review: Complete Analysis",
       "slug": "control4-remote-review",
       "url": "/blogs/control4-remote-review/",
-      "excerpt": "Complete review of the Control4 SR-260 universal remote control. Learn about battery life, features, pros, cons, and whether the SR-260 is right for your smart home.",
+      "excerpt": "Review the legacy SR-260, its Zigbee and battery design, how it compares with NEEO and current Halo remotes, and what to verify before an upgrade.",
       "category": "Product Review",
       "tags": [
         "Control4",
@@ -1953,7 +1953,7 @@
       "title": "Control4 NEEO Remote Review: Sleek Design & Features",
       "slug": "control4-neeo-remote-review",
       "url": "/blogs/control4-neeo-remote-review/",
-      "excerpt": "Complete review of the Control4 NEEO remote control. Learn about battery life, features, pros, cons, and whether the NEEO is right for your smart home.",
+      "excerpt": "Review the legacy NEEO remote, its Wi-Fi, charging and battery limits, and what to verify before keeping it or moving to Halo.",
       "category": "Product Review",
       "tags": [
         "Control4",

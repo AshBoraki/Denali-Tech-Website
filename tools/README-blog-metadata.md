@@ -23,6 +23,6 @@ node tools/refresh-blog-metadata.mjs --write --modified-date=YYYY-MM-DD --modifi
 
 The explicit-date mode updates those article dates, visible updated labels, catalog dates, and the corresponding sitemap entries plus the blog hub. It does not re-date other articles or service pages. Ordinary read-time or catalog corrections do not change article publication or modification dates.
 
-Existing hub cards retain their markup and images; missing catalog articles receive a fallback card. RSS publication dates stay unchanged when existing articles are edited. New publications or changes to RSS titles/excerpts require a separate feed review.
+Edit card summaries in `blogs/blog-data.json`, then run the refresh in write mode to update the crawlable hub's excerpts. Existing hub cards retain their other markup and images; missing catalog articles receive a fallback card. RSS publication dates stay unchanged when existing articles are edited. New publications or changes to RSS titles/excerpts require a separate feed review.
 
 Always inspect the diff, run the checks, and verify the changed pages in the local preview before publishing. This script never deploys.

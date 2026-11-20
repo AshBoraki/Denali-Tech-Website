@@ -59,8 +59,27 @@ export function replaceReadLabel(html, minutes) {
   return html.replace(READ_LABEL, `${minutes} min read`);
 }
 
+const escape = text => String(text).replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
+const EXCERPT_ENTITIES = { amp: '&', quot: '"', apos: "'", lt: '<', gt: '>', nbsp: '\u00a0' };
+const STATIC_EXCERPT = /(<p class=["']blog-card-excerpt["']>)([^<]*)(<\/p>)/;
+
+export function syncStaticExcerpt(card, post) {
+  const match = card.match(STATIC_EXCERPT);
+  if (!match || typeof post.excerpt !== 'string' || !post.excerpt.trim()) {
+    throw new Error(`Missing blog card excerpt: ${post.slug}`);
+  }
+  const current = match[2].replace(/&(amp|quot|apos|lt|gt|nbsp|#\d+|#x[\da-f]+);/gi, (_, entity) => {
+    if (entity.startsWith('#')) {
+      const hex = entity[1].toLowerCase() === 'x';
+      return String.fromCodePoint(parseInt(entity.slice(hex ? 2 : 1), hex ? 16 : 10));
+    }
+    return EXCERPT_ENTITIES[entity.toLowerCase()];
+  });
+  if (current === post.excerpt) return card;
+  return card.replace(STATIC_EXCERPT, (_, start, old, end) => start + escape(post.excerpt) + end);
+}
+
 function staticCard(post) {
-  const escape = text => String(text).replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
   const date = new Date(`${post.publishedDate.slice(0, 10)}T12:00:00Z`).toLocaleDateString('en-US', { timeZone: 'UTC', month: 'long', day: 'numeric', year: 'numeric' });
   return `
                 <article class="blog-card">
@@ -126,7 +145,7 @@ export function planRefresh(root = DEFAULT_ROOT, options = {}) {
     if (!post) throw new Error(`Unknown static hub card: ${slug}`);
     if (seen.has(slug)) throw new Error(`Duplicate static hub card: ${slug}`);
     seen.add(slug);
-    return replaceReadLabel(card, post.readingTime);
+    return syncStaticExcerpt(replaceReadLabel(card, post.readingTime), post);
   });
   const missingCards = catalog.posts.filter(post => !seen.has(post.slug));
   if (missingCards.length) {

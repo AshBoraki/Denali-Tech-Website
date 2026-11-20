@@ -42,7 +42,7 @@ function buildNavigationForTest(legacyListener = false) {
     URL,
     navItems: [],
     projectPlanHref: '/contact/?source=site-navigation#booking',
-    version: 'test'
+    navigationLogo: '/Video/Denali-Tech-Logo-144.webp'
   });
   const button = header.children[0].children.at(-1);
   return { document, header, button, query, resize: () => breakpointListener() };
@@ -78,6 +78,13 @@ test('contact preference stays in natural keyboard order between location and se
   assert.ok(location > 0 && location < preference && preference < service);
   assert.doesNotMatch(html, /formSteps\.forEach/);
   assert.doesNotMatch(html, /lastField\?\.addEventListener\('keydown'/);
+});
+
+test('contact page offers a real call link before form entry', () => {
+  const html = read('contact/index.html');
+  const call = html.indexOf('<p class="contact-call-option"><a href="tel:+13124397500">');
+  assert.ok(call > html.indexOf('id="booking"') && call < html.indexOf('id="booking-form"'));
+  assert.match(html, /\.contact-call-option a\s*\{[^}]*min-height: 44px/);
 });
 
 test('network product visuals preserve the whole product rather than cover-cropping', () => {

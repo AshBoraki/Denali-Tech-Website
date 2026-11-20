@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  var version = "20260829a";
+  var navigationLogo = "/Video/Denali-Tech-Logo-144.webp";
   var projectPlanHref = "/contact/?source=site-navigation#booking";
   var phoneHref = "tel:+13124397500";
 
@@ -95,7 +95,7 @@
     var picture = document.createElement("picture");
     var img = document.createElement("img");
 
-    img.src = "/Video/Denali-Tech-Google-Logo-Final-Polished.png?v=" + version;
+    img.src = navigationLogo;
     img.alt = "Denali Tech";
     img.width = 48;
     img.height = 48;

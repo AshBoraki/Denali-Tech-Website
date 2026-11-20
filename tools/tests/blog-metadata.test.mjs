@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { createHash } from 'node:crypto';
-import { readingMinutes, articleDates, replaceReadLabel, setModifiedDate, planRefresh } from '../refresh-blog-metadata.mjs';
+import { readingMinutes, articleDates, replaceReadLabel, setModifiedDate, planRefresh, syncStaticExcerpt } from '../refresh-blog-metadata.mjs';
 
 test('reading estimate counts main prose and captions, excluding surrounding UI', () => {
   const html = `<nav>${'outside '.repeat(500)}</nav><main><div class="meta">${'byline '.repeat(500)}</div><p>${'word '.repeat(200)}</p><figure><figcaption>Caption</figcaption></figure><div class="blog-share"><a>Share</a></div><div class="related"><p>${'related '.repeat(500)}</p></div><script>${'script '.repeat(500)}</script></main>`;
@@ -24,11 +24,31 @@ test('explicit content date updates modified metadata and visible time but not p
   assert.equal(setModifiedDate(result, '2026-09-05'), result);
 });
 
-test('catalog, all article labels and static hub metadata remain synchronized', () => {
+test('catalog, article labels, and static hub metadata and excerpts remain synchronized', () => {
   const result = planRefresh();
   const catalog = JSON.parse(fs.readFileSync(new URL('../../blogs/blog-data.json', import.meta.url), 'utf8'));
   assert.equal(result.summaries.length, catalog.posts.length);
   assert.deepEqual([...result.changes.keys()], []);
+});
+
+test('refresh uses the catalog excerpt, preserves equal HTML entities, and does not alter links', () => {
+  const card = '<article class="blog-card"><a href="/blogs/demo/">Read</a><p class="blog-card-excerpt">Ash&#39;s Wi-Fi &amp; wiring.</p></article>';
+  const post = { slug: 'demo', excerpt: "Ash's Wi-Fi & wiring." };
+  assert.equal(syncStaticExcerpt(card, post), card);
+  const revised = { ...post, excerpt: 'What Wi-Fi & wiring need for <5 rooms.' };
+  assert.equal(syncStaticExcerpt(card, revised), card.replace('Ash&#39;s Wi-Fi &amp; wiring.', 'What Wi-Fi &amp; wiring need for &lt;5 rooms.'));
+  assert.throws(() => syncStaticExcerpt('<article></article>', post), /Missing blog card excerpt: demo/);
+});
+
+test('the pricing card and social snippets describe costs by scope without promising fixed pricing', () => {
+  const catalog = JSON.parse(fs.readFileSync(new URL('../../blogs/blog-data.json', import.meta.url), 'utf8'));
+  const post = catalog.posts.find(post => post.slug === 'how-much-does-smart-home-automation-cost');
+  assert.match(post.excerpt, /cost of home automation in Chicago/);
+  assert.doesNotMatch(post.excerpt, /\$|budget ranges|free consultation/i);
+  const page = fs.readFileSync(new URL(`../..${post.url}index.html`, import.meta.url), 'utf8');
+  for (const attribute of ['name="description"', 'property="og:description"', 'name="twitter:description"']) {
+    assert.ok(page.includes(`<meta ${attribute} content="${post.excerpt}">`), attribute);
+  }
 });
 
 test('blog skip link targets the current-page focusable main landmark', () => {

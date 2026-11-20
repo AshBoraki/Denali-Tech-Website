@@ -149,7 +149,7 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 
     <!-- Preload Critical Resources -->
-    <link rel="preload" href="/Video/Denali-Tech-Google-Logo-Final-Polished.png" as="image" type="image/png" fetchpriority="high">
+    <link rel="preload" href="/Video/Denali-Tech-Logo-144.webp" as="image" type="image/webp" fetchpriority="high">
     <link rel="preload" href="/Video/homepage/hero-poster-mobile-new-wrap.webp" as="image" type="image/webp" media="(max-width: 768px)" fetchpriority="high">
     <link rel="preload" href="/Video/homepage/hero-poster-desktop-new-wrap.webp" as="image" type="image/webp" media="(min-width: 769px)" fetchpriority="high">
 
@@ -579,7 +579,7 @@
     </script>
 <script src="assets/js/microsoft-uet.js" defer></script>
     <link rel="stylesheet" href="/assets/css/site-chrome.css?v=20261119-contact">
-    <script src="/assets/js/site-chrome.js?v=20261119-contact" defer></script>
+    <script src="/assets/js/site-chrome.js?v=20261119-compact-logo" defer></script>
 </head>
 <body class="dt-unified-chrome light-theme">
     <!-- Google Tag Manager (noscript) -->
@@ -700,7 +700,7 @@
             <nav class="nav">
                 <a href="/" class="logo" title="Denali Tech">
                     <picture>
-                        <img src="/Video/Denali-Tech-Google-Logo-Final-Polished.png" alt="Denali Tech Logo" onerror="this.style.display='none'" loading="eager" width="48" height="48" style="width: 48px; height: 48px; margin-right: 6px; object-fit: contain; object-position: center; border-radius: 10px;" fetchpriority="high">
+                        <img src="/Video/Denali-Tech-Logo-144.webp" alt="Denali Tech Logo" onerror="this.style.display='none'" loading="eager" width="48" height="48" style="width: 48px; height: 48px; margin-right: 6px; object-fit: contain; object-position: center; border-radius: 10px;" fetchpriority="high">
                     </picture>
                     <span class="logo-text">Denali Tech</span>
                 </a>
@@ -1524,7 +1524,7 @@
                 <div>
                     <p style="margin: 0 0 0.65rem; color: var(--accent-primary); font-size: 0.82rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;">Home Tech Plan</p>
                     <h2 id="offer-plan-heading" style="font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.05; margin: 0 0 1rem; color: var(--text-primary);">Start with a real plan.</h2>
-                    <p style="margin: 0; color: var(--text-secondary); font-size: 1.08rem; line-height: 1.7;">Photos first. We map what stays, what changes, and how the system should work. Then we install, test, and walk you through it.</p>
+                    <p style="margin: 0; color: var(--text-secondary); font-size: 1.08rem; line-height: 1.7;">Tell us what you’d like to change. We’ll ask for photos if they’d help, then map what stays, what changes, and how the system should work.</p>
                 </div>
                 <div class="offer-list" style="display: grid; gap: 1rem;">
                     <div style="display: grid; grid-template-columns: auto 1fr; gap: 0.85rem; align-items: start; padding-bottom: 1rem; border-bottom: 1px solid var(--border-color);">
@@ -1589,7 +1589,7 @@
                 </a>
                 <a href="/contact/" class="quick-help-card" style="display: block; padding: 1.2rem; border: 1px solid rgba(249,115,22,0.4); border-radius: 12px; background: rgba(249,115,22,0.12); color: var(--text-primary); text-decoration: none;">
                     <strong style="display: block; margin-bottom: 0.45rem; font-size: 1.05rem;">Not sure yet</strong>
-                    <span style="display: block; color: var(--text-secondary); line-height: 1.5;">Send a short note or photos. We will tell you the next step.</span>
+                    <span style="display: block; color: var(--text-secondary); line-height: 1.5;">Send a short note. We’ll help you decide what to do next.</span>
                 </a>
             </div>
             <p style="margin: 1rem 0 0; color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
@@ -1628,6 +1628,128 @@
                 .quick-help-grid {
                     grid-template-columns: 1fr !important;
                     gap: 0.8rem !important;
+                }
+            }
+        </style>
+    </section>
+
+    <!-- Featured Projects Showcase -->
+    <section class="featured-projects-section" style="padding: 88px 5%; background: var(--bg-color); position: relative; overflow: hidden;">
+        <div class="container">
+            <div class="section-header">
+                <h2>From our installations</h2>
+                <p>Wiring, outdoor WiFi, and rack work from our project videos.</p>
+            </div>
+            <div class="projects-showcase-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <a class="project-showcase-card" href="/projects/#structured-wiring-project" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; transition: all var(--transition);">
+                    <div class="project-image-wrapper" style="position: relative; width: 100%; padding-top: 75%; overflow: hidden; background: #000;">
+                        <picture>
+                            <img src="/Video/Project%20videos/rack-before-after.webp" alt="Structured wiring enclosure organized by Denali Tech" loading="lazy" decoding="async" width="1280" height="720" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain;">
+                        </picture>
+                        <div class="project-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7)); opacity: 0; transition: opacity 0.3s ease;"></div>
+                    </div>
+                    <div class="project-info util-p-1-5">
+                        <span style="display: inline-block; background: var(--accent-primary); color: white; padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.75rem;">Structured wiring</span>
+                        <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">From exposed wires to an organized panel</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">See the wiring before and after, with connections arranged for future service.</p>
+                    </div>
+                </a>
+                <a class="project-showcase-card" href="/projects/#outdoor-wifi-project" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; transition: all var(--transition);">
+                    <div class="project-image-wrapper" style="position: relative; width: 100%; padding-top: 75%; overflow: hidden; background: #000;">
+                        <picture>
+                            <img src="/Video/Project%20videos/araknis-outdoor-wifi.webp" alt="Araknis outdoor access point installed by Denali Tech" loading="lazy" decoding="async" width="1280" height="720" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain;">
+                        </picture>
+                        <div class="project-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7)); opacity: 0; transition: opacity 0.3s ease;"></div>
+                    </div>
+                    <div class="project-info util-p-1-5">
+                        <span style="display: inline-block; background: var(--accent-primary); color: white; padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.75rem;">Outdoor WiFi</span>
+                        <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">WiFi beyond the back door</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">A closer look at an outdoor access point and its installation.</p>
+                    </div>
+                </a>
+                <a class="project-showcase-card" href="/projects/#compact-rack-project" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; transition: all var(--transition);">
+                    <div class="project-image-wrapper" style="position: relative; width: 100%; padding-top: 75%; overflow: hidden; background: #000;">
+                        <picture>
+                            <img src="/Video/Project%20videos/sanus-15u-mini-rack.webp" alt="SANUS 15U home theater rack built by Denali Tech" loading="lazy" decoding="async" width="1280" height="720" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain;">
+                        </picture>
+                        <div class="project-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7)); opacity: 0; transition: opacity 0.3s ease;"></div>
+                    </div>
+                    <div class="project-info util-p-1-5">
+                        <span style="display: inline-block; background: var(--accent-primary); color: white; padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.75rem;">Compact rack</span>
+                        <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">A smaller rack, planned for service</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">See a compact theater rack with cabling and equipment brought together.</p>
+                    </div>
+                </a>
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="/projects/" class="btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 700;">View Projects &rarr;</a>
+            </div>
+        </div>
+        <style>
+            .project-showcase-card:focus {
+                outline: 3px solid var(--accent-primary);
+                outline-offset: 3px;
+            }
+            .featured-projects-section .projects-showcase-grid {
+                grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)) !important;
+                gap: 1rem !important;
+                margin-top: 2rem !important;
+            }
+            .featured-projects-section .project-showcase-card {
+                border-radius: 10px !important;
+                background: #fff !important;
+            }
+            .featured-projects-section .project-image-wrapper {
+                aspect-ratio: 16 / 10;
+                padding-top: 0 !important;
+            }
+            .featured-projects-section .project-image-wrapper img {
+                opacity: 1;
+            }
+            .featured-projects-section .project-info {
+                padding: 1rem !important;
+            }
+            .featured-projects-section .project-info h3 {
+                font-size: 1.08rem !important;
+                line-height: 1.2 !important;
+            }
+            .featured-projects-section .project-info p {
+                font-size: 0.9rem !important;
+                line-height: 1.45 !important;
+            }
+            @media (hover: hover) and (pointer: fine) {
+                .project-showcase-card:hover {
+                    transform: translateY(-8px);
+                    border-color: var(--accent-primary);
+                    box-shadow: var(--shadow-glow);
+                }
+                .project-showcase-card:hover .project-image-wrapper img {
+                    transform: scale(1.1);
+                }
+                .project-showcase-card:hover .project-overlay {
+                    opacity: 1;
+                }
+            }
+            @media (max-width: 768px) {
+                .featured-projects-section {
+                    padding: 56px 1rem !important;
+                }
+                .projects-showcase-grid {
+                    grid-template-columns: 1fr;
+                }
+                .project-showcase-card {
+                    margin-bottom: 1rem;
+                }
+            }
+            @media (prefers-reduced-motion: reduce) {
+                .hero-background-video {
+                    display: none !important;
+                }
+                .project-showcase-card {
+                    transition: none;
+                }
+                .project-showcase-card:hover {
+                    transform: none;
                 }
             }
         </style>
@@ -1725,137 +1847,6 @@
                     min-height: 0 !important;
                     object-fit: cover !important;
                     object-position: center !important;
-                }
-            }
-        </style>
-    </section>
-
-    <!-- Featured Projects Showcase -->
-    <section class="featured-projects-section" style="padding: 88px 5%; background: var(--bg-color); position: relative; overflow: hidden;">
-        <div class="container">
-            <div class="section-header" style="opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease;">
-                <h2>From our installations</h2>
-                <p>Wiring, outdoor WiFi, and rack work from our project videos.</p>
-            </div>
-            <script>
-                // Animate section header on load
-                document.addEventListener('DOMContentLoaded', function() {
-                    const header = document.querySelector('.featured-projects-section .section-header');
-                    if (header) {
-                        setTimeout(() => {
-                            header.style.opacity = '1';
-                            header.style.transform = 'translateY(0)';
-                        }, 300);
-                    }
-                });
-            </script>
-            <div class="projects-showcase-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-top: 3rem;">
-                <a class="project-showcase-card" href="/projects/#project-videos" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; transition: all var(--transition);">
-                    <div class="project-image-wrapper" style="position: relative; width: 100%; padding-top: 75%; overflow: hidden; background: #000;">
-                        <picture>
-                            <img src="/Video/Project%20videos/rack-before-after.webp" alt="Structured wiring enclosure organized by Denali Tech" loading="lazy" decoding="async" width="1280" height="720" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain;">
-                        </picture>
-                        <div class="project-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7)); opacity: 0; transition: opacity 0.3s ease;"></div>
-                    </div>
-                    <div class="project-info util-p-1-5">
-                        <span style="display: inline-block; background: var(--accent-primary); color: white; padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.75rem;">Structured wiring</span>
-                        <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">From exposed wires to an organized panel</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">See the wiring before and after, with connections arranged for future service.</p>
-                    </div>
-                </a>
-                <a class="project-showcase-card" href="/projects/#project-videos" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; transition: all var(--transition);">
-                    <div class="project-image-wrapper" style="position: relative; width: 100%; padding-top: 75%; overflow: hidden; background: #000;">
-                        <picture>
-                            <img src="/Video/Project%20videos/araknis-outdoor-wifi.webp" alt="Araknis outdoor access point installed by Denali Tech" loading="lazy" decoding="async" width="1280" height="720" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain;">
-                        </picture>
-                        <div class="project-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7)); opacity: 0; transition: opacity 0.3s ease;"></div>
-                    </div>
-                    <div class="project-info util-p-1-5">
-                        <span style="display: inline-block; background: var(--accent-primary); color: white; padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.75rem;">Outdoor WiFi</span>
-                        <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">WiFi beyond the back door</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">A closer look at an outdoor access point and its installation.</p>
-                    </div>
-                </a>
-                <a class="project-showcase-card" href="/projects/#project-videos" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; transition: all var(--transition);">
-                    <div class="project-image-wrapper" style="position: relative; width: 100%; padding-top: 75%; overflow: hidden; background: #000;">
-                        <picture>
-                            <img src="/Video/Project%20videos/sanus-15u-mini-rack.webp" alt="SANUS 15U home theater rack built by Denali Tech" loading="lazy" decoding="async" width="1280" height="720" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain;">
-                        </picture>
-                        <div class="project-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7)); opacity: 0; transition: opacity 0.3s ease;"></div>
-                    </div>
-                    <div class="project-info util-p-1-5">
-                        <span style="display: inline-block; background: var(--accent-primary); color: white; padding: 0.4rem 0.8rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.75rem;">Compact rack</span>
-                        <h3 style="font-family: var(--font-heading); font-size: 1.4rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem;">A smaller rack, planned for service</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">See a compact theater rack with cabling and equipment brought together.</p>
-                    </div>
-                </a>
-            </div>
-            <div style="text-align: center; margin-top: 3rem;">
-                <a href="/projects/" class="btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 700;">View Projects &rarr;</a>
-            </div>
-        </div>
-        <style>
-            .project-showcase-card:focus {
-                outline: 3px solid var(--accent-primary);
-                outline-offset: 3px;
-            }
-            .featured-projects-section .projects-showcase-grid {
-                grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)) !important;
-                gap: 1rem !important;
-                margin-top: 2rem !important;
-            }
-            .featured-projects-section .project-showcase-card {
-                border-radius: 10px !important;
-                background: #fff !important;
-            }
-            .featured-projects-section .project-image-wrapper {
-                aspect-ratio: 16 / 10;
-                padding-top: 0 !important;
-            }
-            .featured-projects-section .project-info {
-                padding: 1rem !important;
-            }
-            .featured-projects-section .project-info h3 {
-                font-size: 1.08rem !important;
-                line-height: 1.2 !important;
-            }
-            .featured-projects-section .project-info p {
-                font-size: 0.9rem !important;
-                line-height: 1.45 !important;
-            }
-            @media (hover: hover) and (pointer: fine) {
-                .project-showcase-card:hover {
-                    transform: translateY(-8px);
-                    border-color: var(--accent-primary);
-                    box-shadow: var(--shadow-glow);
-                }
-                .project-showcase-card:hover .project-image-wrapper img {
-                    transform: scale(1.1);
-                }
-                .project-showcase-card:hover .project-overlay {
-                    opacity: 1;
-                }
-            }
-            @media (max-width: 768px) {
-                .featured-projects-section {
-                    padding: 56px 1rem !important;
-                }
-                .projects-showcase-grid {
-                    grid-template-columns: 1fr;
-                }
-                .project-showcase-card {
-                    margin-bottom: 1rem;
-                }
-            }
-            @media (prefers-reduced-motion: reduce) {
-                .hero-background-video {
-                    display: none !important;
-                }
-                .project-showcase-card {
-                    transition: none;
-                }
-                .project-showcase-card:hover {
-                    transform: none;
                 }
             }
         </style>
@@ -2132,7 +2123,7 @@
         .dt-unified-chrome main#main-content > .quick-help-section { order: 30; }
         .dt-unified-chrome main#main-content > .homepage-control4-section { order: 40; }
         .dt-unified-chrome main#main-content > .homepage-guides-section { order: 15; }
-        .dt-unified-chrome main#main-content > .featured-projects-section { order: 60; }
+        .dt-unified-chrome main#main-content > .featured-projects-section { order: 35; }
         .dt-unified-chrome main#main-content > .process-section { order: 70; }
         .dt-unified-chrome main#main-content > .services { order: 75; }
         .dt-unified-chrome main#main-content > .brands-showcase-section { order: 80; }

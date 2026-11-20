@@ -280,7 +280,8 @@ test('Projects does not move focus when the poster did not own keyboard focus', 
 const seoBaseline = [
   ['Control4', c4, '/control4-installer-chicago/', 'b5a60ddaf5400f8852c57953b831c6faa865c0ff9e680980b45ac0444c767e01'],
   ['Projects', projects, '/projects/', 'fcf57edae56685c99836a6fb975bc6bd24c8a5b6009e0a989a8e2fb6eaf36f41'],
-  ['Home theater', theater, '/home-theater-room/', '6e8094805b0c7a3168471f89e45a348ab535bc804cf14007f69984696a772846']
+  // The photo-intake review updated just the structured FAQ answer to match visible copy.
+  ['Home theater', theater, '/home-theater-room/', '66dedef8219265877436a2f24cd604a2b61e754e4f4a676e1c4a25ed7594734e']
 ];
 
 for (const [name, html, pathname, expected] of seoBaseline) {

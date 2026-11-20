@@ -5,12 +5,12 @@ const path = require('node:path');
 const root = path.resolve(__dirname, '../..');
 const html = fs.readFileSync(path.join(root, 'projects/index.html'), 'utf8');
 const collection = html.slice(html.indexOf('<div class="project-video-collection"'), html.indexOf('<!-- FILTER SECTION -->'));
-const cards = [...collection.matchAll(/<article class="project-video-card">([\s\S]*?)<\/article>/g)].map(m => m[1]);
+const cards = [...collection.matchAll(/<article class="project-video-card"[^>]*>([\s\S]*?)<\/article>/g)].map(m => m[1]);
 
 test('all four supporting video cards have concise balanced copy and a relevant guide', () => {
   assert.equal(cards.length, 4);
   for (const card of cards) {
-    assert.equal((card.match(/<h3>/g) || []).length, 1);
+    assert.equal((card.match(/<h3\b[^>]*>/g) || []).length, 1);
     const paragraphs = [...card.matchAll(/<p>([^<]+)<\/p>/g)];
     assert.equal(paragraphs.length, 1);
     const words = paragraphs[0][1].trim().split(/\s+/).length;
@@ -40,4 +40,22 @@ test('card layout aligns links without truncating the descriptions', () => {
   assert.match(html, /\.project-video-collection \.video-card-copy\s*\{[^}]*flex:\s*1;/);
   assert.match(html, /\.project-video-collection \.video-card-link\s*\{[^}]*min-height:\s*44px;[^}]*margin-top:\s*auto;/);
   assert.doesNotMatch(collection, /line-clamp|text-overflow/);
+});
+
+test('the three homepage projects have a focusable anchor on the matching video card', () => {
+  const destinations = {
+    'structured-wiring-project': 'c1XsFCtvaUI',
+    'outdoor-wifi-project': 'oZtPCCqB3I4',
+    'compact-rack-project': 'VUuqk9xgQ98'
+  };
+  for (const [id, video] of Object.entries(destinations)) {
+    const marker = `id="${id}"`;
+    assert.equal(html.split(marker).length - 1, 1);
+    const cardStart = html.lastIndexOf('<article', html.indexOf(marker));
+    const card = html.slice(cardStart, html.indexOf('</article>', cardStart));
+    assert.ok(card.startsWith(`<article class="project-video-card" id="${id}" tabindex="-1" aria-labelledby="${id}-title">`));
+    assert.ok(card.includes(`<h3 id="${id}-title">`));
+    assert.ok(card.includes(`data-video-id="${video}"`));
+  }
+  assert.match(html, /\.project-video-card\[id\]\s*\{[^}]*scroll-margin-top:\s*calc\(var\(--header-height, 90px\) \+ 2rem\)/);
 });

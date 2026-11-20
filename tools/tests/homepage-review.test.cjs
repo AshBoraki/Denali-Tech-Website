@@ -29,14 +29,24 @@ test('Featured Connect guide follows the hero in both DOM and visual order', () 
   assert.match(html, /href="\/blogs\/control4-connect-subscription-guide\/"/);
 });
 
+test('Homepage and About invite project details first and ask for photos only when helpful', () => {
+  const about = fs.readFileSync(path.join(root, 'about/index.html'), 'utf8');
+  assert.doesNotMatch(html, /Photos first|Send a short note or photos/);
+  assert.doesNotMatch(about, /Send the problem, the room, and a few photos/);
+  assert.match(html, /ask for photos if they’d help/);
+  assert.match(about, /ask for photos if they’d help/);
+});
+
 test('Installation cards use existing Denali project-video frames and native crawlable links', () => {
   const section = html.slice(html.indexOf('<!-- Featured Projects Showcase -->'), html.indexOf('<!-- Services Section -->'));
   const cards = [...section.matchAll(/<a class="project-showcase-card" href="([^"]+)"[\s\S]*?<\/a>/g)];
   assert.equal(cards.length, 3);
   const projects = fs.readFileSync(path.join(root, 'projects/index.html'), 'utf8');
   assert.match(projects, /id="project-videos"/);
-  for (const card of cards) {
-    assert.equal(card[1], '/projects/#project-videos');
+  const anchors = ['structured-wiring-project', 'outdoor-wifi-project', 'compact-rack-project'];
+  for (const [index, card] of cards.entries()) {
+    assert.equal(card[1], '/projects/#' + anchors[index]);
+    assert.equal(projects.split('id="' + anchors[index] + '"').length, 2);
     const src = card[0].match(/<img src="([^"]+)"/)[1];
     assert.ok(fs.existsSync(path.join(root, decodeURIComponent(src))));
     assert.ok(projects.includes(src));
@@ -47,6 +57,12 @@ test('Installation cards use existing Denali project-video frames and native cra
   assert.match(html, /Control4 manufacturer images\. See our installations below/);
   assert.match(html, /control4-countertop-remote\.webp 1800w/);
   assert.match(html, /control4-kitchen-lighting-scene\.webp 1800w/);
+});
+
+test('real project proof comes before manufacturer examples in both markup and visual order', () => {
+  assert.ok(html.indexOf('<!-- Featured Projects Showcase -->') < html.indexOf('<!-- Control4 dealer support visual callout -->'));
+  assert.match(html, /\.featured-projects-section \{ order: 35; \}/);
+  assert.match(html, /\.homepage-control4-section \{ order: 40; \}/);
 });
 
 test('Homepage media keeps full subjects and mobile projects do not depend on a sideways gesture', () => {

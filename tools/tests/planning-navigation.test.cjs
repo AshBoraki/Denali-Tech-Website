@@ -49,12 +49,25 @@ test('shared header assets use the refreshed version on every tracked HTML page'
   let count = 0;
   for (const file of files) {
     for (const match of read(file).matchAll(/(?:src|href)=["']([^"']*assets\/(?:js\/site-chrome\.js|css\/site-chrome\.css)[^"']*)["']/g)) {
-      const version = '20261119-contact';
+      const version = match[1].includes('/js/') ? '20261119-compact-logo' : '20261119-contact';
       assert.ok(match[1].endsWith('?v=' + version), file + ': ' + match[1]);
       count++;
     }
   }
   assert.ok(count > 100, 'Verify the shared assets site-wide, not only the blog hub');
+});
+
+test('the navigation and its preloaded fallback use one lightweight logo asset', () => {
+  const logo = '/Video/Denali-Tech-Logo-144.webp';
+  const original = '/Video/Denali-Tech-Google-Logo-Final-Polished.png';
+  const chrome = read('assets/js/site-chrome.js');
+  const home = read('index.html');
+  assert.ok(chrome.includes(`var navigationLogo = "${logo}"`));
+  assert.match(chrome, /img\.src = navigationLogo/);
+  assert.ok(home.includes(`rel="preload" href="${logo}" as="image" type="image/webp"`));
+  assert.ok(home.includes(`<img src="${logo}"`));
+  assert.ok(home.includes(`"logo": "https://denalitechs.com${original}"`));
+  assert.ok(fs.statSync(path.join(root, logo.slice(1))).size < 20000);
 });
 
 test('the website contact journey no longer advertises WhatsApp', () => {

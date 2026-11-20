@@ -778,8 +778,13 @@
             box-shadow: 0 18px 48px rgba(0, 0, 0, 0.24);
         }
 
-        #glenn-control4-theater {
+        .project-video-card[id] {
             scroll-margin-top: calc(var(--header-height, 90px) + 2rem);
+        }
+
+        .project-video-card[tabindex="-1"]:target {
+            outline: 3px solid #f97316;
+            outline-offset: -3px;
         }
 
         .video-poster,
@@ -1825,7 +1830,7 @@
 
 <script src="../assets/js/microsoft-uet.js" defer></script>
     <link rel="stylesheet" href="/assets/css/site-chrome.css?v=20261119-contact">
-    <script src="/assets/js/site-chrome.js?v=20261119-contact" defer></script>
+    <script src="/assets/js/site-chrome.js?v=20261119-compact-logo" defer></script>
 </head>
 
 <body>
@@ -1845,8 +1850,7 @@
             <nav class="nav">
                 <a href="/" class="logo" title="Denali Tech">
                     <picture>
-                        <source srcset="../Video/logo.webp" type="image/webp">
-                        <img src="/Video/Denali-Tech-Google-Logo-Final-Polished.png" alt="Denali Tech Logo" onerror="this.style.display='none'" loading="eager" width="48" height="48" style="width: 48px; height: 48px; margin-right: 6px; object-fit: contain; object-position: center; border-radius: 10px;">
+                        <img src="/Video/Denali-Tech-Logo-144.webp" alt="Denali Tech Logo" onerror="this.style.display='none'" loading="eager" width="48" height="48" style="width: 48px; height: 48px; margin-right: 6px; object-fit: contain; object-position: center; border-radius: 10px;">
                     </picture>
                     <span class="logo-text">Denali Tech</span>
                 </a>
@@ -1922,7 +1926,7 @@
                     </div>
                 </article>
 
-                <article class="project-video-card">
+                <article class="project-video-card" id="structured-wiring-project" tabindex="-1" aria-labelledby="structured-wiring-project-title">
                     <a class="video-poster" href="https://www.youtube.com/shorts/c1XsFCtvaUI" target="_blank" rel="noopener noreferrer" data-video-id="c1XsFCtvaUI" data-video-title="Structured wiring before and after">
                         <img src="/Video/Project%20videos/rack-before-after.webp" alt="Organized Wirepath structured wiring enclosure completed by Denali Tech" loading="lazy" width="1280" height="720">
                         <span class="video-play-button" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
@@ -1930,7 +1934,7 @@
                     </a>
                     <div class="video-card-copy">
                         <span class="video-card-kicker">Before &amp; after</span>
-                        <h3>From exposed wiring to one organized system</h3>
+                        <h3 id="structured-wiring-project-title">From exposed wiring to one organized system</h3>
                         <p>A structured panel gives the home's network, control, and low-voltage wiring a clean foundation that is easier to understand and service.</p>
                         <a class="video-card-link" href="/blogs/wirepath-structured-wiring-prewire-guide/">See how we plan structured wiring</a>
                     </div>
@@ -1965,7 +1969,7 @@
             </div>
 
             <div class="project-video-collection" aria-label="More Denali Tech project videos">
-                <article class="project-video-card">
+                <article class="project-video-card" id="outdoor-wifi-project" tabindex="-1" aria-labelledby="outdoor-wifi-project-title">
                     <a class="video-poster" href="https://www.youtube.com/shorts/oZtPCCqB3I4" target="_blank" rel="noopener noreferrer" data-video-id="oZtPCCqB3I4" data-video-title="Araknis outdoor WiFi access point installation">
                         <img src="/Video/Project%20videos/araknis-outdoor-wifi.webp" alt="Araknis outdoor WiFi access point mounted by Denali Tech" loading="lazy" width="1280" height="720">
                         <span class="video-play-button" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
@@ -1973,13 +1977,13 @@
                     </a>
                     <div class="video-card-copy">
                         <span class="video-card-kicker">Outdoor WiFi</span>
-                        <h3>Coverage designed beyond the back door</h3>
+                        <h3 id="outdoor-wifi-project-title">Coverage designed beyond the back door</h3>
                         <p>An outdoor Araknis access point brings WiFi beyond the house, where indoor coverage may not reach.</p>
                         <a class="video-card-link" href="/blogs/araknis-access-point-model-comparison/">Compare access points</a>
                     </div>
                 </article>
 
-                <article class="project-video-card">
+                <article class="project-video-card" id="compact-rack-project" tabindex="-1" aria-labelledby="compact-rack-project-title">
                     <a class="video-poster" href="https://www.youtube.com/watch?v=VUuqk9xgQ98" target="_blank" rel="noopener noreferrer" data-video-id="VUuqk9xgQ98" data-video-title="SANUS 15U mini AV rack build">
                         <img src="/Video/Project%20videos/sanus-15u-mini-rack.webp" alt="Compact SANUS 15U home theater rack built by Denali Tech" loading="lazy" width="1280" height="720">
                         <span class="video-play-button" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
@@ -1987,7 +1991,7 @@
                     </a>
                     <div class="video-card-copy">
                         <span class="video-card-kicker">Compact rack</span>
-                        <h3>A clean 15U rack for a smaller system</h3>
+                        <h3 id="compact-rack-project-title">A clean 15U rack for a smaller system</h3>
                         <p>A compact SANUS rack brings theater equipment together, with space planned for cabling, airflow, and future service.</p>
                         <a class="video-card-link" href="/blogs/sanus-15u-mini-rack-guide/">15U rack guide</a>
                     </div>
