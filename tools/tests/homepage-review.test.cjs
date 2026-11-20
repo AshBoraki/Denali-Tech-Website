@@ -12,12 +12,12 @@ test('Homepage keeps its search identity, primary choices and established busine
   assert.match(html, /name="robots" content="index, follow/);
   assert.equal([...html.matchAll(/<h1[ >]/g)].length, 1);
   const hero = html.slice(html.indexOf('<div class="hero-content">'), html.indexOf('<section class="homepage-guides-section"'));
-  assert.match(hero, /href="\/contact\/" class="btn-primary">Start a home tech plan/);
+  assert.match(hero, /href="\/contact\/\?source=homepage-hero#booking" class="btn-primary">Tell us about your project/);
   assert.match(hero, /href="\/blogs\/" class="btn-secondary">Read the guides/);
   assert.match(hero, /Control4 \/ URC Authorized Dealer/);
   assert.match(hero, /5\.0 Google rating\. 100\+ homes served/);
   assert.match(hero, /tel:\+13124397500/);
-  assert.match(hero, /https:\/\/wa\.me\/13124397500/);
+  assert.doesNotMatch(hero, /whatsapp|wa\.me/i);
   assert.doesNotMatch(html, /<form\b/i);
 });
 

@@ -90,7 +90,7 @@
     var result = {};
     if (formIds.indexOf(details.form_id) !== -1) result.form_id = details.form_id;
     if (leadTypes.indexOf(details.lead_type) !== -1) result.lead_type = details.lead_type;
-    if (['whatsapp', 'email', 'phone', 'form'].indexOf(details.contact_method) !== -1) result.contact_method = details.contact_method;
+    if (['email', 'phone', 'form'].indexOf(details.contact_method) !== -1) result.contact_method = details.contact_method;
     if (['validation', 'captcha', 'rate_limit', 'provider', 'network', 'timeout'].indexOf(details.reason) !== -1) result.reason = details.reason;
     return result;
   }
@@ -184,7 +184,7 @@
         return { success: true, submission_id: id };
       }
       track('form_submit_failure', Object.assign({}, details, { reason: 'provider' }));
-      return { success: false, message: 'We could not send your request. Please try again or message us on WhatsApp.' };
+      return { success: false, message: 'We could not send your request. Please try again.' };
     } catch (error) {
       var timeout = error && error.name === 'AbortError';
       track('form_submit_failure', Object.assign({}, details, { reason: timeout ? 'timeout' : 'network' }));
@@ -215,7 +215,7 @@
     if (!link) return;
     try {
       var url = new URL(link.href, w.location.origin);
-      var method = url.protocol === 'mailto:' ? 'email' : url.protocol === 'tel:' ? 'phone' : url.hostname === 'wa.me' ? 'whatsapp' : url.origin === w.location.origin && /^\/contact\/?$/.test(url.pathname) ? 'form' : '';
+      var method = url.protocol === 'mailto:' ? 'email' : url.protocol === 'tel:' ? 'phone' : url.origin === w.location.origin && /^\/contact\/?$/.test(url.pathname) ? 'form' : '';
       if (method) track('contact_intent', { contact_method: method });
     } catch (error) { /* Ignore unsupported links. */ }
   });

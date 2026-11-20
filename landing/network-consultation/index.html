@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <script src="/assets/js/microsoft-clarity.js" defer></script>
-  <script src="/assets/js/inquiry-support.js?v=20260905" defer></script>
+  <script src="/assets/js/inquiry-support.js?v=20261119-contact" defer></script>
   <script src="/assets/js/public-analytics.js?v=20260906" defer></script>
   <meta name="facebook-pixel-id" content="1475625250840344">
   <script>
@@ -310,24 +310,25 @@
       box-shadow: 0 8px 18px rgba(13, 89, 216, 0.28);
     }
 
-    .btn-primary:hover,
-    .btn-primary:focus-visible {
+    .btn-primary:hover {
       background: var(--primary-hover);
-      outline: none;
       transform: translateY(-1px);
     }
 
     .btn-outline {
-      color: #25d366;
-      background: rgba(37, 211, 102, 0.1);
-      border: 1px solid rgba(37, 211, 102, 0.3);
+      color: #174571;
+      background: var(--surface);
+      border: 1px solid #afc4dc;
     }
 
-    .btn-outline:hover,
-    .btn-outline:focus-visible {
-      background: rgba(37, 211, 102, 0.18);
-      outline: none;
+    .btn-outline:hover {
+      background: #edf3fb;
       transform: translateY(-1px);
+    }
+
+    .btn:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 3px;
     }
 
     .cta-row {
@@ -554,6 +555,7 @@
 
     .form-message.success { color: var(--success); }
     .form-message.error { color: var(--danger); }
+    .form-message a { color: inherit; text-decoration: underline; }
 
     .urgency {
       padding-top: 24px;
@@ -657,9 +659,8 @@
             <div class="hero-detail">Smart-home focused</div>
           </div>
           <div class="cta-row" aria-label="Primary actions">
-            <a class="btn btn-primary denali-contact-track" data-contact-method="whatsapp_landing_hero" href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20want%20help%20with%20my%20whole-home%20WiFi%20or%20smart%20home%20network." target="_blank" rel="noopener noreferrer">Message on WhatsApp</a>
-            <a class="btn btn-outline denali-contact-track" data-contact-method="email_landing_hero" href="mailto:services@denalitechs.com?subject=Whole-home%20WiFi%20or%20smart%20home%20network%20help&body=Hi%20Denali%20Tech%2C%0A%0AI%20want%20help%20with%3A%0AMy%20home%20or%20business%20is%20in%3A%0ABest%20way%20to%20reach%20me%3A">Email Project Details</a>
-            <a class="btn btn-outline denali-contact-track" data-contact-method="form_landing_hero" href="#consultation-form">Describe Your Project</a>
+            <a class="btn btn-primary denali-contact-track" data-contact-method="form_landing_hero" href="#consultation-form">Describe Your Project</a>
+            <a class="btn btn-outline denali-contact-track" data-contact-method="phone_landing_hero" href="tel:+13124397500">Call (312) 439-7500</a>
           </div>
           <div class="hero-value" aria-label="What you get with Denali Tech">
             <h3>What You Get</h3>
@@ -692,7 +693,7 @@
           <div class="form-top">
             <div class="form-eyebrow">Plan Request</div>
             <h2 id="form-title">Tell Us What Is Going Wrong</h2>
-            <p>Leave your name and the best way to reach you. WhatsApp, text, or email is fine; a call can come later only if it helps.</p>
+            <p>Leave your name and tell us how you prefer to hear back: by text, email, or phone.</p>
             <div class="form-trust" aria-label="Form reassurance">
               <div>Fast response from Denali Tech</div>
               <div>A call only if it helps</div>
@@ -728,22 +729,21 @@
               </div>
 
               <div class="field">
-                <label for="phone">Phone or WhatsApp number</label>
+                <label for="phone">Phone number</label>
                 <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="Optional if you prefer email">
                 <span class="field-error" id="phone-error" role="alert"></span>
               </div>
 
               <div class="field">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" autocomplete="email" placeholder="Optional if you prefer WhatsApp/text">
+                <input type="email" id="email" name="email" autocomplete="email" placeholder="Optional if you prefer text or a call">
                 <span class="field-error" id="email-error" role="alert"></span>
               </div>
 
               <div class="field">
                 <label for="contact-preference">Best way to reach you</label>
                 <select id="contact-preference" name="contact_preference">
-                  <option value="WhatsApp or Text">WhatsApp or text</option>
-                  <option value="Text">Text</option>
+                  <option value="Text">Text message</option>
                   <option value="Email">Email</option>
                   <option value="Call">Call if needed</option>
                 </select>
@@ -882,6 +882,15 @@
         formMessage.className = 'form-message ' + (isError ? 'error' : 'success');
       }
 
+      function setSubmissionError(message) {
+        setMessage(message + ' You can also ', true);
+        var phoneLink = document.createElement('a');
+        phoneLink.href = 'tel:+13124397500';
+        phoneLink.textContent = 'call (312) 439-7500';
+        formMessage.appendChild(phoneLink);
+        formMessage.appendChild(document.createTextNode('.'));
+      }
+
       function validEmail(email) {
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
       }
@@ -948,8 +957,8 @@
         }
 
         if (!fields.phone.value.trim() && !fields.email.value.trim()) {
-          setError('phone-error', 'Please enter a phone/WhatsApp number or an email.');
-          setError('email-error', 'Please enter an email or a phone/WhatsApp number.');
+          setError('phone-error', 'Please enter a phone number or an email.');
+          setError('email-error', 'Please enter an email or a phone number.');
           ok = false;
         } else if (fields.phone.value.trim() && !validPhone(fields.phone.value)) {
           setError('phone-error', 'Please enter a valid phone number.');
@@ -967,7 +976,7 @@
         }
 
         if (fields.contactPreference && fields.contactPreference.value !== 'Email' && !fields.phone.value.trim()) {
-          setError('phone-error', 'Please enter your phone or WhatsApp number for text or WhatsApp replies.');
+          setError('phone-error', 'Please enter a phone number if you want a text or call.');
           ok = false;
         }
 
@@ -1017,11 +1026,11 @@
             setMessage('Thanks. Redirecting...', false);
             window.location.href = form.querySelector('[name="redirect"]').value;
           } else {
-            setMessage(data.message || 'Something went wrong. Please try again.', true);
+            setSubmissionError(data.message || 'We could not send your request. Please try again.');
             submitBtn.disabled = false;
           }
         } catch (error) {
-          setMessage(error.name === 'AbortError' ? 'The request timed out. Please try again or message us on WhatsApp.' : 'We could not send your request. Please check your connection, or message us on WhatsApp.', true);
+          setSubmissionError(error.name === 'AbortError' ? 'The request timed out. Please try again.' : 'We could not send your request. Please check your connection and try again.');
           submitBtn.disabled = false;
         } finally {
           submitting = false;

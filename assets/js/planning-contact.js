@@ -14,7 +14,7 @@
     phone.required = false; phone.setAttribute('aria-required', 'false');
     phone.setAttribute('data-planner-optional-phone', 'true');
     const phoneLabel = document.querySelector('label[for="booking-phone"]');
-    if (phoneLabel) phoneLabel.textContent = 'Phone / WhatsApp (optional)';
+    if (phoneLabel) phoneLabel.textContent = 'Phone number (optional)';
     const banner = document.createElement('div'); banner.setAttribute('data-clarity-mask', 'true');
     banner.style.cssText = 'padding:16px 18px;margin:0 0 24px;border:1px solid #c8d9d0;border-radius:10px;background:#eff6f1;color:#173c28;line-height:1.6;font-size:15px';
     const text = document.createElement('p'); text.style.margin = '0'; banner.append(text);

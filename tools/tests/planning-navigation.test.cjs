@@ -49,10 +49,25 @@ test('shared header assets use the refreshed version on every tracked HTML page'
   let count = 0;
   for (const file of files) {
     for (const match of read(file).matchAll(/(?:src|href)=["']([^"']*assets\/(?:js\/site-chrome\.js|css\/site-chrome\.css)[^"']*)["']/g)) {
-      const version = match[1].includes('/js/') ? '20260918-planning-footer' : '20260917-planning-nav';
+      const version = '20261119-contact';
       assert.ok(match[1].endsWith('?v=' + version), file + ': ' + match[1]);
       count++;
     }
   }
   assert.ok(count > 100, 'Verify the shared assets site-wide, not only the blog hub');
+});
+
+test('the website contact journey no longer advertises WhatsApp', () => {
+  const publicFiles = cp.execFileSync('git', [
+    'ls-files', '-z', '*.html', 'assets/*.js', 'assets/*.css', '*.vcf', '*.xml', 'blogs/*.json', '.well-known/*.json',
+  ], { cwd: root, encoding: 'utf8' }).split('\0').filter(file => file && !file.startsWith('tools/'));
+  for (const file of publicFiles) {
+    assert.doesNotMatch(read(file), /whatsapp|\bwa\.me\b/i, file);
+  }
+  const home = read('index.html');
+  const footer = read('assets/js/site-chrome.js');
+  assert.match(home, /href="\/contact\/\?source=homepage-hero#booking" class="btn-primary">Tell us about your project/);
+  assert.match(home, /<div class="hero-contact-options"[^>]*>\s*<a href="tel:\+13124397500">Call \(312\) 439-7500/);
+  assert.match(footer, /var phoneHref = "tel:\+13124397500"/);
+  assert.match(footer, /call\.href = phoneHref/);
 });

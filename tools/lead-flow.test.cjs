@@ -231,7 +231,7 @@ test('contact clicks are intent only and initialization does not duplicate liste
     env.events.document.click[0]({ target: { closest: () => ({ href }) } });
   }
   assert.equal(env.leadEvents().length, 0);
-  assert.equal(env.window.dataLayer.filter(value => value.event === 'denali_contact_intent').length, 4);
+  assert.deepEqual(env.window.dataLayer.filter(value => value.event === 'denali_contact_intent').map(value => value.contact_method), ['email', 'phone', 'form']);
   assert.ok(!JSON.stringify(env.window.dataLayer).includes('Private'));
 });
 
@@ -380,7 +380,7 @@ for (const failure of ['provider', 'network']) {
       return { ok: true, json: async () => ({ success: true }) };
     } });
     env.window.location = { href: env.window.location.href, origin: env.window.location.origin, hostname: env.window.location.hostname, search: env.window.location.search };
-    const messages = [], results = [], token = { value: 'offline-captcha-token' };
+    const messages = [], recoveryLinks = [], results = [], token = { value: 'offline-captcha-token' };
     const captchaError = domNode();
     env.window.hcaptcha = { reset() { captchaResets += 1; } };
     const buttonText = { textContent: 'Send Project Details' }, buttonLoader = { style: {} };
@@ -398,7 +398,13 @@ for (const failure of ['provider', 'network']) {
         return null;
       }
     });
-    const messageDiv = { textContent: '', style: {}, appendChild: node => messages.push(node.textContent), scrollIntoView() {} };
+    const messageDiv = {
+      textContent: '', style: {}, scrollIntoView() {},
+      appendChild(node) {
+        messages.push(node.textContent);
+        recoveryLinks.push(...node.children.filter(child => child.tagName === 'A'));
+      }
+    };
     env.document.createElement = tag => domNode(tag);
     env.document.createTextNode = text => ({ textContent: text });
     env.document.getElementById = id => id === 'captcha-error' ? captchaError : null;
@@ -438,9 +444,26 @@ for (const failure of ['provider', 'network']) {
     assert.equal(results.at(-1), true);
     assert.equal(captchaError.getAttribute('aria-hidden'), 'true', 'fresh verification clears stale CAPTCHA errors');
     assert.equal(captchaError.textContent, '');
-    assert.ok(messages.some(message => message.includes('Message us on WhatsApp') && message.includes('call (312) 439-7500')));
+    assert.ok(messages.some(message => message.includes('call (312) 439-7500')));
+    assert.equal(recoveryLinks.length, 3);
+    assert.ok(recoveryLinks.every(link => link.href === 'tel:+13124397500'));
   });
 }
+
+test('landing form failure offers the phone link without changing the submission', () => {
+  const env = environment();
+  const formMessage = domNode();
+  env.document.createElement = tag => domNode(tag);
+  env.document.createTextNode = text => ({ textContent: text });
+  Object.assign(env.context, { formMessage });
+  vm.runInContext(namedFunction('landing/network-consultation/index.html', 'setMessage'), env.context);
+  vm.runInContext(namedFunction('landing/network-consultation/index.html', 'setSubmissionError'), env.context);
+  env.context.setSubmissionError('The request timed out. Please try again.');
+  assert.equal(formMessage.className, 'form-message error');
+  assert.equal(formMessage.textContent, 'The request timed out. Please try again. You can also call (312) 439-7500.');
+  assert.equal(formMessage.children[0].href, 'tel:+13124397500');
+  assert.equal(env.requests.length, 0);
+});
 
 function captchaLoaderEnvironment(options = {}) {
   const head = domNode('head'), captcha = domNode(), form = domNode('form');
@@ -562,13 +585,12 @@ test('a ready CAPTCHA widget is not replaced on repeated form interaction', () =
   assert.equal(env.timers.size, 0);
 });
 
-test('CAPTCHA recovery offers accessible status and real alternate contact links', () => {
+test('CAPTCHA recovery offers accessible status and a phone alternative', () => {
   const html = fs.readFileSync(path.join(root, 'contact/index.html'), 'utf8');
   const recovery = html.match(/<div class="captcha-recovery"[\s\S]*?<\/div>/)?.[0] || '';
   assert.match(recovery, /id="captcha-recovery" hidden/);
   assert.match(recovery, /id="captcha-load-status" role="status"/);
   assert.match(recovery, /type="button"[^>]+id="captcha-retry"/);
-  assert.match(recovery, /href="https:\/\/wa\.me\/13124397500"/);
   assert.match(recovery, /href="tel:\+13124397500"/);
 });
 
@@ -651,7 +673,14 @@ test('edited inline scripts parse; required email and delivery routing remain in
   assert.match(contact, /id="booking-email"[^>]*required/);
   assert.match(contact, /id="booking-form" action="https:\/\/api\.web3forms\.com\/submit"/);
   assert.match(contact, /window\.location\.href = '\/thank-you\/'/);
+  for (const preference of ['Email', 'Text message', 'Phone call']) {
+    assert.ok(contact.includes(`<option value="${preference}">${preference}</option>`));
+  }
   const landing = fs.readFileSync(path.join(root, 'landing/network-consultation/index.html'), 'utf8');
   assert.match(landing, /href="#consultation-form">Describe Your Project<\/a>/);
   assert.ok(!landing.includes('>Send Photos</a>'));
+  for (const relative of ['contact/index.html', 'landing/network-consultation/index.html', 'thank-you/index.html', 'assets/js/planning-contact.js', 'assets/js/inquiry-support.js']) {
+    const content = fs.readFileSync(path.join(root, relative), 'utf8');
+    assert.doesNotMatch(content, /whatsapp|wa\.me/i, relative);
+  }
 });

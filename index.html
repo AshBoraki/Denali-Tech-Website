@@ -578,8 +578,8 @@
     }
     </script>
 <script src="assets/js/microsoft-uet.js" defer></script>
-    <link rel="stylesheet" href="/assets/css/site-chrome.css?v=20260917-planning-nav">
-    <script src="/assets/js/site-chrome.js?v=20260918-planning-footer" defer></script>
+    <link rel="stylesheet" href="/assets/css/site-chrome.css?v=20261119-contact">
+    <script src="/assets/js/site-chrome.js?v=20261119-contact" defer></script>
 </head>
 <body class="dt-unified-chrome light-theme">
     <!-- Google Tag Manager (noscript) -->
@@ -719,13 +719,13 @@
                     <span></span>
                     <span></span>
                 </button>
-                <a href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20want%20a%20home%20tech%20plan.%20I%20can%20send%20photos%20and%20my%20home%20is%20in%3A" class="cta-button call-now-button" target="_blank" rel="noopener noreferrer">
+                <a href="tel:+13124397500" class="cta-button call-now-button">
                     <span class="phone-icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                             <path d="M6.62 10.79a15.07 15.07 0 006.59 6.59l2.2-2.2a1 1 0 011.03-.24 11.62 11.62 0 003.67.59 1 1 0 011 1v3.5a1 1 0 01-1 1A17.5 17.5 0 013 6a1 1 0 011-1h3.5a1 1 0 011 1 11.62 11.62 0 00.59 3.67 1 1 0 01-.24 1.03z"></path>
                         </svg>
                     </span>
-                    <span>WhatsApp</span>
+                    <span>Call (312) 439-7500</span>
                 </a>
             </div>
         </div>
@@ -1498,12 +1498,11 @@
             <p class="hero-subcopy">A clear plan for WiFi, control, AV, cameras, lighting, and shades in Chicago-area homes.</p>
             <p class="hero-trust">5.0 Google rating. 100+ homes served. Support after install.</p>
             <div class="hero-buttons">
-                <a href="/contact/" class="btn-primary">Start a home tech plan</a>
+                <a href="/contact/?source=homepage-hero#booking" class="btn-primary">Tell us about your project</a>
                 <a href="/blogs/" class="btn-secondary">Read the guides</a>
             </div>
-            <div class="hero-contact-options" aria-label="Other ways to contact Denali Tech">
+            <div class="hero-contact-options" aria-label="Call Denali Tech">
                 <a href="tel:+13124397500">Call (312) 439-7500</a>
-                <a href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20want%20help%20with%20a%20home%20technology%20project.%20I%20can%20send%20photos.%20My%20home%20is%20in%3A" target="_blank" rel="noopener noreferrer"  aria-label="Send Photos on WhatsApp">Photos on WhatsApp</a>
             </div>
             <button id="hero-video-toggle" type="button" aria-controls="hero-background-video" hidden>Pause background video</button>
         </div>
@@ -3424,7 +3423,7 @@
                 <div class="footer-column">
                     <h4>Contact</h4>
                     <ul>
-                        <li><a href="https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20would%20rather%20use%20WhatsApp.%20Can%20you%20help%20me%20with%3A" class="contact-item" data-copy="(312) 439-7500" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+                        <li><a href="tel:+13124397500" class="contact-item">(312) 439-7500</a></li>
                         <li><a href="mailto:services@denalitechs.com" class="contact-item">services@denalitechs.com</a></li>
                         <li><span style="color: var(--text-secondary); line-height: 1.6; display: block;">Mt Prospect, IL 60056</span></li>
                         <li><span style="color: var(--text-secondary); line-height: 1.6; display: block;">Serving Chicago & Surrounding Areas</span></li>
@@ -3922,59 +3921,6 @@
 
     </script>
 
-
-    <!-- Floating message button disabled: primary CTAs already route mobile leads to WhatsApp/email -->
-    <div id="floating-call-btn" style="position: fixed; bottom: 100px; right: 20px; z-index: 998; display: none;" hidden>
-        <a href="https://wa.me/13124397500" target="_blank" rel="noopener noreferrer" style="display: flex; align-items: center; justify-content: center; width: 60px; height: 60px; background: linear-gradient(135deg, var(--accent-primary), var(--accent-interactive)); border-radius: 50%; box-shadow: 0 4px 15px rgba(249, 115, 22, 0.4); text-decoration: none; transition: all 0.3s; animation: pulse 2s infinite;" aria-label="Message Denali Tech" title="Message Denali Tech">
-            <svg viewBox="0 0 24 24" fill="#ffffff" width="24" height="24" aria-hidden="true">
-                <path d="M6.62 10.79a15.07 15.07 0 006.59 6.59l2.2-2.2a1 1 0 011.03-.24 11.62 11.62 0 003.67.59 1 1 0 011 1v3.5a1 1 0 01-1 1A17.5 17.5 0 013 6a1 1 0 011-1h3.5a1 1 0 011 1 11.62 11.62 0 00.59 3.67 1 1 0 01-.24 1.03z"></path>
-            </svg>
-        </a>
-    </div>
-
-
-    <style>
-        @keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.05);}}
-        #floating-call-btn{display:none !important;}
-    </style>
-    <script>
-        // Show floating message button only on mobile/tablet after scroll
-        window.addEventListener('load', () => {
-            const floatingBtn = document.getElementById('floating-call-btn');
-            if (!floatingBtn) return;
-            return;
-
-            // Check if mobile/tablet using media query to avoid forced reflow
-            const mediaQuery = window.matchMedia('(max-width: 768px)');
-            let isMobile = mediaQuery.matches;
-
-            // Update on resize (debounced)
-            let resizeTimeout;
-            mediaQuery.addEventListener('change', (e) => {
-                clearTimeout(resizeTimeout);
-                resizeTimeout = setTimeout(() => {
-                    isMobile = e.matches;
-                }, 100);
-            });
-
-            if (isMobile) {
-                // Show after user scrolls down a bit (throttled with requestAnimationFrame)
-                let scrollTimeout;
-                const handleFloatingScroll = () => {
-                    if (scrollTimeout) return;
-                    scrollTimeout = requestAnimationFrame(() => {
-                        if (window.scrollY > 300) {
-                            floatingBtn.style.display = 'block';
-                        } else {
-                            floatingBtn.style.display = 'none';
-                        }
-                        scrollTimeout = null;
-                    });
-                };
-                window.addEventListener('scroll', handleFloatingScroll, { passive: true });
-            }
-        });
-    </script>
 
     <!-- Image Loading Handler & Scroll Animations -->
     <script>

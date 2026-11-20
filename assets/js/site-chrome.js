@@ -3,14 +3,14 @@
 
   var version = "20260829a";
   var projectPlanHref = "/contact/?source=site-navigation#booking";
-  var whatsappMessageHref = "https://wa.me/13124397500?text=Hi%20Denali%20Tech%2C%20I%20would%20rather%20use%20WhatsApp.%20Can%20you%20help%20me%20with%3A";
+  var phoneHref = "tel:+13124397500";
 
   // Keep non-sensitive enquiry context across pages. This local helper is
   // optional: loading it must never delay navigation or the contact form.
   function loadLeadContext() {
     if (window.denaliLeads || document.querySelector('script[src*="/assets/js/inquiry-support.js"]')) return;
     var script = document.createElement("script");
-    script.src = "/assets/js/inquiry-support.js?v=20260905";
+    script.src = "/assets/js/inquiry-support.js?v=20261119-contact";
     script.async = true;
     document.head.appendChild(script);
   }
@@ -292,12 +292,10 @@
     var actions = makeElement("div", "dt-site-footer-actions");
     var cta = makeElement("a", "dt-site-cta", "Send Project Details");
     cta.href = projectPlanHref;
-    var message = makeElement("a", "dt-site-footer-secondary", "Message on WhatsApp");
-    message.href = whatsappMessageHref;
-    message.target = "_blank";
-    message.rel = "noopener noreferrer";
+    var call = makeElement("a", "dt-site-footer-secondary", "Call (312) 439-7500");
+    call.href = phoneHref;
     actions.appendChild(cta);
-    actions.appendChild(message);
+    actions.appendChild(call);
 
     var proof = makeElement("aside", "dt-site-footer-proof");
     proof.appendChild(makeElement("h3", "", "Why homeowners call Denali Tech"));

@@ -185,14 +185,14 @@ test('no URL values, campaign parameters, contact details or form events are emi
   assert.deepEqual(Object.keys(env.window.dataLayer[0]).sort(), ['event', 'gtm.start']);
 });
 
-test('shared chrome and standalone landing load the helper, with existing inquiry support unchanged', () => {
+test('shared chrome and standalone landing load analytics and inquiry support', () => {
   const chrome = fs.readFileSync(path.join(root, 'assets/js/site-chrome.js'), 'utf8');
   assert.match(chrome, /function loadPublicAnalytics\(\)/);
   assert.match(chrome, /loadPublicAnalytics\(\);/);
   assert.match(chrome, /\/assets\/js\/public-analytics\.js\?v=20260906/);
   const landing = fs.readFileSync(path.join(root, 'landing/network-consultation/index.html'), 'utf8');
   assert.match(landing, /src="\/assets\/js\/public-analytics\.js\?v=20260906" defer/);
-  assert.match(landing, /src="\/assets\/js\/inquiry-support\.js\?v=20260905" defer/);
+  assert.match(landing, /src="\/assets\/js\/inquiry-support\.js\?v=20261119-contact" defer/);
   assert.match(landing, /src="\/assets\/js\/microsoft-clarity\.js" defer/);
 });
 
