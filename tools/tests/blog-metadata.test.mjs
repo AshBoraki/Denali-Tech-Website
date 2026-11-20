@@ -38,6 +38,19 @@ test('blog skip link targets the current-page focusable main landmark', () => {
   assert.doesNotMatch(hub, /href="\/#main-content"/);
 });
 
+test('Sanus rack checklist links stay in their article despite the root base URL', () => {
+  for (const [slug, target] of [
+    ['sanus-15u-mini-rack-guide', 'check-mini'],
+    ['sanus-cfr2127-rack-guide', 'planning-cfr'],
+  ]) {
+    const article = fs.readFileSync(new URL(`../../blogs/${slug}/index.html`, import.meta.url), 'utf8');
+    const link = `/blogs/${slug}/#${target}`;
+    assert.ok(article.includes(`href="${link}"`), slug);
+    assert.ok(article.includes(`id="${target}"`), slug);
+    assert.ok(!article.includes(`href="#${target}"`), slug);
+  }
+});
+
 test('blog source never exposes JavaScript URL placeholders as crawlable attributes', () => {
   const hub = fs.readFileSync(new URL('../../blogs/index.html', import.meta.url), 'utf8');
   const placeholders = [...hub.matchAll(/\b(?:src|href|srcset|poster|action)\s*=\s*["'][^"']*\$\{[^"']*["']/g)];
