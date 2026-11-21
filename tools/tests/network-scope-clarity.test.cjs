@@ -19,5 +19,5 @@ test('network support terms are conditional, with one quiet project CTA', () => 
   assert.match(html, /class="btn-primary">Send Network Details<\/a>/);
   assert.doesNotMatch(html, /Free Network Consultation|Transform Your Home Network Today|Ongoing support when you need it/);
   assert.match(html, /"dateModified": "2026-11-04"/);
-  for (const source of ['https://www.snapav.com/shop/en/snapav/araknis', 'https://www.legrandav.com/products/luxul', 'https://cedia.org/en-au/smart-home-professionals/news/the-ultimate-smart-home-wiring-guide/']) assert.ok(html.includes(source));
+  for (const source of ['https://www.snapav.com/shop/en/snapav/araknis', 'https://www.legrandav.com/products/luxul', 'https://cedia.org/smart-home-professionals/news/the-ultimate-smart-home-wiring-guide/']) assert.ok(html.includes(source));
 });
