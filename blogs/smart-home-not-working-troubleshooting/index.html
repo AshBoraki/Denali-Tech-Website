@@ -152,7 +152,7 @@
         .blog-container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 120px 2rem 4rem;
+            padding: 4rem 2rem 4rem;
         }
         
         .blog-header {
@@ -275,6 +275,8 @@
         .highlight-box p {
             margin-bottom: 0;
         }
+
+        .blog-header .highlight-box { text-align:left; margin:1rem 0 1.25rem; padding:1rem; line-height:1.6; }
         
         .solution-box {
             background: rgba(34, 197, 94, 0.1);
@@ -452,13 +454,20 @@
         
         @media (max-width: 768px) {
             .blog-container {
-                padding: 100px 1rem 2rem;
+                padding: 2.5rem 1rem 2rem;
             }
+
+            .blog-header { text-align:left; margin-bottom:1.5rem; }
+            .blog-title { font-size:clamp(1.85rem,6vw,2.3rem); }
             
             .blog-meta {
-                flex-direction: column;
-                gap: 0.5rem;
+                justify-content:flex-start;
+                gap:.4rem .8rem;
+                line-height:1.5;
+                margin-bottom:1rem;
+                font-size:.875rem;
             }
+            .blog-tags { justify-content:flex-start; }
             
             .cta-box {
                 padding: 1.5rem;
@@ -599,6 +608,7 @@
                 <a href="/">Home</a> / <a href="/blogs/">Blog</a> / Smart Home Troubleshooting
             </div>
             <h1 class="blog-title">Smart Home Not Working? 10 Common Issues & Professional Solutions</h1>
+            <div class="highlight-box"><p><strong>Before you reset anything, find out what still works.</strong> Try a wall button or remote if the app is offline. Note whether one device, one room, or the whole house is affected. That tells you more than restarting everything at once.</p></div>
             <div class="blog-meta">
                 <span>📅 Published: <time datetime="2025-01-09">January 9, 2025</time></span>
                 <span>👤 By: <a href="/about/">Denali Tech Team</a></span>
@@ -616,13 +626,7 @@
         <img src="/Video/homepage/denali-tech-hero-field-team-new-wrap.webp" alt="Illustrative Denali Tech smart-home service scene beside the newly wrapped van" class="blog-hero-image" loading="eager" width="1679" height="937">
         
         <div class="blog-content">
-            <p><strong>"My smart home isn't working" can describe very different faults.</strong> One app may be offline while local controls still work, one room may have a network problem, or several systems may share a failed power, network, controller, account, or cloud dependency. The first job is to define the exact scope.</p>
-            
-            <p>Many faults can be isolated without replacing the whole system, but no technician should promise the cause or repair before collecting evidence. This guide separates safe observations from changes that can erase configuration or interrupt other services.</p>
-            
-            <div class="highlight-box">
-                <p><strong>First rule:</strong> do not assume Wi-Fi is the cause. Record what failed and what still works, then check shared dependencies before rebooting, updating, re-pairing, or resetting equipment.</p>
-            </div>
+            <p>Don’t assume WiFi is the cause. Write down when the problem started and whether anything changed just before it. Start with checks that won’t erase settings or interrupt equipment that’s still working.</p>
             
             <h2>Why Smart Homes Stop Working</h2>
             

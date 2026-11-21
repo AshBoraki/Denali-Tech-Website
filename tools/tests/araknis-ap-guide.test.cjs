@@ -13,7 +13,7 @@ test('Araknis review retains the public URL, original publication and establishe
   assert.ok(html.includes('<link rel="canonical" href="' + url + '">'));
   assert.equal(schema.mainEntityOfPage, url);
   assert.equal(schema.datePublished, '2026-07-11');
-  assert.equal(schema.dateModified, '2026-10-19');
+  assert.equal(schema.dateModified, '2026-11-21');
   const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]);
   assert.equal(ids.length, new Set(ids).size);
   for (const id of ['models', 'all-current-choices-side-by-side', 'technical-comparison', 'what-wi-fi-7-changes-and-what-it-does-not', 'a-simple-way-to-compare-the-models', 'the-model-is-only-one-part-of-the-system']) {
@@ -26,8 +26,16 @@ test('Wi-Fi 7 power limits are separated by exact model rather than generalized'
   assert.match(html, /On PoE\+, 2.4 and 6 GHz have a 50% transmit duty cycle; 5 GHz remains at 100%/);
   assert.match(html, /On PoE\+, the 6 GHz radio is disabled/);
   assert.match(html, /Ethernet port 1 to 2.5Gbps, and port 2 is disabled/);
-  assert.match(html, /Two 10GbE Ethernet ports/);
   assert.match(html, /not a claim that the access point continuously consumes 60 watts/);
+});
+
+test('830 separates the confirmed uplink from conflicting second-port specifications', () => {
+  assert.match(html, /10GbE PoE-in port plus a second data port/);
+  assert.match(html, /10GbE PoE-in \+ second data port \(see note\)/);
+  assert.match(html, /installation guide lists a 1GbE data-only second port, while its AN-830-AP-I data sheet lists two 10GbE ports/);
+  assert.match(html, /confirm its rated speed for the exact unit before ordering/);
+  assert.match(html, /https:\/\/help\.snapone\.com\/an-2-320-sw-ug\/Content\/x30%20AP\/QSG%20topics\/Features\.htm/);
+  assert.doesNotMatch(html, /<li>Two 10GbE Ethernet ports<\/li>|>2 × 10GbE<\/td>/);
 });
 
 test('Outdoor power, mounting and source discrepancies are explained without weatherproof guarantees', () => {

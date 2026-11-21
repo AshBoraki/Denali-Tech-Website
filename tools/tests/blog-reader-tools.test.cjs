@@ -16,6 +16,7 @@ function buildGuide(href, readyState = 'complete') {
       this.children = [];
       this.id = '';
       this.textContent = '';
+      if (tag === 'details') this.open = false;
       this.classList = { add() {} };
       created.push(this);
     }
@@ -86,4 +87,15 @@ test('reader section links also stay on the article when initialized after DOMCo
   const { links, main } = buildGuide(href, 'loading');
   assert.ok(main.guide);
   assert.equal(links[0].href, href.split('#')[0] + '#1-compare-the-complete-proposal');
+});
+
+test('reader navigation uses a closed native disclosure; the contact link is secondary', () => {
+  const { main } = buildGuide('https://denalitechs.com/blogs/how-to-choose-smart-home-installer/');
+  const guide = main.guide;
+  assert.equal(guide.tagName, 'details');
+  assert.equal(guide.open, false);
+  assert.deepEqual(guide.children.map(child => child.tagName), ['summary', 'nav', 'a']);
+  assert.equal(guide.children[0].textContent, 'Jump to a section');
+  assert.equal(guide.children[1]['aria-label'], 'Article sections');
+  assert.equal(guide.children[2].href, 'https://denalitechs.com/contact/?source=blog-guide&guide=how-to-choose-smart-home-installer#booking');
 });

@@ -152,7 +152,7 @@
         .blog-container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 120px 2rem 4rem;
+            padding: 4rem 2rem 4rem;
         }
         
         .blog-header {
@@ -337,16 +337,25 @@
         .highlight-box p {
             margin-bottom: 0;
         }
+
+        .blog-header .highlight-box { text-align:left; margin:1rem 0 1.25rem; padding:1rem; line-height:1.6; }
         
         @media (max-width: 768px) {
             .blog-container {
-                padding: 100px 1rem 2rem;
+                padding: 2.5rem 1rem 2rem;
             }
+
+            .blog-header { text-align:left; margin-bottom:1.5rem; }
+            .blog-title { font-size:clamp(1.85rem,6vw,2.3rem); }
             
             .blog-meta {
-                flex-direction: column;
-                gap: 0.5rem;
+                justify-content:flex-start;
+                gap:.4rem .8rem;
+                line-height:1.5;
+                margin-bottom:1rem;
+                font-size:.875rem;
             }
+            .blog-tags { justify-content:flex-start; }
             
             .cta-box {
                 padding: 1.5rem;
@@ -436,6 +445,7 @@
                 <a href="/">Home</a> / <a href="/blogs/">Blog</a> / WiFi Dead Zones Fix Guide
             </div>
             <h1 class="blog-title">How to Fix WiFi Dead Zones: Complete Guide to Whole-Home WiFi Coverage</h1>
+            <div class="highlight-box"><p><strong>Start with a room-by-room check.</strong> Try two devices in the problem room and again near the router. If both work better near the router, look at coverage before buying an extender. If they’re slow everywhere, check the internet connection as well as the WiFi.</p></div>
             <div class="blog-meta">
                 <span>📅 Published: <time datetime="2025-01-04">January 4, 2025</time></span>
                 <span>👤 By: <a href="/about/">Denali Tech Team</a></span>
@@ -453,13 +463,7 @@
         <img src="/Video/Blogs%20imge/Arakins%20Wifi%20setup/arakhnis-in-ceiling-access-point-basement.jpg" alt="Installer mounting a WiFi access point on a finished ceiling" class="blog-hero-image" loading="eager" width="1025" height="614">
         
         <div class="blog-content">
-            <p><strong>"Why is my WiFi slow upstairs?"</strong> A weak signal is only one possibility. Congested channels, a bad wired uplink, overloaded equipment, poor roaming, internet-service problems or the phone, tablet, or computer itself can produce the same complaint.</p>
-            
-            <p>A professional diagnosis separates <strong>coverage, capacity, interference, roaming and internet throughput</strong> before equipment is moved or replaced.</p>
-            
-            <div class="highlight-box">
-                <p><strong>💡 Quick Answer:</strong> Measure first. Many homes need properly placed <strong>wired access points</strong>, a clean channel/power plan and a reliable router/switch—not a pile of wireless extenders or an automatic “mesh” recommendation.</p>
-            </div>
+            <p>One slow phone isn’t necessarily a dead zone. If several devices struggle in the same spot, the fix may be moving the router or adding a properly placed wired access point. Measure first so you’re not buying gear for the wrong problem.</p>
 
             <section class="field-media" aria-labelledby="wifi-design-heading"><h2 id="wifi-design-heading">A real WiFi fix starts with the floor plan and wired network</h2><p class="field-media-intro">Access points, switches, router, cabling, channel plan and device roaming must be designed as one system.</p><div class="field-media-grid"><figure class="field-media-card contain"><img src="/Video/Blogs%20imge/Araknis%20AP%20Comparison/araknis-model-lineup-blue.png" alt="Araknis indoor and outdoor access point models shown together" loading="lazy" width="1774" height="887"><figcaption>Choose the access-point type for the location, device density, mounting condition and coverage goal.</figcaption></figure><figure class="field-media-card contain"><img src="/Video/Blogs%20imge/Araknis%20Router%20Comparison/araknis-520-blue.png" alt="Araknis 520 router on the matching blue comparison background" loading="lazy" width="1448" height="1086"><figcaption>A stable wireless system depends on the wired router, PoE switching, clean rack power and documented patching.</figcaption></figure><figure class="field-media-card contain"><img src="/Video/Blogs%20imge/Araknis%20AP%20Comparison/araknis-520-outdoor-blue.png" alt="Outdoor-rated Araknis access point on blue background" loading="lazy" width="592" height="444"><figcaption>Outdoor areas and detached structures need intentional coverage; indoor signal leaking through exterior walls is not a design.</figcaption></figure></div><p class="field-note"><strong>Field test:</strong> validate signal, interference, throughput and roaming at the places people actually use devices. Adding “more mesh” without measuring can create overlap and new problems.</p></section>
             

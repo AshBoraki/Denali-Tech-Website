@@ -18,22 +18,16 @@
     var style = document.createElement("style");
     style.id = "dt-blog-reader-tools-styles";
     style.textContent = [
-      ".dt-blog-reader-guide{margin:clamp(1.4rem,3vw,2.4rem) 0;padding:clamp(1.15rem,2.7vw,1.7rem);display:grid;grid-template-columns:minmax(0,1.35fr) minmax(240px,.65fr);gap:clamp(1rem,2.5vw,1.6rem);color:#f8fafc;background:linear-gradient(135deg,#071525 0%,#102a46 100%);border:1px solid rgba(148,163,184,.3);border-top:3px solid #f97316;border-radius:16px;box-shadow:0 18px 45px rgba(2,8,23,.18)}",
+      ".dt-blog-reader-guide{margin:1.5rem 0;padding:0 1rem;color:#f8fafc;background:#102039;border:1px solid #3a4b62;border-radius:10px}",
       ".dt-blog-reader-guide *{box-sizing:border-box}",
-      ".dt-blog-reader-guide h2{margin:0 0 .35rem!important;color:#fff!important;font-size:clamp(1.25rem,2.4vw,1.55rem)!important;line-height:1.2!important}",
-      ".dt-blog-reader-guide p{margin:0;color:#cbd5e1!important;font-size:.96rem;line-height:1.55}",
-      ".dt-blog-reader-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.55rem;margin-top:1rem}",
-      ".dt-blog-reader-links a{display:flex;align-items:center;min-height:44px;padding:.65rem .78rem;color:#f8fafc!important;background:rgba(255,255,255,.065);border:1px solid rgba(255,255,255,.16);border-radius:9px;text-decoration:none!important;font-size:.88rem;font-weight:700;line-height:1.3;transition:border-color .2s ease,background .2s ease,transform .2s ease}",
-      ".dt-blog-reader-links a:hover{border-color:#fb923c;background:rgba(249,115,22,.16);transform:translateY(-1px)}",
-      ".dt-blog-reader-links a:focus-visible,.dt-blog-reader-action a:focus-visible{outline:3px solid #fdba74;outline-offset:3px}",
-      ".dt-blog-reader-action{display:flex;flex-direction:column;justify-content:center;padding:1rem;background:rgba(255,255,255,.075);border:1px solid rgba(255,255,255,.14);border-radius:12px}",
-      ".dt-blog-reader-action strong{display:block;margin:0 0 .3rem;color:#fff;font-size:1rem}",
-      ".dt-blog-reader-action span{display:block;color:#cbd5e1;font-size:.9rem;line-height:1.45}",
-      ".dt-blog-reader-action a{display:inline-flex;align-items:center;justify-content:center;min-height:46px;margin-top:.9rem;padding:.7rem .95rem;color:#fff!important;background:#c2410c;border:1px solid #ea580c;border-radius:9px;text-decoration:none!important;font-size:.9rem;font-weight:800;text-align:center}",
-      ".dt-blog-reader-action a:hover{background:#9a3412}",
+      ".dt-blog-reader-guide>summary{cursor:pointer;min-height:48px;padding:.8rem 0;line-height:1.5;font-size:1rem;font-weight:700;color:#f8fafc}",
+      ".dt-blog-reader-guide>summary::marker{color:#fdba74}",
+      ".dt-blog-reader-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem .85rem;padding:.35rem 0}",
+      ".dt-blog-reader-links a,.dt-blog-reader-action{display:flex;align-items:center;min-height:44px;padding:.55rem 0;color:#fdba74!important;text-decoration:underline!important;text-underline-offset:.18em;font-size:1rem;line-height:1.45;overflow-wrap:anywhere}",
+      ".dt-blog-reader-guide>summary:focus-visible,.dt-blog-reader-guide a:focus-visible{outline:3px solid #fdba74;outline-offset:3px}",
+      ".dt-blog-reader-action{border-top:1px solid #3a4b62;margin:.35rem 0 0}",
       ".dt-blog-reader-target{scroll-margin-top:96px}",
-      "@media(max-width:760px){.dt-blog-reader-guide{grid-template-columns:1fr;margin:1.2rem 0;padding:1rem}.dt-blog-reader-links{grid-template-columns:1fr}.dt-blog-reader-action{padding:.9rem}.dt-blog-reader-action a{width:100%}}",
-      "@media(prefers-reduced-motion:reduce){.dt-blog-reader-links a{transition:none}.dt-blog-reader-links a:hover{transform:none}}"
+      "@media(max-width:760px){.dt-blog-reader-links{grid-template-columns:1fr}}"
     ].join("");
     document.head.appendChild(style);
   }
@@ -73,16 +67,10 @@
       heading.classList.add("dt-blog-reader-target");
     });
 
-    var guide = document.createElement("aside");
+    var guide = document.createElement("details");
     guide.className = "dt-blog-reader-guide";
-    guide.setAttribute("aria-labelledby", "dt-blog-reader-title");
-
-    var content = document.createElement("div");
-    var title = document.createElement("h2");
-    title.id = "dt-blog-reader-title";
-    title.textContent = "In this guide";
-    var description = document.createElement("p");
-    description.textContent = "Jump directly to the part that matches your project.";
+    var title = document.createElement("summary");
+    title.textContent = "Jump to a section";
 
     var links = document.createElement("nav");
     links.className = "dt-blog-reader-links";
@@ -94,25 +82,14 @@
       links.appendChild(link);
     });
 
-    content.appendChild(title);
-    content.appendChild(description);
-    content.appendChild(links);
-
-    var action = document.createElement("div");
-    action.className = "dt-blog-reader-action";
-    var actionTitle = document.createElement("strong");
-    actionTitle.textContent = "Planning this for your home?";
-    var actionCopy = document.createElement("span");
-    actionCopy.textContent = "Describe the room and include the model number if you have it. We can help you identify the practical next step.";
     var actionLink = document.createElement("a");
+    actionLink.className = "dt-blog-reader-action";
     actionLink.href = "/contact/?source=blog-guide&guide=" + encodeURIComponent(path.split("/").filter(Boolean).pop()) + "#booking";
     actionLink.textContent = "Ask about this guide";
 
-    action.appendChild(actionTitle);
-    action.appendChild(actionCopy);
-    action.appendChild(actionLink);
-    guide.appendChild(content);
-    guide.appendChild(action);
+    guide.appendChild(title);
+    guide.appendChild(links);
+    guide.appendChild(actionLink);
 
     headings[0].parentNode.insertBefore(guide, headings[0]);
   }

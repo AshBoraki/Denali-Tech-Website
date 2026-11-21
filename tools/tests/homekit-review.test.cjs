@@ -14,7 +14,7 @@ test('HomeKit guide preserves identity, publication and all six established sect
   assert.match(html, /<h1>Control4 and Apple HomeKit: What Homeowners Should Understand<\/h1>/);
   assert.equal([...html.matchAll(/<h1[ >]/g)].length, 1);
   assert.match(html, /"datePublished":"2026-06-03"/);
-  assert.match(html, /"dateModified":"2026-10-19"/);
+  assert.match(html, /"dateModified":"2026-11-21"/);
   for (const id of ['control-layer-heading', 'one-primary-control-layer-keeps-the-home-calmer', 'what-does-the-built-in-integration-actually-support', 'do-i-need-a-subscription-or-an-apple-home-hub', 'what-to-ask-before-connecting-systems', 'final-thought']) {
     assert.ok(html.includes(`id="${id}"`), id);
     assert.ok(html.includes(`href="#${id}"`), id);
@@ -41,9 +41,9 @@ test('Seven documented categories remain scoped to OS 4.0 and do not promise ful
 });
 
 test('Connect entitlement and Apple home hub roles remain separate', () => {
-  assert.match(html, /Apple integration among Connect's premium features/);
+  assert.match(html, /X4 HomeKit integration as a premium Connect feature/);
   assert.match(html, /Local Control4 operation without Connect is a separate question/);
-  assert.match(html, /supported HomePod or Apple TV as a home hub/);
+  assert.match(html, /compatible home hub, such as a HomePod or Apple TV/);
   assert.match(html, /This is not the Control4 controller/);
   assert.ok(html.includes('https://support.apple.com/en-us/102557'));
   assert.ok(html.includes('https://www.control4.com/services'));
@@ -94,7 +94,7 @@ test('HomeKit cover matches catalog, social preview and non-cropping static hub'
   const post = JSON.parse(read('blogs/blog-data.json')).posts.find(p => p.slug === 'control4-apple-homekit-guide');
   assert.equal(post.heroImage, image);
   assert.equal(post.publishedDate, '2026-06-03');
-  assert.equal(post.updatedDate, '2026-10-19');
+  assert.equal(post.updatedDate, '2026-11-21');
   assert.ok(html.includes('https://denalitechs.com'+image));
   const hub = read('blogs/index.html');
   assert.ok(hub.includes(`src="${image}"`));

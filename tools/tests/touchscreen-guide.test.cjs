@@ -20,7 +20,7 @@ test('touchscreen review preserves the search URL, publication date and existing
   assert.ok(html.includes('<link rel="canonical" href="' + canonical + '">'));
   assert.equal(schema.mainEntityOfPage, canonical);
   assert.equal(schema.datePublished, '2026-07-12');
-  assert.equal(schema.dateModified, '2026-10-19');
+  assert.equal(schema.dateModified, '2026-11-21');
   const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]);
   assert.equal(new Set(ids).size, ids.length, 'IDs must be unique');
   for (const id of anchors) {

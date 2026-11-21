@@ -14,7 +14,7 @@ test('Connect guide preserves its URL, title, publication date and established s
   assert.match(html, /<title>Control4 Connect: What the Subscription Does \| Denali Tech<\/title>/);
   assert.equal(schema.mainEntityOfPage, url);
   assert.equal(schema.datePublished, '2026-08-17');
-  assert.equal(schema.dateModified, '2026-10-19');
+  assert.equal(schema.dateModified, '2026-11-21');
   const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]);
   assert.equal(ids.length, new Set(ids).size);
   for (const id of ['the-features-homeowners-notice-most', 'connect-or-4sight-which-name-applies', 'what-remote-access-looks-like', 'what-connect-does-and-does-not-solve', 'before-activating-or-renewing-check-four-things', 'connect-is-not-the-same-as-an-onsite-service-plan']) {
@@ -23,10 +23,11 @@ test('Connect guide preserves its URL, title, publication date and established s
 });
 
 test('Connect guide distinguishes optional X4 access from legacy OS 3 Connect and 4Sight', () => {
-  assert.match(html, /On X4, it is an optional subscription/);
+  assert.ok(html.indexOf('On X4, you can keep local app control without Connect') < html.indexOf('class="photo hero-photo"'));
   assert.match(html, /On X4, you can keep local app control without Connect/);
   assert.match(html, /OS 3 <em>Connect<\/em> accounts can lose local app access when Connect expires/);
   assert.match(html, /<em>4Sight<\/em> customers who stay on OS 3 can continue renewing 4Sight/);
+  assert.match(html, /4Sight does not carry over to X4/);
   assert.match(html, /later X4 policy made Connect optional/);
   assert.doesNotMatch(html, /Systems installed after that date use|installation date matters|Connect is required for all/i);
 });

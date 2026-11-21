@@ -152,7 +152,7 @@
         .blog-container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 120px 2rem 4rem;
+            padding: 4rem 2rem 4rem;
         }
         
         .blog-header {
@@ -277,6 +277,8 @@
         .highlight-box p {
             margin-bottom: 0;
         }
+
+        .blog-header .highlight-box { text-align:left; margin:1rem 0 1.25rem; padding:1rem; line-height:1.6; }
         
         .cta-box {
             background: rgba(249, 115, 22, 0.1);
@@ -412,13 +414,20 @@
         
         @media (max-width: 768px) {
             .blog-container {
-                padding: 100px 1rem 2rem;
+                padding: 2.5rem 1rem 2rem;
             }
+
+            .blog-header { text-align:left; margin-bottom:1.5rem; }
+            .blog-title { font-size:clamp(1.85rem,6vw,2.3rem); }
             
             .blog-meta {
-                flex-direction: column;
-                gap: 0.5rem;
+                justify-content:flex-start;
+                gap:.4rem .8rem;
+                line-height:1.5;
+                margin-bottom:1rem;
+                font-size:.875rem;
             }
+            .blog-tags { justify-content:flex-start; }
             
             .cta-box {
                 padding: 1.5rem;
@@ -511,6 +520,7 @@
                 <a href="/">Home</a> / <a href="/blogs/">Blog</a> / Lutron Smart Lighting Guide
             </div>
             <h1 class="blog-title">Lutron Smart Lighting: Complete Guide for Chicago Homes 2026</h1>
+            <div class="highlight-box"><p><strong>Start with how much of the home you want to light.</strong> Caséta is the smaller-system option. Compare RadioRA 3 for a larger, professionally programmed system, or HomeWorks QSX for a custom whole-home design. Check wiring and compatibility before choosing controls.</p></div>
             <div class="blog-meta">
                 <span>📅 Published: <time datetime="2025-01-11">January 11, 2025</time></span>
                 <span>👤 By: <a href="/about/">Denali Tech Team</a></span>
@@ -528,15 +538,7 @@
         <img src="/Video/Blogs%20imge/Lutron%20Smart%20Lighting-Complete%20Guide-for-Chicago%20Homes.webp" alt="Lutron Smart Lighting Control Systems" class="blog-hero-image" loading="eager" width="1200" height="630">
         
         <div class="blog-content">
-            <p><strong>Looking for the right smart lighting system for your Chicago home?</strong> Lutron has made lighting controls since 1961 and offers residential systems for projects ranging from a few rooms to a fully designed home.</p>
-            
-            <p>Whether you want app control, useful lighting scenes, automatic schedules, or integration with a Control4 or URC system, the right Lutron platform depends on the number of devices, control style, wiring, and integration requirements.</p>
-            
-            <p>Denali Tech designs and programs lighting as part of professionally integrated homes in the Chicago area. This guide explains the practical differences without assuming one product line is right for every project.</p>
-            
-            <div class="highlight-box">
-                <p><strong>Quick answer:</strong> Lutron's current residential comparison centers on three systems: Caséta, RadioRA 3, and HomeWorks QSX. Caséta is the smaller-system option, RadioRA 3 supports larger professionally programmed projects, and HomeWorks QSX is the most flexible platform for designed whole-home lighting. Exact integration, device compatibility, and installed cost must be confirmed for the selected hardware and project scope.</p>
-            </div>
+            <p>List the rooms you want to control and what should happen when you press a button. If those buttons should also control shades or work with Control4 or URC, include that before you choose devices or ask for installed pricing.</p>
             
             <h2>Why Choose Lutron Smart Lighting?</h2>
             

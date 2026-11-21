@@ -152,7 +152,7 @@
         .blog-container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 120px 2rem 4rem;
+            padding: 4rem 2rem 4rem;
         }
         
         .blog-header {
@@ -293,6 +293,8 @@
         .highlight-box p {
             margin-bottom: 0;
         }
+
+        .blog-header .highlight-box { text-align:left; margin:1rem 0 1.25rem; padding:1rem; line-height:1.6; }
         
         .comparison-box {
             display: grid;
@@ -479,13 +481,20 @@
         
         @media (max-width: 768px) {
             .blog-container {
-                padding: 100px 1rem 2rem;
+                padding: 2.5rem 1rem 2rem;
             }
+
+            .blog-header { text-align:left; margin-bottom:1.5rem; }
+            .blog-title { font-size:clamp(1.85rem,6vw,2.3rem); }
             
             .blog-meta {
-                flex-direction: column;
-                gap: 0.5rem;
+                justify-content:flex-start;
+                gap:.4rem .8rem;
+                line-height:1.5;
+                margin-bottom:1rem;
+                font-size:.875rem;
             }
+            .blog-tags { justify-content:flex-start; }
             
             .comparison-box {
                 grid-template-columns: 1fr;
@@ -582,6 +591,7 @@
                 <a href="/">Home</a> / <a href="/blogs/">Blog</a> / Professional Network Setup Guide
             </div>
             <h1 class="blog-title">Professional vs DIY Home Networks: What Good Design Actually Changes</h1>
+            <div class="highlight-box"><p><strong>When is professional help worth it?</strong> DIY is reasonable if your equipment covers the rooms you use and you’re comfortable maintaining it. Get help if you need new wiring, measured coverage across a complex floor plan, or someone to document and support the network.</p></div>
             <div class="blog-meta">
                 <span>📅 Published: <time datetime="2025-01-11">January 11, 2025</time></span>
                 <span>👤 By: <a href="/about/">Denali Tech Team</a></span>
@@ -599,15 +609,7 @@
         <img src="/Video/Blogs%20imge/Arakins%20Wifi%20setup/arakhnis-network-overview-header.webp" alt="Professional Araknis Network Setup Overview" class="blog-hero-image" loading="eager" width="1200" height="630">
         
         <div class="blog-content">
-            <p><strong>What's the difference between a DIY network setup and a professional network installation?</strong> The meaningful difference is not the label on the installer or equipment. It is whether the network is designed from requirements, installed cleanly, measured after installation, documented, and supported.</p>
-            
-            <p>A well-chosen consumer system can serve a modest home, and a badly designed professional system can still fail. Professional help becomes valuable when the property, device mix, cabling, security, remote management, or service expectations require more planning than a single router provides.</p>
-            
-            <p>This guide uses an Araknis installation to show the parts that can add real value: organized equipment, appropriate routing and switching, measured access-point placement, power management, configuration, and clear service access.</p>
-            
-            <div class="highlight-box">
-                <p><strong>Quick answer:</strong> Choose professional design when you need a site survey, wired access points, managed switching, VLANs, remote service, rack organization, documented configuration, or validation across many rooms. Choose DIY when a supported consumer system meets the measured requirements and you are comfortable maintaining it.</p>
-            </div>
+            <p>This Araknis installation shows what to look for beyond a brand name: WiFi tested in the rooms you use, equipment you can reach for service, and a clear record of how it all connects.</p>
             
             <h2>What Makes This Network Setup Serviceable?</h2>
             
